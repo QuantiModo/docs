@@ -1,7 +1,7 @@
 #!/bin/sh
 
 echo "On to v1 SDKs"
-cp -R public.built/api/docs/swagger.json swagger-codegen/api-docs-v1.json
+cp -R swagger.json swagger-codegen/api-docs-v1.json
 cd swagger-codegen
 mkdir quantimodo_v1_skds
 
