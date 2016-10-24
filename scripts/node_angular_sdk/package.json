@@ -1,0 +1,11 @@
+{
+  "name": "quantimodo_node_angular_sdk",
+  "version": "1.0.0",
+  "description": "Generate node angular sdks for Quantimodo API",
+  "main": "node_angular.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "quantimodo",
+  "license": "ISC"
+}
