@@ -1,5 +1,7 @@
 # QuantiModo API
 
+[![CircleCI](https://circleci.com/gh/QuantiModo/docs.svg?style=svg)](https://circleci.com/gh/QuantiModo/docs)
+
 See our interactive API explorer at [https://app.quantimo.do/api/docs](https://app.quantimo.do/api/docs)
 
 Welcome to QuantiModo API!
