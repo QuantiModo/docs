@@ -607,6 +607,7 @@ info:
   contact:
     name: info@quantimo.do
 basePath: /api
+host: app.quantimo.do
 schemes:
   - https
 consumes:
