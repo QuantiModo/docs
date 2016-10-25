@@ -1,9 +1,17 @@
 #!/bin/sh
 
-echo "On to v1 SDKs"
+echo "Clone swagger-codegen..."
+git clone https://github.com/swagger-api/swagger-codegen
 cp -R swagger.json swagger-codegen/api-docs-v1.json
+cp -R scripts/node_angular_sdk swagger-codegen/node_angular_sdk
 cd swagger-codegen
+
+echo "Updating maven packages..."
+./run-in-docker.sh mvn package > /dev/null;
+
 mkdir quantimodo_v1_skds
+mkdir quantimodo_v1_skds/nodejs_ionic
+mkdir quantimodo_v1_skds/angularjs_ionic
 
 echo "Generate v1 SDKs"
 for i in "akka-scala" "android" "async-scala" "CsharpDotNet2" "csharp" "dart" "dynamic-html" "flash" "go" "html" "inflector" "java" "jaxrs" "nodejs" "objc" "perl" "php" "python" "qt5cpp" "ruby" "scala" "scalatra" "silex" "sinatra" "spring-mvc" "swift" "tizen" "typescript-angular" "typescript-node"
@@ -18,14 +26,7 @@ do
     #rm -rf quantimodo_v1_skds/$i
 done
 
-mkdir quantimodo_v1_skds/nodejs_ionic
-mkdir quantimodo_v1_skds/angularjs_ionic
-
-cd ..
-
-cp -R tooling/swagger_sdks/node_angular_sdk swagger-codegen/node_angular_sdk
-
-cd swagger-codegen/node_angular_sdk
+cd node_angular_sdk
 npm install swagger-js-codegen
 
 cd ..
