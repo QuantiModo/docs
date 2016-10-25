@@ -23,7 +23,7 @@ do
     ./run-in-docker.sh generate -i api-docs-v1.json -l ${i} -o quantimodo_v1_skds/$i -c config.json
     echo "Replacing localhost with app.quantimo.do"
     find . -type f -exec sed -i 's/localhost/app.quantimo.do/g' {} +
-    chmod +x -R quantimodo_v1_skds/${i}/*
+    sudo chmod +x -R quantimodo_v1_skds/${i}/*
     cd quantimodo_v1_skds/${i}
     /bin/sh ./git_push.sh quantimodo quantimodo-sdk-${i} "minor update"
     cd ../..
