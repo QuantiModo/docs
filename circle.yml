@@ -4,8 +4,6 @@ machine:
     version: 4.1.0
   ruby:
     version: 2.1.2
-  php:
-    version: 5.6.2
 
   # Override /etc/hosts
   services:
@@ -14,14 +12,7 @@ machine:
 dependencies:
   pre:
    - chmod +x -R scripts/*
-   #- tooling/scripts/install_laravel_app_dependencies.sh
-   - sh scripts/install-swagger-codegen-circleci.sh
-   #- sh tooling/swagger_sdks/generate-v2-sdks.sh
    - sh scripts/generate-v1-sdks-circleci.sh
-
-  override:
-    # Create a .env file with development settings
-    #- tooling/scripts/development/create_circleci_environment.sh
 
 #test:
 #  override:
@@ -29,6 +20,5 @@ dependencies:
 
 general:
   artifacts:
-    #- "swagger-codegen/quantimodo_v2_skds.zip"
     - "swagger-codegen/quantimodo_v1_skds.zip"
     - "swagger-codegen/api-docs.json"
