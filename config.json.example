@@ -1,0 +1,10 @@
+{
+    "invokerPackage": "Yay\\Pets",
+    "modelPackage": "Yay\\Pets\\MyModelPackage",
+    "apiPackage": "Yay\\Pets\\MyApiPackage",
+    "packagePath": "GeneratedPetstore",
+    "composerProjectName": "petstore-client",
+    "composerVendorName": "yaypets",
+    "artifactVersion": "1.2.3"
+}
+// See https://github.com/swagger-api/swagger-codegen/pull/977

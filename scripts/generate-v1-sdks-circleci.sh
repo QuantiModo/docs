@@ -5,6 +5,7 @@ git config --global user.email m@quantimodo.com
 echo "Clone swagger-codegen..."
 git clone https://github.com/swagger-api/swagger-codegen
 cp -R swagger.json swagger-codegen/api-docs-v1.json
+cp -R config.json swagger-codegen/config.json
 cp -R scripts/node_angular_sdk swagger-codegen/node_angular_sdk
 cd swagger-codegen
 
@@ -19,7 +20,7 @@ echo "Generate v1 SDKs"
 for i in "akka-scala" "android" "async-scala" "CsharpDotNet2" "csharp" "dart" "dynamic-html" "flash" "go" "html" "inflector" "java" "jaxrs" "nodejs" "objc" "perl" "php" "python" "qt5cpp" "ruby" "scala" "scalatra" "silex" "sinatra" "spring-mvc" "swift" "tizen" "typescript-angular" "typescript-node"
 do
     echo "Generating $i SDK"
-    ./run-in-docker.sh generate -i api-docs-v1.json -l ${i} -o quantimodo_v1_skds/$i --invoker-package QuantiModo
+    ./run-in-docker.sh generate -i api-docs-v1.json -l ${i} -o quantimodo_v1_skds/$i -c config.json
     echo "Replacing localhost with app.quantimo.do"
     find . -type f -exec sed -i 's/localhost/app.quantimo.do/g' {} +
     cd quantimodo_v1_skds/${i}

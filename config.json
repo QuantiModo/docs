@@ -1,0 +1,9 @@
+{
+  "invokerPackage": "QuantiModo",
+  "modelPackage": "QuantiModo\\QuantiModoModelPackage",
+  "apiPackage": "QuantiModo\\QuantiModoApiPackage",
+  "packagePath": "GeneratedQuantiModoClient",
+  "composerProjectName": "quantimodo-client",
+  "composerVendorName": "quantimodo",
+  "artifactVersion": "4.0.8"
+}
