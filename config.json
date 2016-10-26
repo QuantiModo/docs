@@ -1,7 +1,7 @@
 {
   "invokerPackage": "QuantiModoClient",
-  "modelPackage": "QuantiModoClient\\ModelPackage",
-  "apiPackage": "QuantiModoClient\\ApiPackage",
+  "modelPackage": "QuantiModoClient\\Model",
+  "apiPackage": "QuantiModoClient\\Api",
   "packagePath": "QuantiModoClient",
   "composerProjectName": "quantimodo-sdk-php",
   "composerVendorName": "quantimodo",
