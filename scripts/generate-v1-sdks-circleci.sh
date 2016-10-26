@@ -51,4 +51,4 @@ echo "Replacing localhost with app.quantimo.do"
 find . -type f -exec sed -i 's/localhost/app.quantimo.do/g' {} +
 
 echo "Creating combined zip file"
-zip -r quantimodo_v1_skds.zip quantimodo_v1_skds
+zip -r quantimodo_v1_skds.zip quantimodo_v1_skds > /dev/null;
