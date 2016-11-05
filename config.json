@@ -5,5 +5,5 @@
   "packagePath": "QuantiModoClient",
   "composerProjectName": "quantimodo-sdk-php",
   "composerVendorName": "quantimodo",
-  "artifactVersion": "4.0.8"
+  "artifactVersion": "4.6.5"
 }
