@@ -601,7 +601,7 @@ info:
     not 20.2778<br>
 
     `?value[]=(gt)20.2&value[]=(lt)20.3&value[]=!20.2778`<br><br>
-  version: 2.0.6
+  version: 4.6.5
   title: QuantiModo
   termsOfService: 'https://quantimo.do/terms/'
   contact:
@@ -5486,22 +5486,65 @@ definitions:
       - numberOfPairs
       - timestamp
     properties:
-      correlationCoefficient:
+      averageVote:
         type: number
-        description: Pearson correlation coefficient between cause and effect measurements
+        description: Average Vote    
+      causalityFactor:
+        type: number
+        description: ''
       cause:
         type: string
         description: >-
           ORIGINAL variable name of the cause variable for which the user
-          desires correlations.
-      originalCause:
+          desires correlations.        
+      causeCategory:
         type: string
-        description: original name of the cause.
+        description: Variable category of the cause variable.
+      causeChanges:
+        type: integer
+        description: Number of changes in the predictor variable (a.k.a the number of experiments)
+      causeCombinationOperation:
+        type: string
+        description: The way cause measurements are aggregated
+      causeUnit:
+        type: string
+        description: Unit of the predictor variable
+      causeUnitId:
+        type: integer
+        description: Unit Id of the predictor variable  
+      correlationCoefficient:
+        type: number
+        description: Pearson correlation coefficient between cause and effect measurements  
+      dataAnalysis:
+        type: string
+        description: How the data was analyzed
+      dataSources:
+        type: string
+        description: How the data was obtained        
+      durationOfAction:
+        type: number
+        description: >-
+          The amount of time over which a predictor/stimulus event can exert an
+          observable influence on an outcome variable’s value. For instance,
+          aspirin (stimulus/predictor) typically decreases headache severity for
+          approximately four hours (duration of action) following the onset
+          delay.
       effect:
         type: string
         description: >-
           ORIGINAL variable name of the effect variable for which the user
           desires correlations.
+      effectCategory:
+        type: string
+        description: Variable category of the effect variable.          
+      effectSize:
+        type: string
+        description: >-
+          Magnitude of the effects of a cause indicating whether it's
+          practically meaningful.          
+      numberOfPairs:
+        type: number
+        description: Number of points that went into the correlation calculation          
       originalEffect:
         type: string
         description: effect variable original name.
@@ -5515,68 +5558,79 @@ definitions:
           delay” between the time a person takes an aspirin (predictor/stimulus
           event) and the time a person perceives a change in their headache
           severity (outcome) is approximately 30 minutes.
-      durationOfAction:
+      optimalPearsonProduct:
         type: number
-        description: >-
-          The amount of time over which a predictor/stimulus event can exert an
-          observable influence on an outcome variable’s value. For instance,
-          aspirin (stimulus/predictor) typically decreases headache severity for
-          approximately four hours (duration of action) following the onset
-          delay.
-      numberOfPairs:
-        type: number
-        description: Number of points that went into the correlation calculation
-      effectSize:
+        description: Optimal Pearson Product          
+      originalCause:
         type: string
-        description: >-
-          Magnitude of the effects of a cause indicating whether it's
-          practically meaningful.
-      statisticalSignificance:
+        description: original name of the cause.  
+      outcomeDataSources:
         type: string
-        description: A function of the effect size and sample size
-      timestamp:
-        type: number
-        description: Time at which correlation was calculated
+        description: original name of the cause.        
+      predictorExplanation:
+        type: string
+        description:  "HIGHER Remeron predicts HIGHER Overall Mood"     
+      principalInvestigator:
+        type: string
+        description: "Mike Sinn" 
       reverseCorrelation:
         type: number
         description: >-
           Correlation when cause and effect are reversed. For any causal
           relationship, the forward correlation should exceed the reverse
           correlation.
-      causalityFactor:
+      significanceExplanation:
+        type: string
+        description: "Using a two-tailed t-test with alpha = 0.05, it was determined that the change..."         
+      statisticalSignificance:
+        type: string
+        description: A function of the effect size and sample size
+      strengthLevel:
+        type: string
+        description: weak, moderate, strong
+      studyAbstract:
+        type: string
+        description: These data suggest with a high degree of confidence... 
+      studyBackground:
+        type: string
+        description: In order to reduce suffering through the advancement of human knowledge... 
+      studyDesign:
+        type: string
+        description: This study is based on data donated by one QuantiModo user...
+      studyLimitations:
+        type: string
+        description: As with any human experiment, it was impossible to control for all potentially confounding variables...
+      studyObjective:
+        type: string
+        description: The objective of this study is to determine...
+      studyResults:
+        type: string
+        description: This analysis suggests that...
+      studyTitle:
+        type: string
+        description: N1 Study HIGHER Remeron predicts HIGHER Overall Mood                
+      timestamp:
         type: number
-        description: ''
-      causeCategory:
-        type: string
-        description: Variable category of the cause variable.
-      effectCategory:
-        type: string
-        description: Variable category of the effect variable.
+        description: Time at which correlation was calculated
+      userVote:
+        type: number
+        description: User Vote
       valuePredictingHighOutcome:
         type: number
         description: >-
           cause value that predicts an above average effect value (in default
-          unit for cause variable)
+          unit for cause variable) 
+      valuePredictingHighOutcomeExplanation:
+        type: string
+        description: "Overall Mood, on average, 34% HIGHER after around 3.98mg Remeron"
       valuePredictingLowOutcome:
         type: number
         description: >-
           cause value that predicts a below average effect value (in default
-          unit for cause variable)
-      optimalPearsonProduct:
-        type: number
-        description: Optimal Pearson Product
-      averageVote:
-        type: number
-        description: Average Vote
-      userVote:
-        type: number
-        description: User Vote
-      causeUnit:
+          unit for cause variable) 
+      valuePredictingLowOutcomeExplanation:
         type: string
-        description: Unit of the predictor variable
-      causeUnitId:
-        type: integer
-        description: Unit Id of the predictor variable
+        description: "Overall Mood, on average, 4% LOWER after around 0mg Remeron"
   JsonErrorResponse:
     required:
       - status

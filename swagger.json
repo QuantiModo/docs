@@ -2,7 +2,7 @@
     "swagger": "2.0",
     "info": {
         "description": "Welcome to QuantiModo API! QuantiModo makes it easy to retrieve normalized user data from a wide array of devices and applications. [Learn about QuantiModo](https://quantimo.do) or contact us at <api@quantimo.do>.\n\n\n\n\n\n\n\n\nBefore you get started, you will need to:\n* Sign in/Sign up, and add some data at [https://app.quantimo.do/api/v2/account/connectors](https://app.quantimo.do/api/v2/account/connectors) to try out the API for yourself\n* Create an app to get your client id and secret at [https://app.quantimo.do/api/v2/apps](https://app.quantimo.do/api/v2/apps)\n* As long as you're signed in, it will use your browser's cookie for authentication.  However, client applications must use OAuth2 tokens to access the API.\n\n\n\n\n## Application Endpoints\nThese endpoints give you access to all authorized users' data for that application.\n### Getting Application Token\nMake a `POST` request to `/api/v2/oauth/access_token`\n\n\n\n\n\n\n\n * `grant_type` Must be `client_credentials`.\n\n\n\n\n\n\n\n * `clientId` Your application's clientId.\n\n\n\n\n\n\n\n * `client_secret` Your application's client_secret.\n\n\n\n\n\n\n\n * `redirect_uri` Your application's redirect url.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n## Example Queries\n### Query Options\nThe standard query options for QuantiModo API are as described in the table below. These are the available query options in QuantiModo API:\n<table>\n\n\n\n\n\n\n\n    <thead>\n\n\n\n\n\n\n\n        <tr>\n\n\n\n\n\n\n\n            <th>Parameter</th>\n\n\n\n\n\n\n\n            <th>Description</th>\n\n\n\n\n\n\n\n        </tr>\n\n\n\n\n\n\n\n    </thead>\n\n\n\n\n\n\n\n    <tbody>\n\n\n\n\n\n\n\n        <tr>\n\n\n\n\n\n\n\n            <td>limit</td>\n\n\n\n\n\n\n\n            <td>The LIMIT is used to limit the number of results returned.\n\nSo\nif you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</td>\n\n\n\n\n\n\n\n        </tr>\n\n\n\n\n\n\n\n        <tr>\n\n\n\n\n\n\n\n            <td>offset</td>\n\n\n\n\n\n\n\n            <td>Suppose you wanted to show results 11-20. You'd set the\n\n\n\noffset to 10 and the limit to 10.</td>\n\n\n\n\n\n\n\n        </tr>\n\n\n\n\n\n\n\n        <tr>\n\n\n\n\n\n\n\n            <td>sort</td>\n\n\n\n\n\n\n\n            <td>Sort by given field. If the field is prefixed with '-', it\n\n\n\nwill sort in descending order.</td>\n\n\n\n\n\n\n\n        </tr>\n\n\n\n\n\n\n\n    </tbody>\n\n\n\n\n\n\n\n</table>\n\n\n\n\n\n\n\n\n### Pagination Conventions\nSince the maximum limit is 200 records, to get more than that you'll have to make multiple API calls and page through the results. To retrieve all the data, you can iterate through data by using the `limit` and `offset` query parameters.For example, if you want to retrieve data from 61-80 then you can use a query with the following parameters,\n\n\n\n\n\n\n\n\n`/v2/variables?limit=20&offset=60`\n\n\n\n\n\n\n\n\nGenerally, you'll be retrieving new or updated user data. To avoid unnecessary API calls, you'll want to store your last refresh time locally.  Initially, it should be set to 0. Then whenever you make a request to get new data, you should limit the returned results to those updated since your last refresh by appending append\n\n\n\n\n\n\n\n\n`?lastUpdated=(ge)&quot2013-01-D01T01:01:01&quot`\n\n\n\n\n\n\n\n\nto your request.\n\n\n\n\n\n\n\n\nAlso for better pagination, you can get link to the records of first, last, next and previous page from response headers:\n* `Total-Count` - Total number of results for given query\n* `Link-First` - Link to get first page records\n* `Link-Last` - Link to get last page records\n* `Link-Prev` - Link to get previous records set\n* `Link-Next` - Link to get next records set\n\n\n\n\n\n\n\n\nRemember, response header will be only sent when the record set is available. e.g. You will not get a ```Link-Last``` & ```Link-Next``` when you query for the last page.\n\n\n\n\n\n\n\n\n### Filter operators support\nAPI supports the following operators with filter parameters:\n<br>\n**Comparison operators**\n\n\n\n\n\n\n\n\nComparison operators allow you to limit results to those greater than, less than, or equal to a specified value for a specified attribute. These operators can be used with strings, numbers, and dates. The following comparison operators are available:\n* `gt` for `greater than` comparison\n* `ge` for `greater than or equal` comparison\n* `lt` for `less than` comparison\n* `le` for `less than or equal` comparison\n\n\n\n\n\n\n\n\nThey are included in queries using the following format:\n\n\n\n\n\n\n\n\n`(<operator>)<value>`\n\n\n\n\n\n\n\n\nFor example, in order to filter value which is greater than 21, the following query parameter should be used:\n\n\n\n\n\n\n\n\n`?value=(gt)21`\n<br><br>\n**Equals/In Operators**\n\n\n\n\n\n\n\n\nIt also allows filtering by the exact value of an attribute or by a set of values, depending on the type of value passed as a query parameter. If the value contains commas, the parameter is split on commas and used as array input for `IN` filtering, otherwise the exact match is applied. In order to only show records which have the value 42, the following query should be used:\n\n\n\n\n\n\n\n\n`?value=42`\n\n\n\n\n\n\n\n\nIn order to filter records which have value 42 or 43, the following query should be used:\n\n\n\n\n\n\n\n\n`?value=42,43`\n<br><br>\n**Like operators**\n\n\n\n\n\n\n\n\nLike operators allow filtering using `LIKE` query. This operator is triggered if exact match operator is used, but value contains `%` sign as the first or last character. In order to filter records which category that start with `Food`, the following query should be used:\n\n\n\n\n\n\n\n\n`?category=Food%`\n<br><br>\n**Negation operator**\n\n\n\n\n\n\n\n\nIt is possible to get negated results of a query by prefixed the operator with `!`. Some examples:\n\n\n\n\n\n\n\n\n`//filter records except those with value are not 42 or 43`<br>\n`?value=!42,43`\n\n\n\n\n\n\n\n\n`//filter records with value not greater than 21`<br>\n`?value=!(ge)21`\n<br><br>\n**Multiple constraints for single attribute**\n\n\n\n\n\n\n\n\nIt is possible to apply multiple constraints by providing an array of query filters:\n\n\n\n\n\n\n\n\nFilter all records which value is greater than 20.2 and less than 20.3<br>\n`?value[]=(gt)20.2&value[]=(lt)20.3`\n\n\n\n\n\n\n\n\nFilter all records which value is greater than 20.2 and less than 20.3 but not 20.2778<br>\n`?value[]=(gt)20.2&value[]=(lt)20.3&value[]=!20.2778`<br><br>\n",
-        "version": "2.0.6",
+        "version": "4.6.5",
         "title": "QuantiModo",
         "termsOfService": "https://quantimo.do/terms/",
         "contact": {
@@ -6069,21 +6069,69 @@
                 "timestamp"
             ],
             "properties": {
+                "averageVote": {
+                    "type": "number",
+                    "description": "Average Vote"
+                },
+                "causalityFactor": {
+                    "type": "number",
+                    "description": ""
+                },
+                "cause": {
+                    "type": "string",
+                    "description": "ORIGINAL variable name of the cause variable for which the user desires correlations.        "
+                },
+                "causeCategory": {
+                    "type": "string",
+                    "description": "Variable category of the cause variable."
+                },
+                "causeChanges": {
+                    "type": "integer",
+                    "description": "Number of changes in the predictor variable (a.k.a the number of experiments)"
+                },
+                "causeCombinationOperation": {
+                    "type": "string",
+                    "description": "The way cause measurements are aggregated"
+                },
+                "causeUnit": {
+                    "type": "string",
+                    "description": "Unit of the predictor variable"
+                },
+                "causeUnitId": {
+                    "type": "integer",
+                    "description": "Unit Id of the predictor variable"
+                },
                 "correlationCoefficient": {
                     "type": "number",
                     "description": "Pearson correlation coefficient between cause and effect measurements"
                 },
-                "cause": {
+                "dataAnalysis": {
                     "type": "string",
-                    "description": "ORIGINAL variable name of the cause variable for which the user desires correlations."
+                    "description": "How the data was analyzed"
                 },
-                "originalCause": {
+                "dataSources": {
                     "type": "string",
-                    "description": "original name of the cause."
+                    "description": "How the data was obtained"
+                },
+                "durationOfAction": {
+                    "type": "number",
+                    "description": "The amount of time over which a predictor/stimulus event can exert an observable influence on an outcome variable’s value. For instance, aspirin (stimulus/predictor) typically decreases headache severity for approximately four hours (duration of action) following the onset delay."
                 },
                 "effect": {
                     "type": "string",
                     "description": "ORIGINAL variable name of the effect variable for which the user desires correlations."
+                },
+                "effectCategory": {
+                    "type": "string",
+                    "description": "Variable category of the effect variable."
+                },
+                "effectSize": {
+                    "type": "string",
+                    "description": "Magnitude of the effects of a cause indicating whether it's practically meaningful.          "
+                },
+                "numberOfPairs": {
+                    "type": "number",
+                    "description": "Number of points that went into the correlation calculation"
                 },
                 "originalEffect": {
                     "type": "string",
@@ -6094,69 +6142,93 @@
                     "format": "double",
                     "description": "The amount of time in seconds that elapses after the predictor/stimulus event before the outcome as perceived by a self-tracker is known as the “onset delay”. For example, the “onset delay” between the time a person takes an aspirin (predictor/stimulus event) and the time a person perceives a change in their headache severity (outcome) is approximately 30 minutes."
                 },
-                "durationOfAction": {
+                "optimalPearsonProduct": {
                     "type": "number",
-                    "description": "The amount of time over which a predictor/stimulus event can exert an observable influence on an outcome variable’s value. For instance, aspirin (stimulus/predictor) typically decreases headache severity for approximately four hours (duration of action) following the onset delay."
+                    "description": "Optimal Pearson Product"
                 },
-                "numberOfPairs": {
-                    "type": "number",
-                    "description": "Number of points that went into the correlation calculation"
-                },
-                "effectSize": {
+                "originalCause": {
                     "type": "string",
-                    "description": "Magnitude of the effects of a cause indicating whether it's practically meaningful."
+                    "description": "original name of the cause."
                 },
-                "statisticalSignificance": {
+                "outcomeDataSources": {
                     "type": "string",
-                    "description": "A function of the effect size and sample size"
+                    "description": "original name of the cause."
                 },
-                "timestamp": {
-                    "type": "number",
-                    "description": "Time at which correlation was calculated"
+                "predictorExplanation": {
+                    "type": "string",
+                    "description": "HIGHER Remeron predicts HIGHER Overall Mood"
+                },
+                "principalInvestigator": {
+                    "type": "string",
+                    "description": "Mike Sinn"
                 },
                 "reverseCorrelation": {
                     "type": "number",
                     "description": "Correlation when cause and effect are reversed. For any causal relationship, the forward correlation should exceed the reverse correlation."
                 },
-                "causalityFactor": {
-                    "type": "number",
-                    "description": ""
-                },
-                "causeCategory": {
+                "significanceExplanation": {
                     "type": "string",
-                    "description": "Variable category of the cause variable."
+                    "description": "Using a two-tailed t-test with alpha = 0.05, it was determined that the change..."
                 },
-                "effectCategory": {
+                "statisticalSignificance": {
                     "type": "string",
-                    "description": "Variable category of the effect variable."
+                    "description": "A function of the effect size and sample size"
                 },
-                "valuePredictingHighOutcome": {
-                    "type": "number",
-                    "description": "cause value that predicts an above average effect value (in default unit for cause variable)"
+                "strengthLevel": {
+                    "type": "string",
+                    "description": "weak, moderate, strong"
                 },
-                "valuePredictingLowOutcome": {
-                    "type": "number",
-                    "description": "cause value that predicts a below average effect value (in default unit for cause variable)"
+                "studyAbstract": {
+                    "type": "string",
+                    "description": "These data suggest with a high degree of confidence..."
                 },
-                "optimalPearsonProduct": {
-                    "type": "number",
-                    "description": "Optimal Pearson Product"
+                "studyBackground": {
+                    "type": "string",
+                    "description": "In order to reduce suffering through the advancement of human knowledge..."
                 },
-                "averageVote": {
+                "studyDesign": {
+                    "type": "string",
+                    "description": "This study is based on data donated by one QuantiModo user..."
+                },
+                "studyLimitations": {
+                    "type": "string",
+                    "description": "As with any human experiment, it was impossible to control for all potentially confounding variables..."
+                },
+                "studyObjective": {
+                    "type": "string",
+                    "description": "The objective of this study is to determine..."
+                },
+                "studyResults": {
+                    "type": "string",
+                    "description": "This analysis suggests that..."
+                },
+                "studyTitle": {
+                    "type": "string",
+                    "description": "N1 Study HIGHER Remeron predicts HIGHER Overall Mood"
+                },
+                "timestamp": {
                     "type": "number",
-                    "description": "Average Vote"
+                    "description": "Time at which correlation was calculated"
                 },
                 "userVote": {
                     "type": "number",
                     "description": "User Vote"
                 },
-                "causeUnit": {
-                    "type": "string",
-                    "description": "Unit of the predictor variable"
+                "valuePredictingHighOutcome": {
+                    "type": "number",
+                    "description": "cause value that predicts an above average effect value (in default unit for cause variable) "
                 },
-                "causeUnitId": {
-                    "type": "integer",
-                    "description": "Unit Id of the predictor variable"
+                "valuePredictingHighOutcomeExplanation": {
+                    "type": "string",
+                    "description": "Overall Mood, on average, 34% HIGHER after around 3.98mg Remeron"
+                },
+                "valuePredictingLowOutcome": {
+                    "type": "number",
+                    "description": "cause value that predicts a below average effect value (in default unit for cause variable) "
+                },
+                "valuePredictingLowOutcomeExplanation": {
+                    "type": "string",
+                    "description": "Overall Mood, on average, 4% LOWER after around 0mg Remeron"
                 }
             }
         },
