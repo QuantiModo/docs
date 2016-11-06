@@ -6101,6 +6101,10 @@
                     "type": "integer",
                     "description": "Unit Id of the predictor variable"
                 },
+                "causeVariableId": {
+                    "type": "integer",
+                    "description": ""
+                },
                 "correlationCoefficient": {
                     "type": "number",
                     "description": "Pearson correlation coefficient between cause and effect measurements"
@@ -6126,6 +6130,10 @@
                     "description": "Variable category of the effect variable."
                 },
                 "effectSize": {
+                    "type": "string",
+                    "description": "Magnitude of the effects of a cause indicating whether it's practically meaningful.          "
+                },
+                "effectVariableId": {
                     "type": "string",
                     "description": "Magnitude of the effects of a cause indicating whether it's practically meaningful.          "
                 },
@@ -6193,6 +6201,10 @@
                 "studyLimitations": {
                     "type": "string",
                     "description": "As with any human experiment, it was impossible to control for all potentially confounding variables..."
+                },
+                "studyLink": {
+                    "type": "string",
+                    "description": "Url for the study"
                 },
                 "studyObjective": {
                     "type": "string",
