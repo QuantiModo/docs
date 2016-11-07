@@ -609,6 +609,13 @@
                         "description": "Sort by given field. If the field is prefixed with `-, it will sort in descending order.",
                         "required": false,
                         "type": "integer"
+                    },
+                    {
+                        "in": "query",
+                        "name": "outcomesOfInterest",
+                        "description": "Only include correlations for which the effect is an outcome of interest for the user",
+                        "required": false,
+                        "type": "boolean"
                     }
                 ],
                 "responses": {
@@ -721,6 +728,13 @@
                         "description": "Sort by given field. If the field is prefixed with `-, it will sort in descending order.",
                         "required": false,
                         "type": "integer"
+                    },
+                    {
+                        "in": "query",
+                        "name": "outcomesOfInterest",
+                        "description": "Only include correlations for which the effect is an outcome of interest for the user",
+                        "required": false,
+                        "type": "boolean"
                     }
                 ],
                 "responses": {
@@ -840,6 +854,13 @@
                         "description": "Setting this to effect indicates that the searched variable is the effect and that the causes of this variable should be returned.  cause indicates that the searched variable is the cause and the effects should be returned.",
                         "required": true,
                         "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "outcomesOfInterest",
+                        "description": "Only include correlations for which the effect is an outcome of interest for the user",
+                        "required": false,
+                        "type": "boolean"
                     }
                 ],
                 "responses": {
