@@ -106,7 +106,7 @@ name | Original name of the variable (supports exact name match only)
 lastUpdated | Filter by the last time any of the properties of the variable were changed. Uses UTC format "YYYY-MM-DDThh:mm:ss"
 source | The name of the data source that created the variable (supports exact name match only).  So if you have a client application and you only want variables that were last updated by your app, you can include the name of your app here
 latestMeasurementTime | Filter variables based on the last time a measurement for them was created or updated in the UTC format "YYYY-MM-DDThh:mm:ss"
-numberOfMeasurements | Filter variables by the total number of measurements that they have. This could be used of you want to filter or sort by popularity. 
+numberOfRawMeasurements | Filter variables by the total number of measurements that they have. This could be used of you want to filter or sort by popularity. 
 lastSource | Limit variables to those which measurements were last submitted by a specific source. So if you have a client application and you only want variables that were last updated by your app, you can include the name of your app here. (supports exact name match only)
 
 #### Filter operators support

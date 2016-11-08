@@ -5160,7 +5160,7 @@
                     },
                     {
                         "in": "query",
-                        "name": "numberOfMeasurements",
+                        "name": "numberOfRawMeasurements",
                         "description": "Filter variables by the total number of measurements that they have. This could be used of you want to filter or sort by popularity.",
                         "required": false,
                         "type": "string"
@@ -5346,7 +5346,7 @@
                     },
                     {
                         "in": "query",
-                        "name": "numberOfMeasurements",
+                        "name": "numberOfRawMeasurements",
                         "description": "Filter variables by the total number of measurements that they have. This could be used of you want to filter or sort by popularity.",
                         "required": false,
                         "type": "string"
@@ -7055,7 +7055,7 @@
                 "numberOfCorrelations",
                 "outcome",
                 "rawMeasurementsAtLastAnalysis",
-                "numberOfMeasurements",
+                "numberOfRawMeasurements",
                 "lastUnit",
                 "lastValue",
                 "mostCommonValue",
@@ -7172,7 +7172,7 @@
                     "type": "integer",
                     "description": "The number of measurements that a given user had for this variable the last time a correlation calculation was performed. Generally correlation values are only updated once the current number of measurements for a variable is more than 10% greater than the rawMeasurementsAtLastAnalysis.  This avoids a computationally-demanding recalculation when there's not enough new data to make a significant difference in the correlation."
                 },
-                "numberOfMeasurements": {
+                "numberOfRawMeasurements": {
                     "type": "integer",
                     "description": "Number of measurements"
                 },
