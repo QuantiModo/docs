@@ -7054,7 +7054,7 @@
                 "causeOnly",
                 "numberOfCorrelations",
                 "outcome",
-                "measurementsAtLastAnalysis",
+                "rawMeasurementsAtLastAnalysis",
                 "numberOfMeasurements",
                 "lastUnit",
                 "lastValue",
@@ -7168,9 +7168,9 @@
                     "type": "integer",
                     "description": "Outcome variables (those with `outcome` == 1) are variables for which a human would generally want to identify the influencing factors.  These include symptoms of illness, physique, mood, cognitive performance, etc.  Generally correlation calculations are only performed on outcome variables."
                 },
-                "measurementsAtLastAnalysis": {
+                "rawMeasurementsAtLastAnalysis": {
                     "type": "integer",
-                    "description": "The number of measurements that a given user had for this variable the last time a correlation calculation was performed. Generally correlation values are only updated once the current number of measurements for a variable is more than 10% greater than the measurementsAtLastAnalysis.  This avoids a computationally-demanding recalculation when there's not enough new data to make a significant difference in the correlation."
+                    "description": "The number of measurements that a given user had for this variable the last time a correlation calculation was performed. Generally correlation values are only updated once the current number of measurements for a variable is more than 10% greater than the rawMeasurementsAtLastAnalysis.  This avoids a computationally-demanding recalculation when there's not enough new data to make a significant difference in the correlation."
                 },
                 "numberOfMeasurements": {
                     "type": "integer",
