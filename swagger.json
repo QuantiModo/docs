@@ -6098,6 +6098,10 @@
                     "type": "string",
                     "description": "The way cause measurements are aggregated"
                 },
+                "causeImageUrl": {
+                    "type": "string",
+                    "description": ""
+                },
                 "causeUnit": {
                     "type": "string",
                     "description": "Unit of the predictor variable"
@@ -6133,6 +6137,10 @@
                 "effectCategory": {
                     "type": "string",
                     "description": "Variable category of the effect variable."
+                },
+                "effectImageUrl": {
+                    "type": "string",
+                    "description": ""
                 },
                 "effectSize": {
                     "type": "string",
