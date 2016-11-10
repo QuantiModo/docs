@@ -6098,7 +6098,7 @@
                     "type": "string",
                     "description": "The way cause measurements are aggregated"
                 },
-                "causeImageUrl": {
+                "causeVariableImageUrl": {
                     "type": "string",
                     "description": ""
                 },
@@ -6138,7 +6138,7 @@
                     "type": "string",
                     "description": "Variable category of the effect variable."
                 },
-                "effectImageUrl": {
+                "effectVariableImageUrl": {
                     "type": "string",
                     "description": ""
                 },
