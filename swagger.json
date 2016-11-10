@@ -7535,6 +7535,10 @@
               "description": "Latest filling time",
               "type": "integer",
               "format": "int32"
+            },
+            "imageUrl": {
+              "type": "string",
+              "description": ""
             }
           }
         },
@@ -7779,6 +7783,10 @@
                 "lastSource": {
                     "type": "integer",
                     "description": "Last source"
+                },
+                "imageUrl": {
+                  "type": "string",
+                  "description": ""
                 }
             }
         },
