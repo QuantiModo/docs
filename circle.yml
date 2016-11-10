@@ -22,3 +22,9 @@ general:
   artifacts:
     - "swagger-codegen/quantimodo_v1_skds.zip"
     - "swagger-codegen/api-docs.json"
+
+deployment:
+  prod:
+    branch: master
+    commands:
+      - aws s3 sync quantimodo_v1_skds.zip s3://quantimodo-docs/ --delete
