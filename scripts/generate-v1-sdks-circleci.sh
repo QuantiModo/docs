@@ -52,3 +52,12 @@ find . -type f -exec sed -i 's/localhost/app.quantimo.do/g' {} +
 
 echo "Creating combined zip file"
 zip -r quantimodo_v1_skds.zip quantimodo_v1_skds > /dev/null;
+
+if [ -f ~/docs/swagger-codegen/quantimodo_v1_skds.zip ];
+    then
+       echo "SDK's are ready"
+       exit 0
+    else
+       echo "SDK generation FAILED"
+       exit 1
+fi

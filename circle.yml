@@ -12,11 +12,11 @@ machine:
 dependencies:
   pre:
    - chmod +x -R scripts/*
-   - sh scripts/generate-v1-sdks-circleci.sh
+#   - sh scripts/generate-v1-sdks-circleci.sh
 
-#test:
-#  override:
-#    - echo "This line is to prevent automatic test detection."
+test:
+  override:
+    - sh scripts/generate-v1-sdks-circleci.sh
 
 general:
   artifacts:
