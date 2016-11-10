@@ -6227,6 +6227,22 @@
                     "type": "string",
                     "description": "Url for the study"
                 },
+                "studyLinkStatic": {
+                    "type": "string",
+                    "description": "Url for the study"
+                },
+                "studyLinkGoogle": {
+                    "type": "string",
+                    "description": "Url for sharing the study on Google+"
+                },
+                "studyLinkFacebook": {
+                    "type": "string",
+                    "description": "Url for sharing the study on Facebook"
+                },
+                "studyLinkTwitter": {
+                    "type": "string",
+                    "description": "Url for sharing the study on Twitter"
+                },
                 "studyObjective": {
                     "type": "string",
                     "description": "The objective of this study is to determine..."
