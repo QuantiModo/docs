@@ -27,4 +27,4 @@ deployment:
   prod:
     branch: master
     commands:
-      - aws s3 sync quantimodo_v1_skds.zip s3://quantimodo-docs/ --delete
+      - aws s3 sync docs/swagger-codegen/quantimodo_v1_skds.zip s3://quantimodo-docs/ --delete
