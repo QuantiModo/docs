@@ -6150,6 +6150,10 @@
                     "type": "string",
                     "description": "Magnitude of the effects of a cause indicating whether it's practically meaningful.          "
                 },
+                "gaugeImage":  {
+                    "type": "string",
+                    "description": "Illustrates the strength of the relationship"
+                },
                 "numberOfPairs": {
                     "type": "number",
                     "description": "Number of points that went into the correlation calculation"
