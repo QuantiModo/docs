@@ -6122,6 +6122,11 @@
                     "type": "number",
                     "description": "Pearson correlation coefficient between cause and effect measurements"
                 },
+                "createdAt": {
+                    "description": "When the record was first created. Use ISO 8601 datetime format",
+                    "type": "string",
+                    "format": "date-time"
+                },
                 "dataAnalysis": {
                     "type": "string",
                     "description": "How the data was analyzed"
@@ -6263,6 +6268,11 @@
                     "type": "number",
                     "description": "Time at which correlation was calculated"
                 },
+                "updatedAt": {
+                    "description": "When the record in the database was last updated. Use ISO 8601 datetime format. Time zone should be UTC and not local.",
+                    "type": "string",
+                    "format": "date-time"
+                },
                 "userVote": {
                     "type": "number",
                     "description": "User Vote"
@@ -6295,48 +6305,48 @@
               "type": "integer",
               "format": "int32"
             },
-            "user_id": {
+            "userId": {
               "description": "ID of user that owns this correlation",
               "type": "integer",
               "format": "int32"
             },
-            "connector_id": {
+            "connectorId": {
               "description": "The id for the connector data source for which the connection is connected",
               "type": "integer",
               "format": "int32"
             },
-            "connect_status": {
+            "connectStatus": {
               "description": "Indicates whether a connector is currently connected to a service for a user.",
               "type": "string"
             },
-            "connect_error": {
+            "connectError": {
               "description": "Error message if there is a problem with authorizing this connection.",
               "type": "string"
             },
-            "update_requested_at": {
+            "updateRequestedAt": {
               "description": "Time at which an update was requested by a user.",
               "type": "string",
               "format": "date-time"
             },
-            "update_status": {
+            "updateStatus": {
               "description": "Indicates whether a connector is currently updated.",
               "type": "string"
             },
-            "update_error": {
+            "updateError": {
               "description": "Indicates if there was an error during the update.",
               "type": "string"
             },
-            "last_successful_updated_at": {
+            "lastSuccessfulUpdatedAt": {
               "description": "The time at which the connector was last successfully updated.",
               "type": "string",
               "format": "date-time"
             },
-            "created_at": {
+            "createdAt": {
               "description": "When the record was first created. Use ISO 8601 datetime format",
               "type": "string",
               "format": "date-time"
             },
-            "updated_at": {
+            "updatedAt": {
               "description": "When the record in the database was last updated. Use ISO 8601 datetime format",
               "type": "string",
               "format": "date-time"
@@ -6350,28 +6360,28 @@
             "attr_value"
           ],
           "properties": {
-            "user_id": {
+            "userId": {
               "description": "ID of user that owns this credential",
               "type": "integer"
             },
-            "connector_id": {
+            "connectorId": {
               "description": "The id for the connector data source from which the credential was obtained",
               "type": "integer"
             },
-            "attr_key": {
+            "attrKey": {
               "description": "Attribute name such as token, userid, username, or password",
               "type": "string"
             },
-            "attr_value": {
+            "attrValue": {
               "description": "Encrypted value for the attribute specified",
               "type": "string"
             },
-            "created_at": {
+            "createdAt": {
               "description": "When the record was first created. Use ISO 8601 datetime format",
               "type": "string",
               "format": "date-time"
             },
-            "updated_at": {
+            "updatedAt": {
               "description": "When the record in the database was last updated. Use ISO 8601 datetime format",
               "type": "string",
               "format": "date-time"
@@ -7249,17 +7259,17 @@
               "type": "integer",
               "format": "int32"
             },
-            "user_id": {
+            "userId": {
               "description": "user_id",
               "type": "integer",
               "format": "int32"
             },
-            "connector_id": {
+            "connectorId": {
               "description": "connector_id",
               "type": "integer",
               "format": "int32"
             },
-            "number_of_measurements": {
+            "numberOfMeasurements": {
               "description": "number_of_measurements",
               "type": "integer",
               "format": "int32"
@@ -7272,12 +7282,12 @@
               "description": "message",
               "type": "string"
             },
-            "created_at": {
+            "createdAt": {
               "description": "When the record was first created. Use ISO 8601 datetime format",
               "type": "string",
               "format": "date-time"
             },
-            "updated_at": {
+            "updatedAt": {
               "description": "When the record in the database was last updated. Use ISO 8601 datetime format",
               "type": "string",
               "format": "date-time"
@@ -7901,21 +7911,21 @@
                     "type": "integer",
                     "format": "int32"
                 },
-                "client_id": {
+                "clientId": {
                     "description": "client_id",
                     "type": "string"
                 },
-                "user_id": {
+                "userId": {
                     "description": "ID of User",
                     "type": "integer",
                     "format": "int32"
                 },
-                "cause_id": {
+                "causeId": {
                     "description": "ID of the predictor variable",
                     "type": "integer",
                     "format": "int32"
                 },
-                "effect_id": {
+                "effectId": {
                     "description": "ID of effect variable",
                     "type": "integer",
                     "format": "int32"
@@ -7925,12 +7935,12 @@
                     "type": "integer",
                     "format": "int32"
                 },
-                "created_at": {
+                "createdAt": {
                     "description": "When the record was first created. Use ISO 8601 datetime format",
                     "type": "string",
                     "format": "date-time"
                 },
-                "updated_at": {
+                "updatedAt": {
                     "description": "When the record in the database was last updated. Use ISO 8601 datetime format",
                     "type": "string",
                     "format": "date-time"
