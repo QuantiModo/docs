@@ -6200,6 +6200,10 @@
                     "type": "string",
                     "description": "Mike Sinn"
                 },
+                "qmScore": {
+                    "type": "number",
+                    "description": "Value representing the significance of the relationship as a function of crowdsourced insights, predictive strength, data quantity, and data quality"
+                },
                 "reverseCorrelation": {
                     "type": "number",
                     "description": "Correlation when cause and effect are reversed. For any causal relationship, the forward correlation should exceed the reverse correlation."
