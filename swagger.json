@@ -6074,6 +6074,34 @@
                 "timestamp"
             ],
             "properties": {
+                "averageDailyLowCause": {
+                    "type": "number",
+                    "description": ""
+                },
+                "averageDailyHighCause": {
+                    "type": "number",
+                    "description": ""
+                },
+                "averageEffect": {
+                    "type": "number",
+                    "description": ""
+                },
+                "averageEffectFollowingHighCause": {
+                    "type": "number",
+                    "description": ""
+                },
+                "averageEffectFollowingLowCause": {
+                    "type": "number",
+                    "description": ""
+                },
+                "averageEffectFollowingHighCauseExplanation": {
+                    "type": "string",
+                    "description": ""
+                },
+                "averageEffectFollowingLowCauseExplanation": {
+                    "type": "string",
+                    "description": ""
+                },
                 "averageVote": {
                     "type": "number",
                     "description": "Average Vote"
@@ -6117,6 +6145,10 @@
                 "causeVariableId": {
                     "type": "integer",
                     "description": ""
+                },
+                "causeVariableName": {
+                    "type": "string",
+                    "description": "ORIGINAL variable name of the cause variable for which the user desires correlations.        "
                 },
                 "correlationCoefficient": {
                     "type": "number",
@@ -6162,6 +6194,10 @@
                 "effectVariableId": {
                     "type": "string",
                     "description": "Magnitude of the effects of a cause indicating whether it's practically meaningful.          "
+                },
+                "effectVariableName": {
+                    "type": "string",
+                    "description": "ORIGINAL variable name of the effect variable for which the user desires correlations."
                 },
                 "gaugeImage":  {
                     "type": "string",
