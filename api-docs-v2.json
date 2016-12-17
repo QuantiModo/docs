@@ -3585,9 +3585,9 @@
             "type": "boolean"
           },
           {
-            "name": "last_reminded",
+            "name": "latest_tracking_reminder_notification_reminder_time",
             "in": "query",
-            "description": "ISO 8601 timestamp for the last time a reminder was sent",
+            "description": "ISO 8601 timestamp for the reminder time of the latest tracking reminder notification that has been pre-emptively generated in the database",
             "required": false,
             "type": "string"
           },
@@ -9342,8 +9342,8 @@
           "description": "True if the reminders should appear in the notification bar",
           "type": "boolean"
         },
-        "last_reminded": {
-          "description": "ISO 8601 timestamp for the last time a reminder was sent",
+        "latest_tracking_reminder_notification_reminder_time": {
+          "description": "ISO 8601 timestamp for the reminder time of the latest tracking reminder notification that has been pre-emptively generated in the database",
           "type": "string",
           "format": "date-time"
         },
