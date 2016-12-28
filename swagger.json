@@ -3808,7 +3808,7 @@
                     "authentication"
                 ],
                 "summary": "Second Step in Social Authentication flow with JWT Token",
-                "description": " Here is the flow for how social authentication works with a JWT Token\n\n1.**Client:** The client needs to open popup with social auth url (`https://app/quantimo.do/api/v2/auth/social/login?provider={provider}&redirectUrl={url}`) of server with `provider` and `redirectUrl`. (Url should be registered with our social apps. Facebook and Twitter are fine with any redirect url with the same domain base url but Google needs exact redirect url.)\n\n\n2.**Server:** The QM server will redirect user to that provider to get access.\n\n\n3.**Client:** After successful or failed authentication, it will be redirected to given `redirectUrl` with code or error.\n\n\n4.**Client:** The client needs to get that code and needs to send an Ajax request to server at `https://app.quantimo.do/api/v2/auth/social/authorizeCode?provider={provider}&code={authorizationCode}`\n\n\n5.**Server:** The QM server will authorize that code from the social connection and will authenticate user and will retrieve user info.\n\n\n6.**Server:** The QM server will try to find existing user by unique identity. If the user already exists then it will login. Otherwise, it will create new user and will then login.\n\n\n7.**Server:** Once user is found/created, it will return a JWT token for that user in the response.",
+                "description": " Here is the flow for how social authentication works with a JWT Token\n\n1.**Client:** The client needs to open popup with social auth url (`https://app/quantimo.do/api/v2/auth/social/login?provider={provider}&redirectUrl={url}`) of server with `provider` and `redirectUrl`. (Url should be registered with our social apps. Facebook is fine with any redirect url with the same domain base url but Google needs exact redirect url.)\n\n\n2.**Server:** The QM server will redirect user to that provider to get access.\n\n\n3.**Client:** After successful or failed authentication, it will be redirected to given `redirectUrl` with code or error.\n\n\n4.**Client:** The client needs to get that code and needs to send an Ajax request to server at `https://app.quantimo.do/api/v2/auth/social/authorizeCode?provider={provider}&code={authorizationCode}`\n\n\n5.**Server:** The QM server will authorize that code from the social connection and will authenticate user and will retrieve user info.\n\n\n6.**Server:** The QM server will try to find existing user by unique identity. If the user already exists then it will login. Otherwise, it will create new user and will then login.\n\n\n7.**Server:** Once user is found/created, it will return a JWT token for that user in the response.",
                 "produces": [
                     "application/json"
                 ],
@@ -6272,25 +6272,33 @@
                     "type": "string",
                     "description": "As with any human experiment, it was impossible to control for all potentially confounding variables..."
                 },
-                "studyLinkUser": {
+                "studyLinkDynamic": {
                     "type": "string",
-                    "description": "Url for the study"
-                },
-                "studyLinkPublic": {
-                    "type": "string",
-                    "description": "Url for the study"
-                },
-                "studyLinkGoogle": {
-                    "type": "string",
-                    "description": "Url for sharing the study on Google+"
+                    "description": "Url for the interactive study within the web app"
                 },
                 "studyLinkFacebook": {
                     "type": "string",
                     "description": "Url for sharing the study on Facebook"
                 },
+                "studyLinkGoogle": {
+                    "type": "string",
+                    "description": "Url for sharing the study on Google+"
+                },
+                "studyLinkPublic": {
+                    "type": "string",
+                    "description": "Url for the study"
+                },
                 "studyLinkTwitter": {
                     "type": "string",
                     "description": "Url for sharing the study on Twitter"
+                },
+                "studyLinkStatic": {
+                    "type": "string",
+                    "description": "Url for sharing the statically rendered study on social media"
+                },
+                "studyLinkUser": {
+                    "type": "string",
+                    "description": "Url for the study"
                 },
                 "studyObjective": {
                     "type": "string",
