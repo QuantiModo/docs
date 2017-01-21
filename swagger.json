@@ -1340,22 +1340,22 @@
                     },
                     {
                         "in": "query",
-                        "name": "lastUpdated",
-                        "description": "The time that this measurement was created or last updated in the format \"YYYY-MM-DDThh:mm:ss\"",
-                        "required": false,
-                        "type": "string"
-                    },
-                    {
-                        "in": "query",
-                        "name": "unit",
+                        "name": "abbreviatedUnitName",
                         "description": "The unit you want the measurements returned in",
                         "required": false,
                         "type": "string"
                     },
                     {
                         "in": "query",
-                        "name": "startTime",
-                        "description": "The lower limit of measurements returned (Epoch)",
+                        "name": "earliestMeasurementTime",
+                        "description": "The lower limit of measurements returned in ISO 8601 format or epoch seconds (unixtime)",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "latestMeasurementTime",
+                        "description": "The upper limit of measurements returned in ISO 8601 format or epoch seconds (unixtime)",
                         "required": false,
                         "type": "string"
                     },
@@ -1370,13 +1370,6 @@
                         "in": "query",
                         "name": "updatedAt",
                         "description": "The time the measurement record was last changed in the format YYYY-MM-DDThh:mm:ss. Time zone should be UTC and not local.",
-                        "required": false,
-                        "type": "string"
-                    },
-                    {
-                        "in": "query",
-                        "name": "endTime",
-                        "description": "The upper limit of measurements returned (Epoch)",
                         "required": false,
                         "type": "string"
                     },
