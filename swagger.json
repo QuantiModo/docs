@@ -159,7 +159,7 @@
                     {
                         "in": "path",
                         "name": "connector",
-                        "description": "Lowercase system name of the source application or device. Get a list of available connectors from the /connectors/list endpoint.",
+                        "description": "Lowercase system name of the source application or device. Get a list of available connectors from the /v1/connectors/list endpoint.",
                         "required": true,
                         "type": "string"
                     }
@@ -215,7 +215,7 @@
                     {
                         "in": "path",
                         "name": "connector",
-                        "description": "Lowercase system name of the source application or device. Get a list of available connectors from the /connectors/list endpoint.",
+                        "description": "Lowercase system name of the source application or device. Get a list of available connectors from the /v1/connectors/list endpoint.",
                         "required": true,
                         "type": "string"
                     },
@@ -316,7 +316,7 @@
                     {
                         "in": "path",
                         "name": "connector",
-                        "description": "Lowercase system name of the source application or device. Get a list of available connectors from the /connectors/list endpoint.",
+                        "description": "Lowercase system name of the source application or device. Get a list of available connectors from the /v1/connectors/list endpoint.",
                         "required": true,
                         "type": "string"
                     },
@@ -379,7 +379,7 @@
                     {
                         "in": "path",
                         "name": "connector",
-                        "description": "Lowercase system name of the source application or device. Get a list of available connectors from the /connectors/list endpoint.",
+                        "description": "Lowercase system name of the source application or device. Get a list of available connectors from the /v1/connectors/list endpoint.",
                         "required": true,
                         "type": "string"
                     }
@@ -435,7 +435,7 @@
                     {
                         "in": "path",
                         "name": "connector",
-                        "description": "Lowercase system name of the source application or device. Get a list of available connectors from the /connectors/list endpoint.",
+                        "description": "Lowercase system name of the source application or device. Get a list of available connectors from the /v1/connectors/list endpoint.",
                         "required": true,
                         "type": "string"
                     }
