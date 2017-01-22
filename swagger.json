@@ -6277,10 +6277,6 @@
                     "type": "string",
                     "description": "Url for sharing the study on Google+"
                 },
-                "studyLinkPublic": {
-                    "type": "string",
-                    "description": "Url for the study"
-                },
                 "studyLinkTwitter": {
                     "type": "string",
                     "description": "Url for sharing the study on Twitter"
@@ -6288,10 +6284,6 @@
                 "studyLinkStatic": {
                     "type": "string",
                     "description": "Url for sharing the statically rendered study on social media"
-                },
-                "studyLinkUser": {
-                    "type": "string",
-                    "description": "Url for the study"
                 },
                 "studyObjective": {
                     "type": "string",
