@@ -1817,14 +1817,14 @@
                     {
                         "name": "created_at",
                         "in": "query",
-                        "description": "When the record was first created. Use ISO 8601 datetime format ",
+                        "description": "When the record was first created. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format ",
                         "required": false,
                         "type": "string"
                     },
                     {
                         "name": "updated_at",
                         "in": "query",
-                        "description": "When the record was last updated. Use ISO 8601 datetime format ",
+                        "description": "When the record was last updated. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format ",
                         "required": false,
                         "type": "string"
                     },
@@ -1920,14 +1920,14 @@
                     {
                         "name": "created_at",
                         "in": "query",
-                        "description": "When the record was first created. Use ISO 8601 datetime format ",
+                        "description": "When the record was first created. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format ",
                         "required": false,
                         "type": "string"
                     },
                     {
                         "name": "updated_at",
                         "in": "query",
-                        "description": "When the record was last updated. Use ISO 8601 datetime format ",
+                        "description": "When the record was last updated. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format ",
                         "required": false,
                         "type": "string"
                     },
@@ -2030,7 +2030,7 @@
                     {
                         "name": "start_time",
                         "in": "query",
-                        "description": "start time for the measurement event. Use ISO 8601 datetime format ",
+                        "description": "start time for the measurement event. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format ",
                         "required": false,
                         "type": "string"
                     },
@@ -2100,14 +2100,14 @@
                     {
                         "name": "created_at",
                         "in": "query",
-                        "description": "When the record was first created. Use ISO 8601 datetime format ",
+                        "description": "When the record was first created. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format ",
                         "required": false,
                         "type": "string"
                     },
                     {
                         "name": "updated_at",
                         "in": "query",
-                        "description": "When the record was last updated. Use ISO 8601 datetime format ",
+                        "description": "When the record was last updated. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format ",
                         "required": false,
                         "type": "string"
                     },
@@ -2196,14 +2196,14 @@
                     {
                         "name": "created_at",
                         "in": "query",
-                        "description": "When the record was first created. Use ISO 8601 datetime format ",
+                        "description": "When the record was first created. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format ",
                         "required": false,
                         "type": "string"
                     },
                     {
                         "name": "updated_at",
                         "in": "query",
-                        "description": "When the record was last updated. Use ISO 8601 datetime format ",
+                        "description": "When the record was last updated. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format ",
                         "required": false,
                         "type": "string"
                     },
@@ -2306,14 +2306,14 @@
                     {
                         "name": "created_at",
                         "in": "query",
-                        "description": "When the record was first created. Use ISO 8601 datetime format ",
+                        "description": "When the record was first created. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format ",
                         "required": false,
                         "type": "string"
                     },
                     {
                         "name": "updated_at",
                         "in": "query",
-                        "description": "When the record was last updated. Use ISO 8601 datetime format ",
+                        "description": "When the record was last updated. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format ",
                         "required": false,
                         "type": "string"
                     },
@@ -2682,14 +2682,14 @@
                     {
                         "name": "created_at",
                         "in": "query",
-                        "description": "When the record was first created. Use ISO 8601 datetime format ",
+                        "description": "When the record was first created. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format ",
                         "required": false,
                         "type": "string"
                     },
                     {
                         "name": "updated_at",
                         "in": "query",
-                        "description": "When the record was last updated. Use ISO 8601 datetime format ",
+                        "description": "When the record was last updated. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format ",
                         "required": false,
                         "type": "string"
                     },
@@ -3028,14 +3028,14 @@
                     {
                         "name": "created_at",
                         "in": "query",
-                        "description": "When the record was first created. Use ISO 8601 datetime format ",
+                        "description": "When the record was first created. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format ",
                         "required": false,
                         "type": "string"
                     },
                     {
                         "name": "updated_at",
                         "in": "query",
-                        "description": "When the record was last updated. Use ISO 8601 datetime format ",
+                        "description": "When the record was last updated. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format ",
                         "required": false,
                         "type": "string"
                     },
@@ -3138,14 +3138,14 @@
                     {
                         "name": "created_at",
                         "in": "query",
-                        "description": "When the record was first created. Use ISO 8601 datetime format ",
+                        "description": "When the record was first created. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format ",
                         "required": false,
                         "type": "string"
                     },
                     {
                         "name": "updated_at",
                         "in": "query",
-                        "description": "When the record was last updated. Use ISO 8601 datetime format ",
+                        "description": "When the record was last updated. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format ",
                         "required": false,
                         "type": "string"
                     },
@@ -3234,14 +3234,14 @@
                     {
                         "in": "query",
                         "name": "startTime",
-                        "description": "The lower limit of measurements returned (Iso8601)",
+                        "description": "The lower limit of measurements returned (UTC Iso8601 \"YYYY-MM-DDThh:mm:ss\" format)",
                         "required": false,
                         "type": "string"
                     },
                     {
                         "in": "query",
                         "name": "endTime",
-                        "description": "The upper limit of measurements returned (Iso8601)",
+                        "description": "The upper limit of measurements returned (UTC Iso8601 \"YYYY-MM-DDThh:mm:ss\" format)",
                         "required": false,
                         "type": "string"
                     },
@@ -4274,14 +4274,14 @@
                     {
                         "name": "createdAt",
                         "in": "query",
-                        "description": "When the record was first created. Use ISO 8601 datetime format. Time zone should be UTC and not local. ",
+                        "description": "When the record was first created. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format. Time zone should be UTC and not local. ",
                         "required": false,
                         "type": "string"
                     },
                     {
                         "name": "updatedAt",
                         "in": "query",
-                        "description": "When the record was last updated. Use ISO 8601 datetime format. Time zone should be UTC and not local. ",
+                        "description": "When the record was last updated. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format. Time zone should be UTC and not local. ",
                         "required": false,
                         "type": "string"
                     },
@@ -4483,14 +4483,14 @@
                     {
                         "name": "createdAt",
                         "in": "query",
-                        "description": "When the record was first created. Use ISO 8601 datetime format. Time zone should be UTC and not local. ",
+                        "description": "When the record was first created. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format. Time zone should be UTC and not local. ",
                         "required": false,
                         "type": "string"
                     },
                     {
                         "name": "updatedAt",
                         "in": "query",
-                        "description": "When the record was last updated. Use ISO 8601 datetime format. Time zone should be UTC and not local. ",
+                        "description": "When the record was last updated. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format. Time zone should be UTC and not local. ",
                         "required": false,
                         "type": "string"
                     },
@@ -6148,7 +6148,7 @@
                     "description": "Pearson correlation coefficient between cause and effect measurements"
                 },
                 "createdAt": {
-                    "description": "When the record was first created. Use ISO 8601 datetime format",
+                    "description": "When the record was first created. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format",
                     "type": "string",
                     "format": "date-time"
                 },
@@ -6302,7 +6302,7 @@
                     "description": "Time at which correlation was calculated"
                 },
                 "updatedAt": {
-                    "description": "When the record in the database was last updated. Use ISO 8601 datetime format. Time zone should be UTC and not local.",
+                    "description": "When the record in the database was last updated. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format. Time zone should be UTC and not local.",
                     "type": "string",
                     "format": "date-time"
                 },
@@ -6375,12 +6375,12 @@
               "format": "date-time"
             },
             "createdAt": {
-              "description": "When the record was first created. Use ISO 8601 datetime format",
+              "description": "When the record was first created. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format",
               "type": "string",
               "format": "date-time"
             },
             "updatedAt": {
-              "description": "When the record in the database was last updated. Use ISO 8601 datetime format",
+              "description": "When the record in the database was last updated. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format",
               "type": "string",
               "format": "date-time"
             }
@@ -6410,12 +6410,12 @@
               "type": "string"
             },
             "createdAt": {
-              "description": "When the record was first created. Use ISO 8601 datetime format",
+              "description": "When the record was first created. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format",
               "type": "string",
               "format": "date-time"
             },
             "updatedAt": {
-              "description": "When the record in the database was last updated. Use ISO 8601 datetime format",
+              "description": "When the record in the database was last updated. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format",
               "type": "string",
               "format": "date-time"
             }
@@ -6512,7 +6512,7 @@
                 },
                 "startTimeString": {
                     "type": "string",
-                    "description": "Start Time for the measurement event in ISO 8601"
+                    "description": "Start Time for the measurement event in UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\" "
                 },
                 "startTimeEpoch": {
                     "type": "integer",
@@ -6832,12 +6832,12 @@
                     "type": "boolean"
                 },
                 "latestTrackingReminderNotificationReminderTime": {
-                    "description": "ISO 8601 timestamp for the reminder time of the latest tracking reminder notification that has been pre-emptively generated in the database",
+                    "description": "UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  timestamp for the reminder time of the latest tracking reminder notification that has been pre-emptively generated in the database",
                     "type": "string",
                     "format": "date-time"
                 },
                 "lastTracked": {
-                    "description": "ISO 8601 timestamp for the last time a measurement was received for this user and variable",
+                    "description": "UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  timestamp for the last time a measurement was received for this user and variable",
                     "type": "string",
                     "format": "date-time"
                 },
@@ -6852,7 +6852,7 @@
                     "format": "string"
                 },
                 "updatedAt": {
-                    "description": "When the record in the database was last updated. Use ISO 8601 datetime format. Time zone should be UTC and not local.",
+                    "description": "When the record in the database was last updated. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format. Time zone should be UTC and not local.",
                     "type": "string",
                     "format": "date-time"
                 },
@@ -6909,7 +6909,7 @@
                     "format": "int32"
                 },
                 "pendingReminderTime": {
-                    "description": "ISO 8601 timestamp for the specific time the variable should be tracked in UTC.  This will be used for the measurement startTime if the track endpoint is used.",
+                    "description": "UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  timestamp for the specific time the variable should be tracked in UTC.  This will be used for the measurement startTime if the track endpoint is used.",
                     "type": "string",
                     "format": "date-time"
                 },
@@ -6939,7 +6939,7 @@
                     "type": "boolean"
                 },
                 "updatedAt": {
-                    "description": "When the record in the database was last updated. Use ISO 8601 datetime format. Time zone should be UTC and not local.",
+                    "description": "When the record in the database was last updated. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format. Time zone should be UTC and not local.",
                     "type": "string",
                     "format": "date-time"
                 },
@@ -7307,12 +7307,12 @@
               "type": "string"
             },
             "createdAt": {
-              "description": "When the record was first created. Use ISO 8601 datetime format",
+              "description": "When the record was first created. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format",
               "type": "string",
               "format": "date-time"
             },
             "updatedAt": {
-              "description": "When the record in the database was last updated. Use ISO 8601 datetime format",
+              "description": "When the record in the database was last updated. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format",
               "type": "string",
               "format": "date-time"
             }
@@ -7533,22 +7533,22 @@
               "type": "string"
             },
             "experimentStartTime": {
-              "description": "Earliest measurement start_time to be used in analysis. Use ISO 8601 datetime format",
+              "description": "Earliest measurement start_time to be used in analysis. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format",
               "type": "string",
               "format": "date-time"
             },
             "experimentEndTime": {
-              "description": "Latest measurement start_time to be used in analysis. Use ISO 8601 datetime format",
+              "description": "Latest measurement start_time to be used in analysis. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format",
               "type": "string",
               "format": "date-time"
             },
             "createdAt": {
-              "description": "When the record was first created. Use ISO 8601 datetime format",
+              "description": "When the record was first created. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format",
               "type": "string",
               "format": "date-time"
             },
             "updatedAt": {
-              "description": "When the record in the database was last updated. Use ISO 8601 datetime format",
+              "description": "When the record in the database was last updated. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format",
               "type": "string",
               "format": "date-time"
             },
@@ -7960,12 +7960,12 @@
                     "format": "int32"
                 },
                 "createdAt": {
-                    "description": "When the record was first created. Use ISO 8601 datetime format",
+                    "description": "When the record was first created. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format",
                     "type": "string",
                     "format": "date-time"
                 },
                 "updatedAt": {
-                    "description": "When the record in the database was last updated. Use ISO 8601 datetime format",
+                    "description": "When the record in the database was last updated. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format",
                     "type": "string",
                     "format": "date-time"
                 }
@@ -8011,12 +8011,12 @@
                     "format": "int32"
                 },
                 "created_at": {
-                    "description": "When the record was first created. Use ISO 8601 datetime format",
+                    "description": "When the record was first created. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format",
                     "type": "string",
                     "format": "date-time"
                 },
                 "updated_at": {
-                    "description": "When the record in the database was last updated. Use ISO 8601 datetime format",
+                    "description": "When the record in the database was last updated. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format",
                     "type": "string",
                     "format": "date-time"
                 }
