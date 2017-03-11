@@ -1326,10 +1326,10 @@
                     },
                     {
                         "in": "query",
-                        "name": "sourceId",
+                        "name": "sourceName",
                         "description": "ID of the source you want measurements for (supports exact name match only)",
                         "required": false,
-                        "type": "integer"
+                        "type": "string"
                     },
                     {
                         "in": "query",
@@ -2021,11 +2021,11 @@
                         "type": "integer"
                     },
                     {
-                        "name": "source_id",
+                        "name": "source_name",
                         "in": "query",
                         "description": "Application or device used to record the measurement values",
                         "required": false,
-                        "type": "integer"
+                        "type": "string"
                     },
                     {
                         "name": "start_time",
@@ -2538,13 +2538,6 @@
                         "description": "Last Value",
                         "required": false,
                         "type": "number"
-                    },
-                    {
-                        "name": "last_source_id",
-                        "in": "query",
-                        "description": "ID of last source",
-                        "required": false,
-                        "type": "integer"
                     },
                     {
                         "name": "number_of_correlations",
@@ -7435,11 +7428,6 @@
               "type": "integer",
               "format": "int32"
             },
-            "lastSourceId": {
-              "description": "ID of last source",
-              "type": "integer",
-              "format": "int32"
-            },
             "numberOfCorrelations": {
               "description": "Number of correlations for this variable",
               "type": "integer",
@@ -7974,7 +7962,7 @@
         "VariableUserSource": {
             "required": [
                 "variable_id",
-                "source_id",
+                "source_name",
                 "timestamp",
                 "earliest_measurement_time",
                 "latest_measurement_time"
@@ -7990,10 +7978,9 @@
                     "type": "integer",
                     "format": "int32"
                 },
-                "source_id": {
-                    "description": "ID of source",
-                    "type": "integer",
-                    "format": "int32"
+                "source_name": {
+                    "description": "source",
+                    "type": "string"
                 },
                 "timestamp": {
                     "description": "Time that this measurement occurred Uses epoch minute (epoch time divided by 60)",

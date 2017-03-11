@@ -2673,11 +2673,11 @@
             "type": "integer"
           },
           {
-            "name": "source_id",
+            "name": "source_name",
             "in": "query",
             "description": "Application or device used to record the measurement values",
             "required": false,
-            "type": "integer"
+            "type": "string"
           },
           {
             "name": "start_time",
@@ -2914,11 +2914,11 @@
             "type": "integer"
           },
           {
-            "name": "source_id",
+            "name": "source_name",
             "in": "query",
             "description": "Application or device used to record the measurement values",
             "required": false,
-            "type": "integer"
+            "type": "string"
           },
           {
             "name": "start_time",
@@ -5228,13 +5228,6 @@
             "type": "number"
           },
           {
-            "name": "last_source_id",
-            "in": "query",
-            "description": "ID of last source",
-            "required": false,
-            "type": "integer"
-          },
-          {
             "name": "number_of_correlations",
             "in": "query",
             "description": "Number of correlations for this variable",
@@ -5716,13 +5709,6 @@
             "description": "Last original value which is stored",
             "required": false,
             "type": "number"
-          },
-          {
-            "name": "last_source_id",
-            "in": "query",
-            "description": "ID of last source",
-            "required": false,
-            "type": "integer"
           },
           {
             "name": "number_of_correlations",
@@ -7905,11 +7891,11 @@
             "type": "integer"
           },
           {
-            "name": "source_id",
+            "name": "source_name",
             "in": "query",
-            "description": "source id of VariableUserSource",
+            "description": "source of VariableUserSource",
             "required": true,
-            "type": "integer"
+            "type": "string"
           }
         ],
         "responses": {
@@ -7961,11 +7947,11 @@
             "type": "integer"
           },
           {
-            "name": "source_id",
+            "name": "source_name",
             "in": "query",
-            "description": "source id of VariableUserSource",
+            "description": "source of VariableUserSource",
             "required": true,
-            "type": "integer"
+            "type": "string"
           },
           {
             "name": "body",
@@ -8026,11 +8012,11 @@
             "type": "integer"
           },
           {
-            "name": "source_id",
+            "name": "source_name",
             "in": "query",
-            "description": "source id of VariableUserSource",
+            "description": "source of VariableUserSource",
             "required": true,
-            "type": "integer"
+            "type": "string"
           }
         ],
         "responses": {
@@ -8513,7 +8499,7 @@
     "MeasurementPost": {
       "required": [
         "variable_id",
-        "source_id",
+        "source_name",
         "unit_id",
         "measurements"
       ],
@@ -8523,10 +8509,9 @@
           "type": "integer",
           "format": "int32"
         },
-        "source_id": {
-          "description": "Source ID of the app or device as obtained from the GET sources endpoint",
-          "type": "integer",
-          "format": "int32"
+        "source_name": {
+          "description": "app or device as obtained from the GET sources endpoint",
+          "type": "string"
         },
         "unit_id": {
           "description": "Unit id for the measurement value as obtained from the GET units endpoint",
