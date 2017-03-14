@@ -6100,7 +6100,7 @@
                     "type": "string",
                     "description": "ORIGINAL variable name of the cause variable for which the user desires correlations.        "
                 },
-                "causeCategory": {
+                "causeVariableCategoryName": {
                     "type": "string",
                     "description": "Variable category of the cause variable."
                 },
@@ -6161,7 +6161,7 @@
                     "type": "string",
                     "description": "ORIGINAL variable name of the effect variable for which the user desires correlations."
                 },
-                "effectCategory": {
+                "effectVariableCategoryName": {
                     "type": "string",
                     "description": "Variable category of the effect variable."
                 },
@@ -6188,6 +6188,10 @@
                 "gaugeImage":  {
                     "type": "string",
                     "description": "Illustrates the strength of the relationship"
+                },
+                "imageUrl": {
+                    "type": "string",
+                    "description": "Large image for Facebook"
                 },
                 "numberOfPairs": {
                     "type": "number",
