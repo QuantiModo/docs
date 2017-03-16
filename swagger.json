@@ -6108,7 +6108,7 @@
                     "type": "integer",
                     "description": "Number of changes in the predictor variable (a.k.a the number of experiments)"
                 },
-                "causeCombinationOperation": {
+                "causeVariableCombinationOperation": {
                     "type": "string",
                     "description": "The way cause measurements are aggregated"
                 },
@@ -6124,7 +6124,7 @@
                     "type": "string",
                     "description": "Unit of the predictor variable"
                 },
-                "causeUnitId": {
+                "causeVariableDefaultUnitId": {
                     "type": "integer",
                     "description": "Unit Id of the predictor variable"
                 },
@@ -6197,7 +6197,7 @@
                     "type": "number",
                     "description": "Number of points that went into the correlation calculation"
                 },
-                "originalEffect": {
+                "effectVariableName": {
                     "type": "string",
                     "description": "effect variable original name."
                 },
@@ -6210,7 +6210,7 @@
                     "type": "number",
                     "description": "Optimal Pearson Product"
                 },
-                "originalCause": {
+                "causeVariableName": {
                     "type": "string",
                     "description": "original name of the cause."
                 },
