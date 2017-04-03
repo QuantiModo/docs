@@ -95,7 +95,7 @@ lastUpdated | The time that this measurement was created or last updated in the 
 Parameter | Description                                                                                   
 ----------|--------------------------------------------------------------------------
 unitName | Unit Name  (supports exact name match only)
-abbreviatedUnitName | Restrict the results to a specific unit by providing the unit abbreviation (supports exact name match only)
+unitAbbreviatedName | Restrict the results to a specific unit by providing the unit abbreviation (supports exact name match only)
 categoryName | Restrict the results to a specific unit category by providing the unit category name.
 
 #### /variables
