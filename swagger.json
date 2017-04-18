@@ -7402,7 +7402,7 @@
               "type": "integer",
               "format": "int32"
             },
-            "numberOfProcessedMeasurements": {
+            "numberOfProcessedDailyMeasurements": {
               "description": "Number of processed measurements",
               "type": "integer",
               "format": "int32"
@@ -7671,7 +7671,6 @@
         "Variable": {
             "required": [
                 "name",
-                "originalName",
                 "category",
                 "unitAbbreviatedName",
                 "abbreviatedUnitId",
@@ -7708,10 +7707,6 @@
                 "name": {
                     "type": "string",
                     "description": "User-defined variable display name."
-                },
-                "originalName": {
-                    "type": "string",
-                    "description": "Name used when the variable was originally created in the `variables` table."
                 },
                 "category": {
                     "type": "string",
