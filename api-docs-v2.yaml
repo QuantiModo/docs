@@ -118,7 +118,7 @@ info:
     ## Oauth2 Authentication(QM Access Token)
 
     * First step is creating an application on
-    [https://admin.quantimo.do](https://admin.quantimo.do) so you can have
+    [https://app.quantimo.do/api/v2/apps](https://app.quantimo.do/api/v2/apps) so you can have
     client_id and client_secret for testing out/using our api
 
     * You can implement OAuth2 authentication to your application using our
