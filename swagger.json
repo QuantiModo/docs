@@ -33,7 +33,7 @@
         }
     ],
     "paths": {
-        "/v1/connect.js": {
+        "/v1/integration.js": {
             "get": {
                 "tags": [
                     "connectors"
@@ -1555,185 +1555,6 @@
                 "security": [
                     {
                         "oauth2": [
-                            "basic"
-                        ]
-                    }
-                ]
-            }
-        },
-        "/v2/measurements/{id}": {
-            "get": {
-                "tags": [
-                    "measurements"
-                ],
-                "summary": "Get Measurement",
-                "description": "Get Measurement",
-                "produces": [
-                    "application/json"
-                ],
-                "parameters": [
-                    {
-                        "name": "access_token",
-                        "in": "query",
-                        "description": "User's OAuth2 access token",
-                        "required": false,
-                        "type": "string"
-                    },
-                    {
-                        "in": "query",
-                        "name": "user_id",
-                        "description": "User's id",
-                        "required": false,
-                        "type": "integer"
-                    },
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "description": "id of Measurement",
-                        "required": true,
-                        "type": "integer"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "successful operation",
-                        "schema": {
-                            "properties": {
-                                "success": {
-                                    "type": "boolean"
-                                },
-                                "data": {
-                                    "$ref": "#/definitions/Measurement"
-                                }
-                            },
-                            "type": "object"
-                        }
-                    }
-                },
-                "security": [
-                    {
-                        "quantimodo_oauth2": [
-                            "basic"
-                        ]
-                    }
-                ]
-            },
-            "put": {
-                "tags": [
-                    "measurements"
-                ],
-                "summary": "Update Measurement",
-                "description": "Update Measurement",
-                "produces": [
-                    "application/json"
-                ],
-                "parameters": [
-                    {
-                        "name": "access_token",
-                        "in": "query",
-                        "description": "User's OAuth2 access token",
-                        "required": false,
-                        "type": "string"
-                    },
-                    {
-                        "in": "query",
-                        "name": "user_id",
-                        "description": "User's id",
-                        "required": false,
-                        "type": "integer"
-                    },
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "description": "id of Measurement",
-                        "required": true,
-                        "type": "integer"
-                    },
-                    {
-                        "name": "body",
-                        "in": "body",
-                        "description": "Measurement that should be updated",
-                        "required": false,
-                        "schema": {
-                            "$ref": "#/definitions/Measurement"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "successful operation",
-                        "schema": {
-                            "properties": {
-                                "success": {
-                                    "type": "boolean"
-                                },
-                                "data": {
-                                    "type": "string"
-                                }
-                            },
-                            "type": "object"
-                        }
-                    }
-                },
-                "security": [
-                    {
-                        "quantimodo_oauth2": [
-                            "basic"
-                        ]
-                    }
-                ]
-            },
-            "delete": {
-                "tags": [
-                    "measurements"
-                ],
-                "summary": "Delete Measurement",
-                "description": "Delete Measurement",
-                "produces": [
-                    "application/json"
-                ],
-                "parameters": [
-                    {
-                        "name": "access_token",
-                        "in": "query",
-                        "description": "User's OAuth2 access token",
-                        "required": false,
-                        "type": "string"
-                    },
-                    {
-                        "in": "query",
-                        "name": "user_id",
-                        "description": "User's id",
-                        "required": false,
-                        "type": "integer"
-                    },
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "description": "id of Measurement",
-                        "required": true,
-                        "type": "integer"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "successful operation",
-                        "schema": {
-                            "properties": {
-                                "success": {
-                                    "type": "boolean"
-                                },
-                                "data": {
-                                    "type": "string"
-                                }
-                            },
-                            "type": "object"
-                        }
-                    }
-                },
-                "security": [
-                    {
-                        "quantimodo_oauth2": [
                             "basic"
                         ]
                     }
@@ -6197,10 +6018,6 @@
                     "type": "number",
                     "description": "Number of points that went into the correlation calculation"
                 },
-                "effectVariableName": {
-                    "type": "string",
-                    "description": "effect variable original name."
-                },
                 "onsetDelay": {
                     "type": "number",
                     "format": "double",
@@ -6209,10 +6026,6 @@
                 "optimalPearsonProduct": {
                     "type": "number",
                     "description": "Optimal Pearson Product"
-                },
-                "causeVariableName": {
-                    "type": "string",
-                    "description": "original name of the cause."
                 },
                 "outcomeDataSources": {
                     "type": "string",
@@ -6326,114 +6139,114 @@
             }
         },
         "Connection": {
-          "required": [
-            "connector_id"
-          ],
-          "properties": {
-            "id": {
-              "description": "id",
-              "type": "integer",
-              "format": "int32"
-            },
-            "userId": {
-              "description": "ID of user that owns this correlation",
-              "type": "integer",
-              "format": "int32"
-            },
-            "connectorId": {
-              "description": "The id for the connector data source for which the connection is connected",
-              "type": "integer",
-              "format": "int32"
-            },
-            "connectStatus": {
-              "description": "Indicates whether a connector is currently connected to a service for a user.",
-              "type": "string"
-            },
-            "connectError": {
-              "description": "Error message if there is a problem with authorizing this connection.",
-              "type": "string"
-            },
-            "updateRequestedAt": {
-              "description": "Time at which an update was requested by a user.",
-              "type": "string",
-              "format": "date-time"
-            },
-            "updateStatus": {
-              "description": "Indicates whether a connector is currently updated.",
-              "type": "string"
-            },
-            "updateError": {
-              "description": "Indicates if there was an error during the update.",
-              "type": "string"
-            },
-            "lastSuccessfulUpdatedAt": {
-              "description": "The time at which the connector was last successfully updated.",
-              "type": "string",
-              "format": "date-time"
-            },
-            "createdAt": {
-              "description": "When the record was first created. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format",
-              "type": "string",
-              "format": "date-time"
-            },
-            "updatedAt": {
-              "description": "When the record in the database was last updated. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format",
-              "type": "string",
-              "format": "date-time"
+            "required": [
+                "connector_id"
+            ],
+            "properties": {
+                "id": {
+                    "description": "id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "userId": {
+                    "description": "ID of user that owns this correlation",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "connectorId": {
+                    "description": "The id for the connector data source for which the connection is connected",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "connectStatus": {
+                    "description": "Indicates whether a connector is currently connected to a service for a user.",
+                    "type": "string"
+                },
+                "connectError": {
+                    "description": "Error message if there is a problem with authorizing this connection.",
+                    "type": "string"
+                },
+                "updateRequestedAt": {
+                    "description": "Time at which an update was requested by a user.",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "updateStatus": {
+                    "description": "Indicates whether a connector is currently updated.",
+                    "type": "string"
+                },
+                "updateError": {
+                    "description": "Indicates if there was an error during the update.",
+                    "type": "string"
+                },
+                "lastSuccessfulUpdatedAt": {
+                    "description": "The time at which the connector was last successfully updated.",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "createdAt": {
+                    "description": "When the record was first created. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "updatedAt": {
+                    "description": "When the record in the database was last updated. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format",
+                    "type": "string",
+                    "format": "date-time"
+                }
             }
-          }
         },
         "Credential": {
-          "required": [
-            "connector_id",
-            "attr_key",
-            "attr_value"
-          ],
-          "properties": {
-            "userId": {
-              "description": "ID of user that owns this credential",
-              "type": "integer"
-            },
-            "connectorId": {
-              "description": "The id for the connector data source from which the credential was obtained",
-              "type": "integer"
-            },
-            "attrKey": {
-              "description": "Attribute name such as token, userid, username, or password",
-              "type": "string"
-            },
-            "attrValue": {
-              "description": "Encrypted value for the attribute specified",
-              "type": "string"
-            },
-            "createdAt": {
-              "description": "When the record was first created. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format",
-              "type": "string",
-              "format": "date-time"
-            },
-            "updatedAt": {
-              "description": "When the record in the database was last updated. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format",
-              "type": "string",
-              "format": "date-time"
+            "required": [
+                "connector_id",
+                "attr_key",
+                "attr_value"
+            ],
+            "properties": {
+                "userId": {
+                    "description": "ID of user that owns this credential",
+                    "type": "integer"
+                },
+                "connectorId": {
+                    "description": "The id for the connector data source from which the credential was obtained",
+                    "type": "integer"
+                },
+                "attrKey": {
+                    "description": "Attribute name such as token, userid, username, or password",
+                    "type": "string"
+                },
+                "attrValue": {
+                    "description": "Encrypted value for the attribute specified",
+                    "type": "string"
+                },
+                "createdAt": {
+                    "description": "When the record was first created. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "updatedAt": {
+                    "description": "When the record in the database was last updated. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format",
+                    "type": "string",
+                    "format": "date-time"
+                }
             }
-          }
         },
         "HumanTime": {
-        "type": "object",
-        "properties": {
-          "date": {
-            "type": "string",
-            "description": "date time"
-          },
-          "timezone_type": {
-            "type": "integer"
-          },
-          "timezone": {
-            "type": "string",
-            "description": "timezone of date time"
-          }
-        }
-      },
+            "type": "object",
+            "properties": {
+                "date": {
+                    "type": "string",
+                    "description": "date time"
+                },
+                "timezone_type": {
+                    "type": "integer"
+                },
+                "timezone": {
+                    "type": "string",
+                    "description": "timezone of date time"
+                }
+            }
+        },
         "JsonErrorResponse": {
             "required": [
                 "status"
@@ -7169,482 +6982,482 @@
             }
         },
         "UserVariableRelationship": {
-          "required": [
-            "confidence_level",
-            "confidence_score",
-            "direction",
-            "duration_of_action",
-            "outcome_variable_id",
-            "predictor_variable_id",
-            "predictor_unit_id",
-            "sinn_rank",
-            "strength_level",
-            "strength_score",
-            "value_predicting_high_outcome",
-            "value_predicting_low_outcome"
-          ],
-          "properties": {
-            "id": {
-              "description": "id",
-              "type": "integer",
-              "format": "int32"
-            },
-            "confidence_level": {
-              "description": "Our confidence that a consistent predictive relationship exists based on the amount of evidence, reproducibility, and other factors",
-              "type": "string"
-            },
-            "confidence_score": {
-              "description": "A quantitative representation of our confidence that a consistent predictive relationship exists based on the amount of evidence, reproducibility, and other factors",
-              "type": "number",
-              "format": "float"
-            },
-            "direction": {
-              "description": "Direction is positive if higher predictor values generally precede higher outcome values. Direction is negative if higher predictor values generally precede lower outcome values.",
-              "type": "string"
-            },
-            "duration_of_action": {
-              "description": "The amount of time over which a predictor/stimulus event can exert an observable influence on an outcome variable’s value. For instance, aspirin (stimulus/predictor) typically decreases headache severity for approximately four hours (duration of action) following the onset delay.",
-              "type": "integer",
-              "format": "int32"
-            },
-            "error_message": {
-              "description": "error_message",
-              "type": "string"
-            },
-            "onset_delay": {
-              "description": "The amount of time in seconds that elapses after the predictor/stimulus event before the outcome as perceived by a self-tracker is known as the “onset delay”. For example, the “onset delay” between the time a person takes an aspirin (predictor/stimulus event) and the time a person perceives a change in their headache severity (outcome) is approximately 30 minutes.",
-              "type": "integer",
-              "format": "int32"
-            },
-            "outcome_variable_id": {
-              "description": "Variable ID for the outcome variable",
-              "type": "integer",
-              "format": "int32"
-            },
-            "predictor_variable_id": {
-              "description": "Variable ID for the predictor variable",
-              "type": "integer",
-              "format": "int32"
-            },
-            "predictor_unit_id": {
-              "description": "ID for default unit of the predictor variable",
-              "type": "integer",
-              "format": "int32"
-            },
-            "sinn_rank": {
-              "description": "A value representative of the relevance of this predictor relative to other predictors of this outcome.  Usually used for relevancy sorting.",
-              "type": "number",
-              "format": "float"
-            },
-            "strength_level": {
-              "description": "Can be weak, medium, or strong based on the size of the effect which the predictor appears to have on the outcome relative to other variable relationship strength scores.",
-              "type": "string"
-            },
-            "strength_score": {
-              "description": "A value represented to the size of the effect which the predictor appears to have on the outcome.",
-              "type": "number",
-              "format": "float"
-            },
-            "user_id": {
-              "description": "user_id",
-              "type": "integer",
-              "format": "int32"
-            },
-            "vote": {
-              "description": "vote",
-              "type": "string"
-            },
-            "value_predicting_high_outcome": {
-              "description": "Value for the predictor variable (in it's default unit) which typically precedes an above average outcome value",
-              "type": "number",
-              "format": "float"
-            },
-            "value_predicting_low_outcome": {
-              "description": "Value for the predictor variable (in it's default unit) which typically precedes a below average outcome value",
-              "type": "number",
-              "format": "float"
+            "required": [
+                "confidence_level",
+                "confidence_score",
+                "direction",
+                "duration_of_action",
+                "outcome_variable_id",
+                "predictor_variable_id",
+                "predictor_unit_id",
+                "sinn_rank",
+                "strength_level",
+                "strength_score",
+                "value_predicting_high_outcome",
+                "value_predicting_low_outcome"
+            ],
+            "properties": {
+                "id": {
+                    "description": "id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "confidence_level": {
+                    "description": "Our confidence that a consistent predictive relationship exists based on the amount of evidence, reproducibility, and other factors",
+                    "type": "string"
+                },
+                "confidence_score": {
+                    "description": "A quantitative representation of our confidence that a consistent predictive relationship exists based on the amount of evidence, reproducibility, and other factors",
+                    "type": "number",
+                    "format": "float"
+                },
+                "direction": {
+                    "description": "Direction is positive if higher predictor values generally precede higher outcome values. Direction is negative if higher predictor values generally precede lower outcome values.",
+                    "type": "string"
+                },
+                "duration_of_action": {
+                    "description": "The amount of time over which a predictor/stimulus event can exert an observable influence on an outcome variable’s value. For instance, aspirin (stimulus/predictor) typically decreases headache severity for approximately four hours (duration of action) following the onset delay.",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "error_message": {
+                    "description": "error_message",
+                    "type": "string"
+                },
+                "onset_delay": {
+                    "description": "The amount of time in seconds that elapses after the predictor/stimulus event before the outcome as perceived by a self-tracker is known as the “onset delay”. For example, the “onset delay” between the time a person takes an aspirin (predictor/stimulus event) and the time a person perceives a change in their headache severity (outcome) is approximately 30 minutes.",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "outcome_variable_id": {
+                    "description": "Variable ID for the outcome variable",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "predictor_variable_id": {
+                    "description": "Variable ID for the predictor variable",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "predictor_unit_id": {
+                    "description": "ID for default unit of the predictor variable",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "sinn_rank": {
+                    "description": "A value representative of the relevance of this predictor relative to other predictors of this outcome.  Usually used for relevancy sorting.",
+                    "type": "number",
+                    "format": "float"
+                },
+                "strength_level": {
+                    "description": "Can be weak, medium, or strong based on the size of the effect which the predictor appears to have on the outcome relative to other variable relationship strength scores.",
+                    "type": "string"
+                },
+                "strength_score": {
+                    "description": "A value represented to the size of the effect which the predictor appears to have on the outcome.",
+                    "type": "number",
+                    "format": "float"
+                },
+                "user_id": {
+                    "description": "user_id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "vote": {
+                    "description": "vote",
+                    "type": "string"
+                },
+                "value_predicting_high_outcome": {
+                    "description": "Value for the predictor variable (in it's default unit) which typically precedes an above average outcome value",
+                    "type": "number",
+                    "format": "float"
+                },
+                "value_predicting_low_outcome": {
+                    "description": "Value for the predictor variable (in it's default unit) which typically precedes a below average outcome value",
+                    "type": "number",
+                    "format": "float"
+                }
             }
-          }
         },
         "Update": {
-          "required": [
-            "user_id",
-            "connector_id",
-            "number_of_measurements",
-            "success",
-            "message"
-          ],
-          "properties": {
-            "id": {
-              "description": "id",
-              "type": "integer",
-              "format": "int32"
-            },
-            "userId": {
-              "description": "user_id",
-              "type": "integer",
-              "format": "int32"
-            },
-            "connectorId": {
-              "description": "connector_id",
-              "type": "integer",
-              "format": "int32"
-            },
-            "numberOfMeasurements": {
-              "description": "number_of_measurements",
-              "type": "integer",
-              "format": "int32"
-            },
-            "success": {
-              "description": "success",
-              "type": "boolean"
-            },
-            "message": {
-              "description": "message",
-              "type": "string"
-            },
-            "createdAt": {
-              "description": "When the record was first created. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format",
-              "type": "string",
-              "format": "date-time"
-            },
-            "updatedAt": {
-              "description": "When the record in the database was last updated. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format",
-              "type": "string",
-              "format": "date-time"
+            "required": [
+                "user_id",
+                "connector_id",
+                "number_of_measurements",
+                "success",
+                "message"
+            ],
+            "properties": {
+                "id": {
+                    "description": "id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "userId": {
+                    "description": "user_id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "connectorId": {
+                    "description": "connector_id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "numberOfMeasurements": {
+                    "description": "number_of_measurements",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "success": {
+                    "description": "success",
+                    "type": "boolean"
+                },
+                "message": {
+                    "description": "message",
+                    "type": "string"
+                },
+                "createdAt": {
+                    "description": "When the record was first created. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "updatedAt": {
+                    "description": "When the record in the database was last updated. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format",
+                    "type": "string",
+                    "format": "date-time"
+                }
             }
-          }
         },
         "UserVariable": {
-          "required": [
-            "variable_id"
-          ],
-          "properties": {
-            "parentId": {
-              "description": "ID of the parent variable if this variable has any parent",
-              "type": "integer",
-              "format": "int32"
-            },
-            "userId": {
-              "description": "User ID",
-              "type": "integer",
-              "format": "int32"
-            },
-            "clientId": {
-              "description": "client_id",
-              "type": "string"
-            },
-            "variableId": {
-              "description": "ID of variable",
-              "type": "integer",
-              "format": "int32"
-            },
-            "defaultUnitId": {
-              "description": "ID of unit to use for this variable",
-              "type": "integer",
-              "format": "int32"
-            },
-            "minimumAllowedValue": {
-              "description": "The minimum allowed value for measurements. While you can record a value below this minimum, it will be excluded from the correlation analysis.",
-              "type": "number",
-              "format": "float"
-            },
-            "maximumAllowedValue": {
-              "description": "The maximum allowed value for measurements. While you can record a value above this maximum, it will be excluded from the correlation analysis.",
-              "type": "number",
-              "format": "float"
-            },
-            "fillingValue": {
-              "description": "When it comes to analysis to determine the effects of this variable, knowing when it did not occur is as important as knowing when it did occur. For example, if you are tracking a medication, it is important to know when you did not take it, but you do not have to log zero values for all the days when you haven't taken it. Hence, you can specify a filling value (typically 0) to insert whenever data is missing.",
-              "type": "number",
-              "format": "float"
-            },
-            "joinWith": {
-              "description": "The Variable this Variable should be joined with. If the variable is joined with some other variable then it is not shown to user in the list of variables",
-              "type": "integer",
-              "format": "int32"
-            },
-            "onsetDelay": {
-              "description": "The amount of time in seconds that elapses after the predictor/stimulus event before the outcome as perceived by a self-tracker is known as the “onset delay”. For example, the “onset delay” between the time a person takes an aspirin (predictor/stimulus event) and the time a person perceives a change in their headache severity (outcome) is approximately 30 minutes.",
-              "type": "integer",
-              "format": "int32"
-            },
-            "durationOfAction": {
-              "description": "The amount of time over which a predictor/stimulus event can exert an observable influence on an outcome variable’s value. For instance, aspirin (stimulus/predictor) typically decreases headache severity for approximately four hours (duration of action) following the onset delay.",
-              "type": "integer",
-              "format": "int32"
-            },
-            "variableCategoryId": {
-              "description": "ID of variable category",
-              "type": "integer",
-              "format": "int32"
-            },
-            "updated": {
-              "description": "updated",
-              "type": "integer",
-              "format": "int32"
-            },
-            "public": {
-              "description": "Is variable public",
-              "type": "integer",
-              "format": "int32"
-            },
-            "causeOnly": {
-              "description": "A value of 1 indicates that this variable is generally a cause in a causal relationship.  An example of a causeOnly variable would be a variable such as Cloud Cover which would generally not be influenced by the behaviour of the user",
-              "type": "boolean"
-            },
-            "fillingType": {
-              "description": "0 -> No filling, 1 -> Use filling-value",
-              "type": "string"
-            },
-            "numberOfMeasurements": {
-              "description": "Number of measurements",
-              "type": "integer",
-              "format": "int32"
-            },
-            "numberOfProcessedDailyMeasurements": {
-              "description": "Number of processed measurements",
-              "type": "integer",
-              "format": "int32"
-            },
-            "measurementsAtLastAnalysis": {
-              "description": "Number of measurements at last analysis",
-              "type": "integer",
-              "format": "int32"
-            },
-            "lastUnitId": {
-              "description": "ID of last Unit",
-              "type": "integer",
-              "format": "int32"
-            },
-            "lastOriginalUnitId": {
-              "description": "ID of last original Unit",
-              "type": "integer",
-              "format": "int32"
-            },
-            "lastValue": {
-              "description": "Last Value",
-              "type": "number",
-              "format": "float"
-            },
-            "lastOriginalValue": {
-              "description": "Last original value which is stored",
-              "type": "integer",
-              "format": "int32"
-            },
-            "numberOfCorrelations": {
-              "description": "Number of correlations for this variable",
-              "type": "integer",
-              "format": "int32"
-            },
-            "status": {
-              "description": "status",
-              "type": "string"
-            },
-            "errorMessage": {
-              "description": "error_message",
-              "type": "string"
-            },
-            "lastSuccessfulUpdateTime": {
-              "description": "When this variable or its settings were last updated",
-              "type": "string",
-              "format": "date-time"
-            },
-            "standard_deviation": {
-              "description": "Standard deviation",
-              "type": "number",
-              "format": "float"
-            },
-            "variance": {
-              "description": "Variance",
-              "type": "number",
-              "format": "float"
-            },
-            "minimumRecordedValue": {
-              "description": "Minimum recorded value of this variable",
-              "type": "number",
-              "format": "float"
-            },
-            "maximumRecordedDailyValue": {
-              "description": "Maximum recorded daily value of this variable",
-              "type": "number",
-              "format": "float"
-            },
-            "mean": {
-              "description": "Mean",
-              "type": "number",
-              "format": "float"
-            },
-            "median": {
-              "description": "Median",
-              "type": "number",
-              "format": "float"
-            },
-            "mostCommonUnitId": {
-              "description": "Most common Unit ID",
-              "type": "integer",
-              "format": "int32"
-            },
-            "mostCommonValue": {
-              "description": "Most common value",
-              "type": "number",
-              "format": "float"
-            },
-            "numberOfUniqueDailyValues": {
-              "description": "Number of unique daily values",
-              "type": "number",
-              "format": "float"
-            },
-            "numberOfChanges": {
-              "description": "Number of changes",
-              "type": "integer",
-              "format": "int32"
-            },
-            "skewness": {
-              "description": "Skewness",
-              "type": "number",
-              "format": "float"
-            },
-            "kurtosis": {
-              "description": "Kurtosis",
-              "type": "number",
-              "format": "float"
-            },
-            "latitude": {
-              "description": "Latitude",
-              "type": "number",
-              "format": "float"
-            },
-            "longitude": {
-              "description": "Longitude",
-              "type": "number",
-              "format": "float"
-            },
-            "location": {
-              "description": "Location",
-              "type": "string"
-            },
-            "experimentStartTime": {
-              "description": "Earliest measurement start_time to be used in analysis. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format",
-              "type": "string",
-              "format": "date-time"
-            },
-            "experimentEndTime": {
-              "description": "Latest measurement start_time to be used in analysis. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format",
-              "type": "string",
-              "format": "date-time"
-            },
-            "createdAt": {
-              "description": "When the record was first created. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format",
-              "type": "string",
-              "format": "date-time"
-            },
-            "updatedAt": {
-              "description": "When the record in the database was last updated. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format",
-              "type": "string",
-              "format": "date-time"
-            },
-            "outcome": {
-              "description": "Outcome variables (those with `outcome` == 1) are variables for which a human would generally want to identify the influencing factors.  These include symptoms of illness, physique, mood, cognitive performance, etc.  Generally correlation calculations are only performed on outcome variables",
-              "type": "boolean"
-            },
-            "sources": {
-              "description": "Comma-separated list of source names to limit variables to those sources",
-              "type": "string"
-            },
-            "earliestSourceTime": {
-              "description": "Earliest source time",
-              "type": "integer",
-              "format": "int32"
-            },
-            "latestSourceTime": {
-              "description": "Latest source time",
-              "type": "integer",
-              "format": "int32"
-            },
-            "earliestMeasurementTime": {
-              "description": "Earliest measurement time",
-              "type": "integer",
-              "format": "int32"
-            },
-            "latestMeasurementTime": {
-              "description": "Latest measurement time",
-              "type": "integer",
-              "format": "int32"
-            },
-            "earliestFillingTime": {
-              "description": "Earliest filling time",
-              "type": "integer",
-              "format": "int32"
-            },
-            "latestFillingTime": {
-              "description": "Latest filling time",
-              "type": "integer",
-              "format": "int32"
-            },
-            "imageUrl": {
-              "type": "string",
-              "description": ""
-            },
-            "ionIcon": {
-                  "type": "string",
-                  "description": ""
-             }
-          }
+            "required": [
+                "variable_id"
+            ],
+            "properties": {
+                "parentId": {
+                    "description": "ID of the parent variable if this variable has any parent",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "userId": {
+                    "description": "User ID",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "clientId": {
+                    "description": "client_id",
+                    "type": "string"
+                },
+                "variableId": {
+                    "description": "ID of variable",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "defaultUnitId": {
+                    "description": "ID of unit to use for this variable",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "minimumAllowedValue": {
+                    "description": "The minimum allowed value for measurements. While you can record a value below this minimum, it will be excluded from the correlation analysis.",
+                    "type": "number",
+                    "format": "float"
+                },
+                "maximumAllowedValue": {
+                    "description": "The maximum allowed value for measurements. While you can record a value above this maximum, it will be excluded from the correlation analysis.",
+                    "type": "number",
+                    "format": "float"
+                },
+                "fillingValue": {
+                    "description": "When it comes to analysis to determine the effects of this variable, knowing when it did not occur is as important as knowing when it did occur. For example, if you are tracking a medication, it is important to know when you did not take it, but you do not have to log zero values for all the days when you haven't taken it. Hence, you can specify a filling value (typically 0) to insert whenever data is missing.",
+                    "type": "number",
+                    "format": "float"
+                },
+                "joinWith": {
+                    "description": "The Variable this Variable should be joined with. If the variable is joined with some other variable then it is not shown to user in the list of variables",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "onsetDelay": {
+                    "description": "The amount of time in seconds that elapses after the predictor/stimulus event before the outcome as perceived by a self-tracker is known as the “onset delay”. For example, the “onset delay” between the time a person takes an aspirin (predictor/stimulus event) and the time a person perceives a change in their headache severity (outcome) is approximately 30 minutes.",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "durationOfAction": {
+                    "description": "The amount of time over which a predictor/stimulus event can exert an observable influence on an outcome variable’s value. For instance, aspirin (stimulus/predictor) typically decreases headache severity for approximately four hours (duration of action) following the onset delay.",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "variableCategoryId": {
+                    "description": "ID of variable category",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "updated": {
+                    "description": "updated",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "public": {
+                    "description": "Is variable public",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "causeOnly": {
+                    "description": "A value of 1 indicates that this variable is generally a cause in a causal relationship.  An example of a causeOnly variable would be a variable such as Cloud Cover which would generally not be influenced by the behaviour of the user",
+                    "type": "boolean"
+                },
+                "fillingType": {
+                    "description": "0 -> No filling, 1 -> Use filling-value",
+                    "type": "string"
+                },
+                "numberOfMeasurements": {
+                    "description": "Number of measurements",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "numberOfProcessedDailyMeasurements": {
+                    "description": "Number of processed measurements",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "measurementsAtLastAnalysis": {
+                    "description": "Number of measurements at last analysis",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "lastUnitId": {
+                    "description": "ID of last Unit",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "lastOriginalUnitId": {
+                    "description": "ID of last original Unit",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "lastValue": {
+                    "description": "Last Value",
+                    "type": "number",
+                    "format": "float"
+                },
+                "lastOriginalValue": {
+                    "description": "Last original value which is stored",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "numberOfCorrelations": {
+                    "description": "Number of correlations for this variable",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "status": {
+                    "description": "status",
+                    "type": "string"
+                },
+                "errorMessage": {
+                    "description": "error_message",
+                    "type": "string"
+                },
+                "lastSuccessfulUpdateTime": {
+                    "description": "When this variable or its settings were last updated",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "standard_deviation": {
+                    "description": "Standard deviation",
+                    "type": "number",
+                    "format": "float"
+                },
+                "variance": {
+                    "description": "Variance",
+                    "type": "number",
+                    "format": "float"
+                },
+                "minimumRecordedValue": {
+                    "description": "Minimum recorded value of this variable",
+                    "type": "number",
+                    "format": "float"
+                },
+                "maximumRecordedDailyValue": {
+                    "description": "Maximum recorded daily value of this variable",
+                    "type": "number",
+                    "format": "float"
+                },
+                "mean": {
+                    "description": "Mean",
+                    "type": "number",
+                    "format": "float"
+                },
+                "median": {
+                    "description": "Median",
+                    "type": "number",
+                    "format": "float"
+                },
+                "mostCommonUnitId": {
+                    "description": "Most common Unit ID",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "mostCommonValue": {
+                    "description": "Most common value",
+                    "type": "number",
+                    "format": "float"
+                },
+                "numberOfUniqueDailyValues": {
+                    "description": "Number of unique daily values",
+                    "type": "number",
+                    "format": "float"
+                },
+                "numberOfChanges": {
+                    "description": "Number of changes",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "skewness": {
+                    "description": "Skewness",
+                    "type": "number",
+                    "format": "float"
+                },
+                "kurtosis": {
+                    "description": "Kurtosis",
+                    "type": "number",
+                    "format": "float"
+                },
+                "latitude": {
+                    "description": "Latitude",
+                    "type": "number",
+                    "format": "float"
+                },
+                "longitude": {
+                    "description": "Longitude",
+                    "type": "number",
+                    "format": "float"
+                },
+                "location": {
+                    "description": "Location",
+                    "type": "string"
+                },
+                "experimentStartTime": {
+                    "description": "Earliest measurement start_time to be used in analysis. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "experimentEndTime": {
+                    "description": "Latest measurement start_time to be used in analysis. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "createdAt": {
+                    "description": "When the record was first created. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "updatedAt": {
+                    "description": "When the record in the database was last updated. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "outcome": {
+                    "description": "Outcome variables (those with `outcome` == 1) are variables for which a human would generally want to identify the influencing factors.  These include symptoms of illness, physique, mood, cognitive performance, etc.  Generally correlation calculations are only performed on outcome variables",
+                    "type": "boolean"
+                },
+                "sources": {
+                    "description": "Comma-separated list of source names to limit variables to those sources",
+                    "type": "string"
+                },
+                "earliestSourceTime": {
+                    "description": "Earliest source time",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "latestSourceTime": {
+                    "description": "Latest source time",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "earliestMeasurementTime": {
+                    "description": "Earliest measurement time",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "latestMeasurementTime": {
+                    "description": "Latest measurement time",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "earliestFillingTime": {
+                    "description": "Earliest filling time",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "latestFillingTime": {
+                    "description": "Latest filling time",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "imageUrl": {
+                    "type": "string",
+                    "description": ""
+                },
+                "ionIcon": {
+                    "type": "string",
+                    "description": ""
+                }
+            }
         },
         "UserVariables": {
-          "required": [
-            "user",
-            "variableId"
-          ],
-          "properties": {
-            "user": {
-              "type": "integer",
-              "description": "User ID"
-            },
-            "variableId": {
-              "type": "integer",
-              "description": "Common variable id"
-            },
-            "durationOfAction": {
-              "type": "integer",
-              "description": "The amount of time over which a predictor/stimulus event can exert an observable influence on an outcome variable’s value. For instance, aspirin (stimulus/predictor) typically decreases headache severity for approximately four hours (duration of action) following the onset delay."
-            },
-            "fillingValue": {
-              "type": "integer",
-              "description": "When it comes to analysis to determine the effects of this variable, knowing when it did not occur is as important as knowing when it did occur. For example, if you are tracking a medication, it is important to know when you did not take it, but you do not have to log zero values for all the days when you haven't taken it. Hence, you can specify a filling value (typically 0) to insert whenever data is missing."
-            },
-            "joinWith": {
-              "type": "string",
-              "description": "joinWith"
-            },
-            "maximumAllowedValue": {
-              "type": "number",
-              "format": "float",
-              "description": "The maximum allowed value for measurements. While you can record a value above this maximum, it will be excluded from the correlation analysis."
-            },
-            "minimumAllowedValue": {
-              "type": "number",
-              "format": "float",
-              "description": "The minimum allowed value for measurements. While you can record a value below this minimum, it will be excluded from the correlation analysis."
-            },
-            "onsetDelay": {
-              "type": "integer",
-              "description": "onsetDelay"
-            },
-            "experimentStartTime": {
-              "type": "string",
-              "description": "Earliest measurement startTime that should be used in analysis. For instance, the date when you started tracking something.  Helpful in determining when to start 0 filling since we can assume the absence of a treatment measurement, for instance, indicates that the treatment was not applied rathter than simply not recorded.  Uses ISO string format"
-            },
-            "experimentEndTime": {
-              "type": "string",
-              "description": "Latest measurement startTime that should be used in analysis. For instance, the date when you stopped tracking something.  Helpful in determining when to stop 0 filling since we can assume the absence of a treatment measurement, for instance, indicates that the treatment was not applied rathter than simply not recorded.   Uses ISO string format"
-            },
-            "alias": {
-              "type": "string",
-              "description": "User-defined display alias for variable name"
+            "required": [
+                "user",
+                "variableId"
+            ],
+            "properties": {
+                "user": {
+                    "type": "integer",
+                    "description": "User ID"
+                },
+                "variableId": {
+                    "type": "integer",
+                    "description": "Common variable id"
+                },
+                "durationOfAction": {
+                    "type": "integer",
+                    "description": "The amount of time over which a predictor/stimulus event can exert an observable influence on an outcome variable’s value. For instance, aspirin (stimulus/predictor) typically decreases headache severity for approximately four hours (duration of action) following the onset delay."
+                },
+                "fillingValue": {
+                    "type": "integer",
+                    "description": "When it comes to analysis to determine the effects of this variable, knowing when it did not occur is as important as knowing when it did occur. For example, if you are tracking a medication, it is important to know when you did not take it, but you do not have to log zero values for all the days when you haven't taken it. Hence, you can specify a filling value (typically 0) to insert whenever data is missing."
+                },
+                "joinWith": {
+                    "type": "string",
+                    "description": "joinWith"
+                },
+                "maximumAllowedValue": {
+                    "type": "number",
+                    "format": "float",
+                    "description": "The maximum allowed value for measurements. While you can record a value above this maximum, it will be excluded from the correlation analysis."
+                },
+                "minimumAllowedValue": {
+                    "type": "number",
+                    "format": "float",
+                    "description": "The minimum allowed value for measurements. While you can record a value below this minimum, it will be excluded from the correlation analysis."
+                },
+                "onsetDelay": {
+                    "type": "integer",
+                    "description": "onsetDelay"
+                },
+                "experimentStartTime": {
+                    "type": "string",
+                    "description": "Earliest measurement startTime that should be used in analysis. For instance, the date when you started tracking something.  Helpful in determining when to start 0 filling since we can assume the absence of a treatment measurement, for instance, indicates that the treatment was not applied rathter than simply not recorded.  Uses ISO string format"
+                },
+                "experimentEndTime": {
+                    "type": "string",
+                    "description": "Latest measurement startTime that should be used in analysis. For instance, the date when you stopped tracking something.  Helpful in determining when to stop 0 filling since we can assume the absence of a treatment measurement, for instance, indicates that the treatment was not applied rathter than simply not recorded.   Uses ISO string format"
+                },
+                "alias": {
+                    "type": "string",
+                    "description": "User-defined display alias for variable name"
+                }
             }
-          }
         },
         "ValueObject": {
             "required": [
@@ -7830,8 +7643,8 @@
                     "description": "Last source"
                 },
                 "imageUrl": {
-                  "type": "string",
-                  "description": ""
+                    "type": "string",
+                    "description": ""
                 },
                 "ionIcon": {
                     "type": "string",
