@@ -3,21 +3,11 @@ info:
   description: >
     Welcome to QuantiModo API! QuantiModo makes it easy to retrieve normalized
     user data from a wide array of devices and applications. [Learn about
-    QuantiModo](https://quantimo.do) or contact us at <api@quantimo.do>.
+    QuantiModo](https://quantimo.do) or contact us at api@quantimo.do.
 
-
-
-
-
-
-
-
-
-    Before you get started, you will need to:
-
-    * Sign in/Sign up, and add some data at
-    [https://app.quantimo.do](https://app.quantimo.do) to try out the API for
-    yourself
+    Before you get started, you will need to: - Sign in/Sign up, and add some
+    data at [https://app.quantimo.do](https://app.quantimo.do) to try out the
+    API for yourself
 
     * Create an app to get your client id and secret at
     [https://app.quantimo.do/api/v2/apps](https://app.quantimo.do/api/v2/apps)
@@ -26,65 +16,16 @@ info:
     authentication.  However, client applications must use OAuth2 tokens to
     access the API.
 
+    ## Application Endpoints These endpoints give you access to all authorized
+    users' data for that application.
 
-
-
-
-    ## Application Endpoints
-
-    These endpoints give you access to all authorized users' data for that
-    application.
-
-    ### Getting Application Token
-
-    Make a `POST` request to `/api/v2/oauth/access_token`
-
-
-
-
-
-
-
+    ### Getting Application Token Make a `POST` request to
+    `/api/v2/oauth/access_token`
      * `grant_type` Must be `client_credentials`.
-
-
-
-
-
-
-
-     * `clientId` Your application's clientId.
-
-
-
-
-
-
-
+     * `client_id` Your application's clientId.
      * `client_secret` Your application's client_secret.
-
-
-
-
-
-
-
      * `redirect_uri` Your application's redirect url.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+     
     ## Example Queries
 
     ### Query Options
@@ -92,515 +33,84 @@ info:
     The standard query options for QuantiModo API are as described in the table
     below. These are the available query options in QuantiModo API:
 
-    <table>
-
-
-
-
-
-
-
-        <thead>
-
-
-
-
-
-
-
-            <tr>
-
-
-
-
-
-
-
-                <th>Parameter</th>
-
-
-
-
-
-
-
-                <th>Description</th>
-
-
-
-
-
-
-
-            </tr>
-
-
-
-
-
-
-
-        </thead>
-
-
-
-
-
-
-
-        <tbody>
-
-
-
-
-
-
-
-            <tr>
-
-
-
-
-
-
-
-                <td>limit</td>
-
-
-
-
-
-
-
-                <td>The LIMIT is used to limit the number of results returned.
-
-    So
-
-    if you have 1000 results, but only want to the first 10, you would set this
-    to 10 and offset to 0. The maximum limit is 200 records.</td>
-
-
-
-
-
-
-
-            </tr>
-
-
-
-
-
-
-
-            <tr>
-
-
-
-
-
-
-
-                <td>offset</td>
-
-
-
-
-
-
-
-                <td>Suppose you wanted to show results 11-20. You'd set the
-
-
-
-    offset to 10 and the limit to 10.</td>
-
-
-
-
-
-
-
-            </tr>
-
-
-
-
-
-
-
-            <tr>
-
-
-
-
-
-
-
-                <td>sort</td>
-
-
-
-
-
-
-
-                <td>Sort by given field. If the field is prefixed with '-', it
-
-
-
-    will sort in descending order.</td>
-
-
-
-
-
-
-
-            </tr>
-
-
-
-
-
-
-
-        </tbody>
-
-
-
-
-
-
-
-    </table>
-
-
-
-
-
-
-
-
+    - limit: The LIMIT is used to limit the number of results returned. So if
+    you have 1000 results, but only want to the first 10, you would set this to
+    10 and offset to 0. The maximum limit is 200 records.  
+
+    - offset: Suppose you wanted to show results 11-20. You'd set the offset to
+    10 and the limit to 10.
+
+    - sort: Sort by given field. If the field is prefixed with '-', it will sort
+    in descending order.
 
     ### Pagination Conventions
 
     Since the maximum limit is 200 records, to get more than that you'll have to
     make multiple API calls and page through the results. To retrieve all the
     data, you can iterate through data by using the `limit` and `offset` query
-    parameters.For example, if you want to retrieve data from 61-80 then you can
-    use a query with the following parameters,
+    parameters.
 
-
-
-
-
-
-
-
-
-    `/v2/variables?limit=20&offset=60`
-
-
-
-
-
-
-
-
+    For example, if you want to retrieve data from 61-80 then you can use a
+    query with the following parameters, `/v2/variables?limit=20&offset=60`.
 
     Generally, you'll be retrieving new or updated user data. To avoid
-    unnecessary API calls, you'll want to store your last refresh time locally. 
+    unnecessary API calls, you'll want to store your last refresh time locally.
     Initially, it should be set to 0. Then whenever you make a request to get
     new data, you should limit the returned results to those updated since your
     last refresh by appending append
-
-
-
-
-
-
-
-
-
-    `?lastUpdated=(ge)&quot2013-01-D01T01:01:01&quot`
-
-
-
-
-
-
-
-
-
-    to your request.
-
-
-
-
-
-
-
-
-
-    Also for better pagination, you can get link to the records of first, last,
-    next and previous page from response headers:
-
-    * `Total-Count` - Total number of results for given query
-
-    * `Link-First` - Link to get first page records
-
-    * `Link-Last` - Link to get last page records
-
-    * `Link-Prev` - Link to get previous records set
-
-    * `Link-Next` - Link to get next records set
-
-
-
-
-
-
-
-
-
-    Remember, response header will be only sent when the record set is
-    available. e.g. You will not get a ```Link-Last``` & ```Link-Next``` when
-    you query for the last page.
-
-
-
-
-
-
-
-
+    `?lastUpdated=(ge)&quot2013-01-D01T01:01:01&quot` to your request.
 
     ### Filter operators support
 
-    API supports the following operators with filter parameters:
+    The API supports the following operators with filter parameters:
 
-    <br>
-
-    **Comparison operators**
-
-
-
-
-
-
-
-
-
-    Comparison operators allow you to limit results to those greater than, less
-    than, or equal to a specified value for a specified attribute. These
-    operators can be used with strings, numbers, and dates. The following
-    comparison operators are available:
-
-    * `gt` for `greater than` comparison
+    **Comparison operators** Comparison operators allow you to limit results to
+    those greater than, less than, or equal to a specified value for a specified
+    attribute. These operators can be used with strings, numbers, and dates. The
+    following comparison operators are available: * `gt` for `greater than`
+    comparison
 
     * `ge` for `greater than or equal` comparison
 
     * `lt` for `less than` comparison
 
-    * `le` for `less than or equal` comparison
-
-
-
-
-
-
-
+    * `le` for `less than or equal` comparison  
 
 
     They are included in queries using the following format:
+    `(<operator>)<value>` For example, in order to filter value which is greater
+    than 21, the following query parameter should be used: `?value=(gt)21`  
 
 
+    **Equals/In Operators** It also allows filtering by the exact value of an
+    attribute or by a set of values, depending on the type of value passed as a
+    query parameter. If the value contains commas, the parameter is split on
+    commas and used as array input for `IN` filtering, otherwise the exact match
+    is applied. In order to only show records which have the value 42, the
+    following query should be used: `?value=42` In order to filter records which
+    have value 42 or 43, the following query should be used: `?value=42,43`  
 
 
+    **Like operators** Like operators allow filtering using `LIKE` query. This
+    operator is triggered if exact match operator is used, but value contains
+    `%` sign as the first or last character. In order to filter records which
+    category that start with `Food`, the following query should be used:
+    `?category=Food%`  
 
 
+    **Negation operator** It is possible to get negated results of a query by
+    prefixed the operator with `!`. Some examples: `//filter records except
+    those with value are not 42 or 43` `?value=!42,43` `//filter records with
+    value not greater than 21` `?value=!(ge)21`  
 
 
+    **Multiple constraints for single attribute** It is possible to apply
+    multiple constraints by providing an array of query filters: Filter all
+    records which value is greater than 20.2 and less than 20.3  
 
-    `(<operator>)<value>`
-
-
-
-
-
-
-
-
-
-    For example, in order to filter value which is greater than 21, the
-    following query parameter should be used:
-
-
-
-
-
-
-
-
-
-    `?value=(gt)21`
-
-    <br><br>
-
-    **Equals/In Operators**
-
-
-
-
-
-
-
-
-
-    It also allows filtering by the exact value of an attribute or by a set of
-    values, depending on the type of value passed as a query parameter. If the
-    value contains commas, the parameter is split on commas and used as array
-    input for `IN` filtering, otherwise the exact match is applied. In order to
-    only show records which have the value 42, the following query should be
-    used:
-
-
-
-
-
-
-
-
-
-    `?value=42`
-
-
-
-
-
-
-
-
-
-    In order to filter records which have value 42 or 43, the following query
-    should be used:
-
-
-
-
-
-
-
-
-
-    `?value=42,43`
-
-    <br><br>
-
-    **Like operators**
-
-
-
-
-
-
-
-
-
-    Like operators allow filtering using `LIKE` query. This operator is
-    triggered if exact match operator is used, but value contains `%` sign as
-    the first or last character. In order to filter records which category that
-    start with `Food`, the following query should be used:
-
-
-
-
-
-
-
-
-
-    `?category=Food%`
-
-    <br><br>
-
-    **Negation operator**
-
-
-
-
-
-
-
-
-
-    It is possible to get negated results of a query by prefixed the operator
-    with `!`. Some examples:
-
-
-
-
-
-
-
-
-
-    `//filter records except those with value are not 42 or 43`<br>
-
-    `?value=!42,43`
-
-
-
-
-
-
-
-
-
-    `//filter records with value not greater than 21`<br>
-
-    `?value=!(ge)21`
-
-    <br><br>
-
-    **Multiple constraints for single attribute**
-
-
-
-
-
-
-
-
-
-    It is possible to apply multiple constraints by providing an array of query
-    filters:
-
-
-
-
-
-
-
-
-
-    Filter all records which value is greater than 20.2 and less than 20.3<br>
-
-    `?value[]=(gt)20.2&value[]=(lt)20.3`
-
-
-
-
-
-
-
-
-
-    Filter all records which value is greater than 20.2 and less than 20.3 but
-    not 20.2778<br>
-
-    `?value[]=(gt)20.2&value[]=(lt)20.3&value[]=!20.2778`<br><br>
+    `?value[]=(gt)20.2&value[]=(lt)20.3` Filter all records which value is
+    greater than 20.2 and less than 20.3 but not 20.2778
+    `?value[]=(gt)20.2&value[]=(lt)20.3&value[]=!20.2778`
   version: '2.0'
   title: QuantiModo
   termsOfService: 'https://quantimo.do/terms/'
@@ -614,12 +124,6 @@ consumes:
   - application/json
 produces:
   - application/json
-security:
-  - oauth2:
-      - basic
-      - readmeasurements
-      - writemeasurements
-  - internalApiKey: []
 paths:
   /v1/integration.js:
     get:
@@ -628,25 +132,17 @@ paths:
       summary: Get embeddable connect javascript
       description: |-
         Get embeddable connect javascript. Usage:
-
           - Embedding in applications with popups for 3rd-party authentication
         windows.
-
             Use `qmSetupInPopup` function after connecting `connect.js`.
-
           - Embedding in applications with popups for 3rd-party authentication
         windows.
-
             Requires a selector to block. It will be embedded in this block.
-
             Use `qmSetupOnPage` function after connecting `connect.js`.
-
           - Embedding in mobile applications without popups for 3rd-party
         authentication.
-
             Use `qmSetupOnMobile` function after connecting `connect.js`.
-
-            If using in a Cordova application call  `qmSetupOnIonic` function after connecting `connect.js`. 
+            If using in a Cordova application call  `qmSetupOnIonic` function after connecting `connect.js`.
       produces:
         - application/x-javascript
       parameters:
@@ -677,7 +173,7 @@ paths:
           required: true
           type: string
         - in: query
-          name: user_id
+          name: userId
           description: User's id
           required: false
           type: integer
@@ -711,7 +207,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
-        - oauth2:
+        - quantimodo_oauth2:
             - basic
   '/v1/connectors/{connector}/connect':
     get:
@@ -731,7 +227,7 @@ paths:
           required: false
           type: string
         - in: query
-          name: user_id
+          name: userId
           description: User's id
           required: false
           type: integer
@@ -752,7 +248,7 @@ paths:
         '500':
           description: Error during update. Unsupported response from update().
       security:
-        - oauth2:
+        - quantimodo_oauth2:
             - basic
   '/v1/connectors/{connector}/connectParameter':
     get:
@@ -771,7 +267,7 @@ paths:
           required: false
           type: string
         - in: query
-          name: user_id
+          name: userId
           description: User's id
           required: false
           type: integer
@@ -828,7 +324,7 @@ paths:
         '500':
           description: Error during update. Unsupported response from update().
       security:
-        - oauth2:
+        - quantimodo_oauth2:
             - basic
   '/v1/connectors/{connector}/connectInstructions':
     get:
@@ -847,7 +343,7 @@ paths:
           required: false
           type: string
         - in: query
-          name: user_id
+          name: userId
           description: User's id
           required: false
           type: integer
@@ -883,7 +379,7 @@ paths:
         '500':
           description: Error during update. Unsupported response from update().
       security:
-        - oauth2:
+        - quantimodo_oauth2:
             - basic
   '/v1/connectors/{connector}/disconnect':
     get:
@@ -913,7 +409,7 @@ paths:
         '500':
           description: Error during update. Unsupported response from update().
       security:
-        - oauth2:
+        - quantimodo_oauth2:
             - basic
   '/v1/connectors/{connector}/info':
     get:
@@ -933,7 +429,7 @@ paths:
           required: false
           type: string
         - in: query
-          name: user_id
+          name: userId
           description: User's id
           required: false
           type: integer
@@ -956,7 +452,7 @@ paths:
         '500':
           description: Error during update. Please contact info@quantimo.do.
       security:
-        - oauth2:
+        - quantimodo_oauth2:
             - basic
   '/v1/connectors/{connector}/update':
     get:
@@ -976,7 +472,7 @@ paths:
           required: false
           type: string
         - in: query
-          name: user_id
+          name: userId
           description: User's id
           required: false
           type: integer
@@ -995,7 +491,7 @@ paths:
         '500':
           description: Error during update. Unsupported response from update().
       security:
-        - oauth2:
+        - quantimodo_oauth2:
             - basic
   /v1/correlations:
     get:
@@ -1012,7 +508,7 @@ paths:
           required: false
           type: string
         - in: query
-          name: user_id
+          name: userId
           description: User's id
           required: false
           type: integer
@@ -1104,7 +600,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
-        - oauth2:
+        - quantimodo_oauth2:
             - basic
   /v1/aggregatedCorrelations:
     get:
@@ -1123,7 +619,7 @@ paths:
           required: false
           type: string
         - in: query
-          name: user_id
+          name: userId
           description: User's id
           required: false
           type: integer
@@ -1215,7 +711,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
-        - oauth2:
+        - quantimodo_oauth2:
             - basic
     post:
       tags:
@@ -1231,7 +727,7 @@ paths:
           required: false
           type: string
         - in: query
-          name: user_id
+          name: userId
           description: User's id
           required: false
           type: integer
@@ -1251,7 +747,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
-        - oauth2:
+        - quantimodo_oauth2:
             - basic
   '/v1/public/correlations/search/{search}':
     get:
@@ -1271,7 +767,7 @@ paths:
           required: false
           type: string
         - in: query
-          name: user_id
+          name: userId
           description: User's id
           required: false
           type: integer
@@ -1284,7 +780,7 @@ paths:
           name: effectOrCause
           description: >-
             Setting this to effect indicates that the searched variable is the
-            effect and that the causes of this variable should be returned. 
+            effect and that the causes of this variable should be returned.
             cause indicates that the searched variable is the cause and the
             effects should be returned.
           required: true
@@ -1306,7 +802,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
-        - oauth2:
+        - quantimodo_oauth2:
             - basic
   '/v1/variables/{variableName}/public/causes':
     get:
@@ -1325,7 +821,7 @@ paths:
           required: false
           type: string
         - in: query
-          name: user_id
+          name: userId
           description: User's id
           required: false
           type: integer
@@ -1351,7 +847,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
-        - oauth2:
+        - quantimodo_oauth2:
             - basic
   '/v1/variables/{variableName}/public/effects':
     get:
@@ -1370,7 +866,7 @@ paths:
           required: false
           type: string
         - in: query
-          name: user_id
+          name: userId
           description: User's id
           required: false
           type: integer
@@ -1389,7 +885,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
-        - oauth2:
+        - quantimodo_oauth2:
             - basic
   '/v1/variables/{variableName}/causes':
     get:
@@ -1417,7 +913,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
-        - oauth2:
+        - quantimodo_oauth2:
             - basic
   '/v1/variables/{variableName}/effects':
     get:
@@ -1436,7 +932,7 @@ paths:
           required: false
           type: string
         - in: query
-          name: user_id
+          name: userId
           description: User's id
           required: false
           type: integer
@@ -1462,7 +958,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
-        - oauth2:
+        - quantimodo_oauth2:
             - basic
   '/v1/organizations/{organizationId}/users/{userId}/variables/{variableName}/causes':
     get:
@@ -1483,7 +979,7 @@ paths:
           required: false
           type: string
         - in: query
-          name: user_id
+          name: userId
           description: User's id
           required: false
           type: integer
@@ -1522,7 +1018,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
-        - oauth2:
+        - quantimodo_oauth2:
             - basic
   '/v1/organizations/{organizationId}/users/{userId}/variables/{variableName}/effects':
     get:
@@ -1543,7 +1039,7 @@ paths:
           required: false
           type: string
         - in: query
-          name: user_id
+          name: userId
           description: User's id
           required: false
           type: integer
@@ -1582,7 +1078,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
-        - oauth2:
+        - quantimodo_oauth2:
             - basic
   /v1/measurements:
     get:
@@ -1591,11 +1087,11 @@ paths:
       summary: Get measurements for this user
       description: >-
         Measurements are any value that can be recorded like daily steps, a mood
-        rating, or apples eaten. <br>Supported filter
-        parameters:<br><ul><li><b>value</b> - Value of
+        rating, or apples eaten. Supported filter
+        parameters:<ul><li><b>value</b> - Value of
         measurement</li><li><b>lastUpdated</b> - The time that this measurement
         was created or last updated in the UTC format
-        "YYYY-MM-DDThh:mm:ss"</li></ul><br>
+        "YYYY-MM-DDThh:mm:ss"</li></ul>
       produces:
         - application/json
       parameters:
@@ -1605,7 +1101,7 @@ paths:
           required: false
           type: string
         - in: query
-          name: user_id
+          name: userId
           description: User's id
           required: false
           type: integer
@@ -1709,7 +1205,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
-        - oauth2:
+        - quantimodo_oauth2:
             - basic
     post:
       tags:
@@ -1732,7 +1228,7 @@ paths:
           required: false
           type: string
         - in: query
-          name: user_id
+          name: userId
           description: User's id
           required: false
           type: integer
@@ -1748,7 +1244,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
-        - oauth2:
+        - quantimodo_oauth2:
             - writemeasurements
   /v1/measurements/delete:
     post:
@@ -1773,7 +1269,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
-        - oauth2:
+        - quantimodo_oauth2:
             - basic
   /v1/measurements/update:
     post:
@@ -1800,7 +1296,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
-        - oauth2:
+        - quantimodo_oauth2:
             - basic
   /v2/application/connections:
     get:
@@ -1817,11 +1313,11 @@ paths:
           required: false
           type: string
         - in: query
-          name: user_id
+          name: userId
           description: User's id
           required: false
           type: integer
-        - name: connector_id
+        - name: connectorId
           in: query
           description: >-
             The id for the connector data source for which the connection is
@@ -1857,23 +1353,23 @@ paths:
           description: Indicates if there was an error during the update.
           required: false
           type: string
-        - name: last_successful_updated_at
+        - name: last_successful_updatedAt
           in: query
           description: The time at which the connector was last successfully updated.
           required: false
           type: string
-        - name: created_at
+        - name: createdAt
           in: query
           description: >-
             When the record was first created. Use UTC ISO 8601
-            "YYYY-MM-DDThh:mm:ss"  datetime format 
+            "YYYY-MM-DDThh:mm:ss"  datetime format
           required: false
           type: string
-        - name: updated_at
+        - name: updatedAt
           in: query
           description: >-
             When the record was last updated. Use UTC ISO 8601
-            "YYYY-MM-DDThh:mm:ss"  datetime format 
+            "YYYY-MM-DDThh:mm:ss"  datetime format
           required: false
           type: string
         - name: limit
@@ -1912,92 +1408,6 @@ paths:
                 items:
                   $ref: '#/definitions/Connection'
             type: object
-  /v2/application/credentials:
-    get:
-      tags:
-        - application endpoints
-      summary: Get all Credentials
-      description: Get all Credentials
-      produces:
-        - application/json
-      parameters:
-        - name: access_token
-          in: query
-          description: Application's OAuth2 access token
-          required: false
-          type: string
-        - in: query
-          name: user_id
-          description: User's id
-          required: false
-          type: integer
-        - name: connector_id
-          in: query
-          description: >-
-            The id for the connector data source from which the credential was
-            obtained
-          required: false
-          type: integer
-        - name: attr_key
-          in: query
-          description: 'Attribute name such as token, userid, username, or password'
-          required: false
-          type: string
-        - name: attr_value
-          in: query
-          description: Encrypted value for the attribute specified
-          required: false
-          type: string
-        - name: created_at
-          in: query
-          description: >-
-            When the record was first created. Use UTC ISO 8601
-            "YYYY-MM-DDThh:mm:ss"  datetime format 
-          required: false
-          type: string
-        - name: updated_at
-          in: query
-          description: >-
-            When the record was last updated. Use UTC ISO 8601
-            "YYYY-MM-DDThh:mm:ss"  datetime format 
-          required: false
-          type: string
-        - name: limit
-          in: query
-          description: >-
-            The LIMIT is used to limit the number of results returned. So if you
-            have 1000 results, but only want to the first 10, you would set this
-            to 10 and offset to 0. The maximum limit is 200 records.
-          required: false
-          type: integer
-        - name: offset
-          in: query
-          description: >-
-            OFFSET says to skip that many rows before beginning to return rows
-            to the client. OFFSET 0 is the same as omitting the OFFSET clause.
-            If both OFFSET and LIMIT appear, then OFFSET rows are skipped before
-            starting to count the LIMIT rows that are returned.
-          required: false
-          type: integer
-        - name: sort
-          in: query
-          description: >-
-            Sort by given field. If the field is prefixed with '-', it will sort
-            in descending order.
-          required: false
-          type: string
-      responses:
-        '200':
-          description: successful operation
-          schema:
-            properties:
-              data:
-                type: array
-                items:
-                  $ref: '#/definitions/Credential'
-              success:
-                type: boolean
-            type: object
   /v2/application/measurements:
     get:
       tags:
@@ -2015,30 +1425,30 @@ paths:
           required: false
           type: string
         - in: query
-          name: user_id
+          name: userId
           description: User's id
           required: false
           type: integer
-        - name: client_id
+        - name: clientId
           in: query
           description: >-
             The ID of the client application which originally stored the
             measurement
           required: false
           type: string
-        - name: connector_id
+        - name: connectorId
           in: query
           description: >-
             The id for the connector data source from which the measurement was
             obtained
           required: false
           type: integer
-        - name: variable_id
+        - name: variableId
           in: query
           description: ID of the variable for which we are creating the measurement records
           required: false
           type: integer
-        - name: source_name
+        - name: sourceName
           in: query
           description: Application or device used to record the measurement values
           required: false
@@ -2047,7 +1457,7 @@ paths:
           in: query
           description: >-
             start time for the measurement event. Use UTC ISO 8601
-            "YYYY-MM-DDThh:mm:ss"  datetime format 
+            "YYYY-MM-DDThh:mm:ss"  datetime format
           required: false
           type: string
         - name: value
@@ -2106,18 +1516,18 @@ paths:
             was recorded
           required: false
           type: string
-        - name: created_at
+        - name: createdAt
           in: query
           description: >-
             When the record was first created. Use UTC ISO 8601
-            "YYYY-MM-DDThh:mm:ss"  datetime format 
+            "YYYY-MM-DDThh:mm:ss"  datetime format
           required: false
           type: string
-        - name: updated_at
+        - name: updatedAt
           in: query
           description: >-
             When the record was last updated. Use UTC ISO 8601
-            "YYYY-MM-DDThh:mm:ss"  datetime format 
+            "YYYY-MM-DDThh:mm:ss"  datetime format
           required: false
           type: string
         - name: error
@@ -2168,7 +1578,7 @@ paths:
       summary: Get tracking reminders
       description: >-
         Get the variable id, frequency, and default value for the user tracking
-        reminders 
+        reminders
       produces:
         - application/json
       parameters:
@@ -2178,29 +1588,29 @@ paths:
           required: false
           type: string
         - in: query
-          name: user_id
+          name: userId
           description: User's id
           required: false
           type: integer
-        - name: client_id
+        - name: clientId
           in: query
           description: >-
             The ID of the client application which last created or updated this
             trackingReminder
           required: false
           type: string
-        - name: created_at
+        - name: createdAt
           in: query
           description: >-
             When the record was first created. Use UTC ISO 8601
-            "YYYY-MM-DDThh:mm:ss"  datetime format 
+            "YYYY-MM-DDThh:mm:ss"  datetime format
           required: false
           type: string
-        - name: updated_at
+        - name: updatedAt
           in: query
           description: >-
             When the record was last updated. Use UTC ISO 8601
-            "YYYY-MM-DDThh:mm:ss"  datetime format 
+            "YYYY-MM-DDThh:mm:ss"  datetime format
           required: false
           type: string
         - name: limit
@@ -2254,18 +1664,18 @@ paths:
           required: false
           type: string
         - in: query
-          name: user_id
+          name: userId
           description: User's id
           required: false
           type: integer
-        - name: connector_id
+        - name: connectorId
           in: query
-          description: connector_id
+          description: connectorId
           required: false
           type: integer
-        - name: number_of_measurements
+        - name: numberOfMeasurements
           in: query
-          description: number_of_measurements
+          description: numberOfMeasurements
           required: false
           type: integer
         - name: success
@@ -2278,18 +1688,18 @@ paths:
           description: message
           required: false
           type: string
-        - name: created_at
+        - name: createdAt
           in: query
           description: >-
             When the record was first created. Use UTC ISO 8601
-            "YYYY-MM-DDThh:mm:ss"  datetime format 
+            "YYYY-MM-DDThh:mm:ss"  datetime format
           required: false
           type: string
-        - name: updated_at
+        - name: updatedAt
           in: query
           description: >-
             When the record was last updated. Use UTC ISO 8601
-            "YYYY-MM-DDThh:mm:ss"  datetime format 
+            "YYYY-MM-DDThh:mm:ss"  datetime format
           required: false
           type: string
         - name: limit
@@ -2343,11 +1753,11 @@ paths:
           required: false
           type: string
         - in: query
-          name: user_id
+          name: userId
           description: User's id
           required: false
           type: integer
-        - name: client_id
+        - name: clientId
           in: query
           description: >-
             The ID of the client application which last created or updated this
@@ -2359,7 +1769,7 @@ paths:
           description: ID of the parent variable if this variable has any parent
           required: false
           type: integer
-        - name: variable_id
+        - name: variableId
           in: query
           description: ID of variable
           required: false
@@ -2455,7 +1865,7 @@ paths:
           description: '0 -> No filling, 1 -> Use filling-value'
           required: false
           type: string
-        - name: number_of_measurements
+        - name: numberOfMeasurements
           in: query
           description: Number of measurements
           required: false
@@ -2585,18 +1995,18 @@ paths:
           description: Location
           required: false
           type: string
-        - name: created_at
+        - name: createdAt
           in: query
           description: >-
             When the record was first created. Use UTC ISO 8601
-            "YYYY-MM-DDThh:mm:ss"  datetime format 
+            "YYYY-MM-DDThh:mm:ss"  datetime format
           required: false
           type: string
-        - name: updated_at
+        - name: updatedAt
           in: query
           description: >-
             When the record was last updated. Use UTC ISO 8601
-            "YYYY-MM-DDThh:mm:ss"  datetime format 
+            "YYYY-MM-DDThh:mm:ss"  datetime format
           required: false
           type: string
         - name: outcome
@@ -2626,12 +2036,12 @@ paths:
           description: Latest source time
           required: false
           type: integer
-        - name: earliest_measurement_time
+        - name: earliestMeasurementTime
           in: query
           description: Earliest measurement time
           required: false
           type: integer
-        - name: latest_measurement_time
+        - name: latestMeasurementTime
           in: query
           description: Latest measurement time
           required: false
@@ -2697,7 +2107,7 @@ paths:
           required: false
           type: string
         - in: query
-          name: user_id
+          name: userId
           description: User's id
           required: false
           type: integer
@@ -2755,12 +2165,12 @@ paths:
             in their headache severity (outcome) is approximately 30 minutes.
           required: false
           type: integer
-        - name: outcome_variable_id
+        - name: outcome_variableId
           in: query
           description: Variable ID for the outcome variable
           required: false
           type: integer
-        - name: predictor_variable_id
+        - name: predictor_variableId
           in: query
           description: Variable ID for the predictor variable
           required: false
@@ -2863,11 +2273,11 @@ paths:
           required: false
           type: string
         - in: query
-          name: user_id
+          name: userId
           description: User's id
           required: false
           type: integer
-        - name: variable_id
+        - name: variableId
           in: query
           description: ID of variable
           required: false
@@ -2879,28 +2289,28 @@ paths:
             divided by 60)
           required: false
           type: integer
-        - name: earliest_measurement_time
+        - name: earliestMeasurementTime
           in: query
           description: Earliest measurement time
           required: false
           type: integer
-        - name: latest_measurement_time
+        - name: latestMeasurementTime
           in: query
           description: Latest measurement time
           required: false
           type: integer
-        - name: created_at
+        - name: createdAt
           in: query
           description: >-
             When the record was first created. Use UTC ISO 8601
-            "YYYY-MM-DDThh:mm:ss"  datetime format 
+            "YYYY-MM-DDThh:mm:ss"  datetime format
           required: false
           type: string
-        - name: updated_at
+        - name: updatedAt
           in: query
           description: >-
             When the record was last updated. Use UTC ISO 8601
-            "YYYY-MM-DDThh:mm:ss"  datetime format 
+            "YYYY-MM-DDThh:mm:ss"  datetime format
           required: false
           type: string
         - name: limit
@@ -2954,23 +2364,23 @@ paths:
           required: false
           type: string
         - in: query
-          name: user_id
+          name: userId
           description: User's id
           required: false
           type: integer
-        - name: client_id
+        - name: clientId
           in: query
           description: >-
             The ID of the client application which last created or updated this
             vote
           required: false
           type: string
-        - name: cause_id
+        - name: causeId
           in: query
           description: ID of predictor variable
           required: false
           type: integer
-        - name: effect_id
+        - name: effectId
           in: query
           description: ID of outcome variable
           required: false
@@ -2982,18 +2392,18 @@ paths:
             is no vote.
           required: false
           type: integer
-        - name: created_at
+        - name: createdAt
           in: query
           description: >-
             When the record was first created. Use UTC ISO 8601
-            "YYYY-MM-DDThh:mm:ss"  datetime format 
+            "YYYY-MM-DDThh:mm:ss"  datetime format
           required: false
           type: string
-        - name: updated_at
+        - name: updatedAt
           in: query
           description: >-
             When the record was last updated. Use UTC ISO 8601
-            "YYYY-MM-DDThh:mm:ss"  datetime format 
+            "YYYY-MM-DDThh:mm:ss"  datetime format
           required: false
           type: string
         - name: limit
@@ -3039,11 +2449,11 @@ paths:
       summary: Get daily measurements for this user
       description: >-
         Measurements are any value that can be recorded like daily steps, a mood
-        rating, or apples eaten. <br>Supported filter
-        parameters:<br><ul><li><b>value</b> - Value of
+        rating, or apples eaten. Supported filter
+        parameters:<ul><li><b>value</b> - Value of
         measurement</li><li><b>lastUpdated</b> - The time that this measurement
         was created or last updated in the UTC format
-        "YYYY-MM-DDThh:mm:ss"</li></ul><br>
+        "YYYY-MM-DDThh:mm:ss"</li></ul>
       produces:
         - application/json
       parameters:
@@ -3053,7 +2463,7 @@ paths:
           required: false
           type: string
         - in: query
-          name: user_id
+          name: userId
           description: User's id
           required: false
           type: integer
@@ -3121,7 +2531,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
-        - oauth2:
+        - quantimodo_oauth2:
             - basic
   /v2/measurements/request_csv:
     post:
@@ -3140,7 +2550,7 @@ paths:
           required: false
           type: string
         - in: query
-          name: user_id
+          name: userId
           description: User's id
           required: false
           type: integer
@@ -3169,7 +2579,7 @@ paths:
           required: false
           type: string
         - in: query
-          name: user_id
+          name: userId
           description: User's id
           required: false
           type: integer
@@ -3198,7 +2608,7 @@ paths:
           required: false
           type: string
         - in: query
-          name: user_id
+          name: userId
           description: User's id
           required: false
           type: integer
@@ -3225,7 +2635,7 @@ paths:
           required: false
           type: string
         - in: query
-          name: user_id
+          name: userId
           description: User's id
           required: false
           type: integer
@@ -3266,7 +2676,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
-        - oauth2:
+        - quantimodo_oauth2:
             - basic
   /v1/measurementSources:
     post:
@@ -3285,7 +2695,7 @@ paths:
           required: false
           type: string
         - in: query
-          name: user_id
+          name: userId
           description: User's id
           required: false
           type: integer
@@ -3299,7 +2709,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
-        - oauth2:
+        - quantimodo_oauth2:
             - basic
     get:
       tags:
@@ -3316,7 +2726,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
-        - oauth2:
+        - quantimodo_oauth2:
             - basic
   /v2/oauth/authorize:
     get:
@@ -3331,13 +2741,7 @@ paths:
         to allow a client's application to submit or obtain data from their QM
         account. It will redirect the user to the url provided by the client
         application with the code as a query parameter or error in case of an
-        error.
-
-
-
-
-
-        See the /api/v2/oauth/access_token endpoint for the next steps.
+        error. See the /api/v2/oauth/access_token endpoint for the next steps.
       produces:
         - application/json
       parameters:
@@ -3399,7 +2803,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
-        - oauth2:
+        - quantimodo_oauth2:
             - basic
   /v2/oauth2/access_token:
     get:
@@ -3410,71 +2814,30 @@ paths:
         Client provides authorization token obtained from
         /api/v1/oauth2/authorize to this endpoint and receives an access token.
         Access token can then be used to query different API endpoints of
-        QuantiModo.
-
-        ### Request Access Token
-
-        After user approves your access to the given scope form the
-        https:/app.quantimo.do/v2/oauth2/authorize endpoint, you'll receive an
-        authorization code to request an access token. This time make a `POST`
-        request to `/api/v2/oauth/access_token` with parameters including:
-
-        * `grant_type` Can be `authorization_code` or `refresh_token` since we
-        are getting the `access_token` for the first time we don't have a
-        `refresh_token` so this must be `authorization_code`.
-
-        * `code` Authorization code you received with the previous request.
-
-        * `redirect_uri` Your application's redirect url.
-
-
-
-
-
-
-
-
-
-        ### Refreshing Access Token
-
-        Access tokens expire at some point, to continue using our api you need
-        to refresh them with `refresh_token` you received along with the
-        `access_token`. To do this make a `POST` request to
-        `/api/v2/oauth/access_token` with correct parameters, which are:
-
-        * `grant_type` This time grant type must be `refresh_token` since we
-        have it.
-
-        * `clientId` Your application's client id.
-
-        * `client_secret` Your application's client secret.
-
-        * `refresh_token` The refresh token you received with the
-        `access_token`.
-
-        Every request you make to this endpoint will give you a new refresh
-        token and make the old one expired. So you can keep getting new access
-        tokens with new refresh tokens.
-
-        ### Using Access Token
-
-        Currently we support 2 ways for this, you can't use both at the same
-        time.
-
-        * Adding access token to the request header as `Authorization: Bearer
-        {access_token}`
-
-        * Adding to the url as a query parameter `?access_token={access_token}`
-
-
-
-
-
-
-
-
-
-        You can read more about OAuth2 from [here](http://oauth.net/2/)
+        QuantiModo. ### Request Access Token After user approves your access to
+        the given scope form the https:/app.quantimo.do/v2/oauth2/authorize
+        endpoint, you'll receive an authorization code to request an access
+        token. This time make a `POST` request to `/api/v2/oauth/access_token`
+        with parameters including: * `grant_type` Can be `authorization_code` or
+        `refresh_token` since we are getting the `access_token` for the first
+        time we don't have a `refresh_token` so this must be
+        `authorization_code`. * `code` Authorization code you received with the
+        previous request. * `redirect_uri` Your application's redirect url. ###
+        Refreshing Access Token Access tokens expire at some point, to continue
+        using our api you need to refresh them with `refresh_token` you received
+        along with the `access_token`. To do this make a `POST` request to
+        `/api/v2/oauth/access_token` with correct parameters, which are: *
+        `grant_type` This time grant type must be `refresh_token` since we have
+        it. * `clientId` Your application's client id. * `client_secret` Your
+        application's client secret. * `refresh_token` The refresh token you
+        received with the `access_token`. Every request you make to this
+        endpoint will give you a new refresh token and make the old one expired.
+        So you can keep getting new access tokens with new refresh tokens. ###
+        Using Access Token Currently we support 2 ways for this, you can't use
+        both at the same time. * Adding access token to the request header as
+        `Authorization: Bearer {access_token}` * Adding to the url as a query
+        parameter `?access_token={access_token}` You can read more about OAuth2
+        from [here](http://oauth.net/2/)
       produces:
         - application/json
       parameters:
@@ -3543,7 +2906,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
-        - oauth2:
+        - quantimodo_oauth2:
             - basic
   /v2/auth/social/login:
     get:
@@ -3552,44 +2915,23 @@ paths:
       summary: First Setp in Social Authentication flow with JWT Token
       description: >2-
          Here is the flow for how social authentication works with a JWT Token
-
         1.**Client:** The client needs to open popup with social auth url
         (`https://app/quantimo.do/api/v2/auth/social/login?provider={provider}&redirectUrl={url}`)
         of server with `provider` and `redirectUrl`. (Url should be registered
         with our social apps. Facebook and Twitter are fine with any redirect
         url with the same domain base url but Google needs exact redirect url.)
-
-
-
         2.**Server:** The QM server will redirect user to that provider to get
-        access.
-
-
-
-        3.**Client:** After successful or failed authentication, it will be
-        redirected to given `redirectUrl` with code or error.
-
-
-
-        4.**Client:** The client needs to get that code and needs to send an
-        Ajax request to server at
+        access. 3.**Client:** After successful or failed authentication, it will
+        be redirected to given `redirectUrl` with code or error. 4.**Client:**
+        The client needs to get that code and needs to send an Ajax request to
+        server at
         `https://app.quantimo.do/api/v2/auth/social/authorizeCode?provider={provider}&code={authorizationCode}`
-
-
-
         5.**Server:** The QM server will authorize that code from the social
         connection and will authenticate user and will retrieve user info.
-
-
-
         6.**Server:** The QM server will try to find existing user by unique
         identity. If the user already exists then it will login. Otherwise, it
-        will create new user and will then login.
-
-
-
-        7.**Server:** Once user is found/created, it will return a JWT token for
-        that user in the response.
+        will create new user and will then login. 7.**Server:** Once user is
+        found/created, it will return a JWT token for that user in the response.
       produces:
         - application/json
       parameters:
@@ -3613,7 +2955,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
-        - oauth2:
+        - quantimodo_oauth2:
             - basic
   /v2/auth/social/authorizeCode:
     get:
@@ -3622,44 +2964,23 @@ paths:
       summary: Second Step in Social Authentication flow with JWT Token
       description: >2-
          Here is the flow for how social authentication works with a JWT Token
-
         1.**Client:** The client needs to open popup with social auth url
         (`https://app/quantimo.do/api/v2/auth/social/login?provider={provider}&redirectUrl={url}`)
         of server with `provider` and `redirectUrl`. (Url should be registered
         with our social apps. Facebook is fine with any redirect url with the
-        same domain base url but Google needs exact redirect url.)
-
-
-
-        2.**Server:** The QM server will redirect user to that provider to get
-        access.
-
-
-
+        same domain base url but Google needs exact redirect url.) 2.**Server:**
+        The QM server will redirect user to that provider to get access.
         3.**Client:** After successful or failed authentication, it will be
-        redirected to given `redirectUrl` with code or error.
-
-
-
-        4.**Client:** The client needs to get that code and needs to send an
-        Ajax request to server at
+        redirected to given `redirectUrl` with code or error. 4.**Client:** The
+        client needs to get that code and needs to send an Ajax request to
+        server at
         `https://app.quantimo.do/api/v2/auth/social/authorizeCode?provider={provider}&code={authorizationCode}`
-
-
-
         5.**Server:** The QM server will authorize that code from the social
         connection and will authenticate user and will retrieve user info.
-
-
-
         6.**Server:** The QM server will try to find existing user by unique
         identity. If the user already exists then it will login. Otherwise, it
-        will create new user and will then login.
-
-
-
-        7.**Server:** Once user is found/created, it will return a JWT token for
-        that user in the response.
+        will create new user and will then login. 7.**Server:** Once user is
+        found/created, it will return a JWT token for that user in the response.
       produces:
         - application/json
       parameters:
@@ -3679,49 +3000,30 @@ paths:
         '401':
           description: Not Authenticated
       security:
-        - oauth2:
+        - quantimodo_oauth2:
             - basic
   /v2/auth/social/authorizeToken:
     get:
       tags:
         - authentication
       summary: Native Social Authentication
-      description: >2-
-             
+      description: >-
         If you are using native authentication via Facebook or Google SDKs then
-        you should use the following flow.
-
-
-
-        1.**Client:** Using native authentication via your native mobile app,
-        get an access token using the instructions provided by the Facebook SDK
+        you should use the following flow. 1.**Client:** Using native
+        authentication via your native mobile app, get an access token using the
+        instructions provided by the Facebook SDK
         (https://developers.facebook.com/docs/facebook-login) or Google
-        (https://developers.google.com/identity/protocols/OAuth2)
-
-
-
-        2.**Client:** Send an Ajax request with provider name and access token
-        on
+        (https://developers.google.com/identity/protocols/OAuth2) 2.**Client:**
+        Send an Ajax request with provider name and access token on
         `https://app.quantimo.do/api/v2/auth/social/authorizeToken?provider={provider}&accessToken={accessToken}&refreshToken={refreshToken}`
-        (`refreshToken` is optional)
-
-
-
-        3.**Server:** Server will try to get user info and will find existing
-        user by unique identity. If user exist then it will do a login for that
-        or it will create new user and will do login
-
-
-
+        (`refreshToken` is optional) 3.**Server:** Server will try to get user
+        info and will find existing user by unique identity. If user exist then
+        it will do a login for that or it will create new user and will do login
         4.**Server:** Once user is found/created, it will return a JWT token for
-        that user in response
-
-
-
-        5.**Client:** After getting the JWT token to get a QM access token
-        follow these steps and include your JWT token in them as a header
-        (Authorization: Bearer **{yourJWThere}**) or as a url parameter
-        (https://app.quantimo.do/api/v2/oauth/authorize?token={yourJWThere}). 
+        that user in response 5.**Client:** After getting the JWT token to get a
+        QM access token follow these steps and include your JWT token in them as
+        a header (Authorization: Bearer **{yourJWThere}**) or as a url parameter
+        (https://app.quantimo.do/api/v2/oauth/authorize?token={yourJWThere}).
       produces:
         - application/json
       parameters:
@@ -3746,7 +3048,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
-        - oauth2:
+        - quantimodo_oauth2:
             - basic
   '/v1/organizations/{organizationId}/users':
     post:
@@ -3764,7 +3066,7 @@ paths:
           required: false
           type: string
         - in: query
-          name: user_id
+          name: userId
           description: User's id
           required: false
           type: integer
@@ -3813,7 +3115,7 @@ paths:
           required: false
           type: string
         - in: query
-          name: user_id
+          name: userId
           description: User's id
           required: false
           type: integer
@@ -3914,7 +3216,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
-        - oauth2:
+        - quantimodo_oauth2:
             - basic
   /v1/pairsCsv:
     get:
@@ -3933,7 +3235,7 @@ paths:
           required: false
           type: string
         - in: query
-          name: user_id
+          name: userId
           description: User's id
           required: false
           type: integer
@@ -4034,7 +3336,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
-        - oauth2:
+        - quantimodo_oauth2:
             - basic
   /v1/trackingReminders:
     get:
@@ -4043,7 +3345,7 @@ paths:
       summary: Get repeating tracking reminder settings
       description: >-
         Users can be reminded to track certain variables at a specified
-        frequency with a default value.  
+        frequency with a default value.
       produces:
         - application/json
       parameters:
@@ -4053,7 +3355,7 @@ paths:
           required: false
           type: string
         - in: query
-          name: user_id
+          name: userId
           description: User's id
           required: false
           type: integer
@@ -4067,7 +3369,7 @@ paths:
           description: >-
             When the record was first created. Use UTC ISO 8601
             "YYYY-MM-DDThh:mm:ss"  datetime format. Time zone should be UTC and
-            not local. 
+            not local.
           required: false
           type: string
         - name: updatedAt
@@ -4075,7 +3377,7 @@ paths:
           description: >-
             When the record was last updated. Use UTC ISO 8601
             "YYYY-MM-DDThh:mm:ss"  datetime format. Time zone should be UTC and
-            not local. 
+            not local.
           required: false
           type: string
         - name: limit
@@ -4133,7 +3435,7 @@ paths:
           required: false
           type: string
         - in: query
-          name: user_id
+          name: userId
           description: User's id
           required: false
           type: integer
@@ -4171,7 +3473,7 @@ paths:
           required: false
           type: string
         - in: query
-          name: user_id
+          name: userId
           description: User's id
           required: false
           type: integer
@@ -4189,7 +3491,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
-        - oauth2:
+        - quantimodo_oauth2:
             - basic
   /v1/trackingReminderNotifications:
     get:
@@ -4206,7 +3508,7 @@ paths:
           required: false
           type: string
         - in: query
-          name: user_id
+          name: userId
           description: User's id
           required: false
           type: integer
@@ -4222,7 +3524,7 @@ paths:
           description: >-
             When the record was first created. Use UTC ISO 8601
             "YYYY-MM-DDThh:mm:ss"  datetime format. Time zone should be UTC and
-            not local. 
+            not local.
           required: false
           type: string
         - name: updatedAt
@@ -4230,7 +3532,7 @@ paths:
           description: >-
             When the record was last updated. Use UTC ISO 8601
             "YYYY-MM-DDThh:mm:ss"  datetime format. Time zone should be UTC and
-            not local. 
+            not local.
           required: false
           type: string
         - name: limit
@@ -4287,7 +3589,7 @@ paths:
           required: false
           type: string
         - in: query
-          name: user_id
+          name: userId
           description: User's id
           required: false
           type: integer
@@ -4305,7 +3607,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
-        - oauth2:
+        - quantimodo_oauth2:
             - basic
   /v1/trackingReminderNotifications/skip:
     post:
@@ -4322,7 +3624,7 @@ paths:
           required: false
           type: string
         - in: query
-          name: user_id
+          name: userId
           description: User's id
           required: false
           type: integer
@@ -4340,7 +3642,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
-        - oauth2:
+        - quantimodo_oauth2:
             - basic
   /v1/trackingReminderNotifications/track:
     post:
@@ -4359,7 +3661,7 @@ paths:
           required: false
           type: string
         - in: query
-          name: user_id
+          name: userId
           description: User's id
           required: false
           type: integer
@@ -4377,7 +3679,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
-        - oauth2:
+        - quantimodo_oauth2:
             - basic
   /v1/units:
     get:
@@ -4394,7 +3696,7 @@ paths:
           required: false
           type: string
         - in: query
-          name: user_id
+          name: userId
           description: User's id
           required: false
           type: integer
@@ -4432,7 +3734,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
-        - oauth2:
+        - quantimodo_oauth2:
             - basic
   /v1/unitCategories:
     get:
@@ -4453,7 +3755,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
-        - oauth2:
+        - quantimodo_oauth2:
             - basic
   /v1/unitsVariable:
     get:
@@ -4470,7 +3772,7 @@ paths:
           required: false
           type: string
         - in: query
-          name: user_id
+          name: userId
           description: User's id
           required: false
           type: integer
@@ -4504,7 +3806,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
-        - oauth2:
+        - quantimodo_oauth2:
             - basic
   /v1/user/me:
     get:
@@ -4522,7 +3824,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
-        - oauth2:
+        - quantimodo_oauth2:
             - basic
   /v1/userTags:
     post:
@@ -4544,7 +3846,7 @@ paths:
           required: false
           type: string
         - in: query
-          name: user_id
+          name: userId
           description: User's id
           required: false
           type: integer
@@ -4562,7 +3864,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
-        - oauth2:
+        - quantimodo_oauth2:
             - basic
   /v1/userTags/delete:
     post:
@@ -4595,7 +3897,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
-        - oauth2:
+        - quantimodo_oauth2:
             - basic
   /v1/variables:
     post:
@@ -4612,7 +3914,7 @@ paths:
           required: false
           type: string
         - in: query
-          name: user_id
+          name: userId
           description: User's id
           required: false
           type: integer
@@ -4630,7 +3932,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
-        - oauth2:
+        - quantimodo_oauth2:
             - basic
     get:
       tags:
@@ -4649,18 +3951,13 @@ paths:
           required: false
           type: string
         - in: query
-          name: user_id
+          name: userId
           description: User's id
           required: false
           type: integer
         - in: query
           name: id
           description: Common variable id
-          required: false
-          type: integer
-        - in: query
-          name: userId
-          description: User id
           required: false
           type: integer
         - in: query
@@ -4742,9 +4039,8 @@ paths:
         '401':
           description: Not Authenticated
       security:
-        - oauth2:
+        - quantimodo_oauth2:
             - basic
-        - basicAuth: []
   '/v1/variables/{variableName}':
     get:
       tags:
@@ -4763,7 +4059,7 @@ paths:
           required: false
           type: string
         - in: query
-          name: user_id
+          name: userId
           description: User's id
           required: false
           type: integer
@@ -4780,7 +4076,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
-        - oauth2:
+        - quantimodo_oauth2:
             - basic
   /v1/public/variables:
     get:
@@ -4801,18 +4097,13 @@ paths:
           required: false
           type: string
         - in: query
-          name: user_id
+          name: userId
           description: User's id
           required: false
           type: integer
         - in: query
           name: id
           description: Common variable id
-          required: false
-          type: integer
-        - in: query
-          name: userId
-          description: User id
           required: false
           type: integer
         - in: query
@@ -4894,7 +4185,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
-        - oauth2:
+        - quantimodo_oauth2:
             - basic
   '/v1/public/variables/search/{search}':
     get:
@@ -4905,9 +4196,8 @@ paths:
         Get top 5 PUBLIC variables with the most correlations containing the
         entered search characters. For example, search for 'mood' as an effect.
         Since 'Overall Mood' has a lot of correlations with other variables, it
-        should be in the autocomplete list.<br>Supported filter
-        parameters:<br><ul><li><b>category</b> - Category of
-        Variable</li></ul><br>
+        should be in the autocomplete list.Supported filter
+        parameters:<ul><li><b>category</b> - Category of Variable</li></ul>
       produces:
         - application/json
       parameters:
@@ -4922,7 +4212,7 @@ paths:
           required: false
           type: string
         - in: query
-          name: user_id
+          name: userId
           description: User's id
           required: false
           type: integer
@@ -4946,7 +4236,7 @@ paths:
         - in: query
           name: effectOrCause
           description: >-
-            Indicate if you only want variables that have user correlations. 
+            Indicate if you only want variables that have user correlations.
             Possible values are effect and cause.
           required: false
           type: string
@@ -4987,7 +4277,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
-        - oauth2:
+        - quantimodo_oauth2:
             - basic
   '/v1/variables/search/{search}':
     get:
@@ -5014,7 +4304,7 @@ paths:
           required: false
           type: string
         - in: query
-          name: user_id
+          name: userId
           description: User's id
           required: false
           type: integer
@@ -5052,7 +4342,7 @@ paths:
         - in: query
           name: effectOrCause
           description: >-
-            Indicate if you only want variables that have user correlations. 
+            Indicate if you only want variables that have user correlations.
             Possible values are effect and cause.
           required: false
           type: string
@@ -5088,7 +4378,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
-        - oauth2:
+        - quantimodo_oauth2:
             - basic
   /v1/userVariables:
     post:
@@ -5120,7 +4410,7 @@ paths:
         '404':
           description: Unknown target user ID
       security:
-        - oauth2:
+        - quantimodo_oauth2:
             - basic
   /v1/userVariables/delete:
     post:
@@ -5147,7 +4437,7 @@ paths:
         '404':
           description: Unknown target user ID
       security:
-        - oauth2:
+        - quantimodo_oauth2:
             - basic
   /v1/userVariables/reset:
     post:
@@ -5174,7 +4464,7 @@ paths:
         '404':
           description: Unknown target user ID
       security:
-        - oauth2:
+        - quantimodo_oauth2:
             - basic
   /v1/variableCategories:
     get:
@@ -5198,7 +4488,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
-        - oauth2:
+        - quantimodo_oauth2:
             - basic
   /v1/votes:
     post:
@@ -5222,7 +4512,7 @@ paths:
           required: false
           type: string
         - in: query
-          name: user_id
+          name: userId
           description: User's id
           required: false
           type: integer
@@ -5240,7 +4530,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
-        - oauth2:
+        - quantimodo_oauth2:
             - basic
   /v1/votes/delete:
     post:
@@ -5258,7 +4548,7 @@ paths:
           required: false
           type: string
         - in: query
-          name: user_id
+          name: userId
           description: User's id
           required: false
           type: integer
@@ -5278,7 +4568,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
-        - oauth2:
+        - quantimodo_oauth2:
             - basic
 definitions:
   CommonResponse:
@@ -5446,7 +4736,7 @@ definitions:
         type: string
         description: >-
           ORIGINAL variable name of the cause variable for which the user
-          desires correlations.        
+          desires correlations.
       causeVariableCategoryName:
         type: string
         description: Variable category of the cause variable.
@@ -5477,7 +4767,7 @@ definitions:
         type: string
         description: >-
           ORIGINAL variable name of the cause variable for which the user
-          desires correlations.        
+          desires correlations.
       correlationCoefficient:
         type: number
         description: Pearson correlation coefficient between cause and effect measurements
@@ -5519,12 +4809,12 @@ definitions:
         type: string
         description: >-
           Magnitude of the effects of a cause indicating whether it's
-          practically meaningful.          
+          practically meaningful.
       effectVariableId:
         type: string
         description: >-
           Magnitude of the effects of a cause indicating whether it's
-          practically meaningful.          
+          practically meaningful.
       effectVariableName:
         type: string
         description: >-
@@ -5641,7 +4931,7 @@ definitions:
         type: number
         description: >-
           cause value that predicts an above average effect value (in default
-          unit for cause variable) 
+          unit for cause variable)
       valuePredictingHighOutcomeExplanation:
         type: string
         description: 'Overall Mood, on average, 34% HIGHER after around 3.98mg Remeron'
@@ -5649,13 +4939,13 @@ definitions:
         type: number
         description: >-
           cause value that predicts a below average effect value (in default
-          unit for cause variable) 
+          unit for cause variable)
       valuePredictingLowOutcomeExplanation:
         type: string
         description: 'Overall Mood, on average, 4% LOWER after around 0mg Remeron'
   Connection:
     required:
-      - connector_id
+      - connectorId
     properties:
       id:
         description: id
@@ -5693,38 +4983,6 @@ definitions:
         description: The time at which the connector was last successfully updated.
         type: string
         format: date-time
-      createdAt:
-        description: >-
-          When the record was first created. Use UTC ISO 8601
-          "YYYY-MM-DDThh:mm:ss"  datetime format
-        type: string
-        format: date-time
-      updatedAt:
-        description: >-
-          When the record in the database was last updated. Use UTC ISO 8601
-          "YYYY-MM-DDThh:mm:ss"  datetime format
-        type: string
-        format: date-time
-  Credential:
-    required:
-      - connector_id
-      - attr_key
-      - attr_value
-    properties:
-      userId:
-        description: ID of user that owns this credential
-        type: integer
-      connectorId:
-        description: >-
-          The id for the connector data source from which the credential was
-          obtained
-        type: integer
-      attrKey:
-        description: 'Attribute name such as token, userid, username, or password'
-        type: string
-      attrValue:
-        description: Encrypted value for the attribute specified
-        type: string
       createdAt:
         description: >-
           When the record was first created. Use UTC ISO 8601
@@ -5789,7 +5047,7 @@ definitions:
           - MEAN
           - SUM
         description: >-
-          Way to aggregate measurements over time. Options are "MEAN" or "SUM". 
+          Way to aggregate measurements over time. Options are "MEAN" or "SUM".
           SUM should be used for things like minutes of exercise.  If you use
           MEAN for exercise, then a person might exercise more minutes in one
           day but add separate measurements that were smaller.  So when we are
@@ -5803,7 +5061,7 @@ definitions:
     required:
       - variableName
       - sourceName
-      - startTime
+      - startTimeString
       - value
       - unitAbbreviatedName
     properties:
@@ -5817,7 +5075,7 @@ definitions:
         type: string
         description: >-
           Start Time for the measurement event in UTC ISO 8601
-          "YYYY-MM-DDThh:mm:ss" 
+          "YYYY-MM-DDThh:mm:ss"
       startTimeEpoch:
         type: integer
         description: >-
@@ -6345,8 +5603,8 @@ definitions:
       - confidence_score
       - direction
       - duration_of_action
-      - outcome_variable_id
-      - predictor_variable_id
+      - outcome_variableId
+      - predictor_variableId
       - predictor_unit_id
       - sinn_rank
       - strength_level
@@ -6398,11 +5656,11 @@ definitions:
           severity (outcome) is approximately 30 minutes.
         type: integer
         format: int32
-      outcome_variable_id:
+      outcome_variableId:
         description: Variable ID for the outcome variable
         type: integer
         format: int32
-      predictor_variable_id:
+      predictor_variableId:
         description: Variable ID for the predictor variable
         type: integer
         format: int32
@@ -6428,8 +5686,8 @@ definitions:
           appears to have on the outcome.
         type: number
         format: float
-      user_id:
-        description: user_id
+      userId:
+        description: userId
         type: integer
         format: int32
       vote:
@@ -6449,9 +5707,9 @@ definitions:
         format: float
   Update:
     required:
-      - user_id
-      - connector_id
-      - number_of_measurements
+      - userId
+      - connectorId
+      - numberOfMeasurements
       - success
       - message
     properties:
@@ -6460,15 +5718,15 @@ definitions:
         type: integer
         format: int32
       userId:
-        description: user_id
+        description: userId
         type: integer
         format: int32
       connectorId:
-        description: connector_id
+        description: connectorId
         type: integer
         format: int32
       numberOfMeasurements:
-        description: number_of_measurements
+        description: numberOfMeasurements
         type: integer
         format: int32
       success:
@@ -6491,7 +5749,7 @@ definitions:
         format: date-time
   UserVariable:
     required:
-      - variable_id
+      - variableId
     properties:
       parentId:
         description: ID of the parent variable if this variable has any parent
@@ -6502,7 +5760,7 @@ definitions:
         type: integer
         format: int32
       clientId:
-        description: client_id
+        description: clientId
         type: string
       variableId:
         description: ID of variable
@@ -6713,7 +5971,7 @@ definitions:
       outcome:
         description: >-
           Outcome variables (those with `outcome` == 1) are variables for which
-          a human would generally want to identify the influencing factors. 
+          a human would generally want to identify the influencing factors.
           These include symptoms of illness, physique, mood, cognitive
           performance, etc.  Generally correlation calculations are only
           performed on outcome variables
@@ -6912,7 +6170,7 @@ definitions:
           - MEAN
           - SUM
         description: >-
-          Way to aggregate measurements over time. Options are "MEAN" or "SUM". 
+          Way to aggregate measurements over time. Options are "MEAN" or "SUM".
           SUM should be used for things like minutes of exercise.  If you use
           MEAN for exercise, then a person might exercise more minutes in one
           day but add separate measurements that were smaller.  So when we are
@@ -6989,7 +6247,7 @@ definitions:
         type: integer
         description: >-
           Outcome variables (those with `outcome` == 1) are variables for which
-          a human would generally want to identify the influencing factors. 
+          a human would generally want to identify the influencing factors.
           These include symptoms of illness, physique, mood, cognitive
           performance, etc.  Generally correlation calculations are only
           performed on outcome variables.
@@ -7059,7 +6317,7 @@ definitions:
           - MEAN
           - SUM
         description: >-
-          Way to aggregate measurements over time. Options are "MEAN" or "SUM". 
+          Way to aggregate measurements over time. Options are "MEAN" or "SUM".
           SUM should be used for things like minutes of exercise.  If you use
           MEAN for exercise, then a person might exercise more minutes in one
           day but add separate measurements that were smaller.  So when we are
@@ -7087,10 +6345,10 @@ definitions:
         description: Effect variable name for the correlation to which the vote pertains
   Vote:
     required:
-      - client_id
-      - user_id
-      - cause_id
-      - effect_id
+      - clientId
+      - userId
+      - causeId
+      - effectId
       - value
     properties:
       id:
@@ -7098,7 +6356,7 @@ definitions:
         type: integer
         format: int32
       clientId:
-        description: client_id
+        description: clientId
         type: string
       userId:
         description: ID of User
@@ -7130,21 +6388,21 @@ definitions:
         format: date-time
   VariableUserSource:
     required:
-      - variable_id
-      - source_name
+      - variableId
+      - sourceName
       - timestamp
-      - earliest_measurement_time
-      - latest_measurement_time
+      - earliestMeasurementTime
+      - latestMeasurementTime
     properties:
-      user_id:
+      userId:
         description: ID of User
         type: integer
         format: int32
-      variable_id:
+      variableId:
         description: ID of variable
         type: integer
         format: int32
-      source_name:
+      sourceName:
         description: source
         type: string
       timestamp:
@@ -7153,21 +6411,21 @@ definitions:
           divided by 60)
         type: integer
         format: int32
-      earliest_measurement_time:
+      earliestMeasurementTime:
         description: Earliest measurement time
         type: integer
         format: int32
-      latest_measurement_time:
+      latestMeasurementTime:
         description: Latest measurement time
         type: integer
         format: int32
-      created_at:
+      createdAt:
         description: >-
           When the record was first created. Use UTC ISO 8601
           "YYYY-MM-DDThh:mm:ss"  datetime format
         type: string
         format: date-time
-      updated_at:
+      updatedAt:
         description: >-
           When the record in the database was last updated. Use UTC ISO 8601
           "YYYY-MM-DDThh:mm:ss"  datetime format
@@ -7176,29 +6434,14 @@ definitions:
 securityDefinitions:
   quantimodo_oauth2:
     type: oauth2
+    authorizationUrl: 'https://app.quantimo.do/api/v2/oauth/authorize'
+    tokenUrl: 'https://app.quantimo.do/api/v2/oauth/token'
     flow: accessCode
-    authorizationUrl: /api/v2/oauth/authorize
-    tokenUrl: /api/v2/oauth/access_token
     scopes:
       basic: 'Allows you to read user info (displayname, email, etc).'
       readmeasurements: Allows one to read a user's data
       writemeasurements: Allows you to write user data
-  basicAuth:
-    type: basic
-    description: HTTP Basic Authentication. Works over `HTTPS`
-  oauth2:
-    type: oauth2
-    scopes:
-      basic: Basic authentication
-      readmeasurements: >-
-        Grants read access to measurements and variables. Allows the client app
-        to obtain the user's data.
-      writemeasurements: >-
-        Grants write access to measurements and variables. Allows the client app
-        to store user data.
-    flow: implicit
-    authorizationUrl: 'https://app.quantimo.do/api/v1/oauth2/authorize'
-  internalApiKey:
+  api_key:
     type: apiKey
-    in: header
     name: api_key
+    in: header
