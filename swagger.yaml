@@ -20,7 +20,7 @@ info:
     authentication.  However, client applications must use OAuth2 tokens to
     access the API.
 
-    ## Application Endpoints These endpoints give you access to all authorized
+    ## Application Endpoints  These endpoints give you access to all authorized
     users' data for that application.
 
     ### Getting Application Token Make a `POST` request to
@@ -34,8 +34,8 @@ info:
 
     ### Query Options
 
-    The standard query options for QuantiModo API are as described in the table
-    below. These are the available query options in QuantiModo API:
+    The standard query options for QuantiModo API are as described below. These
+    are the available query options in QuantiModo API:
 
     - limit: The LIMIT is used to limit the number of results returned. So if
     you have 1000 results, but only want to the first 10, you would set this to
@@ -52,10 +52,12 @@ info:
     Since the maximum limit is 200 records, to get more than that you'll have to
     make multiple API calls and page through the results. To retrieve all the
     data, you can iterate through data by using the `limit` and `offset` query
-    parameters.
+    parameters.  
+
 
     For example, if you want to retrieve data from 61-80 then you can use a
-    query with the following parameters, `/v2/variables?limit=20&offset=60`.
+    query with the following parameters, `/v2/variables?limit=20&offset=60`.  
+
 
     Generally, you'll be retrieving new or updated user data. To avoid
     unnecessary API calls, you'll want to store your last refresh time locally.
@@ -68,10 +70,15 @@ info:
 
     The API supports the following operators with filter parameters:
 
-    **Comparison operators** Comparison operators allow you to limit results to
-    those greater than, less than, or equal to a specified value for a specified
-    attribute. These operators can be used with strings, numbers, and dates. The
-    following comparison operators are available:  
+
+    **Comparison operators** 
+
+
+    Comparison operators allow you to limit results to those greater than, less
+    than, or equal to specified value for a specifiedattribute. These operators
+    can be used with strings, numbers, and dates. 
+
+    The following comparison operators are available:  
 
     * `gt` for `greater than` comparison
 
@@ -88,6 +95,7 @@ info:
     For example, in order to filter value which is greater than 21, the
     following query parameter should be used: `?value=(gt)21`  
 
+
     **Equals/In Operators**  
      
     It also allows filtering by the exact value of an attribute or by a set of
@@ -97,8 +105,11 @@ info:
 
 
     In order to only show records which have the value 42, the following query
-    should be used: `?value=42` In order to filter records which have value 42
-    or 43, the following query should be used: `?value=42,43`  
+    should be used: `?value=42` 
+
+
+    In order to filter records which have value 42 or 43, the following query
+    should be used: `?value=42,43`  
 
 
     **Like operators**   
@@ -106,29 +117,44 @@ info:
 
     Like operators allow filtering using `LIKE` query. This operator is
     triggered if exact match operator is used, but value contains `%` sign as
-    the first or last character. In order to filter records which category that
-    start with `Food`, the following query should be used: `?category=Food%`  
+    the first or last character. 
+
+    In order to filter records which category that start with `Food`, the
+    following query should be used: `?category=Food%`  
 
 
     **Negation operator**    
 
 
     It is possible to get negated results of a query by prefixed the operator
-    with `!`. Some examples: `//filter records except those with value are not
-    42 or 43` `?value=!42,43` `//filter records with value not greater than 21`
-    `?value=!(ge)21`  
+    with `!`. 
+
+    Some examples: 
+
+    filter records except those with value are not 42 or 43: `?value=!42,43` 
+
+
+    filter records with value not greater than 21: `?value=!(ge)21`  
 
 
     **Multiple constraints for single attribute**    
 
 
     It is possible to apply multiple constraints by providing an array of query
-    filters. To filter all records which value is greater than 20.2 and less
-    than 20.3:   `?value[]=(gt)20.2&value[]=(lt)20.3`   
+    filters. 
+
+
+    To filter all records which value is greater than 20.2 and less than 20.3: 
+
+
+    `?value[]=(gt)20.2&value[]=(lt)20.3`   
 
 
     Filter all records which value is greater than 20.2 and less than 20.3 but
-    not 20.2778 `?value[]=(gt)20.2&value[]=(lt)20.3&value[]=!20.2778`
+    not 20.2778 
+
+
+    `?value[]=(gt)20.2&value[]=(lt)20.3&value[]=!20.2778`
   version: '2.0'
   title: QuantiModo
   termsOfService: 'https://quantimo.do/terms/'
