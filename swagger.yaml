@@ -251,6 +251,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
+        - access_token: []
         - quantimodo_oauth2:
             - basic
   '/v1/connectors/{connector}/connect':
@@ -292,6 +293,7 @@ paths:
         '500':
           description: Error during update. Unsupported response from update().
       security:
+        - access_token: []
         - quantimodo_oauth2:
             - basic
   '/v1/connectors/{connector}/connectParameter':
@@ -368,6 +370,7 @@ paths:
         '500':
           description: Error during update. Unsupported response from update().
       security:
+        - access_token: []
         - quantimodo_oauth2:
             - basic
   '/v1/connectors/{connector}/connectInstructions':
@@ -423,6 +426,7 @@ paths:
         '500':
           description: Error during update. Unsupported response from update().
       security:
+        - access_token: []
         - quantimodo_oauth2:
             - basic
   '/v1/connectors/{connector}/disconnect':
@@ -453,6 +457,7 @@ paths:
         '500':
           description: Error during update. Unsupported response from update().
       security:
+        - access_token: []
         - quantimodo_oauth2:
             - basic
   '/v1/connectors/{connector}/info':
@@ -496,6 +501,7 @@ paths:
         '500':
           description: Error during update. Please contact info@quantimo.do.
       security:
+        - access_token: []
         - quantimodo_oauth2:
             - basic
   '/v1/connectors/{connector}/update':
@@ -535,6 +541,7 @@ paths:
         '500':
           description: Error during update. Unsupported response from update().
       security:
+        - access_token: []
         - quantimodo_oauth2:
             - basic
   /v1/correlations:
@@ -644,6 +651,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
+        - access_token: []
         - quantimodo_oauth2:
             - basic
   /v1/aggregatedCorrelations:
@@ -755,6 +763,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
+        - access_token: []
         - quantimodo_oauth2:
             - basic
     post:
@@ -791,6 +800,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
+        - access_token: []
         - quantimodo_oauth2:
             - basic
   '/v1/public/correlations/search/{search}':
@@ -846,6 +856,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
+        - access_token: []
         - quantimodo_oauth2:
             - basic
   '/v1/variables/{variableName}/public/causes':
@@ -891,6 +902,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
+        - access_token: []
         - quantimodo_oauth2:
             - basic
   '/v1/variables/{variableName}/public/effects':
@@ -929,6 +941,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
+        - access_token: []
         - quantimodo_oauth2:
             - basic
   '/v1/variables/{variableName}/causes':
@@ -957,6 +970,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
+        - access_token: []
         - quantimodo_oauth2:
             - basic
   '/v1/variables/{variableName}/effects':
@@ -1002,6 +1016,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
+        - access_token: []
         - quantimodo_oauth2:
             - basic
   '/v1/organizations/{organizationId}/users/{userId}/variables/{variableName}/causes':
@@ -1062,6 +1077,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
+        - access_token: []
         - quantimodo_oauth2:
             - basic
   '/v1/organizations/{organizationId}/users/{userId}/variables/{variableName}/effects':
@@ -1122,6 +1138,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
+        - access_token: []
         - quantimodo_oauth2:
             - basic
   /v1/measurements:
@@ -1250,7 +1267,8 @@ paths:
           description: Not Authenticated
       security:
         - quantimodo_oauth2:
-            - basic
+            - readmeasurements
+        - access_token: []
     post:
       tags:
         - measurements
@@ -1288,6 +1306,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
+        - access_token: []
         - quantimodo_oauth2:
             - writemeasurements
   /v1/measurements/delete:
@@ -1313,6 +1332,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
+        - access_token: []
         - quantimodo_oauth2:
             - basic
   /v1/measurements/update:
@@ -1340,6 +1360,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
+        - access_token: []
         - quantimodo_oauth2:
             - basic
   /v2/application/connections:
@@ -2575,6 +2596,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
+        - access_token: []
         - quantimodo_oauth2:
             - basic
   /v2/measurements/request_csv:
@@ -2604,6 +2626,7 @@ paths:
           schema:
             type: integer
       security:
+        - access_token: []
         - quantimodo_oauth2:
             - basic
   /v2/measurements/request_xls:
@@ -2633,6 +2656,7 @@ paths:
           schema:
             type: integer
       security:
+        - access_token: []
         - quantimodo_oauth2:
             - basic
   /v2/measurements/request_pdf:
@@ -2662,6 +2686,7 @@ paths:
           schema:
             type: integer
       security:
+        - access_token: []
         - quantimodo_oauth2:
             - basic
   /v2/measurements/csv:
@@ -2689,6 +2714,7 @@ paths:
           schema:
             type: file
       security:
+        - access_token: []
         - quantimodo_oauth2:
             - basic
   /v1/measurementsRange:
@@ -2720,6 +2746,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
+        - access_token: []
         - quantimodo_oauth2:
             - basic
   /v1/measurementSources:
@@ -2753,6 +2780,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
+        - access_token: []
         - quantimodo_oauth2:
             - basic
     get:
@@ -2770,6 +2798,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
+        - access_token: []
         - quantimodo_oauth2:
             - basic
   /v2/oauth/authorize:
@@ -2847,6 +2876,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
+        - access_token: []
         - quantimodo_oauth2:
             - basic
   /v2/oauth2/access_token:
@@ -2950,6 +2980,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
+        - access_token: []
         - quantimodo_oauth2:
             - basic
   /v2/auth/social/login:
@@ -2999,6 +3030,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
+        - access_token: []
         - quantimodo_oauth2:
             - basic
   /v2/auth/social/authorizeCode:
@@ -3044,6 +3076,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
+        - access_token: []
         - quantimodo_oauth2:
             - basic
   /v2/auth/social/authorizeToken:
@@ -3092,6 +3125,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
+        - access_token: []
         - quantimodo_oauth2:
             - basic
   '/v1/organizations/{organizationId}/users':
@@ -3260,6 +3294,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
+        - access_token: []
         - quantimodo_oauth2:
             - basic
   /v1/pairsCsv:
@@ -3380,6 +3415,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
+        - access_token: []
         - quantimodo_oauth2:
             - basic
   /v1/trackingReminders:
@@ -3461,6 +3497,7 @@ paths:
                   $ref: '#/definitions/TrackingReminder'
             type: object
       security:
+        - access_token: []
         - quantimodo_oauth2:
             - basic
     post:
@@ -3500,6 +3537,7 @@ paths:
                 $ref: '#/definitions/TrackingReminder'
             type: object
       security:
+        - access_token: []
         - quantimodo_oauth2:
             - basic
   /v1/trackingReminders/delete:
@@ -3535,6 +3573,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
+        - access_token: []
         - quantimodo_oauth2:
             - basic
   /v1/trackingReminderNotifications:
@@ -3616,6 +3655,7 @@ paths:
                   $ref: '#/definitions/TrackingReminderNotification'
             type: object
       security:
+        - access_token: []
         - quantimodo_oauth2:
             - basic
   /v1/trackingReminderNotifications/snooze:
@@ -3651,6 +3691,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
+        - access_token: []
         - quantimodo_oauth2:
             - basic
   /v1/trackingReminderNotifications/skip:
@@ -3686,6 +3727,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
+        - access_token: []
         - quantimodo_oauth2:
             - basic
   /v1/trackingReminderNotifications/track:
@@ -3723,6 +3765,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
+        - access_token: []
         - quantimodo_oauth2:
             - basic
   /v1/units:
@@ -3778,6 +3821,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
+        - access_token: []
         - quantimodo_oauth2:
             - basic
   /v1/unitCategories:
@@ -3799,6 +3843,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
+        - access_token: []
         - quantimodo_oauth2:
             - basic
   /v1/unitsVariable:
@@ -3850,6 +3895,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
+        - access_token: []
         - quantimodo_oauth2:
             - basic
   /v1/user/me:
@@ -3868,6 +3914,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
+        - access_token: []
         - quantimodo_oauth2:
             - basic
   /v1/userTags:
@@ -3908,6 +3955,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
+        - access_token: []
         - quantimodo_oauth2:
             - basic
   /v1/userTags/delete:
@@ -3941,6 +3989,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
+        - access_token: []
         - quantimodo_oauth2:
             - basic
   /v1/variables:
@@ -3976,6 +4025,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
+        - access_token: []
         - quantimodo_oauth2:
             - basic
     get:
@@ -4083,6 +4133,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
+        - access_token: []
         - quantimodo_oauth2:
             - basic
   '/v1/variables/{variableName}':
@@ -4120,6 +4171,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
+        - access_token: []
         - quantimodo_oauth2:
             - basic
   /v1/public/variables:
@@ -4229,6 +4281,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
+        - access_token: []
         - quantimodo_oauth2:
             - basic
   '/v1/public/variables/search/{search}':
@@ -4321,6 +4374,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
+        - access_token: []
         - quantimodo_oauth2:
             - basic
   '/v1/variables/search/{search}':
@@ -4422,6 +4476,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
+        - access_token: []
         - quantimodo_oauth2:
             - basic
   /v1/userVariables:
@@ -4454,6 +4509,7 @@ paths:
         '404':
           description: Unknown target user ID
       security:
+        - access_token: []
         - quantimodo_oauth2:
             - basic
   /v1/userVariables/delete:
@@ -4481,6 +4537,7 @@ paths:
         '404':
           description: Unknown target user ID
       security:
+        - access_token: []
         - quantimodo_oauth2:
             - basic
   /v1/userVariables/reset:
@@ -4508,6 +4565,7 @@ paths:
         '404':
           description: Unknown target user ID
       security:
+        - access_token: []
         - quantimodo_oauth2:
             - basic
   /v1/variableCategories:
@@ -4532,6 +4590,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
+        - access_token: []
         - quantimodo_oauth2:
             - basic
   /v1/votes:
@@ -4574,6 +4633,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
+        - access_token: []
         - quantimodo_oauth2:
             - basic
   /v1/votes/delete:
@@ -4612,6 +4672,7 @@ paths:
         '401':
           description: Not Authenticated
       security:
+        - access_token: []
         - quantimodo_oauth2:
             - basic
 definitions:
@@ -6485,7 +6546,7 @@ securityDefinitions:
       basic: 'Allows you to read user info (displayname, email, etc).'
       readmeasurements: Allows one to read a user's data
       writemeasurements: Allows you to write user data
-  api_key:
+  access_token:
     type: apiKey
-    name: api_key
-    in: header
+    name: access_token
+    in: query

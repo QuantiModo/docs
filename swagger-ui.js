@@ -1423,6 +1423,8 @@ OperationView = (function(_super) {
       if (isFileUpload) {
         return this.handleFileUpload(map, form);
       } else {
+          console.debug('Using ' + window.location.origin + ' as host');
+          this.model.host = window.location.host;
         return this.model["do"](map, opts, this.showCompleteStatus, this.showErrorStatus, this);
       }
     }
