@@ -2,7 +2,7 @@ swagger: '2.0'
 info:
   title: Quantimodo API
   description: >
-    Welcome to QuantiModo API! QuantiModo makes it easy to retrieve normalized
+    Welcome to the QuantiModo API! QuantiModo makes it easy to retrieve normalized
     user data from a wide array of devices and applications. [Learn about
     QuantiModo](https://quantimo.do) or contact us at <api@quantimo.do>.
 

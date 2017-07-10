@@ -4,7 +4,7 @@
 
 See our interactive API explorer at [https://app.quantimo.do/api/docs](https://app.quantimo.do/api/docs)
 
-Welcome to QuantiModo API!
+Welcome to the QuantiModo API!
 
 QuantiModo makes it easy to retrieve normalized user data from a wide array of devices and applications.
 [Learn about QuantiModo](https://app.quantimo.do) or contact us at [help.quantimo.do](https://help.quantimo.do).
