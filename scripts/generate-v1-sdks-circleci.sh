@@ -4,7 +4,7 @@ git config --global user.email m@quantimodo.com
 
 echo "Clone swagger-codegen..."
 git clone https://github.com/swagger-api/swagger-codegen
-cp -R swagger.json swagger-codegen/api-docs-v1.json
+cp -R swagger/swagger.json swagger-codegen/api-docs-v1.json
 cp -R config.json swagger-codegen/config.json
 cp -R scripts/node_angular_sdk swagger-codegen/node_angular_sdk
 cd swagger-codegen
