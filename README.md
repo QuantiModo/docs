@@ -4,18 +4,14 @@
 
 See our interactive API explorer at [https://app.quantimo.do/api/docs](https://app.quantimo.do/api/docs)
 
-Welcome to the QuantiModo API!
+Before you get started, you will need to:   
 
-QuantiModo makes it easy to retrieve normalized user data from a wide array of devices and applications.
-[Learn about QuantiModo](https://app.quantimo.do) or contact us at [help.quantimo.do](https://help.quantimo.do).
+- Sign in/Sign up, and add some data at
+[https://app.quantimo.do](https://app.quantimo.do) to try out the API for
+yourself
 
-Before you get started, you will need to:
-* Create an account at [QuantiModo](https://app.quantimo.do)
-* Sign in, and add some data at [https://app.quantimo.do/connect](https://app.quantimo.do/connect) to try out the API for yourself
-* Create an app to get your client id and secret at [https://app.quantimo.do/api/v2/apps](https://app.quantimo.do/api/v2/apps)
-* As long as you're signed in, it will use your browser's cookie for authentication.  However, client applications must use OAuth2 tokens to access the API.
-
-## Example Queries
+* Create an app to get your client id and secret at
+[https://app.quantimo.do/api/v2/apps](https://app.quantimo.do/api/v2/apps)
 
 ### Query Options
 
@@ -38,7 +34,7 @@ For example, if you want to retrieve data from 61-80 then you can use a query wi
   /variables?limit=20&offset=60
 ```
 
-Generally, you'll be retrieving new or updated user data.  To avoid unnecessary API calls, you'll want to store your last refresh time locally.  Initially, it should be set to 0.  Then whenever you make a request to get new data, you should limit the returned results to those updated since your last refresh by appending append `?lastUpdated=(ge)"2013-01-D01T01:01:01"` to your request.
+Generally, you'll be retrieving new or updated user data.  To avoid unnecessary API calls, you'll want to store your last refresh time locally.  Initially, it should be set to 0.  Then whenever you make a request to get new data, you should limit the returned results to those updated since your last refresh by appending append `?updatedAt=(ge)"2013-01-D01T01:01:01"` to your request.
 
 Also for better pagination, you can get link to the records of first, last, next and previous page from response headers:
 * ```Total-Count``` - Total number of results for given query
@@ -54,12 +50,12 @@ Remember, response header will be only sent when the record set is available. e.
 To get data sorted by particular field:
 
 ```
-    /variables?sort=lastUpdated
+    /variables?sort=updatedAt
 ```
 
 It will sort data in ascending order. For descending order, you can add '-' prefix before field like:
 ```
-    /variables?sort=-lastUpdated
+    /variables?sort=-updatedAt
 ```
 
 ### Filter Parameters
@@ -70,44 +66,6 @@ For example, to get all variables within the "Mood" category, you would use:
 ```
     /variables?category=Mood
 ```
-
-Here is the complete list of filter parameters by endpoints:
-
-#### /correlations
-Parameter | Description                                                                                   
-----------|--------------------------------------------------------------------------
-cause | Original variable name of the hypothetical cause (a.k.a. explanatory or independent variable) for which the user desires correlations
-effect | Original variable name of the hypothetical effect (a.k.a. outcome or dependent variable) for which the user desires correlations
-correlationCoefficient | Pearson correlation coefficient between cause and effect after lagging by onset delay and grouping by duration of action
-onsetDelay | The number of seconds which pass following a cause measurement before an effect would likely be observed. 
-durationOfAction | The time in seconds over which the cause would be expected to exert a measurable effect. We have selected a default value for each variable. This default value may be replaced by a user specified by adjusting their variable user settings. 
-lastUpdated | The time that this measurement was last updated in the UTC format "YYYY-MM-DDThh:mm:ss"
-
-#### /measurements
-Parameter | Description                                                                                   
-----------|----------------------------------------------------------------------
-variableName | Name of the variable you want measurements for (supports exact name match only)
-source | Name of the source you want measurements for (supports exact name match only)
-value | Value of measurement 
-lastUpdated | The time that this measurement was created or last updated in the UTC format "YYYY-MM-DDThh:mm:ss"
-
-#### /units
-Parameter | Description                                                                                   
-----------|--------------------------------------------------------------------------
-unitName | Unit Name  (supports exact name match only)
-unitAbbreviatedName | Restrict the results to a specific unit by providing the unit abbreviation (supports exact name match only)
-categoryName | Restrict the results to a specific unit category by providing the unit category name.
-
-#### /variables
-Parameter | Description                                                                                   
-----------|--------------------------------------------------------------------------
-category | Restrict the results to a specific category by providing the variable category name such as "Nutrients" or "Physique".  A complete list of variable categories can be obtained at the /variableCategories endpoint. 
-name | Original name of the variable (supports exact name match only)
-lastUpdated | Filter by the last time any of the properties of the variable were changed. Uses UTC format "YYYY-MM-DDThh:mm:ss"
-source | The name of the data source that created the variable (supports exact name match only).  So if you have a client application and you only want variables that were last updated by your app, you can include the name of your app here
-latestMeasurementTime | Filter variables based on the last time a measurement for them was created or updated in the UTC format "YYYY-MM-DDThh:mm:ss"
-numberOfRawMeasurements | Filter variables by the total number of measurements that they have. This could be used of you want to filter or sort by popularity. 
-lastSource | Limit variables to those which measurements were last submitted by a specific source. So if you have a client application and you only want variables that were last updated by your app, you can include the name of your app here. (supports exact name match only)
 
 #### Filter operators support
 
