@@ -1288,6 +1288,29 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - basic
+  /v1/units:
+    get:
+      operationId: getUnits
+      tags:
+        - units
+      summary: Get units
+      description: Get a list of the available measurement units
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: Successful operation
+          schema:
+              type: array
+              items:
+                $ref: '#/definitions/Unit'
+              description: Array of units
+        '401':
+          description: Not Authenticated
+      security:
+        - access_token: []
+        - quantimodo_oauth2:
+            - basic
   /v1/unitCategories:
     get:
       operationId: getUnitCategories
@@ -2577,114 +2600,6 @@ definitions:
       access_token:
         type: string
         description: User token
-  UserVariableRelationship:
-    required:
-      - confidence_level
-      - confidence_score
-      - direction
-      - duration_of_action
-      - outcome_variableId
-      - predictor_variableId
-      - predictor_unit_id
-      - sinn_rank
-      - strength_level
-      - strength_score
-      - value_predicting_high_outcome
-      - value_predicting_low_outcome
-    properties:
-      id:
-        description: id
-        type: integer
-        format: int32
-      confidence_level:
-        description: >-
-          Our confidence that a consistent predictive relationship exists based
-          on the amount of evidence, reproducibility, and other factors
-        type: string
-      confidence_score:
-        description: >-
-          A quantitative representation of our confidence that a consistent
-          predictive relationship exists based on the amount of evidence,
-          reproducibility, and other factors
-        type: number
-        format: float
-      direction:
-        description: >-
-          Direction is positive if higher predictor values generally precede
-          higher outcome values. Direction is negative if higher predictor
-          values generally precede lower outcome values.
-        type: string
-      duration_of_action:
-        description: >-
-          The amount of time over which a predictor/stimulus event can exert an
-          observable influence on an outcome variable’s value. For instance,
-          aspirin (stimulus/predictor) typically decreases headache severity for
-          approximately four hours (duration of action) following the onset
-          delay.
-        type: integer
-        format: int32
-      error_message:
-        description: error_message
-        type: string
-      onset_delay:
-        description: >-
-          The amount of time in seconds that elapses after the
-          predictor/stimulus event before the outcome as perceived by a
-          self-tracker is known as the “onset delay”. For example, the “onset
-          delay” between the time a person takes an aspirin (predictor/stimulus
-          event) and the time a person perceives a change in their headache
-          severity (outcome) is approximately 30 minutes.
-        type: integer
-        format: int32
-      outcome_variableId:
-        description: Variable ID for the outcome variable
-        type: integer
-        format: int32
-      predictor_variableId:
-        description: Variable ID for the predictor variable
-        type: integer
-        format: int32
-      predictor_unit_id:
-        description: ID for default unit of the predictor variable
-        type: integer
-        format: int32
-      sinn_rank:
-        description: >-
-          A value representative of the relevance of this predictor relative to
-          other predictors of this outcome.  Usually used for relevancy sorting.
-        type: number
-        format: float
-      strength_level:
-        description: >-
-          Can be weak, medium, or strong based on the size of the effect which
-          the predictor appears to have on the outcome relative to other
-          variable relationship strength scores.
-        type: string
-      strength_score:
-        description: >-
-          A value represented to the size of the effect which the predictor
-          appears to have on the outcome.
-        type: number
-        format: float
-      userId:
-        description: userId
-        type: integer
-        format: int32
-      vote:
-        description: vote
-        type: string
-      value_predicting_high_outcome:
-        description: >-
-          Value for the predictor variable (in it's default unit) which
-          typically precedes an above average outcome value
-        type: number
-        format: float
-      value_predicting_low_outcome:
-        description: >-
-          Value for the predictor variable (in it's default unit) which
-          typically precedes a below average outcome value
-        type: number
-        format: float
   Update:
     required:
       - userId
@@ -3015,7 +2930,7 @@ definitions:
   Variable:
     required:
       - name
-      - category
+      - variableCategoryName
       - unitAbbreviatedName
       - abbreviatedUnitId
       - sources
@@ -3049,7 +2964,7 @@ definitions:
       name:
         type: string
         description: User-defined variable display name.
-      category:
+      variableCategoryName:
         type: string
         description: >-
           Variable category like Mood, Sleep, Physical Activity, Treatment,
