@@ -2,7 +2,7 @@
   "swagger" : "2.0",
   "info" : {
     "description" : "QuantiModo makes it easy to retrieve normalized user data from a wide array of devices and applications. [Learn about QuantiModo](https://quantimo.do), check out our [docs](https://github.com/QuantiModo/docs) or contact us at [help.quantimo.do](https://help.quantimo.do).\n",
-    "version" : "2.0",
+    "version" : "5.8.5",
     "title" : "QuantiModo",
     "termsOfService" : "https://quantimo.do/tos/",
     "contact" : {
@@ -22,9 +22,9 @@
         "description" : "Get embeddable connect javascript. Usage:\n  - Embedding in applications with popups for 3rd-party authentication\nwindows.\n    Use `qmSetupInPopup` function after connecting `connect.js`.\n  - Embedding in applications with popups for 3rd-party authentication\nwindows.\n    Requires a selector to block. It will be embedded in this block.\n    Use `qmSetupOnPage` function after connecting `connect.js`.\n  - Embedding in mobile applications without popups for 3rd-party\nauthentication.\n    Use `qmSetupOnMobile` function after connecting `connect.js`.\n    If using in a Cordova application call  `qmSetupOnIonic` function after connecting `connect.js`.",
         "produces" : [ "application/x-javascript" ],
         "parameters" : [ {
-          "name" : "access_token",
+          "name" : "clientId",
           "in" : "query",
-          "description" : "User's OAuth2 access token",
+          "description" : "Your app's client id",
           "required" : false,
           "type" : "string"
         } ],
@@ -102,12 +102,6 @@
         "description" : "Attempt to obtain a token from the data provider, store it in the database. With this, the connector to continue to obtain new user data until the token is revoked.",
         "produces" : [ "application/json" ],
         "parameters" : [ {
-          "name" : "access_token",
-          "in" : "query",
-          "description" : "User's OAuth2 access token",
-          "required" : false,
-          "type" : "string"
-        }, {
           "name" : "userId",
           "in" : "query",
           "description" : "User's id",
@@ -148,12 +142,6 @@
         "description" : "Returns instructions that describe what parameters and endpoint to use to connect to the given data provider.",
         "produces" : [ "application/json" ],
         "parameters" : [ {
-          "name" : "access_token",
-          "in" : "query",
-          "description" : "User's OAuth2 access token",
-          "required" : false,
-          "type" : "string"
-        }, {
           "name" : "userId",
           "in" : "query",
           "description" : "User's id",
@@ -233,12 +221,6 @@
         "description" : "Returns instructions that describe what parameters and endpoint to use to connect to the given data provider.",
         "produces" : [ "application/json" ],
         "parameters" : [ {
-          "name" : "access_token",
-          "in" : "query",
-          "description" : "User's OAuth2 access token",
-          "required" : false,
-          "type" : "string"
-        }, {
           "name" : "userId",
           "in" : "query",
           "description" : "User's id",
@@ -331,12 +313,6 @@
         "description" : "Returns information about the connector such as the connector id, whether or not is connected for this user (i.e. we have a token or credentials), and its update history for the user.",
         "produces" : [ "application/json" ],
         "parameters" : [ {
-          "name" : "access_token",
-          "in" : "query",
-          "description" : "User's OAuth2 access token",
-          "required" : false,
-          "type" : "string"
-        }, {
           "name" : "userId",
           "in" : "query",
           "description" : "User's id",
@@ -380,12 +356,6 @@
         "description" : "The update method tells the QM Connector Framework to check with the data provider (such as Fitbit or MyFitnessPal) and retrieve any new measurements available.",
         "produces" : [ "application/json" ],
         "parameters" : [ {
-          "name" : "access_token",
-          "in" : "query",
-          "description" : "User's OAuth2 access token",
-          "required" : false,
-          "type" : "string"
-        }, {
           "name" : "userId",
           "in" : "query",
           "description" : "User's id",
@@ -426,12 +396,6 @@
         "description" : "Get correlations based on data from a single user.",
         "produces" : [ "application/json" ],
         "parameters" : [ {
-          "name" : "access_token",
-          "in" : "query",
-          "description" : "User's OAuth2 access token",
-          "required" : false,
-          "type" : "string"
-        }, {
           "name" : "userId",
           "in" : "query",
           "description" : "User's id",
@@ -526,12 +490,6 @@
         "description" : "Get correlations based on the anonymized aggregate data from all QuantiModo users.",
         "produces" : [ "application/json" ],
         "parameters" : [ {
-          "name" : "access_token",
-          "in" : "query",
-          "description" : "User's OAuth2 access token",
-          "required" : false,
-          "type" : "string"
-        }, {
           "name" : "userId",
           "in" : "query",
           "description" : "User's id",
@@ -624,12 +582,6 @@
         "description" : "Add correlation",
         "produces" : [ "application/json" ],
         "parameters" : [ {
-          "name" : "access_token",
-          "in" : "query",
-          "description" : "User's OAuth2 access token",
-          "required" : false,
-          "type" : "string"
-        }, {
           "name" : "userId",
           "in" : "query",
           "description" : "User's id",
@@ -665,401 +617,14 @@
         } ]
       }
     },
-    "/v1/public/correlations/search/{search}" : {
-      "get" : {
-        "tags" : [ "correlations" ],
-        "summary" : "Get average correlations for variables containing search term",
-        "description" : "Returns the average correlations from all users for all public variables that contain the characters in the search query. Returns average of all users public variable correlations with a specified cause or effect.",
-        "produces" : [ "application/json" ],
-        "parameters" : [ {
-          "name" : "access_token",
-          "in" : "query",
-          "description" : "User's OAuth2 access token",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "userId",
-          "in" : "query",
-          "description" : "User's id",
-          "required" : false,
-          "type" : "integer"
-        }, {
-          "name" : "search",
-          "in" : "path",
-          "description" : "Name of the variable that you want to know the causes or effects of.",
-          "required" : true,
-          "type" : "string"
-        }, {
-          "name" : "effectOrCause",
-          "in" : "query",
-          "description" : "Setting this to effect indicates that the searched variable is the effect and that the causes of this variable should be returned. cause indicates that the searched variable is the cause and the effects should be returned.",
-          "required" : true,
-          "type" : "string"
-        }, {
-          "name" : "outcomesOfInterest",
-          "in" : "query",
-          "description" : "Only include correlations for which the effect is an outcome of interest for the user",
-          "required" : false,
-          "type" : "boolean"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "Successful Operation",
-            "schema" : {
-              "type" : "array",
-              "items" : {
-                "$ref" : "#/definitions/Correlation"
-              }
-            }
-          },
-          "401" : {
-            "description" : "Not Authenticated"
-          }
-        },
-        "security" : [ {
-          "access_token" : [ ]
-        }, {
-          "quantimodo_oauth2" : [ "basic" ]
-        } ]
-      }
-    },
-    "/v1/variables/{variableName}/public/causes" : {
-      "get" : {
-        "tags" : [ "correlations" ],
-        "summary" : "Search public correlations for a given effect",
-        "description" : "Returns average of all correlations and votes for all public cause variables for a given effect",
-        "produces" : [ "application/json" ],
-        "parameters" : [ {
-          "name" : "access_token",
-          "in" : "query",
-          "description" : "User's OAuth2 access token",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "userId",
-          "in" : "query",
-          "description" : "User's id",
-          "required" : false,
-          "type" : "integer"
-        }, {
-          "name" : "correlationCoefficient",
-          "in" : "query",
-          "description" : "You can use this to get causes with correlations greater than or less than 0",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "variableName",
-          "in" : "path",
-          "description" : "Effect variable name",
-          "required" : true,
-          "type" : "string"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "Successful Operation",
-            "schema" : {
-              "type" : "array",
-              "items" : {
-                "$ref" : "#/definitions/Correlation"
-              }
-            }
-          },
-          "401" : {
-            "description" : "Not Authenticated"
-          }
-        },
-        "security" : [ {
-          "access_token" : [ ]
-        }, {
-          "quantimodo_oauth2" : [ "basic" ]
-        } ]
-      }
-    },
-    "/v1/variables/{variableName}/public/effects" : {
-      "get" : {
-        "tags" : [ "correlations" ],
-        "summary" : "Search public correlations for a given cause",
-        "description" : "Returns average of all correlations and votes for all public cause variables for a given cause",
-        "produces" : [ "application/json" ],
-        "parameters" : [ {
-          "name" : "access_token",
-          "in" : "query",
-          "description" : "User's OAuth2 access token",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "userId",
-          "in" : "query",
-          "description" : "User's id",
-          "required" : false,
-          "type" : "integer"
-        }, {
-          "name" : "variableName",
-          "in" : "path",
-          "description" : "Cause variable name",
-          "required" : true,
-          "type" : "string"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "Successful Operation",
-            "schema" : {
-              "type" : "array",
-              "items" : {
-                "$ref" : "#/definitions/Correlation"
-              }
-            }
-          },
-          "401" : {
-            "description" : "Not Authenticated"
-          }
-        },
-        "security" : [ {
-          "access_token" : [ ]
-        }, {
-          "quantimodo_oauth2" : [ "basic" ]
-        } ]
-      }
-    },
-    "/v1/variables/{variableName}/causes" : {
-      "get" : {
-        "tags" : [ "correlations" ],
-        "summary" : "Search user correlations for a given effect",
-        "description" : "Returns average of all correlations and votes for all user cause variables for a given effect",
-        "produces" : [ "application/json" ],
-        "parameters" : [ {
-          "name" : "variableName",
-          "in" : "path",
-          "description" : "Effect variable name",
-          "required" : true,
-          "type" : "string"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "Successful Operation",
-            "schema" : {
-              "type" : "array",
-              "items" : {
-                "$ref" : "#/definitions/Correlation"
-              }
-            }
-          },
-          "401" : {
-            "description" : "Not Authenticated"
-          }
-        },
-        "security" : [ {
-          "access_token" : [ ]
-        }, {
-          "quantimodo_oauth2" : [ "basic" ]
-        } ]
-      }
-    },
-    "/v1/variables/{variableName}/effects" : {
-      "get" : {
-        "tags" : [ "correlations" ],
-        "summary" : "Search user correlations for a given cause",
-        "description" : "Returns average of all correlations and votes for all user effect variables for a given cause",
-        "produces" : [ "application/json" ],
-        "parameters" : [ {
-          "name" : "access_token",
-          "in" : "query",
-          "description" : "User's OAuth2 access token",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "userId",
-          "in" : "query",
-          "description" : "User's id",
-          "required" : false,
-          "type" : "integer"
-        }, {
-          "name" : "correlationCoefficient",
-          "in" : "query",
-          "description" : "You can use this to get effects with correlations greater than or less than 0",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "variableName",
-          "in" : "path",
-          "description" : "Cause variable name",
-          "required" : true,
-          "type" : "string"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "Successful Operation",
-            "schema" : {
-              "type" : "array",
-              "items" : {
-                "$ref" : "#/definitions/Correlation"
-              }
-            }
-          },
-          "401" : {
-            "description" : "Not Authenticated"
-          }
-        },
-        "security" : [ {
-          "access_token" : [ ]
-        }, {
-          "quantimodo_oauth2" : [ "basic" ]
-        } ]
-      }
-    },
-    "/v1/organizations/{organizationId}/users/{userId}/variables/{variableName}/causes" : {
-      "get" : {
-        "tags" : [ "correlations" ],
-        "summary" : "Search user correlations for a given cause",
-        "description" : "Returns average of all correlations and votes for all user cause variables for a given cause. If parameter \"include_public\" is used, it also returns public correlations. User correlation overwrites or supersedes public correlation.",
-        "produces" : [ "application/json" ],
-        "parameters" : [ {
-          "name" : "access_token",
-          "in" : "query",
-          "description" : "User's OAuth2 access token",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "userId",
-          "in" : "query",
-          "description" : "User's id",
-          "required" : false,
-          "type" : "integer"
-        }, {
-          "name" : "organizationId",
-          "in" : "path",
-          "description" : "Organization ID",
-          "required" : true,
-          "type" : "integer"
-        }, {
-          "name" : "userId",
-          "in" : "path",
-          "description" : "User id",
-          "required" : true,
-          "type" : "integer"
-        }, {
-          "name" : "variableName",
-          "in" : "path",
-          "description" : "Effect variable name",
-          "required" : true,
-          "type" : "string"
-        }, {
-          "name" : "organization_token",
-          "in" : "query",
-          "description" : "Organization access token",
-          "required" : true,
-          "type" : "string"
-        }, {
-          "name" : "includePublic",
-          "in" : "query",
-          "description" : "Include public correlations, Can be \"1\" or empty.",
-          "required" : false,
-          "type" : "string"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "Successful Operation",
-            "schema" : {
-              "type" : "array",
-              "items" : {
-                "$ref" : "#/definitions/Correlation"
-              }
-            }
-          },
-          "401" : {
-            "description" : "Not Authenticated"
-          }
-        },
-        "security" : [ {
-          "access_token" : [ ]
-        }, {
-          "quantimodo_oauth2" : [ "basic" ]
-        } ]
-      }
-    },
-    "/v1/organizations/{organizationId}/users/{userId}/variables/{variableName}/effects" : {
-      "get" : {
-        "tags" : [ "correlations" ],
-        "summary" : "Search user correlations for a given cause",
-        "description" : "Returns average of all correlations and votes for all user cause variables for a given effect. If parameter \"include_public\" is used, it also returns public correlations. User correlation overwrites or supersedes public correlation.",
-        "produces" : [ "application/json" ],
-        "parameters" : [ {
-          "name" : "access_token",
-          "in" : "query",
-          "description" : "User's OAuth2 access token",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "userId",
-          "in" : "query",
-          "description" : "User's id",
-          "required" : false,
-          "type" : "integer"
-        }, {
-          "name" : "organizationId",
-          "in" : "path",
-          "description" : "Organization ID",
-          "required" : true,
-          "type" : "integer"
-        }, {
-          "name" : "userId",
-          "in" : "path",
-          "description" : "User id",
-          "required" : true,
-          "type" : "integer"
-        }, {
-          "name" : "variableName",
-          "in" : "path",
-          "description" : "Cause variable name",
-          "required" : true,
-          "type" : "string"
-        }, {
-          "name" : "organization_token",
-          "in" : "query",
-          "description" : "Organization access token",
-          "required" : true,
-          "type" : "string"
-        }, {
-          "name" : "include_public",
-          "in" : "query",
-          "description" : "Include public correlations, Can be \"1\" or empty.",
-          "required" : false,
-          "type" : "string"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "Successful Operation",
-            "schema" : {
-              "type" : "array",
-              "items" : {
-                "$ref" : "#/definitions/CommonResponse"
-              }
-            }
-          },
-          "401" : {
-            "description" : "Not Authenticated"
-          }
-        },
-        "security" : [ {
-          "access_token" : [ ]
-        }, {
-          "quantimodo_oauth2" : [ "basic" ]
-        } ]
-      }
-    },
     "/v1/measurements" : {
       "get" : {
         "tags" : [ "measurements" ],
         "summary" : "Get measurements for this user",
         "description" : "Measurements are any value that can be recorded like daily steps, a mood rating, or apples eaten. Supported filter parameters:<ul><li><b>value</b> - Value of measurement</li><li><b>updatedAt</b> - The time that this measurement was created or last updated in the UTC format \"YYYY-MM-DDThh:mm:ss\"</li></ul>",
+        "operationId" : "getMeasurements",
         "produces" : [ "application/json" ],
         "parameters" : [ {
-          "name" : "access_token",
-          "in" : "query",
-          "description" : "User's OAuth2 access token",
-          "required" : false,
-          "type" : "string"
-        }, {
           "name" : "userId",
           "in" : "query",
           "description" : "User's id",
@@ -1179,12 +744,6 @@
         "description" : "You can submit or update multiple measurements in a \"measurements\" sub-array.  If the variable these measurements correspond to does not already exist in the database, it will be automatically added.  The request body should look something like [{\"measurements\":[{\"startTime\":1439389320,\"value\":\"3\"}, {\"startTime\":1439389319,\"value\":\"2\"}],\"name\":\"Acne (out of 5)\",\"source\":\"QuantiModo\",\"category\":\"Symptoms\",\"combinationOperation\":\"MEAN\",\"unit\":\"/5\"}]",
         "produces" : [ "application/json" ],
         "parameters" : [ {
-          "name" : "access_token",
-          "in" : "query",
-          "description" : "User's OAuth2 access token",
-          "required" : false,
-          "type" : "string"
-        }, {
           "name" : "userId",
           "in" : "query",
           "description" : "User's id",
@@ -1267,97 +826,6 @@
             "description" : "Successful Operation",
             "schema" : {
               "$ref" : "#/definitions/CommonResponse"
-            }
-          },
-          "401" : {
-            "description" : "Not Authenticated"
-          }
-        },
-        "security" : [ {
-          "access_token" : [ ]
-        }, {
-          "quantimodo_oauth2" : [ "basic" ]
-        } ]
-      }
-    },
-    "/v1/measurements/daily" : {
-      "get" : {
-        "tags" : [ "measurements" ],
-        "summary" : "Get daily measurements for this user",
-        "description" : "Measurements are any value that can be recorded like daily steps, a mood rating, or apples eaten. Supported filter parameters:<ul><li><b>value</b> - Value of measurement</li><li><b>updatedAt</b> - The time that this measurement was created or last updated in the UTC format \"YYYY-MM-DDThh:mm:ss\"</li></ul>",
-        "produces" : [ "application/json" ],
-        "parameters" : [ {
-          "name" : "access_token",
-          "in" : "query",
-          "description" : "User's OAuth2 access token",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "userId",
-          "in" : "query",
-          "description" : "User's id",
-          "required" : false,
-          "type" : "integer"
-        }, {
-          "name" : "variableName",
-          "in" : "query",
-          "description" : "Name of the variable you want measurements for",
-          "required" : true,
-          "type" : "string"
-        }, {
-          "name" : "unitAbbreviatedName",
-          "in" : "query",
-          "description" : "The unit your want the measurements in",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "startTime",
-          "in" : "query",
-          "description" : "The lower limit of measurements returned (UTC Iso8601 \"YYYY-MM-DDThh:mm:ss\" format)",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "endTime",
-          "in" : "query",
-          "description" : "The upper limit of measurements returned (UTC Iso8601 \"YYYY-MM-DDThh:mm:ss\" format)",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "groupingWidth",
-          "in" : "query",
-          "description" : "The time (in seconds) over which measurements are grouped together",
-          "required" : false,
-          "type" : "integer"
-        }, {
-          "name" : "groupingTimezone",
-          "in" : "query",
-          "description" : "The time (in seconds) over which measurements are grouped together",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "limit",
-          "in" : "query",
-          "description" : "The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0.",
-          "required" : false,
-          "type" : "integer"
-        }, {
-          "name" : "offset",
-          "in" : "query",
-          "description" : "Since the maximum limit is 200 records, to get more than that you'll have to make multiple API calls and page through the results. To retrieve all the data, you can iterate through data by using the `limit` and `offset` query parameters.  For example, if you want to retrieve data from 61-80 then you can use a query with the following parameters, `imit=20&offset=60`.",
-          "required" : false,
-          "type" : "integer"
-        }, {
-          "name" : "sort",
-          "in" : "query",
-          "description" : "Sort by given field. If the field is prefixed with `-, it will sort in descending order.",
-          "required" : false,
-          "type" : "integer"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "Successful Operation",
-            "schema" : {
-              "$ref" : "#/definitions/Measurement"
             }
           },
           "401" : {
@@ -1507,43 +975,6 @@
         } ]
       }
     },
-    "/v1/measurementsRange" : {
-      "get" : {
-        "tags" : [ "measurements" ],
-        "summary" : "Get measurements range for this user",
-        "description" : "Get Unix time-stamp (epoch time) of the user's first and last measurements taken.",
-        "produces" : [ "application/json" ],
-        "parameters" : [ {
-          "name" : "sources",
-          "in" : "query",
-          "description" : "Enter source name to limit to specific source (varchar)",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "user",
-          "in" : "query",
-          "description" : "If not specified, uses currently logged in user (bigint)",
-          "required" : false,
-          "type" : "integer"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "Successful operation",
-            "schema" : {
-              "$ref" : "#/definitions/MeasurementRange"
-            }
-          },
-          "401" : {
-            "description" : "Not Authenticated"
-          }
-        },
-        "security" : [ {
-          "access_token" : [ ]
-        }, {
-          "quantimodo_oauth2" : [ "basic" ]
-        } ]
-      }
-    },
     "/v1/measurementSources" : {
       "get" : {
         "tags" : [ "measurements" ],
@@ -1574,12 +1005,6 @@
         "description" : "Add a life-tracking app or device to the QuantiModo list of data sources.",
         "produces" : [ "application/json" ],
         "parameters" : [ {
-          "name" : "access_token",
-          "in" : "query",
-          "description" : "User's OAuth2 access token",
-          "required" : false,
-          "type" : "string"
-        }, {
           "name" : "userId",
           "in" : "query",
           "description" : "User's id",
@@ -1849,12 +1274,6 @@
         "description" : "Get user tokens for existing users, create new users",
         "produces" : [ "application/json" ],
         "parameters" : [ {
-          "name" : "access_token",
-          "in" : "query",
-          "description" : "User's OAuth2 access token",
-          "required" : false,
-          "type" : "string"
-        }, {
           "name" : "userId",
           "in" : "query",
           "description" : "User's id",
@@ -1910,12 +1329,6 @@
         "description" : "Pairs cause measurements with effect measurements grouped over the duration of action after the onset delay.",
         "produces" : [ "application/json" ],
         "parameters" : [ {
-          "name" : "access_token",
-          "in" : "query",
-          "description" : "User's OAuth2 access token",
-          "required" : false,
-          "type" : "string"
-        }, {
           "name" : "userId",
           "in" : "query",
           "description" : "User's id",
@@ -2028,12 +1441,6 @@
         "description" : "Pairs cause measurements with effect measurements grouped over the duration of action after the onset delay.",
         "produces" : [ "application/json" ],
         "parameters" : [ {
-          "name" : "access_token",
-          "in" : "query",
-          "description" : "User's OAuth2 access token",
-          "required" : false,
-          "type" : "string"
-        }, {
           "name" : "userId",
           "in" : "query",
           "description" : "User's id",
@@ -2362,9 +1769,7 @@
         }, {
           "quantimodo_oauth2" : [ "basic" ]
         } ]
-      }
-    },
-    "/v1/trackingReminderNotifications/snooze" : {
+      },
       "post" : {
         "tags" : [ "reminders" ],
         "summary" : "Snooze a pending tracking reminder",
@@ -2409,160 +1814,6 @@
         } ]
       }
     },
-    "/v1/trackingReminderNotifications/skip" : {
-      "post" : {
-        "tags" : [ "reminders" ],
-        "summary" : "Skip a pending tracking reminder",
-        "description" : "Deletes the pending tracking reminder",
-        "produces" : [ "application/json" ],
-        "parameters" : [ {
-          "name" : "access_token",
-          "in" : "query",
-          "description" : "User's OAuth2 access token",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "userId",
-          "in" : "query",
-          "description" : "User's id",
-          "required" : false,
-          "type" : "integer"
-        }, {
-          "in" : "body",
-          "name" : "body",
-          "description" : "Id of the pending reminder to be skipped or deleted",
-          "required" : true,
-          "schema" : {
-            "$ref" : "#/definitions/TrackingReminderNotificationSkip"
-          }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "Successful Operation",
-            "schema" : {
-              "$ref" : "#/definitions/CommonResponse"
-            }
-          },
-          "401" : {
-            "description" : "Not Authenticated"
-          }
-        },
-        "security" : [ {
-          "access_token" : [ ]
-        }, {
-          "quantimodo_oauth2" : [ "basic" ]
-        } ]
-      }
-    },
-    "/v1/trackingReminderNotifications/track" : {
-      "post" : {
-        "tags" : [ "reminders" ],
-        "summary" : "Track a pending tracking reminder",
-        "description" : "Adds the default measurement for the pending tracking reminder with the reminder time as the measurment start time",
-        "produces" : [ "application/json" ],
-        "parameters" : [ {
-          "name" : "access_token",
-          "in" : "query",
-          "description" : "User's OAuth2 access token",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "userId",
-          "in" : "query",
-          "description" : "User's id",
-          "required" : false,
-          "type" : "integer"
-        }, {
-          "in" : "body",
-          "name" : "body",
-          "description" : "Id of the pending reminder to be tracked",
-          "required" : true,
-          "schema" : {
-            "$ref" : "#/definitions/TrackingReminderNotificationTrack"
-          }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "Successful Operation",
-            "schema" : {
-              "$ref" : "#/definitions/CommonResponse"
-            }
-          },
-          "401" : {
-            "description" : "Not Authenticated"
-          }
-        },
-        "security" : [ {
-          "access_token" : [ ]
-        }, {
-          "quantimodo_oauth2" : [ "basic" ]
-        } ]
-      }
-    },
-    "/v1/units" : {
-      "get" : {
-        "tags" : [ "units" ],
-        "summary" : "Get all available units",
-        "description" : "Get all available units",
-        "produces" : [ "application/json" ],
-        "parameters" : [ {
-          "name" : "access_token",
-          "in" : "query",
-          "description" : "User's OAuth2 access token",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "userId",
-          "in" : "query",
-          "description" : "User's id",
-          "required" : false,
-          "type" : "integer"
-        }, {
-          "name" : "id",
-          "in" : "query",
-          "description" : "Unit id",
-          "required" : false,
-          "type" : "integer"
-        }, {
-          "name" : "unitName",
-          "in" : "query",
-          "description" : "Unit name",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "unitAbbreviatedName",
-          "in" : "query",
-          "description" : "Restrict the results to a specific unit by providing the unit abbreviation.",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "unitCategoryName",
-          "in" : "query",
-          "description" : "Restrict the results to a specific unit category by providing the unit category name.",
-          "required" : false,
-          "type" : "string"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "Successful operation",
-            "schema" : {
-              "type" : "array",
-              "items" : {
-                "$ref" : "#/definitions/Unit"
-              }
-            }
-          },
-          "401" : {
-            "description" : "Not Authenticated"
-          }
-        },
-        "security" : [ {
-          "access_token" : [ ]
-        }, {
-          "quantimodo_oauth2" : [ "basic" ]
-        } ]
-      }
-    },
     "/v1/unitCategories" : {
       "get" : {
         "tags" : [ "units" ],
@@ -2575,70 +1826,6 @@
             "description" : "Successful operation",
             "schema" : {
               "$ref" : "#/definitions/UnitCategory"
-            }
-          },
-          "401" : {
-            "description" : "Not Authenticated"
-          }
-        },
-        "security" : [ {
-          "access_token" : [ ]
-        }, {
-          "quantimodo_oauth2" : [ "basic" ]
-        } ]
-      }
-    },
-    "/v1/unitsVariable" : {
-      "get" : {
-        "tags" : [ "units" ],
-        "summary" : "Units for Variable",
-        "description" : "Get a list of all possible units to use for a given variable",
-        "produces" : [ "application/json" ],
-        "parameters" : [ {
-          "name" : "access_token",
-          "in" : "query",
-          "description" : "User's OAuth2 access token",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "userId",
-          "in" : "query",
-          "description" : "User's id",
-          "required" : false,
-          "type" : "integer"
-        }, {
-          "name" : "unitName",
-          "in" : "query",
-          "description" : "Name of Unit you want to retrieve",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "unitAbbreviatedName",
-          "in" : "query",
-          "description" : "Abbreviated Unit Name of the unit you want",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "unitCategoryName",
-          "in" : "query",
-          "description" : "Name of the category you want units for",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "variable",
-          "in" : "query",
-          "description" : "Name of the variable you want units for",
-          "required" : false,
-          "type" : "string"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "Successful operation",
-            "schema" : {
-              "type" : "array",
-              "items" : {
-                "$ref" : "#/definitions/Unit"
-              }
             }
           },
           "401" : {
@@ -2684,12 +1871,6 @@
         "description" : "This endpoint allows users to tag foods with their ingredients.  This information will then be used to infer the user intake of the different ingredients by just entering the foods. The inferred intake levels will then be used to determine the effects of different nutrients on the user during analysis.",
         "produces" : [ "application/json" ],
         "parameters" : [ {
-          "name" : "access_token",
-          "in" : "query",
-          "description" : "User's OAuth2 access token",
-          "required" : false,
-          "type" : "string"
-        }, {
           "name" : "userId",
           "in" : "query",
           "description" : "User's id",
@@ -2766,12 +1947,6 @@
         "description" : "Get variables for which the user has measurements. If the user has specified variable settings, these are provided instead of the common variable defaults.",
         "produces" : [ "application/json" ],
         "parameters" : [ {
-          "name" : "access_token",
-          "in" : "query",
-          "description" : "User's OAuth2 access token",
-          "required" : false,
-          "type" : "string"
-        }, {
           "name" : "userId",
           "in" : "query",
           "description" : "User's id",
@@ -2867,12 +2042,6 @@
         "description" : "Allows the client to create a new variable in the `variables` table.",
         "produces" : [ "application/json" ],
         "parameters" : [ {
-          "name" : "access_token",
-          "in" : "query",
-          "description" : "User's OAuth2 access token",
-          "required" : false,
-          "type" : "string"
-        }, {
           "name" : "userId",
           "in" : "query",
           "description" : "User's id",
@@ -2912,12 +2081,6 @@
         "description" : "Get all of the settings and information about a variable by its name. If the logged in user has modified the settings for the variable, these will be provided instead of the default settings for that variable.",
         "produces" : [ "application/json" ],
         "parameters" : [ {
-          "name" : "access_token",
-          "in" : "query",
-          "description" : "User's OAuth2 access token",
-          "required" : false,
-          "type" : "string"
-        }, {
           "name" : "userId",
           "in" : "query",
           "description" : "User's id",
@@ -2955,12 +2118,6 @@
         "description" : "This endpoint retrieves an array of all public variables. Public variables are things like foods, medications, symptoms, conditions, and anything not unique to a particular user. For instance, a telephone number or name would not be a public variable.",
         "produces" : [ "application/json" ],
         "parameters" : [ {
-          "name" : "access_token",
-          "in" : "query",
-          "description" : "User's OAuth2 access token",
-          "required" : false,
-          "type" : "string"
-        }, {
           "name" : "userId",
           "in" : "query",
           "description" : "User's id",
@@ -3038,185 +2195,6 @@
             "description" : "Successful operation",
             "schema" : {
               "$ref" : "#/definitions/Variable"
-            }
-          },
-          "401" : {
-            "description" : "Not Authenticated"
-          }
-        },
-        "security" : [ {
-          "access_token" : [ ]
-        }, {
-          "quantimodo_oauth2" : [ "basic" ]
-        } ]
-      }
-    },
-    "/v1/public/variables/search/{search}" : {
-      "get" : {
-        "tags" : [ "variables" ],
-        "summary" : "Get top 5 PUBLIC variables with the most correlations",
-        "description" : "Get top 5 PUBLIC variables with the most correlations containing the entered search characters. For example, search for 'mood' as an effect. Since 'Overall Mood' has a lot of correlations with other variables, it should be in the autocomplete list.Supported filter parameters:<ul><li><b>category</b> - Category of Variable</li></ul>",
-        "produces" : [ "application/json" ],
-        "parameters" : [ {
-          "name" : "search",
-          "in" : "path",
-          "description" : "Search query can be some fraction of a variable name.",
-          "required" : true,
-          "type" : "string"
-        }, {
-          "name" : "access_token",
-          "in" : "query",
-          "description" : "User's OAuth2 access token",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "userId",
-          "in" : "query",
-          "description" : "User's id",
-          "required" : false,
-          "type" : "integer"
-        }, {
-          "name" : "variableCategoryName",
-          "in" : "query",
-          "description" : "Filter variables by category name. The variable categories include Activity, Causes of Illness, Cognitive Performance, Conditions, Environment, Foods, Location, Miscellaneous, Mood, Nutrition, Physical Activity, Physique, Sleep, Social Interactions, Symptoms, Treatments, Vital Signs, and Work.",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "source",
-          "in" : "query",
-          "description" : "Specify a data source name to only return variables from a specific data source.",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "effectOrCause",
-          "in" : "query",
-          "description" : "Indicate if you only want variables that have user correlations. Possible values are effect and cause.",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "publicEffectOrCause",
-          "in" : "query",
-          "description" : "Indicate if you only want variables that have aggregated correlations.  Possible values are effect and cause.",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "limit",
-          "in" : "query",
-          "description" : "The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0.",
-          "required" : false,
-          "type" : "integer"
-        }, {
-          "name" : "offset",
-          "in" : "query",
-          "description" : "Since the maximum limit is 200 records, to get more than that you'll have to make multiple API calls and page through the results. To retrieve all the data, you can iterate through data by using the `limit` and `offset` query parameters.  For example, if you want to retrieve data from 61-80 then you can use a query with the following parameters, `imit=20&offset=60`.",
-          "required" : false,
-          "type" : "integer"
-        }, {
-          "name" : "sort",
-          "in" : "query",
-          "description" : "Sort by given field. If the field is prefixed with `-, it will sort in descending order.",
-          "required" : false,
-          "type" : "integer"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "Variables returned",
-            "schema" : {
-              "$ref" : "#/definitions/Variable"
-            }
-          },
-          "401" : {
-            "description" : "Not Authenticated"
-          }
-        },
-        "security" : [ {
-          "access_token" : [ ]
-        }, {
-          "quantimodo_oauth2" : [ "basic" ]
-        } ]
-      }
-    },
-    "/v1/variables/search/{search}" : {
-      "get" : {
-        "tags" : [ "variables" ],
-        "summary" : "Get variables by search query",
-        "description" : "Get variables containing the search characters for which the currently logged in user has measurements. Used to provide auto-complete function in variable search boxes.",
-        "produces" : [ "application/json" ],
-        "parameters" : [ {
-          "name" : "search",
-          "in" : "path",
-          "description" : "Search query which may be an entire variable name or a fragment of one.",
-          "required" : true,
-          "type" : "string"
-        }, {
-          "name" : "access_token",
-          "in" : "query",
-          "description" : "User's OAuth2 access token",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "userId",
-          "in" : "query",
-          "description" : "User's id",
-          "required" : false,
-          "type" : "integer"
-        }, {
-          "name" : "variableCategoryName",
-          "in" : "query",
-          "description" : "Filter variables by category name. The variable categories include Activity, Causes of Illness, Cognitive Performance, Conditions, Environment, Foods, Location, Miscellaneous, Mood, Nutrition, Physical Activity, Physique, Sleep, Social Interactions, Symptoms, Treatments, Vital Signs, and Work.",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "includePublic",
-          "in" : "query",
-          "description" : "Set to true if you would like to include public variables when no user variables are found.",
-          "required" : false,
-          "type" : "boolean"
-        }, {
-          "name" : "manualTracking",
-          "in" : "query",
-          "description" : "Set to true if you would like to exlude variables like apps and website names.",
-          "required" : false,
-          "type" : "boolean"
-        }, {
-          "name" : "source",
-          "in" : "query",
-          "description" : "Specify a data source name to only return variables from a specific data source.",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "effectOrCause",
-          "in" : "query",
-          "description" : "Indicate if you only want variables that have user correlations. Possible values are effect and cause.",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "publicEffectOrCause",
-          "in" : "query",
-          "description" : "Indicate if you only want variables that have aggregated correlations.  Possible values are effect and cause.",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "limit",
-          "in" : "query",
-          "description" : "The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0.",
-          "required" : false,
-          "type" : "integer"
-        }, {
-          "name" : "offset",
-          "in" : "query",
-          "description" : "Since the maximum limit is 200 records, to get more than that you'll have to make multiple API calls and page through the results. To retrieve all the data, you can iterate through data by using the `limit` and `offset` query parameters.  For example, if you want to retrieve data from 61-80 then you can use a query with the following parameters, `imit=20&offset=60`.",
-          "required" : false,
-          "type" : "integer"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "Successful operation",
-            "schema" : {
-              "type" : "array",
-              "items" : {
-                "$ref" : "#/definitions/Variable"
-              }
             }
           },
           "401" : {
@@ -3373,12 +2351,6 @@
         "description" : "This is to enable users to indicate their opinion on the plausibility of a causal relationship between a treatment and outcome. QuantiModo incorporates crowd-sourced plausibility estimations into their algorithm. This is done allowing user to indicate their view of the plausibility of each relationship with thumbs up/down buttons placed next to each prediction.",
         "produces" : [ "application/json" ],
         "parameters" : [ {
-          "name" : "access_token",
-          "in" : "query",
-          "description" : "User's OAuth2 access token",
-          "required" : false,
-          "type" : "string"
-        }, {
           "name" : "userId",
           "in" : "query",
           "description" : "User's id",
@@ -3418,12 +2390,6 @@
         "description" : "Delete previously posted vote",
         "produces" : [ "application/json" ],
         "parameters" : [ {
-          "name" : "access_token",
-          "in" : "query",
-          "description" : "User's OAuth2 access token",
-          "required" : false,
-          "type" : "string"
-        }, {
           "name" : "userId",
           "in" : "query",
           "description" : "User's id",
