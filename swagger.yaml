@@ -1265,8 +1265,8 @@ paths:
     post:
       tags:
         - reminders
-      summary: Snooze a pending tracking reminder
-      description: Changes the reminder time to now plus one hour
+      summary: Snooze, skip, or track a pending tracking reminder notification
+      description: Snooze, skip, or track a pending tracking reminder notification
       produces:
         - application/json
       parameters:
@@ -1276,7 +1276,10 @@ paths:
           description: Id of the pending reminder to be snoozed
           required: true
           schema:
-            $ref: '#/definitions/TrackingReminderNotification'
+              type: array
+              items:
+                $ref: '#/definitions/TrackingReminderNotificationPost'
+              description: Array of TrackingReminderNotifications to take action on
       responses:
         '200':
           description: Successful Operation
@@ -2242,30 +2245,25 @@ definitions:
     properties:
       id:
         type: integer
-        description: Id of the PENDING reminder to be deleted
-  TrackingReminderNotificationSkip:
-    required:
-      - id
-    properties:
-      id:
-        type: integer
-        description: Id of the PENDING reminder to be skipped
-  TrackingReminderNotificationSnooze:
-    required:
-      - id
-    properties:
-      id:
-        type: integer
-        description: Id of the PENDING reminder to be snoozed
+        description: Id of the TrackingReminder to be deleted
   TrackingReminderNotificationPost:
     required:
-      - trackingReminderNotification
+      - id
+      - action
     properties:
-      trackingReminderNotification:
-        $ref: '#/definitions/TrackingReminderNotification'
+      id:
+        type: number
+        description: Id of the TrackingReminderNotification
       modifiedValue:
         type: number
         description: Optional value to be recorded instead of the tracking reminder default value
+      action:
+        type: string
+        description: track records a measurement for the notification.  snooze changes the notification to 1 hour from now. skip deletes the notification.
+        enum:
+          - track
+          - snooze
+          - skip
   TrackingReminder:
     required:
       - variableId
