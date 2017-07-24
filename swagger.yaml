@@ -856,7 +856,7 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - basic
-  /v2/auth/social/login:
+  '/v2/auth/social/login':
     get:
       operationId: getSocialLoginPage
       tags:
@@ -907,7 +907,7 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - basic
-  /v2/auth/social/authorizeCode:
+  '/v2/auth/social/authorizeCode':
     get:
       operationId: getSocialAuthorizationCode
       tags:
@@ -954,7 +954,7 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - basic
-  /v2/auth/social/authorizeToken:
+  '/v2/auth/social/authorizeToken':
     get:
       operationId: getSocialAuthorizationToken
       tags:
@@ -1043,7 +1043,7 @@ paths:
           description: Forbidden
           schema:
             $ref: '#/definitions/UserTokenFailedResponse'
-  /v1/pairs:
+  '/v1/pairs':
     get:
       operationId: getPairs
       tags:
@@ -1137,7 +1137,7 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - basic
-  /v1/trackingReminders:
+  '/v1/trackingReminders':
     get:
       operationId: getTrackingReminders
       tags:
@@ -1202,7 +1202,7 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - basic
-  /v1/trackingReminders/delete:
+  '/v1/trackingReminders/delete':
     delete:
       tags:
         - reminders
@@ -1229,7 +1229,7 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - basic
-  /v1/trackingReminderNotifications:
+  '/v1/trackingReminderNotifications':
     get:
       operationId: getTrackingReminderNotifications
       tags:
@@ -1291,7 +1291,7 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - basic
-  /v1/units:
+  '/v1/units':
     get:
       operationId: getUnits
       tags:
@@ -1314,7 +1314,7 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - basic
-  /v1/unitCategories:
+  '/v1/unitCategories':
     get:
       operationId: getUnitCategories
       tags:
@@ -1337,7 +1337,7 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - basic
-  /v1/user/me:
+  '/v1/user/me':
     get:
       operationId: getLoggedInUser
       tags:
@@ -1357,7 +1357,7 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - basic
-  /v1/userTags:
+  '/v1/userTags':
     post:
       tags:
         - tags
@@ -1389,7 +1389,7 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - basic
-  /v1/userTags/delete:
+  '/v1/userTags/delete':
     delete:
       tags:
         - tags
@@ -1423,7 +1423,7 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - basic
-  /v1/userVariables:
+  '/v1/userVariables':
     post:
       tags:
         - variables
