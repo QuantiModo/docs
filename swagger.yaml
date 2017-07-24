@@ -1676,7 +1676,7 @@ paths:
           description: 'Contains the cause variable, effect variable, and vote value.'
           required: true
           schema:
-            $ref: '#/definitions/PostVote'
+            $ref: '#/definitions/Vote'
       responses:
         '200':
           description: Successful Operation
@@ -2187,21 +2187,6 @@ definitions:
       name:
         type: string
         description: Category name
-  PostVote:
-    required:
-      - causeVariableId
-      - effectVariableId
-      - vote
-    properties:
-      causeVariableId:
-        type: integer
-        description: Cause variable id
-      effectVariableId:
-        type: integer
-        description: Effect variable id
-      vote:
-        type: boolean
-        description: 'Vote: 0 (for implausible) or 1 (for plausible)'
   PostCorrelation:
     required:
       - causeVariableName
@@ -3007,75 +2992,10 @@ definitions:
         type: string
         description: ''
   UserVariables:
-    required:
-      - user
-      - variableId
-    properties:
-      user:
-        type: integer
-        description: User ID
-      variableId:
-        type: integer
-        description: Common variable id
-      durationOfAction:
-        type: integer
-        description: >-
-          The amount of time over which a predictor/stimulus event can exert an
-          observable influence on an outcome variable’s value. For instance,
-          aspirin (stimulus/predictor) typically decreases headache severity for
-          approximately four hours (duration of action) following the onset
-          delay.
-      fillingValue:
-        type: integer
-        description: >-
-          When it comes to analysis to determine the effects of this variable,
-          knowing when it did not occur is as important as knowing when it did
-          occur. For example, if you are tracking a medication, it is important
-          to know when you did not take it, but you do not have to log zero
-          values for all the days when you haven't taken it. Hence, you can
-          specify a filling value (typically 0) to insert whenever data is
-          missing.
-      joinWith:
-        type: string
-        description: joinWith
-      maximumAllowedValue:
-        type: number
-        format: float
-        description: >-
-          The maximum allowed value for measurements. While you can record a
-          value above this maximum, it will be excluded from the correlation
-          analysis.
-      minimumAllowedValue:
-        type: number
-        format: float
-        description: >-
-          The minimum allowed value for measurements. While you can record a
-          value below this minimum, it will be excluded from the correlation
-          analysis.
-      onsetDelay:
-        type: integer
-        description: onsetDelay
-      experimentStartTime:
-        type: string
-        description: >-
-          Earliest measurement startTime that should be used in analysis. For
-          instance, the date when you started tracking something.  Helpful in
-          determining when to start 0 filling since we can assume the absence of
-          a treatment measurement, for instance, indicates that the treatment
-          was not applied rathter than simply not recorded.  Uses ISO string
-          format
-      experimentEndTime:
-        type: string
-        description: >-
-          Latest measurement startTime that should be used in analysis. For
-          instance, the date when you stopped tracking something.  Helpful in
-          determining when to stop 0 filling since we can assume the absence of
-          a treatment measurement, for instance, indicates that the treatment
-          was not applied rathter than simply not recorded.   Uses ISO string
-          format
-      alias:
-        type: string
-        description: User-defined display alias for variable name
+    type: array
+    items:
+      $ref: '#/definitions/UserVariable'
+    description: Array of user variables
   MeasurementItem:
     required:
       - timestamp
@@ -3302,8 +3222,8 @@ definitions:
     required:
       - clientId
       - userId
-      - causeId
-      - effectId
+      - causeVariableId
+      - effectVariableId
       - value
     properties:
       id:
@@ -3317,18 +3237,15 @@ definitions:
         description: ID of User
         type: integer
         format: int32
-      causeId:
-        description: ID of the predictor variable
+      causeVariableId:
         type: integer
-        format: int32
-      effectId:
-        description: ID of effect variable
+        description: Cause variable id
+      effectVariableId:
         type: integer
-        format: int32
+        description: Effect variable id
       value:
-        description: Value of Vote
-        type: integer
-        format: int32
+        type: boolean
+        description: 'Vote: 0 (for implausible) or 1 (for plausible)'
       createdAt:
         description: >-
           When the record was first created. Use UTC ISO 8601
