@@ -64,7 +64,7 @@ parameters:
     name: userId
     description: User's id
     required: false
-    type: int
+    type: number
   createdAtParam:
     in: query
     name: createdAt
@@ -585,10 +585,12 @@ paths:
         - $ref: '#/parameters/userIdParam'
         - in: body
           name: body
-          description: An array of measurements you want to insert.
+          description: An array of measurement sets containing measurement items you want to insert.
           required: true
           schema:
-            $ref: '#/definitions/MeasurementSet'
+            type: array
+            items:
+              $ref: '#/definitions/MeasurementSet'
       responses:
         '200':
           description: Measurements successfully stored
@@ -751,7 +753,7 @@ paths:
             - basic
   /v2/oauth2/access_token:
     get:
-      operationId: createUsersWithArrayInput
+      operationId: getAccessToken
       tags:
         - authentication
       summary: Get a user access token
@@ -856,7 +858,7 @@ paths:
             - basic
   /v2/auth/social/login:
     get:
-      operationId: createUsersWithArrayInput
+      operationId: getSocialLoginPage
       tags:
         - authentication
       summary: First Setp in Social Authentication flow with JWT Token
@@ -907,7 +909,7 @@ paths:
             - basic
   /v2/auth/social/authorizeCode:
     get:
-      operationId: createUsersWithArrayInput
+      operationId: getSocialAuthorizationCode
       tags:
         - authentication
       summary: Second Step in Social Authentication flow with JWT Token
@@ -954,7 +956,7 @@ paths:
             - basic
   /v2/auth/social/authorizeToken:
     get:
-      operationId: createUsersWithArrayInput
+      operationId: getSocialAuthorizationToken
       tags:
         - authentication
       summary: Native Social Authentication
@@ -1043,7 +1045,7 @@ paths:
             $ref: '#/definitions/UserTokenFailedResponse'
   /v1/pairs:
     get:
-      operationId: createUsersWithArrayInput
+      operationId: getPairs
       tags:
         - pairs
       summary: Get pairs
@@ -1152,15 +1154,7 @@ paths:
         - $ref: '#/parameters/updatedAtParam'
         - $ref: '#/parameters/limitParam'
         - $ref: '#/parameters/offsetParam'
-          required: false
-          type: integer
-        - name: sort
-          in: query
-          description: >-
-            Sort by given field. If the field is prefixed with '-', it will sort
-            in descending order.
-          required: false
-          type: string
+        - $ref: '#/parameters/sortParam'
       responses:
         '200':
           description: successful operation
@@ -1251,15 +1245,7 @@ paths:
         - $ref: '#/parameters/updatedAtParam'
         - $ref: '#/parameters/limitParam'
         - $ref: '#/parameters/offsetParam'
-          required: false
-          type: integer
-        - name: sort
-          in: query
-          description: >-
-            Sort by given field. If the field is prefixed with '-', it will sort
-            in descending order.
-          required: false
-          type: string
+        - $ref: '#/parameters/sortParam'
       responses:
         '200':
           description: successful operation
@@ -1415,25 +1401,29 @@ paths:
     post:
       tags:
         - variables
-      summary: Create Variables
-      description: Allows the client to create a new variable in the `variables` table.
+      summary: Update User Settings for a Variable
+      description: >-
+        Users can change the parameters used in analysis of that variable such
+        as the expected duration of action for a variable to have an effect, the
+        estimated delay before the onset of action. In order to filter out
+        erroneous data, they are able to set the maximum and minimum reasonable
+        daily values for a variable.
       produces:
         - application/json
       parameters:
-        - $ref: '#/parameters/userIdParam'
         - in: body
-          name: body
-          description: Original name for the variable.
+          name: userVariables
+          description: Variable user settings data
           required: true
           schema:
-            $ref: '#/definitions/VariablesNew'
+            $ref: '#/definitions/UserVariables'
       responses:
-        '200':
-          description: Successful operation
-        '201':
-          description: Variable created
+        '400':
+          description: The received JSON was invalid or malformed
         '401':
           description: Not Authenticated
+        '404':
+          description: Unknown target user ID
       security:
         - access_token: []
         - quantimodo_oauth2:
@@ -1578,39 +1568,6 @@ paths:
             $ref: '#/definitions/Variable'
         '401':
           description: Not Authenticated
-      security:
-        - access_token: []
-        - quantimodo_oauth2:
-            - basic
-  /v1/userVariables:
-    post:
-      tags:
-        - variables
-      summary: Update User Settings for a Variable
-      description: >-
-        Users can change the parameters used in analysis of that variable such
-        as the expected duration of action for a variable to have an effect, the
-        estimated delay before the onset of action. In order to filter out
-        erroneous data, they are able to set the maximum and minimum reasonable
-        daily values for a variable.
-      produces:
-        - application/json
-      parameters:
-        - in: body
-          name: userVariables
-          description: Variable user settings data
-          required: true
-          schema:
-            $ref: '#/definitions/UserVariables'
-      responses:
-        '200':
-          description: Successful operation
-        '400':
-          description: The received JSON was invalid or malformed
-        '401':
-          description: Not Authenticated
-        '404':
-          description: Unknown target user ID
       security:
         - access_token: []
         - quantimodo_oauth2:
@@ -2205,7 +2162,7 @@ definitions:
         description: Error message
   MeasurementSet:
     required:
-      - measurements
+      - measurementItems
       - variableName
       - sourceName
       - unitAbbreviatedName
@@ -2446,10 +2403,7 @@ definitions:
         $ref: '#/definitions/TrackingReminderNotification'
       modifiedValue:
         type: number
-        description: >- Optional value to be recorded instead of the tracking reminder default value
-      action:
-        type: number
-        description: >- Optional value to be recorded instead of the tracking reminder default value
+        description: Optional value to be recorded instead of the tracking reminder default value
   TrackingReminder:
     required:
       - variableId
