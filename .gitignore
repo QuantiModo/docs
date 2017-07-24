@@ -1,5 +1,8 @@
 
 scripts/quantimodo_v1_skds\.zip
+silex-PHP-server-generated/
+slim-server-generated/
+*.zip
 
 slim-server-generated\.zip
 
