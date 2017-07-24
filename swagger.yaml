@@ -2182,7 +2182,7 @@ definitions:
     properties:
       id:
         type: integer
-        description: Variable id of the measurement to be deleted
+        description: Variable id of the measurement to be updated
       startTime:
         type: integer
         description: The new timestamp for the the event in epoch seconds (optional)
