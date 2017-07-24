@@ -2074,17 +2074,6 @@ definitions:
       valuePredictingLowOutcomeExplanation:
         type: string
         description: 'Overall Mood, on average, 4% LOWER after around 0mg Remeron'
-  HumanTime:
-    type: object
-    properties:
-      date:
-        type: string
-        description: date time
-      timezone_type:
-        type: integer
-      timezone:
-        type: string
-        description: timezone of date time
   JsonErrorResponse:
     required:
       - status
@@ -2160,8 +2149,6 @@ definitions:
         description: >-
           Seconds between the start of the event measured and 1970 (Unix
           timestamp)
-      humanTime:
-        $ref: '#/definitions/HumanTime'
       value:
         type: number
         format: double
