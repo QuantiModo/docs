@@ -1,2 +1,10 @@
 
 scripts/quantimodo_v1_skds\.zip
+
+slim-server-generated\.zip
+
+silex-PHP-server-generated/SwaggerServer/
+
+slim-server-generated/
+
+*.zip
