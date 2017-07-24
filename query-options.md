@@ -21,15 +21,6 @@ For example, if you want to retrieve data from 61-80 then you can use a query wi
 
 Generally, you'll be retrieving new or updated user data.  To avoid unnecessary API calls, you'll want to store your last refresh time locally.  Initially, it should be set to 0.  Then whenever you make a request to get new data, you should limit the returned results to those updated since your last refresh by appending append `?updatedAt=(ge)"2013-01-D01T01:01:01"` to your request.
 
-Also for better pagination, you can get link to the records of first, last, next and previous page from response headers:
-* ```Total-Count``` - Total number of results for given query
-* ```Link-First``` - Link to get first page records
-* ```Link-Last``` - Link to get last page records
-* ```Link-Prev``` - Link to get previous records set
-* ```Link-Next``` - Link to get next records set
-
-Remember, response header will be only sent when the record set is available. e.g. You will not get a ```Link-Last``` & ```Link-Next``` when you query for the last page.
-
 ### Sorting Results
 
 To get data sorted by particular field:
