@@ -1785,45 +1785,6 @@ definitions:
       totalMeasurementsInLastUpdate:
         type: integer
         description: Number of measurements obtained during latest update
-  ConnectorInfo:
-    required:
-      - id
-      - connected
-      - error
-      - history
-    properties:
-      id:
-        type: integer
-        description: Connector ID number
-      connected:
-        type: boolean
-        description: True if the authenticated user has this connector enabled
-      error:
-        type: string
-        description: Error message. Empty if connected.
-      history:
-        type: array
-        items:
-          $ref: '#/definitions/ConnectorInfoHistoryItem'
-  ConnectorInfoHistoryItem:
-    required:
-      - numberOfMeasurements
-      - success
-      - message
-      - createdAt
-    properties:
-      numberOfMeasurements:
-        type: integer
-        description: Number of measurements
-      success:
-        type: boolean
-        description: True if the update was successfull
-      message:
-        type: string
-        description: Error message.
-      createdAt:
-        type: string
-        description: Date and time of the update in UTC time zone
   ConversionStep:
     required:
       - operation
@@ -2087,58 +2048,6 @@ definitions:
       valuePredictingLowOutcomeExplanation:
         type: string
         description: 'Overall Mood, on average, 4% LOWER after around 0mg Remeron'
-  Connection:
-    required:
-      - connectorId
-    properties:
-      id:
-        description: id
-        type: integer
-        format: int32
-      userId:
-        description: ID of user that owns this correlation
-        type: integer
-        format: int32
-      connectorId:
-        description: >-
-          The id for the connector data source for which the connection is
-          connected
-        type: integer
-        format: int32
-      connectStatus:
-        description: >-
-          Indicates whether a connector is currently connected to a service for
-          a user.
-        type: string
-      connectError:
-        description: Error message if there is a problem with authorizing this connection.
-        type: string
-      updateRequestedAt:
-        description: Time at which an update was requested by a user.
-        type: string
-        format: date-time
-      updateStatus:
-        description: Indicates whether a connector is currently updated.
-        type: string
-      updateError:
-        description: Indicates if there was an error during the update.
-        type: string
-      lastSuccessfulUpdatedAt:
-        description: The time at which the connector was last successfully updated.
-        type: string
-        format: date-time
-      createdAt:
-        description: >-
-          When the record was first created. Use UTC ISO 8601
-          "YYYY-MM-DDThh:mm:ss"  datetime format
-        type: string
-        format: date-time
-      updatedAt:
-        description: >-
-          When the record in the database was last updated. Use UTC ISO 8601
-          "YYYY-MM-DDThh:mm:ss"  datetime format
-        type: string
-        format: date-time
   HumanTime:
     type: object
     properties:
@@ -2271,23 +2180,6 @@ definitions:
       note:
         type: string
         description: The new note for the measurement (optional)
-  MeasurementRange:
-    required:
-      - lowerLimit
-    properties:
-      lowerLimit:
-        type: integer
-        description: The timestamp of the earliest measurement for a user.
-      upperLimit:
-        type: integer
-        description: The timestamp of the most recent measurement for a user.
-  MeasurementSource:
-    required:
-      - name
-    properties:
-      name:
-        type: string
-        description: Name of the application or device.
   Pairs:
     required:
       - name
@@ -2295,44 +2187,6 @@ definitions:
       name:
         type: string
         description: Category name
-  Permission:
-    required:
-      - target
-      - variableName
-      - minTimestamp
-      - maxTimestamp
-      - minTimeOfDay
-      - maxTimeOfDay
-      - week
-    properties:
-      target:
-        type: integer
-        description: >-
-          Grant permission to target user or public so they may access
-          measurements within the given parameters. TODO: Rename target to
-          something more intuitive.
-      variableName:
-        type: string
-        description: ORIGINAL Variable name
-      minTimestamp:
-        type: integer
-        description: Earliest time when measurements will be accessible in epoch seconds
-      maxTimestamp:
-        type: integer
-        description: Latest time when measurements will be accessible in epoch seconds
-      minTimeOfDay:
-        type: integer
-        description: >-
-          Earliest time of day when measurements will be accessible in epoch
-          seconds
-      maxTimeOfDay:
-        type: integer
-        description: >-
-          Latest time of day when measurements will be accessible in epoch
-          seconds
-      week:
-        type: string
-        description: Maybe specifies if only weekday measurements should be accessible
   PostVote:
     required:
       - causeVariableId
@@ -3433,46 +3287,6 @@ definitions:
       name:
         type: string
         description: Category name
-  VariableNew:
-    required:
-      - name
-      - category
-      - unit
-      - combinationOperation
-      - parent
-    properties:
-      name:
-        type: string
-        description: User-defined variable display name.
-      category:
-        type: string
-        description: >-
-          Variable category like Mood, Sleep, Physical Activity, Treatment,
-          Symptom, etc.
-      unit:
-        type: string
-        description: Abbreviated name of the default unit for the variable
-      combinationOperation:
-        type: string
-        enum:
-          - MEAN
-          - SUM
-        description: >-
-          Way to aggregate measurements over time. Options are "MEAN" or "SUM".
-          SUM should be used for things like minutes of exercise.  If you use
-          MEAN for exercise, then a person might exercise more minutes in one
-          day but add separate measurements that were smaller.  So when we are
-          doing correlational analysis, we would think that the person exercised
-          less that day even though they exercised more.  Conversely, we must
-          use MEAN for things such as ratings which cannot be SUMMED.
-      parent:
-        type: string
-        description: Parent
-  VariablesNew:
-    type: array
-    items:
-      $ref: '#/definitions/VariableNew'
-    description: New variables
   VoteDelete:
     required:
       - cause
