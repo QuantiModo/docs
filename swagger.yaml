@@ -2456,7 +2456,6 @@ definitions:
   User:
     required:
       - id
-      - wpId
       - displayName
       - loginName
       - email
@@ -2466,9 +2465,6 @@ definitions:
       id:
         type: integer
         description: User id
-      wpId:
-        type: integer
-        description: Wordpress user id
       displayName:
         type: string
         description: User display name
@@ -2478,9 +2474,9 @@ definitions:
       email:
         type: string
         description: User email
-      token:
+      accessToken:
         type: string
-        description: User token
+        description: User access token
       administrator:
         type: boolean
         description: Is user administrator

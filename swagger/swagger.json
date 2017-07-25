@@ -3230,7 +3230,6 @@
     "User": {
       "required": [
         "id",
-        "wpId",
         "displayName",
         "loginName",
         "email",
@@ -3241,10 +3240,6 @@
         "id": {
           "type": "integer",
           "description": "User id"
-        },
-        "wpId": {
-          "type": "integer",
-          "description": "Wordpress user id"
         },
         "displayName": {
           "type": "string",
@@ -3258,9 +3253,9 @@
           "type": "string",
           "description": "User email"
         },
-        "token": {
+        "accessToken": {
           "type": "string",
-          "description": "User token"
+          "description": "User access token"
         },
         "administrator": {
           "type": "boolean",
