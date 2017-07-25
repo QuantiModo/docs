@@ -446,7 +446,7 @@
       "get": {
         "operationId": "getCorrelations",
         "tags": [
-          "correlations"
+          "analytics"
         ],
         "summary": "Get correlations",
         "description": "Get correlations based on data from a single user.",
@@ -534,7 +534,7 @@
       "get": {
         "operationId": "getAggregatedCorrelations",
         "tags": [
-          "correlations"
+          "analytics"
         ],
         "summary": "Get aggregated correlations",
         "description": "Get correlations based on the anonymized aggregate data from all QuantiModo users.",
@@ -620,7 +620,7 @@
       "post": {
         "operationId": "postAggregatedCorrelations",
         "tags": [
-          "correlations"
+          "analytics"
         ],
         "summary": "Store or Update a Correlation",
         "description": "Add correlation",
@@ -1274,9 +1274,9 @@
       "get": {
         "operationId": "getPairs",
         "tags": [
-          "pairs"
+          "measurements"
         ],
-        "summary": "Get pairs",
+        "summary": "Get pairs of measurements for correlational analysis",
         "description": "Pairs cause measurements with effect measurements grouped over the duration of action after the onset delay.",
         "produces": [
           "application/json"
@@ -1742,16 +1742,36 @@
         ]
       }
     },
-    "/v1/user/me": {
+    "/v1/user": {
       "get": {
-        "operationId": "getLoggedInUser",
+        "operationId": "getUser",
         "tags": [
           "user"
         ],
-        "summary": "Get all available units for variableGet authenticated user",
-        "description": "Returns user info for the currently authenticated user.",
+        "summary": "Get user info",
+        "description": "Returns user info.  If no userId is specified, returns info for currently authenticated user",
         "produces": [
           "application/json"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/userIdParam"
+          },
+          {
+            "$ref": "#/parameters/createdAtParam"
+          },
+          {
+            "$ref": "#/parameters/updatedAtParam"
+          },
+          {
+            "$ref": "#/parameters/limitParam"
+          },
+          {
+            "$ref": "#/parameters/offsetParam"
+          },
+          {
+            "$ref": "#/parameters/sortParam"
+          }
         ],
         "responses": {
           "200": {
@@ -1780,7 +1800,7 @@
       "post": {
         "operationId": "postUserTags",
         "tags": [
-          "tags"
+          "variables"
         ],
         "summary": "Post or update user tags or ingredients",
         "description": "This endpoint allows users to tag foods with their ingredients.  This information will then be used to infer the user intake of the different ingredients by just entering the foods. The inferred intake levels will then be used to determine the effects of different nutrients on the user during analysis.",
@@ -1828,7 +1848,7 @@
       "delete": {
         "operationId": "deleteUserTag",
         "tags": [
-          "tags"
+          "variables"
         ],
         "summary": "Delete user tag or ingredient",
         "description": "Delete previously created user tags or ingredients.",
@@ -2246,8 +2266,7 @@
       "post": {
         "operationId": "postVote",
         "tags": [
-          "correlations",
-          "votes"
+          "analytics"
         ],
         "summary": "Post or update vote",
         "description": "This is to enable users to indicate their opinion on the plausibility of a causal relationship between a treatment and outcome. QuantiModo incorporates crowd-sourced plausibility estimations into their algorithm. This is done allowing user to indicate their view of the plausibility of each relationship with thumbs up/down buttons placed next to each prediction.",
@@ -2295,8 +2314,7 @@
       "delete": {
         "operationId": "deleteVote",
         "tags": [
-          "correlations",
-          "votes"
+          "analytics"
         ],
         "summary": "Delete vote",
         "description": "Delete previously posted vote",
