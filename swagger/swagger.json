@@ -3233,7 +3233,7 @@
         "displayName",
         "loginName",
         "email",
-        "token",
+        "accessToken",
         "administrator"
       ],
       "properties": {
