@@ -618,6 +618,7 @@
         ]
       },
       "post": {
+        "operationId": "postAggregatedCorrelations",
         "tags": [
           "correlations"
         ],
@@ -786,6 +787,7 @@
         ]
       },
       "post": {
+        "operationId": "postMeasurements",
         "tags": [
           "measurements"
         ],
@@ -833,6 +835,7 @@
     },
     "/v1/measurements/delete": {
       "delete": {
+        "operationId": "deleteMeasurement",
         "tags": [
           "measurements"
         ],
@@ -876,7 +879,7 @@
       }
     },
     "/v1/measurements/update": {
-      "post": {
+      "put": {
         "tags": [
           "measurements"
         ],
@@ -919,8 +922,9 @@
         ]
       }
     },
-    "/v2/measurements/export": {
+    "/v2/measurements/exportRequest": {
       "post": {
+        "operationId": "measurementExportRequest",
         "tags": [
           "measurements"
         ],
@@ -1266,66 +1270,6 @@
         ]
       }
     },
-    "/v1/organizations/{organizationId}/users": {
-      "post": {
-        "tags": [
-          "organizations",
-          "user"
-        ],
-        "summary": "Get user tokens for existing users, create new users",
-        "description": "Get user tokens for existing users, create new users",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "$ref": "#/parameters/userIdParam"
-          },
-          {
-            "in": "path",
-            "name": "organizationId",
-            "description": "Organization ID",
-            "required": true,
-            "type": "integer"
-          },
-          {
-            "in": "body",
-            "name": "body",
-            "description": "Provides organization token and user ID",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/UserTokenRequest"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "User has been found, token was returned",
-            "schema": {
-              "$ref": "#/definitions/UserTokenSuccessfulResponse"
-            }
-          },
-          "201": {
-            "description": "User has been created, token was returned",
-            "schema": {
-              "$ref": "#/definitions/UserTokenSuccessfulResponse"
-            }
-          },
-          "400": {
-            "description": "Bad data",
-            "schema": {
-              "$ref": "#/definitions/UserTokenFailedResponse"
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "schema": {
-              "$ref": "#/definitions/UserTokenFailedResponse"
-            }
-          }
-        }
-      }
-    },
     "/v1/pairs": {
       "get": {
         "operationId": "getPairs",
@@ -1512,6 +1456,7 @@
         ]
       },
       "post": {
+        "operationId": "postTrackingReminders",
         "tags": [
           "reminders"
         ],
@@ -1564,6 +1509,7 @@
     },
     "/v1/trackingReminders/delete": {
       "delete": {
+        "operationId": "deleteTrackingReminder",
         "tags": [
           "reminders"
         ],
@@ -1674,6 +1620,7 @@
         ]
       },
       "post": {
+        "operationId": "postTrackingReminderNotifications",
         "tags": [
           "reminders"
         ],
@@ -1831,6 +1778,7 @@
     },
     "/v1/userTags": {
       "post": {
+        "operationId": "postUserTags",
         "tags": [
           "tags"
         ],
@@ -1878,6 +1826,7 @@
     },
     "/v1/userTags/delete": {
       "delete": {
+        "operationId": "deleteUserTag",
         "tags": [
           "tags"
         ],
@@ -1927,6 +1876,7 @@
     },
     "/v1/userVariables": {
       "post": {
+        "operationId": "postUserVariables",
         "tags": [
           "variables"
         ],
@@ -2161,6 +2111,7 @@
     },
     "/v1/userVariables/delete": {
       "delete": {
+        "operationId": "deleteUserVariable",
         "tags": [
           "variables"
         ],
@@ -2208,6 +2159,7 @@
     },
     "/v1/userVariables/reset": {
       "post": {
+        "operationId": "resetUserVariableSettings",
         "tags": [
           "variables"
         ],
@@ -2292,6 +2244,7 @@
     },
     "/v1/votes": {
       "post": {
+        "operationId": "postVote",
         "tags": [
           "correlations",
           "votes"
@@ -2340,6 +2293,7 @@
     },
     "/v1/votes/delete": {
       "delete": {
+        "operationId": "deleteVote",
         "tags": [
           "correlations",
           "votes"

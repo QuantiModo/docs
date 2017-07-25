@@ -455,6 +455,7 @@ paths:
         - quantimodo_oauth2:
             - basic
     post:
+      operationId: postAggregatedCorrelations
       tags:
         - correlations
       summary: Store or Update a Correlation
@@ -568,6 +569,7 @@ paths:
         - quantimodo_oauth2:
             - readmeasurements
     post:
+      operationId: postMeasurements
       tags:
         - measurements
       summary: Post a new set or update existing measurements to the database
@@ -602,6 +604,7 @@ paths:
             - writemeasurements
   /v1/measurements/delete:
     delete:
+      operationId: deleteMeasurement
       tags:
         - measurements
       summary: Delete a measurement
@@ -627,7 +630,7 @@ paths:
         - quantimodo_oauth2:
             - writemeasurements
   /v1/measurements/update:
-    post:
+    put:
       tags:
         - measurements
       summary: Update a measurement
@@ -654,8 +657,9 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - basic
-  /v2/measurements/export:
+  /v2/measurements/exportRequest:
     post:
+      operationId: measurementExportRequest
       tags:
         - measurements
       summary: Post Request for Measurements CSV
@@ -1004,45 +1008,6 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - basic
-  '/v1/organizations/{organizationId}/users':
-    post:
-      tags:
-        - organizations
-        - user
-      summary: 'Get user tokens for existing users, create new users'
-      description: 'Get user tokens for existing users, create new users'
-      produces:
-        - application/json
-      parameters:
-        - $ref: '#/parameters/userIdParam'
-        - in: path
-          name: organizationId
-          description: Organization ID
-          required: true
-          type: integer
-        - in: body
-          name: body
-          description: Provides organization token and user ID
-          required: true
-          schema:
-            $ref: '#/definitions/UserTokenRequest'
-      responses:
-        '200':
-          description: 'User has been found, token was returned'
-          schema:
-            $ref: '#/definitions/UserTokenSuccessfulResponse'
-        '201':
-          description: 'User has been created, token was returned'
-          schema:
-            $ref: '#/definitions/UserTokenSuccessfulResponse'
-        '400':
-          description: Bad data
-          schema:
-            $ref: '#/definitions/UserTokenFailedResponse'
-        '403':
-          description: Forbidden
-          schema:
-            $ref: '#/definitions/UserTokenFailedResponse'
   '/v1/pairs':
     get:
       operationId: getPairs
@@ -1172,12 +1137,11 @@ paths:
         - quantimodo_oauth2:
             - basic
     post:
+      operationId: postTrackingReminders
       tags:
         - reminders
       summary: Store a Tracking Reminder
-      description: >-
-        This is to enable users to create reminders to track a variable with a
-        default value at a specified frequency
+      description: This is to enable users to create reminders to track a variable with a default value at a specified frequency
       produces:
         - application/json
       parameters:
@@ -1204,6 +1168,7 @@ paths:
             - basic
   '/v1/trackingReminders/delete':
     delete:
+      operationId: deleteTrackingReminder
       tags:
         - reminders
       summary: Delete tracking reminder
@@ -1263,6 +1228,7 @@ paths:
         - quantimodo_oauth2:
             - basic
     post:
+      operationId: postTrackingReminderNotifications
       tags:
         - reminders
       summary: Snooze, skip, or track a pending tracking reminder notification
@@ -1359,6 +1325,7 @@ paths:
             - basic
   '/v1/userTags':
     post:
+      operationId: postUserTags
       tags:
         - tags
       summary: Post or update user tags or ingredients
@@ -1391,6 +1358,7 @@ paths:
             - basic
   '/v1/userTags/delete':
     delete:
+      operationId: deleteUserTag
       tags:
         - tags
       summary: Delete user tag or ingredient
@@ -1425,6 +1393,7 @@ paths:
             - basic
   '/v1/userVariables':
     post:
+      operationId: postUserVariables
       tags:
         - variables
       summary: Update User Settings for a Variable
@@ -1600,6 +1569,7 @@ paths:
             - basic
   /v1/userVariables/delete:
     delete:
+      operationId: deleteUserVariable
       tags:
         - variables
       summary: Delete All Measurements For Variable
@@ -1628,6 +1598,7 @@ paths:
             - basic
   /v1/userVariables/reset:
     post:
+      operationId: resetUserVariableSettings
       tags:
         - variables
       summary: Reset user settings for a variable to defaults
@@ -1682,6 +1653,7 @@ paths:
             - basic
   /v1/votes:
     post:
+      operationId: postVote
       tags:
         - correlations
         - votes
@@ -1716,6 +1688,7 @@ paths:
             - basic
   /v1/votes/delete:
     delete:
+      operationId: deleteVote
       tags:
         - correlations
         - votes
