@@ -43,7 +43,7 @@ parameters:
   connectorNamePathParam:
     in: path
     name: connectorName
-    description: Lowercase system name of the source application or device. Get a list of available connectors from the /v1/connectors/list endpoint.
+    description: Lowercase system name of the source application or device. Get a list of available connectors from the /v3/connectors/list endpoint.
     required: true
     type: string
   variableCategoryNameParam:
@@ -99,7 +99,7 @@ consumes:
 produces:
   - application/json
 paths:
-  /v1/integration.js:
+  /v3/integration.js:
     get:
       operationId: getIntegrationJs
       tags:
@@ -129,7 +129,7 @@ paths:
       responses:
         '200':
           description: Embeddable connect javascript was returned
-  /v1/connect/mobile:
+  /v3/connect/mobile:
     get:
       operationId: getMobileConnectPage
       tags:
@@ -139,7 +139,7 @@ paths:
         This page is designed to be opened in a webview.  Instead of using popup
         authentication boxes, it uses redirection. You can include the user's
         access_token as a URL parameter like
-        https://app.quantimo.do/api/v1/connect/mobile?access_token=123
+        https://app.quantimo.do/api/v3/connect/mobile?access_token=123
       produces:
         - text/html
       parameters:
@@ -151,7 +151,7 @@ paths:
           description: User token is missing
         '403':
           description: User token is incorrect
-  /v1/connectors/list:
+  /v3/connectors/list:
     get:
       operationId: getConnectorsList
       tags:
@@ -178,7 +178,7 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - basic
-  '/v1/connectors/{connectorName}/connect':
+  '/v3/connectors/{connectorName}/connect':
     get:
       operationId: connectConnector
       tags:
@@ -206,7 +206,7 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - basic
-  '/v1/connectors/{connectorName}/connectParameter':
+  '/v3/connectors/{connectorName}/connectParameter':
     get:
       operationId: connectConnectorWithParameters
       tags:
@@ -269,7 +269,7 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - basic
-  '/v1/connectors/{connectorName}/disconnect':
+  '/v3/connectors/{connectorName}/disconnect':
     get:
       operationId: disconnectConnector
       tags:
@@ -295,7 +295,7 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - basic
-  '/v1/connectors/{connectorName}/update':
+  '/v3/connectors/{connectorName}/update':
     get:
       operationId: updateConnector
       tags:
@@ -323,7 +323,7 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - basic
-  /v1/correlations:
+  /v3/correlations:
     get:
       operationId: getCorrelations
       tags:
@@ -386,7 +386,7 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - basic
-  /v1/aggregatedCorrelations:
+  /v3/aggregatedCorrelations:
     get:
       operationId: getAggregatedCorrelations
       tags:
@@ -482,7 +482,7 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - basic
-  /v1/measurements:
+  /v3/measurements:
     get:
       operationId: getMeasurements
       tags:
@@ -601,7 +601,7 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - writemeasurements
-  /v1/measurements/delete:
+  /v3/measurements/delete:
     delete:
       operationId: deleteMeasurement
       tags:
@@ -628,7 +628,7 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - writemeasurements
-  /v1/measurements/update:
+  /v3/measurements/update:
     put:
       tags:
         - measurements
@@ -762,7 +762,7 @@ paths:
       summary: Get a user access token
       description: >-
         Client provides authorization token obtained from
-        /api/v1/oauth2/authorize to this endpoint and receives an access token.
+        /api/v3/oauth2/authorize to this endpoint and receives an access token.
         Access token can then be used to query different API endpoints of
         QuantiModo. ### Request Access Token After user approves your access to
         the given scope form the https:/app.quantimo.do/v2/oauth2/authorize
@@ -1007,7 +1007,7 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - basic
-  '/v1/pairs':
+  '/v3/pairs':
     get:
       operationId: getPairs
       tags:
@@ -1099,7 +1099,7 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - basic
-  '/v1/trackingReminders':
+  '/v3/trackingReminders':
     get:
       operationId: getTrackingReminders
       tags:
@@ -1163,7 +1163,7 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - basic
-  '/v1/trackingReminders/delete':
+  '/v3/trackingReminders/delete':
     delete:
       operationId: deleteTrackingReminder
       tags:
@@ -1191,7 +1191,7 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - basic
-  '/v1/trackingReminderNotifications':
+  '/v3/trackingReminderNotifications':
     get:
       operationId: getTrackingReminderNotifications
       tags:
@@ -1254,7 +1254,7 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - basic
-  '/v1/units':
+  '/v3/units':
     get:
       operationId: getUnits
       tags:
@@ -1277,7 +1277,7 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - basic
-  '/v1/unitCategories':
+  '/v3/unitCategories':
     get:
       operationId: getUnitCategories
       tags:
@@ -1300,7 +1300,7 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - basic
-  '/v1/user':
+  '/v3/user':
     get:
       operationId: getUser
       tags:
@@ -1327,7 +1327,7 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - basic
-  '/v1/userTags':
+  '/v3/userTags':
     post:
       operationId: postUserTags
       tags:
@@ -1360,7 +1360,7 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - basic
-  '/v1/userTags/delete':
+  '/v3/userTags/delete':
     delete:
       operationId: deleteUserTag
       tags:
@@ -1395,7 +1395,7 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - basic
-  '/v1/userVariables':
+  '/v3/userVariables':
     post:
       operationId: postUserVariables
       tags:
@@ -1498,7 +1498,7 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - basic
-  /v1/public/variables:
+  /v3/public/variables:
     get:
       operationId: getPublicVariables
       tags:
@@ -1571,7 +1571,7 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - basic
-  /v1/userVariables/delete:
+  /v3/userVariables/delete:
     delete:
       operationId: deleteUserVariable
       tags:
@@ -1600,7 +1600,7 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - basic
-  /v1/userVariables/reset:
+  /v3/userVariables/reset:
     post:
       operationId: resetUserVariableSettings
       tags:
@@ -1629,7 +1629,7 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - basic
-  /v1/variableCategories:
+  /v3/variableCategories:
     get:
       operationId: getVariableCategories
       tags:
@@ -1655,7 +1655,7 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - basic
-  /v1/votes:
+  /v3/votes:
     post:
       operationId: postVote
       tags:
@@ -1689,7 +1689,7 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - basic
-  /v1/votes/delete:
+  /v3/votes/delete:
     delete:
       operationId: deleteVote
       tags:
