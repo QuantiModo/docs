@@ -477,7 +477,7 @@ gulp.task('getUnits', ['copy-js-to-node-modules'], function (callback) {
     var apiInstance = new Quantimodo.UnitsApi();
     var qmApiResponseCallback = function(error, data, response) {
         if (error && response.body.errorMessage) {logError(response.req.path + "failed: " + response.body.errorMessage, error);}
-        if(!response.body.unitArray){throw "Unit array not returned!"}
+        if(!response.body.units){throw "Unit array not returned!"}
         logInfo('API returned data', response.body);
         callback();
     };
