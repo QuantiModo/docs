@@ -13,3 +13,5 @@ slim-server-generated/
 *.zip
 
 \.idea/
+node_modules/
+sdks-unzipped/
