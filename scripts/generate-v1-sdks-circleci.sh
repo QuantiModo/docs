@@ -3,12 +3,12 @@ git config --global user.name "Mike Sinn"
 git config --global user.email m@quantimodo.com
 
 echo "Clone swagger-codegen..."
-git clone https://github.com/swagger-api/swagger-codegen
-cd swagger-codegen
+#git clone https://github.com/swagger-api/swagger-codegen
 
 echo "Updating maven packages..."
-./run-in-docker.sh mvn package;
+#cd swagger-codegen && ./run-in-docker.sh mvn package
 
+cd swagger-codegen
 mkdir quantimodo_v1_skds
 
 echo "Generate v1 SDKs"

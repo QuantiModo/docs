@@ -12,6 +12,8 @@ machine:
 dependencies:
   pre:
    - chmod +x -R scripts/*
+   - git clone https://github.com/swagger-api/swagger-codegen
+   - cd swagger-codegen && ./run-in-docker.sh mvn package
 #   - sh scripts/generate-v1-sdks-circleci.sh
 
 test:
