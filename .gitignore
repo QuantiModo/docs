@@ -11,3 +11,5 @@ silex-PHP-server-generated/SwaggerServer/
 slim-server-generated/
 
 *.zip
+
+\.idea/
