@@ -7,6 +7,7 @@ echo "Clone swagger-codegen..."
 
 echo "Updating maven packages..."
 #cd swagger-codegen && ./run-in-docker.sh mvn package
+cp -R swagger/swagger.json swagger-codegen/api-docs-v1.json
 
 cd swagger-codegen
 mkdir quantimodo_v1_skds
@@ -15,7 +16,7 @@ echo "Generate v1 SDKs"
 for i in "javascript" "android" "go" "java" "objc" "php" "python" "ruby" "swift"
 do
     echo "Generating $i SDK"
-    ./run-in-docker.sh generate -i ../swagger/swagger.json -l ${i} -o quantimodo_v1_skds/${i}
+    ./run-in-docker.sh generate -i api-docs-v1.json -l ${i} -o quantimodo_v1_skds/${i}
 done
 
 echo "Creating combined zip file"
