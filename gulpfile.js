@@ -100,10 +100,6 @@ var shell = require('gulp-shell');
 var prompt = require('gulp-prompt');
 var util = require('util');
 var s3 = require('gulp-s3-upload')({accessKeyId: process.env.AWS_ACCESS_KEY_ID, secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY});
-var zippedTestDbFilename = "quantimodo.zip";
-var testDbFilename = "quantimodo.sql";
-var pathToTestFixtures = "src/tests/fixtures";
-var pathToTestDatabase = pathToTestFixtures + "/" + testDbFilename;
 var majorMinorVersionNumbers = '5.8.';
 function getPatchVersionNumber() {
     var date = new Date();
@@ -197,6 +193,11 @@ function copyOneFoldersContentsToAnotherExceptReadme(sourceFolderPath, destinati
     return gulp.src([sourceFolderPath + '/**/*', '!README.md'])
         .pipe(gulp.dest(destinationFolderPath));
 }
+function copyOneFoldersContentsToAnother(sourceFolderPath, destinationFolderPath) {
+    logInfo("Copying " + sourceFolderPath + " to " + destinationFolderPath);
+    return gulp.src([sourceFolderPath + '/**/*'])
+        .pipe(gulp.dest(destinationFolderPath));
+}
 function getZipPathForLanguage(language) {
     return sdksZippedPath + '/' + getSdkNameForLanguage(language) + '.zip';
 }
@@ -246,7 +247,6 @@ function unzipFileToFolder(sourceFile, destinationFolder) {
         .pipe(decompress())
         .pipe(gulp.dest(destinationFolder));
 }
-gulp.task('default', ['app-designer-index', 'watch']);
 gulp.task('changelog', function () {
     return gulp.src('CHANGELOG.md', {
         buffer: false
@@ -330,12 +330,8 @@ function updateBowerAndPackageJsonVersions(path, callback) {
         });
     });
 }
-gulp.task('sdk-javascript-update-bower-and-package-json-versions', function (callback) {
-    updateBowerAndPackageJsonVersions('.');
-    updateBowerAndPackageJsonVersions(pathToIonic);
-    callback();
-});
-function buildAndReleaseJavascript(callback) {
+var pathToQmDocker = "../../..";
+gulp.task('build-and-release-javascript', ['getUnits'], function (callback) {
     var sourceFile = getRepoPathForSdkLanguage('javascript') + '/src/index.js';
     var outputFile = getRepoPathForSdkLanguage('javascript') + '/quantimodo-web.js';
     executeCommand('browserify ' + sourceFile + ' --standalone Quantimodo > ' + outputFile, function () {
@@ -348,34 +344,21 @@ function buildAndReleaseJavascript(callback) {
             ' && git push origin ' + apiVersionNumber +
             ' && bower version ' + apiVersionNumber, function () {
             executeCommand("cd " + getRepoPathForSdkLanguage('javascript') + " && npm version " + apiVersionNumber + ' && npm publish', function () {
-                updateBowerAndPackageJsonVersions('.');
+                updateBowerAndPackageJsonVersions(pathToQmDocker);
                 updateBowerAndPackageJsonVersions(pathToIonic);
                 callback();
             });
         });
     });
-}
-gulp.task('sdk-build-and-release-javascript', function (callback) {
-    buildAndReleaseJavascript(callback);
 });
-gulp.task('sdks-clean-folders-for-language', [], function () {
+gulp.task('clean-folders', [], function () {
     return del([
         sdksZippedPath + '/**/*',
         sdksUnzippedPath + '/**/*',
         sdksReposPath + '/**/*'
     ]);
 });
-gulp.task('sdks-clone-one', [], function (callback) {
-    clone('quantimodo', getSdkNameForLanguage(process.env.SDK_LANGUAGE), sdksReposPath, callback);
-});
-gulp.task('sdks-clean-folders', [], function () {
-    return del([
-        sdksZippedPath + '/**/*',
-        sdksUnzippedPath + '/**/*',
-        sdksReposPath + '/**/*'
-    ]);
-});
-gulp.task('sdks-clone-repos', [], function (callback) {
+gulp.task('clone-repos', [], function (callback) {
     for(var i = 0; i < languages.length; i++){
         if(i === languages.length - 1){
             clone('quantimodo', getSdkNameForLanguage(languages[i]), sdksReposPath, callback);
@@ -384,25 +367,25 @@ gulp.task('sdks-clone-repos', [], function (callback) {
         }
     }
 });
-gulp.task('sdks-clean-folders-and-clone-repos', function (callback) { // Must be run before `gulp updateSdks` because I can't get it to wait for cloning to complete
+gulp.task('clean-folders-and-clone-repos', function (callback) { // Must be run before `gulp updateSdks` because I can't get it to wait for cloning to complete
     runSequence(
-        'sdks-clean-folders',
-        'sdks-clone-repos',
+        'clean-folders',
+        'clone-repos',
         function (error) {
             if (error) {logError(error.message);} else {logInfo('SDK RELEASE FINISHED SUCCESSFULLY');}
             callback(error);
         });
 });
-gulp.task('sdks-clean-repos-except-git', [], function(){
+gulp.task('clean-repos-except-git', [], function(){
     for(var i = 0; i < languages.length; i++) {
         if(i === languages.length - 1){ return cleanOneFolderExceptGit(getRepoPathForSdkLanguage(languages[i]));}
         cleanOneFolderExceptGit(getRepoPathForSdkLanguage(languages[i]));
     }
 });
-gulp.task('sdks-download-js', [], function () {
+gulp.task('download-js', [], function () {
     return downloadOneSdk('javascript');
 });
-gulp.task('sdks-download', ['sdks-clean-folders-and-clone-repos'], function () {
+gulp.task('download', ['clean-folders-and-clone-repos'], function () {
     function downloadSdk(language) {
         var requestOptions = {
             method: 'POST',
@@ -466,15 +449,15 @@ String.prototype.replaceAll = function(search, replacement) {
     var target = this;
     return target.replace(new RegExp(search, 'g'), replacement);
 };
-gulp.task('sdks-decompress', ['sdks-clean-repos-except-git'], function () {
+gulp.task('decompress', ['clean-repos-except-git'], function () {
     for(var i = 0; i < languages.length; i++) {
         if(i === languages.length - 1){
-            return unzipFileToFolder(getZipPathForLanguage(languages[i]), 'sdks-unzipped');
+            return unzipFileToFolder(getZipPathForLanguage(languages[i]), 'unzipped');
         }
-        unzipFileToFolder(getZipPathForLanguage(languages[i]), 'sdks-unzipped');
+        unzipFileToFolder(getZipPathForLanguage(languages[i]), 'unzipped');
     }
 });
-gulp.task('sdks-copy-to-repos', [], function(){
+gulp.task('copy-to-repos', [], function(){
     for(var i = 0; i < languages.length; i++) {
         if(i === languages.length - 1){
             return copyOneFoldersContentsToAnotherExceptReadme(getUnzippedPathForSdkLanguage(languages[i]), getRepoPathForSdkLanguage(languages[i]));
@@ -482,29 +465,21 @@ gulp.task('sdks-copy-to-repos', [], function(){
         copyOneFoldersContentsToAnotherExceptReadme(getUnzippedPathForSdkLanguage(languages[i]), getRepoPathForSdkLanguage(languages[i]));
     }
 });
-gulp.task('updateSdks', function (callback) {
-    runSequence(
-        'sdks-clean-repos-except-git',
-        'sdks-download',
-        'sdks-decompress',
-        'sdks-copy-to-repos',
-        function (error) {
-            if (error) {logError(error.message);} else {logInfo('SDK RELEASE FINISHED SUCCESSFULLY');}
-            callback(error);
-        });
+var pathToQuantiModoNodeModule = 'node_modules/quantimodo';
+gulp.task('copy-js-to-node-modules', [], function(){
+    copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage('javascript'), pathToQuantiModoNodeModule);
 });
-gulp.task('installJsSdkFromGithub', function (callback) {
-    executeCommand('npm install quantimodo/quantimodo-sdk-javascript --save', callback);
-});
-var quantimodo = require('quantimodo');
-gulp.task('npmUpdateVersionAndPublishJavascriptSdk', [], function (callback) {
-    var apiInstance = new quantimodo.UnitsApi();
-    apiInstance.getUnits(function(error, data, response) {
-        if (error) {
-            logError(response.req.path + "failed: " + response.body.errorMessage, error);
-        } else {
-            buildAndReleaseJavascript(callback);
-            logInfo(response.req.path + " response: ", response);
-        }
-    });
+var Quantimodo = require('quantimodo');
+var defaultClient = Quantimodo.ApiClient.instance;
+var quantimodo_oauth2 = defaultClient.authentications['quantimodo_oauth2'];
+quantimodo_oauth2.accessToken = process.env.QUANTIMODO_ACCESS_TOKEN;
+gulp.task('getUnits', ['copy-js-to-node-modules'], function (callback) {
+    var apiInstance = new Quantimodo.UnitsApi();
+    var qmApiResponseCallback = function(error, data, response) {
+        if (error && response.body.errorMessage) {logError(response.req.path + "failed: " + response.body.errorMessage, error);}
+        if(!response.body.unitArray){throw "Unit array not returned!"}
+        logInfo('API returned data', response.body);
+        callback();
+    };
+    apiInstance.getUnits(qmApiResponseCallback);
 });
