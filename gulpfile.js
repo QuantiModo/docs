@@ -206,25 +206,6 @@ function writeToFile(filePath, stringContents, callback) {
     if(typeof stringContents !== "string"){stringContents = JSON.stringify(stringContents);}
     return fs.writeFile(filePath, stringContents, {}, callback);
 }
-function downloadOneSdk(language) {
-    var requestOptions = {
-        method: 'POST',
-        uri: 'http://generator.swagger.io/api/gen/clients/' + language,
-        body: {swaggerUrl: swaggerJsonUrl, options:{}},
-        json: true
-    };
-    logInfo("Generating " + language + " sdk", requestOptions.body.options);
-    return rp(requestOptions)
-        .then(function (parsedBody) {
-            logInfo("SDK response", parsedBody);
-            return download(parsedBody.link.replace('https', 'http'))
-                .pipe(rename(getSdkNameForLanguage(language) + '.zip'))
-                .pipe(gulp.dest(sdksZippedPath));
-        })
-        .catch(function (err) {
-            logError(err.error.message);
-        });
-}
 function getSdkNameForLanguage(languageName) {
     return 'quantimodo-sdk-' + languageName;
 }
@@ -315,11 +296,11 @@ var pathToQmDocker = "../../..";
 gulp.task('build-and-release-javascript', ['get-units'], function (callback) {
     function updateBowerAndPackageJsonVersions(path, callback) {
         var bowerJson = readJsonFile(path + '/bower.json');
-        bowerJson.dependencies["quantimodo"] = apiVersionNumber;
+        bowerJson.dependencies.quantimodo = apiVersionNumber;
         return writeToFile(path  + '/bower.json', prettyJSONStringify(bowerJson), function () {
             executeCommand("cd " + pathToIonic + " && bower install", function () {
                 var packageJson = readJsonFile(path + '/package.json');
-                packageJson.dependencies["quantimodo"] = apiVersionNumber;
+                packageJson.dependencies.quantimodo = apiVersionNumber;
                 return writeToFile(path  + '/package.json', prettyJSONStringify(packageJson), function () {
                     executeCommand("cd " + pathToIonic + " && npm install", function () {
                         if(callback){callback();}
@@ -377,9 +358,6 @@ gulp.task('clean-repos-except-git', [], function(){
         if(i === languages.length - 1){ return cleanOneFolderExceptGit(getRepoPathForSdkLanguage(languages[i]));}
         cleanOneFolderExceptGit(getRepoPathForSdkLanguage(languages[i]));
     }
-});
-gulp.task('download-js', [], function () {
-    return downloadOneSdk('javascript');
 });
 gulp.task('download', ['clean-folders-and-clone-repos'], function () {
     function downloadSdk(language) {
@@ -467,13 +445,13 @@ gulp.task('copy-js-to-node-modules', [], function(){
 });
 var Quantimodo = require('quantimodo');
 var defaultClient = Quantimodo.ApiClient.instance;
-var quantimodo_oauth2 = defaultClient.authentications['quantimodo_oauth2'];
+var quantimodo_oauth2 = defaultClient.authentications.quantimodo_oauth2;
 quantimodo_oauth2.accessToken = process.env.QUANTIMODO_ACCESS_TOKEN;
 gulp.task('get-units', ['copy-js-to-node-modules'], function (callback) {
     var apiInstance = new Quantimodo.UnitsApi();
     var qmApiResponseCallback = function(error, data, response) {
         if (error && response.body.errorMessage) {logError(response.req.path + "failed: " + response.body.errorMessage, error);}
-        if(!response.body.units){throw "Unit array not returned!"}
+        if(!response.body.units){throw "Unit array not returned!";}
         logInfo('API returned data', response.body);
         callback();
     };
