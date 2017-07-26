@@ -1,15 +1,14 @@
 swagger: '2.0'
 info:
-  description: |
-    QuantiModo makes it easy to retrieve normalized user data from a wide array of devices and applications. [Learn about QuantiModo](https://quantimo.do), check out our [docs](https://github.com/QuantiModo/docs) or contact us at [help.quantimo.do](https://help.quantimo.do).
-  version: "5.8.7"
-  title: QuantiModo
+  description: "QuantiModo makes it easy to retrieve normalized user data from a wide array of devices and applications. [Learn about QuantiModo](https://quantimo.do), check out our [docs](https://github.com/QuantiModo/docs) or contact us at [help.quantimo.do](https://help.quantimo.do)."
+  version: "5.8.726"
+  title: 'quantimodo'
   termsOfService: 'https://quantimo.do/tos/'
   contact:
-    name: info@quantimo.do
+    name: 'info@quantimo.do'
   license:
     name: Apache 2.0
-    url: http://www.apache.org/licenses/LICENSE-2.0.html
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
 basePath: /api
 host: app.quantimo.do
 tags:
