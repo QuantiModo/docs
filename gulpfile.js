@@ -215,7 +215,7 @@ function getUnzippedPathForSdkLanguage(languageName) {
 function getRepoPathForSdkLanguage(languageName) {
     return sdksReposPath + '/' + getSdkNameForLanguage(languageName);
 }
-var pathToIonic = './public.built/ionic/Modo';
+var pathToIonic = '../../../public.built/ionic/Modo';
 function readJsonFile(pathToFile) {
     logInfo("Reading " + pathToFile);
     return JSON.parse(fs.readFileSync(pathToFile, 'utf8'));
@@ -375,7 +375,6 @@ gulp.task('download', ['clean-folders-and-clone-repos'], function () {
             requestOptions.body.options = {};
             requestOptions.body.options.apiPackage = "QuantiModoApi";
             requestOptions.body.options.artifactId = "quantimodoApi";
-            requestOptions.body.options.artifactVersion = requestOptions.body.options.projectVersion = requestOptions.body.options.packageVarsion = getAppVersionNumber();
             requestOptions.body.options.authorEmail = "mike@quantimo.do";
             requestOptions.body.options.authorName = "Mike P. Sinn";
             requestOptions.body.options.classPrefix = "QM";
@@ -390,6 +389,8 @@ gulp.task('download', ['clean-folders-and-clone-repos'], function () {
             requestOptions.body.options.podVersion = getAppVersionNumber();
             requestOptions.body.options.projectName = (sdkSwaggerCodegenOptions[language] && sdkSwaggerCodegenOptions[language].projectName) ? sdkSwaggerCodegenOptions[language].projectName : "quantimodoApi";
         }
+        requestOptions.body.options.artifactVersion = requestOptions.body.options.projectVersion = requestOptions.body.options.packageVarsion =
+            requestOptions.body.options.podVersion = getAppVersionNumber();
         requestOptions.body.options.artifactDescription = requestOptions.body.options.projectDescription = swaggerJson.info.description;
         var sdkName = 'quantimodo-sdk-' + language;
         var getOptionsRequestOptions = JSON.parse(JSON.stringify(requestOptions));
@@ -426,9 +427,9 @@ String.prototype.replaceAll = function(search, replacement) {
 gulp.task('decompress', ['clean-repos-except-git'], function () {
     for(var i = 0; i < languages.length; i++) {
         if(i === languages.length - 1){
-            return unzipFileToFolder(getZipPathForLanguage(languages[i]), 'unzipped');
+            return unzipFileToFolder(getZipPathForLanguage(languages[i]), sdksUnzippedPath);
         }
-        unzipFileToFolder(getZipPathForLanguage(languages[i]), 'unzipped');
+        unzipFileToFolder(getZipPathForLanguage(languages[i]), sdksUnzippedPath);
     }
 });
 gulp.task('copy-to-repos', [], function(){
