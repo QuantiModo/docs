@@ -238,6 +238,13 @@ String.prototype.replaceAll = function(search, replacement) {
     var target = this;
     return target.replace(new RegExp(search, 'g'), replacement);
 };
+gulp.task('browserify', [], function (callback) {
+    var sourceFile = getUnzippedPathForSdkLanguage('javascript') + '/src/index.js';
+    var outputFile = getUnzippedPathForSdkLanguage('javascript') + '/quantimodo-web.js';
+    executeCommand('browserify ' + sourceFile + ' --standalone Quantimodo > ' + outputFile, function () {
+        callback();
+    });
+});
 gulp.task('3-build-and-release-javascript', ['get-units'], function (callback) {
     function updateBowerAndPackageJsonVersions(path, callback) {
         var bowerJson = readJsonFile(path + '/bower.json');
@@ -254,22 +261,18 @@ gulp.task('3-build-and-release-javascript', ['get-units'], function (callback) {
             });
         });
     }
-    var sourceFile = getRepoPathForSdkLanguage('javascript') + '/src/index.js';
-    var outputFile = getRepoPathForSdkLanguage('javascript') + '/quantimodo-web.js';
-    executeCommand('browserify ' + sourceFile + ' --standalone Quantimodo > ' + outputFile, function () {
-        executeCommand("cd " + getRepoPathForSdkLanguage('javascript') +
-            ' && npm install' +
-            ' && git add .' +
-            ' && git commit -m "' + apiVersionNumber + '"' +
-            ' && git push' +
-            ' && git tag ' + apiVersionNumber +
-            ' && git push origin ' + apiVersionNumber +
-            ' && bower version ' + apiVersionNumber, function () {
-            executeCommand("cd " + getRepoPathForSdkLanguage('javascript') + " && npm version " + apiVersionNumber + ' && npm publish', function () {
-                updateBowerAndPackageJsonVersions(pathToQmDocker);
-                updateBowerAndPackageJsonVersions(pathToIonic);
-                callback();
-            });
+    executeCommand("cd " + getRepoPathForSdkLanguage('javascript') +
+        ' && npm install' +
+        ' && git add .' +
+        ' && git commit -m "' + apiVersionNumber + '"' +
+        ' && git push' +
+        ' && git tag ' + apiVersionNumber +
+        ' && git push origin ' + apiVersionNumber +
+        ' && bower version ' + apiVersionNumber, function () {
+        executeCommand("cd " + getRepoPathForSdkLanguage('javascript') + " && npm version " + apiVersionNumber + ' && npm publish', function () {
+            updateBowerAndPackageJsonVersions(pathToQmDocker);
+            updateBowerAndPackageJsonVersions(pathToIonic);
+            callback();
         });
     });
 });
@@ -373,7 +376,10 @@ gulp.task('1-decompress', ['clean-repos-except-git'], function () {
         unzipFileToFolder(getZipPathForLanguage(languages[i]), sdksUnzippedPath);
     }
 });
-gulp.task('2-copy-to-repos', [], function(){
+gulp.task('2-copy-to-repos', ['browserify'], function(){
+    copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage('javascript'), pathToQmDocker + '/' + pathToQuantiModoNodeModule);
+    copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage('javascript'), pathToIonic + '/' + pathToQuantiModoNodeModule);
+    copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage('javascript'), pathToIonic + '/www/custom-lib');
     for(var i = 0; i < languages.length; i++) {
         if(i === languages.length - 1){
             return copyOneFoldersContentsToAnotherExceptReadme(getUnzippedPathForSdkLanguage(languages[i]), getRepoPathForSdkLanguage(languages[i]));
@@ -381,10 +387,7 @@ gulp.task('2-copy-to-repos', [], function(){
         copyOneFoldersContentsToAnotherExceptReadme(getUnzippedPathForSdkLanguage(languages[i]), getRepoPathForSdkLanguage(languages[i]));
     }
 });
-gulp.task('copy-js-to-node-modules', [], function(){
-    copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage('javascript'), pathToQuantiModoNodeModule);
-});
-gulp.task('get-units', ['copy-js-to-node-modules'], function (callback) {
+gulp.task('get-units', [], function (callback) {
     var apiInstance = new Quantimodo.UnitsApi();
     var qmApiResponseCallback = function(error, data, response) {
         if (error && response.body.errorMessage) {logError(response.req.path + "failed: " + response.body.errorMessage, error);}
