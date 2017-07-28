@@ -380,12 +380,17 @@ gulp.task('2-copy-to-repos', ['browserify'], function(){
     copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage('javascript'), pathToQmDocker + '/' + pathToQuantiModoNodeModule);
     copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage('javascript'), pathToIonic + '/' + pathToQuantiModoNodeModule);
     copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage('javascript'), pathToIonic + '/www/custom-lib/quantimodo');
+    return gulp.src([getUnzippedPathForSdkLanguage('javascript') + 'quantimodo-web.js'])
+        .pipe(gulp.dest('/www/custom-lib/'));
     for(var i = 0; i < languages.length; i++) {
         if(i === languages.length - 1){
             return copyOneFoldersContentsToAnotherExceptReadme(getUnzippedPathForSdkLanguage(languages[i]), getRepoPathForSdkLanguage(languages[i]));
         }
         copyOneFoldersContentsToAnotherExceptReadme(getUnzippedPathForSdkLanguage(languages[i]), getRepoPathForSdkLanguage(languages[i]));
     }
+});
+gulp.task('2-copy-qm-web-js', ['browserify'], function(){
+    return gulp.src([getUnzippedPathForSdkLanguage('javascript') + '/quantimodo-web.js']).pipe(gulp.dest(pathToIonic + '/www/custom-lib/'));
 });
 gulp.task('get-units', [], function (callback) {
     var apiInstance = new Quantimodo.UnitsApi();
