@@ -1,5 +1,4 @@
 var gulp = require('gulp');
-var gutil = require('gulp-util');
 var bower = require('bower');
 var concat = require('gulp-concat');
 var rename = require('gulp-rename');
@@ -15,8 +14,6 @@ var plist = require('plist');
 var clean = require('gulp-rimraf');
 var replace = require('gulp-string-replace');
 var unzip = require('gulp-unzip');
-var conventionalChangelog = require('gulp-conventional-changelog');
-var conventionalGithubReleaser = require('conventional-github-releaser');
 var bump = require('gulp-bump');
 var git = require('gulp-git');
 var download = require('gulp-download-stream');
@@ -228,72 +225,20 @@ function unzipFileToFolder(sourceFile, destinationFolder) {
         .pipe(decompress())
         .pipe(gulp.dest(destinationFolder));
 }
-gulp.task('changelog', function () {
-    return gulp.src('CHANGELOG.md', {
-        buffer: false
-    })
-        .pipe(conventionalChangelog({
-            preset: 'angular' // Or to any other commit message convention you use.
-        }))
-        .pipe(gulp.dest('./'));
-});
-gulp.task('github-release', function(done) {
-    conventionalGithubReleaser({
-        type: "oauth",
-        token: '0126af95c0e2d9b0a7c78738c4c00a860b04acc8' // change this to your own GitHub token or use an environment variable
-    }, {
-        preset: 'angular' // Or to any other commit message convention you use.
-    }, done);
-});
-gulp.task('bump-version', function () {
-// We hardcode the version change type to 'patch' but it may be a good idea to
-// use minimist (https://www.npmjs.com/package/minimist) to determine with a
-// command argument whether you are doing a 'major', 'minor' or a 'patch' change.
-    return gulp.src(['./bower.json', './package.json'])
-        .pipe(bump({type: "patch"}).on('error', gutil.log))
-        .pipe(gulp.dest('./'));
-});
-gulp.task('commit-changes', function () {
-    return gulp.src('.')
-        .pipe(git.add())
-        .pipe(git.commit('[Prerelease] Bumped version number'));
-});
-gulp.task('push-changes', function (cb) {
-    git.push('origin', 'master', cb);
-});
-gulp.task('create-new-tag', function (cb) {
-    var version = getPackageJsonVersion();
-    git.tag(version, 'Created Tag for version: ' + version, function (error) {
-        if (error) {
-            return cb(error);
-        }
-        git.push('origin', 'master', {args: '--tags'}, cb);
-    });
-    function getPackageJsonVersion () {
-        // We parse the json file instead of using require because require caches
-        // multiple calls so the version number won't be updated
-        return JSON.parse(fs.readFileSync('./package.json', 'utf8')).version;
-    }
-});
-gulp.task('release', function (callback) {
-    runSequence(
-        'bump-version',
-        'changelog',
-        'commit-changes',
-        'push-changes',
-        'create-new-tag',
-        'github-release',
-        function (error) {
-            if (error) {
-                logError(error.message);
-            } else {
-                logInfo('RELEASE FINISHED SUCCESSFULLY');
-            }
-            callback(error);
-        });
-});
 var pathToQmDocker = "../../..";
-gulp.task('build-and-release-javascript', ['get-units'], function (callback) {
+var pathToQuantiModoNodeModule = 'node_modules/quantimodo';
+var Quantimodo = require('quantimodo');
+var defaultClient = Quantimodo.ApiClient.instance;
+if(process.env.APP_HOST_NAME){
+    defaultClient.basePath = process.env.APP_HOST_NAME + '/api';
+}
+var quantimodo_oauth2 = defaultClient.authentications['quantimodo_oauth2'];
+quantimodo_oauth2.accessToken = process.env.QUANTIMODO_ACCESS_TOKEN;
+String.prototype.replaceAll = function(search, replacement) {
+    var target = this;
+    return target.replace(new RegExp(search, 'g'), replacement);
+};
+gulp.task('3-build-and-release-javascript', ['get-units'], function (callback) {
     function updateBowerAndPackageJsonVersions(path, callback) {
         var bowerJson = readJsonFile(path + '/bower.json');
         bowerJson.dependencies.quantimodo = apiVersionNumber;
@@ -359,7 +304,7 @@ gulp.task('clean-repos-except-git', [], function(){
         cleanOneFolderExceptGit(getRepoPathForSdkLanguage(languages[i]));
     }
 });
-gulp.task('download', ['clean-folders-and-clone-repos'], function () {
+gulp.task('0-download', ['clean-folders-and-clone-repos'], function () {
     function downloadSdk(language) {
         var requestOptions = {
             method: 'POST',
@@ -420,11 +365,7 @@ gulp.task('download', ['clean-folders-and-clone-repos'], function () {
         downloadSdk(languages[i]);
     }
 });
-String.prototype.replaceAll = function(search, replacement) {
-    var target = this;
-    return target.replace(new RegExp(search, 'g'), replacement);
-};
-gulp.task('decompress', ['clean-repos-except-git'], function () {
+gulp.task('1-decompress', ['clean-repos-except-git'], function () {
     for(var i = 0; i < languages.length; i++) {
         if(i === languages.length - 1){
             return unzipFileToFolder(getZipPathForLanguage(languages[i]), sdksUnzippedPath);
@@ -432,7 +373,7 @@ gulp.task('decompress', ['clean-repos-except-git'], function () {
         unzipFileToFolder(getZipPathForLanguage(languages[i]), sdksUnzippedPath);
     }
 });
-gulp.task('copy-to-repos', [], function(){
+gulp.task('2-copy-to-repos', [], function(){
     for(var i = 0; i < languages.length; i++) {
         if(i === languages.length - 1){
             return copyOneFoldersContentsToAnotherExceptReadme(getUnzippedPathForSdkLanguage(languages[i]), getRepoPathForSdkLanguage(languages[i]));
@@ -440,17 +381,9 @@ gulp.task('copy-to-repos', [], function(){
         copyOneFoldersContentsToAnotherExceptReadme(getUnzippedPathForSdkLanguage(languages[i]), getRepoPathForSdkLanguage(languages[i]));
     }
 });
-var pathToQuantiModoNodeModule = 'node_modules/quantimodo';
 gulp.task('copy-js-to-node-modules', [], function(){
     copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage('javascript'), pathToQuantiModoNodeModule);
 });
-var Quantimodo = require('quantimodo');
-var defaultClient = Quantimodo.ApiClient.instance;
-if(process.env.APP_HOST_NAME){
-    defaultClient.basePath = process.env.APP_HOST_NAME + '/api';
-}
-var quantimodo_oauth2 = defaultClient.authentications['quantimodo_oauth2'];
-quantimodo_oauth2.accessToken = process.env.QUANTIMODO_ACCESS_TOKEN;
 gulp.task('get-units', ['copy-js-to-node-modules'], function (callback) {
     var apiInstance = new Quantimodo.UnitsApi();
     var qmApiResponseCallback = function(error, data, response) {
