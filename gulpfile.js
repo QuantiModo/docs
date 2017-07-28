@@ -445,14 +445,17 @@ gulp.task('copy-js-to-node-modules', [], function(){
 });
 var Quantimodo = require('quantimodo');
 var defaultClient = Quantimodo.ApiClient.instance;
-var quantimodo_oauth2 = defaultClient.authentications.quantimodo_oauth2;
+if(process.env.APP_HOST_NAME){
+    defaultClient.basePath = process.env.APP_HOST_NAME + '/api';
+}
+var quantimodo_oauth2 = defaultClient.authentications['quantimodo_oauth2'];
 quantimodo_oauth2.accessToken = process.env.QUANTIMODO_ACCESS_TOKEN;
 gulp.task('get-units', ['copy-js-to-node-modules'], function (callback) {
     var apiInstance = new Quantimodo.UnitsApi();
     var qmApiResponseCallback = function(error, data, response) {
         if (error && response.body.errorMessage) {logError(response.req.path + "failed: " + response.body.errorMessage, error);}
-        if(!response.body.units){throw "Unit array not returned!";}
-        logInfo('API returned data', response.body);
+        if(!data){throw "Unit data not returned!"}
+        logInfo('API returned data', data);
         callback();
     };
     apiInstance.getUnits(qmApiResponseCallback);
