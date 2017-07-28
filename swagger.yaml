@@ -1,7 +1,7 @@
 swagger: '2.0'
 info:
   description: "QuantiModo makes it easy to retrieve normalized user data from a wide array of devices and applications. [Learn about QuantiModo](https://quantimo.do), check out our [docs](https://github.com/QuantiModo/docs) or contact us at [help.quantimo.do](https://help.quantimo.do)."
-  version: "5.8.726"
+  version: "5.8.727"
   title: 'quantimodo'
   termsOfService: 'https://quantimo.do/tos/'
   contact:
@@ -323,7 +323,7 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - basic
-  /v3/correlations:
+  '/v4/correlations':
     get:
       operationId: getCorrelations
       tags:
@@ -373,6 +373,31 @@ paths:
           description: Only include correlations for which the effect is an outcome of interest for the user
           required: false
           type: boolean
+      responses:
+        '200':
+          description: Successful Operation
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Correlation'
+        '401':
+          description: Not Authenticated
+      security:
+        - access_token: []
+        - quantimodo_oauth2:
+            - basic
+  '/v3/correlations/explanations':
+    get:
+      operationId: getUserCorrelationExplantions
+      tags:
+        - analytics
+      summary: Get correlation explanations
+      description: Get explanations of  correlations based on data from a single user.
+      produces:
+        - application/json
+      parameters:
+        - $ref: '#/parameters/effectVariableNameParam'
+        - $ref: '#/parameters/causeVariableNameParam'
       responses:
         '200':
           description: Successful Operation
