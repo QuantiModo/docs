@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "description": "QuantiModo makes it easy to retrieve normalized user data from a wide array of devices and applications. [Learn about QuantiModo](https://quantimo.do), check out our [docs](https://github.com/QuantiModo/docs) or contact us at [help.quantimo.do](https://help.quantimo.do).",
-    "version": "5.8.727",
+    "version": "5.8.728",
     "title": "quantimodo",
     "termsOfService": "https://quantimo.do/tos/",
     "contact": {
@@ -643,7 +643,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/Correlation"
+                "$ref": "#/definitions/Correlations"
               }
             }
           },
@@ -1481,7 +1481,7 @@
                 "data": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/definitions/TrackingReminder"
+                    "$ref": "#/definitions/TrackingReminders"
                   }
                 }
               },
@@ -1645,7 +1645,7 @@
                 "data": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/definitions/TrackingReminderNotification"
+                    "$ref": "#/definitions/TrackingReminderNotifications"
                   }
                 }
               },
@@ -1732,7 +1732,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/Unit"
+                "$ref": "#/definitions/Units"
               },
               "description": "Array of units"
             }
@@ -1768,7 +1768,7 @@
           "200": {
             "description": "Successful operation",
             "schema": {
-              "$ref": "#/definitions/UnitCategory"
+              "$ref": "#/definitions/UnitCategories"
             }
           },
           "401": {
@@ -2059,7 +2059,7 @@
           "200": {
             "description": "Variables returned",
             "schema": {
-              "$ref": "#/definitions/Variable"
+              "$ref": "#/definitions/UserVariables"
             }
           },
           "401": {
@@ -2155,7 +2155,7 @@
           "200": {
             "description": "Successful operation",
             "schema": {
-              "$ref": "#/definitions/Variable"
+              "$ref": "#/definitions/Variables"
             }
           },
           "401": {
@@ -2495,6 +2495,13 @@
         }
       }
     },
+    "Connectors": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Connector"
+      },
+      "description": "Array"
+    },
     "ConversionStep": {
       "required": [
         "operation",
@@ -2783,6 +2790,13 @@
           "description": "Overall Mood, on average, 4% LOWER after around 0mg Remeron"
         }
       }
+    },
+    "Correlations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Correlation"
+      },
+      "description": "Array"
     },
     "JsonErrorResponse": {
       "required": [
@@ -3130,6 +3144,13 @@
         }
       }
     },
+    "TrackingReminders": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/TrackingReminder"
+      },
+      "description": "Array"
+    },
     "TrackingReminderNotification": {
       "required": [
         "id"
@@ -3216,6 +3237,13 @@
         }
       }
     },
+    "TrackingReminderNotifications": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/TrackingReminderNotification"
+      },
+      "description": "Array"
+    },
     "Unit": {
       "required": [
         "name",
@@ -3268,6 +3296,13 @@
         }
       }
     },
+    "Units": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Unit"
+      },
+      "description": "Array"
+    },
     "UnitCategory": {
       "required": [
         "name"
@@ -3278,6 +3313,13 @@
           "description": "Category name"
         }
       }
+    },
+    "UnitCategories": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/UnitCategory"
+      },
+      "description": "Array"
     },
     "User": {
       "required": [
@@ -3943,6 +3985,13 @@
         }
       }
     },
+    "Variables": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Variable"
+      },
+      "description": "Array"
+    },
     "VariableCategory": {
       "required": [
         "name"
@@ -3953,6 +4002,13 @@
           "description": "Category name"
         }
       }
+    },
+    "VariableCategories": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/VariableCategory"
+      },
+      "description": "Array"
     },
     "VoteDelete": {
       "required": [
