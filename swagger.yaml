@@ -585,7 +585,7 @@ paths:
         '200':
           description: Successful Operation
           schema:
-            $ref: '#/definitions/Measurement'
+            $ref: '#/definitions/Measurements'
         '401':
           description: Not Authenticated
       security:
@@ -2165,6 +2165,11 @@ definitions:
       note:
         type: string
         description: Note of measurement
+  Measurements:
+    type: array
+    items:
+      $ref: '#/definitions/Measurement'
+    description: Array of mesaurements
   MeasurementDelete:
     required:
       - variableId

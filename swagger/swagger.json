@@ -813,7 +813,7 @@
           "200": {
             "description": "Successful Operation",
             "schema": {
-              "$ref": "#/definitions/Measurement"
+              "$ref": "#/definitions/Measurements"
             }
           },
           "401": {
@@ -2887,6 +2887,13 @@
           "description": "Note of measurement"
         }
       }
+    },
+    "Measurements": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Measurement"
+      },
+      "description": "Array of mesaurements"
     },
     "MeasurementDelete": {
       "required": [
