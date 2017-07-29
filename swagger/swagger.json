@@ -45,14 +45,14 @@
     "effectVariableNameParam": {
       "in": "query",
       "name": "effectVariableName",
-      "description": "Variable name of the effect variable for which the user desires correlations",
+      "description": "Variable name of the hypothetical effect variable.  Example: Overall Mood",
       "required": false,
       "type": "string"
     },
     "causeVariableNameParam": {
       "in": "query",
       "name": "causeVariableName",
-      "description": "Variable name of the cause variable for which the user desires correlations",
+      "description": "Variable name of the hypothetical cause variable.  Example: Sleep Duration",
       "required": false,
       "type": "string"
     },
@@ -83,6 +83,20 @@
       "description": "User's id",
       "required": false,
       "type": "number"
+    },
+    "latestMeasurementTimeParam": {
+      "in": "query",
+      "name": "latestMeasurementTime",
+      "description": "Excluded records with measurement times later than this value. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format. Time zone should be UTC and not local.",
+      "required": false,
+      "type": "string"
+    },
+    "earliestMeasurementTimeParam": {
+      "in": "query",
+      "name": "earliestMeasurementTime",
+      "description": "Excluded records with measurement times earlier than this value. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format. Time zone should be UTC and not local.",
+      "required": false,
+      "type": "string"
     },
     "createdAtParam": {
       "in": "query",
@@ -766,18 +780,10 @@
             "type": "string"
           },
           {
-            "in": "query",
-            "name": "earliestMeasurementTime",
-            "description": "The lower limit of measurements returned in ISO 8601 format or epoch seconds (unixtime)",
-            "required": false,
-            "type": "string"
+            "$ref": "#/parameters/earliestMeasurementTimeParam"
           },
           {
-            "in": "query",
-            "name": "latestMeasurementTime",
-            "description": "The upper limit of measurements returned in ISO 8601 format or epoch seconds (unixtime)",
-            "required": false,
-            "type": "string"
+            "$ref": "#/parameters/latestMeasurementTimeParam"
           },
           {
             "$ref": "#/parameters/createdAtParam"
@@ -1331,23 +1337,15 @@
             "$ref": "#/parameters/userIdParam"
           },
           {
-            "in": "query",
-            "name": "causeVariableName",
-            "description": "Original variable name for the explanatory or independent variable",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/effectVariableNameParam"
+          },
+          {
+            "$ref": "#/parameters/causeVariableNameParam"
           },
           {
             "in": "query",
-            "name": "causeSource",
-            "description": "Name of data source that the cause measurements should come from",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "causeUnit",
-            "description": "Abbreviated name for the unit cause measurements to be returned in",
+            "name": "causeUnitName",
+            "description": "Name for the unit cause measurements to be returned in",
             "required": false,
             "type": "string"
           },
@@ -1367,38 +1365,16 @@
           },
           {
             "in": "query",
-            "name": "effectVariableName",
-            "description": "Original variable name for the outcome or dependent variable",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "effectSource",
-            "description": "Name of data source that the effectmeasurements should come from",
+            "name": "effectUnitName",
+            "description": "Name for the unit effect measurements to be returned in",
             "required": false,
             "type": "string"
           },
           {
-            "in": "query",
-            "name": "effectUnit",
-            "description": "Abbreviated name for the unit effect measurements to be returned in",
-            "required": false,
-            "type": "string"
+            "$ref": "#/parameters/earliestMeasurementTimeParam"
           },
           {
-            "in": "query",
-            "name": "endTime",
-            "description": "The most recent date (in epoch time) for which we should return measurements",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "startTime",
-            "description": "The earliest date (in epoch time) for which we should return measurements",
-            "required": false,
-            "type": "string"
+            "$ref": "#/parameters/latestMeasurementTimeParam"
           },
           {
             "$ref": "#/parameters/limitParam"
@@ -2025,11 +2001,10 @@
             "type": "string"
           },
           {
-            "in": "query",
-            "name": "latestMeasurementTime",
-            "description": "Filter variables based on the last time a measurement for them was created or updated in the UTC format \"YYYY-MM-DDThh:mm:ss\"",
-            "required": false,
-            "type": "string"
+            "$ref": "#/parameters/earliestMeasurementTimeParam"
+          },
+          {
+            "$ref": "#/parameters/latestMeasurementTimeParam"
           },
           {
             "in": "query",
@@ -2121,11 +2096,10 @@
             "type": "string"
           },
           {
-            "in": "query",
-            "name": "latestMeasurementTime",
-            "description": "Filter variables based on the last time a measurement for them was created or updated in the UTC format \"YYYY-MM-DDThh:mm:ss\"",
-            "required": false,
-            "type": "string"
+            "$ref": "#/parameters/earliestMeasurementTimeParam"
+          },
+          {
+            "$ref": "#/parameters/latestMeasurementTimeParam"
           },
           {
             "in": "query",
