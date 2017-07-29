@@ -444,7 +444,7 @@ paths:
           schema:
             $ref: '#/definitions/PostCorrelation'
       responses:
-        '200':
+        '201':
           description: Successful Operation
         '400':
           description: Bad request
@@ -553,7 +553,7 @@ paths:
             items:
               $ref: '#/definitions/MeasurementSet'
       responses:
-        '200':
+        '201':
           description: Measurements successfully stored
         '401':
           description: Not Authenticated
@@ -578,7 +578,7 @@ paths:
           schema:
             $ref: '#/definitions/MeasurementDelete'
       responses:
-        '200':
+        '204':
           description: Successful Operation
           schema:
             $ref: '#/definitions/CommonResponse'
@@ -630,7 +630,7 @@ paths:
       parameters:
         - $ref: '#/parameters/userIdParam'
       responses:
-        '200':
+        '201':
           description: successful operation
           schema:
             type: integer
@@ -1080,7 +1080,7 @@ paths:
           schema:
             $ref: '#/definitions/TrackingReminder'
       responses:
-        '200':
+        '201':
           description: successful operation
           schema:
             properties:
@@ -1111,7 +1111,7 @@ paths:
           schema:
             $ref: '#/definitions/TrackingReminderDelete'
       responses:
-        '200':
+        '204':
           description: Successful Operation
           schema:
             $ref: '#/definitions/CommonResponse'
@@ -1174,7 +1174,7 @@ paths:
                 $ref: '#/definitions/TrackingReminderNotificationPost'
               description: Array of TrackingReminderNotifications to take action on
       responses:
-        '200':
+        '201':
           description: Successful Operation
           schema:
             $ref: '#/definitions/CommonResponse'
@@ -1280,7 +1280,7 @@ paths:
           schema:
             $ref: '#/definitions/UserTag'
       responses:
-        '200':
+        '201':
           description: Successful Operation
           schema:
             $ref: '#/definitions/CommonResponse'
@@ -1315,7 +1315,7 @@ paths:
           required: true
           type: integer
       responses:
-        '200':
+        '204':
           description: Successful Operation
           schema:
             $ref: '#/definitions/CommonResponse'
@@ -1347,6 +1347,10 @@ paths:
           schema:
             $ref: '#/definitions/UserVariables'
       responses:
+        '201':
+          description: Successful Operation
+          schema:
+            $ref: '#/definitions/CommonResponse'
         '400':
           description: The received JSON was invalid or malformed
         '401':
@@ -1508,7 +1512,7 @@ paths:
           schema:
             $ref: '#/definitions/UserVariableDelete'
       responses:
-        '200':
+        '204':
           description: Successful operation
         '400':
           description: The received JSON was invalid or malformed
@@ -1599,7 +1603,7 @@ paths:
           schema:
             $ref: '#/definitions/Vote'
       responses:
-        '200':
+        '201':
           description: Successful Operation
           schema:
             $ref: '#/definitions/CommonResponse'
@@ -1629,7 +1633,7 @@ paths:
           schema:
             $ref: '#/definitions/VoteDelete'
       responses:
-        '200':
+        '204':
           description: Successful Operation
           schema:
             $ref: '#/definitions/CommonResponse'
