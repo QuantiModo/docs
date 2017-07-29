@@ -402,3 +402,8 @@ gulp.task('get-units', [], function (callback) {
     };
     apiInstance.getUnits(qmApiResponseCallback);
 });
+gulp.task('test-javascript-client', [], function (callback) {
+    executeCommand('cd ' + getUnzippedPathForSdkLanguage('javascript') + ' && npm install && npm test ', function () {
+        callback();
+    });
+});
