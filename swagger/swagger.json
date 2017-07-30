@@ -976,7 +976,7 @@
       }
     },
     "/v3/measurements/update": {
-      "put": {
+      "post": {
         "tags": [
           "measurements"
         ],

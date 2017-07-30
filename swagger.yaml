@@ -744,7 +744,7 @@ paths:
         - quantimodo_oauth2:
             - writemeasurements
   /v3/measurements/update:
-    put:
+    post:
       tags:
         - measurements
       summary: Update a measurement

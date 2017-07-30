@@ -102,7 +102,8 @@ function getPatchVersionNumber() {
     var date = new Date();
     var monthNumber = (date.getMonth() + 1).toString();
     var dayOfMonth = ('0' + date.getDate()).slice(-2);
-    return monthNumber + dayOfMonth;
+    var hourOfDay = ('0' + date.getHours()).slice(-2);
+    return monthNumber + dayOfMonth + hourOfDay;
 }
 var apiVersionNumber = majorMinorVersionNumbers + getPatchVersionNumber();
 logInfo("API version is " + apiVersionNumber);
@@ -246,7 +247,7 @@ gulp.task('browserify', [], function (callback) {
         callback();
     });
 });
-gulp.task('3-build-and-release-javascript', ['get-units'], function (callback) {
+gulp.task('4-build-and-release-javascript', ['get-units'], function (callback) {
     function updateBowerAndPackageJsonVersions(path, callback) {
         var bowerJson = readJsonFile(path + '/bower.json');
         bowerJson.dependencies.quantimodo = apiVersionNumber;
@@ -377,11 +378,11 @@ gulp.task('1-decompress', ['clean-repos-except-git'], function () {
         unzipFileToFolder(getZipPathForLanguage(languages[i]), sdksUnzippedPath);
     }
 });
-gulp.task('2-copy-to-repos', ['browserify'], function(){
+gulp.task('3-copy-to-repos', ['browserify'], function(){
     copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage('javascript'), pathToQmDocker + '/' + pathToQuantiModoNodeModule);
     copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage('javascript'), pathToIonic + '/' + pathToQuantiModoNodeModule);
     copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage('javascript'), pathToIonic + '/www/custom-lib/quantimodo');
-    return gulp.src([getUnzippedPathForSdkLanguage('javascript') + 'quantimodo-web.js'])
+    gulp.src([getUnzippedPathForSdkLanguage('javascript') + 'quantimodo-web.js'])
         .pipe(gulp.dest('/www/custom-lib/'));
     for(var i = 0; i < languages.length; i++) {
         if(i === languages.length - 1){
