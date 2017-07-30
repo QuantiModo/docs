@@ -181,34 +181,35 @@ parameters:
       1000 results, but only want to the first 10, you would set this to 10 and
       offset to 0. The maximum limit is 200 records.
   clientIdParam:
-    parameters: null
     name: clientId
     required: false
     description: 'Example: oauth_test_client'
     in: query
     type: string
   appNameParam:
-    parameters: null
     name: appName
     required: false
     description: 'Example: MoodiModo'
     in: query
     type: string
   appVersionParam:
-    parameters: null
     name: appVersion
     required: false
     description: 'Example: 2.1.1.0'
     in: query
     type: string
   reminderFrequencyParam:
-    parameters: null
     name: reminderFrequency
     required: false
     description: 'Example: 86400'
     in: query
     type: string
-  unitNamePathParam:
+  unitNameParam:
+    name: unitName
+    required: false
+    description: 'Example: 86400'
+    in: query
+    type: string
     enum:
       - '% Recommended Daily Allowance'
       - '-4 to 4 Rating'
