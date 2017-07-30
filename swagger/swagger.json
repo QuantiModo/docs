@@ -149,14 +149,14 @@
     "createdAtParam": {
       "in": "query",
       "name": "createdAt",
-      "description": "When the record was first created. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format. Time zone should be UTC and not local.",
+      "description": "When the record was first created. Use UTC ISO 8601 `YYYY-MM-DDThh:mm:ss` datetime format. Time zone should be UTC and not local.",
       "required": false,
       "type": "string"
     },
     "updatedAtParam": {
       "in": "query",
       "name": "updatedAt",
-      "description": "When the record was last updated. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format. Time zone should be UTC and not local.",
+      "description": "When the record was last updated. Use UTC ISO 8601 `YYYY-MM-DDThh:mm:ss` datetime format. Time zone should be UTC and not local.",
       "required": false,
       "type": "string"
     },
@@ -780,7 +780,7 @@
           "measurements"
         ],
         "summary": "Get measurements for this user",
-        "description": "Measurements are any value that can be recorded like daily steps, a mood rating, or apples eaten. Supported filter parameters:<ul><li><b>value</b> - Value of measurement</li><li><b>updatedAt</b> - The time that this measurement was created or last updated in the UTC format \"YYYY-MM-DDThh:mm:ss\"</li></ul>",
+        "description": "Measurements are any value that can be recorded like daily steps, a mood rating, or apples eaten.",
         "produces": [
           "application/json"
         ],
@@ -820,11 +820,7 @@
             "type": "string"
           },
           {
-            "in": "query",
-            "name": "unitAbbreviatedName",
-            "description": "The unit you want the measurements returned in",
-            "required": false,
-            "type": "string"
+            "$ref": "#/parameters/unitNameParam"
           },
           {
             "$ref": "#/parameters/earliestMeasurementTimeParam"
@@ -890,7 +886,7 @@
           "measurements"
         ],
         "summary": "Post a new set or update existing measurements to the database",
-        "description": "You can submit or update multiple measurements in a \"measurements\" sub-array.  If the variable these measurements correspond to does not already exist in the database, it will be automatically added.  The request body should look something like [{\"measurements\":[{\"startTime\":1439389320,\"value\":\"3\"}, {\"startTime\":1439389319,\"value\":\"2\"}],\"name\":\"Acne (out of 5)\",\"source\":\"QuantiModo\",\"category\":\"Symptoms\",\"combinationOperation\":\"MEAN\",\"unit\":\"/5\"}]",
+        "description": "You can submit or update multiple measurements in a \"measurements\" sub-array.  If the variable these measurements correspond to does not already exist in the database, it will be automatically added.",
         "produces": [
           "application/json"
         ],
@@ -1092,7 +1088,7 @@
           {
             "in": "query",
             "name": "scope",
-            "description": "Scopes include basic, readmeasurements, and writemeasurements. The \"basic\" scope allows you to read user info (displayname, email, etc). The \"readmeasurements\" scope allows one to read a user's data. The \"writemeasurements\" scope allows you to write user data. Separate multiple scopes by a space.",
+            "description": "Scopes include basic, readmeasurements, and writemeasurements. The `basic` scope allows you to read user info (displayName, email, etc). The `readmeasurements` scope allows one to read a user's data. The `writemeasurements` scope allows you to write user data. Separate multiple scopes by a space.",
             "required": true,
             "type": "string"
           },
@@ -1181,7 +1177,7 @@
           {
             "in": "query",
             "name": "scope",
-            "description": "Scopes include basic, readmeasurements, and writemeasurements. The \"basic\" scope allows you to read user info (displayname, email, etc). The \"readmeasurements\" scope allows one to read a user's data. The \"writemeasurements\" scope allows you to write user data. Separate multiple scopes by a space.",
+            "description": "Scopes include basic, readmeasurements, and writemeasurements. The `basic` scope allows you to read user info (displayname, email, etc). The `readmeasurements` scope allows one to read a user's data. The `writemeasurements` scope allows you to write user data. Separate multiple scopes by a space.",
             "required": false,
             "type": "string"
           },
@@ -3845,8 +3841,8 @@
       "required": [
         "name",
         "variableCategoryName",
-        "unitAbbreviatedName",
-        "abbreviatedUnitId",
+        "defaultUnitAbbreviatedName",
+        "defaultUnitId",
         "sources",
         "minimumAllowedValue",
         "maximumAllowedValue",
@@ -3885,11 +3881,11 @@
           "type": "string",
           "description": "Variable category like Mood, Sleep, Physical Activity, Treatment, Symptom, etc."
         },
-        "unitAbbreviatedName": {
+        "defaultUnitAbbreviatedName": {
           "type": "string",
           "description": "Abbreviated name of the default unit for the variable"
         },
-        "abbreviatedUnitId": {
+        "defaultUnitId": {
           "type": "integer",
           "description": "Id of the default unit for the variable"
         },
