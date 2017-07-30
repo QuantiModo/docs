@@ -241,7 +241,8 @@ String.prototype.replaceAll = function(search, replacement) {
 gulp.task('browserify', [], function (callback) {
     var sourceFile = 'src/index.js';
     var outputFile = 'quantimodo-web.js';
-    executeCommand('cd ' + getUnzippedPathForSdkLanguage('javascript') + ' && npm install -g browserify && browserify ' + sourceFile + ' --standalone Quantimodo > ' + outputFile, function () {
+    executeCommand('cd ' + getUnzippedPathForSdkLanguage('javascript') + ' && npm install -g browserify && browserify ' +
+        sourceFile + ' --standalone Quantimodo > ' + outputFile, function () {
         callback();
     });
 });
