@@ -239,9 +239,9 @@ String.prototype.replaceAll = function(search, replacement) {
     return target.replace(new RegExp(search, 'g'), replacement);
 };
 gulp.task('browserify', [], function (callback) {
-    var sourceFile = getUnzippedPathForSdkLanguage('javascript') + '/src/index.js';
-    var outputFile = getUnzippedPathForSdkLanguage('javascript') + '/quantimodo-web.js';
-    executeCommand('browserify ' + sourceFile + ' --standalone Quantimodo > ' + outputFile, function () {
+    var sourceFile = 'src/index.js';
+    var outputFile = 'quantimodo-web.js';
+    executeCommand('cd ' + getUnzippedPathForSdkLanguage('javascript') + ' && npm install -g browserify && browserify ' + sourceFile + ' --standalone Quantimodo > ' + outputFile, function () {
         callback();
     });
 });
