@@ -1,32 +1,41 @@
 swagger: '2.0'
 info:
-  description: "QuantiModo makes it easy to retrieve normalized user data from a wide array of devices and applications. [Learn about QuantiModo](https://quantimo.do), check out our [docs](https://github.com/QuantiModo/docs) or contact us at [help.quantimo.do](https://help.quantimo.do)."
-  version: "5.8.728"
-  title: 'quantimodo'
+  description: >-
+    QuantiModo makes it easy to retrieve normalized user data from a wide array
+    of devices and applications. [Learn about QuantiModo](https://quantimo.do),
+    check out our [docs](https://github.com/QuantiModo/docs) or contact us at
+    [help.quantimo.do](https://help.quantimo.do).
+  version: 5.8.728
+  title: quantimodo
   termsOfService: 'https://quantimo.do/tos/'
   contact:
-    name: 'info@quantimo.do'
+    name: info@quantimo.do
   license:
     name: Apache 2.0
     url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
 basePath: /api
 host: app.quantimo.do
 tags:
-- name: measurements
-  description: Measurements are any value that can be recorded like daily steps, a mood rating, or apples eaten.
-  externalDocs:
-    description: See it in action
-    url: 'https://app.quantimo.do/ionic/Modo/www/#/app/history-all-category/Anything'
-- name: reminders
-  description: Users can be reminded to track certain variables at a specified frequency with a default value.
-  externalDocs:
-    description: See it in action
-    url: 'https://app.quantimo.do/ionic/Modo/www/#/app/reminders-inbox'
-- name: connectors
-  description: Import data from third-party apps and devices like Fitbit and Mint.
-  externalDocs:
-    description: Import your data now
-    url: 'https://app.quantimo.do/ionic/Modo/www/#/app/import'
+  - name: measurements
+    description: >-
+      Measurements are any value that can be recorded like daily steps, a mood
+      rating, or apples eaten.
+    externalDocs:
+      description: See it in action
+      url: >-
+        https://app.quantimo.do/ionic/Modo/www/#/app/history-all-category/Anything
+  - name: reminders
+    description: >-
+      Users can be reminded to track certain variables at a specified frequency
+      with a default value.
+    externalDocs:
+      description: See it in action
+      url: 'https://app.quantimo.do/ionic/Modo/www/#/app/reminders-inbox'
+  - name: connectors
+    description: Import data from third-party apps and devices like Fitbit and Mint.
+    externalDocs:
+      description: Import your data now
+      url: 'https://app.quantimo.do/ionic/Modo/www/#/app/import'
 parameters:
   effectVariableNameParam:
     in: query
@@ -43,7 +52,9 @@ parameters:
   connectorNamePathParam:
     in: path
     name: connectorName
-    description: Lowercase system name of the source application or device. Get a list of available connectors from the /v3/connectors/list endpoint.
+    description: >-
+      Lowercase system name of the source application or device. Get a list of
+      available connectors from the /v3/connectors/list endpoint.
     required: true
     type: string
   variableCategoryNameParam:
@@ -55,7 +66,9 @@ parameters:
   sortParam:
     in: query
     name: sort
-    description: Sort by one of the listed field names. If the field name is prefixed with `-`, it will sort in descending order.
+    description: >-
+      Sort by one of the listed field names. If the field name is prefixed with
+      `-`, it will sort in descending order.
     required: false
     type: string
   userIdParam:
@@ -67,25 +80,35 @@ parameters:
   latestMeasurementTimeParam:
     in: query
     name: latestMeasurementTime
-    description: Excluded records with measurement times later than this value. Use UTC ISO 8601 "YYYY-MM-DDThh:mm:ss"  datetime format. Time zone should be UTC and not local.
+    description: >-
+      Excluded records with measurement times later than this value. Use UTC ISO
+      8601 "YYYY-MM-DDThh:mm:ss"  datetime format. Time zone should be UTC and
+      not local.
     required: false
     type: string
   earliestMeasurementTimeParam:
     in: query
     name: earliestMeasurementTime
-    description: Excluded records with measurement times earlier than this value. Use UTC ISO 8601 "YYYY-MM-DDThh:mm:ss"  datetime format. Time zone should be UTC and not local.
+    description: >-
+      Excluded records with measurement times earlier than this value. Use UTC
+      ISO 8601 "YYYY-MM-DDThh:mm:ss"  datetime format. Time zone should be UTC
+      and not local.
     required: false
     type: string
   createdAtParam:
     in: query
     name: createdAt
-    description: When the record was first created. Use UTC ISO 8601 "YYYY-MM-DDThh:mm:ss"  datetime format. Time zone should be UTC and not local.
+    description: >-
+      When the record was first created. Use UTC ISO 8601 "YYYY-MM-DDThh:mm:ss" 
+      datetime format. Time zone should be UTC and not local.
     required: false
     type: string
   updatedAtParam:
     in: query
     name: updatedAt
-    description: When the record was last updated. Use UTC ISO 8601 "YYYY-MM-DDThh:mm:ss"  datetime format. Time zone should be UTC and not local.
+    description: >-
+      When the record was last updated. Use UTC ISO 8601 "YYYY-MM-DDThh:mm:ss" 
+      datetime format. Time zone should be UTC and not local.
     required: false
     type: string
   offsetParam:
@@ -94,7 +117,11 @@ parameters:
     required: false
     type: integer
     minimum: 0
-    description: OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause.If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.
+    description: >-
+      OFFSET says to skip that many rows before beginning to return rows to the
+      client. OFFSET 0 is the same as omitting the OFFSET clause.If both OFFSET
+      and LIMIT appear, then OFFSET rows are skipped before starting to count
+      the LIMIT rows that are returned.
   limitParam:
     in: query
     name: limit
@@ -103,7 +130,38 @@ parameters:
     minimum: 1
     maximum: 200
     default: 100
-    description: The LIMIT is used to limit the number of results returned. So if youhave 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.
+    description: >-
+      The LIMIT is used to limit the number of results returned. So if youhave
+      1000 results, but only want to the first 10, you would set this to 10 and
+      offset to 0. The maximum limit is 200 records.
+  clientIdParam:
+    parameters: null
+    name: clientId
+    required: false
+    description: 'Example: oauth_test_client'
+    in: query
+    type: string
+  appNameParam:
+    parameters: null
+    name: appName
+    required: false
+    description: 'Example: MoodiModo'
+    in: query
+    type: string
+  appVersionParam:
+    parameters: null
+    name: appVersion
+    required: false
+    description: 'Example: 2.1.1.0'
+    in: query
+    type: string
+  reminderFrequencyParam:
+    parameters: null
+    name: reminderFrequency
+    required: false
+    description: 'Example: 86400'
+    in: query
+    type: string
 schemes:
   - https
 consumes:
@@ -272,7 +330,7 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - basic
-  '/v4/correlations':
+  /v4/correlations:
     get:
       operationId: getCorrelations
       tags:
@@ -319,7 +377,9 @@ paths:
         - $ref: '#/parameters/sortParam'
         - in: query
           name: outcomesOfInterest
-          description: Only include correlations for which the effect is an outcome of interest for the user
+          description: >-
+            Only include correlations for which the effect is an outcome of
+            interest for the user
           required: false
           type: boolean
       responses:
@@ -335,7 +395,7 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - basic
-  '/v3/correlations/explanations':
+  /v3/correlations/explanations:
     get:
       operationId: getUserCorrelationExplantions
       tags:
@@ -486,7 +546,9 @@ paths:
         - $ref: '#/parameters/variableCategoryNameParam'
         - in: query
           name: sourceName
-          description: ID of the source you want measurements for (supports exact name match only)
+          description: >-
+            ID of the source you want measurements for (supports exact name
+            match only)
           required: false
           type: string
         - in: query
@@ -546,7 +608,9 @@ paths:
         - $ref: '#/parameters/userIdParam'
         - in: body
           name: body
-          description: An array of measurement sets containing measurement items you want to insert.
+          description: >-
+            An array of measurement sets containing measurement items you want
+            to insert.
           required: true
           schema:
             type: array
@@ -658,7 +722,10 @@ paths:
       parameters:
         - in: query
           name: clientId
-          description: This is the unique ID that QuantiModo uses to identify your application. Obtain a client id by creating a free application at [https://app.quantimo.do/api/v2/apps](https://app.quantimo.do/api/v2/apps).
+          description: >-
+            This is the unique ID that QuantiModo uses to identify your
+            application. Obtain a client id by creating a free application at
+            [https://app.quantimo.do/api/v2/apps](https://app.quantimo.do/api/v2/apps).
           required: true
           type: string
         - in: query
@@ -819,7 +886,7 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - basic
-  '/v2/auth/social/login':
+  /v2/auth/social/login:
     get:
       operationId: getSocialLoginPage
       tags:
@@ -870,7 +937,7 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - basic
-  '/v2/auth/social/authorizeCode':
+  /v2/auth/social/authorizeCode:
     get:
       operationId: getSocialAuthorizationCode
       tags:
@@ -917,7 +984,7 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - basic
-  '/v2/auth/social/authorizeToken':
+  /v2/auth/social/authorizeToken:
     get:
       operationId: getSocialAuthorizationToken
       tags:
@@ -967,13 +1034,15 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - basic
-  '/v3/pairs':
+  /v3/pairs:
     get:
       operationId: getPairs
       tags:
         - measurements
       summary: Get pairs of measurements for correlational analysis
-      description: Pairs cause measurements with effect measurements grouped over the duration of action after the onset delay.
+      description: >-
+        Pairs cause measurements with effect measurements grouped over the
+        duration of action after the onset delay.
       produces:
         - application/json
       parameters:
@@ -1029,14 +1098,15 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - basic
-  '/v3/trackingReminders':
+  /v3/trackingReminders:
     get:
       operationId: getTrackingReminders
       tags:
         - reminders
       summary: Get repeating tracking reminder settings
       description: >-
-        Users can be reminded to track certain variables at a specified frequency with a default value.
+        Users can be reminded to track certain variables at a specified
+        frequency with a default value.
       produces:
         - application/json
       parameters:
@@ -1068,7 +1138,9 @@ paths:
       tags:
         - reminders
       summary: Store a Tracking Reminder
-      description: This is to enable users to create reminders to track a variable with a default value at a specified frequency
+      description: >-
+        This is to enable users to create reminders to track a variable with a
+        default value at a specified frequency
       produces:
         - application/json
       parameters:
@@ -1093,7 +1165,7 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - basic
-  '/v3/trackingReminders/delete':
+  /v3/trackingReminders/delete:
     delete:
       operationId: deleteTrackingReminder
       tags:
@@ -1121,7 +1193,7 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - basic
-  '/v3/trackingReminderNotifications':
+  /v3/trackingReminderNotifications:
     get:
       operationId: getTrackingReminderNotifications
       tags:
@@ -1158,8 +1230,8 @@ paths:
       operationId: postTrackingReminderNotifications
       tags:
         - reminders
-      summary: Snooze, skip, or track a pending tracking reminder notification
-      description: Snooze, skip, or track a pending tracking reminder notification
+      summary: 'Snooze, skip, or track a pending tracking reminder notification'
+      description: 'Snooze, skip, or track a pending tracking reminder notification'
       produces:
         - application/json
       parameters:
@@ -1169,10 +1241,10 @@ paths:
           description: Id of the pending reminder to be snoozed
           required: true
           schema:
-              type: array
-              items:
-                $ref: '#/definitions/TrackingReminderNotificationPost'
-              description: Array of TrackingReminderNotifications to take action on
+            type: array
+            items:
+              $ref: '#/definitions/TrackingReminderNotificationPost'
+            description: Array of TrackingReminderNotifications to take action on
       responses:
         '201':
           description: Successful Operation
@@ -1184,7 +1256,7 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - basic
-  '/v3/units':
+  /v3/units:
     get:
       operationId: getUnits
       tags:
@@ -1197,17 +1269,17 @@ paths:
         '200':
           description: Successful operation
           schema:
-              type: array
-              items:
-                $ref: '#/definitions/Units'
-              description: Array of units
+            type: array
+            items:
+              $ref: '#/definitions/Units'
+            description: Array of units
         '401':
           description: Not Authenticated
       security:
         - access_token: []
         - quantimodo_oauth2:
             - basic
-  '/v3/unitCategories':
+  /v3/unitCategories:
     get:
       operationId: getUnitCategories
       tags:
@@ -1230,13 +1302,15 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - basic
-  '/v3/user':
+  /v3/user:
     get:
       operationId: getUser
       tags:
         - user
       summary: Get user info
-      description: Returns user info.  If no userId is specified, returns info for currently authenticated user
+      description: >-
+        Returns user info.  If no userId is specified, returns info for
+        currently authenticated user
       produces:
         - application/json
       parameters:
@@ -1257,7 +1331,7 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - basic
-  '/v3/userTags':
+  /v3/userTags:
     post:
       operationId: postUserTags
       tags:
@@ -1290,7 +1364,7 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - basic
-  '/v3/userTags/delete':
+  /v3/userTags/delete:
     delete:
       operationId: deleteUserTag
       tags:
@@ -1325,7 +1399,7 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - basic
-  '/v3/userVariables':
+  /v3/userVariables:
     post:
       operationId: postUserVariables
       tags:
@@ -1770,8 +1844,8 @@ definitions:
       cause:
         type: string
         description: >-
-          Variable name of the cause variable for which the user
-          desires correlations.
+          Variable name of the cause variable for which the user desires
+          correlations.
       causeVariableCategoryName:
         type: string
         description: Variable category of the cause variable.
@@ -1801,8 +1875,8 @@ definitions:
       causeVariableName:
         type: string
         description: >-
-          Variable name of the cause variable for which the user
-          desires correlations.
+          Variable name of the cause variable for which the user desires
+          correlations.
       correlationCoefficient:
         type: number
         description: Pearson correlation coefficient between cause and effect measurements
@@ -1829,8 +1903,8 @@ definitions:
       effect:
         type: string
         description: >-
-          Variable name of the effect variable for which the user
-          desires correlations.
+          Variable name of the effect variable for which the user desires
+          correlations.
       effectVariableCategoryName:
         type: string
         description: Variable category of the effect variable.
@@ -1853,8 +1927,8 @@ definitions:
       effectVariableName:
         type: string
         description: >-
-          Variable name of the effect variable for which the user
-          desires correlations.
+          Variable name of the effect variable for which the user desires
+          correlations.
       gaugeImage:
         type: string
         description: Illustrates the strength of the relationship
@@ -2157,10 +2231,14 @@ definitions:
         description: Id of the TrackingReminderNotification
       modifiedValue:
         type: number
-        description: Optional value to be recorded instead of the tracking reminder default value
+        description: >-
+          Optional value to be recorded instead of the tracking reminder default
+          value
       action:
         type: string
-        description: track records a measurement for the notification.  snooze changes the notification to 1 hour from now. skip deletes the notification.
+        description: >-
+          track records a measurement for the notification.  snooze changes the
+          notification to 1 hour from now. skip deletes the notification.
         enum:
           - track
           - snooze
