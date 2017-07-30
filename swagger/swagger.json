@@ -135,14 +135,14 @@
     "latestMeasurementTimeParam": {
       "in": "query",
       "name": "latestMeasurementTime",
-      "description": "Excluded records with measurement times later than this value. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format. Time zone should be UTC and not local.",
+      "description": "Excluded records with measurement times later than this value. Use UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`  datetime format. Time zone should be UTC and not local.",
       "required": false,
       "type": "string"
     },
     "earliestMeasurementTimeParam": {
       "in": "query",
       "name": "earliestMeasurementTime",
-      "description": "Excluded records with measurement times earlier than this value. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format. Time zone should be UTC and not local.",
+      "description": "Excluded records with measurement times earlier than this value. Use UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`  datetime format. Time zone should be UTC and not local.",
       "required": false,
       "type": "string"
     },
@@ -862,7 +862,10 @@
           "200": {
             "description": "Successful Operation",
             "schema": {
-              "$ref": "#/definitions/Measurements"
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Measurement"
+              }
             }
           },
           "401": {
@@ -1500,7 +1503,7 @@
                 "data": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/definitions/TrackingReminders"
+                    "$ref": "#/definitions/TrackingReminder"
                   }
                 }
               },
@@ -1664,7 +1667,7 @@
                 "data": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/definitions/TrackingReminderNotifications"
+                    "$ref": "#/definitions/TrackingReminderNotification"
                   }
                 }
               },
@@ -1751,7 +1754,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/Units"
+                "$ref": "#/definitions/Unit"
               },
               "description": "Array of units"
             }
@@ -1787,7 +1790,10 @@
           "200": {
             "description": "Successful operation",
             "schema": {
-              "$ref": "#/definitions/UnitCategories"
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/UnitCategory"
+              }
             }
           },
           "401": {
@@ -1976,7 +1982,10 @@
             "description": "Variable user settings data",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/UserVariables"
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/UserVariable"
+              }
             }
           }
         ],
@@ -2083,7 +2092,10 @@
           "200": {
             "description": "Variables returned",
             "schema": {
-              "$ref": "#/definitions/UserVariables"
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/UserVariable"
+              }
             }
           },
           "401": {
@@ -2178,7 +2190,10 @@
           "200": {
             "description": "Successful operation",
             "schema": {
-              "$ref": "#/definitions/Variables"
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Variable"
+              }
             }
           },
           "401": {
@@ -2518,13 +2533,6 @@
         }
       }
     },
-    "Connectors": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/Connector"
-      },
-      "description": "Array"
-    },
     "ConversionStep": {
       "required": [
         "operation",
@@ -2638,7 +2646,7 @@
           "description": "Pearson correlation coefficient between cause and effect measurements"
         },
         "createdAt": {
-          "description": "When the record was first created. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format",
+          "description": "When the record was first created. Use UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`  datetime format",
           "type": "string",
           "format": "date-time"
         },
@@ -2788,7 +2796,7 @@
           "description": "Time at which correlation was calculated"
         },
         "updatedAt": {
-          "description": "When the record in the database was last updated. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format. Time zone should be UTC and not local.",
+          "description": "When the record in the database was last updated. Use UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`  datetime format. Time zone should be UTC and not local.",
           "type": "string",
           "format": "date-time"
         },
@@ -2836,6 +2844,76 @@
         }
       }
     },
+    "Measurement": {
+      "required": [
+        "variableName",
+        "sourceName",
+        "startTimeString",
+        "value",
+        "unitAbbreviatedName"
+      ],
+      "properties": {
+        "variableName": {
+          "type": "string",
+          "description": "Name of the variable for which we are creating the measurement records"
+        },
+        "sourceName": {
+          "type": "string",
+          "description": "Application or device used to record the measurement values"
+        },
+        "startTimeString": {
+          "type": "string",
+          "description": "Start Time for the measurement event in UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`"
+        },
+        "startTimeEpoch": {
+          "type": "integer",
+          "description": "Seconds between the start of the event measured and 1970 (Unix timestamp)"
+        },
+        "value": {
+          "type": "number",
+          "format": "double",
+          "description": "Converted measurement value in requested unit"
+        },
+        "originalValue": {
+          "type": "integer",
+          "description": "Original value as originally submitted"
+        },
+        "originalunitAbbreviatedName": {
+          "type": "string",
+          "description": "Original Unit of measurement as originally submitted"
+        },
+        "unitAbbreviatedName": {
+          "type": "string",
+          "description": "Abbreviated name for the unit of measurement"
+        },
+        "note": {
+          "type": "string",
+          "description": "Note of measurement"
+        }
+      }
+    },
+    "MeasurementItem": {
+      "required": [
+        "timestamp",
+        "value"
+      ],
+      "properties": {
+        "timestamp": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Timestamp for the measurement event in epoch time (unixtime)"
+        },
+        "value": {
+          "type": "number",
+          "format": "double",
+          "description": "Measurement value"
+        },
+        "note": {
+          "type": "string",
+          "description": "Optional note to include with the measurement"
+        }
+      }
+    },
     "MeasurementSet": {
       "required": [
         "measurementItems",
@@ -2876,61 +2954,6 @@
           "description": "Unit of measurement"
         }
       }
-    },
-    "Measurement": {
-      "required": [
-        "variableName",
-        "sourceName",
-        "startTimeString",
-        "value",
-        "unitAbbreviatedName"
-      ],
-      "properties": {
-        "variableName": {
-          "type": "string",
-          "description": "Name of the variable for which we are creating the measurement records"
-        },
-        "sourceName": {
-          "type": "string",
-          "description": "Application or device used to record the measurement values"
-        },
-        "startTimeString": {
-          "type": "string",
-          "description": "Start Time for the measurement event in UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\""
-        },
-        "startTimeEpoch": {
-          "type": "integer",
-          "description": "Seconds between the start of the event measured and 1970 (Unix timestamp)"
-        },
-        "value": {
-          "type": "number",
-          "format": "double",
-          "description": "Converted measurement value in requested unit"
-        },
-        "originalValue": {
-          "type": "integer",
-          "description": "Original value as originally submitted"
-        },
-        "originalunitAbbreviatedName": {
-          "type": "string",
-          "description": "Original Unit of measurement as originally submitted"
-        },
-        "unitAbbreviatedName": {
-          "type": "string",
-          "description": "Abbreviated name for the unit of measurement"
-        },
-        "note": {
-          "type": "string",
-          "description": "Note of measurement"
-        }
-      }
-    },
-    "Measurements": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/Measurement"
-      },
-      "description": "Array of mesaurements"
     },
     "MeasurementDelete": {
       "required": [
@@ -3006,17 +3029,6 @@
         "vote": {
           "type": "integer",
           "description": "Vote: 0 or 1"
-        }
-      }
-    },
-    "UserVariableDelete": {
-      "required": [
-        "variableId"
-      ],
-      "properties": {
-        "variableId": {
-          "type": "integer",
-          "description": "Id of the variable whose measurements should be deleted"
         }
       }
     },
@@ -3121,12 +3133,12 @@
           "type": "boolean"
         },
         "latestTrackingReminderNotificationReminderTime": {
-          "description": "UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  timestamp for the reminder time of the latest tracking reminder notification that has been pre-emptively generated in the database",
+          "description": "UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`  timestamp for the reminder time of the latest tracking reminder notification that has been pre-emptively generated in the database",
           "type": "string",
           "format": "date-time"
         },
         "lastTracked": {
-          "description": "UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  timestamp for the last time a measurement was received for this user and variable",
+          "description": "UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`  timestamp for the last time a measurement was received for this user and variable",
           "type": "string",
           "format": "date-time"
         },
@@ -3141,7 +3153,7 @@
           "format": "string"
         },
         "updatedAt": {
-          "description": "When the record in the database was last updated. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format. Time zone should be UTC and not local.",
+          "description": "When the record in the database was last updated. Use UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`  datetime format. Time zone should be UTC and not local.",
           "type": "string",
           "format": "date-time"
         },
@@ -3166,13 +3178,6 @@
           ]
         }
       }
-    },
-    "TrackingReminders": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/TrackingReminder"
-      },
-      "description": "Array"
     },
     "TrackingReminderNotification": {
       "required": [
@@ -3204,7 +3209,7 @@
           "format": "int32"
         },
         "pendingReminderTime": {
-          "description": "UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  timestamp for the specific time the variable should be tracked in UTC.  This will be used for the measurement startTime if the track endpoint is used.",
+          "description": "UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`  timestamp for the specific time the variable should be tracked in UTC.  This will be used for the measurement startTime if the track endpoint is used.",
           "type": "string",
           "format": "date-time"
         },
@@ -3234,7 +3239,7 @@
           "type": "boolean"
         },
         "updatedAt": {
-          "description": "When the record in the database was last updated. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format. Time zone should be UTC and not local.",
+          "description": "When the record in the database was last updated. Use UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`  datetime format. Time zone should be UTC and not local.",
           "type": "string",
           "format": "date-time"
         },
@@ -3259,13 +3264,6 @@
           ]
         }
       }
-    },
-    "TrackingReminderNotifications": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/TrackingReminderNotification"
-      },
-      "description": "Array"
     },
     "Unit": {
       "required": [
@@ -3319,12 +3317,54 @@
         }
       }
     },
-    "Units": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/Unit"
-      },
-      "description": "Array"
+    "Update": {
+      "required": [
+        "userId",
+        "connectorId",
+        "numberOfMeasurements",
+        "success",
+        "message"
+      ],
+      "properties": {
+        "id": {
+          "description": "id",
+          "type": "integer",
+          "format": "int32"
+        },
+        "userId": {
+          "description": "userId",
+          "type": "integer",
+          "format": "int32"
+        },
+        "connectorId": {
+          "description": "connectorId",
+          "type": "integer",
+          "format": "int32"
+        },
+        "numberOfMeasurements": {
+          "description": "numberOfMeasurements",
+          "type": "integer",
+          "format": "int32"
+        },
+        "success": {
+          "description": "success",
+          "type": "boolean"
+        },
+        "message": {
+          "description": "message",
+          "type": "string"
+        },
+        "createdAt": {
+          "description": "When the record was first created. Use UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`  datetime format",
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "description": "When the record in the database was last updated. Use UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`  datetime format",
+          "type": "string",
+          "format": "date-time"
+        }
+      }
     },
     "UnitCategory": {
       "required": [
@@ -3336,13 +3376,6 @@
           "description": "Category name"
         }
       }
-    },
-    "UnitCategories": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/UnitCategory"
-      },
-      "description": "Array"
     },
     "User": {
       "required": [
@@ -3479,55 +3512,6 @@
         "access_token": {
           "type": "string",
           "description": "User token"
-        }
-      }
-    },
-    "Update": {
-      "required": [
-        "userId",
-        "connectorId",
-        "numberOfMeasurements",
-        "success",
-        "message"
-      ],
-      "properties": {
-        "id": {
-          "description": "id",
-          "type": "integer",
-          "format": "int32"
-        },
-        "userId": {
-          "description": "userId",
-          "type": "integer",
-          "format": "int32"
-        },
-        "connectorId": {
-          "description": "connectorId",
-          "type": "integer",
-          "format": "int32"
-        },
-        "numberOfMeasurements": {
-          "description": "numberOfMeasurements",
-          "type": "integer",
-          "format": "int32"
-        },
-        "success": {
-          "description": "success",
-          "type": "boolean"
-        },
-        "message": {
-          "description": "message",
-          "type": "string"
-        },
-        "createdAt": {
-          "description": "When the record was first created. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format",
-          "type": "string",
-          "format": "date-time"
-        },
-        "updatedAt": {
-          "description": "When the record in the database was last updated. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format",
-          "type": "string",
-          "format": "date-time"
         }
       }
     },
@@ -3741,22 +3725,22 @@
           "type": "string"
         },
         "experimentStartTime": {
-          "description": "Earliest measurement start_time to be used in analysis. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format",
+          "description": "Earliest measurement start_time to be used in analysis. Use UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`  datetime format",
           "type": "string",
           "format": "date-time"
         },
         "experimentEndTime": {
-          "description": "Latest measurement start_time to be used in analysis. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format",
+          "description": "Latest measurement start_time to be used in analysis. Use UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`  datetime format",
           "type": "string",
           "format": "date-time"
         },
         "createdAt": {
-          "description": "When the record was first created. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format",
+          "description": "When the record was first created. Use UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`  datetime format",
           "type": "string",
           "format": "date-time"
         },
         "updatedAt": {
-          "description": "When the record in the database was last updated. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format",
+          "description": "When the record in the database was last updated. Use UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`  datetime format",
           "type": "string",
           "format": "date-time"
         },
@@ -3808,32 +3792,14 @@
         }
       }
     },
-    "UserVariables": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/UserVariable"
-      },
-      "description": "Array of user variables"
-    },
-    "MeasurementItem": {
+    "UserVariableDelete": {
       "required": [
-        "timestamp",
-        "value"
+        "variableId"
       ],
       "properties": {
-        "timestamp": {
+        "variableId": {
           "type": "integer",
-          "format": "int64",
-          "description": "Timestamp for the measurement event in epoch time (unixtime)"
-        },
-        "value": {
-          "type": "number",
-          "format": "double",
-          "description": "Measurement value"
-        },
-        "note": {
-          "type": "string",
-          "description": "Optional note to include with the measurement"
+          "description": "Id of the variable whose measurements should be deleted"
         }
       }
     },
@@ -4008,13 +3974,6 @@
         }
       }
     },
-    "Variables": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/Variable"
-      },
-      "description": "Array"
-    },
     "VariableCategory": {
       "required": [
         "name"
@@ -4025,13 +3984,6 @@
           "description": "Category name"
         }
       }
-    },
-    "VariableCategories": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/VariableCategory"
-      },
-      "description": "Array"
     },
     "VoteDelete": {
       "required": [
@@ -4085,12 +4037,12 @@
           "description": "Vote: 0 (for implausible) or 1 (for plausible)"
         },
         "createdAt": {
-          "description": "When the record was first created. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format",
+          "description": "When the record was first created. Use UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`  datetime format",
           "type": "string",
           "format": "date-time"
         },
         "updatedAt": {
-          "description": "When the record in the database was last updated. Use UTC ISO 8601 \"YYYY-MM-DDThh:mm:ss\"  datetime format",
+          "description": "When the record in the database was last updated. Use UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`  datetime format",
           "type": "string",
           "format": "date-time"
         }

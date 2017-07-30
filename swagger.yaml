@@ -128,7 +128,7 @@ parameters:
     name: latestMeasurementTime
     description: >-
       Excluded records with measurement times later than this value. Use UTC ISO
-      8601 "YYYY-MM-DDThh:mm:ss"  datetime format. Time zone should be UTC and
+      8601 `YYYY-MM-DDThh:mm:ss`  datetime format. Time zone should be UTC and
       not local.
     required: false
     type: string
@@ -137,7 +137,7 @@ parameters:
     name: earliestMeasurementTime
     description: >-
       Excluded records with measurement times earlier than this value. Use UTC
-      ISO 8601 "YYYY-MM-DDThh:mm:ss"  datetime format. Time zone should be UTC
+      ISO 8601 `YYYY-MM-DDThh:mm:ss`  datetime format. Time zone should be UTC
       and not local.
     required: false
     type: string
@@ -675,7 +675,9 @@ paths:
         '200':
           description: Successful Operation
           schema:
-            $ref: '#/definitions/Measurements'
+            type: array
+            items:
+              $ref: '#/definitions/Measurement'
         '401':
           description: Not Authenticated
       security:
@@ -1216,7 +1218,7 @@ paths:
               data:
                 type: array
                 items:
-                  $ref: '#/definitions/TrackingReminders'
+                  $ref: '#/definitions/TrackingReminder'
             type: object
       security:
         - access_token: []
@@ -1309,7 +1311,7 @@ paths:
               data:
                 type: array
                 items:
-                  $ref: '#/definitions/TrackingReminderNotifications'
+                  $ref: '#/definitions/TrackingReminderNotification'
             type: object
       security:
         - access_token: []
@@ -1360,7 +1362,7 @@ paths:
           schema:
             type: array
             items:
-              $ref: '#/definitions/Units'
+              $ref: '#/definitions/Unit'
             description: Array of units
         '401':
           description: Not Authenticated
@@ -1384,7 +1386,9 @@ paths:
         '200':
           description: Successful operation
           schema:
-            $ref: '#/definitions/UnitCategories'
+            type: array
+            items:
+              $ref: '#/definitions/UnitCategory'
         '401':
           description: Not Authenticated
       security:
@@ -1508,7 +1512,9 @@ paths:
           description: Variable user settings data
           required: true
           schema:
-            $ref: '#/definitions/UserVariables'
+            type: array
+            items:
+              $ref: '#/definitions/UserVariable'
       responses:
         '201':
           description: Successful Operation
@@ -1583,7 +1589,9 @@ paths:
         '200':
           description: Variables returned
           schema:
-            $ref: '#/definitions/UserVariables'
+            type: array
+            items:
+              $ref: '#/definitions/UserVariable'
         '401':
           description: Not Authenticated
       security:
@@ -1651,7 +1659,9 @@ paths:
         '200':
           description: Successful operation
           schema:
-            $ref: '#/definitions/Variables'
+            type: array
+            items:
+              $ref: '#/definitions/Variable'
         '401':
           description: Not Authenticated
       security:
@@ -1873,11 +1883,6 @@ definitions:
       totalMeasurementsInLastUpdate:
         type: integer
         description: Number of measurements obtained during latest update
-  Connectors:
-    type: array
-    items:
-      $ref: '#/definitions/Connector'
-    description: Array
   ConversionStep:
     required:
       - operation
@@ -1972,7 +1977,7 @@ definitions:
       createdAt:
         description: >-
           When the record was first created. Use UTC ISO 8601
-          "YYYY-MM-DDThh:mm:ss"  datetime format
+          `YYYY-MM-DDThh:mm:ss`  datetime format
         type: string
         format: date-time
       dataAnalysis:
@@ -2118,7 +2123,7 @@ definitions:
       updatedAt:
         description: >-
           When the record in the database was last updated. Use UTC ISO 8601
-          "YYYY-MM-DDThh:mm:ss"  datetime format. Time zone should be UTC and
+          `YYYY-MM-DDThh:mm:ss`  datetime format. Time zone should be UTC and
           not local.
         type: string
         format: date-time
@@ -2156,6 +2161,62 @@ definitions:
       message:
         type: string
         description: Error message
+  Measurement:
+    required:
+      - variableName
+      - sourceName
+      - startTimeString
+      - value
+      - unitAbbreviatedName
+    properties:
+      variableName:
+        type: string
+        description: Name of the variable for which we are creating the measurement records
+      sourceName:
+        type: string
+        description: Application or device used to record the measurement values
+      startTimeString:
+        type: string
+        description: >-
+          Start Time for the measurement event in UTC ISO 8601
+          `YYYY-MM-DDThh:mm:ss`
+      startTimeEpoch:
+        type: integer
+        description: >-
+          Seconds between the start of the event measured and 1970 (Unix
+          timestamp)
+      value:
+        type: number
+        format: double
+        description: Converted measurement value in requested unit
+      originalValue:
+        type: integer
+        description: Original value as originally submitted
+      originalunitAbbreviatedName:
+        type: string
+        description: Original Unit of measurement as originally submitted
+      unitAbbreviatedName:
+        type: string
+        description: Abbreviated name for the unit of measurement
+      note:
+        type: string
+        description: Note of measurement
+  MeasurementItem:
+    required:
+      - timestamp
+      - value
+    properties:
+      timestamp:
+        type: integer
+        format: int64
+        description: Timestamp for the measurement event in epoch time (unixtime)
+      value:
+        type: number
+        format: double
+        description: Measurement value
+      note:
+        type: string
+        description: Optional note to include with the measurement
   MeasurementSet:
     required:
       - measurementItems
@@ -2197,51 +2258,6 @@ definitions:
       unitAbbreviatedName:
         type: string
         description: Unit of measurement
-  Measurement:
-    required:
-      - variableName
-      - sourceName
-      - startTimeString
-      - value
-      - unitAbbreviatedName
-    properties:
-      variableName:
-        type: string
-        description: Name of the variable for which we are creating the measurement records
-      sourceName:
-        type: string
-        description: Application or device used to record the measurement values
-      startTimeString:
-        type: string
-        description: >-
-          Start Time for the measurement event in UTC ISO 8601
-          "YYYY-MM-DDThh:mm:ss"
-      startTimeEpoch:
-        type: integer
-        description: >-
-          Seconds between the start of the event measured and 1970 (Unix
-          timestamp)
-      value:
-        type: number
-        format: double
-        description: Converted measurement value in requested unit
-      originalValue:
-        type: integer
-        description: Original value as originally submitted
-      originalunitAbbreviatedName:
-        type: string
-        description: Original Unit of measurement as originally submitted
-      unitAbbreviatedName:
-        type: string
-        description: Abbreviated name for the unit of measurement
-      note:
-        type: string
-        description: Note of measurement
-  Measurements:
-    type: array
-    items:
-      $ref: '#/definitions/Measurement'
-    description: Array of mesaurements
   MeasurementDelete:
     required:
       - variableId
@@ -2296,13 +2312,6 @@ definitions:
       vote:
         type: integer
         description: 'Vote: 0 or 1'
-  UserVariableDelete:
-    required:
-      - variableId
-    properties:
-      variableId:
-        type: integer
-        description: Id of the variable whose measurements should be deleted
   TrackingReminderDelete:
     required:
       - id
@@ -2388,14 +2397,14 @@ definitions:
         type: boolean
       latestTrackingReminderNotificationReminderTime:
         description: >-
-          UTC ISO 8601 "YYYY-MM-DDThh:mm:ss"  timestamp for the reminder time of
+          UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`  timestamp for the reminder time of
           the latest tracking reminder notification that has been pre-emptively
           generated in the database
         type: string
         format: date-time
       lastTracked:
         description: >-
-          UTC ISO 8601 "YYYY-MM-DDThh:mm:ss"  timestamp for the last time a
+          UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`  timestamp for the last time a
           measurement was received for this user and variable
         type: string
         format: date-time
@@ -2414,7 +2423,7 @@ definitions:
       updatedAt:
         description: >-
           When the record in the database was last updated. Use UTC ISO 8601
-          "YYYY-MM-DDThh:mm:ss"  datetime format. Time zone should be UTC and
+          `YYYY-MM-DDThh:mm:ss`  datetime format. Time zone should be UTC and
           not local.
         type: string
         format: date-time
@@ -2433,11 +2442,6 @@ definitions:
         enum:
           - MEAN
           - SUM
-  TrackingReminders:
-    type: array
-    items:
-      $ref: '#/definitions/TrackingReminder'
-    description: Array
   TrackingReminderNotification:
     required:
       - id
@@ -2463,7 +2467,7 @@ definitions:
         format: int32
       pendingReminderTime:
         description: >-
-          UTC ISO 8601 "YYYY-MM-DDThh:mm:ss"  timestamp for the specific time
+          UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`  timestamp for the specific time
           the variable should be tracked in UTC.  This will be used for the
           measurement startTime if the track endpoint is used.
         type: string
@@ -2490,7 +2494,7 @@ definitions:
       updatedAt:
         description: >-
           When the record in the database was last updated. Use UTC ISO 8601
-          "YYYY-MM-DDThh:mm:ss"  datetime format. Time zone should be UTC and
+          `YYYY-MM-DDThh:mm:ss`  datetime format. Time zone should be UTC and
           not local.
         type: string
         format: date-time
@@ -2509,11 +2513,6 @@ definitions:
         enum:
           - MEAN
           - SUM
-  TrackingReminderNotifications:
-    type: array
-    items:
-      $ref: '#/definitions/TrackingReminderNotification'
-    description: Array
   Unit:
     required:
       - name
@@ -2561,11 +2560,48 @@ definitions:
         items:
           $ref: '#/definitions/ConversionStep'
         description: Conversion steps list
-  Units:
-    type: array
-    items:
-      $ref: '#/definitions/Unit'
-    description: Array
+  Update:
+    required:
+      - userId
+      - connectorId
+      - numberOfMeasurements
+      - success
+      - message
+    properties:
+      id:
+        description: id
+        type: integer
+        format: int32
+      userId:
+        description: userId
+        type: integer
+        format: int32
+      connectorId:
+        description: connectorId
+        type: integer
+        format: int32
+      numberOfMeasurements:
+        description: numberOfMeasurements
+        type: integer
+        format: int32
+      success:
+        description: success
+        type: boolean
+      message:
+        description: message
+        type: string
+      createdAt:
+        description: >-
+          When the record was first created. Use UTC ISO 8601
+          `YYYY-MM-DDThh:mm:ss`  datetime format
+        type: string
+        format: date-time
+      updatedAt:
+        description: >-
+          When the record in the database was last updated. Use UTC ISO 8601
+          `YYYY-MM-DDThh:mm:ss`  datetime format
+        type: string
+        format: date-time
   UnitCategory:
     required:
       - name
@@ -2573,11 +2609,6 @@ definitions:
       name:
         type: string
         description: Category name
-  UnitCategories:
-    type: array
-    items:
-      $ref: '#/definitions/UnitCategory'
-    description: Array
   User:
     required:
       - id
@@ -2682,48 +2713,6 @@ definitions:
       access_token:
         type: string
         description: User token
-  Update:
-    required:
-      - userId
-      - connectorId
-      - numberOfMeasurements
-      - success
-      - message
-    properties:
-      id:
-        description: id
-        type: integer
-        format: int32
-      userId:
-        description: userId
-        type: integer
-        format: int32
-      connectorId:
-        description: connectorId
-        type: integer
-        format: int32
-      numberOfMeasurements:
-        description: numberOfMeasurements
-        type: integer
-        format: int32
-      success:
-        description: success
-        type: boolean
-      message:
-        description: message
-        type: string
-      createdAt:
-        description: >-
-          When the record was first created. Use UTC ISO 8601
-          "YYYY-MM-DDThh:mm:ss"  datetime format
-        type: string
-        format: date-time
-      updatedAt:
-        description: >-
-          When the record in the database was last updated. Use UTC ISO 8601
-          "YYYY-MM-DDThh:mm:ss"  datetime format
-        type: string
-        format: date-time
   UserVariable:
     required:
       - variableId
@@ -2924,25 +2913,25 @@ definitions:
       experimentStartTime:
         description: >-
           Earliest measurement start_time to be used in analysis. Use UTC ISO
-          8601 "YYYY-MM-DDThh:mm:ss"  datetime format
+          8601 `YYYY-MM-DDThh:mm:ss`  datetime format
         type: string
         format: date-time
       experimentEndTime:
         description: >-
           Latest measurement start_time to be used in analysis. Use UTC ISO 8601
-          "YYYY-MM-DDThh:mm:ss"  datetime format
+          `YYYY-MM-DDThh:mm:ss`  datetime format
         type: string
         format: date-time
       createdAt:
         description: >-
           When the record was first created. Use UTC ISO 8601
-          "YYYY-MM-DDThh:mm:ss"  datetime format
+          `YYYY-MM-DDThh:mm:ss`  datetime format
         type: string
         format: date-time
       updatedAt:
         description: >-
           When the record in the database was last updated. Use UTC ISO 8601
-          "YYYY-MM-DDThh:mm:ss"  datetime format
+          `YYYY-MM-DDThh:mm:ss`  datetime format
         type: string
         format: date-time
       outcome:
@@ -2988,27 +2977,13 @@ definitions:
       ionIcon:
         type: string
         description: ''
-  UserVariables:
-    type: array
-    items:
-      $ref: '#/definitions/UserVariable'
-    description: Array of user variables
-  MeasurementItem:
+  UserVariableDelete:
     required:
-      - timestamp
-      - value
+      - variableId
     properties:
-      timestamp:
+      variableId:
         type: integer
-        format: int64
-        description: Timestamp for the measurement event in epoch time (unixtime)
-      value:
-        type: number
-        format: double
-        description: Measurement value
-      note:
-        type: string
-        description: Optional note to include with the measurement
+        description: Id of the variable whose measurements should be deleted
   Variable:
     required:
       - name
@@ -3197,11 +3172,6 @@ definitions:
       ionIcon:
         type: string
         description: ''
-  Variables:
-    type: array
-    items:
-      $ref: '#/definitions/Variable'
-    description: Array
   VariableCategory:
     required:
       - name
@@ -3209,11 +3179,6 @@ definitions:
       name:
         type: string
         description: Category name
-  VariableCategories:
-    type: array
-    items:
-      $ref: '#/definitions/VariableCategory'
-    description: Array
   VoteDelete:
     required:
       - cause
@@ -3256,13 +3221,13 @@ definitions:
       createdAt:
         description: >-
           When the record was first created. Use UTC ISO 8601
-          "YYYY-MM-DDThh:mm:ss"  datetime format
+          `YYYY-MM-DDThh:mm:ss`  datetime format
         type: string
         format: date-time
       updatedAt:
         description: >-
           When the record in the database was last updated. Use UTC ISO 8601
-          "YYYY-MM-DDThh:mm:ss"  datetime format
+          `YYYY-MM-DDThh:mm:ss`  datetime format
         type: string
         format: date-time
 securityDefinitions:
