@@ -57,12 +57,58 @@ parameters:
       available connectors from the /v3/connectors/list endpoint.
     required: true
     type: string
+    enum:
+      - myfitnesspal
+      - runkeeper
+      - whatpulse
+      - github
+      - moodscope
+      - up
+      - fitbit
+      - facebook
+      - withings
+      - moodpanda
+      - rescuetime
+      - mynetdiary
+      - worldweatheronline
+      - sleepcloud
+      - slice
+      - googlecalendar
+      - googlefit
+      - medhelper
+      - mint
+      - slack
+      - netatmo
   variableCategoryNameParam:
     in: query
     name: variableCategoryName
     description: Limit results to a specific variable category
     required: false
     type: string
+    enum:
+      - Emotions
+      - Physique
+      - Physical Activity
+      - Location
+      - Miscellaneous
+      - Sleep
+      - Social Interactions
+      - Vital Signs
+      - Cognitive Performance
+      - Symptoms
+      - Nutrients
+      - Work
+      - Treatments
+      - Activity
+      - Foods
+      - Conditions
+      - Environment
+      - Causes of Illness
+      - Books
+      - Software
+      - Payments
+      - Movies and TV
+      - Music
   sortParam:
     in: query
     name: sort
@@ -99,7 +145,7 @@ parameters:
     in: query
     name: createdAt
     description: >-
-      When the record was first created. Use UTC ISO 8601 "YYYY-MM-DDThh:mm:ss" 
+      When the record was first created. Use UTC ISO 8601 "YYYY-MM-DDThh:mm:ss"
       datetime format. Time zone should be UTC and not local.
     required: false
     type: string
@@ -107,7 +153,7 @@ parameters:
     in: query
     name: updatedAt
     description: >-
-      When the record was last updated. Use UTC ISO 8601 "YYYY-MM-DDThh:mm:ss" 
+      When the record was last updated. Use UTC ISO 8601 "YYYY-MM-DDThh:mm:ss"
       datetime format. Time zone should be UTC and not local.
     required: false
     type: string
@@ -162,6 +208,60 @@ parameters:
     description: 'Example: 86400'
     in: query
     type: string
+  unitNamePathParam:
+    enum:
+      - '% Recommended Daily Allowance'
+      - '-4 to 4 Rating'
+      - 0 to 1 Rating
+      - 0 to 5 Rating
+      - 1 to 10 Rating
+      - 1 to 5 Rating
+      - Applications
+      - Beats per Minute
+      - Calories
+      - Capsules
+      - Centimeters
+      - Count
+      - Degrees Celsius
+      - Degrees East
+      - Degrees Fahrenheit
+      - Degrees North
+      - Dollars
+      - Drops
+      - Event
+      - Feet
+      - Grams
+      - Hours
+      - Inches
+      - Index
+      - Kilocalories
+      - Kilograms
+      - Kilometers
+      - Liters
+      - Meters
+      - Micrograms
+      - Micrograms per decilitre
+      - Miles
+      - Milligrams
+      - Milliliters
+      - Millimeters
+      - Millimeters Merc
+      - Milliseconds
+      - Minutes
+      - Pascal
+      - per Minute
+      - Percent
+      - Pieces
+      - Pills
+      - Pounds
+      - Puffs
+      - Seconds
+      - Serving
+      - Sprays
+      - Tablets
+      - Torr
+      - Units
+      - Yes/No
 schemes:
   - https
 consumes:
