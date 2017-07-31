@@ -1055,14 +1055,14 @@
         ]
       }
     },
-    "/v2/oauth/authorize": {
+    "/v3/oauth2/authorize": {
       "get": {
         "operationId": "getOauthAuthorizationCode",
         "tags": [
           "authentication"
         ],
         "summary": "Request Authorization Code",
-        "description": "You can implement OAuth2 authentication to your application using our **OAuth2** endpoints.  You need to redirect users to `/api/v2/oauth/authorize` endpoint to get an authorization code and include the parameters below.   This page will ask the user if they want to allow a client's application to submit or obtain data from their QM account. It will redirect the user to the url provided by the client application with the code as a query parameter or error in case of an error. See the /api/v2/oauth/access_token endpoint for the next steps.",
+        "description": "You can implement OAuth2 authentication to your application using our **OAuth2** endpoints.  You need to redirect users to `/api/v3/oauth2/authorize` endpoint to get an authorization code and include the parameters below.   This page will ask the user if they want to allow a client's application to submit or obtain data from their QM account. It will redirect the user to the url provided by the client application with the code as a query parameter or error in case of an error. See the /api/v2/oauth/access_token endpoint for the next steps.",
         "produces": [
           "application/json"
         ],
@@ -1130,7 +1130,7 @@
         ]
       }
     },
-    "/v2/oauth2/access_token": {
+    "/v3/oauth2/token": {
       "get": {
         "operationId": "getAccessToken",
         "tags": [
@@ -1196,154 +1196,6 @@
             "name": "state",
             "description": "An opaque string that is round-tripped in the protocol; that is to say, it is returned as a URI parameter in the Basic flow, and in the URI",
             "required": false,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful Operation"
-          },
-          "401": {
-            "description": "Not Authenticated"
-          }
-        },
-        "security": [
-          {
-            "access_token": []
-          },
-          {
-            "quantimodo_oauth2": [
-              "basic"
-            ]
-          }
-        ]
-      }
-    },
-    "/v2/auth/social/login": {
-      "get": {
-        "operationId": "getSocialLoginPage",
-        "tags": [
-          "authentication"
-        ],
-        "summary": "First Setp in Social Authentication flow with JWT Token",
-        "description": " Here is the flow for how social authentication works with a JWT Token\n1.**Client:** The client needs to open popup with social auth url (`https://app/quantimo.do/api/v2/auth/social/login?provider={provider}&redirectUrl={url}`) of server with `provider` and `redirectUrl`. (Url should be registered with our social apps. Facebook and Twitter are fine with any redirect url with the same domain base url but Google needs exact redirect url.) 2.**Server:** The QM server will redirect user to that provider to get access. 3.**Client:** After successful or failed authentication, it will be redirected to given `redirectUrl` with code or error. 4.**Client:** The client needs to get that code and needs to send an Ajax request to server at `https://app.quantimo.do/api/v2/auth/social/authorizeCode?provider={provider}&code={authorizationCode}` 5.**Server:** The QM server will authorize that code from the social connection and will authenticate user and will retrieve user info. 6.**Server:** The QM server will try to find existing user by unique identity. If the user already exists then it will login. Otherwise, it will create new user and will then login. 7.**Server:** Once user is found/created, it will return a JWT token for that user in the response.",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "in": "query",
-            "name": "redirectUrl",
-            "description": "The redirect URI is the URL within your client application that will receive the OAuth2 credentials. Url should be registered with our social apps. Facebook and Twitter are fine with any redirect url with the same domain base url but Google needs exact redirect url.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "provider",
-            "description": "The current options are `google` and `facebook`.",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful Operation"
-          },
-          "401": {
-            "description": "Not Authenticated"
-          }
-        },
-        "security": [
-          {
-            "access_token": []
-          },
-          {
-            "quantimodo_oauth2": [
-              "basic"
-            ]
-          }
-        ]
-      }
-    },
-    "/v2/auth/social/authorizeCode": {
-      "get": {
-        "operationId": "getSocialAuthorizationCode",
-        "tags": [
-          "authentication"
-        ],
-        "summary": "Second Step in Social Authentication flow with JWT Token",
-        "description": " Here is the flow for how social authentication works with a JWT Token\n1.**Client:** The client needs to open popup with social auth url (`https://app/quantimo.do/api/v2/auth/social/login?provider={provider}&redirectUrl={url}`) of server with `provider` and `redirectUrl`. (Url should be registered with our social apps. Facebook is fine with any redirect url with the same domain base url but Google needs exact redirect url.) 2.**Server:** The QM server will redirect user to that provider to get access. 3.**Client:** After successful or failed authentication, it will be redirected to given `redirectUrl` with code or error. 4.**Client:** The client needs to get that code and needs to send an Ajax request to server at `https://app.quantimo.do/api/v2/auth/social/authorizeCode?provider={provider}&code={authorizationCode}` 5.**Server:** The QM server will authorize that code from the social connection and will authenticate user and will retrieve user info. 6.**Server:** The QM server will try to find existing user by unique identity. If the user already exists then it will login. Otherwise, it will create new user and will then login. 7.**Server:** Once user is found/created, it will return a JWT token for that user in the response.",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "in": "query",
-            "name": "code",
-            "description": "Authorization code obtained from the provider.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "provider",
-            "description": "The current options are `google` and `facebook`.",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful Operation"
-          },
-          "401": {
-            "description": "Not Authenticated"
-          }
-        },
-        "security": [
-          {
-            "access_token": []
-          },
-          {
-            "quantimodo_oauth2": [
-              "basic"
-            ]
-          }
-        ]
-      }
-    },
-    "/v2/auth/social/authorizeToken": {
-      "get": {
-        "operationId": "getSocialAuthorizationToken",
-        "tags": [
-          "authentication"
-        ],
-        "summary": "Native Social Authentication",
-        "description": "If you are using native authentication via Facebook or Google SDKs then you should use the following flow. 1.**Client:** Using native authentication via your native mobile app, get an access token using the instructions provided by the Facebook SDK (https://developers.facebook.com/docs/facebook-login) or Google (https://developers.google.com/identity/protocols/OAuth2) 2.**Client:** Send an Ajax request with provider name and access token on `https://app.quantimo.do/api/v2/auth/social/authorizeToken?provider={provider}&accessToken={accessToken}&refreshToken={refreshToken}` (`refreshToken` is optional) 3.**Server:** Server will try to get user info and will find existing user by unique identity. If user exist then it will do a login for that or it will create new user and will do login 4.**Server:** Once user is found/created, it will return a JWT token for that user in response 5.**Client:** After getting the JWT token to get a QM access token follow these steps and include your JWT token in them as a header (Authorization: Bearer **{yourJWThere}**) or as a url parameter (https://app.quantimo.do/api/v2/oauth/authorize?token={yourJWThere}).",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "in": "query",
-            "name": "refreshToken",
-            "description": "Optional refresh token obtained from Google or FB native SDK",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "accessToken",
-            "description": "User's OAuth2 access token obtained from Google or FB native SDK",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "provider",
-            "description": "The current options are `google` and `facebook`.",
-            "required": true,
             "type": "string"
           }
         ],
