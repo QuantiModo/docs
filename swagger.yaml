@@ -2408,6 +2408,158 @@ definitions:
         enum:
           - MEAN
           - SUM
+      createdAt:
+        description: 'Example: 2016-05-18 02:24:08'
+        type: string
+        format: date-time
+      trackingReminderId:
+        description: 'Example: 11841'
+        type: integer
+      defaultUnitId:
+        description: 'Example: 10'
+        type: integer
+      variableDescription:
+        description: 'Example: negative'
+        type: string
+      valence:
+        description: 'Example: negative'
+        type: string
+      ionIcon:
+        description: 'Example: ion-sad-outline'
+        type: string
+      variableCategoryId:
+        description: 'Example: 10'
+        type: integer
+      lastValue:
+        description: 'Example: 2'
+        type: number
+        format: double
+      secondToLastValue:
+        description: 'Example: 1'
+        type: number
+        format: double
+      thirdToLastValue:
+        description: 'Example: 3'
+        type: number
+        format: double
+      userVariableDefaultUnitId:
+        description: 'Example: 10'
+        type: integer
+      userVariableVariableCategoryId:
+        description: 'Example: 10'
+        type: integer
+      numberOfRawMeasurements:
+        description: 'Example: 445'
+        type: integer
+      svgUrl:
+        description: >-
+          Example:
+          https://app.quantimo.do/ionic/Modo/www/img/variable_categories/symptoms.svg
+        type: string
+      pngUrl:
+        description: >-
+          Example:
+          https://app.quantimo.do/ionic/Modo/www/img/variable_categories/symptoms.png
+        type: string
+      pngPath:
+        description: 'Example: img/variable_categories/symptoms.png'
+        type: string
+      variableCategoryImageUrl:
+        description: 'Example: https://maxcdn.icons8.com/Color/PNG/96/Messaging/sad-96.png'
+        type: string
+      manualTracking:
+        description: 'Example: 1'
+        type: boolean
+      userVariableVariableCategoryName:
+        description: 'Example: Symptoms'
+        type: string
+      reminderStartTimeLocal:
+        description: 'Example: 21:45:20'
+        type: string
+        format: date-time
+      reminderStartTimeLocalHumanFormatted:
+        description: 'Example: 09:45 PM'
+        type: string
+        format: date-time
+      lastValueInUserVariableDefaultUnit:
+        description: 'Example: 2'
+        type: number
+        format: double
+      secondToLastValueInUserVariableDefaultUnit:
+        description: 'Example: 1'
+        type: number
+        format: double
+      thirdToLastValueInUserVariableDefaultUnit:
+        description: 'Example: 3'
+        type: number
+        format: double
+      unitId:
+        description: 'Example: 10'
+        type: integer
+      unitName:
+        description: 'Example: 1 to 5 Rating'
+        type: string
+      unitCategoryId:
+        description: 'Example: 5'
+        type: integer
+      unitCategoryName:
+        description: 'Example: Rating'
+        type: string
+      defaultUnitName:
+        description: 'Example: 1 to 5 Rating'
+        type: string
+      defaultUnitAbbreviatedName:
+        description: 'Example: /5'
+        type: string
+      defaultUnitCategoryId:
+        description: 'Example: 5'
+        type: integer
+      defaultUnitCategoryName:
+        description: 'Example: Rating'
+        type: string
+      userVariableDefaultUnitName:
+        description: 'Example: 1 to 5 Rating'
+        type: string
+      userVariableDefaultUnitAbbreviatedName:
+        description: 'Example: /5'
+        type: string
+      userVariableDefaultUnitCategoryId:
+        description: 'Example: 5'
+        type: integer
+      userVariableDefaultUnitCategoryName:
+        description: 'Example: Rating'
+        type: string
+      minimumAllowedValue:
+        description: 'Example: 1'
+        type: integer
+      maximumAllowedValue:
+        description: 'Example: 5'
+        type: integer
+      inputType:
+        description: 'Example: saddestFaceIsFive'
+        type: string
+      reminderStartEpochSeconds:
+        description: 'Example: 1469760320'
+        type: integer
+      nextReminderTimeEpochSeconds:
+        description: 'Example: 1501555520'
+        type: integer
+      firstDailyReminderTime:
+        description: 'Example: 02:45:20'
+        type: string
+        format: date-time
+      frequencyTextDescription:
+        description: 'Example: Daily'
+        type: string
+      frequencyTextDescriptionWithTime:
+        description: 'Example: Daily at 09:45 PM'
+        type: string
+      valueAndFrequencyTextDescription:
+        description: 'Example: Rate daily'
+        type: string
+      valueAndFrequencyTextDescriptionWithTime:
+        description: 'Example: Rate daily at 09:45 PM'
+        type: string
   TrackingReminderNotification:
     required:
       - id
