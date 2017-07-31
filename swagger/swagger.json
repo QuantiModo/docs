@@ -4049,6 +4049,96 @@
         "administrator": {
           "type": "boolean",
           "description": "Is user administrator"
+        },
+        "clientId": {
+          "description": "Example: quantimodo",
+          "type": "string"
+        },
+        "earliestReminderTime": {
+          "description": "Earliest time user should get notifications. Example: 05:00:00",
+          "type": "string",
+          "format": "date-time"
+        },
+        "lastFour": {
+          "description": "Example: 2009",
+          "type": "string"
+        },
+        "latestReminderTime": {
+          "description": "Latest time user should get notifications. Example: 23:00:00",
+          "type": "string"
+        },
+        "clientUserId": {
+          "description": "Example: 118444693184829555362",
+          "type": "string"
+        },
+        "pushNotificationsEnabled": {
+          "description": "Example: 1",
+          "type": "boolean"
+        },
+        "roles": {
+          "description": "Example: [\"admin\"]",
+          "type": "string"
+        },
+        "sendPredictorEmails": {
+          "description": "Example: 1",
+          "type": "boolean"
+        },
+        "sendReminderNotificationEmails": {
+          "description": "Example: 1",
+          "type": "boolean"
+        },
+        "stripeId": {
+          "description": "Example: cus_A8CEmcvl8jwLhV",
+          "type": "string"
+        },
+        "stripePlan": {
+          "description": "Example: monthly7",
+          "type": "string"
+        },
+        "stripeSubscription": {
+          "description": "Example: sub_ANTx3nOE7nzjQf",
+          "type": "string"
+        },
+        "subscriptionProvider": {
+          "description": "Example: google",
+          "type": "string"
+        },
+        "timeZoneOffset": {
+          "description": "Example: 300",
+          "type": "integer"
+        },
+        "password": {
+          "description": "Example: PASSWORD",
+          "type": "string"
+        },
+        "avatar": {
+          "description": "Example: https://lh6.googleusercontent.com/-BHr4hyUWqZU/AAAAAAAAAAI/AAAAAAAIG28/2Lv0en738II/photo.jpg?sz=50",
+          "type": "string"
+        },
+        "userRegistered": {
+          "description": "Example: 2013-12-03 15:25:13",
+          "type": "string",
+          "format": "date-time"
+        },
+        "userUrl": {
+          "description": "Example: https://plus.google.com/+MikeSinn",
+          "type": "string"
+        },
+        "capabilities": {
+          "description": "Example: a:1:{s:13:\"administrator\";b:1;}",
+          "type": "string"
+        },
+        "firstName": {
+          "description": "Example: Mike",
+          "type": "string"
+        },
+        "lastName": {
+          "description": "Example: Sinn",
+          "type": "string"
+        },
+        "trackLocation": {
+          "description": "Example: 1",
+          "type": "boolean"
         }
       }
     },
