@@ -2741,6 +2741,130 @@
         "note": {
           "type": "string",
           "description": "Note of measurement"
+        },
+        "unitId": {
+          "description": "Example: 23",
+          "type": "integer"
+        },
+        "variableId": {
+          "description": "Example: 5956846",
+          "type": "integer"
+        },
+        "variableCategoryId": {
+          "description": "Example: 13",
+          "type": "integer"
+        },
+        "userVariableDefaultUnitId": {
+          "description": "Example: 23",
+          "type": "integer"
+        },
+        "id": {
+          "description": "Example: 1051466127",
+          "type": "integer"
+        },
+        "originalUnitId": {
+          "description": "Example: 23",
+          "type": "integer"
+        },
+        "clientId": {
+          "description": "Example: quantimodo",
+          "type": "string"
+        },
+        "createdAt": {
+          "description": "Example: 2017-07-30 21:08:36",
+          "type": "string"
+        },
+        "updatedAt": {
+          "description": "Example: 2017-07-30 21:08:36",
+          "type": "string"
+        },
+        "variableCategoryName": {
+          "description": "Example: Treatments",
+          "type": "string"
+        },
+        "userVariableVariableCategoryId": {
+          "description": "Example: 13",
+          "type": "integer"
+        },
+        "ionIcon": {
+          "description": "Example: ion-ios-medkit-outline",
+          "type": "string"
+        },
+        "svgUrl": {
+          "description": "Example: https://app.quantimo.do/ionic/Modo/www/img/variable_categories/treatments.svg",
+          "type": "string"
+        },
+        "pngUrl": {
+          "description": "Example: https://app.quantimo.do/ionic/Modo/www/img/variable_categories/treatments.png",
+          "type": "string"
+        },
+        "pngPath": {
+          "description": "Example: img/variable_categories/treatments.png",
+          "type": "string"
+        },
+        "variableCategoryImageUrl": {
+          "description": "Example: https://maxcdn.icons8.com/Color/PNG/96/Healthcare/pill-96.png",
+          "type": "string"
+        },
+        "manualTracking": {
+          "description": "Example: 1",
+          "type": "boolean"
+        },
+        "userVariableVariableCategoryName": {
+          "description": "Example: Treatments",
+          "type": "string"
+        },
+        "humanTime": {
+          "description": "Example: {\"date\":\"2017-07-30 20:05:30.000000\",\"timezone_type\":1,\"timezone\":\"+00:00\"}",
+          "type": "object"
+        },
+        "unitName": {
+          "description": "Example: Count",
+          "type": "string"
+        },
+        "unitCategoryId": {
+          "description": "Example: 6",
+          "type": "integer"
+        },
+        "unitCategoryName": {
+          "description": "Example: Miscellany",
+          "type": "string"
+        },
+        "userVariableDefaultUnitName": {
+          "description": "Example: Count",
+          "type": "string"
+        },
+        "userVariableDefaultUnitAbbreviatedName": {
+          "description": "Example: count",
+          "type": "string"
+        },
+        "userVariableDefaultUnitCategoryId": {
+          "description": "Example: 6",
+          "type": "integer"
+        },
+        "userVariableDefaultUnitCategoryName": {
+          "description": "Example: Miscellany",
+          "type": "string"
+        },
+        "originalUnitName": {
+          "description": "Example: Count",
+          "type": "string"
+        },
+        "originalUnitAbbreviatedName": {
+          "description": "Example: count",
+          "type": "string"
+        },
+        "originalUnitCategoryId": {
+          "description": "Example: 6",
+          "type": "integer"
+        },
+        "originalUnitCategoryName": {
+          "description": "Example: Miscellany",
+          "type": "string"
+        },
+        "inputType": {
+          "description": "Example: value",
+          "type": "string"
         }
       }
     },
