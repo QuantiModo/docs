@@ -2865,6 +2865,26 @@
         "inputType": {
           "description": "Example: value",
           "type": "string"
+        },
+        "variableDescription": {
+          "description": "Example: negative",
+          "type": "string"
+        },
+        "valence": {
+          "description": "Example: negative",
+          "type": "string"
+        },
+        "iconIcon": {
+          "description": "Example: ion-sad-outline",
+          "type": "string"
+        },
+        "minimumAllowedValue": {
+          "description": "Example: 1",
+          "type": "integer"
+        },
+        "maximumAllowedValue": {
+          "description": "Example: 5",
+          "type": "integer"
         }
       }
     },
