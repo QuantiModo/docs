@@ -266,6 +266,188 @@
         "Units",
         "Yes/No"
       ]
+    },
+    "correlationCoefficientParam": {
+      "in": "query",
+      "name": "correlationCoefficient",
+      "description": "Pearson correlation coefficient between cause and effect after lagging by onset delay and grouping by duration of action",
+      "required": false,
+      "type": "string"
+    },
+    "onsetDelayParam": {
+      "in": "query",
+      "name": "onsetDelay",
+      "description": "The amount of time in seconds that elapses after the predictor/stimulus event before the outcome as perceived by a self-tracker is known as the onset delay. For example, the onset delay between the time a person takes an aspirin (predictor/stimulus event) and the time a person perceives a change in their headache severity (outcome) is approximately 30 minutes.",
+      "required": false,
+      "type": "string"
+    },
+    "durationOfActionParam": {
+      "in": "query",
+      "name": "durationOfAction",
+      "description": "The amount of time over which a predictor/stimulus event can exert an observable influence on an outcome variable value. For instance, aspirin (stimulus/predictor) typically decreases headache severity for approximately four hours (duration of action) following the onset delay.",
+      "required": false,
+      "type": "string"
+    },
+    "outcomesOfInterestParam": {
+      "in": "query",
+      "name": "outcomesOfInterest",
+      "description": "Only include correlations for which the effect is an outcome of interest for the user",
+      "required": false,
+      "type": "boolean"
+    },
+    "variableNameParam": {
+      "in": "query",
+      "name": "variableName",
+      "description": "Name of the variable you want measurements for",
+      "required": false,
+      "type": "string"
+    },
+    "sourceNameParam": {
+      "in": "query",
+      "name": "sourceName",
+      "description": "ID of the source you want measurements for (supports exact name match only)",
+      "required": false,
+      "type": "string"
+    },
+    "valueParam": {
+      "in": "query",
+      "name": "value",
+      "description": "Value of measurement",
+      "required": false,
+      "type": "string"
+    },
+    "groupingWidthParam": {
+      "in": "query",
+      "name": "groupingWidth",
+      "description": "The time (in seconds) over which measurements are grouped together",
+      "required": false,
+      "type": "integer"
+    },
+    "groupingTimezoneParam": {
+      "in": "query",
+      "name": "groupingTimezone",
+      "description": "The time (in seconds) over which measurements are grouped together",
+      "required": false,
+      "type": "string"
+    },
+    "clientSecretParam": {
+      "in": "query",
+      "name": "client_secret",
+      "description": "This is the secret for your obtained clientId. QuantiModo uses this to validate that only your application uses the clientId.  Obtain this by creating a free application at [https://app.quantimo.do/api/v2/apps](https://app.quantimo.do/api/v2/apps).",
+      "required": true,
+      "type": "string"
+    },
+    "responseTypeParam": {
+      "in": "query",
+      "name": "response_type",
+      "description": "If the value is code, launches a Basic flow, requiring a POST to the token endpoint to obtain the tokens. If the value is token id_token or id_token token, launches an Implicit flow, requiring the use of Javascript at the redirect URI to retrieve tokens from the URI #fragment.",
+      "required": true,
+      "type": "string"
+    },
+    "scopeParam": {
+      "in": "query",
+      "name": "scope",
+      "description": "Scopes include basic, readmeasurements, and writemeasurements. The `basic` scope allows you to read user info (displayName, email, etc). The `readmeasurements` scope allows one to read a user's data. The `writemeasurements` scope allows you to write user data. Separate multiple scopes by a space.",
+      "required": true,
+      "type": "string"
+    },
+    "redirectUriParam": {
+      "in": "query",
+      "name": "redirect_uri",
+      "description": "The redirect URI is the URL within your client application that will receive the OAuth2 credentials.",
+      "required": false,
+      "type": "string"
+    },
+    "stateParam": {
+      "in": "query",
+      "name": "state",
+      "description": "An opaque string that is round-tripped in the protocol; that is to say, it is returned as a URI parameter in the Basic flow, and in the URI",
+      "required": false,
+      "type": "string"
+    },
+    "grantTypeParam": {
+      "in": "query",
+      "name": "grant_type",
+      "description": "Grant Type can be 'authorization_code' or 'refresh_token'",
+      "required": true,
+      "type": "string"
+    },
+    "codeParam": {
+      "in": "query",
+      "name": "code",
+      "description": "Authorization code you received with the previous request.",
+      "required": true,
+      "type": "string"
+    },
+    "causeUnitNameParam": {
+      "in": "query",
+      "name": "causeUnitName",
+      "description": "Name for the unit cause measurements to be returned in",
+      "required": false,
+      "type": "string"
+    },
+    "effectUnitNameParam": {
+      "in": "query",
+      "name": "effectUnitName",
+      "description": "Name for the unit effect measurements to be returned in",
+      "required": false,
+      "type": "string"
+    },
+    "taggedVariableIdParam": {
+      "in": "query",
+      "name": "taggedVariableId",
+      "description": "This is the id of the variable being tagged with an ingredient or something.",
+      "required": true,
+      "type": "integer"
+    },
+    "tagVariableIdParam": {
+      "in": "query",
+      "name": "tagVariableId",
+      "description": "This is the id of the ingredient variable whose value is determined based on the value of the tagged variable.",
+      "required": true,
+      "type": "integer"
+    },
+    "userVariablesParam": {
+      "in": "body",
+      "name": "userVariables",
+      "description": "Variable user settings data",
+      "required": true,
+      "schema": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/UserVariable"
+        }
+      }
+    },
+    "numberOfRawMeasurementsParam": {
+      "in": "query",
+      "name": "numberOfRawMeasurements",
+      "description": "Filter variables by the total number of measurements that they have. This could be used of you want to filter or sort by popularity.",
+      "required": false,
+      "type": "string"
+    },
+    "lastSourceParam": {
+      "in": "query",
+      "name": "lastSource",
+      "description": "Limit variables to those which measurements were last submitted by a specific source. So if you have a client application and you only want variables that were last updated by your app, you can include the name of your app here. (supports exact name match only)",
+      "required": false,
+      "type": "string"
+    },
+    "variableIdParam": {
+      "in": "body",
+      "name": "variableId",
+      "description": "Id of the variable whose measurements should be deleted",
+      "required": true,
+      "schema": {
+        "$ref": "#/definitions/UserVariableDelete"
+      }
+    },
+    "reminderTimeParam": {
+      "name": "reminderTime",
+      "required": false,
+      "description": "Example: (lt)2017-07-31 21:43:26",
+      "in": "query",
+      "type": "string"
     }
   },
   "schemes": [
@@ -291,11 +473,7 @@
         ],
         "parameters": [
           {
-            "in": "query",
-            "name": "clientId",
-            "description": "Your app's client id",
-            "required": false,
-            "type": "string"
+            "$ref": "#/parameters/clientIdParam"
           }
         ],
         "responses": {
@@ -525,25 +703,13 @@
             "$ref": "#/parameters/causeVariableNameParam"
           },
           {
-            "in": "query",
-            "name": "correlationCoefficient",
-            "description": "Pearson correlation coefficient between cause and effect after lagging by onset delay and grouping by duration of action",
-            "required": false,
-            "type": "string"
+            "$ref": "#/parameters/correlationCoefficientParam"
           },
           {
-            "in": "query",
-            "name": "onsetDelay",
-            "description": "The amount of time in seconds that elapses after the predictor/stimulus event before the outcome as perceived by a self-tracker is known as the onset delay. For example, the onset delay between the time a person takes an aspirin (predictor/stimulus event) and the time a person perceives a change in their headache severity (outcome) is approximately 30 minutes.",
-            "required": false,
-            "type": "string"
+            "$ref": "#/parameters/onsetDelayParam"
           },
           {
-            "in": "query",
-            "name": "durationOfAction",
-            "description": "The amount of time over which a predictor/stimulus event can exert an observable influence on an outcome variable value. For instance, aspirin (stimulus/predictor) typically decreases headache severity for approximately four hours (duration of action) following the onset delay.",
-            "required": false,
-            "type": "string"
+            "$ref": "#/parameters/durationOfActionParam"
           },
           {
             "$ref": "#/parameters/updatedAtParam"
@@ -558,11 +724,7 @@
             "$ref": "#/parameters/sortParam"
           },
           {
-            "in": "query",
-            "name": "outcomesOfInterest",
-            "description": "Only include correlations for which the effect is an outcome of interest for the user",
-            "required": false,
-            "type": "boolean"
+            "$ref": "#/parameters/outcomesOfInterestParam"
           }
         ],
         "responses": {
@@ -658,25 +820,13 @@
             "$ref": "#/parameters/causeVariableNameParam"
           },
           {
-            "in": "query",
-            "name": "correlationCoefficient",
-            "description": "Pearson correlation coefficient between cause and effect after lagging by onset delay and grouping by duration of action",
-            "required": false,
-            "type": "string"
+            "$ref": "#/parameters/correlationCoefficientParam"
           },
           {
-            "in": "query",
-            "name": "onsetDelay",
-            "description": "The amount of time in seconds that elapses after the predictor/stimulus event before the outcome as perceived by a self-tracker is known as the onset delay. For example, the onset delay between the time a person takes an aspirin (predictor/stimulus event) and the time a person perceives a change in their headache severity (outcome) is approximately 30 minutes.",
-            "required": false,
-            "type": "string"
+            "$ref": "#/parameters/onsetDelayParam"
           },
           {
-            "in": "query",
-            "name": "durationOfAction",
-            "description": "The amount of time over which a predictor/stimulus event can exert an observable influence on an outcome variable value. For instance, aspirin (stimulus/predictor) typically decreases headache severity for approximately four hours (duration of action) following the onset delay.",
-            "required": false,
-            "type": "string"
+            "$ref": "#/parameters/durationOfActionParam"
           },
           {
             "$ref": "#/parameters/updatedAtParam"
@@ -691,11 +841,7 @@
             "$ref": "#/parameters/sortParam"
           },
           {
-            "in": "query",
-            "name": "outcomesOfInterest",
-            "description": "Only include correlations for which the effect is an outcome of interest for the user",
-            "required": false,
-            "type": "boolean"
+            "$ref": "#/parameters/outcomesOfInterestParam"
           }
         ],
         "responses": {
@@ -796,28 +942,16 @@
             "type": "integer"
           },
           {
-            "in": "query",
-            "name": "variableName",
-            "description": "Name of the variable you want measurements for",
-            "required": false,
-            "type": "string"
+            "$ref": "#/parameters/variableNameParam"
           },
           {
             "$ref": "#/parameters/variableCategoryNameParam"
           },
           {
-            "in": "query",
-            "name": "sourceName",
-            "description": "ID of the source you want measurements for (supports exact name match only)",
-            "required": false,
-            "type": "string"
+            "$ref": "#/parameters/sourceNameParam"
           },
           {
-            "in": "query",
-            "name": "value",
-            "description": "Value of measurement",
-            "required": false,
-            "type": "string"
+            "$ref": "#/parameters/valueParam"
           },
           {
             "$ref": "#/parameters/unitNameParam"
@@ -835,18 +969,10 @@
             "$ref": "#/parameters/updatedAtParam"
           },
           {
-            "in": "query",
-            "name": "groupingWidth",
-            "description": "The time (in seconds) over which measurements are grouped together",
-            "required": false,
-            "type": "integer"
+            "$ref": "#/parameters/groupingWidthParam"
           },
           {
-            "in": "query",
-            "name": "groupingTimezone",
-            "description": "The time (in seconds) over which measurements are grouped together",
-            "required": false,
-            "type": "string"
+            "$ref": "#/parameters/groupingTimezoneParam"
           },
           {
             "$ref": "#/parameters/limitParam"
@@ -1068,46 +1194,22 @@
         ],
         "parameters": [
           {
-            "in": "query",
-            "name": "clientId",
-            "description": "This is the unique ID that QuantiModo uses to identify your application. Obtain a client id by creating a free application at [https://app.quantimo.do/api/v2/apps](https://app.quantimo.do/api/v2/apps).",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/clientIdParam"
           },
           {
-            "in": "query",
-            "name": "client_secret",
-            "description": "This is the secret for your obtained clientId. QuantiModo uses this to validate that only your application uses the clientId.  Obtain this by creating a free application at [https://app.quantimo.do/api/v2/apps](https://app.quantimo.do/api/v2/apps).",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/clientSecretParam"
           },
           {
-            "in": "query",
-            "name": "response_type",
-            "description": "If the value is code, launches a Basic flow, requiring a POST to the token endpoint to obtain the tokens. If the value is token id_token or id_token token, launches an Implicit flow, requiring the use of Javascript at the redirect URI to retrieve tokens from the URI #fragment.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/responseTypeParam"
           },
           {
-            "in": "query",
-            "name": "scope",
-            "description": "Scopes include basic, readmeasurements, and writemeasurements. The `basic` scope allows you to read user info (displayName, email, etc). The `readmeasurements` scope allows one to read a user's data. The `writemeasurements` scope allows you to write user data. Separate multiple scopes by a space.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/scopeParam"
           },
           {
-            "in": "query",
-            "name": "redirect_uri",
-            "description": "The redirect URI is the URL within your client application that will receive the OAuth2 credentials.",
-            "required": false,
-            "type": "string"
+            "$ref": "#/parameters/redirectUriParam"
           },
           {
-            "in": "query",
-            "name": "state",
-            "description": "An opaque string that is round-tripped in the protocol; that is to say, it is returned as a URI parameter in the Basic flow, and in the URI",
-            "required": false,
-            "type": "string"
+            "$ref": "#/parameters/stateParam"
           }
         ],
         "responses": {
@@ -1143,60 +1245,28 @@
         ],
         "parameters": [
           {
-            "in": "query",
-            "name": "clientId",
-            "description": "This is the unique ID that QuantiModo uses to identify your application. Obtain a client id by emailing info@quantimo.do.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/clientIdParam"
           },
           {
-            "in": "query",
-            "name": "client_secret",
-            "description": "This is the secret for your obtained clientId. QuantiModo uses this to validate that only your application uses the clientId.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/clientSecretParam"
           },
           {
-            "in": "query",
-            "name": "grant_type",
-            "description": "Grant Type can be 'authorization_code' or 'refresh_token'",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/grantTypeParam"
           },
           {
-            "in": "query",
-            "name": "code",
-            "description": "Authorization code you received with the previous request.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/codeParam"
           },
           {
-            "in": "query",
-            "name": "response_type",
-            "description": "If the value is code, launches a Basic flow, requiring a POST to the token endpoint to obtain the tokens. If the value is token id_token or id_token token, launches an Implicit flow, requiring the use of Javascript at the redirect URI to retrieve tokens from the URI #fragment.",
-            "required": false,
-            "type": "string"
+            "$ref": "#/parameters/responseTypeParam"
           },
           {
-            "in": "query",
-            "name": "scope",
-            "description": "Scopes include basic, readmeasurements, and writemeasurements. The `basic` scope allows you to read user info (displayname, email, etc). The `readmeasurements` scope allows one to read a user's data. The `writemeasurements` scope allows you to write user data. Separate multiple scopes by a space.",
-            "required": false,
-            "type": "string"
+            "$ref": "#/parameters/scopeParam"
           },
           {
-            "in": "query",
-            "name": "redirect_uri",
-            "description": "The redirect URI is the URL within your client application that will receive the OAuth2 credentials.",
-            "required": false,
-            "type": "string"
+            "$ref": "#/parameters/redirectUriParam"
           },
           {
-            "in": "query",
-            "name": "state",
-            "description": "An opaque string that is round-tripped in the protocol; that is to say, it is returned as a URI parameter in the Basic flow, and in the URI",
-            "required": false,
-            "type": "string"
+            "$ref": "#/parameters/stateParam"
           }
         ],
         "responses": {
@@ -1241,32 +1311,16 @@
             "$ref": "#/parameters/causeVariableNameParam"
           },
           {
-            "in": "query",
-            "name": "causeUnitName",
-            "description": "Name for the unit cause measurements to be returned in",
-            "required": false,
-            "type": "string"
+            "$ref": "#/parameters/causeUnitNameParam"
           },
           {
-            "in": "query",
-            "name": "onsetDelay",
-            "description": "The amount of time in seconds that elapses after the predictor/stimulus event before the outcome as perceived by a self-tracker is known as the onset delay. For example, the onset delay between the time a person takes an aspirin (predictor/stimulus event) and the time a person perceives a change in their headache severity (outcome) is approximately 30 minutes.",
-            "required": false,
-            "type": "string"
+            "$ref": "#/parameters/onsetDelayParam"
           },
           {
-            "in": "query",
-            "name": "durationOfAction",
-            "description": "The amount of time over which a predictor/stimulus event can exert an observable influence on an outcome variable value. For instance, aspirin (stimulus/predictor) typically decreases headache severity for approximately four hours (duration of action) following the onset delay.",
-            "required": false,
-            "type": "string"
+            "$ref": "#/parameters/durationOfActionParam"
           },
           {
-            "in": "query",
-            "name": "effectUnitName",
-            "description": "Name for the unit effect measurements to be returned in",
-            "required": false,
-            "type": "string"
+            "$ref": "#/parameters/effectUnitNameParam"
           },
           {
             "$ref": "#/parameters/earliestMeasurementTimeParam"
@@ -1779,18 +1833,10 @@
         ],
         "parameters": [
           {
-            "in": "query",
-            "name": "taggedVariableId",
-            "description": "This is the id of the variable being tagged with an ingredient or something.",
-            "required": true,
-            "type": "integer"
+            "$ref": "#/parameters/taggedVariableIdParam"
           },
           {
-            "in": "query",
-            "name": "tagVariableId",
-            "description": "This is the id of the ingredient variable whose value is determined based on the value of the tagged variable.",
-            "required": true,
-            "type": "integer"
+            "$ref": "#/parameters/tagVariableIdParam"
           }
         ],
         "responses": {
@@ -1829,16 +1875,7 @@
         ],
         "parameters": [
           {
-            "in": "body",
-            "name": "userVariables",
-            "description": "Variable user settings data",
-            "required": true,
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/UserVariable"
-              }
-            }
+            "$ref": "#/parameters/userVariablesParam"
           }
         ],
         "responses": {
@@ -1904,11 +1941,7 @@
             "$ref": "#/parameters/updatedAtParam"
           },
           {
-            "in": "query",
-            "name": "sourceName",
-            "description": "The name of the data source that created the variable (supports exact name match only). So if you have a client application and you only want variables that were last updated by your app, you can include the name of your app here",
-            "required": false,
-            "type": "string"
+            "$ref": "#/parameters/sourceNameParam"
           },
           {
             "$ref": "#/parameters/earliestMeasurementTimeParam"
@@ -1917,18 +1950,10 @@
             "$ref": "#/parameters/latestMeasurementTimeParam"
           },
           {
-            "in": "query",
-            "name": "numberOfRawMeasurements",
-            "description": "Filter variables by the total number of measurements that they have. This could be used of you want to filter or sort by popularity.",
-            "required": false,
-            "type": "string"
+            "$ref": "#/parameters/numberOfRawMeasurementsParam"
           },
           {
-            "in": "query",
-            "name": "lastSource",
-            "description": "Limit variables to those which measurements were last submitted by a specific source. So if you have a client application and you only want variables that were last updated by your app, you can include the name of your app here. (supports exact name match only)",
-            "required": false,
-            "type": "string"
+            "$ref": "#/parameters/lastSourceParam"
           },
           {
             "$ref": "#/parameters/limitParam"
@@ -2002,11 +2027,7 @@
             "$ref": "#/parameters/updatedAtParam"
           },
           {
-            "in": "query",
-            "name": "sourceName",
-            "description": "The name of the data source that created the variable (supports exact name match only). So if you have a client application and you only want variables that were last updated by your app, you can include the name of your app here",
-            "required": false,
-            "type": "string"
+            "$ref": "#/parameters/sourceNameParam"
           },
           {
             "$ref": "#/parameters/earliestMeasurementTimeParam"
@@ -2015,18 +2036,10 @@
             "$ref": "#/parameters/latestMeasurementTimeParam"
           },
           {
-            "in": "query",
-            "name": "numberOfRawMeasurements",
-            "description": "Filter variables by the total number of measurements that they have. This could be used of you want to filter or sort by popularity.",
-            "required": false,
-            "type": "string"
+            "$ref": "#/parameters/numberOfRawMeasurementsParam"
           },
           {
-            "in": "query",
-            "name": "lastSource",
-            "description": "Limit variables to those which measurements were last submitted by a specific source. So if you have a client application and you only want variables that were last updated by your app, you can include the name of your app here. (supports exact name match only)",
-            "required": false,
-            "type": "string"
+            "$ref": "#/parameters/lastSourceParam"
           },
           {
             "$ref": "#/parameters/limitParam"
@@ -2077,13 +2090,7 @@
         ],
         "parameters": [
           {
-            "in": "body",
-            "name": "variableId",
-            "description": "Id of the variable whose measurements should be deleted",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/UserVariableDelete"
-            }
+            "$ref": "#/parameters/variableIdParam"
           }
         ],
         "responses": {
@@ -2125,13 +2132,7 @@
         ],
         "parameters": [
           {
-            "in": "body",
-            "name": "variableId",
-            "description": "Id of the variable that should be reset",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/UserVariableDelete"
-            }
+            "$ref": "#/parameters/variableIdParam"
           }
         ],
         "responses": {
