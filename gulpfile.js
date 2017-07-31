@@ -228,13 +228,7 @@ function unzipFileToFolder(sourceFile, destinationFolder) {
 }
 var pathToQmDocker = "../../..";
 var pathToQuantiModoNodeModule = 'node_modules/quantimodo';
-var Quantimodo = require('quantimodo');
-var defaultClient = Quantimodo.ApiClient.instance;
-if(process.env.APP_HOST_NAME){
-    defaultClient.basePath = process.env.APP_HOST_NAME + '/api';
-}
-var quantimodo_oauth2 = defaultClient.authentications['quantimodo_oauth2'];
-quantimodo_oauth2.accessToken = process.env.QUANTIMODO_ACCESS_TOKEN;
+
 String.prototype.replaceAll = function(search, replacement) {
     var target = this;
     return target.replace(new RegExp(search, 'g'), replacement);
@@ -394,15 +388,32 @@ gulp.task('3-copy-to-repos', ['browserify'], function(){
 gulp.task('2-copy-qm-web-js', ['browserify'], function(){
     return gulp.src([getUnzippedPathForSdkLanguage('javascript') + '/quantimodo-web.js']).pipe(gulp.dest(pathToIonic + '/www/custom-lib/'));
 });
+var Quantimodo = require('quantimodo');
+var defaultClient = Quantimodo.ApiClient.instance;
+if(process.env.APP_HOST_NAME){
+    defaultClient.basePath = process.env.APP_HOST_NAME + '/api';
+}
+var quantimodo_oauth2 = defaultClient.authentications['quantimodo_oauth2'];
+quantimodo_oauth2.accessToken = process.env.QUANTIMODO_ACCESS_TOKEN;
 gulp.task('get-units', [], function (callback) {
     var apiInstance = new Quantimodo.UnitsApi();
     var qmApiResponseCallback = function(error, data, response) {
         if (error && response.body.errorMessage) {logError(response.req.path + "failed: " + response.body.errorMessage, error);}
-        if(!data){throw "Unit data not returned!"}
+        if(!data){throw "Unit data not returned!";}
         logInfo('API returned data', data);
         callback();
     };
     apiInstance.getUnits(qmApiResponseCallback);
+});
+gulp.task('get-unit-categories', [], function (callback) {
+    var apiInstance = new Quantimodo.UnitsApi();
+    var qmApiResponseCallback = function(error, data, response) {
+        if (error && response.body.errorMessage) {logError(response.req.path + "failed: " + response.body.errorMessage, error);}
+        if(!data){throw "Unit category data not returned!";}
+        logInfo('API returned data', data);
+        callback();
+    };
+    apiInstance.getUnitCategories(qmApiResponseCallback);
 });
 gulp.task('test-javascript-client', [], function (callback) {
     executeCommand('cd ' + getUnzippedPathForSdkLanguage('javascript') + ' && npm install && npm test ', function () {
