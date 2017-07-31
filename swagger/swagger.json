@@ -2382,6 +2382,82 @@
         "totalMeasurementsInLastUpdate": {
           "type": "integer",
           "description": "Number of measurements obtained during latest update"
+        },
+        "connectStatus": {
+          "description": "Example: CONNECTED",
+          "type": "string"
+        },
+        "updateRequestedAt": {
+          "description": "Example: 2017-07-18 05:16:31",
+          "type": "string",
+          "format": "date-time"
+        },
+        "shortDescription": {
+          "description": "Example: Tracks social interaction. QuantiModo requires permission to access your Facebook \"user likes\" and \"user posts\".",
+          "type": "string"
+        },
+        "message": {
+          "description": "Example: Got 412 new measurements on 2017-07-31 10:10:34",
+          "type": "string"
+        },
+        "lastSuccessfulUpdatedAt": {
+          "description": "Example: 2017-07-31 10:10:34",
+          "type": "string",
+          "format": "date-time"
+        },
+        "imageHtml": {
+          "description": "Example: <a href=\"http://www.facebook.com\"><img id=\"facebook_image\" title=\"Facebook\" src=\"https://i.imgur.com/GhwqK4f.png\" alt=\"Facebook\"></a>",
+          "type": "string"
+        },
+        "updateStatus": {
+          "description": "Example: UPDATED",
+          "type": "string"
+        },
+        "oauth": {
+          "description": "Example: {}",
+          "type": "object"
+        },
+        "defaultVariableCategoryName": {
+          "description": "Example: Social Interactions",
+          "type": "string"
+        },
+        "connectorClientId": {
+          "description": "Example: 225078261031461",
+          "type": "string"
+        },
+        "longDescription": {
+          "description": "Example: Facebook is a social networking website where users may create a personal profile, add other users as friends, and exchange messages.",
+          "type": "string"
+        },
+        "enabled": {
+          "description": "Example: 1",
+          "type": "integer"
+        },
+        "linkedDisplayNameHtml": {
+          "description": "Example: <a href=\"http://www.facebook.com\">Facebook</a>",
+          "type": "string"
+        },
+        "clientId": {
+          "description": "Example: ghostInspector",
+          "type": "string"
+        },
+        "userId": {
+          "description": "Example: 230",
+          "type": "integer"
+        },
+        "connectorId": {
+          "description": "Example: 8",
+          "type": "integer"
+        },
+        "createdAt": {
+          "description": "Example: 2000-01-01 00:00:00",
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "description": "Example: 2017-07-31 10:10:34",
+          "type": "string",
+          "format": "date-time"
         }
       }
     },
