@@ -202,7 +202,7 @@
     "reminderFrequencyParam": {
       "name": "reminderFrequency",
       "required": false,
-      "description": "Example: 86400",
+      "description": "How often user should be reminded in seconds. Example: 86400",
       "in": "query",
       "type": "string"
     },
@@ -3184,11 +3184,6 @@
           "type": "integer",
           "format": "int32"
         },
-        "pendingReminderTime": {
-          "description": "UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`  timestamp for the specific time the variable should be tracked in UTC.  This will be used for the measurement startTime if the track endpoint is used.",
-          "type": "string",
-          "format": "date-time"
-        },
         "defaultValue": {
           "description": "Default value to use for the measurement when tracking",
           "type": "number",
@@ -3238,6 +3233,226 @@
             "MEAN",
             "SUM"
           ]
+        },
+        "reminderFrequency": {
+          "description": "How often user should be reminded in seconds. Example: 86400",
+          "type": "integer"
+        },
+        "reminderStartTime": {
+          "description": "Earliest time of day at which reminders should appear in UTC HH:MM:SS format",
+          "type": "string"
+        },
+        "createdAt": {
+          "description": "Example: 2017-07-29 20:49:54",
+          "type": "string",
+          "format": "date-time"
+        },
+        "trackingReminderNotificationId": {
+          "description": "Example: 5072482",
+          "type": "integer"
+        },
+        "reminderTime": {
+          "description": "UTC ISO 8601 `YYYY-MM-DDThh:mm:ss` timestamp for the specific time the variable should be tracked in UTC.  This will be used for the measurement startTime if the track endpoint is used.",
+          "type": "string",
+          "format": "date-time"
+        },
+        "trackingReminderNotificationTime": {
+          "description": "UTC ISO 8601 `YYYY-MM-DDThh:mm:ss` timestamp for the specific time the variable should be tracked in UTC.  This will be used for the measurement startTime if the track endpoint is used.",
+          "type": "string",
+          "format": "date-time"
+        },
+        "defaultUnitId": {
+          "description": "Example: 10",
+          "type": "integer"
+        },
+        "description": {
+          "description": "Example: positive",
+          "type": "string"
+        },
+        "variableCategoryId": {
+          "description": "Example: 1",
+          "type": "integer"
+        },
+        "valence": {
+          "description": "Example: positive",
+          "type": "string"
+        },
+        "mostCommonValue": {
+          "description": "Example: 3",
+          "type": "number",
+          "format": "double"
+        },
+        "secondMostCommonValue": {
+          "description": "Example: 4",
+          "type": "number",
+          "format": "double"
+        },
+        "thirdMostCommonValue": {
+          "description": "Example: 2",
+          "type": "number",
+          "format": "double"
+        },
+        "lastValue": {
+          "description": "Example: 3",
+          "type": "number",
+          "format": "double"
+        },
+        "secondToLastValue": {
+          "description": "Example: 1",
+          "type": "number",
+          "format": "double"
+        },
+        "thirdToLastValue": {
+          "description": "Example: 2",
+          "type": "number",
+          "format": "double"
+        },
+        "userVariableDefaultUnitId": {
+          "description": "Example: 10",
+          "type": "integer"
+        },
+        "userVariableVariableCategoryId": {
+          "description": "Example: 1",
+          "type": "integer"
+        },
+        "numberOfUniqueValues": {
+          "description": "Example: 5",
+          "type": "integer"
+        },
+        "ionIcon": {
+          "description": "Example: ion-happy-outline",
+          "type": "string"
+        },
+        "svgUrl": {
+          "description": "Example: https://app.quantimo.do/ionic/Modo/www/img/variable_categories/emotions.svg",
+          "type": "string"
+        },
+        "pngUrl": {
+          "description": "Example: https://app.quantimo.do/ionic/Modo/www/img/variable_categories/emotions.png",
+          "type": "string"
+        },
+        "pngPath": {
+          "description": "Example: img/variable_categories/emotions.png",
+          "type": "string"
+        },
+        "variableCategoryImageUrl": {
+          "description": "Example: https://maxcdn.icons8.com/Color/PNG/96/Cinema/theatre_mask-96.png",
+          "type": "string"
+        },
+        "manualTracking": {
+          "description": "Example: 1",
+          "type": "boolean"
+        },
+        "userVariableVariableCategoryName": {
+          "description": "Example: Emotions",
+          "type": "string"
+        },
+        "trackingReminderNotificationTimeEpoch": {
+          "description": "Example: 1501534124",
+          "type": "integer"
+        },
+        "trackingReminderNotificationTimeLocal": {
+          "description": "Example: 15:48:44",
+          "type": "string"
+        },
+        "lastValueInUserVariableDefaultUnit": {
+          "description": "Example: 3",
+          "type": "number",
+          "format": "double"
+        },
+        "secondToLastValueInUserVariableDefaultUnit": {
+          "description": "Example: 1",
+          "type": "number",
+          "format": "double"
+        },
+        "thirdToLastValueInUserVariableDefaultUnit": {
+          "description": "Example: 2",
+          "type": "number",
+          "format": "double"
+        },
+        "mostCommonValueInUserVariableDefaultUnit": {
+          "description": "Example: 3",
+          "type": "number",
+          "format": "double"
+        },
+        "secondMostCommonValueInUserVariableDefaultUnit": {
+          "description": "Example: 4",
+          "type": "number",
+          "format": "double"
+        },
+        "thirdMostCommonValueInUserVariableDefaultUnit": {
+          "description": "Example: 2",
+          "type": "number",
+          "format": "double"
+        },
+        "unitId": {
+          "description": "Example: 10",
+          "type": "integer"
+        },
+        "unitName": {
+          "description": "Example: 1 to 5 Rating",
+          "type": "string"
+        },
+        "unitCategoryId": {
+          "description": "Example: 5",
+          "type": "integer"
+        },
+        "unitCategoryName": {
+          "description": "Example: Rating",
+          "type": "string"
+        },
+        "defaultUnitName": {
+          "description": "Example: 1 to 5 Rating",
+          "type": "string"
+        },
+        "defaultUnitAbbreviatedName": {
+          "description": "Example: /5",
+          "type": "string"
+        },
+        "defaultUnitCategoryId": {
+          "description": "Example: 5",
+          "type": "integer"
+        },
+        "defaultUnitCategoryName": {
+          "description": "Example: Rating",
+          "type": "string"
+        },
+        "userVariableDefaultUnitName": {
+          "description": "Example: 1 to 5 Rating",
+          "type": "string"
+        },
+        "userVariableDefaultUnitAbbreviatedName": {
+          "description": "Example: /5",
+          "type": "string"
+        },
+        "userVariableDefaultUnitCategoryId": {
+          "description": "Example: 5",
+          "type": "integer"
+        },
+        "userVariableDefaultUnitCategoryName": {
+          "description": "Example: Rating",
+          "type": "string"
+        },
+        "minimumAllowedValue": {
+          "description": "Example: 1",
+          "type": "integer"
+        },
+        "maximumAllowedValue": {
+          "description": "Example: 5",
+          "type": "integer"
+        },
+        "inputType": {
+          "description": "Example: happiestFaceIsFive",
+          "type": "string"
+        },
+        "total": {
+          "description": "Example: 3",
+          "type": "number",
+          "format": "double"
+        },
+        "title": {
+          "description": "Example: Rate Overall Mood",
+          "type": "string"
         }
       }
     },
@@ -3290,6 +3505,22 @@
             "$ref": "#/definitions/ConversionStep"
           },
           "description": "Conversion steps list"
+        },
+        "id": {
+          "description": "Example: 29",
+          "type": "integer"
+        },
+        "categoryName": {
+          "description": "Example: Miscellany",
+          "type": "string"
+        },
+        "categoryId": {
+          "description": "Example: 6",
+          "type": "integer"
+        },
+        "advanced": {
+          "description": "Example: 1",
+          "type": "integer"
         }
       }
     },
