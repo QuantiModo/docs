@@ -1998,6 +1998,240 @@ definitions:
       valuePredictingLowOutcomeExplanation:
         type: string
         description: 'Overall Mood, on average, 4% LOWER after around 0mg Remeron'
+      averageForwardPearsonCorrelationOverOnsetDelays:
+        description: 'Example: 0.396'
+        type: number
+        format: double
+      averageReversePearsonCorrelationOverOnsetDelays:
+        description: 'Example: 0.453667'
+        type: number
+        format: double
+      confidenceInterval:
+        description: 'Example: 0.14344467795996'
+        type: number
+        format: double
+      criticalTValue:
+        description: 'Example: 1.646'
+        type: number
+        format: double
+      effectChanges:
+        description: 'Example: 193'
+        type: integer
+      experimentEndTime:
+        description: 'Example: 2014-07-30 12:50:00'
+        type: string
+        format: date-time
+      experimentStartTime:
+        description: 'Example: 2012-05-06 21:15:00'
+        type: string
+        format: date-time
+      forwardSpearmanCorrelationCoefficient:
+        description: 'Example: 0.528359'
+        type: number
+        format: double
+      onsetDelayWithStrongestPearsonCorrelation:
+        description: 'Example: -86400'
+        type: integer
+      pearsonCorrelationWithNoOnsetDelay:
+        description: 'Example: 0.477'
+        type: number
+        format: double
+      predictivePearsonCorrelation:
+        description: 'Example: 0.538'
+        type: number
+        format: double
+      predictsHighEffectChange:
+        description: 'Example: 17'
+        type: integer
+      predictsLowEffectChange:
+        description: 'Example: -11'
+        type: integer
+      strongestPearsonCorrelationCoefficient:
+        description: 'Example: 0.613'
+        type: number
+        format: double
+      tValue:
+        description: 'Example: 9.6986079652717'
+        type: number
+        format: double
+      userId:
+        description: 'Example: 230'
+        type: integer
+      causeVariableMostCommonConnectorId:
+        description: 'Example: 6'
+        type: integer
+      causeVariableCategoryId:
+        description: 'Example: 6'
+        type: integer
+      effectVariableCombinationOperation:
+        description: 'Example: MEAN'
+        type: string
+      effectVariableCommonAlias:
+        description: 'Example: Mood_(psychology)'
+        type: string
+      effectVariableDefaultUnitId:
+        description: 'Example: 10'
+        type: integer
+      effectVariableMostCommonConnectorId:
+        description: 'Example: 10'
+        type: integer
+      effectVariableCategoryId:
+        description: 'Example: 1'
+        type: integer
+      causeUserVariableShareUserMeasurements:
+        description: 'Example: 1'
+        type: integer
+      effectUserVariableShareUserMeasurements:
+        description: 'Example: 1'
+        type: integer
+      predictorFillingValue:
+        description: 'Example: -1'
+        type: integer
+      outcomeFillingValue:
+        description: 'Example: -1'
+        type: integer
+      createdTime:
+        description: 'Example: 2016-12-28 20:47:30'
+        type: string
+        format: date-time
+      updatedTime:
+        description: 'Example: 2017-05-06 15:40:38'
+        type: string
+        format: date-time
+      durationOfActionInHours:
+        description: 'Example: 168'
+        type: integer
+      onsetDelayWithStrongestPearsonCorrelationInHours:
+        description: 'Example: -24'
+        type: integer
+      direction:
+        description: 'Example: higher'
+        type: string
+      causeVariableDefaultUnitAbbreviatedName:
+        description: 'Example: /5'
+        type: string
+      effectVariableDefaultUnitAbbreviatedName:
+        description: 'Example: /5'
+        type: string
+      causeVariableDefaultUnitName:
+        description: 'Example: 1 to 5 Rating'
+        type: string
+      effectVariableDefaultUnitName:
+        description: 'Example: 1 to 5 Rating'
+        type: string
+      shareUserMeasurements:
+        description: 'Example: 1'
+        type: boolean
+      effectUnit:
+        description: 'Example: /5'
+        type: string
+      significantDifference:
+        description: 'Example: 1'
+        type: boolean
+      predictsHighEffectChangeSentenceFragment:
+        description: 'Example: , on average, 17% '
+        type: string
+      predictsLowEffectChangeSentenceFragment:
+        description: 'Example: , on average, 11% '
+        type: string
+      confidenceLevel:
+        description: 'Example: high'
+        type: string
+      predictivePearsonCorrelationCoefficient:
+        description: 'Example: 0.538'
+        type: number
+        format: double
+      studyLinkEmail:
+        description: >-
+          Example:
+          mailto:?subject=N1%20Study%3A%20Sleep%20Quality%20Predicts%20Higher%20Overall%20Mood&body=Check%20out%20my%20study%20at%20https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fstudy%3FcauseVariableName%3DSleep%2520Quality%26effectVariableName%3DOverall%2520Mood%26userId%3D230%0A%0AHave%20a%20great%20day!
+        type: string
+      gaugeImageSquare:
+        description: >-
+          Example:
+          https://s3.amazonaws.com/quantimodo-docs/images/gauge-moderately-positive-relationship-200-200.png
+        type: string
+      causeDataSource:
+        description: >-
+          Example:
+          {"id":6,"name":"up","connectorClientId":"10RfjEgKr8U","connectorClientSecret":"e17fd34e4bc4642f0c4c99d7acb6e661","displayName":"Up
+          by
+          Jawbone","image":"https:\/\/i.imgur.com\/MXNQy3T.png","getItUrl":"http:\/\/www.amazon.com\/gp\/product\/B00A17IAO0\/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20","shortDescription":"Tracks
+          sleep, exercise, and diet.","longDescription":"UP by Jawbone is a
+          wristband and app that tracks how you sleep, move and eat and then
+          helps you use that information to feel your
+          best.","enabled":1,"affiliate":true,"defaultVariableCategoryName":"Physical
+          Activity","imageHtml":"<a
+          href=\"http:\/\/www.amazon.com\/gp\/product\/B00A17IAO0\/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20\"><img
+          id=\"up_image\" title=\"Up by Jawbone\"
+          src=\"https:\/\/i.imgur.com\/MXNQy3T.png\" alt=\"Up by
+          Jawbone\"><\/a>","linkedDisplayNameHtml":"<a
+          href=\"http:\/\/www.amazon.com\/gp\/product\/B00A17IAO0\/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20\">Up
+          by Jawbone<\/a>"}
+        type: object
+      dataSourcesParagraphForCause:
+        description: >-
+          Example: Sleep Quality data was primarily collected using <a
+          href="http://www.amazon.com/gp/product/B00A17IAO0/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20">Up
+          by Jawbone</a>.  UP by Jawbone is a wristband and app that tracks how
+          you sleep, move and eat and then helps you use that information to
+          feel your best.
+        type: string
+      instructionsForCause:
+        description: >-
+          Example: <a
+          href="http://www.amazon.com/gp/product/B00A17IAO0/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20">Obtain
+          Up by Jawbone</a> and use it to record your Sleep Quality. Once you
+          have a <a
+          href="http://www.amazon.com/gp/product/B00A17IAO0/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20">Up
+          by Jawbone</a> account, <a
+          href="https://app.quantimo.do/ionic/Modo/www/#/app/import">connect
+          your  Up by Jawbone account at QuantiModo</a> to automatically import
+          and analyze your data.
+        type: string
+      effectDataSource:
+        description: >-
+          Example:
+          {"id":72,"name":"quantimodo","displayName":"QuantiModo","image":"https:\/\/app.quantimo.do\/ionic\/Modo\/www\/img\/logos\/quantimodo-logo-qm-rainbow-200-200.png","getItUrl":"https:\/\/quantimo.do","shortDescription":"Tracks
+          anything","longDescription":"QuantiModo is a Chrome extension, Android
+          app, iOS app, and web app that allows you to easily track mood,
+          symptoms, or any outcome you want to optimize in a fraction of a
+          second.  You can also import your data from over 30 other apps and
+          devices like Fitbit, Rescuetime, Jawbone Up, Withings, Facebook,
+          Github, Google Calendar, Runkeeper, MoodPanda, Slice, Google Fit, and
+          more.  QuantiModo then analyzes your data to identify which hidden
+          factors are most likely to be influencing your mood or symptoms and
+          their optimal daily
+          values.","enabled":0,"affiliate":true,"defaultVariableCategoryName":"Foods","imageHtml":"<a
+          href=\"https:\/\/quantimo.do\"><img id=\"quantimodo_image\"
+          title=\"QuantiModo\"
+          src=\"https:\/\/app.quantimo.do\/ionic\/Modo\/www\/img\/logos\/quantimodo-logo-qm-rainbow-200-200.png\"
+          alt=\"QuantiModo\"><\/a>","linkedDisplayNameHtml":"<a
+          href=\"https:\/\/quantimo.do\">QuantiModo<\/a>"}
+        type: object
+      dataSourcesParagraphForEffect:
+        description: >-
+          Example: Overall Mood data was primarily collected using <a
+          href="https://quantimo.do">QuantiModo</a>.  <a
+          href="https://quantimo.do">QuantiModo</a> is a Chrome extension,
+          Android app, iOS app, and web app that allows you to easily track
+          mood, symptoms, or any outcome you want to optimize in a fraction of a
+          second.  You can also import your data from over 30 other apps and
+          devices like Fitbit, Rescuetime, Jawbone Up, Withings, Facebook,
+          Github, Google Calendar, Runkeeper, MoodPanda, Slice, Google Fit, and
+          more.  <a href="https://quantimo.do">QuantiModo</a> then analyzes your
+          data to identify which hidden factors are most likely to be
+          influencing your mood or symptoms and their optimal daily values.
+        type: string
+      instructionsForEffect:
+        description: >-
+          Example: <a href="https://quantimo.do">Obtain QuantiModo</a> and use
+          it to record your Overall Mood. Once you have a <a
+          href="https://quantimo.do">QuantiModo</a> account, <a
+          href="https://app.quantimo.do/ionic/Modo/www/#/app/import">connect
+          your  QuantiModo account at QuantiModo</a> to automatically import and
+          analyze your data.
+        type: string
   Correlations:
     type: array
     items:
