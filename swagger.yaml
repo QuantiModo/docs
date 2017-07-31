@@ -3131,6 +3131,189 @@ definitions:
       ionIcon:
         type: string
         description: ''
+      id:
+        description: 'Example: 95614'
+        type: integer
+      name:
+        description: 'Example: Trader Joes Bedtime Tea / Sleepytime Tea (any Brand)'
+        type: string
+      userVariableDefaultUnitId:
+        description: 'Example: 23'
+        type: integer
+      userVariableFillingValue:
+        description: 'Example: -1'
+        type: number
+        format: double
+      latestUserMeasurementTime:
+        description: 'Example: 1501383600'
+        type: integer
+      maximumRecordedValue:
+        description: 'Example: 1'
+        type: number
+        format: double
+      rawMeasurementsAtLastAnalysis:
+        description: 'Example: 131'
+        type: integer
+      numberOfRawMeasurements:
+        description: 'Example: 295'
+        type: integer
+      numberOfUserCorrelationsAsCause:
+        description: 'Example: 115'
+        type: integer
+      standardDeviation:
+        description: 'Example: 0.46483219855434'
+        type: number
+        format: double
+      userVariableVariableCategoryId:
+        description: 'Example: 13'
+        type: integer
+      variableFillingValue:
+        description: 'Example: -1'
+        type: number
+        format: double
+      mostCommonOriginalUnitId:
+        description: 'Example: 23'
+        type: integer
+      numberOfAggregateCorrelationsAsCause:
+        description: 'Example: 1'
+        type: integer
+      numberOfUserVariables:
+        description: 'Example: 2'
+        type: integer
+      secondMostCommonValue:
+        description: 'Example: 1'
+        type: number
+        format: double
+      updatedTime:
+        description: 'Example: 2017-07-30 14:58:26'
+        type: string
+        format: date-time
+      commonVariableUpdatedAt:
+        description: 'Example: 2017-02-07 23:43:39'
+        type: string
+        format: date-time
+      userVariableUpdatedAt:
+        description: 'Example: 2017-07-30 14:58:26'
+        type: string
+        format: date-time
+      combinationOperation:
+        description: 'Example: MEAN'
+        type: string
+      variableCategoryName:
+        description: 'Example: Treatments'
+        type: string
+      svgUrl:
+        description: >-
+          Example:
+          https://app.quantimo.do/ionic/Modo/www/img/variable_categories/treatments.svg
+        type: string
+      pngUrl:
+        description: >-
+          Example:
+          https://app.quantimo.do/ionic/Modo/www/img/variable_categories/treatments.png
+        type: string
+      pngPath:
+        description: 'Example: img/variable_categories/treatments.png'
+        type: string
+      variableCategoryImageUrl:
+        description: 'Example: https://maxcdn.icons8.com/Color/PNG/96/Healthcare/pill-96.png'
+        type: string
+      manualTracking:
+        description: 'Example: 1'
+        type: boolean
+      userVariableVariableCategoryName:
+        description: 'Example: Treatments'
+        type: string
+      meanInUserVariableDefaultUnit:
+        description: 'Example: 0.31159'
+        type: number
+        format: double
+      secondMostCommonValueInUserVariableDefaultUnit:
+        description: 'Example: 1'
+        type: number
+        format: double
+      unitId:
+        description: 'Example: 23'
+        type: integer
+      unitName:
+        description: 'Example: Count'
+        type: string
+      unitAbbreviatedName:
+        description: 'Example: count'
+        type: string
+      unitCategoryId:
+        description: 'Example: 6'
+        type: integer
+      unitCategoryName:
+        description: 'Example: Miscellany'
+        type: string
+      defaultUnitName:
+        description: 'Example: Count'
+        type: string
+      defaultUnitAbbreviatedName:
+        description: 'Example: count'
+        type: string
+      defaultUnitCategoryId:
+        description: 'Example: 6'
+        type: integer
+      defaultUnitCategoryName:
+        description: 'Example: Miscellany'
+        type: string
+      userVariableDefaultUnitName:
+        description: 'Example: Count'
+        type: string
+      userVariableDefaultUnitAbbreviatedName:
+        description: 'Example: count'
+        type: string
+      userVariableDefaultUnitCategoryId:
+        description: 'Example: 6'
+        type: integer
+      userVariableDefaultUnitCategoryName:
+        description: 'Example: Miscellany'
+        type: string
+      variableName:
+        description: 'Example: Trader Joes Bedtime Tea / Sleepytime Tea (any Brand)'
+        type: string
+      inputType:
+        description: 'Example: value'
+        type: string
+      durationOfActionInHours:
+        description: 'Example: 168'
+        type: integer
+      onsetDelayInHours:
+        description: 'Example: 0.5'
+        type: number
+        format: double
+      chartsLinkStatic:
+        description: >-
+          Example:
+          https://local.quantimo.do/api/v2/charts?variableName=Trader%20Joes%20Bedtime%20Tea%20%2F%20Sleepytime%20Tea%20%28any%20Brand%29&userId=230&pngUrl=https%3A%2F%2Fapp.quantimo.do%2Fionic%2FModo%2Fwww%2Fimg%2Fvariable_categories%2Ftreatments.png
+        type: string
+      chartsLinkDynamic:
+        description: >-
+          Example:
+          https://local.quantimo.do/ionic/Modo/www/#/app/charts/Trader%20Joes%20Bedtime%20Tea%20%2F%20Sleepytime%20Tea%20%28any%20Brand%29?variableName=Trader%20Joes%20Bedtime%20Tea%20%2F%20Sleepytime%20Tea%20%28any%20Brand%29&userId=230&pngUrl=https%3A%2F%2Fapp.quantimo.do%2Fionic%2FModo%2Fwww%2Fimg%2Fvariable_categories%2Ftreatments.png
+        type: string
+      chartsLinkFacebook:
+        description: >-
+          Example:
+          https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fcharts%3FvariableName%3DTrader%2520Joes%2520Bedtime%2520Tea%2520%252F%2520Sleepytime%2520Tea%2520%2528any%2520Brand%2529%26userId%3D230%26pngUrl%3Dhttps%253A%252F%252Fapp.quantimo.do%252Fionic%252FModo%252Fwww%252Fimg%252Fvariable_categories%252Ftreatments.png
+        type: string
+      chartsLinkGoogle:
+        description: >-
+          Example:
+          https://plus.google.com/share?url=https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fcharts%3FvariableName%3DTrader%2520Joes%2520Bedtime%2520Tea%2520%252F%2520Sleepytime%2520Tea%2520%2528any%2520Brand%2529%26userId%3D230%26pngUrl%3Dhttps%253A%252F%252Fapp.quantimo.do%252Fionic%252FModo%252Fwww%252Fimg%252Fvariable_categories%252Ftreatments.png
+        type: string
+      chartsLinkTwitter:
+        description: >-
+          Example:
+          https://twitter.com/home?status=Check%20out%20my%20Trader%20Joes%20Bedtime%20Tea%20%2F%20Sleepytime%20Tea%20%28any%20Brand%29%20data%21%20https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fcharts%3FvariableName%3DTrader%2520Joes%2520Bedtime%2520Tea%2520%252F%2520Sleepytime%2520Tea%2520%2528any%2520Brand%2529%26userId%3D230%26pngUrl%3Dhttps%253A%252F%252Fapp.quantimo.do%252Fionic%252FModo%252Fwww%252Fimg%252Fvariable_categories%252Ftreatments.png%20%40quantimodo
+        type: string
+      chartsLinkEmail:
+        description: >-
+          Example:
+          mailto:?subject=Check%20out%20my%20Trader%20Joes%20Bedtime%20Tea%20%2F%20Sleepytime%20Tea%20%28any%20Brand%29%20data%21&body=See%20my%20Trader%20Joes%20Bedtime%20Tea%20%2F%20Sleepytime%20Tea%20%28any%20Brand%29%20history%20at%20https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fcharts%3FvariableName%3DTrader%2520Joes%2520Bedtime%2520Tea%2520%252F%2520Sleepytime%2520Tea%2520%2528any%2520Brand%2529%26userId%3D230%26pngUrl%3Dhttps%253A%252F%252Fapp.quantimo.do%252Fionic%252FModo%252Fwww%252Fimg%252Fvariable_categories%252Ftreatments.png%0A%0AHave%20a%20great%20day!
+        type: string
   UserVariableDelete:
     required:
       - variableId
@@ -3326,6 +3509,154 @@ definitions:
       ionIcon:
         type: string
         description: ''
+      createdAt:
+        description: 'Example: 2014-10-23 03:41:06'
+        type: string
+        format: date-time
+      unitId:
+        description: 'Example: 34'
+        type: integer
+      kurtosis:
+        description: 'Example: 10.764488721491'
+        type: number
+        format: double
+      mean:
+        description: 'Example: 2202.3886251393'
+        type: number
+        format: double
+      median:
+        description: 'Example: 2255.9284755781'
+        type: number
+        format: double
+      mostCommonConnectorId:
+        description: 'Example: 7'
+        type: integer
+      mostCommonOriginalUnitId:
+        description: 'Example: 2'
+        type: integer
+      numberOfAggregateCorrelationsAsCause:
+        description: 'Example: 386'
+        type: integer
+      numberOfAggregateCorrelationsAsEffect:
+        description: 'Example: 2074'
+        type: integer
+      numberOfTrackingReminders:
+        description: 'Example: 6'
+        type: integer
+      numberOfUniqueValues:
+        description: 'Example: 74'
+        type: integer
+      numberOfUserVariables:
+        description: 'Example: 307'
+        type: integer
+      secondMostCommonValue:
+        description: 'Example: 8'
+        type: number
+        format: double
+      skewness:
+        description: 'Example: 0.2461351905455'
+        type: number
+        format: double
+      standardDeviation:
+        description: 'Example: 1840.535129803'
+        type: number
+        format: double
+      thirdMostCommonValue:
+        description: 'Example: 7'
+        type: number
+        format: double
+      updatedAt:
+        description: 'Example: 2017-07-31 03:57:06'
+        type: string
+        format: date-time
+      variableCategoryId:
+        description: 'Example: 6'
+        type: integer
+      variance:
+        description: 'Example: 115947037.40816'
+        type: number
+        format: double
+      public:
+        description: 'Example: 1'
+        type: boolean
+      userVariableVariableCategoryId:
+        description: 'Example: 6'
+        type: integer
+      svgUrl:
+        description: >-
+          Example:
+          https://app.quantimo.do/ionic/Modo/www/img/variable_categories/sleep.svg
+        type: string
+      pngUrl:
+        description: >-
+          Example:
+          https://app.quantimo.do/ionic/Modo/www/img/variable_categories/sleep.png
+        type: string
+      pngPath:
+        description: 'Example: img/variable_categories/sleep.png'
+        type: string
+      variableCategoryImageUrl:
+        description: >-
+          Example:
+          https://maxcdn.icons8.com/Color/PNG/96/Household/sleeping_in_bed-96.png
+        type: string
+      manualTracking:
+        description: 'Example: 1'
+        type: boolean
+      userVariableVariableCategoryName:
+        description: 'Example: Sleep'
+        type: string
+      category:
+        description: 'Example: Sleep'
+        type: string
+      durationOfActionInHours:
+        description: 'Example: 168'
+        type: integer
+      variableName:
+        description: 'Example: Sleep Duration'
+        type: string
+      numberOfMeasurements:
+        description: 'Example: 308554'
+        type: integer
+      unitName:
+        description: 'Example: Hours'
+        type: string
+      unitAbbreviatedName:
+        description: 'Example: h'
+        type: string
+      unitCategoryId:
+        description: 'Example: 1'
+        type: integer
+      unitCategoryName:
+        description: 'Example: Duration'
+        type: string
+      defaultUnitName:
+        description: 'Example: Hours'
+        type: string
+      defaultUnitCategoryId:
+        description: 'Example: 1'
+        type: integer
+      defaultUnitCategoryName:
+        description: 'Example: Duration'
+        type: string
+      userVariableDefaultUnitId:
+        description: 'Example: 34'
+        type: integer
+      userVariableDefaultUnitName:
+        description: 'Example: Hours'
+        type: string
+      userVariableDefaultUnitAbbreviatedName:
+        description: 'Example: h'
+        type: string
+      userVariableDefaultUnitCategoryId:
+        description: 'Example: 1'
+        type: integer
+      userVariableDefaultUnitCategoryName:
+        description: 'Example: Duration'
+        type: string
+      inputType:
+        description: 'Example: slider'
+        type: string
   VariableCategory:
     required:
       - name
