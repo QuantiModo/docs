@@ -77,7 +77,10 @@ var sdkSwaggerCodegenOptions ={
     "php": {
         "invokerPackage": "QuantiModo\\Client",
         "composerProjectName": "quantimodo-sdk-php",
-        "composerVendorName": "quantimodo"
+        "composerVendorName": "quantimodo",
+        "modelPackage": "Model",
+        "apiPackage": "Api",
+        "packagePath": "QuantiModoClient"
     },
     "javascript": {
         //"projectName": "quantimodo",

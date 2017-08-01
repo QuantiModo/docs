@@ -16,7 +16,6 @@ dependencies:
     - cd swagger-codegen && ./run-in-docker.sh mvn package
     - sh scripts/generate-v1-sdks-circleci.sh
     - cd quantimodo_v1_skds/javascript && npm install && npm test
-    - curl -u HtT2C7gL6ALepi8g: "https://assertible.com/deployments" -d'{"service": "28000e7f-867d-4f02-854f-ceb9519fbe32", "environmentName": "production", "version": "v1"}'
 
 general:
   artifacts:
