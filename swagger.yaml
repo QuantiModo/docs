@@ -1689,6 +1689,27 @@ paths:
         - $ref: '#/parameters/offsetParam'
         - $ref: '#/parameters/appNameParam'
         - $ref: '#/parameters/clientIdParam'
+  /v3/userSettings:
+    post:
+      operationId: postUserSettings
+      tags:
+        - userSettings
+      summary: Post UserSettings
+      description: Post UserSettings
+      produces:
+        - application/json
+      responses:
+        '201':
+          description: Successful operation
+        '401':
+          description: Not authenticated
+        '404':
+          description: Not found
+        '500':
+          description: Internal server error
+      parameters:
+        - $ref: '#/parameters/appNameParam'
+        - $ref: '#/parameters/clientIdParam'
 definitions:
   CommonResponse:
     type: object
@@ -3356,6 +3377,9 @@ definitions:
         description: 'Example: Sinn'
         type: string
       trackLocation:
+        description: 'Example: 1'
+        type: boolean
+      combineNotifications:
         description: 'Example: 1'
         type: boolean
   UserTag:
