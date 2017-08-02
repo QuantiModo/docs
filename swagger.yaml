@@ -465,6 +465,48 @@ parameters:
     description: 'Example: true'
     in: query
     type: boolean
+  includePublicParam:
+    name: includePublic
+    required: false
+    description: 'Example: true'
+    in: query
+    type: boolean
+  fallbackToAggregatedCorrelationsParam:
+    name: fallbackToAggregatedCorrelations
+    required: false
+    description: 'Example: true'
+    in: query
+    type: boolean
+  numberOfUserCorrelationsAsCauseParam:
+    name: numberOfUserCorrelationsAsCause
+    required: false
+    description: 'Example: (gt)1'
+    in: query
+    type: string
+  numberOfUserCorrelationsAsEffectParam:
+    name: numberOfUserCorrelationsAsEffect
+    required: false
+    description: 'Example: (gt)1'
+    in: query
+    type: string
+  outcomeParam:
+    name: outcome
+    required: false
+    description: 'Example: true'
+    in: query
+    type: boolean
+  includeChartsParam:
+    name: includeCharts
+    required: false
+    description: 'Example: true'
+    in: query
+    type: boolean
+  includeTagsParam:
+    name: includeTags
+    required: false
+    description: 'Example: true'
+    in: query
+    type: boolean
 schemes:
   - https
 consumes:
@@ -547,6 +589,9 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - basic
+      parameters:
+        - $ref: '#/parameters/appNameParam'
+        - $ref: '#/parameters/clientIdParam'
   '/v3/connectors/{connectorName}/connect':
     get:
       operationId: connectConnector
@@ -1053,6 +1098,8 @@ paths:
         - $ref: '#/parameters/limitParam'
         - $ref: '#/parameters/offsetParam'
         - $ref: '#/parameters/sortParam'
+        - $ref: '#/parameters/appNameParam'
+        - $ref: '#/parameters/clientIdParam'
       responses:
         '200':
           description: successful operation
@@ -1146,6 +1193,9 @@ paths:
         - $ref: '#/parameters/limitParam'
         - $ref: '#/parameters/offsetParam'
         - $ref: '#/parameters/sortParam'
+        - $ref: '#/parameters/reminderTimeParam'
+        - $ref: '#/parameters/appNameParam'
+        - $ref: '#/parameters/clientIdParam'
       responses:
         '200':
           description: successful operation
@@ -1341,6 +1391,8 @@ paths:
         - application/json
       parameters:
         - $ref: '#/parameters/userVariablesParam'
+        - $ref: '#/parameters/appNameParam'
+        - $ref: '#/parameters/clientIdParam'
       responses:
         '201':
           description: Successful Operation
@@ -1588,6 +1640,55 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - basic
+  /v3/study:
+    get:
+      operationId: getStudy
+      tags:
+        - study
+      summary: Get Study
+      description: Get Study
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: Successful operation
+        '401':
+          description: Not authenticated
+        '404':
+          description: Not found
+        '500':
+          description: Internal server error
+      parameters:
+        - $ref: '#/parameters/causeVariableNameParam'
+        - $ref: '#/parameters/effectVariableNameParam'
+        - $ref: '#/parameters/appNameParam'
+        - $ref: '#/parameters/clientIdParam'
+        - $ref: '#/parameters/includeChartsParam'
+  /v3/measurements/daily:
+    get:
+      operationId: getMeasurementsDaily
+      tags:
+        - measurements
+      summary: Get Measurements Daily
+      description: Get Measurements Daily
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: Successful operation
+        '401':
+          description: Not authenticated
+        '404':
+          description: Not found
+        '500':
+          description: Internal server error
+      parameters:
+        - $ref: '#/parameters/sortParam'
+        - $ref: '#/parameters/variableNameParam'
+        - $ref: '#/parameters/limitParam'
+        - $ref: '#/parameters/offsetParam'
+        - $ref: '#/parameters/appNameParam'
+        - $ref: '#/parameters/clientIdParam'
 definitions:
   CommonResponse:
     type: object
@@ -2218,6 +2319,25 @@ definitions:
           your  QuantiModo account at QuantiModo</a> to automatically import and
           analyze your data.
         type: string
+      pValue:
+        description: 'Example: 3.5306635529222E-5'
+        type: number
+        format: double
+      reversePearsonCorrelationCoefficient:
+        description: 'Example: 0.63628232030415'
+        type: number
+        format: double
+      predictorMinimumAllowedValue:
+        description: 'Example: 10'
+        type: number
+        format: double
+      predictorMaximumAllowedValue:
+        description: 'Example: 160934'
+        type: number
+        format: double
+      predictorDataSources:
+        description: 'Example: RescueTime'
+        type: string
   Correlations:
     type: array
     items:
@@ -2386,6 +2506,12 @@ definitions:
         type: integer
       maximumAllowedValue:
         description: 'Example: 5'
+        type: integer
+      startDate:
+        description: 'Example: 2014-08-27'
+        type: string
+      connectorId:
+        description: 'Example: 13'
         type: integer
   MeasurementItem:
     required:
@@ -3793,6 +3919,32 @@ definitions:
         description: 'Example: 250'
         type: number
         format: double
+      numberOfUserCorrelationsAsEffect:
+        description: 'Example: 29014'
+        type: integer
+      numberOfAggregateCorrelationsAsEffect:
+        description: 'Example: 310'
+        type: integer
+      thirdMostCommonValue:
+        description: 'Example: 6'
+        type: number
+        format: double
+      thirdMostCommonValueInUserVariableDefaultUnit:
+        description: 'Example: 6'
+        type: number
+        format: double
+      outcomeOfInterest:
+        description: 'Example: 1'
+        type: integer
+      description:
+        description: 'Example: negative'
+        type: string
+      valence:
+        description: 'Example: negative'
+        type: string
+      shareUserMeasurements:
+        description: 'Example: 1'
+        type: boolean
   UserVariableDelete:
     required:
       - variableId
