@@ -568,7 +568,7 @@
         }
       }
     },
-    "/v3/connectors/list": {
+    "/v4/connectors/list": {
       "get": {
         "operationId": "getConnectors",
         "tags": [

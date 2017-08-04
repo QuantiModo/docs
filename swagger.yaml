@@ -562,7 +562,7 @@ paths:
           description: User token is missing
         '403':
           description: User token is incorrect
-  /v3/connectors/list:
+  /v4/connectors/list:
     get:
       operationId: getConnectors
       tags:
