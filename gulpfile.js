@@ -396,9 +396,7 @@ gulp.task('2-copy-qm-web-js', ['browserify'], function(){
 });
 var Quantimodo = require('quantimodo');
 var defaultClient = Quantimodo.ApiClient.instance;
-if(process.env.APP_HOST_NAME){
-    defaultClient.basePath = process.env.APP_HOST_NAME + '/api';
-}
+if(process.env.APP_HOST_NAME){defaultClient.basePath = process.env.APP_HOST_NAME + '/api';}
 var quantimodo_oauth2 = defaultClient.authentications['quantimodo_oauth2'];
 quantimodo_oauth2.accessToken = process.env.QUANTIMODO_ACCESS_TOKEN;
 function handleApiResponse(error, data, response) {
@@ -464,13 +462,19 @@ gulp.task('get-tracking-reminders', [], function (callback) {
 });
 gulp.task('get-unit-categories', [], function (callback) {
     var apiInstance = new Quantimodo.UnitsApi();
-    var qmApiResponseCallback = function(error, data, response) {
-        if (error && response.body.errorMessage) {logError(response.req.path + "failed: " + response.body.errorMessage, error);}
-        if(!data){throw "Unit category data not returned!";}
-        logInfo('API returned data', data);
+    function qmApiResponseCallback(error, data, response) {
+        handleApiResponse(error, data, response);
         callback();
-    };
+    }
     apiInstance.getUnitCategories(qmApiResponseCallback);
+});
+gulp.task('get-connectors', [], function (callback) {
+    var apiInstance = new Quantimodo.ConnectorsApi();
+    function qmApiResponseCallback(error, data, response) {
+        handleApiResponse(error, data, response);
+        callback();
+    }
+    apiInstance.getConnectors(qmApiResponseCallback);
 });
 gulp.task('test-endpoints', function (callback) {
     runSequence(
