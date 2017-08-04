@@ -1481,18 +1481,10 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "properties": {
-                "success": {
-                  "type": "boolean"
-                },
-                "data": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/definitions/TrackingReminder"
-                  }
-                }
-              },
-              "type": "object"
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/TrackingReminder"
+              }
             }
           }
         },
@@ -1654,18 +1646,10 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "properties": {
-                "success": {
-                  "type": "boolean"
-                },
-                "data": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/definitions/TrackingReminderNotification"
-                  }
-                }
-              },
-              "type": "object"
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/TrackingReminderNotification"
+              }
             }
           }
         },
