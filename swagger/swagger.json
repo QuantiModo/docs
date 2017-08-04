@@ -570,7 +570,7 @@
     },
     "/v3/connectors/list": {
       "get": {
-        "operationId": "getConnectorsList",
+        "operationId": "getConnectors",
         "tags": [
           "connectors"
         ],
