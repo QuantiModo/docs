@@ -914,7 +914,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/Correlations"
+                "$ref": "#/definitions/Correlation"
               }
             }
           },

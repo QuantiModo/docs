@@ -762,7 +762,7 @@ paths:
           schema:
             type: array
             items:
-              $ref: '#/definitions/Correlations'
+              $ref: '#/definitions/Correlation'
         '401':
           description: Not Authenticated
       security:
