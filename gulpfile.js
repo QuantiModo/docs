@@ -230,7 +230,9 @@ function unzipFileToFolder(sourceFile, destinationFolder) {
         .pipe(gulp.dest(destinationFolder));
 }
 var pathToQmDocker = "../../..";
+var pathToSwaggerDocsFolder = pathToQmDocker + "/public.built/api/docs";
 var pathToQuantiModoNodeModule = 'node_modules/quantimodo';
+var pathToSwaggerQMNodeModule = pathToSwaggerDocsFolder + "/" + pathToQuantiModoNodeModule;
 
 String.prototype.replaceAll = function(search, replacement) {
     var target = this;
@@ -379,6 +381,7 @@ gulp.task('3-copy-to-repos', ['browserify'], function(){
     copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage('javascript'), pathToQmDocker + '/' + pathToQuantiModoNodeModule);
     copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage('javascript'), pathToIonic + '/' + pathToQuantiModoNodeModule);
     copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage('javascript'), pathToIonic + '/www/custom-lib/quantimodo');
+    copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage('javascript'), pathToSwaggerQMNodeModule);
     gulp.src([getUnzippedPathForSdkLanguage('javascript') + 'quantimodo-web.js'])
         .pipe(gulp.dest('/www/custom-lib/'));
     for(var i = 0; i < languages.length; i++) {
@@ -398,15 +401,50 @@ if(process.env.APP_HOST_NAME){
 }
 var quantimodo_oauth2 = defaultClient.authentications['quantimodo_oauth2'];
 quantimodo_oauth2.accessToken = process.env.QUANTIMODO_ACCESS_TOKEN;
-gulp.task('get-units', [], function (callback) {
-    var apiInstance = new Quantimodo.UnitsApi();
-    var qmApiResponseCallback = function(error, data, response) {
-        if (error && response.body.errorMessage) {logError(response.req.path + "failed: " + response.body.errorMessage, error);}
-        if(!data){throw "Unit data not returned!";}
-        logInfo('API returned data', data);
+function handleApiResponse(error, data, response) {
+    if (error && response.body.errorMessage) {logError(response.req.path + "failed: " + response.body.errorMessage, error);}
+    if(!data){throw "data not returned!";}
+    logInfo('API returned data', data);
+}
+gulp.task('get-units', [], function () {
+    var apiInstance = new Quantimodo.UnitsApi(callback);
+    function qmApiResponseCallback(error, data, response) {
+        handleApiResponse(error, data, response);
         callback();
     };
     apiInstance.getUnits(qmApiResponseCallback);
+});
+gulp.task('get-public-variables', [], function (callback) {
+    var apiInstance = new Quantimodo.VariablesApi();
+    function qmApiResponseCallback(error, data, response) {
+        handleApiResponse(error, data, response);
+        callback();
+    }
+    apiInstance.getPublicVariables({}, qmApiResponseCallback);
+});
+gulp.task('get-user-variables', [], function (callback) {
+    var apiInstance = new Quantimodo.VariablesApi();
+    function qmApiResponseCallback(error, data, response) {
+        handleApiResponse(error, data, response);
+        callback();
+    }
+    apiInstance.getUserVariables({}, qmApiResponseCallback);
+});
+gulp.task('get-public-correlations', [], function (callback) {
+    var apiInstance = new Quantimodo.AnalyticsApi();
+    function qmApiResponseCallback(error, data, response) {
+        handleApiResponse(error, data, response);
+        callback();
+    }
+    apiInstance.getAggregatedCorrelations({}, qmApiResponseCallback);
+});
+gulp.task('get-user-correlations', [], function (callback) {
+    var apiInstance = new Quantimodo.AnalyticsApi();
+    function qmApiResponseCallback(error, data, response) {
+        handleApiResponse(error, data, response);
+        callback();
+    }
+    apiInstance.getCorrelations({}, qmApiResponseCallback);
 });
 gulp.task('get-unit-categories', [], function (callback) {
     var apiInstance = new Quantimodo.UnitsApi();
