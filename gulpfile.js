@@ -444,7 +444,7 @@ gulp.task('get-user-correlations', [], function (callback) {
         handleApiResponse(error, data, response);
         callback();
     }
-    apiInstance.getCorrelations({}, qmApiResponseCallback);
+    apiInstance.getUserCorrelations({}, qmApiResponseCallback);
 });
 gulp.task('get-unit-categories', [], function (callback) {
     var apiInstance = new Quantimodo.UnitsApi();
