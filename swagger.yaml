@@ -676,7 +676,7 @@ paths:
             - basic
   /v4/correlations:
     get:
-      operationId: getCorrelations
+      operationId: getUserCorrelations
       tags:
         - analytics
       summary: Get correlations
@@ -701,7 +701,7 @@ paths:
           schema:
             type: array
             items:
-              $ref: '#/definitions/Correlation'
+              $ref: '#/definitions/UserCorrelation'
         '401':
           description: Not Authenticated
       security:
@@ -726,7 +726,7 @@ paths:
           schema:
             type: array
             items:
-              $ref: '#/definitions/Correlation'
+              $ref: '#/definitions/UserCorrelation'
         '401':
           description: Not Authenticated
       security:
@@ -762,7 +762,7 @@ paths:
           schema:
             type: array
             items:
-              $ref: '#/definitions/Correlation'
+              $ref: '#/definitions/AggregatedCorrelation'
         '401':
           description: Not Authenticated
       security:
@@ -1858,7 +1858,7 @@ definitions:
         type: number
         format: double
         description: This specifies the order of conversion steps starting with 0
-  Correlation:
+  UserCorrelation:
     required:
       - correlationCoefficient
       - cause
@@ -2359,11 +2359,507 @@ definitions:
       predictorDataSources:
         description: 'Example: RescueTime'
         type: string
-  Correlations:
-    type: array
-    items:
-      $ref: '#/definitions/Correlation'
-    description: Array
+  AggregatedCorrelation:
+    required:
+      - correlationCoefficient
+      - cause
+      - effect
+      - onsetDelay
+      - durationOfAction
+      - numberOfPairs
+      - timestamp
+    properties:
+      averageDailyLowCause:
+        type: number
+        description: ''
+      averageDailyHighCause:
+        type: number
+        description: ''
+      averageEffect:
+        type: number
+        description: ''
+      averageEffectFollowingHighCause:
+        type: number
+        description: ''
+      averageEffectFollowingLowCause:
+        type: number
+        description: ''
+      averageEffectFollowingHighCauseExplanation:
+        type: string
+        description: ''
+      averageEffectFollowingLowCauseExplanation:
+        type: string
+        description: ''
+      averageVote:
+        type: number
+        description: Average Vote
+      causalityFactor:
+        type: number
+        description: ''
+      cause:
+        type: string
+        description: >-
+          Variable name of the cause variable for which the user desires
+          correlations.
+      causeVariableCategoryName:
+        type: string
+        description: Variable category of the cause variable.
+      causeChanges:
+        type: integer
+        description: >-
+          Number of changes in the predictor variable (a.k.a the number of
+          experiments)
+      causeVariableCombinationOperation:
+        type: string
+        description: The way cause measurements are aggregated
+      causeVariableImageUrl:
+        type: string
+        description: ''
+      causeVariableIonIcon:
+        type: string
+        description: For use in Ionic apps
+      causeUnit:
+        type: string
+        description: Unit of the predictor variable
+      causeVariableDefaultUnitId:
+        type: integer
+        description: Unit Id of the predictor variable
+      causeVariableId:
+        type: integer
+        description: ''
+      causeVariableName:
+        type: string
+        description: >-
+          Variable name of the cause variable for which the user desires
+          correlations.
+      correlationCoefficient:
+        type: number
+        description: Pearson correlation coefficient between cause and effect measurements
+      createdAt:
+        description: >-
+          When the record was first created. Use UTC ISO 8601
+          `YYYY-MM-DDThh:mm:ss`  datetime format
+        type: string
+        format: date-time
+      dataAnalysis:
+        type: string
+        description: How the data was analyzed
+      dataSources:
+        type: string
+        description: How the data was obtained
+      durationOfAction:
+        type: number
+        description: >-
+          The amount of time over which a predictor/stimulus event can exert an
+          observable influence on an outcome variable value. For instance,
+          aspirin (stimulus/predictor) typically decreases headache severity for
+          approximately four hours (duration of action) following the onset
+          delay.
+      effect:
+        type: string
+        description: >-
+          Variable name of the effect variable for which the user desires
+          correlations.
+      effectVariableCategoryName:
+        type: string
+        description: Variable category of the effect variable.
+      effectVariableImageUrl:
+        type: string
+        description: ''
+      effectVariableIonIcon:
+        type: string
+        description: For use in Ionic apps
+      effectSize:
+        type: string
+        description: >-
+          Magnitude of the effects of a cause indicating whether it's
+          practically meaningful.
+      effectVariableId:
+        type: string
+        description: >-
+          Magnitude of the effects of a cause indicating whether it's
+          practically meaningful.
+      effectVariableName:
+        type: string
+        description: >-
+          Variable name of the effect variable for which the user desires
+          correlations.
+      gaugeImage:
+        type: string
+        description: Illustrates the strength of the relationship
+      imageUrl:
+        type: string
+        description: Large image for Facebook
+      numberOfPairs:
+        type: number
+        description: Number of points that went into the correlation calculation
+      onsetDelay:
+        type: number
+        format: double
+        description: >-
+          The amount of time in seconds that elapses after the
+          predictor/stimulus event before the outcome as perceived by a
+          self-tracker is known as the onset delay. For example, the onset delay
+          between the time a person takes an aspirin (predictor/stimulus event)
+          and the time a person perceives a change in their headache severity
+          (outcome) is approximately 30 minutes.
+      optimalPearsonProduct:
+        type: number
+        description: Optimal Pearson Product
+      outcomeDataSources:
+        type: string
+        description: original name of the cause.
+      predictorExplanation:
+        type: string
+        description: HIGHER Remeron predicts HIGHER Overall Mood
+      principalInvestigator:
+        type: string
+        description: Mike Sinn
+      qmScore:
+        type: number
+        description: >-
+          Value representing the significance of the relationship as a function
+          of crowdsourced insights, predictive strength, data quantity, and data
+          quality
+      reverseCorrelation:
+        type: number
+        description: >-
+          Correlation when cause and effect are reversed. For any causal
+          relationship, the forward correlation should exceed the reverse
+          correlation.
+      significanceExplanation:
+        type: string
+        description: >-
+          Using a two-tailed t-test with alpha = 0.05, it was determined that
+          the change...
+      statisticalSignificance:
+        type: string
+        description: A function of the effect size and sample size
+      strengthLevel:
+        type: string
+        description: 'weak, moderate, strong'
+      studyAbstract:
+        type: string
+        description: These data suggest with a high degree of confidence...
+      studyBackground:
+        type: string
+        description: >-
+          In order to reduce suffering through the advancement of human
+          knowledge...
+      studyDesign:
+        type: string
+        description: This study is based on data donated by one QuantiModo user...
+      studyLimitations:
+        type: string
+        description: >-
+          As with any human experiment, it was impossible to control for all
+          potentially confounding variables...
+      studyLinkDynamic:
+        type: string
+        description: Url for the interactive study within the web app
+      studyLinkFacebook:
+        type: string
+        description: Url for sharing the study on Facebook
+      studyLinkGoogle:
+        type: string
+        description: Url for sharing the study on Google+
+      studyLinkTwitter:
+        type: string
+        description: Url for sharing the study on Twitter
+      studyLinkStatic:
+        type: string
+        description: Url for sharing the statically rendered study on social media
+      studyObjective:
+        type: string
+        description: The objective of this study is to determine...
+      studyResults:
+        type: string
+        description: This analysis suggests that...
+      studyTitle:
+        type: string
+        description: N1 Study HIGHER Remeron predicts HIGHER Overall Mood
+      timestamp:
+        type: number
+        description: Time at which correlation was calculated
+      updatedAt:
+        description: >-
+          When the record in the database was last updated. Use UTC ISO 8601
+          `YYYY-MM-DDThh:mm:ss`  datetime format. Time zone should be UTC and
+          not local.
+        type: string
+        format: date-time
+      userVote:
+        type: number
+        description: User Vote
+      valuePredictingHighOutcome:
+        type: number
+        description: >-
+          cause value that predicts an above average effect value (in default
+          unit for cause variable)
+      valuePredictingHighOutcomeExplanation:
+        type: string
+        description: 'Overall Mood, on average, 34% HIGHER after around 3.98mg Remeron'
+      valuePredictingLowOutcome:
+        type: number
+        description: >-
+          cause value that predicts a below average effect value (in default
+          unit for cause variable)
+      valuePredictingLowOutcomeExplanation:
+        type: string
+        description: 'Overall Mood, on average, 4% LOWER after around 0mg Remeron'
+      averageForwardPearsonCorrelationOverOnsetDelays:
+        description: 'Example: 0.396'
+        type: number
+        format: double
+      averageReversePearsonCorrelationOverOnsetDelays:
+        description: 'Example: 0.453667'
+        type: number
+        format: double
+      confidenceInterval:
+        description: 'Example: 0.14344467795996'
+        type: number
+        format: double
+      criticalTValue:
+        description: 'Example: 1.646'
+        type: number
+        format: double
+      effectChanges:
+        description: 'Example: 193'
+        type: integer
+      experimentEndTime:
+        description: 'Example: 2014-07-30 12:50:00'
+        type: string
+        format: date-time
+      experimentStartTime:
+        description: 'Example: 2012-05-06 21:15:00'
+        type: string
+        format: date-time
+      forwardSpearmanCorrelationCoefficient:
+        description: 'Example: 0.528359'
+        type: number
+        format: double
+      onsetDelayWithStrongestPearsonCorrelation:
+        description: 'Example: -86400'
+        type: integer
+      pearsonCorrelationWithNoOnsetDelay:
+        description: 'Example: 0.477'
+        type: number
+        format: double
+      predictivePearsonCorrelation:
+        description: 'Example: 0.538'
+        type: number
+        format: double
+      predictsHighEffectChange:
+        description: 'Example: 17'
+        type: integer
+      predictsLowEffectChange:
+        description: 'Example: -11'
+        type: integer
+      strongestPearsonCorrelationCoefficient:
+        description: 'Example: 0.613'
+        type: number
+        format: double
+      tValue:
+        description: 'Example: 9.6986079652717'
+        type: number
+        format: double
+      userId:
+        description: 'Example: 230'
+        type: integer
+      causeVariableMostCommonConnectorId:
+        description: 'Example: 6'
+        type: integer
+      causeVariableCategoryId:
+        description: 'Example: 6'
+        type: integer
+      effectVariableCombinationOperation:
+        description: 'Example: MEAN'
+        type: string
+      effectVariableCommonAlias:
+        description: 'Example: Mood_(psychology)'
+        type: string
+      effectVariableDefaultUnitId:
+        description: 'Example: 10'
+        type: integer
+      effectVariableMostCommonConnectorId:
+        description: 'Example: 10'
+        type: integer
+      effectVariableCategoryId:
+        description: 'Example: 1'
+        type: integer
+      causeUserVariableShareUserMeasurements:
+        description: 'Example: 1'
+        type: integer
+      effectUserVariableShareUserMeasurements:
+        description: 'Example: 1'
+        type: integer
+      predictorFillingValue:
+        description: 'Example: -1'
+        type: integer
+      outcomeFillingValue:
+        description: 'Example: -1'
+        type: integer
+      createdTime:
+        description: 'Example: 2016-12-28 20:47:30'
+        type: string
+        format: date-time
+      updatedTime:
+        description: 'Example: 2017-05-06 15:40:38'
+        type: string
+        format: date-time
+      durationOfActionInHours:
+        description: 'Example: 168'
+        type: integer
+      onsetDelayWithStrongestPearsonCorrelationInHours:
+        description: 'Example: -24'
+        type: integer
+      direction:
+        description: 'Example: higher'
+        type: string
+      causeVariableDefaultUnitAbbreviatedName:
+        description: 'Example: /5'
+        type: string
+      effectVariableDefaultUnitAbbreviatedName:
+        description: 'Example: /5'
+        type: string
+      causeVariableDefaultUnitName:
+        description: 'Example: 1 to 5 Rating'
+        type: string
+      effectVariableDefaultUnitName:
+        description: 'Example: 1 to 5 Rating'
+        type: string
+      shareUserMeasurements:
+        description: 'Example: 1'
+        type: boolean
+      effectUnit:
+        description: 'Example: /5'
+        type: string
+      significantDifference:
+        description: 'Example: 1'
+        type: boolean
+      predictsHighEffectChangeSentenceFragment:
+        description: 'Example: , on average, 17% '
+        type: string
+      predictsLowEffectChangeSentenceFragment:
+        description: 'Example: , on average, 11% '
+        type: string
+      confidenceLevel:
+        description: 'Example: high'
+        type: string
+      predictivePearsonCorrelationCoefficient:
+        description: 'Example: 0.538'
+        type: number
+        format: double
+      studyLinkEmail:
+        description: >-
+          Example:
+          mailto:?subject=N1%20Study%3A%20Sleep%20Quality%20Predicts%20Higher%20Overall%20Mood&body=Check%20out%20my%20study%20at%20https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fstudy%3FcauseVariableName%3DSleep%2520Quality%26effectVariableName%3DOverall%2520Mood%26userId%3D230%0A%0AHave%20a%20great%20day!
+        type: string
+      gaugeImageSquare:
+        description: >-
+          Example:
+          https://s3.amazonaws.com/quantimodo-docs/images/gauge-moderately-positive-relationship-200-200.png
+        type: string
+      causeDataSource:
+        description: >-
+          Example:
+          {"id":6,"name":"up","connectorClientId":"10RfjEgKr8U","connectorClientSecret":"e17fd34e4bc4642f0c4c99d7acb6e661","displayName":"Up
+          by
+          Jawbone","image":"https:\/\/i.imgur.com\/MXNQy3T.png","getItUrl":"http:\/\/www.amazon.com\/gp\/product\/B00A17IAO0\/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20","shortDescription":"Tracks
+          sleep, exercise, and diet.","longDescription":"UP by Jawbone is a
+          wristband and app that tracks how you sleep, move and eat and then
+          helps you use that information to feel your
+          best.","enabled":1,"affiliate":true,"defaultVariableCategoryName":"Physical
+          Activity","imageHtml":"<a
+          href=\"http:\/\/www.amazon.com\/gp\/product\/B00A17IAO0\/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20\"><img
+          id=\"up_image\" title=\"Up by Jawbone\"
+          src=\"https:\/\/i.imgur.com\/MXNQy3T.png\" alt=\"Up by
+          Jawbone\"><\/a>","linkedDisplayNameHtml":"<a
+          href=\"http:\/\/www.amazon.com\/gp\/product\/B00A17IAO0\/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20\">Up
+          by Jawbone<\/a>"}
+        type: object
+      dataSourcesParagraphForCause:
+        description: >-
+          Example: Sleep Quality data was primarily collected using <a
+          href="http://www.amazon.com/gp/product/B00A17IAO0/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20">Up
+          by Jawbone</a>.  UP by Jawbone is a wristband and app that tracks how
+          you sleep, move and eat and then helps you use that information to
+          feel your best.
+        type: string
+      instructionsForCause:
+        description: >-
+          Example: <a
+          href="http://www.amazon.com/gp/product/B00A17IAO0/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20">Obtain
+          Up by Jawbone</a> and use it to record your Sleep Quality. Once you
+          have a <a
+          href="http://www.amazon.com/gp/product/B00A17IAO0/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20">Up
+          by Jawbone</a> account, <a
+          href="https://app.quantimo.do/ionic/Modo/www/#/app/import">connect
+          your  Up by Jawbone account at QuantiModo</a> to automatically import
+          and analyze your data.
+        type: string
+      effectDataSource:
+        description: >-
+          Example:
+          {"id":72,"name":"quantimodo","displayName":"QuantiModo","image":"https:\/\/app.quantimo.do\/ionic\/Modo\/www\/img\/logos\/quantimodo-logo-qm-rainbow-200-200.png","getItUrl":"https:\/\/quantimo.do","shortDescription":"Tracks
+          anything","longDescription":"QuantiModo is a Chrome extension, Android
+          app, iOS app, and web app that allows you to easily track mood,
+          symptoms, or any outcome you want to optimize in a fraction of a
+          second.  You can also import your data from over 30 other apps and
+          devices like Fitbit, Rescuetime, Jawbone Up, Withings, Facebook,
+          Github, Google Calendar, Runkeeper, MoodPanda, Slice, Google Fit, and
+          more.  QuantiModo then analyzes your data to identify which hidden
+          factors are most likely to be influencing your mood or symptoms and
+          their optimal daily
+          values.","enabled":0,"affiliate":true,"defaultVariableCategoryName":"Foods","imageHtml":"<a
+          href=\"https:\/\/quantimo.do\"><img id=\"quantimodo_image\"
+          title=\"QuantiModo\"
+          src=\"https:\/\/app.quantimo.do\/ionic\/Modo\/www\/img\/logos\/quantimodo-logo-qm-rainbow-200-200.png\"
+          alt=\"QuantiModo\"><\/a>","linkedDisplayNameHtml":"<a
+          href=\"https:\/\/quantimo.do\">QuantiModo<\/a>"}
+        type: object
+      dataSourcesParagraphForEffect:
+        description: >-
+          Example: Overall Mood data was primarily collected using <a
+          href="https://quantimo.do">QuantiModo</a>.  <a
+          href="https://quantimo.do">QuantiModo</a> is a Chrome extension,
+          Android app, iOS app, and web app that allows you to easily track
+          mood, symptoms, or any outcome you want to optimize in a fraction of a
+          second.  You can also import your data from over 30 other apps and
+          devices like Fitbit, Rescuetime, Jawbone Up, Withings, Facebook,
+          Github, Google Calendar, Runkeeper, MoodPanda, Slice, Google Fit, and
+          more.  <a href="https://quantimo.do">QuantiModo</a> then analyzes your
+          data to identify which hidden factors are most likely to be
+          influencing your mood or symptoms and their optimal daily values.
+        type: string
+      instructionsForEffect:
+        description: >-
+          Example: <a href="https://quantimo.do">Obtain QuantiModo</a> and use
+          it to record your Overall Mood. Once you have a <a
+          href="https://quantimo.do">QuantiModo</a> account, <a
+          href="https://app.quantimo.do/ionic/Modo/www/#/app/import">connect
+          your  QuantiModo account at QuantiModo</a> to automatically import and
+          analyze your data.
+        type: string
+      pValue:
+        description: 'Example: 3.5306635529222E-5'
+        type: number
+        format: double
+      reversePearsonCorrelationCoefficient:
+        description: 'Example: 0.63628232030415'
+        type: number
+        format: double
+      predictorMinimumAllowedValue:
+        description: 'Example: 10'
+        type: number
+        format: double
+      predictorMaximumAllowedValue:
+        description: 'Example: 160934'
+        type: number
+        format: double
+      predictorDataSources:
+        description: 'Example: RescueTime'
+        type: string
   JsonErrorResponse:
     required:
       - status
