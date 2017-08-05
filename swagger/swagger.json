@@ -826,16 +826,19 @@
           },
           {
             "$ref": "#/parameters/outcomesOfInterestParam"
+          },
+          {
+            "$ref": "#/parameters/appNameParam"
+          },
+          {
+            "$ref": "#/parameters/clientIdParam"
           }
         ],
         "responses": {
           "200": {
-            "description": "Successful Operation",
+            "description": "successful operation",
             "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/UserCorrelation"
-              }
+              "$ref": "#/definitions/GetUserCorrelationsDataResponse"
             }
           },
           "401": {
@@ -2516,6 +2519,19 @@
         },
         "success": {
           "type": "boolean"
+        },
+        "data": {
+          "properties": {
+            "correlations": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Correlation"
+              }
+            },
+            "explanation": {
+              "$ref": "#/definitions/Explanation"
+            }
+          }
         }
       }
     },
@@ -6215,6 +6231,606 @@
         "userId": {
           "description": "Example: 230",
           "type": "integer"
+        }
+      }
+    },
+    "Correlation": {
+      "required": [
+        "causeVariableName",
+        "effectVariableName",
+        "averageDailyHighCause",
+        "averageDailyLowCause",
+        "averageEffect",
+        "averageEffectFollowingHighCause",
+        "averageEffectFollowingLowCause",
+        "averageForwardPearsonCorrelationOverOnsetDelays",
+        "averageReversePearsonCorrelationOverOnsetDelays",
+        "causeChanges",
+        "causeVariableId",
+        "confidenceInterval",
+        "createdAt",
+        "criticalTValue",
+        "durationOfAction",
+        "effectChanges",
+        "effectVariableId",
+        "experimentEndTime",
+        "experimentStartTime",
+        "correlationCoefficient",
+        "forwardSpearmanCorrelationCoefficient",
+        "numberOfPairs",
+        "onsetDelayWithStrongestPearsonCorrelation",
+        "optimalPearsonProduct",
+        "pearsonCorrelationWithNoOnsetDelay",
+        "predictivePearsonCorrelation",
+        "predictsHighEffectChange",
+        "predictsLowEffectChange",
+        "qmScore",
+        "statisticalSignificance",
+        "strongestPearsonCorrelationCoefficient",
+        "tValue",
+        "updatedAt",
+        "userId",
+        "valuePredictingHighOutcome",
+        "valuePredictingLowOutcome",
+        "causeVariableCombinationOperation",
+        "causeVariableDefaultUnitId",
+        "causeVariableImageUrl",
+        "causeVariableIonIcon",
+        "causeVariableMostCommonConnectorId",
+        "causeVariableCategoryId",
+        "effectVariableCombinationOperation",
+        "effectVariableCommonAlias",
+        "effectVariableDefaultUnitId",
+        "effectVariableImageUrl",
+        "effectVariableIonIcon",
+        "effectVariableMostCommonConnectorId",
+        "effectVariableCategoryId",
+        "timestamp",
+        "userVote",
+        "causeUserVariableShareUserMeasurements",
+        "effectUserVariableShareUserMeasurements",
+        "predictorFillingValue",
+        "outcomeFillingValue",
+        "averageVote",
+        "durationOfActionInHours",
+        "onsetDelayWithStrongestPearsonCorrelationInHours",
+        "effectVariableCategoryName",
+        "causeVariableCategoryName",
+        "direction",
+        "causeVariableDefaultUnitAbbreviatedName",
+        "effectVariableDefaultUnitAbbreviatedName",
+        "causeVariableDefaultUnitName",
+        "effectVariableDefaultUnitName",
+        "shareUserMeasurements",
+        "effectUnit",
+        "significanceExplanation",
+        "significantDifference",
+        "effectSize",
+        "predictsHighEffectChangeSentenceFragment",
+        "predictsLowEffectChangeSentenceFragment",
+        "valuePredictingHighOutcomeExplanation",
+        "averageEffectFollowingHighCauseExplanation",
+        "averageEffectFollowingLowCauseExplanation",
+        "valuePredictingLowOutcomeExplanation",
+        "strengthLevel",
+        "confidenceLevel",
+        "predictivePearsonCorrelationCoefficient",
+        "predictorExplanation",
+        "studyTitle",
+        "studyAbstract",
+        "studyLinkStatic",
+        "studyLinkDynamic",
+        "studyLinkFacebook",
+        "studyLinkGoogle",
+        "studyLinkTwitter",
+        "studyLinkEmail",
+        "gaugeImage",
+        "gaugeImageSquare",
+        "imageUrl",
+        "studyDesign",
+        "studyObjective",
+        "dataSources",
+        "causeDataSource",
+        "dataSourcesParagraphForCause",
+        "instructionsForCause",
+        "effectDataSource",
+        "dataSourcesParagraphForEffect",
+        "instructionsForEffect",
+        "dataAnalysis",
+        "studyResults",
+        "studyLimitations"
+      ],
+      "properties": {
+        "causeVariableName": {
+          "description": "Example: Sleep Quality",
+          "type": "string"
+        },
+        "effectVariableName": {
+          "description": "Example: Overall Mood",
+          "type": "string"
+        },
+        "averageDailyHighCause": {
+          "description": "Example: 4.19",
+          "type": "number",
+          "format": "double"
+        },
+        "averageDailyLowCause": {
+          "description": "Example: 1.97",
+          "type": "number",
+          "format": "double"
+        },
+        "averageEffect": {
+          "description": "Example: 3.0791054117396",
+          "type": "number",
+          "format": "double"
+        },
+        "averageEffectFollowingHighCause": {
+          "description": "Example: 3.55",
+          "type": "number",
+          "format": "double"
+        },
+        "averageEffectFollowingLowCause": {
+          "description": "Example: 2.65",
+          "type": "number",
+          "format": "double"
+        },
+        "averageForwardPearsonCorrelationOverOnsetDelays": {
+          "description": "Example: 0.396",
+          "type": "number",
+          "format": "double"
+        },
+        "averageReversePearsonCorrelationOverOnsetDelays": {
+          "description": "Example: 0.453667",
+          "type": "number",
+          "format": "double"
+        },
+        "causeChanges": {
+          "description": "Example: 164",
+          "type": "integer"
+        },
+        "causeVariableId": {
+          "description": "Example: 1448",
+          "type": "integer"
+        },
+        "confidenceInterval": {
+          "description": "Example: 0.14344467795996",
+          "type": "number",
+          "format": "double"
+        },
+        "createdAt": {
+          "description": "Example: 2016-12-28 20:47:30",
+          "type": "string",
+          "format": "date-time"
+        },
+        "criticalTValue": {
+          "description": "Example: 1.646",
+          "type": "number",
+          "format": "double"
+        },
+        "durationOfAction": {
+          "description": "Example: 604800",
+          "type": "integer"
+        },
+        "effectChanges": {
+          "description": "Example: 193",
+          "type": "integer"
+        },
+        "effectVariableId": {
+          "description": "Example: 1398",
+          "type": "integer"
+        },
+        "experimentEndTime": {
+          "description": "Example: 2014-07-30 12:50:00",
+          "type": "string",
+          "format": "date-time"
+        },
+        "experimentStartTime": {
+          "description": "Example: 2012-05-06 21:15:00",
+          "type": "string",
+          "format": "date-time"
+        },
+        "correlationCoefficient": {
+          "description": "Example: 0.538",
+          "type": "number",
+          "format": "double"
+        },
+        "forwardSpearmanCorrelationCoefficient": {
+          "description": "Example: 0.528359",
+          "type": "number",
+          "format": "double"
+        },
+        "numberOfPairs": {
+          "description": "Example: 298",
+          "type": "integer"
+        },
+        "onsetDelayWithStrongestPearsonCorrelation": {
+          "description": "Example: -86400",
+          "type": "integer"
+        },
+        "optimalPearsonProduct": {
+          "description": "Example: 0.68582816186982",
+          "type": "number",
+          "format": "double"
+        },
+        "pearsonCorrelationWithNoOnsetDelay": {
+          "description": "Example: 0.477",
+          "type": "number",
+          "format": "double"
+        },
+        "predictivePearsonCorrelation": {
+          "description": "Example: 0.538",
+          "type": "number",
+          "format": "double"
+        },
+        "predictsHighEffectChange": {
+          "description": "Example: 17",
+          "type": "integer"
+        },
+        "predictsLowEffectChange": {
+          "description": "Example: -11",
+          "type": "integer"
+        },
+        "qmScore": {
+          "description": "Example: 0.528",
+          "type": "number",
+          "format": "double"
+        },
+        "statisticalSignificance": {
+          "description": "Example: 0.9813",
+          "type": "number",
+          "format": "double"
+        },
+        "strongestPearsonCorrelationCoefficient": {
+          "description": "Example: 0.613",
+          "type": "number",
+          "format": "double"
+        },
+        "tValue": {
+          "description": "Example: 9.6986079652717",
+          "type": "number",
+          "format": "double"
+        },
+        "updatedAt": {
+          "description": "Example: 2017-05-06 15:40:38",
+          "type": "string",
+          "format": "date-time"
+        },
+        "userId": {
+          "description": "Example: 230",
+          "type": "integer"
+        },
+        "valuePredictingHighOutcome": {
+          "description": "Example: 4.14",
+          "type": "number",
+          "format": "double"
+        },
+        "valuePredictingLowOutcome": {
+          "description": "Example: 3.03",
+          "type": "number",
+          "format": "double"
+        },
+        "causeVariableCombinationOperation": {
+          "description": "Example: MEAN",
+          "type": "string"
+        },
+        "causeVariableDefaultUnitId": {
+          "description": "Example: 10",
+          "type": "integer"
+        },
+        "causeVariableImageUrl": {
+          "description": "Example: https://maxcdn.icons8.com/Color/PNG/96/Household/sleeping_in_bed-96.png",
+          "type": "string"
+        },
+        "causeVariableIonIcon": {
+          "description": "Example: ion-ios-cloudy-night-outline",
+          "type": "string"
+        },
+        "causeVariableMostCommonConnectorId": {
+          "description": "Example: 6",
+          "type": "integer"
+        },
+        "causeVariableCategoryId": {
+          "description": "Example: 6",
+          "type": "integer"
+        },
+        "effectVariableCombinationOperation": {
+          "description": "Example: MEAN",
+          "type": "string"
+        },
+        "effectVariableCommonAlias": {
+          "description": "Example: Mood_(psychology)",
+          "type": "string"
+        },
+        "effectVariableDefaultUnitId": {
+          "description": "Example: 10",
+          "type": "integer"
+        },
+        "effectVariableImageUrl": {
+          "description": "Example: https://maxcdn.icons8.com/Color/PNG/96/Cinema/theatre_mask-96.png",
+          "type": "string"
+        },
+        "effectVariableIonIcon": {
+          "description": "Example: ion-happy-outline",
+          "type": "string"
+        },
+        "effectVariableMostCommonConnectorId": {
+          "description": "Example: 10",
+          "type": "integer"
+        },
+        "effectVariableCategoryId": {
+          "description": "Example: 1",
+          "type": "integer"
+        },
+        "timestamp": {
+          "description": "Example: 1494085127",
+          "type": "integer"
+        },
+        "userVote": {
+          "description": "Example: 1",
+          "type": "integer"
+        },
+        "causeUserVariableShareUserMeasurements": {
+          "description": "Example: 1",
+          "type": "integer"
+        },
+        "effectUserVariableShareUserMeasurements": {
+          "description": "Example: 1",
+          "type": "integer"
+        },
+        "predictorFillingValue": {
+          "description": "Example: -1",
+          "type": "integer"
+        },
+        "outcomeFillingValue": {
+          "description": "Example: -1",
+          "type": "integer"
+        },
+        "averageVote": {
+          "description": "Example: 0.9855",
+          "type": "string"
+        },
+        "durationOfActionInHours": {
+          "description": "Example: 168",
+          "type": "integer"
+        },
+        "onsetDelayWithStrongestPearsonCorrelationInHours": {
+          "description": "Example: -24",
+          "type": "integer"
+        },
+        "effectVariableCategoryName": {
+          "description": "Example: Emotions",
+          "type": "string"
+        },
+        "causeVariableCategoryName": {
+          "description": "Example: Sleep",
+          "type": "string"
+        },
+        "direction": {
+          "description": "Example: higher",
+          "type": "string"
+        },
+        "causeVariableDefaultUnitAbbreviatedName": {
+          "description": "Example: /5",
+          "type": "string"
+        },
+        "effectVariableDefaultUnitAbbreviatedName": {
+          "description": "Example: /5",
+          "type": "string"
+        },
+        "causeVariableDefaultUnitName": {
+          "description": "Example: 1 to 5 Rating",
+          "type": "string"
+        },
+        "effectVariableDefaultUnitName": {
+          "description": "Example: 1 to 5 Rating",
+          "type": "string"
+        },
+        "shareUserMeasurements": {
+          "description": "Example: 1",
+          "type": "boolean"
+        },
+        "effectUnit": {
+          "description": "Example: /5",
+          "type": "string"
+        },
+        "significanceExplanation": {
+          "description": "Example: Using a two-tailed t-test with alpha = 0.05, it was determined that the change in Overall Mood is statistically significant at 95% confidence interval. ",
+          "type": "string"
+        },
+        "significantDifference": {
+          "description": "Example: 1",
+          "type": "boolean"
+        },
+        "effectSize": {
+          "description": "Example: moderately positive",
+          "type": "string"
+        },
+        "predictsHighEffectChangeSentenceFragment": {
+          "description": "Example: , on average, 17% ",
+          "type": "string"
+        },
+        "predictsLowEffectChangeSentenceFragment": {
+          "description": "Example: , on average, 11% ",
+          "type": "string"
+        },
+        "valuePredictingHighOutcomeExplanation": {
+          "description": "Example: Overall Mood, on average, 17% higher after around 4.14/5 Sleep Quality ",
+          "type": "string"
+        },
+        "averageEffectFollowingHighCauseExplanation": {
+          "description": "Example: Overall Mood is 3.55/5 (15% higher) on average after days with around 4.19/5 Sleep Quality",
+          "type": "string"
+        },
+        "averageEffectFollowingLowCauseExplanation": {
+          "description": "Example: Overall Mood is 2.65/5 (14% lower) on average after days with around 1.97/5 Sleep Quality",
+          "type": "string"
+        },
+        "valuePredictingLowOutcomeExplanation": {
+          "description": "Example: Overall Mood, on average, 11% lower after around 3.03/5 Sleep Quality ",
+          "type": "string"
+        },
+        "strengthLevel": {
+          "description": "Example: moderate",
+          "type": "string"
+        },
+        "confidenceLevel": {
+          "description": "Example: high",
+          "type": "string"
+        },
+        "predictivePearsonCorrelationCoefficient": {
+          "description": "Example: 0.538",
+          "type": "number",
+          "format": "double"
+        },
+        "predictorExplanation": {
+          "description": "Example: Sleep Quality Predicts Higher Overall Mood",
+          "type": "string"
+        },
+        "studyTitle": {
+          "description": "Example: N1 Study: Sleep Quality Predicts Higher Overall Mood",
+          "type": "string"
+        },
+        "studyAbstract": {
+          "description": "Example: Your data suggests with a high degree of confidence (p=0) that Sleep Quality (Sleep) has a moderately positive predictive relationship (R=0.538) with Overall Mood  (Emotions).  The highest quartile of Overall Mood  measurements were observed following an average 4.14/5 Sleep Quality.  The lowest quartile of Overall Mood  measurements were observed following an average 3.03/5 Sleep Quality.",
+          "type": "string"
+        },
+        "studyLinkStatic": {
+          "description": "Example: https://local.quantimo.do/api/v2/study?causeVariableName=Sleep%20Quality&effectVariableName=Overall%20Mood&userId=230",
+          "type": "string"
+        },
+        "studyLinkDynamic": {
+          "description": "Example: https://local.quantimo.do/ionic/Modo/www/index.html#/app/study?causeVariableName=Sleep%20Quality&effectVariableName=Overall%20Mood&userId=230",
+          "type": "string"
+        },
+        "studyLinkFacebook": {
+          "description": "Example: https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fstudy%3FcauseVariableName%3DSleep%2520Quality%26effectVariableName%3DOverall%2520Mood%26userId%3D230",
+          "type": "string"
+        },
+        "studyLinkGoogle": {
+          "description": "Example: https://plus.google.com/share?url=https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fstudy%3FcauseVariableName%3DSleep%2520Quality%26effectVariableName%3DOverall%2520Mood%26userId%3D230",
+          "type": "string"
+        },
+        "studyLinkTwitter": {
+          "description": "Example: https://twitter.com/home?status=Sleep%20Quality%20Predicts%20Higher%20Overall%20Mood%20https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fstudy%3FcauseVariableName%3DSleep%2520Quality%26effectVariableName%3DOverall%2520Mood%26userId%3D230%20%40quantimodo",
+          "type": "string"
+        },
+        "studyLinkEmail": {
+          "description": "Example: mailto:?subject=N1%20Study%3A%20Sleep%20Quality%20Predicts%20Higher%20Overall%20Mood&body=Check%20out%20my%20study%20at%20https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fstudy%3FcauseVariableName%3DSleep%2520Quality%26effectVariableName%3DOverall%2520Mood%26userId%3D230%0A%0AHave%20a%20great%20day!",
+          "type": "string"
+        },
+        "gaugeImage": {
+          "description": "Example: https://s3.amazonaws.com/quantimodo-docs/images/gauge-moderately-positive-relationship.png",
+          "type": "string"
+        },
+        "gaugeImageSquare": {
+          "description": "Example: https://s3.amazonaws.com/quantimodo-docs/images/gauge-moderately-positive-relationship-200-200.png",
+          "type": "string"
+        },
+        "imageUrl": {
+          "description": "Example: https://s3-us-west-1.amazonaws.com/qmimages/variable_categories_gauges_logo_background/gauge-moderately-positive-relationship_sleep_emotions_logo_background.png",
+          "type": "string"
+        },
+        "studyDesign": {
+          "description": "Example: This study is based on data donated by one QuantiModo user. Thus, the study design is consistent with an n=1 observational natural experiment. ",
+          "type": "string"
+        },
+        "studyObjective": {
+          "description": "Example: The objective of this study is to determine the nature of the relationship (if any) between the Sleep Quality and the Overall Mood. Additionally, we attempt to determine the Sleep Quality values most likely to produce optimal Overall Mood values. ",
+          "type": "string"
+        },
+        "dataSources": {
+          "description": "Example: Sleep Quality data was primarily collected using <a href=\"http://www.amazon.com/gp/product/B00A17IAO0/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20\">Up by Jawbone</a>.  UP by Jawbone is a wristband and app that tracks how you sleep, move and eat and then helps you use that information to feel your best.<br>Overall Mood data was primarily collected using <a href=\"https://quantimo.do\">QuantiModo</a>.  <a href=\"https://quantimo.do\">QuantiModo</a> is a Chrome extension, Android app, iOS app, and web app that allows you to easily track mood, symptoms, or any outcome you want to optimize in a fraction of a second.  You can also import your data from over 30 other apps and devices like Fitbit, Rescuetime, Jawbone Up, Withings, Facebook, Github, Google Calendar, Runkeeper, MoodPanda, Slice, Google Fit, and more.  <a href=\"https://quantimo.do\">QuantiModo</a> then analyzes your data to identify which hidden factors are most likely to be influencing your mood or symptoms and their optimal daily values.",
+          "type": "string"
+        },
+        "causeDataSource": {
+          "description": "Example: {\"id\":6,\"name\":\"up\",\"connectorClientId\":\"10RfjEgKr8U\",\"connectorClientSecret\":\"e17fd34e4bc4642f0c4c99d7acb6e661\",\"displayName\":\"Up by Jawbone\",\"image\":\"https:\\/\\/i.imgur.com\\/MXNQy3T.png\",\"getItUrl\":\"http:\\/\\/www.amazon.com\\/gp\\/product\\/B00A17IAO0\\/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20\",\"shortDescription\":\"Tracks sleep, exercise, and diet.\",\"longDescription\":\"UP by Jawbone is a wristband and app that tracks how you sleep, move and eat and then helps you use that information to feel your best.\",\"enabled\":1,\"affiliate\":true,\"defaultVariableCategoryName\":\"Physical Activity\",\"imageHtml\":\"<a href=\\\"http:\\/\\/www.amazon.com\\/gp\\/product\\/B00A17IAO0\\/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20\\\"><img id=\\\"up_image\\\" title=\\\"Up by Jawbone\\\" src=\\\"https:\\/\\/i.imgur.com\\/MXNQy3T.png\\\" alt=\\\"Up by Jawbone\\\"><\\/a>\",\"linkedDisplayNameHtml\":\"<a href=\\\"http:\\/\\/www.amazon.com\\/gp\\/product\\/B00A17IAO0\\/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20\\\">Up by Jawbone<\\/a>\"}",
+          "type": "object"
+        },
+        "dataSourcesParagraphForCause": {
+          "description": "Example: Sleep Quality data was primarily collected using <a href=\"http://www.amazon.com/gp/product/B00A17IAO0/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20\">Up by Jawbone</a>.  UP by Jawbone is a wristband and app that tracks how you sleep, move and eat and then helps you use that information to feel your best.",
+          "type": "string"
+        },
+        "instructionsForCause": {
+          "description": "Example: <a href=\"http://www.amazon.com/gp/product/B00A17IAO0/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20\">Obtain Up by Jawbone</a> and use it to record your Sleep Quality. Once you have a <a href=\"http://www.amazon.com/gp/product/B00A17IAO0/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20\">Up by Jawbone</a> account, <a href=\"https://app.quantimo.do/ionic/Modo/www/#/app/import\">connect your  Up by Jawbone account at QuantiModo</a> to automatically import and analyze your data.",
+          "type": "string"
+        },
+        "effectDataSource": {
+          "description": "Example: {\"id\":72,\"name\":\"quantimodo\",\"displayName\":\"QuantiModo\",\"image\":\"https:\\/\\/app.quantimo.do\\/ionic\\/Modo\\/www\\/img\\/logos\\/quantimodo-logo-qm-rainbow-200-200.png\",\"getItUrl\":\"https:\\/\\/quantimo.do\",\"shortDescription\":\"Tracks anything\",\"longDescription\":\"QuantiModo is a Chrome extension, Android app, iOS app, and web app that allows you to easily track mood, symptoms, or any outcome you want to optimize in a fraction of a second.  You can also import your data from over 30 other apps and devices like Fitbit, Rescuetime, Jawbone Up, Withings, Facebook, Github, Google Calendar, Runkeeper, MoodPanda, Slice, Google Fit, and more.  QuantiModo then analyzes your data to identify which hidden factors are most likely to be influencing your mood or symptoms and their optimal daily values.\",\"enabled\":0,\"affiliate\":true,\"defaultVariableCategoryName\":\"Foods\",\"imageHtml\":\"<a href=\\\"https:\\/\\/quantimo.do\\\"><img id=\\\"quantimodo_image\\\" title=\\\"QuantiModo\\\" src=\\\"https:\\/\\/app.quantimo.do\\/ionic\\/Modo\\/www\\/img\\/logos\\/quantimodo-logo-qm-rainbow-200-200.png\\\" alt=\\\"QuantiModo\\\"><\\/a>\",\"linkedDisplayNameHtml\":\"<a href=\\\"https:\\/\\/quantimo.do\\\">QuantiModo<\\/a>\"}",
+          "type": "object"
+        },
+        "dataSourcesParagraphForEffect": {
+          "description": "Example: Overall Mood data was primarily collected using <a href=\"https://quantimo.do\">QuantiModo</a>.  <a href=\"https://quantimo.do\">QuantiModo</a> is a Chrome extension, Android app, iOS app, and web app that allows you to easily track mood, symptoms, or any outcome you want to optimize in a fraction of a second.  You can also import your data from over 30 other apps and devices like Fitbit, Rescuetime, Jawbone Up, Withings, Facebook, Github, Google Calendar, Runkeeper, MoodPanda, Slice, Google Fit, and more.  <a href=\"https://quantimo.do\">QuantiModo</a> then analyzes your data to identify which hidden factors are most likely to be influencing your mood or symptoms and their optimal daily values.",
+          "type": "string"
+        },
+        "instructionsForEffect": {
+          "description": "Example: <a href=\"https://quantimo.do\">Obtain QuantiModo</a> and use it to record your Overall Mood. Once you have a <a href=\"https://quantimo.do\">QuantiModo</a> account, <a href=\"https://app.quantimo.do/ionic/Modo/www/#/app/import\">connect your  QuantiModo account at QuantiModo</a> to automatically import and analyze your data.",
+          "type": "string"
+        },
+        "dataAnalysis": {
+          "description": "Example: It was assumed that 0 hours would pass before a change in Sleep Quality would produce an observable change in Overall Mood.  It was assumed that Sleep Quality could produce an observable change in Overall Mood for as much as 7 days after the stimulus event.  ",
+          "type": "string"
+        },
+        "studyResults": {
+          "description": "Example: This analysis suggests that higher Sleep Quality (Sleep) generally predicts higher Overall Mood (p = 0).  Overall Mood is, on average, 17%  higher after around 4.14 Sleep Quality.  After an onset delay of 168 hours, Overall Mood is, on average, 11%  lower than its average over the 168 hours following around 3.03 Sleep Quality.  298 data points were used in this analysis.  The value for Sleep Quality changed 164 times, effectively running 82 separate natural experiments.  The top quartile outcome values are preceded by an average 4.14 /5 of Sleep Quality.  The bottom quartile outcome values are preceded by an average 3.03 /5 of Sleep Quality.  Forward Pearson Correlation Coefficient was 0.538 (p=0, 95% CI 0.395 to 0.681 onset delay = 0 hours, duration of action = 168 hours) .  The Reverse Pearson Correlation Coefficient was 0 (P=0, 95% CI -0.143 to 0.143, onset delay = -0 hours, duration of action = -168 hours). When the Sleep Quality value is closer to 4.14 /5 than 3.03 /5, the Overall Mood value which follows is, on average, 17%  percent higher than its typical value.  When the Sleep Quality value is closer to 3.03 /5 than 4.14 /5, the Overall Mood value which follows is 0% lower than its typical value.  Overall Mood is 3.55/5 (15% higher) on average after days with around 4.19/5 Sleep Quality  Overall Mood is 2.65/5 (14% lower) on average after days with around 1.97/5 Sleep Quality",
+          "type": "string"
+        },
+        "studyLimitations": {
+          "description": "Example: As with any human experiment, it was impossible to control for all potentially confounding variables. \n            \n            Correlation does not necessarily imply correlation.  We can never know for sure if one factor is definitely the cause of an outcome.  \n            However, lack of correlation definitely implies the lack of a causal relationship.  Hence, we can with great \n            confidence rule out non-existent relationships. For instance, if we discover no relationship between mood\n            and an antidepressant this information is just as or even more valuable than the discovery that there is a relationship. \n            <br>\n            <br>\n           \n            We can also take advantage of several characteristics of time series data from many subjects  to infer the likelihood of a causal relationship if we do find a correlational relationship. \n            The criteria for causation are a group of minimal conditions necessary to provide adequate evidence of a causal relationship between an incidence and a possible consequence.\n            The list of the criteria is as follows:\n            <br>\n            1. Strength (effect size): A small association does not mean that there is not a causal effect, though the larger the association, the more likely that it is causal.\n            <br>\n            2. Consistency (reproducibility): Consistent findings observed by different persons in different places with different samples strengthens the likelihood of an effect.\n            <br>\n            3. Specificity: Causation is likely if a very specific population at a specific site and disease with no other likely explanation. The more specific an association between a factor and an effect is, the bigger the probability of a causal relationship.\n            <br>\n            4. Temporality: The effect has to occur after the cause (and if there is an expected delay between the cause and expected effect, then the effect must occur after that delay).\n            <br>\n            5. Biological gradient: Greater exposure should generally lead to greater incidence of the effect. However, in some cases, the mere presence of the factor can trigger the effect. In other cases, an inverse proportion is observed: greater exposure leads to lower incidence.\n            <br>\n            6. Plausibility: A plausible mechanism between cause and effect is helpful.\n            <br>\n            7. Coherence: Coherence between epidemiological and laboratory findings increases the likelihood of an effect.\n            <br>\n            8. Experiment: \"Occasionally it is possible to appeal to experimental evidence\".\n            <br>\n            9. Analogy: The effect of similar factors may be considered.\n            <br>\n            <br>\n             \n             The confidence in a causal relationship is bolstered by the fact that time-precedence was taken into account in all calculations. Furthermore, in accordance with the law of large numbers (LLN), the predictive power and accuracy of these results will continually grow over time.  298 paired data points were used in this analysis.   Assuming that the relationship is merely coincidental, as the participant independently modifies their Sleep Quality values, the observed strength of the relationship will decline until it is below the threshold of significance.  To it another way, in the case that we do find a spurious correlation, suggesting that banana intake improves mood for instance,\n            one will likely increase their banana intake.  Due to the fact that this correlation is spurious, it is unlikely\n            that you will see a continued and persistent corresponding increase in mood.  So over time, the spurious correlation will\n            naturally dissipate.Furthermore, it will be very enlightening to aggregate this data with the data from other participants  with similar genetic, diseasomic, environmentomic, and demographic profiles.",
+          "type": "string"
+        }
+      }
+    },
+    "Explanation": {
+      "required": [
+        "ionIcon",
+        "description",
+        "title"
+      ],
+      "properties": {
+        "ionIcon": {
+          "description": "Example: ion-ios-person",
+          "type": "string"
+        },
+        "description": {
+          "description": "Example: These factors are most predictive of Overall Mood based on your own data.",
+          "type": "string"
+        },
+        "title": {
+          "description": "Example: Top Predictors of Overall Mood",
+          "type": "string"
+        }
+      }
+    },
+    "GetUserCorrelationsDataResponse": {
+      "type": "object",
+      "required": [
+        "status",
+        "success"
+      ],
+      "properties": {
+        "status": {
+          "type": "integer",
+          "description": "Status code"
+        },
+        "message": {
+          "type": "string",
+          "description": "Message"
+        },
+        "success": {
+          "type": "boolean"
+        },
+        "data": {
+          "properties": {
+            "correlations": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Correlation"
+              }
+            },
+            "explanation": {
+              "$ref": "#/definitions/Explanation"
+            }
+          }
         }
       }
     }
