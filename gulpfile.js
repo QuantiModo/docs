@@ -532,7 +532,12 @@ gulp.task('test-endpoints', function (callback) {
         'get-user-correlations',
         'get-user-variables',
         function (error) {
-            if (error) {logError(error.message);} else {logInfo('SDK RELEASE FINISHED SUCCESSFULLY');}
+            if (error) {
+                logError(error.message);
+                throw error.message;
+            } else {
+                logInfo('SDK RELEASE FINISHED SUCCESSFULLY');
+            }
             callback(error);
         });
 });
