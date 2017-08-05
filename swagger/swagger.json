@@ -17,19 +17,11 @@
   "host": "app.quantimo.do",
   "tags": [
     {
-      "name": "measurements",
-      "description": "Measurements are any value that can be recorded like daily steps, a mood rating, or apples eaten.",
+      "name": "analytics",
+      "description": "Identify the strongest predictors of a given outcome and generate studies",
       "externalDocs": {
-        "description": "See it in action",
-        "url": "https://app.quantimo.do/ionic/Modo/www/#/app/history-all-category/Anything"
-      }
-    },
-    {
-      "name": "reminders",
-      "description": "Users can be reminded to track certain variables at a specified frequency with a default value.",
-      "externalDocs": {
-        "description": "See it in action",
-        "url": "https://app.quantimo.do/ionic/Modo/www/#/app/reminders-inbox"
+        "description": "Try it out",
+        "url": "https://app.quantimo.do/ionic/Modo/www/index.html#/app/predictor-search"
       }
     },
     {
@@ -38,6 +30,46 @@
       "externalDocs": {
         "description": "Import your data now",
         "url": "https://app.quantimo.do/ionic/Modo/www/#/app/import"
+      }
+    },
+    {
+      "name": "measurements",
+      "description": "Measurements are any value that can be recorded like daily steps, a mood rating, or apples eaten.",
+      "externalDocs": {
+        "description": "See it in action",
+        "url": "https://app.quantimo.do/ionic/Modo/www/#/app/history-all-category/Anything?accessToken=demo"
+      }
+    },
+    {
+      "name": "reminders",
+      "description": "Users can be reminded to track certain variables at a specified frequency with a default value.",
+      "externalDocs": {
+        "description": "See it in action",
+        "url": "https://app.quantimo.do/ionic/Modo/www/#/app/reminders-inbox?accessToken=demo"
+      }
+    },
+    {
+      "name": "units",
+      "description": "Available units for measurements",
+      "externalDocs": {
+        "description": "See it in action",
+        "url": "https://app.quantimo.do/ionic/Modo/www/#/app/measurement-search?accessToken=demo"
+      }
+    },
+    {
+      "name": "user",
+      "description": "Get or update user info and settings",
+      "externalDocs": {
+        "description": "See it in action",
+        "url": "https://app.quantimo.do/ionic/Modo/www/#/app/settings?accessToken=demo"
+      }
+    },
+    {
+      "name": "variables",
+      "description": "Can be used for search autocomplete for data types like symptoms, foods and treatments and include statistics",
+      "externalDocs": {
+        "description": "Search for a variable",
+        "url": "https://app.quantimo.do/ionic/Modo/www/#/app/reminder-search?accessToken=demo"
       }
     }
   ],
@@ -2389,7 +2421,7 @@
       "get": {
         "operationId": "getStudy",
         "tags": [
-          "study"
+          "analytics"
         ],
         "summary": "Get Study",
         "description": "Get Study",
@@ -2429,58 +2461,11 @@
         ]
       }
     },
-    "/v3/measurements/daily": {
-      "get": {
-        "operationId": "getMeasurementsDaily",
-        "tags": [
-          "measurements"
-        ],
-        "summary": "Get Measurements Daily",
-        "description": "Get Measurements Daily",
-        "produces": [
-          "application/json"
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful operation"
-          },
-          "401": {
-            "description": "Not authenticated"
-          },
-          "404": {
-            "description": "Not found"
-          },
-          "500": {
-            "description": "Internal server error"
-          }
-        },
-        "parameters": [
-          {
-            "$ref": "#/parameters/sortParam"
-          },
-          {
-            "$ref": "#/parameters/variableNameParam"
-          },
-          {
-            "$ref": "#/parameters/limitParam"
-          },
-          {
-            "$ref": "#/parameters/offsetParam"
-          },
-          {
-            "$ref": "#/parameters/appNameParam"
-          },
-          {
-            "$ref": "#/parameters/clientIdParam"
-          }
-        ]
-      }
-    },
     "/v3/userSettings": {
       "post": {
         "operationId": "postUserSettings",
         "tags": [
-          "userSettings"
+          "user"
         ],
         "summary": "Post UserSettings",
         "description": "Post UserSettings",

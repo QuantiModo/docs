@@ -412,30 +412,6 @@ function handleApiResponse(error, data, response) {
     if(!data || Object.keys(data).length === 0){throw "data not returned!";}
     logInfo('API returned data', data);
 }
-gulp.task('get-units', [], function (callback) {
-    var apiInstance = new Quantimodo.UnitsApi();
-    function qmApiResponseCallback(error, data, response) {
-        handleApiResponse(error, data, response);
-        callback();
-    }
-    apiInstance.getUnits(qmApiResponseCallback);
-});
-gulp.task('get-public-variables', [], function (callback) {
-    var apiInstance = new Quantimodo.VariablesApi();
-    function qmApiResponseCallback(error, data, response) {
-        handleApiResponse(error, data, response);
-        callback();
-    }
-    apiInstance.getPublicVariables({}, qmApiResponseCallback);
-});
-gulp.task('get-user-variables', [], function (callback) {
-    var apiInstance = new Quantimodo.VariablesApi();
-    function qmApiResponseCallback(error, data, response) {
-        handleApiResponse(error, data, response);
-        callback();
-    }
-    apiInstance.getUserVariables({}, qmApiResponseCallback);
-});
 gulp.task('get-aggregated-correlations', [], function (callback) {
     var apiInstance = new Quantimodo.AnalyticsApi();
     function qmApiResponseCallback(error, data, response) {
@@ -443,38 +419,6 @@ gulp.task('get-aggregated-correlations', [], function (callback) {
         callback();
     }
     apiInstance.getAggregatedCorrelations({}, qmApiResponseCallback);
-});
-gulp.task('get-user-correlations', [], function (callback) {
-    var apiInstance = new Quantimodo.AnalyticsApi();
-    function qmApiResponseCallback(error, data, response) {
-        handleApiResponse(error, data, response);
-        callback();
-    }
-    apiInstance.getUserCorrelations({}, qmApiResponseCallback);
-});
-gulp.task('get-measurements', [], function (callback) {
-    var apiInstance = new Quantimodo.MeasurementsApi();
-    function qmApiResponseCallback(error, data, response) {
-        handleApiResponse(error, data, response);
-        callback();
-    }
-    apiInstance.getMeasurements({}, qmApiResponseCallback);
-});
-gulp.task('get-tracking-reminders', [], function (callback) {
-    var apiInstance = new Quantimodo.RemindersApi();
-    function qmApiResponseCallback(error, data, response) {
-        handleApiResponse(error, data, response);
-        callback();
-    }
-    apiInstance.getTrackingReminders({}, qmApiResponseCallback);
-});
-gulp.task('get-unit-categories', [], function (callback) {
-    var apiInstance = new Quantimodo.UnitsApi();
-    function qmApiResponseCallback(error, data, response) {
-        handleApiResponse(error, data, response);
-        callback();
-    }
-    apiInstance.getUnitCategories(qmApiResponseCallback);
 });
 gulp.task('get-connectors', [], function (callback) {
     var apiInstance = new Quantimodo.ConnectorsApi();
@@ -484,6 +428,70 @@ gulp.task('get-connectors', [], function (callback) {
     }
     apiInstance.getConnectors(qmApiResponseCallback);
 });
+gulp.task('get-measurements', [], function (callback) {
+    var apiInstance = new Quantimodo.MeasurementsApi();
+    function qmApiResponseCallback(error, data, response) {
+        handleApiResponse(error, data, response);
+        callback();
+    }
+    apiInstance.getMeasurements({}, qmApiResponseCallback);
+});
+gulp.task('get-pairs', [], function (callback) {
+    var apiInstance = new Quantimodo.MeasurementsApi();
+    function qmApiResponseCallback(error, data, response) {
+        handleApiResponse(error, data, response);
+        callback();
+    }
+    apiInstance.getMeasurements({causeVariableName: "Sleep Duration", effectVariableName: "Overall Mood"}, qmApiResponseCallback);
+});
+gulp.task('get-public-variables', [], function (callback) {
+    var apiInstance = new Quantimodo.VariablesApi();
+    function qmApiResponseCallback(error, data, response) {
+        handleApiResponse(error, data, response);
+        callback();
+    }
+    apiInstance.getPublicVariables({}, qmApiResponseCallback);
+});
+gulp.task('get-study', [], function (callback) {
+    var apiInstance = new Quantimodo.AnalyticsApi();
+    function qmApiResponseCallback(error, data, response) {
+        handleApiResponse(error, data, response);
+        callback();
+    }
+    apiInstance.getStudy({causeVariableName: "Sleep Duration", effectVariableName: "Overall Mood"}, qmApiResponseCallback);
+});
+gulp.task('get-tracking-reminder-notifications', [], function (callback) {
+    var apiInstance = new Quantimodo.RemindersApi();
+    function qmApiResponseCallback(error, data, response) {
+        handleApiResponse(error, data, response);
+        callback();
+    }
+    apiInstance.getTrackingReminderNotifications({}, qmApiResponseCallback);
+});
+gulp.task('get-tracking-reminders', [], function (callback) {
+    var apiInstance = new Quantimodo.RemindersApi();
+    function qmApiResponseCallback(error, data, response) {
+        handleApiResponse(error, data, response);
+        callback();
+    }
+    apiInstance.getTrackingReminders({}, qmApiResponseCallback);
+});
+gulp.task('get-units', [], function (callback) {
+    var apiInstance = new Quantimodo.UnitsApi();
+    function qmApiResponseCallback(error, data, response) {
+        handleApiResponse(error, data, response);
+        callback();
+    }
+    apiInstance.getUnits(qmApiResponseCallback);
+});
+gulp.task('get-unit-categories', [], function (callback) {
+    var apiInstance = new Quantimodo.UnitsApi();
+    function qmApiResponseCallback(error, data, response) {
+        handleApiResponse(error, data, response);
+        callback();
+    }
+    apiInstance.getUnitCategories(qmApiResponseCallback);
+});
 gulp.task('get-user', [], function (callback) {
     var apiInstance = new Quantimodo.UserApi();
     function qmApiResponseCallback(error, data, response) {
@@ -492,16 +500,33 @@ gulp.task('get-user', [], function (callback) {
     }
     apiInstance.getUser({}, qmApiResponseCallback);
 });
+gulp.task('get-user-correlations', [], function (callback) {
+    var apiInstance = new Quantimodo.AnalyticsApi();
+    function qmApiResponseCallback(error, data, response) {
+        handleApiResponse(error, data, response);
+        callback();
+    }
+    apiInstance.getUserCorrelations({}, qmApiResponseCallback);
+});
+gulp.task('get-user-variables', [], function (callback) {
+    var apiInstance = new Quantimodo.VariablesApi();
+    function qmApiResponseCallback(error, data, response) {
+        handleApiResponse(error, data, response);
+        callback();
+    }
+    apiInstance.getUserVariables({}, qmApiResponseCallback);
+});
 gulp.task('test-endpoints', function (callback) {
     runSequence(
-        'get-units',
-        'get-public-variables',
-        'get-user-variables',
         'get-aggregated-correlations',
-        'get-user-correlations',
+        'get-connectors',
         'get-measurements',
+        'get-public-variables',
         'get-tracking-reminders',
         'get-unit-categories',
+        'get-user',
+        'get-user-correlations',
+        'get-user-variables',
         function (error) {
             if (error) {logError(error.message);} else {logInfo('SDK RELEASE FINISHED SUCCESSFULLY');}
             callback(error);
