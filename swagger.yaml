@@ -1202,7 +1202,7 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - basic
-  /v3/trackingReminderNotifications:
+  /v4/trackingReminderNotifications:
     get:
       operationId: getTrackingReminderNotifications
       tags:
@@ -3047,6 +3047,14 @@ definitions:
       connectorId:
         description: 'Example: 13'
         type: integer
+      noteObject:
+        description: >-
+          Example:
+          {"message":null,"commenter":null,"url":null,"image":null,"icon":null,"description":null,"name":null,"Description":"Transfer
+          from MICHAEL P SINN","Original Description":"Bank
+          Account","Transaction Type":"credit","Account Name":"Mike's Personal
+          PayPal"}
+        type: object
   MeasurementItem:
     required:
       - timestamp
@@ -3696,6 +3704,9 @@ definitions:
         description: >-
           Example:
           https://rximage.nlm.nih.gov/image/images/gallery/original/55111-0129-60_RXNAVIMAGE10_B051D81E.jpg
+        type: string
+      iconIcon:
+        description: 'Example: ion-sad-outline'
         type: string
   Unit:
     required:
