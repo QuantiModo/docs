@@ -77,8 +77,8 @@ In order to filter records which have value 42 or 43, the following query should
 
     ?value=42,43
     
-#### Like Operator
-Add `%` sign as the first and/or last character.  In order to filter records which category that start with `Food`, the following query should be used: `?variableCategoryName=Food%`
+#### Wildcard Like Operator
+To get results matching a substring, add `%` as a wildcard as the first and/or last character of a query string parameter.  In order to filter records which category that start with `Food`, the following query should be used: `?variableCategoryName=Food%`
     
 #### Negation Operator
 It is possible to get negated results of a query by prefixed the operator with `!`.
