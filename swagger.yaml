@@ -1669,7 +1669,7 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - basic
-  /v4/study:
+  /v3/study:
     get:
       operationId: getStudy
       tags:
