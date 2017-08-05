@@ -394,11 +394,19 @@ gulp.task('3-copy-to-repos', ['browserify'], function(){
 gulp.task('2-copy-qm-web-js', ['browserify'], function(){
     return gulp.src([getUnzippedPathForSdkLanguage('javascript') + '/quantimodo-web.js']).pipe(gulp.dest(pathToIonic + '/www/custom-lib/'));
 });
-var Quantimodo = require('quantimodo');
-var defaultClient = Quantimodo.ApiClient.instance;
-if(process.env.APP_HOST_NAME){defaultClient.basePath = process.env.APP_HOST_NAME + '/api';}
-var quantimodo_oauth2 = defaultClient.authentications['quantimodo_oauth2'];
-quantimodo_oauth2.accessToken = process.env.QUANTIMODO_ACCESS_TOKEN;
+try {
+    var Quantimodo = require('quantimodo');
+    authenticateQuantiModoSdk();
+} catch (error) {
+    logError(error);
+}
+var defaultClient;
+function authenticateQuantiModoSdk() {
+    defaultClient = Quantimodo.ApiClient.instance;
+    if(process.env.APP_HOST_NAME){defaultClient.basePath = process.env.APP_HOST_NAME + '/api';}
+    var quantimodo_oauth2 = defaultClient.authentications['quantimodo_oauth2'];
+    quantimodo_oauth2.accessToken = process.env.QUANTIMODO_ACCESS_TOKEN;
+}
 function handleApiResponse(error, data, response) {
     if (error && response.body.errorMessage) {logError(response.req.path + "failed: " + response.body.errorMessage, error);}
     if(!data || Object.keys(data).length === 0){throw "data not returned!";}
