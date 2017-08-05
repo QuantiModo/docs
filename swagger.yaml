@@ -463,12 +463,12 @@ parameters:
     type: string
   lastSourceParam:
     in: query
-    name: lastSource
+    name: lastSourceName
     description: >-
       Limit variables to those which measurements were last submitted by a
       specific source. So if you have a client application and you only want
       variables that were last updated by your app, you can include the name of
-      your app here. (supports exact name match only)
+      your app here
     required: false
     type: string
   variableIdParam:
@@ -1452,7 +1452,7 @@ paths:
         - $ref: '#/parameters/variableCategoryNameParam'
         - in: query
           name: name
-          description: Original name of the variable (supports exact name match only)
+          description: 'Name of the variable. To get results matching a substring, add % as a wildcard as the first and/or last character of a query string parameter. In order to get variables that contain `Mood`, the following query should be used: ?variableName=%Mood%'
           required: false
           type: string
         - $ref: '#/parameters/updatedAtParam'
@@ -1500,7 +1500,7 @@ paths:
         - $ref: '#/parameters/variableCategoryNameParam'
         - in: query
           name: name
-          description: Original name of the variable (supports exact name match only)
+          description: 'Name of the variable. To get results matching a substring, add % as a wildcard as the first and/or last character of a query string parameter. In order to get variables that contain `Mood`, the following query should be used: ?variableName=%Mood%'
           required: false
           type: string
         - $ref: '#/parameters/updatedAtParam'
