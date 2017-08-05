@@ -77,14 +77,10 @@ In order to filter records which have value 42 or 43, the following query should
 
     ?value=42,43
     
-#### Like operators
-Like operators allow filtering using `LIKE` query. This operator is triggered if exact match operator is used, but value contains `%` sign as the first or last character.
-
-In order to filter records which category that start with `Food`, the following query should be used:
-
-    ?category=Food%
+#### Like Operator
+Add `%` sign as the first and/or last character.  In order to filter records which category that start with `Food`, the following query should be used: `?variableCategoryName=Food%`
     
-#### Negation operator
+#### Negation Operator
 It is possible to get negated results of a query by prefixed the operator with `!`.
     
 Some examples:
