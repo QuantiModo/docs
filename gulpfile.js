@@ -476,6 +476,14 @@ gulp.task('get-connectors', [], function (callback) {
     }
     apiInstance.getConnectors(qmApiResponseCallback);
 });
+gulp.task('get-user', [], function (callback) {
+    var apiInstance = new Quantimodo.UserApi();
+    function qmApiResponseCallback(error, data, response) {
+        handleApiResponse(error, data, response);
+        callback();
+    }
+    apiInstance.getUser({}, qmApiResponseCallback);
+});
 gulp.task('test-endpoints', function (callback) {
     runSequence(
         'get-units',
