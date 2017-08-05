@@ -32,29 +32,35 @@ tags:
       rating, or apples eaten.
     externalDocs:
       description: See it in action
-      url: 'https://app.quantimo.do/ionic/Modo/www/#/app/history-all-category/Anything?accessToken=demo'
+      url: >-
+        https://app.quantimo.do/ionic/Modo/www/#/app/history-all-category/Anything?accessToken=demo
   - name: reminders
     description: >-
       Users can be reminded to track certain variables at a specified frequency
       with a default value.
     externalDocs:
       description: See it in action
-      url: 'https://app.quantimo.do/ionic/Modo/www/#/app/reminders-inbox?accessToken=demo'
+      url: >-
+        https://app.quantimo.do/ionic/Modo/www/#/app/reminders-inbox?accessToken=demo
   - name: units
     description: Available units for measurements
     externalDocs:
       description: See it in action
-      url: 'https://app.quantimo.do/ionic/Modo/www/#/app/measurement-search?accessToken=demo'
+      url: >-
+        https://app.quantimo.do/ionic/Modo/www/#/app/measurement-search?accessToken=demo
   - name: user
     description: Get or update user info and settings
     externalDocs:
       description: See it in action
       url: 'https://app.quantimo.do/ionic/Modo/www/#/app/settings?accessToken=demo'
   - name: variables
-    description: Can be used for search autocomplete for data types like symptoms, foods and treatments and include statistics
+    description: >-
+      Can be used for search autocomplete for data types like symptoms, foods
+      and treatments and include statistics
     externalDocs:
       description: Search for a variable
-      url: 'https://app.quantimo.do/ionic/Modo/www/#/app/reminder-search?accessToken=demo'
+      url: >-
+        https://app.quantimo.do/ionic/Modo/www/#/app/reminder-search?accessToken=demo
 parameters:
   effectVariableNameParam:
     in: query
@@ -1657,7 +1663,7 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - basic
-  /v3/study:
+  /v4/study:
     get:
       operationId: getStudy
       tags:
@@ -2852,6 +2858,23 @@ definitions:
       predictorDataSources:
         description: 'Example: RescueTime'
         type: string
+      aggregateQMScore:
+        description: 'Example: 0.011598441286655'
+        type: number
+        format: double
+      numberOfCorrelations:
+        description: 'Example: 6'
+        type: integer
+      numberOfUsers:
+        description: 'Example: 6'
+        type: integer
+      forwardPearsonCorrelationCoefficient:
+        description: 'Example: 0.0333'
+        type: number
+        format: double
+      correlationIsContradictoryToOptimalValues:
+        description: 'Example: 1'
+        type: boolean
   JsonErrorResponse:
     required:
       - status
@@ -3887,7 +3910,9 @@ definitions:
         description: 'Example: 1'
         type: boolean
       avatarImage:
-        description: 'Example: https://lh6.googleusercontent.com/-BHr4hyUWqZU/AAAAAAAAAAI/AAAAAAAIG28/2Lv0en738II/photo.jpg?sz=50'
+        description: >-
+          Example:
+          https://lh6.googleusercontent.com/-BHr4hyUWqZU/AAAAAAAAAAI/AAAAAAAIG28/2Lv0en738II/photo.jpg?sz=50
         type: string
       stripeActive:
         description: 'Example: 1'
@@ -4833,6 +4858,15 @@ definitions:
         type: string
       inputType:
         description: 'Example: slider'
+        type: string
+      commonAlias:
+        description: 'Example: Mood_(psychology)'
+        type: string
+      description:
+        description: 'Example: positive'
+        type: string
+      valence:
+        description: 'Example: positive'
         type: string
   VariableCategory:
     required:

@@ -2417,7 +2417,7 @@
         ]
       }
     },
-    "/v3/study": {
+    "/v4/study": {
       "get": {
         "operationId": "getStudy",
         "tags": [
@@ -3702,6 +3702,28 @@
         "predictorDataSources": {
           "description": "Example: RescueTime",
           "type": "string"
+        },
+        "aggregateQMScore": {
+          "description": "Example: 0.011598441286655",
+          "type": "number",
+          "format": "double"
+        },
+        "numberOfCorrelations": {
+          "description": "Example: 6",
+          "type": "integer"
+        },
+        "numberOfUsers": {
+          "description": "Example: 6",
+          "type": "integer"
+        },
+        "forwardPearsonCorrelationCoefficient": {
+          "description": "Example: 0.0333",
+          "type": "number",
+          "format": "double"
+        },
+        "correlationIsContradictoryToOptimalValues": {
+          "description": "Example: 1",
+          "type": "boolean"
         }
       }
     },
@@ -6043,6 +6065,18 @@
         },
         "inputType": {
           "description": "Example: slider",
+          "type": "string"
+        },
+        "commonAlias": {
+          "description": "Example: Mood_(psychology)",
+          "type": "string"
+        },
+        "description": {
+          "description": "Example: positive",
+          "type": "string"
+        },
+        "valence": {
+          "description": "Example: positive",
           "type": "string"
         }
       }
