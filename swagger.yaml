@@ -703,7 +703,7 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - basic
-  /v4/correlations:
+  /v3/correlations:
     get:
       operationId: getUserCorrelations
       tags:

@@ -782,7 +782,7 @@
         ]
       }
     },
-    "/v4/correlations": {
+    "/v3/correlations": {
       "get": {
         "operationId": "getUserCorrelations",
         "tags": [
