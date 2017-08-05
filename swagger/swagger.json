@@ -205,8 +205,6 @@
       "name": "limit",
       "required": false,
       "type": "integer",
-      "minimum": 1,
-      "maximum": 200,
       "default": 100,
       "description": "The LIMIT is used to limit the number of results returned. So if youhave 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records."
     },
