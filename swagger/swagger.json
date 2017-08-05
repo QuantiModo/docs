@@ -4714,6 +4714,14 @@
         "title": {
           "description": "Example: Rate Overall Mood",
           "type": "string"
+        },
+        "trackingReminderImageUrl": {
+          "description": "Example: https://rximage.nlm.nih.gov/image/images/gallery/original/55111-0129-60_RXNAVIMAGE10_B051D81E.jpg",
+          "type": "string"
+        },
+        "imageUrl": {
+          "description": "Example: https://rximage.nlm.nih.gov/image/images/gallery/original/55111-0129-60_RXNAVIMAGE10_B051D81E.jpg",
+          "type": "string"
         }
       }
     },
