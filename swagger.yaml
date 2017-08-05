@@ -507,6 +507,12 @@ parameters:
     description: 'Example: true'
     in: query
     type: boolean
+  fallbackToAggregateCorrelationsParam:
+    name: fallbackToAggregateCorrelations
+    required: false
+    description: 'Example: true'
+    in: query
+    type: boolean
 schemes:
   - https
 consumes:
@@ -1221,6 +1227,8 @@ paths:
             items:
               $ref: '#/definitions/TrackingReminderNotificationPost'
             description: Array of TrackingReminderNotifications to take action on
+        - $ref: '#/parameters/appNameParam'
+        - $ref: '#/parameters/clientIdParam'
       responses:
         '201':
           description: Successful Operation
@@ -3874,6 +3882,12 @@ definitions:
       combineNotifications:
         description: 'Example: 1'
         type: boolean
+      avatarImage:
+        description: 'Example: https://lh6.googleusercontent.com/-BHr4hyUWqZU/AAAAAAAAAAI/AAAAAAAIG28/2Lv0en738II/photo.jpg?sz=50'
+        type: string
+      stripeActive:
+        description: 'Example: 1'
+        type: boolean
   UserTag:
     required:
       - taggedVariableId
@@ -4461,6 +4475,18 @@ definitions:
       shareUserMeasurements:
         description: 'Example: 1'
         type: boolean
+      numberOfUniqueValues:
+        description: 'Example: 2'
+        type: integer
+      numberOfTrackingReminders:
+        description: 'Example: 1'
+        type: integer
+      iconIcon:
+        description: 'Example: ion-sad-outline'
+        type: string
+      commonAlias:
+        description: 'Example: Anxiety / Nervousness'
+        type: string
   UserVariableDelete:
     required:
       - variableId
