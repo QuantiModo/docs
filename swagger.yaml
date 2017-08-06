@@ -1680,9 +1680,9 @@ paths:
         - application/json
       responses:
         '200':
-          description: Successful operation
+          description: successful operation
           schema:
-            $ref: '#/definitions/Study'
+            $ref: '#/definitions/GetStudyDataResponse'
         '401':
           description: Not authenticated
         '404':
@@ -1732,13 +1732,7 @@ definitions:
       success:
         type: boolean
       data:
-        properties:
-          correlations:
-            type: array
-            items:
-              $ref: '#/definitions/Correlation'
-          explanation:
-            $ref: '#/definitions/Explanation'
+        properties: {}
   ConnectorInstruction:
     properties:
       url:
@@ -1881,6 +1875,7 @@ definitions:
       - durationOfAction
       - numberOfPairs
       - timestamp
+      - onsetDelayInHours
     properties:
       averageDailyLowCause:
         type: number
@@ -2373,6 +2368,9 @@ definitions:
       predictorDataSources:
         description: 'Example: RescueTime'
         type: string
+      onsetDelayInHours:
+        description: 'Example: 0'
+        type: integer
   AggregatedCorrelation:
     required:
       - correlationCoefficient
@@ -2382,6 +2380,8 @@ definitions:
       - durationOfAction
       - numberOfPairs
       - timestamp
+      - onsetDelayInHours
+      - vote
     properties:
       averageDailyLowCause:
         type: number
@@ -2891,6 +2891,13 @@ definitions:
       correlationIsContradictoryToOptimalValues:
         description: 'Example: 1'
         type: boolean
+      onsetDelayInHours:
+        description: 'Example: 0'
+        type: integer
+      vote:
+        description: 'Example: 1'
+        type: number
+        format: double
   JsonErrorResponse:
     required:
       - status
@@ -3728,6 +3735,8 @@ definitions:
       - abbreviatedName
       - category
       - conversionSteps
+      - unitCategory
+      - maximumValue
     properties:
       name:
         type: string
@@ -3786,6 +3795,13 @@ definitions:
         type: integer
       manualTracking:
         description: 'Example: 0'
+        type: integer
+      unitCategory:
+        type: array
+        items:
+          $ref: '#/definitions/UnitCategory'
+      maximumValue:
+        description: 'Example: 4'
         type: integer
   Update:
     required:
@@ -4030,6 +4046,7 @@ definitions:
   UserVariable:
     required:
       - variableId
+      - availableDefaultUnits
     properties:
       parentId:
         description: ID of the parent variable if this variable has any parent
@@ -4566,6 +4583,10 @@ definitions:
       experimentEndTimeSeconds:
         description: 'Example: 1893477600'
         type: integer
+      availableDefaultUnits:
+        type: array
+        items:
+          $ref: '#/definitions/Unit'
   UserVariableDelete:
     required:
       - variableId
@@ -4603,6 +4624,9 @@ definitions:
       - mostCommonValue
       - mostCommonUnit
       - lastSource
+      - onsetDelayInHours
+      - availableDefaultUnits
+      - dataSource
     properties:
       id:
         type: integer
@@ -4918,13 +4942,122 @@ definitions:
       valence:
         description: 'Example: positive'
         type: string
+      onsetDelayInHours:
+        description: 'Example: 0'
+        type: integer
+      availableDefaultUnits:
+        type: array
+        items:
+          $ref: '#/definitions/Unit'
+      dataSource:
+        $ref: '#/definitions/DataSource'
   VariableCategory:
     required:
       - name
+      - id
+      - appType
+      - fillingValue
+      - durationOfAction
+      - onsetDelay
+      - combinationOperation
+      - public
+      - outcome
+      - updated
+      - imageUrl
+      - ionIcon
+      - manualTracking
+      - svgUrl
+      - pngUrl
+      - pngPath
+      - svgPath
+      - defaultUnitAbbreviatedName
+      - helpText
+      - variableCategoryName
+      - variableCategoryNameSingular
+      - measurementSynonymSingularLowercase
+      - moreInfo
+      - defaultUnitId
     properties:
       name:
         type: string
         description: Category name
+      id:
+        description: 'Example: 1'
+        type: integer
+      appType:
+        description: 'Example: mood'
+        type: string
+      fillingValue:
+        description: 'Example: -1'
+        type: integer
+      durationOfAction:
+        description: 'Example: 86400'
+        type: integer
+      onsetDelay:
+        description: 'Example: 0'
+        type: integer
+      combinationOperation:
+        description: 'Example: MEAN'
+        type: string
+      public:
+        description: 'Example: 1'
+        type: boolean
+      outcome:
+        description: 'Example: 1'
+        type: boolean
+      updated:
+        description: 'Example: 1'
+        type: integer
+      imageUrl:
+        description: >-
+          Example:
+          https://maxcdn.icons8.com/Color/PNG/96/Cinema/theatre_mask-96.png
+        type: string
+      ionIcon:
+        description: 'Example: ion-happy-outline'
+        type: string
+      manualTracking:
+        description: 'Example: 1'
+        type: boolean
+      svgUrl:
+        description: >-
+          Example:
+          https://app.quantimo.do/ionic/Modo/www/img/variable_categories/emotions.svg
+        type: string
+      pngUrl:
+        description: >-
+          Example:
+          https://app.quantimo.do/ionic/Modo/www/img/variable_categories/emotions.png
+        type: string
+      pngPath:
+        description: 'Example: img/variable_categories/emotions.png'
+        type: string
+      svgPath:
+        description: 'Example: img/variable_categories/emotions.svg'
+        type: string
+      defaultUnitAbbreviatedName:
+        description: 'Example: /5'
+        type: string
+      helpText:
+        description: 'Example: What emotion do you want to rate?'
+        type: string
+      variableCategoryName:
+        description: 'Example: Emotions'
+        type: string
+      variableCategoryNameSingular:
+        description: 'Example: Emotion'
+        type: string
+      measurementSynonymSingularLowercase:
+        description: 'Example: rating'
+        type: string
+      moreInfo:
+        description: >-
+          Example: Do you have any emotions that fluctuate regularly?  If so,
+          add them so I can try to determine which factors are influencing them.
+        type: string
+      defaultUnitId:
+        description: 'Example: 10'
+        type: integer
   VoteDelete:
     required:
       - cause
@@ -4980,6 +5113,7 @@ definitions:
     required:
       - causeVariable
       - effectVariable
+      - charts
     properties:
       causeVariable:
         description: >-
@@ -5301,6 +5435,10 @@ definitions:
       userId:
         description: 'Example: 230'
         type: integer
+      charts:
+        type: array
+        items:
+          $ref: '#/definitions/Chart'
   Correlation:
     required:
       - causeVariableName
@@ -5967,6 +6105,659 @@ definitions:
               $ref: '#/definitions/Correlation'
           explanation:
             $ref: '#/definitions/Explanation'
+  Chart:
+    required:
+      - chartConfig
+      - chartTitle
+      - chartId
+      - explanation
+    properties:
+      chartConfig:
+        type: array
+      chartTitle:
+        description: >-
+          Example: Trait Correlation Between Sleep Quality and Overall Mood  (R
+          = -0.27433209180726)
+        type: string
+      chartId:
+        description: 'Example: averageValueScatterPlot'
+        type: string
+      explanation:
+        description: >-
+          Example: The chart above indicates if people with higher average Sleep
+          Quality usually have lower average Overall Mood.
+        type: string
+  DataSource:
+    required:
+      - id
+      - name
+      - connectorClientId
+      - connectorClientSecret
+      - displayName
+      - image
+      - getItUrl
+      - shortDescription
+      - longDescription
+      - enabled
+      - affiliate
+      - defaultVariableCategoryName
+      - imageHtml
+      - linkedDisplayNameHtml
+    properties:
+      id:
+        description: 'Example: 6'
+        type: integer
+      name:
+        description: 'Example: up'
+        type: string
+      connectorClientId:
+        description: 'Example: 10RfjEgKr8U'
+        type: string
+      connectorClientSecret:
+        description: 'Example: e17fd34e4bc4642f0c4c99d7acb6e661'
+        type: string
+      displayName:
+        description: 'Example: Up by Jawbone'
+        type: string
+      image:
+        description: 'Example: https://i.imgur.com/MXNQy3T.png'
+        type: string
+      getItUrl:
+        description: >-
+          Example:
+          http://www.amazon.com/gp/product/B00A17IAO0/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20
+        type: string
+      shortDescription:
+        description: 'Example: Tracks sleep, exercise, and diet.'
+        type: string
+      longDescription:
+        description: >-
+          Example: UP by Jawbone is a wristband and app that tracks how you
+          sleep, move and eat and then helps you use that information to feel
+          your best.
+        type: string
+      enabled:
+        description: 'Example: 1'
+        type: integer
+      affiliate:
+        description: 'Example: 1'
+        type: boolean
+      defaultVariableCategoryName:
+        description: 'Example: Physical Activity'
+        type: string
+      imageHtml:
+        description: >-
+          Example: <a
+          href="http://www.amazon.com/gp/product/B00A17IAO0/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20"><img
+          id="up_image" title="Up by Jawbone"
+          src="https://i.imgur.com/MXNQy3T.png" alt="Up by Jawbone"></a>
+        type: string
+      linkedDisplayNameHtml:
+        description: >-
+          Example: <a
+          href="http://www.amazon.com/gp/product/B00A17IAO0/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20">Up
+          by Jawbone</a>
+        type: string
+  Statistic:
+    required:
+      - causeVariableName
+      - effectVariableName
+      - aggregateQMScore
+      - averageVote
+      - durationOfAction
+      - correlationCoefficient
+      - numberOfCorrelations
+      - numberOfPairs
+      - numberOfUsers
+      - onsetDelay
+      - optimalPearsonProduct
+      - statisticalSignificance
+      - valuePredictingHighOutcome
+      - valuePredictingLowOutcome
+      - causeVariableDefaultUnitId
+      - averageDailyHighCause
+      - averageDailyLowCause
+      - averageEffect
+      - averageEffectFollowingHighCause
+      - averageEffectFollowingLowCause
+      - causeChanges
+      - causeVariableId
+      - confidenceInterval
+      - createdAt
+      - criticalTValue
+      - effectChanges
+      - effectVariableId
+      - pValue
+      - predictsHighEffectChange
+      - predictsLowEffectChange
+      - tValue
+      - updatedAt
+      - causeVariableCombinationOperation
+      - causeVariableImageUrl
+      - causeVariableIonIcon
+      - causeVariableMostCommonConnectorId
+      - causeVariableCategoryId
+      - effectVariableCombinationOperation
+      - effectVariableCommonAlias
+      - effectVariableDefaultUnitId
+      - effectVariableImageUrl
+      - effectVariableIonIcon
+      - effectVariableMostCommonConnectorId
+      - effectVariableCategoryId
+      - reversePearsonCorrelationCoefficient
+      - predictivePearsonCorrelationCoefficient
+      - durationOfActionInHours
+      - onsetDelayInHours
+      - qmScore
+      - vote
+      - forwardPearsonCorrelationCoefficient
+      - causeVariableCategoryName
+      - effectVariableCategoryName
+      - causeVariableDefaultUnitAbbreviatedName
+      - effectVariableDefaultUnitAbbreviatedName
+      - causeVariableDefaultUnitName
+      - effectVariableDefaultUnitName
+      - effectUnit
+      - significanceExplanation
+      - significantDifference
+      - direction
+      - effectSize
+      - predictsHighEffectChangeSentenceFragment
+      - predictsLowEffectChangeSentenceFragment
+      - valuePredictingHighOutcomeExplanation
+      - averageEffectFollowingHighCauseExplanation
+      - valuePredictingLowOutcomeExplanation
+      - strengthLevel
+      - confidenceLevel
+      - predictorExplanation
+      - studyTitle
+      - studyAbstract
+      - studyLinkStatic
+      - studyLinkDynamic
+      - studyLinkFacebook
+      - studyLinkGoogle
+      - studyLinkTwitter
+      - studyLinkEmail
+      - gaugeImage
+      - gaugeImageSquare
+      - imageUrl
+      - studyDesign
+      - studyObjective
+      - dataSources
+      - dataSourcesParagraphForCause
+      - instructionsForCause
+      - dataSourcesParagraphForEffect
+      - instructionsForEffect
+      - dataAnalysis
+      - studyResults
+      - studyLimitations
+    properties:
+      causeVariableName:
+        description: 'Example: Sleep Quality'
+        type: string
+      effectVariableName:
+        description: 'Example: Overall Mood'
+        type: string
+      aggregateQMScore:
+        description: 'Example: 0.19185548919442'
+        type: number
+        format: double
+      averageVote:
+        description: 'Example: 1'
+        type: number
+        format: double
+      durationOfAction:
+        description: 'Example: 604800'
+        type: integer
+      correlationCoefficient:
+        description: 'Example: 0.4687'
+        type: number
+        format: double
+      numberOfCorrelations:
+        description: 'Example: 4'
+        type: integer
+      numberOfPairs:
+        description: 'Example: 136'
+        type: integer
+      numberOfUsers:
+        description: 'Example: 4'
+        type: integer
+      onsetDelay:
+        description: 'Example: 0'
+        type: integer
+      optimalPearsonProduct:
+        description: 'Example: 0.27272117923755'
+        type: number
+        format: double
+      statisticalSignificance:
+        description: 'Example: 0.6229'
+        type: number
+        format: double
+      valuePredictingHighOutcome:
+        description: 'Example: 1.95'
+        type: number
+        format: double
+      valuePredictingLowOutcome:
+        description: 'Example: 1.35'
+        type: number
+        format: double
+      causeVariableDefaultUnitId:
+        description: 'Example: 10'
+        type: integer
+      averageDailyHighCause:
+        description: 'Example: 2'
+        type: number
+        format: double
+      averageDailyLowCause:
+        description: 'Example: 1'
+        type: number
+        format: double
+      averageEffect:
+        description: 'Example: 3'
+        type: number
+        format: double
+      averageEffectFollowingHighCause:
+        description: 'Example: 4'
+        type: number
+        format: double
+      averageEffectFollowingLowCause:
+        description: 'Example: 3'
+        type: number
+        format: double
+      causeChanges:
+        description: 'Example: 380'
+        type: integer
+      causeVariableId:
+        description: 'Example: 1448'
+        type: integer
+      confidenceInterval:
+        description: 'Example: 0.21928850768708'
+        type: number
+        format: double
+      createdAt:
+        description: 'Example: 2017-07-31 21:44:50'
+        type: string
+        format: date-time
+      criticalTValue:
+        description: 'Example: 1.6816666736603'
+        type: number
+        format: double
+      effectChanges:
+        description: 'Example: 389'
+        type: integer
+      effectVariableId:
+        description: 'Example: 1398'
+        type: integer
+      pValue:
+        description: 'Example: 0.098532917173033'
+        type: number
+        format: double
+      predictsHighEffectChange:
+        description: 'Example: 10'
+        type: integer
+      predictsLowEffectChange:
+        description: 'Example: -10'
+        type: integer
+      tValue:
+        description: 'Example: 7.0144980571005'
+        type: number
+        format: double
+      updatedAt:
+        description: 'Example: 2017-07-31 21:48:47'
+        type: string
+        format: date-time
+      causeVariableCombinationOperation:
+        description: 'Example: MEAN'
+        type: string
+      causeVariableImageUrl:
+        description: >-
+          Example:
+          https://maxcdn.icons8.com/Color/PNG/96/Household/sleeping_in_bed-96.png
+        type: string
+      causeVariableIonIcon:
+        description: 'Example: ion-ios-cloudy-night-outline'
+        type: string
+      causeVariableMostCommonConnectorId:
+        description: 'Example: 6'
+        type: integer
+      causeVariableCategoryId:
+        description: 'Example: 6'
+        type: integer
+      effectVariableCombinationOperation:
+        description: 'Example: MEAN'
+        type: string
+      effectVariableCommonAlias:
+        description: 'Example: Mood_(psychology)'
+        type: string
+      effectVariableDefaultUnitId:
+        description: 'Example: 10'
+        type: integer
+      effectVariableImageUrl:
+        description: >-
+          Example:
+          https://maxcdn.icons8.com/Color/PNG/96/Cinema/theatre_mask-96.png
+        type: string
+      effectVariableIonIcon:
+        description: 'Example: ion-happy-outline'
+        type: string
+      effectVariableMostCommonConnectorId:
+        description: 'Example: 10'
+        type: integer
+      effectVariableCategoryId:
+        description: 'Example: 1'
+        type: integer
+      reversePearsonCorrelationCoefficient:
+        description: 'Example: 0.24731815629527'
+        type: number
+        format: double
+      predictivePearsonCorrelationCoefficient:
+        description: 'Example: 0.22141243895634'
+        type: number
+        format: double
+      durationOfActionInHours:
+        description: 'Example: 168'
+        type: integer
+      onsetDelayInHours:
+        description: 'Example: 0'
+        type: integer
+      qmScore:
+        description: 'Example: 0.19185548919442'
+        type: number
+        format: double
+      vote:
+        description: 'Example: 1'
+        type: number
+        format: double
+      forwardPearsonCorrelationCoefficient:
+        description: 'Example: 0.4687'
+        type: number
+        format: double
+      causeVariableCategoryName:
+        description: 'Example: Sleep'
+        type: string
+      effectVariableCategoryName:
+        description: 'Example: Emotions'
+        type: string
+      causeVariableDefaultUnitAbbreviatedName:
+        description: 'Example: /5'
+        type: string
+      effectVariableDefaultUnitAbbreviatedName:
+        description: 'Example: /5'
+        type: string
+      causeVariableDefaultUnitName:
+        description: 'Example: 1 to 5 Rating'
+        type: string
+      effectVariableDefaultUnitName:
+        description: 'Example: 1 to 5 Rating'
+        type: string
+      effectUnit:
+        description: 'Example: /5'
+        type: string
+      significanceExplanation:
+        description: >-
+          Example: Using a two-tailed t-test with alpha = 0.05, it was
+          determined that the change in Overall Mood is statistically
+          significant at 95% confidence interval.
+        type: string
+      significantDifference:
+        description: 'Example: 1'
+        type: boolean
+      direction:
+        description: 'Example: higher'
+        type: string
+      effectSize:
+        description: 'Example: moderately positive'
+        type: string
+      predictsHighEffectChangeSentenceFragment:
+        description: 'Example: , on average, 10% '
+        type: string
+      predictsLowEffectChangeSentenceFragment:
+        description: 'Example: , on average, 10% '
+        type: string
+      valuePredictingHighOutcomeExplanation:
+        description: >-
+          Example: Overall Mood, on average, 10% higher after around 1.95/5
+          Sleep Quality
+        type: string
+      averageEffectFollowingHighCauseExplanation:
+        description: >-
+          Example: Overall Mood is 4/5 (33% higher) on average after days with
+          around 2/5 Sleep Quality
+        type: string
+      valuePredictingLowOutcomeExplanation:
+        description: >-
+          Example: Overall Mood, on average, 10% lower after around 1.35/5 Sleep
+          Quality
+        type: string
+      strengthLevel:
+        description: 'Example: moderate'
+        type: string
+      confidenceLevel:
+        description: 'Example: low'
+        type: string
+      predictorExplanation:
+        description: 'Example: Sleep Quality Predicts Higher Overall Mood'
+        type: string
+      studyTitle:
+        description: 'Example: N1 Study: Sleep Quality Predicts Higher Overall Mood'
+        type: string
+      studyAbstract:
+        description: >-
+          Example: Aggregated data from 4 suggests with a low degree of
+          confidence (p=0.099) that Sleep Quality (Sleep) has a moderately
+          positive predictive relationship (R=0.469) with Overall Mood
+          (Emotions).  The highest quartile of Overall Mood  measurements were
+          observed following an average 1.95/5 Sleep Quality.  The lowest
+          quartile of Overall Mood  measurements were observed following an
+          average 1.35/5 Sleep Quality.
+        type: string
+      studyLinkStatic:
+        description: >-
+          Example:
+          https://local.quantimo.do/api/v2/study?causeVariableName=Sleep%20Quality&effectVariableName=Overall%20Mood
+        type: string
+      studyLinkDynamic:
+        description: >-
+          Example:
+          https://local.quantimo.do/ionic/Modo/www/index.html#/app/study?causeVariableName=Sleep%20Quality&effectVariableName=Overall%20Mood
+        type: string
+      studyLinkFacebook:
+        description: >-
+          Example:
+          https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fstudy%3FcauseVariableName%3DSleep%2520Quality%26effectVariableName%3DOverall%2520Mood
+        type: string
+      studyLinkGoogle:
+        description: >-
+          Example:
+          https://plus.google.com/share?url=https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fstudy%3FcauseVariableName%3DSleep%2520Quality%26effectVariableName%3DOverall%2520Mood
+        type: string
+      studyLinkTwitter:
+        description: >-
+          Example:
+          https://twitter.com/home?status=Sleep%20Quality%20Predicts%20Higher%20Overall%20Mood%20https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fstudy%3FcauseVariableName%3DSleep%2520Quality%26effectVariableName%3DOverall%2520Mood%20%40quantimodo
+        type: string
+      studyLinkEmail:
+        description: >-
+          Example:
+          mailto:?subject=N1%20Study%3A%20Sleep%20Quality%20Predicts%20Higher%20Overall%20Mood&body=Check%20out%20my%20study%20at%20https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fstudy%3FcauseVariableName%3DSleep%2520Quality%26effectVariableName%3DOverall%2520Mood%0A%0AHave%20a%20great%20day!
+        type: string
+      gaugeImage:
+        description: >-
+          Example:
+          https://s3.amazonaws.com/quantimodo-docs/images/gauge-moderately-positive-relationship.png
+        type: string
+      gaugeImageSquare:
+        description: >-
+          Example:
+          https://s3.amazonaws.com/quantimodo-docs/images/gauge-moderately-positive-relationship-200-200.png
+        type: string
+      imageUrl:
+        description: >-
+          Example:
+          https://s3-us-west-1.amazonaws.com/qmimages/variable_categories_gauges_logo_background/gauge-moderately-positive-relationship_sleep_emotions_logo_background.png
+        type: string
+      studyDesign:
+        description: >-
+          Example: This study is based on data donated by  4 QuantiModo users.
+          Thus, the study design is equivalent to the aggregation of 4 separate
+          n=1 observational natural experiments.
+        type: string
+      studyObjective:
+        description: >-
+          Example: The objective of this study is to determine the nature of the
+          relationship (if any) between the Sleep Quality and the Overall Mood.
+          Additionally, we attempt to determine the Sleep Quality values most
+          likely to produce optimal Overall Mood values.
+        type: string
+      dataSources:
+        description: >-
+          Example: Sleep Quality data was primarily collected using <a
+          href="http://www.amazon.com/gp/product/B00A17IAO0/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20">Up
+          by Jawbone</a>.  UP by Jawbone is a wristband and app that tracks how
+          you sleep, move and eat and then helps you use that information to
+          feel your best.<br>Overall Mood data was primarily collected using <a
+          href="https://quantimo.do">QuantiModo</a>.  <a
+          href="https://quantimo.do">QuantiModo</a> is a Chrome extension,
+          Android app, iOS app, and web app that allows you to easily track
+          mood, symptoms, or any outcome you want to optimize in a fraction of a
+          second.  You can also import your data from over 30 other apps and
+          devices like Fitbit, Rescuetime, Jawbone Up, Withings, Facebook,
+          Github, Google Calendar, Runkeeper, MoodPanda, Slice, Google Fit, and
+          more.  <a href="https://quantimo.do">QuantiModo</a> then analyzes your
+          data to identify which hidden factors are most likely to be
+          influencing your mood or symptoms and their optimal daily values.
+        type: string
+      dataSourcesParagraphForCause:
+        description: >-
+          Example: Sleep Quality data was primarily collected using <a
+          href="http://www.amazon.com/gp/product/B00A17IAO0/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20">Up
+          by Jawbone</a>.  UP by Jawbone is a wristband and app that tracks how
+          you sleep, move and eat and then helps you use that information to
+          feel your best.
+        type: string
+      instructionsForCause:
+        description: >-
+          Example: <a
+          href="http://www.amazon.com/gp/product/B00A17IAO0/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20">Obtain
+          Up by Jawbone</a> and use it to record your Sleep Quality. Once you
+          have a <a
+          href="http://www.amazon.com/gp/product/B00A17IAO0/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20">Up
+          by Jawbone</a> account, <a
+          href="https://app.quantimo.do/ionic/Modo/www/#/app/import">connect
+          your  Up by Jawbone account at QuantiModo</a> to automatically import
+          and analyze your data.
+        type: string
+      dataSourcesParagraphForEffect:
+        description: >-
+          Example: Overall Mood data was primarily collected using <a
+          href="https://quantimo.do">QuantiModo</a>.  <a
+          href="https://quantimo.do">QuantiModo</a> is a Chrome extension,
+          Android app, iOS app, and web app that allows you to easily track
+          mood, symptoms, or any outcome you want to optimize in a fraction of a
+          second.  You can also import your data from over 30 other apps and
+          devices like Fitbit, Rescuetime, Jawbone Up, Withings, Facebook,
+          Github, Google Calendar, Runkeeper, MoodPanda, Slice, Google Fit, and
+          more.  <a href="https://quantimo.do">QuantiModo</a> then analyzes your
+          data to identify which hidden factors are most likely to be
+          influencing your mood or symptoms and their optimal daily values.
+        type: string
+      instructionsForEffect:
+        description: >-
+          Example: <a href="https://quantimo.do">Obtain QuantiModo</a> and use
+          it to record your Overall Mood. Once you have a <a
+          href="https://quantimo.do">QuantiModo</a> account, <a
+          href="https://app.quantimo.do/ionic/Modo/www/#/app/import">connect
+          your  QuantiModo account at QuantiModo</a> to automatically import and
+          analyze your data.
+        type: string
+      dataAnalysis:
+        description: >-
+          Example: It was assumed that 0 hours would pass before a change in
+          Sleep Quality would produce an observable change in Overall Mood.  It
+          was assumed that Sleep Quality could produce an observable change in
+          Overall Mood for as much as 7 days after the stimulus event.
+        type: string
+      studyResults:
+        description: >-
+          Example: This analysis suggests that higher Sleep Quality (Sleep)
+          generally predicts higher Overall Mood (p = 0.099).  Overall Mood is,
+          on average, 10%  higher after around 1.95 Sleep Quality.  After an
+          onset delay of 168 hours, Overall Mood is, on average, 10%  lower than
+          its average over the 168 hours following around 1.35 Sleep Quality.
+          136 data points were used in this analysis.  The value for Sleep
+          Quality changed 380 times, effectively running 190 separate natural
+          experiments.  The top quartile outcome values are preceded by an
+          average 1.95 /5 of Sleep Quality.  The bottom quartile outcome values
+          are preceded by an average 1.35 /5 of Sleep Quality.  Forward Pearson
+          Correlation Coefficient was 0.469 (p=0.099, 95% CI 0.249 to 0.688
+          onset delay = 0 hours, duration of action = 168 hours) .  The Reverse
+          Pearson Correlation Coefficient was 0.247 (P=0.099, 95% CI 0.028 to
+          0.467, onset delay = -0 hours, duration of action = -168 hours). When
+          the Sleep Quality value is closer to 1.95 /5 than 1.35 /5, the Overall
+          Mood value which follows is, on average, 10%  percent higher than its
+          typical value.  When the Sleep Quality value is closer to 1.35 /5 than
+          1.95 /5, the Overall Mood value which follows is 0% lower than its
+          typical value.  Overall Mood is 4/5 (33% higher) on average after days
+          with around 2/5 Sleep Quality
+        type: string
+      studyLimitations:
+        description: >-
+          Example: As with any human experiment, it was impossible to control
+          for all potentially confounding variables.
+
+                      Correlation does not necessarily imply correlation.  We can never know for sure if one factor is definitely the cause of an outcome.
+                      However, lack of correlation definitely implies the lack of a causal relationship.  Hence, we can with great
+                      confidence rule out non-existent relationships. For instance, if we discover no relationship between mood
+                      and an antidepressant this information is just as or even more valuable than the discovery that there is a relationship.
+                      <br>
+                      <br>
+
+                      We can also take advantage of several characteristics of time series data from many subjects  to infer the likelihood of a causal relationship if we do find a correlational relationship.
+                      The criteria for causation are a group of minimal conditions necessary to provide adequate evidence of a causal relationship between an incidence and a possible consequence.
+                      The list of the criteria is as follows:
+                      <br>
+                      1. Strength (effect size): A small association does not mean that there is not a causal effect, though the larger the association, the more likely that it is causal.
+                      <br>
+                      2. Consistency (reproducibility): Consistent findings observed by different persons in different places with different samples strengthens the likelihood of an effect.
+                      <br>
+                      3. Specificity: Causation is likely if a very specific population at a specific site and disease with no other likely explanation. The more specific an association between a factor and an effect is, the bigger the probability of a causal relationship.
+                      <br>
+                      4. Temporality: The effect has to occur after the cause (and if there is an expected delay between the cause and expected effect, then the effect must occur after that delay).
+                      <br>
+                      5. Biological gradient: Greater exposure should generally lead to greater incidence of the effect. However, in some cases, the mere presence of the factor can trigger the effect. In other cases, an inverse proportion is observed: greater exposure leads to lower incidence.
+                      <br>
+                      6. Plausibility: A plausible mechanism between cause and effect is helpful.
+                      <br>
+                      7. Coherence: Coherence between epidemiological and laboratory findings increases the likelihood of an effect.
+                      <br>
+                      8. Experiment: "Occasionally it is possible to appeal to experimental evidence".
+                      <br>
+                      9. Analogy: The effect of similar factors may be considered.
+                      <br>
+                      <br>
+
+                       The confidence in a causal relationship is bolstered by the fact that time-precedence was taken into account in all calculations. Furthermore, in accordance with the law of large numbers (LLN), the predictive power and accuracy of these results will continually grow over time.  136 paired data points were used in this analysis.   Assuming that the relationship is merely coincidental, as the participant independently modifies their Sleep Quality values, the observed strength of the relationship will decline until it is below the threshold of significance.  To it another way, in the case that we do find a spurious correlation, suggesting that banana intake improves mood for instance,
+                      one will likely increase their banana intake.  Due to the fact that this correlation is spurious, it is unlikely
+                      that you will see a continued and persistent corresponding increase in mood.  So over time, the spurious correlation will
+                      naturally dissipate.Furthermore, it will be very enlightening to aggregate this data with the data from other participants  with similar genetic, diseasomic, environmentomic, and demographic profiles.
+        type: string
+  GetStudyDataResponse:
+    required:
+      - causeVariable
+      - charts
+      - effectVariable
+      - statistics
+    properties:
+      causeVariable:
+        $ref: '#/definitions/Variable'
+      charts:
+        type: array
+        items:
+          $ref: '#/definitions/Chart'
+      effectVariable:
+        $ref: '#/definitions/Variable'
+      statistics:
+        $ref: '#/definitions/Statistic'
 securityDefinitions:
   quantimodo_oauth2:
     type: oauth2
