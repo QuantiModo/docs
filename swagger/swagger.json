@@ -6829,7 +6829,7 @@
       "tokenUrl": "https://app.quantimo.do/api/v2/oauth/token",
       "flow": "accessCode",
       "scopes": {
-        "basic": "Allows you to read user info (displayname, email, etc).",
+        "basic": "Allows you to read user info (display name, email, etc).",
         "readmeasurements": "Allows one to read a user's data",
         "writemeasurements": "Allows you to write user data"
       }
