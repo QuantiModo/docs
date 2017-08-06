@@ -3933,6 +3933,8 @@ definitions:
   UserVariable:
     required:
       - variableId
+      - availableDefaultUnits
+      - price
     properties:
       parentId:
         description: ID of the parent variable if this variable has any parent
@@ -4469,6 +4471,14 @@ definitions:
       experimentEndTimeSeconds:
         description: 'Example: 1893477600'
         type: integer
+      availableDefaultUnits:
+        type: array
+        items:
+          $ref: '#/definitions/Unit'
+      price:
+        description: 'Example: 95.4'
+        type: number
+        format: double
   UserVariableDelete:
     required:
       - variableId
