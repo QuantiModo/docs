@@ -838,7 +838,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/GetCorrelationsDataResponse"
+              "$ref": "#/definitions/GetUserCorrelationsDataResponse"
             }
           },
           "401": {
@@ -2521,7 +2521,17 @@
           "type": "boolean"
         },
         "data": {
-          "properties": {}
+          "properties": {
+            "correlations": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Correlation"
+              }
+            },
+            "explanation": {
+              "$ref": "#/definitions/Explanation"
+            }
+          }
         }
       }
     },
@@ -4752,9 +4762,7 @@
         "name",
         "abbreviatedName",
         "category",
-        "conversionSteps",
-        "unitCategory",
-        "maximumValue"
+        "conversionSteps"
       ],
       "properties": {
         "name": {
@@ -4821,13 +4829,6 @@
         },
         "manualTracking": {
           "description": "Example: 0",
-          "type": "integer"
-        },
-        "unitCategory": {
-          "$ref": "#/definitions/UnitCategory"
-        },
-        "maximumValue": {
-          "description": "Example: 4",
           "type": "integer"
         }
       }
@@ -6337,13 +6338,7 @@
         "instructionsForEffect",
         "dataAnalysis",
         "studyResults",
-        "studyLimitations",
-        "onsetDelay",
-        "onsetDelayInHours",
-        "predictorMinimumAllowedValue",
-        "predictorMaximumAllowedValue",
-        "reversePearsonCorrelationCoefficient",
-        "predictorDataSources"
+        "studyLimitations"
       ],
       "properties": {
         "causeVariableName": {
@@ -6782,33 +6777,6 @@
         "studyLimitations": {
           "description": "Example: As with any human experiment, it was impossible to control for all potentially confounding variables. \n            \n            Correlation does not necessarily imply correlation.  We can never know for sure if one factor is definitely the cause of an outcome.  \n            However, lack of correlation definitely implies the lack of a causal relationship.  Hence, we can with great \n            confidence rule out non-existent relationships. For instance, if we discover no relationship between mood\n            and an antidepressant this information is just as or even more valuable than the discovery that there is a relationship. \n            <br>\n            <br>\n           \n            We can also take advantage of several characteristics of time series data from many subjects  to infer the likelihood of a causal relationship if we do find a correlational relationship. \n            The criteria for causation are a group of minimal conditions necessary to provide adequate evidence of a causal relationship between an incidence and a possible consequence.\n            The list of the criteria is as follows:\n            <br>\n            1. Strength (effect size): A small association does not mean that there is not a causal effect, though the larger the association, the more likely that it is causal.\n            <br>\n            2. Consistency (reproducibility): Consistent findings observed by different persons in different places with different samples strengthens the likelihood of an effect.\n            <br>\n            3. Specificity: Causation is likely if a very specific population at a specific site and disease with no other likely explanation. The more specific an association between a factor and an effect is, the bigger the probability of a causal relationship.\n            <br>\n            4. Temporality: The effect has to occur after the cause (and if there is an expected delay between the cause and expected effect, then the effect must occur after that delay).\n            <br>\n            5. Biological gradient: Greater exposure should generally lead to greater incidence of the effect. However, in some cases, the mere presence of the factor can trigger the effect. In other cases, an inverse proportion is observed: greater exposure leads to lower incidence.\n            <br>\n            6. Plausibility: A plausible mechanism between cause and effect is helpful.\n            <br>\n            7. Coherence: Coherence between epidemiological and laboratory findings increases the likelihood of an effect.\n            <br>\n            8. Experiment: \"Occasionally it is possible to appeal to experimental evidence\".\n            <br>\n            9. Analogy: The effect of similar factors may be considered.\n            <br>\n            <br>\n             \n             The confidence in a causal relationship is bolstered by the fact that time-precedence was taken into account in all calculations. Furthermore, in accordance with the law of large numbers (LLN), the predictive power and accuracy of these results will continually grow over time.  298 paired data points were used in this analysis.   Assuming that the relationship is merely coincidental, as the participant independently modifies their Sleep Quality values, the observed strength of the relationship will decline until it is below the threshold of significance.  To it another way, in the case that we do find a spurious correlation, suggesting that banana intake improves mood for instance,\n            one will likely increase their banana intake.  Due to the fact that this correlation is spurious, it is unlikely\n            that you will see a continued and persistent corresponding increase in mood.  So over time, the spurious correlation will\n            naturally dissipate.Furthermore, it will be very enlightening to aggregate this data with the data from other participants  with similar genetic, diseasomic, environmentomic, and demographic profiles.",
           "type": "string"
-        },
-        "onsetDelay": {
-          "description": "Example: 0",
-          "type": "integer"
-        },
-        "onsetDelayInHours": {
-          "description": "Example: 0",
-          "type": "integer"
-        },
-        "predictorMinimumAllowedValue": {
-          "description": "Example: 30",
-          "type": "number",
-          "format": "double"
-        },
-        "predictorMaximumAllowedValue": {
-          "description": "Example: 200",
-          "type": "number",
-          "format": "double"
-        },
-        "reversePearsonCorrelationCoefficient": {
-          "description": "Example: 0.01377184270977",
-          "type": "number",
-          "format": "double"
-        },
-        "predictorDataSources": {
-          "description": "Example: RescueTime",
-          "type": "string"
         }
       }
     },
@@ -6816,9 +6784,7 @@
       "required": [
         "ionIcon",
         "description",
-        "title",
-        "image",
-        "startTracking"
+        "title"
       ],
       "properties": {
         "ionIcon": {
@@ -6832,12 +6798,6 @@
         "title": {
           "description": "Example: Top Predictors of Overall Mood",
           "type": "string"
-        },
-        "image": {
-          "$ref": "#/definitions/Image"
-        },
-        "startTracking": {
-          "$ref": "#/definitions/ExplanationStartTracking"
         }
       }
     },
@@ -6871,156 +6831,6 @@
               "$ref": "#/definitions/Explanation"
             }
           }
-        }
-      }
-    },
-    "DataSource": {
-      "required": [
-        "id",
-        "name",
-        "connectorClientId",
-        "connectorClientSecret",
-        "displayName",
-        "image",
-        "getItUrl",
-        "shortDescription",
-        "longDescription",
-        "enabled",
-        "affiliate",
-        "defaultVariableCategoryName",
-        "imageHtml",
-        "linkedDisplayNameHtml"
-      ],
-      "properties": {
-        "id": {
-          "description": "Example: 6",
-          "type": "integer"
-        },
-        "name": {
-          "description": "Example: up",
-          "type": "string"
-        },
-        "connectorClientId": {
-          "description": "Example: 10RfjEgKr8U",
-          "type": "string"
-        },
-        "connectorClientSecret": {
-          "description": "Example: e17fd34e4bc4642f0c4c99d7acb6e661",
-          "type": "string"
-        },
-        "displayName": {
-          "description": "Example: Up by Jawbone",
-          "type": "string"
-        },
-        "image": {
-          "description": "Example: https://i.imgur.com/MXNQy3T.png",
-          "type": "string"
-        },
-        "getItUrl": {
-          "description": "Example: http://www.amazon.com/gp/product/B00A17IAO0/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20",
-          "type": "string"
-        },
-        "shortDescription": {
-          "description": "Example: Tracks sleep, exercise, and diet.",
-          "type": "string"
-        },
-        "longDescription": {
-          "description": "Example: UP by Jawbone is a wristband and app that tracks how you sleep, move and eat and then helps you use that information to feel your best.",
-          "type": "string"
-        },
-        "enabled": {
-          "description": "Example: 1",
-          "type": "integer"
-        },
-        "affiliate": {
-          "description": "Example: 1",
-          "type": "boolean"
-        },
-        "defaultVariableCategoryName": {
-          "description": "Example: Physical Activity",
-          "type": "string"
-        },
-        "imageHtml": {
-          "description": "Example: <a href=\"http://www.amazon.com/gp/product/B00A17IAO0/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20\"><img id=\"up_image\" title=\"Up by Jawbone\" src=\"https://i.imgur.com/MXNQy3T.png\" alt=\"Up by Jawbone\"></a>",
-          "type": "string"
-        },
-        "linkedDisplayNameHtml": {
-          "description": "Example: <a href=\"http://www.amazon.com/gp/product/B00A17IAO0/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20\">Up by Jawbone</a>",
-          "type": "string"
-        }
-      }
-    },
-    "Image": {
-      "required": [
-        "imageUrl",
-        "height",
-        "width"
-      ],
-      "properties": {
-        "imageUrl": {
-          "description": "Example: https://www.filepicker.io/api/file/TjmeNWS5Q2SFmtJlUGLf",
-          "type": "string"
-        },
-        "height": {
-          "description": "Example: 240",
-          "type": "string"
-        },
-        "width": {
-          "description": "Example: 224",
-          "type": "string"
-        }
-      }
-    },
-    "Button": {
-      "required": [
-        "text",
-        "link"
-      ],
-      "properties": {
-        "text": {
-          "description": "Example: Start Tracking",
-          "type": "string"
-        },
-        "link": {
-          "description": "Example: https://local.quantimo.do",
-          "type": "string"
-        }
-      }
-    },
-    "ExplanationStartTracking": {
-      "required": [
-        "title",
-        "description",
-        "button"
-      ],
-      "properties": {
-        "title": {
-          "description": "Example: Improve Accuracy",
-          "type": "string"
-        },
-        "description": {
-          "description": "Example: The more data I have the more accurate your results will be so track regularly!",
-          "type": "string"
-        },
-        "button": {
-          "$ref": "#/definitions/Button"
-        }
-      }
-    },
-    "GetCorrelationsDataResponse": {
-      "required": [
-        "correlations",
-        "explanation"
-      ],
-      "properties": {
-        "correlations": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Correlation"
-          }
-        },
-        "explanation": {
-          "$ref": "#/definitions/Explanation"
         }
       }
     }
