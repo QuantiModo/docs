@@ -730,7 +730,7 @@ paths:
         '200':
           description: successful operation
           schema:
-            $ref: '#/definitions/GetUserCorrelationsDataResponse'
+            $ref: '#/definitions/GetCorrelationsDataResponse'
         '401':
           description: Not Authenticated
       security:
@@ -1732,13 +1732,7 @@ definitions:
       success:
         type: boolean
       data:
-        properties:
-          correlations:
-            type: array
-            items:
-              $ref: '#/definitions/Correlation'
-          explanation:
-            $ref: '#/definitions/Explanation'
+        properties: {}
   ConnectorInstruction:
     properties:
       url:
@@ -3728,6 +3722,8 @@ definitions:
       - abbreviatedName
       - category
       - conversionSteps
+      - unitCategory
+      - maximumValue
     properties:
       name:
         type: string
@@ -3786,6 +3782,11 @@ definitions:
         type: integer
       manualTracking:
         description: 'Example: 0'
+        type: integer
+      unitCategory:
+        $ref: '#/definitions/UnitCategory'
+      maximumValue:
+        description: 'Example: 4'
         type: integer
   Update:
     required:
@@ -5406,6 +5407,12 @@ definitions:
       - dataAnalysis
       - studyResults
       - studyLimitations
+      - onsetDelay
+      - onsetDelayInHours
+      - predictorMinimumAllowedValue
+      - predictorMaximumAllowedValue
+      - reversePearsonCorrelationCoefficient
+      - predictorDataSources
     properties:
       causeVariableName:
         description: 'Example: Sleep Quality'
@@ -5928,11 +5935,34 @@ definitions:
                       that you will see a continued and persistent corresponding increase in mood.  So over time, the spurious correlation will
                       naturally dissipate.Furthermore, it will be very enlightening to aggregate this data with the data from other participants  with similar genetic, diseasomic, environmentomic, and demographic profiles.
         type: string
+      onsetDelay:
+        description: 'Example: 0'
+        type: integer
+      onsetDelayInHours:
+        description: 'Example: 0'
+        type: integer
+      predictorMinimumAllowedValue:
+        description: 'Example: 30'
+        type: number
+        format: double
+      predictorMaximumAllowedValue:
+        description: 'Example: 200'
+        type: number
+        format: double
+      reversePearsonCorrelationCoefficient:
+        description: 'Example: 0.01377184270977'
+        type: number
+        format: double
+      predictorDataSources:
+        description: 'Example: RescueTime'
+        type: string
   Explanation:
     required:
       - ionIcon
       - description
       - title
+      - image
+      - startTracking
     properties:
       ionIcon:
         description: 'Example: ion-ios-person'
@@ -5945,6 +5975,10 @@ definitions:
       title:
         description: 'Example: Top Predictors of Overall Mood'
         type: string
+      image:
+        $ref: '#/definitions/Image'
+      startTracking:
+        $ref: '#/definitions/ExplanationStartTracking'
   GetUserCorrelationsDataResponse:
     type: object
     required:
@@ -5967,6 +6001,130 @@ definitions:
               $ref: '#/definitions/Correlation'
           explanation:
             $ref: '#/definitions/Explanation'
+  DataSource:
+    required:
+      - id
+      - name
+      - connectorClientId
+      - connectorClientSecret
+      - displayName
+      - image
+      - getItUrl
+      - shortDescription
+      - longDescription
+      - enabled
+      - affiliate
+      - defaultVariableCategoryName
+      - imageHtml
+      - linkedDisplayNameHtml
+    properties:
+      id:
+        description: 'Example: 6'
+        type: integer
+      name:
+        description: 'Example: up'
+        type: string
+      connectorClientId:
+        description: 'Example: 10RfjEgKr8U'
+        type: string
+      connectorClientSecret:
+        description: 'Example: e17fd34e4bc4642f0c4c99d7acb6e661'
+        type: string
+      displayName:
+        description: 'Example: Up by Jawbone'
+        type: string
+      image:
+        description: 'Example: https://i.imgur.com/MXNQy3T.png'
+        type: string
+      getItUrl:
+        description: >-
+          Example:
+          http://www.amazon.com/gp/product/B00A17IAO0/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20
+        type: string
+      shortDescription:
+        description: 'Example: Tracks sleep, exercise, and diet.'
+        type: string
+      longDescription:
+        description: >-
+          Example: UP by Jawbone is a wristband and app that tracks how you
+          sleep, move and eat and then helps you use that information to feel
+          your best.
+        type: string
+      enabled:
+        description: 'Example: 1'
+        type: integer
+      affiliate:
+        description: 'Example: 1'
+        type: boolean
+      defaultVariableCategoryName:
+        description: 'Example: Physical Activity'
+        type: string
+      imageHtml:
+        description: >-
+          Example: <a
+          href="http://www.amazon.com/gp/product/B00A17IAO0/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20"><img
+          id="up_image" title="Up by Jawbone"
+          src="https://i.imgur.com/MXNQy3T.png" alt="Up by Jawbone"></a>
+        type: string
+      linkedDisplayNameHtml:
+        description: >-
+          Example: <a
+          href="http://www.amazon.com/gp/product/B00A17IAO0/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20">Up
+          by Jawbone</a>
+        type: string
+  Image:
+    required:
+      - imageUrl
+      - height
+      - width
+    properties:
+      imageUrl:
+        description: 'Example: https://www.filepicker.io/api/file/TjmeNWS5Q2SFmtJlUGLf'
+        type: string
+      height:
+        description: 'Example: 240'
+        type: string
+      width:
+        description: 'Example: 224'
+        type: string
+  Button:
+    required:
+      - text
+      - link
+    properties:
+      text:
+        description: 'Example: Start Tracking'
+        type: string
+      link:
+        description: 'Example: https://local.quantimo.do'
+        type: string
+  ExplanationStartTracking:
+    required:
+      - title
+      - description
+      - button
+    properties:
+      title:
+        description: 'Example: Improve Accuracy'
+        type: string
+      description:
+        description: >-
+          Example: The more data I have the more accurate your results will be
+          so track regularly!
+        type: string
+      button:
+        $ref: '#/definitions/Button'
+  GetCorrelationsDataResponse:
+    required:
+      - correlations
+      - explanation
+    properties:
+      correlations:
+        type: array
+        items:
+          $ref: '#/definitions/Correlation'
+      explanation:
+        $ref: '#/definitions/Explanation'
 securityDefinitions:
   quantimodo_oauth2:
     type: oauth2
