@@ -7056,8 +7056,8 @@
       "flow": "accessCode",
       "scopes": {
         "basic": "Allows you to read user info (display name, email, etc).",
-        "readmeasurements": "Allows one to read a user's data",
-        "writemeasurements": "Allows you to write user data"
+        "readmeasurements": "Allows one to read user data",
+        "writemeasurements": "Allows one to write user data"
       }
     },
     "access_token": {
