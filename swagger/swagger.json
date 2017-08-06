@@ -4436,7 +4436,11 @@
     },
     "TrackingReminderNotification": {
       "required": [
-        "id"
+        "id",
+        "availableDefaultUnits",
+        "actionArray",
+        "trackAllActions",
+        "fillingValue"
       ],
       "properties": {
         "id": {
@@ -4744,6 +4748,28 @@
         "iconIcon": {
           "description": "Example: ion-sad-outline",
           "type": "string"
+        },
+        "availableDefaultUnits": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Unit"
+          }
+        },
+        "actionArray": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TrackingReminderNotificationActionArray"
+          }
+        },
+        "trackAllActions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TrackingReminderNotificationTrackAllAction"
+          }
+        },
+        "fillingValue": {
+          "description": "Example: 0",
+          "type": "integer"
         }
       }
     },
@@ -5678,7 +5704,9 @@
         "lastValue",
         "mostCommonValue",
         "mostCommonUnit",
-        "lastSource"
+        "lastSource",
+        "onsetDelayInHours",
+        "availableDefaultUnits"
       ],
       "properties": {
         "id": {
@@ -6015,6 +6043,16 @@
         "valence": {
           "description": "Example: positive",
           "type": "string"
+        },
+        "onsetDelayInHours": {
+          "description": "Example: 0",
+          "type": "integer"
+        },
+        "availableDefaultUnits": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Unit"
+          }
         }
       }
     },
@@ -6818,6 +6856,58 @@
         },
         "explanation": {
           "$ref": "#/definitions/Explanation"
+        }
+      }
+    },
+    "TrackingReminderNotificationActionArray": {
+      "required": [
+        "title",
+        "callback",
+        "modifiedValue",
+        "action"
+      ],
+      "properties": {
+        "title": {
+          "description": "Example: Rate 3/5",
+          "type": "string"
+        },
+        "callback": {
+          "description": "Example: trackThreeRatingAction",
+          "type": "string"
+        },
+        "modifiedValue": {
+          "description": "Example: 3",
+          "type": "integer"
+        },
+        "action": {
+          "description": "Example: track",
+          "type": "string"
+        }
+      }
+    },
+    "TrackingReminderNotificationTrackAllAction": {
+      "required": [
+        "title",
+        "callback",
+        "modifiedValue",
+        "action"
+      ],
+      "properties": {
+        "title": {
+          "description": "Example: Rate 3/5 for all",
+          "type": "string"
+        },
+        "callback": {
+          "description": "Example: trackThreeRatingAction",
+          "type": "string"
+        },
+        "modifiedValue": {
+          "description": "Example: 3",
+          "type": "integer"
+        },
+        "action": {
+          "description": "Example: trackAll",
+          "type": "string"
         }
       }
     }
