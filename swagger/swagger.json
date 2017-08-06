@@ -5012,7 +5012,9 @@
     },
     "UserVariable": {
       "required": [
-        "variableId"
+        "variableId",
+        "availableDefaultUnits",
+        "price"
       ],
       "properties": {
         "parentId": {
@@ -5622,6 +5624,17 @@
         "experimentEndTimeSeconds": {
           "description": "Example: 1893477600",
           "type": "integer"
+        },
+        "availableDefaultUnits": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Unit"
+          }
+        },
+        "price": {
+          "description": "Example: 95.4",
+          "type": "number",
+          "format": "double"
         }
       }
     },
