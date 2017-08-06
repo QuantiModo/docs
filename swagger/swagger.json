@@ -4832,55 +4832,6 @@
         }
       }
     },
-    "Update": {
-      "required": [
-        "userId",
-        "connectorId",
-        "numberOfMeasurements",
-        "success",
-        "message"
-      ],
-      "properties": {
-        "id": {
-          "description": "id",
-          "type": "integer",
-          "format": "int32"
-        },
-        "userId": {
-          "description": "userId",
-          "type": "integer",
-          "format": "int32"
-        },
-        "connectorId": {
-          "description": "connectorId",
-          "type": "integer",
-          "format": "int32"
-        },
-        "numberOfMeasurements": {
-          "description": "numberOfMeasurements",
-          "type": "integer",
-          "format": "int32"
-        },
-        "success": {
-          "description": "success",
-          "type": "boolean"
-        },
-        "message": {
-          "description": "message",
-          "type": "string"
-        },
-        "createdAt": {
-          "description": "When the record was first created. Use UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`  datetime format",
-          "type": "string",
-          "format": "date-time"
-        },
-        "updatedAt": {
-          "description": "When the record in the database was last updated. Use UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`  datetime format",
-          "type": "string",
-          "format": "date-time"
-        }
-      }
-    },
     "UnitCategory": {
       "required": [
         "name"
@@ -5056,87 +5007,6 @@
         "conversionFactor": {
           "type": "number",
           "description": "Number by which we multiply the tagged variable value to obtain the tag variable (ingredient) value"
-        }
-      }
-    },
-    "UserTokenRequest": {
-      "type": "object",
-      "required": [
-        "organizationAccessToken"
-      ],
-      "properties": {
-        "user": {
-          "$ref": "#/definitions/UserTokenRequestInnerUserField"
-        },
-        "organizationAccessToken": {
-          "type": "string",
-          "description": "Organization Access token"
-        }
-      }
-    },
-    "UserTokenSuccessfulResponse": {
-      "type": "object",
-      "required": [
-        "code",
-        "message",
-        "user"
-      ],
-      "properties": {
-        "code": {
-          "type": "integer",
-          "description": "Status code"
-        },
-        "message": {
-          "type": "string",
-          "description": "Message"
-        },
-        "user": {
-          "$ref": "#/definitions/UserTokenSuccessfulResponseInnerUserField"
-        }
-      }
-    },
-    "UserTokenFailedResponse": {
-      "type": "object",
-      "required": [
-        "code",
-        "message",
-        "success"
-      ],
-      "properties": {
-        "code": {
-          "type": "integer",
-          "description": "Status code"
-        },
-        "message": {
-          "type": "string",
-          "description": "Message"
-        },
-        "success": {
-          "type": "boolean"
-        }
-      }
-    },
-    "UserTokenRequestInnerUserField": {
-      "properties": {
-        "id": {
-          "type": "integer",
-          "description": "WordPress user ID"
-        }
-      }
-    },
-    "UserTokenSuccessfulResponseInnerUserField": {
-      "required": [
-        "id",
-        "access_token"
-      ],
-      "properties": {
-        "id": {
-          "type": "integer",
-          "description": "WordPress user ID"
-        },
-        "access_token": {
-          "type": "string",
-          "description": "User token"
         }
       }
     },
@@ -6841,115 +6711,6 @@
         }
       }
     },
-    "GetUserCorrelationsDataResponse": {
-      "type": "object",
-      "required": [
-        "status",
-        "success"
-      ],
-      "properties": {
-        "status": {
-          "type": "integer",
-          "description": "Status code"
-        },
-        "message": {
-          "type": "string",
-          "description": "Message"
-        },
-        "success": {
-          "type": "boolean"
-        },
-        "data": {
-          "properties": {
-            "correlations": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/Correlation"
-              }
-            },
-            "explanation": {
-              "$ref": "#/definitions/Explanation"
-            }
-          }
-        }
-      }
-    },
-    "DataSource": {
-      "required": [
-        "id",
-        "name",
-        "connectorClientId",
-        "connectorClientSecret",
-        "displayName",
-        "image",
-        "getItUrl",
-        "shortDescription",
-        "longDescription",
-        "enabled",
-        "affiliate",
-        "defaultVariableCategoryName",
-        "imageHtml",
-        "linkedDisplayNameHtml"
-      ],
-      "properties": {
-        "id": {
-          "description": "Example: 6",
-          "type": "integer"
-        },
-        "name": {
-          "description": "Example: up",
-          "type": "string"
-        },
-        "connectorClientId": {
-          "description": "Example: 10RfjEgKr8U",
-          "type": "string"
-        },
-        "connectorClientSecret": {
-          "description": "Example: e17fd34e4bc4642f0c4c99d7acb6e661",
-          "type": "string"
-        },
-        "displayName": {
-          "description": "Example: Up by Jawbone",
-          "type": "string"
-        },
-        "image": {
-          "description": "Example: https://i.imgur.com/MXNQy3T.png",
-          "type": "string"
-        },
-        "getItUrl": {
-          "description": "Example: http://www.amazon.com/gp/product/B00A17IAO0/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20",
-          "type": "string"
-        },
-        "shortDescription": {
-          "description": "Example: Tracks sleep, exercise, and diet.",
-          "type": "string"
-        },
-        "longDescription": {
-          "description": "Example: UP by Jawbone is a wristband and app that tracks how you sleep, move and eat and then helps you use that information to feel your best.",
-          "type": "string"
-        },
-        "enabled": {
-          "description": "Example: 1",
-          "type": "integer"
-        },
-        "affiliate": {
-          "description": "Example: 1",
-          "type": "boolean"
-        },
-        "defaultVariableCategoryName": {
-          "description": "Example: Physical Activity",
-          "type": "string"
-        },
-        "imageHtml": {
-          "description": "Example: <a href=\"http://www.amazon.com/gp/product/B00A17IAO0/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20\"><img id=\"up_image\" title=\"Up by Jawbone\" src=\"https://i.imgur.com/MXNQy3T.png\" alt=\"Up by Jawbone\"></a>",
-          "type": "string"
-        },
-        "linkedDisplayNameHtml": {
-          "description": "Example: <a href=\"http://www.amazon.com/gp/product/B00A17IAO0/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20\">Up by Jawbone</a>",
-          "type": "string"
-        }
-      }
-    },
     "GetCorrelationsResponse": {
       "type": "object",
       "required": [
@@ -7055,9 +6816,9 @@
       "tokenUrl": "https://app.quantimo.do/api/v2/oauth/token",
       "flow": "accessCode",
       "scopes": {
-        "basic": "Allows you to read user info (display name, email, etc).",
-        "readmeasurements": "Allows one to read user data",
-        "writemeasurements": "Allows one to write user data"
+        "basic": "Allows you to read user info (displayname, email, etc).",
+        "readmeasurements": "Allows one to read a user's data",
+        "writemeasurements": "Allows you to write user data"
       }
     },
     "access_token": {
