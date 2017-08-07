@@ -23,6 +23,9 @@ dependencies:
     - ls ./sdks-unzipped/javascript-client
     - gulp copy-js-sdk-to-node-modules
     - ls ./node_modules/quantimodo
+
+test:
+  override:
     - gulp test-endpoints
 
 general:
