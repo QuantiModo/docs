@@ -21,6 +21,8 @@ dependencies:
     - gulp 0-download
     - gulp 1-decompress
     - ls ./sdks-unzipped/javascript-client
+    - gulp copy-js-sdk-to-node-modules
+    - ls ./node_modules/quantimodo
     - gulp test-endpoints
 
 general:
