@@ -20,6 +20,7 @@ dependencies:
     - npm install
     - gulp 0-download
     - gulp 1-decompress
+    - ls ./sdks-unzipped/javascript-client
     - gulp test-endpoints
 
 general:
