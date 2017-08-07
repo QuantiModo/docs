@@ -12,10 +12,15 @@ machine:
 dependencies:
   pre:
     - chmod +x -R scripts/*
-    - git clone https://github.com/swagger-api/swagger-codegen
-    - cd swagger-codegen && ./run-in-docker.sh mvn package
-    - sh scripts/generate-v1-sdks-circleci.sh
-    - cd quantimodo_v1_skds/javascript && npm install && npm test
+    #- git clone https://github.com/swagger-api/swagger-codegen
+    #- cd swagger-codegen && ./run-in-docker.sh mvn package
+    #- sh scripts/generate-v1-sdks-circleci.sh
+    #- cd quantimodo_v1_skds/javascript && npm install && npm test
+    - npm install
+    - gulp 0-download
+    - gulp 1-decompress
+    - gulp 3-copy-to-repos
+    - gulp test-endpoints
 
 general:
   artifacts:
@@ -26,4 +31,4 @@ deployment:
   prod:
     branch: master
     commands:
-      - aws s3 cp ~/docs/swagger-codegen/quantimodo_v1_skds.zip s3://quantimodo-docs/
+      #- aws s3 cp ~/docs/swagger-codegen/quantimodo_v1_skds.zip s3://quantimodo-docs/
