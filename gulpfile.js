@@ -1,29 +1,12 @@
 var gulp = require('gulp');
-var bower = require('bower');
-var concat = require('gulp-concat');
 var rename = require('gulp-rename');
-var change = require('gulp-change');
-var q = require('q');
 var fs = require('fs');
-var glob = require('glob');
-var zip = require('gulp-zip');
-var request = require('request');
-var open = require('gulp-open');
 var runSequence = require('run-sequence');
-var plist = require('plist');
-var clean = require('gulp-rimraf');
-var replace = require('gulp-string-replace');
-var unzip = require('gulp-unzip');
-var bump = require('gulp-bump');
 var git = require('gulp-git');
 var download = require('gulp-download-stream');
-var inject = require('gulp-inject');
-var jimp = require('gulp-jimp');
 var rp = require('request-promise');
-var minimatch = require('minimatch');
 var ignore = require('gulp-ignore');
 var del = require('del');
-var logger = require('gulp-logger');
 var decompress = require('gulp-decompress');
 var bugsnag = require("bugsnag");
 bugsnag.register("ae7bc49d1285848342342bb5c321a2cf");
@@ -96,10 +79,6 @@ var sdkSwaggerCodegenOptions ={
         "gemAuthorEmail": "mike@quantimo.do"
     }
 };
-var shell = require('gulp-shell');
-var prompt = require('gulp-prompt');
-var util = require('util');
-var s3 = require('gulp-s3-upload')({accessKeyId: process.env.AWS_ACCESS_KEY_ID, secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY});
 var majorMinorVersionNumbers = '5.8.';
 function getPatchVersionNumber() {
     var date = new Date();
