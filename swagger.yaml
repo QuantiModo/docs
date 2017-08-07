@@ -536,6 +536,120 @@ parameters:
     description: 'Example: true'
     in: query
     type: boolean
+  fallbackToStudyForCauseAndEffectParam:
+    name: fallbackToStudyForCauseAndEffect
+    required: false
+    description: 'Example: 1'
+    in: query
+    type: boolean
+  reminderStartTimeParam:
+    name: reminderStartTime
+    required: false
+    description: 'Example: 20:00:00'
+    in: query
+    type: string
+  startTrackingDateParam:
+    name: startTrackingDate
+    required: false
+    description: 'Example: 2017-08-07'
+    in: query
+    type: string
+  stopTrackingDateParam:
+    name: stopTrackingDate
+    required: false
+    description: 'Example: 2117-08-07'
+    in: query
+    type: string
+  variableCategoryIdParam:
+    name: variableCategoryId
+    required: false
+    description: 'Example: 13'
+    in: query
+    type: integer
+  includeDeletedParam:
+    name: includeDeleted
+    required: false
+    description: 'Example: '
+    in: query
+    type: boolean
+  unitAbbreviatedNameParam:
+    name: unitAbbreviatedName
+    required: false
+    description: 'Example: /5'
+    in: query
+    type: string
+  doNotCreateNewCommonVariablesParam:
+    name: doNotCreateNewCommonVariables
+    required: false
+    description: 'Example: '
+    in: query
+    type: boolean
+  unitIdParam:
+    name: unitId
+    required: false
+    description: 'Example: 10'
+    in: query
+    type: integer
+  minimumReminderTimeUtcStringParam:
+    name: minimumReminderTimeUtcString
+    required: false
+    description: 'Example: 2017-08-06T23:20:11+00:00'
+    in: query
+    type: string
+  maximumReminderTimeUtcStringParam:
+    name: maximumReminderTimeUtcString
+    required: false
+    description: 'Example: 2017-08-08T23:20:11+00:00'
+    in: query
+    type: string
+  effectOrCauseParam:
+    name: effectOrCause
+    required: false
+    description: 'Example: '
+    in: query
+    type: string
+  publicEffectOrCauseParam:
+    name: publicEffectOrCause
+    required: false
+    description: 'Example: '
+    in: query
+    type: string
+  exactMatchParam:
+    name: exactMatch
+    required: false
+    description: 'Example: '
+    in: query
+    type: boolean
+  manualTrackingParam:
+    name: manualTracking
+    required: false
+    description: 'Example: '
+    in: query
+    type: boolean
+  includePrivateParam:
+    name: includePrivate
+    required: false
+    description: 'Example: '
+    in: query
+    type: boolean
+  searchPhraseParam:
+    name: searchPhrase
+    required: false
+    description: 'Example: %Body Fat%'
+    in: query
+    type: string
+  synonymsParam:
+    name: synonyms
+    required: false
+    description: 'Example: %McDonalds hotcake%'
+    in: query
+    type: string
+  numberOfAggregatedCorrelationsAsEffectParam:
+    name: numberOfAggregatedCorrelationsAsEffect
+    required: false
+    description: 'Example: (gt)1'
+    in: query
+    type: string
 schemes:
   - https
 consumes:
@@ -726,9 +840,10 @@ paths:
         - $ref: '#/parameters/outcomesOfInterestParam'
         - $ref: '#/parameters/appNameParam'
         - $ref: '#/parameters/clientIdParam'
+        - $ref: '#/parameters/fallbackToStudyForCauseAndEffectParam'
       responses:
         '200':
-          description: successful operation
+          description: Successful operation
           schema:
             $ref: '#/definitions/GetCorrelationsResponse'
         '401':
@@ -1151,7 +1266,6 @@ paths:
       produces:
         - application/json
       parameters:
-        - $ref: '#/parameters/userIdParam'
         - name: body
           in: body
           description: TrackingReminder that should be stored
@@ -1412,6 +1526,14 @@ paths:
         - $ref: '#/parameters/userVariablesParam'
         - $ref: '#/parameters/appNameParam'
         - $ref: '#/parameters/clientIdParam'
+        - $ref: '#/parameters/includePublicParam'
+        - $ref: '#/parameters/searchPhraseParam'
+        - $ref: '#/parameters/includePrivateParam'
+        - $ref: '#/parameters/exactMatchParam'
+        - $ref: '#/parameters/manualTrackingParam'
+        - $ref: '#/parameters/variableCategoryNameParam'
+        - $ref: '#/parameters/variableCategoryIdParam'
+        - $ref: '#/parameters/synonymsParam'
       responses:
         '201':
           description: Successful Operation
@@ -1516,6 +1638,15 @@ paths:
         - $ref: '#/parameters/limitParam'
         - $ref: '#/parameters/offsetParam'
         - $ref: '#/parameters/sortParam'
+        - $ref: '#/parameters/effectOrCauseParam'
+        - $ref: '#/parameters/publicEffectOrCauseParam'
+        - $ref: '#/parameters/exactMatchParam'
+        - $ref: '#/parameters/manualTrackingParam'
+        - $ref: '#/parameters/variableCategoryIdParam'
+        - $ref: '#/parameters/includePrivateParam'
+        - $ref: '#/parameters/clientIdParam'
+        - $ref: '#/parameters/searchPhraseParam'
+        - $ref: '#/parameters/synonymsParam'
       responses:
         '200':
           description: Successful operation
@@ -3848,6 +3979,34 @@ definitions:
       stripeActive:
         description: 'Example: 1'
         type: boolean
+      getPreviewBuilds:
+        description: 'Example: false'
+        type: boolean
+      hasAndroidApp:
+        description: 'Example: false'
+        type: boolean
+      hasChromeExtension:
+        description: 'Example: false'
+        type: boolean
+      hasIosApp:
+        description: 'Example: false'
+        type: boolean
+      lastSmsTrackingReminderNotificationId:
+        description: 'Example: '
+        type: string
+      phoneNumber:
+        description: 'Example: '
+        type: string
+      phoneVerificationCode:
+        description: 'Example: '
+        type: string
+      smsNotificationsEnabled:
+        description: 'Example: false'
+        type: boolean
+      subscriptionEndsAt:
+        description: 'Example: '
+        type: string
+        format: date-time
   UserTag:
     required:
       - taggedVariableId
@@ -5151,6 +5310,100 @@ definitions:
       name:
         type: string
         description: Category name
+      id:
+        description: 'Example: 1'
+        type: integer
+      appType:
+        description: 'Example: mood'
+        type: string
+      fillingValue:
+        description: 'Example: -1'
+        type: integer
+      maximumAllowedValue:
+        description: 'Example: '
+        type: string
+      minimumAllowedValue:
+        description: 'Example: '
+        type: string
+      durationOfAction:
+        description: 'Example: 86400'
+        type: integer
+      onsetDelay:
+        description: 'Example: 0'
+        type: integer
+      combinationOperation:
+        description: 'Example: MEAN'
+        type: string
+      causeOnly:
+        description: 'Example: false'
+        type: boolean
+      public:
+        description: 'Example: true'
+        type: boolean
+      outcome:
+        description: 'Example: true'
+        type: boolean
+      updated:
+        description: 'Example: 1'
+        type: integer
+      createdTime:
+        description: 'Example: '
+        type: string
+        format: date-time
+      updatedTime:
+        description: 'Example: '
+        type: string
+        format: date-time
+      imageUrl:
+        description: >-
+          Example:
+          https://maxcdn.icons8.com/Color/PNG/96/Cinema/theatre_mask-96.png
+        type: string
+      ionIcon:
+        description: 'Example: ion-happy-outline'
+        type: string
+      manualTracking:
+        description: 'Example: true'
+        type: boolean
+      svgUrl:
+        description: >-
+          Example:
+          https://app.quantimo.do/ionic/Modo/www/img/variable_categories/emotions.svg
+        type: string
+      pngUrl:
+        description: >-
+          Example:
+          https://app.quantimo.do/ionic/Modo/www/img/variable_categories/emotions.png
+        type: string
+      pngPath:
+        description: 'Example: img/variable_categories/emotions.png'
+        type: string
+      svgPath:
+        description: 'Example: img/variable_categories/emotions.svg'
+        type: string
+      defaultUnitAbbreviatedName:
+        description: 'Example: /5'
+        type: string
+      helpText:
+        description: 'Example: What emotion do you want to rate?'
+        type: string
+      variableCategoryName:
+        description: 'Example: Emotions'
+        type: string
+      variableCategoryNameSingular:
+        description: 'Example: Emotion'
+        type: string
+      measurementSynonymSingularLowercase:
+        description: 'Example: rating'
+        type: string
+      moreInfo:
+        description: >-
+          Example: Do you have any emotions that fluctuate regularly?  If so,
+          add them so I can try to determine which factors are influencing them.
+        type: string
+      defaultUnitId:
+        description: 'Example: 10'
+        type: integer
   VoteDelete:
     required:
       - cause
@@ -7408,6 +7661,26 @@ definitions:
     type: array
     items:
       $ref: '#/definitions/TrackingReminderNotification'
+  UnitArray:
+    type: array
+    items:
+      $ref: '#/definitions/Unit'
+  VariableCategoryArray:
+    type: array
+    items:
+      $ref: '#/definitions/VariableCategory'
+  UserVariableArray:
+    type: array
+    items:
+      $ref: '#/definitions/UserVariable'
+  TrackingReminderNotificationArray:
+    type: array
+    items:
+      $ref: '#/definitions/TrackingReminderNotification'
+  VariableArray:
+    type: array
+    items:
+      $ref: '#/definitions/Variable'
 securityDefinitions:
   quantimodo_oauth2:
     type: oauth2
