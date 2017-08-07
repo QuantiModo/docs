@@ -1686,10 +1686,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/TrackingReminderNotification"
-              }
+              "$ref": "#/definitions/GetTrackingReminderNotificationsResponse"
             }
           }
         },
@@ -4746,6 +4743,20 @@
         "fillingValue": {
           "description": "Example: 0",
           "type": "integer"
+        },
+        "reminderEndTime": {
+          "description": "Example: ",
+          "type": "string",
+          "format": "date-time"
+        },
+        "notifiedAt": {
+          "description": "Example: ",
+          "type": "string",
+          "format": "date-time"
+        },
+        "variableImageUrl": {
+          "description": "Example: ",
+          "type": "string"
         }
       }
     },
@@ -8925,6 +8936,35 @@
           "description": "Example: 230",
           "type": "integer"
         }
+      }
+    },
+    "GetTrackingReminderNotificationsResponse": {
+      "type": "object",
+      "required": [
+        "status",
+        "success"
+      ],
+      "properties": {
+        "status": {
+          "type": "integer",
+          "description": "Status code"
+        },
+        "message": {
+          "type": "string",
+          "description": "Message"
+        },
+        "success": {
+          "type": "boolean"
+        },
+        "data": {
+          "$ref": "#/definitions/TrackingReminderNotificationsArray"
+        }
+      }
+    },
+    "TrackingReminderNotificationsArray": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/TrackingReminderNotification"
       }
     }
   },
