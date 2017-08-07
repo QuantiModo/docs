@@ -388,11 +388,17 @@ function authenticateQuantiModoSdk() {
     defaultClient = Quantimodo.ApiClient.instance;
     if(process.env.APP_HOST_NAME){defaultClient.basePath = process.env.APP_HOST_NAME + '/api';}
     var quantimodo_oauth2 = defaultClient.authentications['quantimodo_oauth2'];
-    quantimodo_oauth2.accessToken = (process.env.QUANTIMODO_ACCESS_TOKEN) ? process.env.QUANTIMODO_ACCESS_TOKEN : 'demo';
+    if(process.env.QUANTIMODO_ACCESS_TOKEN){
+        logInfo("Using process.env.QUANTIMODO_ACCESS_TOKEN");
+        quantimodo_oauth2.accessToken = process.env.QUANTIMODO_ACCESS_TOKEN;
+    } else {
+        logInfo("Using demo access token");
+        quantimodo_oauth2.accessToken = 'demo';
+    }
 }
 function handleApiResponse(error, data, response) {
     if (error && error.message) {
-        logError(response.req.path + "failed: " + error.message, error);
+        logError(response.req.path + " failed: " + error.message, error);
     }
     if(!data || Object.keys(data).length === 0){throw "data not returned from " + response.request.url;}
     logDebug('API returned data', data);
