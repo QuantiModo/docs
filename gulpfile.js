@@ -230,9 +230,7 @@ function unzipFileToFolder(sourceFile, destinationFolder) {
         .pipe(gulp.dest(destinationFolder));
 }
 var pathToQmDocker = "../../..";
-var pathToSwaggerDocsFolder = pathToQmDocker + "/public.built/api/docs";
 var pathToQuantiModoNodeModule = 'node_modules/quantimodo';
-var pathToSwaggerQMNodeModule = pathToSwaggerDocsFolder + "/" + pathToQuantiModoNodeModule;
 
 String.prototype.replaceAll = function(search, replacement) {
     var target = this;
@@ -386,7 +384,7 @@ gulp.task('3-copy-to-repos', ['browserify'], function(){
     } catch (error){
         logError(error, error);
     }
-    copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage('javascript'), pathToSwaggerQMNodeModule);
+    copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage('javascript'), pathToQuantiModoNodeModule);
     for(var i = 0; i < languages.length; i++) {
         if(i === languages.length - 1){
             return copyOneFoldersContentsToAnotherExceptReadme(getUnzippedPathForSdkLanguage(languages[i]), getRepoPathForSdkLanguage(languages[i]));
@@ -395,7 +393,7 @@ gulp.task('3-copy-to-repos', ['browserify'], function(){
     }
 });
 gulp.task('copy-js-sdk-to-node-modules', [], function(){
-    return copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage('javascript'), pathToSwaggerQMNodeModule);
+    return copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage('javascript'), pathToQuantiModoNodeModule);
 });
 gulp.task('2-copy-qm-web-js', ['browserify'], function(){
     return gulp.src([getUnzippedPathForSdkLanguage('javascript') + '/quantimodo-web.js']).pipe(gulp.dest(pathToIonic + '/www/custom-lib/'));
