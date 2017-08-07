@@ -7918,7 +7918,7 @@
         }
       }
     },
-    "Style": {
+    "ChartStyle": {
       "required": [
         "background"
       ],
@@ -7937,7 +7937,7 @@
       ],
       "properties": {
         "style": {
-          "$ref": "#/definitions/Style"
+          "$ref": "#/definitions/ChartStyle"
         },
         "hideDuration": {
           "description": "Example: 10",

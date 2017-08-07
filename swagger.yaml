@@ -6411,7 +6411,7 @@ definitions:
       loading:
         description: 'Example: '
         type: string
-  Style:
+  ChartStyle:
     required:
       - background
     properties:
@@ -6425,7 +6425,7 @@ definitions:
       - showDuration
     properties:
       style:
-        $ref: '#/definitions/Style'
+        $ref: '#/definitions/ChartStyle'
       hideDuration:
         description: 'Example: 10'
         type: integer
