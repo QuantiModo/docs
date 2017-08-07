@@ -408,8 +408,10 @@ function authenticateQuantiModoSdk() {
     quantimodo_oauth2.accessToken = process.env.QUANTIMODO_ACCESS_TOKEN;
 }
 function handleApiResponse(error, data, response) {
-    if (error && response.body.errorMessage) {logError(response.req.path + "failed: " + response.body.errorMessage, error);}
-    if(!data || Object.keys(data).length === 0){throw "data not returned!";}
+    if (error && error.message) {
+        logError(response.req.path + "failed: " + error.message, error);
+    }
+    if(!data || Object.keys(data).length === 0){throw "data not returned from " + response.request.url;}
     logInfo('API returned data', data);
 }
 gulp.task('get-aggregated-correlations', [], function (callback) {
