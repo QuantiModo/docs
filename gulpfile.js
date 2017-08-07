@@ -378,12 +378,15 @@ gulp.task('1-decompress', ['clean-repos-except-git'], function () {
     }
 });
 gulp.task('3-copy-to-repos', ['browserify'], function(){
-    copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage('javascript'), pathToQmDocker + '/' + pathToQuantiModoNodeModule);
-    copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage('javascript'), pathToIonic + '/' + pathToQuantiModoNodeModule);
-    copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage('javascript'), pathToIonic + '/www/custom-lib/quantimodo');
-    copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage('javascript'), pathToSwaggerQMNodeModule);
-    gulp.src([getUnzippedPathForSdkLanguage('javascript') + 'quantimodo-web.js'])
-        .pipe(gulp.dest('/www/custom-lib/'));
+    try {
+        copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage('javascript'), pathToQmDocker + '/' + pathToQuantiModoNodeModule);
+        copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage('javascript'), pathToIonic + '/' + pathToQuantiModoNodeModule);
+        copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage('javascript'), pathToIonic + '/www/custom-lib/quantimodo');
+        copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage('javascript'), pathToSwaggerQMNodeModule);
+        gulp.src([getUnzippedPathForSdkLanguage('javascript') + 'quantimodo-web.js']).pipe(gulp.dest('/www/custom-lib/'));
+    } catch (error){
+        logError(error, error);
+    }
     for(var i = 0; i < languages.length; i++) {
         if(i === languages.length - 1){
             return copyOneFoldersContentsToAnotherExceptReadme(getUnzippedPathForSdkLanguage(languages[i]), getRepoPathForSdkLanguage(languages[i]));
