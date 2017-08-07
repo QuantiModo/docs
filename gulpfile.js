@@ -527,7 +527,7 @@ gulp.task('test-endpoints', ['copy-js-sdk-to-node-modules'], function (callback)
                 logError(error.message);
                 throw error.message;
             } else {
-                logInfo('SDK RELEASE FINISHED SUCCESSFULLY');
+                logInfo('All endpoints work! :D');
             }
             callback(error);
         });
