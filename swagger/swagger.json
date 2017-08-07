@@ -2431,9 +2431,9 @@
         ],
         "responses": {
           "200": {
-            "description": "Successful operation",
+            "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/Study"
+              "$ref": "#/definitions/GetStudyResponse"
             }
           },
           "401": {
@@ -2521,7 +2521,7 @@
           "type": "boolean"
         },
         "data": {
-          "$ref": "#/definitions/GetCorrelationsDataResponse"
+          "$ref": "#/definitions/GetStudyDataResponse"
         }
       }
     },
@@ -5016,7 +5016,23 @@
       "required": [
         "variableId",
         "availableDefaultUnits",
-        "price"
+        "price",
+        "alias",
+        "userVariableValence",
+        "userVariableWikipediaTitle",
+        "informationalUrl",
+        "parent",
+        "productUrl",
+        "wikipediaTitle",
+        "userTagVariables",
+        "userTaggedVariables",
+        "joinedUserTagVariables",
+        "ingredientUserTagVariables",
+        "ingredientOfUserTagVariables",
+        "childUserTagVariables",
+        "parentUserTagVariables",
+        "commonTagVariables",
+        "commonTaggedVariables"
       ],
       "properties": {
         "parentId": {
@@ -5637,6 +5653,61 @@
           "description": "Example: 95.4",
           "type": "number",
           "format": "double"
+        },
+        "alias": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "userVariableValence": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "userVariableWikipediaTitle": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "informationalUrl": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "parent": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "productUrl": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "wikipediaTitle": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "userTagVariables": {
+          "$ref": "#/definitions/UserVariable"
+        },
+        "userTaggedVariables": {
+          "$ref": "#/definitions/UserVariable"
+        },
+        "joinedUserTagVariables": {
+          "$ref": "#/definitions/UserVariable"
+        },
+        "ingredientUserTagVariables": {
+          "$ref": "#/definitions/UserVariable"
+        },
+        "ingredientOfUserTagVariables": {
+          "$ref": "#/definitions/UserVariable"
+        },
+        "childUserTagVariables": {
+          "$ref": "#/definitions/UserVariable"
+        },
+        "parentUserTagVariables": {
+          "$ref": "#/definitions/UserVariable"
+        },
+        "commonTagVariables": {
+          "$ref": "#/definitions/Variable"
+        },
+        "commonTaggedVariables": {
+          "$ref": "#/definitions/Variable"
         }
       }
     },
@@ -5682,7 +5753,78 @@
         "mostCommonUnit",
         "lastSource",
         "onsetDelayInHours",
-        "availableDefaultUnits"
+        "availableDefaultUnits",
+        "alias",
+        "clientId",
+        "earliestFillingTime",
+        "earliestSourceTime",
+        "experimentEndTime",
+        "experimentStartTime",
+        "fillingType",
+        "userVariableFillingValue",
+        "lastOriginalUnitId",
+        "lastOriginalValue",
+        "lastProcessedDailyValue",
+        "lastSuccessfulUpdateTime",
+        "lastUnitId",
+        "latestFillingTime",
+        "latestUserMeasurementTime",
+        "latestSourceTime",
+        "maximumRecordedValue",
+        "measurementsAtLastAnalysis",
+        "minimumRecordedValue",
+        "userVariableMostCommonConnectorId",
+        "numberOfChanges",
+        "numberOfProcessedDailyMeasurements",
+        "numberOfUniqueDailyValues",
+        "numberOfUserCorrelationsAsCause",
+        "numberOfUserCorrelationsAsEffect",
+        "outcomeOfInterest",
+        "parentId",
+        "predictorOfInterest",
+        "secondToLastValue",
+        "shareUserMeasurements",
+        "status",
+        "thirdToLastValue",
+        "userId",
+        "userVariableValence",
+        "variableId",
+        "userVariableWikipediaTitle",
+        "variableFillingValue",
+        "informationalUrl",
+        "commonVariableMostCommonConnectorId",
+        "price",
+        "productUrl",
+        "wikipediaTitle",
+        "commonVariableUpdatedAt",
+        "userVariableUpdatedAt",
+        "experimentStartTimeString",
+        "experimentStartTimeSeconds",
+        "experimentEndTimeString",
+        "experimentEndTimeSeconds",
+        "meanInUserVariableDefaultUnit",
+        "lastValueInUserVariableDefaultUnit",
+        "secondToLastValueInUserVariableDefaultUnit",
+        "thirdToLastValueInUserVariableDefaultUnit",
+        "mostCommonValueInUserVariableDefaultUnit",
+        "secondMostCommonValueInUserVariableDefaultUnit",
+        "thirdMostCommonValueInUserVariableDefaultUnit",
+        "chartsLinkStatic",
+        "chartsLinkDynamic",
+        "chartsLinkFacebook",
+        "chartsLinkGoogle",
+        "chartsLinkTwitter",
+        "chartsLinkEmail",
+        "userTagVariables",
+        "userTaggedVariables",
+        "joinedUserTagVariables",
+        "ingredientUserTagVariables",
+        "ingredientOfUserTagVariables",
+        "childUserTagVariables",
+        "parentUserTagVariables",
+        "commonTagVariables",
+        "commonTaggedVariables",
+        "dataSource"
       ],
       "properties": {
         "id": {
@@ -6029,6 +6171,304 @@
           "items": {
             "$ref": "#/definitions/Unit"
           }
+        },
+        "alias": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "clientId": {
+          "description": "Example: local",
+          "type": "string"
+        },
+        "earliestFillingTime": {
+          "description": "Example: 1362099600",
+          "type": "integer"
+        },
+        "earliestSourceTime": {
+          "description": "Example: 1334473200",
+          "type": "integer"
+        },
+        "experimentEndTime": {
+          "description": "Example: ",
+          "type": "string",
+          "format": "date-time"
+        },
+        "experimentStartTime": {
+          "description": "Example: ",
+          "type": "string",
+          "format": "date-time"
+        },
+        "fillingType": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "userVariableFillingValue": {
+          "description": "Example: -1",
+          "type": "number",
+          "format": "double"
+        },
+        "lastOriginalUnitId": {
+          "description": "Example: 47",
+          "type": "integer"
+        },
+        "lastOriginalValue": {
+          "description": "Example: 100900",
+          "type": "number",
+          "format": "double"
+        },
+        "lastProcessedDailyValue": {
+          "description": "Example: 100900",
+          "type": "number",
+          "format": "double"
+        },
+        "lastSuccessfulUpdateTime": {
+          "description": "Example: 2017-02-08 17:43:01",
+          "type": "string",
+          "format": "date-time"
+        },
+        "lastUnitId": {
+          "description": "Example: 47",
+          "type": "integer"
+        },
+        "latestFillingTime": {
+          "description": "Example: 1501722000",
+          "type": "integer"
+        },
+        "latestUserMeasurementTime": {
+          "description": "Example: 1501722000",
+          "type": "integer"
+        },
+        "latestSourceTime": {
+          "description": "Example: 1501722000",
+          "type": "integer"
+        },
+        "maximumRecordedValue": {
+          "description": "Example: 104700",
+          "type": "number",
+          "format": "double"
+        },
+        "measurementsAtLastAnalysis": {
+          "description": "Example: 9795",
+          "type": "integer"
+        },
+        "minimumRecordedValue": {
+          "description": "Example: 1008.74",
+          "type": "number",
+          "format": "double"
+        },
+        "userVariableMostCommonConnectorId": {
+          "description": "Example: 13",
+          "type": "integer"
+        },
+        "numberOfChanges": {
+          "description": "Example: 1317",
+          "type": "integer"
+        },
+        "numberOfProcessedDailyMeasurements": {
+          "description": "Example: 1364",
+          "type": "integer"
+        },
+        "numberOfUniqueDailyValues": {
+          "description": "Example: 283",
+          "type": "integer"
+        },
+        "numberOfUserCorrelationsAsCause": {
+          "description": "Example: 155",
+          "type": "integer"
+        },
+        "numberOfUserCorrelationsAsEffect": {
+          "description": "Example: 0",
+          "type": "integer"
+        },
+        "outcomeOfInterest": {
+          "description": "Example: 0",
+          "type": "integer"
+        },
+        "parentId": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "predictorOfInterest": {
+          "description": "Example: 0",
+          "type": "integer"
+        },
+        "secondToLastValue": {
+          "description": "Example: 101800",
+          "type": "number",
+          "format": "double"
+        },
+        "shareUserMeasurements": {
+          "description": "Example: false",
+          "type": "boolean"
+        },
+        "status": {
+          "description": "Example: UPDATED",
+          "type": "string"
+        },
+        "thirdToLastValue": {
+          "description": "Example: 102000",
+          "type": "number",
+          "format": "double"
+        },
+        "userId": {
+          "description": "Example: 230",
+          "type": "integer"
+        },
+        "userVariableValence": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "variableId": {
+          "description": "Example: 96380",
+          "type": "integer"
+        },
+        "userVariableWikipediaTitle": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "variableFillingValue": {
+          "description": "Example: -1",
+          "type": "number",
+          "format": "double"
+        },
+        "informationalUrl": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "commonVariableMostCommonConnectorId": {
+          "description": "Example: 13",
+          "type": "integer"
+        },
+        "price": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "productUrl": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "wikipediaTitle": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "commonVariableUpdatedAt": {
+          "description": "Example: 2017-07-30 20:47:38",
+          "type": "string",
+          "format": "date-time"
+        },
+        "userVariableUpdatedAt": {
+          "description": "Example: 2017-08-04 11:19:31",
+          "type": "string",
+          "format": "date-time"
+        },
+        "experimentStartTimeString": {
+          "description": "Example: ",
+          "type": "string",
+          "format": "date-time"
+        },
+        "experimentStartTimeSeconds": {
+          "description": "Example: ",
+          "type": "string",
+          "format": "date-time"
+        },
+        "experimentEndTimeString": {
+          "description": "Example: ",
+          "type": "string",
+          "format": "date-time"
+        },
+        "experimentEndTimeSeconds": {
+          "description": "Example: ",
+          "type": "string",
+          "format": "date-time"
+        },
+        "meanInUserVariableDefaultUnit": {
+          "description": "Example: 101260",
+          "type": "number",
+          "format": "double"
+        },
+        "lastValueInUserVariableDefaultUnit": {
+          "description": "Example: 101600",
+          "type": "number",
+          "format": "double"
+        },
+        "secondToLastValueInUserVariableDefaultUnit": {
+          "description": "Example: 101800",
+          "type": "number",
+          "format": "double"
+        },
+        "thirdToLastValueInUserVariableDefaultUnit": {
+          "description": "Example: 102000",
+          "type": "number",
+          "format": "double"
+        },
+        "mostCommonValueInUserVariableDefaultUnit": {
+          "description": "Example: 101700",
+          "type": "number",
+          "format": "double"
+        },
+        "secondMostCommonValueInUserVariableDefaultUnit": {
+          "description": "Example: 101500",
+          "type": "number",
+          "format": "double"
+        },
+        "thirdMostCommonValueInUserVariableDefaultUnit": {
+          "description": "Example: 101700",
+          "type": "number",
+          "format": "double"
+        },
+        "chartsLinkStatic": {
+          "description": "Example: https://local.quantimo.do/api/v2/charts?variableName=Barometric%20Pressure&userId=230&pngUrl=https%3A%2F%2Fapp.quantimo.do%2Fionic%2FModo%2Fwww%2Fimg%2Fvariable_categories%2Fenvironment.png",
+          "type": "string"
+        },
+        "chartsLinkDynamic": {
+          "description": "Example: https://local.quantimo.do/ionic/Modo/www/#/app/charts/Barometric%20Pressure?variableName=Barometric%20Pressure&userId=230&pngUrl=https%3A%2F%2Fapp.quantimo.do%2Fionic%2FModo%2Fwww%2Fimg%2Fvariable_categories%2Fenvironment.png",
+          "type": "string"
+        },
+        "chartsLinkFacebook": {
+          "description": "Example: https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fcharts%3FvariableName%3DBarometric%2520Pressure%26userId%3D230%26pngUrl%3Dhttps%253A%252F%252Fapp.quantimo.do%252Fionic%252FModo%252Fwww%252Fimg%252Fvariable_categories%252Fenvironment.png",
+          "type": "string"
+        },
+        "chartsLinkGoogle": {
+          "description": "Example: https://plus.google.com/share?url=https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fcharts%3FvariableName%3DBarometric%2520Pressure%26userId%3D230%26pngUrl%3Dhttps%253A%252F%252Fapp.quantimo.do%252Fionic%252FModo%252Fwww%252Fimg%252Fvariable_categories%252Fenvironment.png",
+          "type": "string"
+        },
+        "chartsLinkTwitter": {
+          "description": "Example: https://twitter.com/home?status=Check%20out%20my%20Barometric%20Pressure%20data%21%20https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fcharts%3FvariableName%3DBarometric%2520Pressure%26userId%3D230%26pngUrl%3Dhttps%253A%252F%252Fapp.quantimo.do%252Fionic%252FModo%252Fwww%252Fimg%252Fvariable_categories%252Fenvironment.png%20%40quantimodo",
+          "type": "string"
+        },
+        "chartsLinkEmail": {
+          "description": "Example: mailto:?subject=Check%20out%20my%20Barometric%20Pressure%20data%21&body=See%20my%20Barometric%20Pressure%20history%20at%20https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fcharts%3FvariableName%3DBarometric%2520Pressure%26userId%3D230%26pngUrl%3Dhttps%253A%252F%252Fapp.quantimo.do%252Fionic%252FModo%252Fwww%252Fimg%252Fvariable_categories%252Fenvironment.png%0A%0AHave%20a%20great%20day!",
+          "type": "string"
+        },
+        "userTagVariables": {
+          "$ref": "#/definitions/UserVariable"
+        },
+        "userTaggedVariables": {
+          "$ref": "#/definitions/UserVariable"
+        },
+        "joinedUserTagVariables": {
+          "$ref": "#/definitions/UserVariable"
+        },
+        "ingredientUserTagVariables": {
+          "$ref": "#/definitions/UserVariable"
+        },
+        "ingredientOfUserTagVariables": {
+          "$ref": "#/definitions/UserVariable"
+        },
+        "childUserTagVariables": {
+          "$ref": "#/definitions/UserVariable"
+        },
+        "parentUserTagVariables": {
+          "$ref": "#/definitions/UserVariable"
+        },
+        "commonTagVariables": {
+          "$ref": "#/definitions/Variable"
+        },
+        "commonTaggedVariables": {
+          "$ref": "#/definitions/Variable"
+        },
+        "dataSource": {
+          "$ref": "#/definitions/DataSource"
         }
       }
     },
@@ -6109,12 +6549,60 @@
     "Study": {
       "required": [
         "causeVariable",
-        "effectVariable"
+        "effectVariable",
+        "causeProcessedDailyMeasurements",
+        "charts",
+        "effectProcessedDailyMeasurements",
+        "pairs",
+        "statistics",
+        "text",
+        "user"
       ],
       "properties": {
         "userId": {
           "description": "Example: 230",
           "type": "integer"
+        },
+        "causeProcessedDailyMeasurements": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ProcessedDailyMeasurement"
+          }
+        },
+        "causeVariable": {
+          "$ref": "#/definitions/Variable"
+        },
+        "effectVariable": {
+          "$ref": "#/definitions/Variable"
+        },
+        "charts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Chart"
+          }
+        },
+        "effectProcessedDailyMeasurements": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ProcessedDailyMeasurement"
+          }
+        },
+        "pairs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Pair"
+          }
+        },
+        "statistics": {
+          "$ref": "#/definitions/Statistic"
+        },
+        "text": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "user": {
+          "description": "Example: ",
+          "type": "string"
         }
       }
     },
@@ -6214,10 +6702,8 @@
         "studyDesign",
         "studyObjective",
         "dataSources",
-        "causeDataSource",
         "dataSourcesParagraphForCause",
         "instructionsForCause",
-        "effectDataSource",
         "dataSourcesParagraphForEffect",
         "instructionsForEffect",
         "dataAnalysis",
@@ -6864,6 +7350,1580 @@
         "action": {
           "description": "Example: trackAll",
           "type": "string"
+        }
+      }
+    },
+    "ProcessedDailyMeasurement": {
+      "required": [
+        "startTimeEpoch",
+        "unitId",
+        "variableId",
+        "variableName",
+        "variableCategoryId",
+        "value",
+        "startDate",
+        "note",
+        "originalValue",
+        "originalUnitId",
+        "id",
+        "duration",
+        "startTimeString"
+      ],
+      "properties": {
+        "startTimeEpoch": {
+          "description": "Example: 1464937200",
+          "type": "integer"
+        },
+        "unitId": {
+          "description": "Example: 47",
+          "type": "integer"
+        },
+        "variableId": {
+          "description": "Example: 96380",
+          "type": "integer"
+        },
+        "variableName": {
+          "description": "Example: Barometric Pressure",
+          "type": "string"
+        },
+        "variableCategoryId": {
+          "description": "Example: 17",
+          "type": "integer"
+        },
+        "value": {
+          "description": "Example: 101341.66666667",
+          "type": "number",
+          "format": "double"
+        },
+        "startDate": {
+          "description": "Example: 2016-06-03",
+          "type": "string"
+        },
+        "note": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "originalValue": {
+          "description": "Example: 101800, 101800, 101700, 101600, 101600, 101600",
+          "type": "string"
+        },
+        "originalUnitId": {
+          "description": "Example: 47, 47, 47, 47, 47, 47",
+          "type": "string"
+        },
+        "id": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "duration": {
+          "description": "Example: 0",
+          "type": "integer"
+        },
+        "startTimeString": {
+          "description": "Example: 2016-06-03 07:00:00",
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "DataSource": {
+      "required": [
+        "id",
+        "name",
+        "displayName",
+        "image",
+        "getItUrl",
+        "shortDescription",
+        "longDescription",
+        "enabled",
+        "affiliate",
+        "defaultVariableCategoryName",
+        "imageHtml",
+        "linkedDisplayNameHtml",
+        "connectorClientId"
+      ],
+      "properties": {
+        "id": {
+          "description": "Example: 72",
+          "type": "integer"
+        },
+        "name": {
+          "description": "Example: quantimodo",
+          "type": "string"
+        },
+        "displayName": {
+          "description": "Example: QuantiModo",
+          "type": "string"
+        },
+        "image": {
+          "description": "Example: https://app.quantimo.do/ionic/Modo/www/img/logos/quantimodo-logo-qm-rainbow-200-200.png",
+          "type": "string"
+        },
+        "getItUrl": {
+          "description": "Example: https://quantimo.do",
+          "type": "string"
+        },
+        "shortDescription": {
+          "description": "Example: Tracks anything",
+          "type": "string"
+        },
+        "longDescription": {
+          "description": "Example: QuantiModo is a Chrome extension, Android app, iOS app, and web app that allows you to easily track mood, symptoms, or any outcome you want to optimize in a fraction of a second.  You can also import your data from over 30 other apps and devices like Fitbit, Rescuetime, Jawbone Up, Withings, Facebook, Github, Google Calendar, Runkeeper, MoodPanda, Slice, Google Fit, and more.  QuantiModo then analyzes your data to identify which hidden factors are most likely to be influencing your mood or symptoms and their optimal daily values.",
+          "type": "string"
+        },
+        "enabled": {
+          "description": "Example: 0",
+          "type": "integer"
+        },
+        "affiliate": {
+          "description": "Example: true",
+          "type": "boolean"
+        },
+        "defaultVariableCategoryName": {
+          "description": "Example: Foods",
+          "type": "string"
+        },
+        "imageHtml": {
+          "description": "Example: <a href=\"https://quantimo.do\"><img id=\"quantimodo_image\" title=\"QuantiModo\" src=\"https://app.quantimo.do/ionic/Modo/www/img/logos/quantimodo-logo-qm-rainbow-200-200.png\" alt=\"QuantiModo\"></a>",
+          "type": "string"
+        },
+        "linkedDisplayNameHtml": {
+          "description": "Example: <a href=\"https://quantimo.do\">QuantiModo</a>",
+          "type": "string"
+        },
+        "connectorClientId": {
+          "description": "Example: ba7d0c12432650e23b3ce924ae2d21e2ff59e7e4e28650759633700af7ed0a30",
+          "type": "string"
+        }
+      }
+    },
+    "Chart": {
+      "required": [
+        "type",
+        "zoomType",
+        "chartConfig",
+        "chartTitle",
+        "chartId",
+        "explanation",
+        "height",
+        "renderTo",
+        "animation"
+      ],
+      "properties": {
+        "type": {
+          "description": "Example: scatter",
+          "type": "string"
+        },
+        "zoomType": {
+          "description": "Example: xy",
+          "type": "string"
+        },
+        "chartConfig": {
+          "$ref": "#/definitions/ChartConfig"
+        },
+        "chartTitle": {
+          "description": "Example: Reference And Learning Hours following Barometric Pressure (R = 0.147)",
+          "type": "string"
+        },
+        "chartId": {
+          "description": "Example: correlationScatterPlot",
+          "type": "string"
+        },
+        "explanation": {
+          "description": "Example: The chart above indicates that an increase in Barometric Pressure is usually followed by an increase in Reference And Learning Hours.",
+          "type": "string"
+        },
+        "height": {
+          "description": "Example: 300",
+          "type": "integer"
+        },
+        "renderTo": {
+          "description": "Example: BarContainer",
+          "type": "string"
+        },
+        "animation": {
+          "$ref": "#/definitions/Animation"
+        }
+      }
+    },
+    "Hover": {
+      "required": [
+        "enabled",
+        "lineColor",
+        "marker"
+      ],
+      "properties": {
+        "enabled": {
+          "description": "Example: true",
+          "type": "boolean"
+        },
+        "lineColor": {
+          "description": "Example: rgb(100,100,100)",
+          "type": "string"
+        },
+        "marker": {
+          "$ref": "#/definitions/Marker"
+        }
+      }
+    },
+    "State": {
+      "required": [
+        "hover"
+      ],
+      "properties": {
+        "hover": {
+          "$ref": "#/definitions/Hover"
+        }
+      }
+    },
+    "Marker": {
+      "required": [
+        "radius",
+        "states",
+        "enabled"
+      ],
+      "properties": {
+        "radius": {
+          "description": "Example: 5",
+          "type": "integer"
+        },
+        "states": {
+          "$ref": "#/definitions/State"
+        },
+        "enabled": {
+          "description": "Example: false",
+          "type": "boolean"
+        }
+      }
+    },
+    "Tooltip": {
+      "required": [
+        "pointFormat",
+        "valueSuffix"
+      ],
+      "properties": {
+        "pointFormat": {
+          "description": "Example: {point.x}Pa, {point.y}h",
+          "type": "string"
+        },
+        "valueSuffix": {
+          "description": "Example: Pa",
+          "type": "string"
+        }
+      }
+    },
+    "Scatter": {
+      "required": [
+        "marker",
+        "states",
+        "tooltip"
+      ],
+      "properties": {
+        "marker": {
+          "$ref": "#/definitions/Marker"
+        },
+        "states": {
+          "$ref": "#/definitions/State"
+        },
+        "tooltip": {
+          "$ref": "#/definitions/Tooltip"
+        }
+      }
+    },
+    "PlotOption": {
+      "required": [
+        "scatter",
+        "column"
+      ],
+      "properties": {
+        "scatter": {
+          "$ref": "#/definitions/Scatter"
+        },
+        "column": {
+          "$ref": "#/definitions/Column"
+        }
+      }
+    },
+    "Credit": {
+      "required": [
+        "enabled"
+      ],
+      "properties": {
+        "enabled": {
+          "description": "Example: false",
+          "type": "boolean"
+        }
+      }
+    },
+    "Option": {
+      "required": [
+        "chart",
+        "plotOptions",
+        "credits",
+        "yAxis",
+        "title",
+        "xAxis",
+        "lang",
+        "loading",
+        "legend",
+        "colors"
+      ],
+      "properties": {
+        "chart": {
+          "$ref": "#/definitions/Chart"
+        },
+        "plotOptions": {
+          "$ref": "#/definitions/PlotOption"
+        },
+        "credits": {
+          "$ref": "#/definitions/Credit"
+        },
+        "yAxis": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/YAxi"
+          }
+        },
+        "title": {
+          "$ref": "#/definitions/Title"
+        },
+        "xAxis": {
+          "$ref": "#/definitions/XAxi"
+        },
+        "lang": {
+          "$ref": "#/definitions/Lang"
+        },
+        "loading": {
+          "$ref": "#/definitions/Loading"
+        },
+        "legend": {
+          "$ref": "#/definitions/Legend"
+        },
+        "colors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Color"
+          }
+        }
+      }
+    },
+    "Title": {
+      "required": [
+        "enabled",
+        "text"
+      ],
+      "properties": {
+        "enabled": {
+          "description": "Example: true",
+          "type": "boolean"
+        },
+        "text": {
+          "description": "Example: Barometric Pressure (Pa)",
+          "type": "string"
+        }
+      }
+    },
+    "XAxi": {
+      "required": [
+        "title",
+        "startOnTick",
+        "endOnTick",
+        "showLastLabel",
+        "text",
+        "categories"
+      ],
+      "properties": {
+        "title": {
+          "$ref": "#/definitions/Title"
+        },
+        "startOnTick": {
+          "description": "Example: true",
+          "type": "boolean"
+        },
+        "endOnTick": {
+          "description": "Example: true",
+          "type": "boolean"
+        },
+        "showLastLabel": {
+          "description": "Example: true",
+          "type": "boolean"
+        },
+        "text": {
+          "description": "Example: Date",
+          "type": "string"
+        },
+        "categories": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Category"
+          }
+        }
+      }
+    },
+    "YAxi": {
+      "required": [
+        "title",
+        "lineWidth",
+        "opposite",
+        "min",
+        "max"
+      ],
+      "properties": {
+        "title": {
+          "$ref": "#/definitions/Title"
+        },
+        "lineWidth": {
+          "description": "Example: 1",
+          "type": "integer"
+        },
+        "opposite": {
+          "description": "Example: true",
+          "type": "boolean"
+        },
+        "min": {
+          "description": "Example: -2.68",
+          "type": "number",
+          "format": "double"
+        },
+        "max": {
+          "description": "Example: 372.68",
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "Series": {
+      "required": [
+        "name",
+        "color",
+        "data",
+        "type",
+        "tooltip",
+        "yAxis"
+      ],
+      "properties": {
+        "name": {
+          "description": "Example: Reference And Learning Hours by Barometric Pressure",
+          "type": "string"
+        },
+        "color": {
+          "description": "Example: rgba(223, 83, 83, .5)",
+          "type": "string"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Series"
+          }
+        },
+        "type": {
+          "description": "Example: spline",
+          "type": "string"
+        },
+        "tooltip": {
+          "$ref": "#/definitions/Tooltip"
+        },
+        "yAxis": {
+          "description": "Example: 1",
+          "type": "integer"
+        }
+      }
+    },
+    "Subtitle": {
+      "required": [
+        "text"
+      ],
+      "properties": {
+        "text": {
+          "description": "Example: ",
+          "type": "string"
+        }
+      }
+    },
+    "ChartConfig": {
+      "required": [
+        "options",
+        "xAxis",
+        "yAxis",
+        "series",
+        "title",
+        "subtitle",
+        "loading"
+      ],
+      "properties": {
+        "options": {
+          "$ref": "#/definitions/Option"
+        },
+        "xAxis": {
+          "$ref": "#/definitions/XAxi"
+        },
+        "yAxis": {
+          "$ref": "#/definitions/YAxi"
+        },
+        "series": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Series"
+          }
+        },
+        "title": {
+          "$ref": "#/definitions/Title"
+        },
+        "subtitle": {
+          "$ref": "#/definitions/Subtitle"
+        },
+        "loading": {
+          "description": "Example: false",
+          "type": "boolean"
+        }
+      }
+    },
+    "Category": {
+      "properties": {},
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "Animation": {
+      "required": [
+        "duration"
+      ],
+      "properties": {
+        "duration": {
+          "description": "Example: 0",
+          "type": "integer"
+        }
+      }
+    },
+    "Lang": {
+      "required": [
+        "loading"
+      ],
+      "properties": {
+        "loading": {
+          "description": "Example: ",
+          "type": "string"
+        }
+      }
+    },
+    "Style": {
+      "required": [
+        "background"
+      ],
+      "properties": {
+        "background": {
+          "description": "Example: url(/res/loading3.gif) no-repeat center",
+          "type": "string"
+        }
+      }
+    },
+    "Loading": {
+      "required": [
+        "style",
+        "hideDuration",
+        "showDuration"
+      ],
+      "properties": {
+        "style": {
+          "$ref": "#/definitions/Style"
+        },
+        "hideDuration": {
+          "description": "Example: 10",
+          "type": "integer"
+        },
+        "showDuration": {
+          "description": "Example: 10",
+          "type": "integer"
+        }
+      }
+    },
+    "Legend": {
+      "required": [
+        "enabled"
+      ],
+      "properties": {
+        "enabled": {
+          "description": "Example: false",
+          "type": "boolean"
+        }
+      }
+    },
+    "Column": {
+      "required": [
+        "pointPadding",
+        "borderWidth",
+        "pointWidth",
+        "enableMouseTracking",
+        "colorByPoint"
+      ],
+      "properties": {
+        "pointPadding": {
+          "description": "Example: 0.2",
+          "type": "number",
+          "format": "double"
+        },
+        "borderWidth": {
+          "description": "Example: 0",
+          "type": "integer"
+        },
+        "pointWidth": {
+          "description": "Example: 33.333333333333",
+          "type": "number",
+          "format": "double"
+        },
+        "enableMouseTracking": {
+          "description": "Example: true",
+          "type": "boolean"
+        },
+        "colorByPoint": {
+          "description": "Example: true",
+          "type": "boolean"
+        }
+      }
+    },
+    "Color": {
+      "properties": {},
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "Pair": {
+      "required": [
+        "causeMeasurement",
+        "effectMeasurement",
+        "timestamp",
+        "startTimeSting",
+        "causeMeasurementValue",
+        "effectMeasurementValue",
+        "causeVariableDefaultUnitAbbreviatedName",
+        "effectVariableDefaultUnitAbbreviatedName"
+      ],
+      "properties": {
+        "causeMeasurement": {
+          "description": "Example: 101341.66666667",
+          "type": "number",
+          "format": "double"
+        },
+        "effectMeasurement": {
+          "description": "Example: 7.98",
+          "type": "number",
+          "format": "double"
+        },
+        "timestamp": {
+          "description": "Example: 1464937200",
+          "type": "integer"
+        },
+        "startTimeSting": {
+          "description": "Example: 2016-06-03 07:00:00",
+          "type": "string",
+          "format": "date-time"
+        },
+        "causeMeasurementValue": {
+          "description": "Example: 101341.66666667",
+          "type": "number",
+          "format": "double"
+        },
+        "effectMeasurementValue": {
+          "description": "Example: 7.98",
+          "type": "number",
+          "format": "double"
+        },
+        "causeVariableDefaultUnitAbbreviatedName": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "effectVariableDefaultUnitAbbreviatedName": {
+          "description": "Example: ",
+          "type": "string"
+        }
+      }
+    },
+    "Statistic": {
+      "required": [
+        "correlationCoefficient",
+        "onsetDelay",
+        "durationOfAction",
+        "numberOfPairs",
+        "effectSize",
+        "statisticalSignificance",
+        "timestamp",
+        "reversePearsonCorrelationCoefficient",
+        "predictivePearsonCorrelationCoefficient",
+        "causalityFactor",
+        "causeVariableCategoryName",
+        "effectVariableCategoryName",
+        "valuePredictingHighOutcome",
+        "valuePredictingLowOutcome",
+        "optimalPearsonProduct",
+        "userVote",
+        "averageVote",
+        "causeVariableDefaultUnitId",
+        "createdAt",
+        "updatedAt",
+        "causeChanges",
+        "effectChanges",
+        "qmScore",
+        "error",
+        "predictsHighEffectChange",
+        "predictsLowEffectChange",
+        "pValue",
+        "tValue",
+        "criticalTValue",
+        "confidenceInterval",
+        "experimentStartTime",
+        "experimentEndTime",
+        "userId",
+        "studyResults",
+        "dataAnalysis",
+        "outcomeMaximumAllowedValue",
+        "predictorMaximumAllowedValue",
+        "studyLimitations",
+        "significantDifference",
+        "significanceExplanation",
+        "strengthLevel",
+        "confidenceLevel",
+        "studyObjective",
+        "studyTitle",
+        "dataSources",
+        "studyAbstract",
+        "direction",
+        "predictivePearsonCorrelation",
+        "predictorExplanation",
+        "studyBackground",
+        "studyDesign",
+        "dataPoints",
+        "numberOfDays",
+        "reversePairsCount",
+        "causeChangesStatisticalSignificance",
+        "causeVariableCategoryId",
+        "effectVariableCategoryId",
+        "predictorFillingValue",
+        "outcomeFillingValue",
+        "causeNumberOfRawMeasurements",
+        "effectNumberOfRawMeasurements",
+        "causeNumberOfProcessedDailyMeasurements",
+        "effectNumberOfProcessedDailyMeasurements",
+        "causeVariableMostCommonConnectorId",
+        "effectVariableMostCommonConnectorId",
+        "studyLinkFacebook",
+        "studyLinkTwitter",
+        "studyLinkGoogle",
+        "causeVariableName",
+        "effectVariableName",
+        "averageEffect",
+        "numberOfLowEffectPairs",
+        "numberOfHighEffectPairs",
+        "degreesOfFreedom",
+        "numberOfUniqueCauseValuesForOptimalValues",
+        "numberOfUniqueEffectValuesForOptimalValues",
+        "numberOfCauseChangesForOptimalValues",
+        "medianOfUpperHalfOfEffectMeasurements",
+        "medianOfLowerHalfOfEffectMeasurements",
+        "numberOfEffectChangesForOptimalValues",
+        "minimumEffectValue",
+        "maximumEffectValue",
+        "effectValueSpread",
+        "minimumCauseValue",
+        "maximumCauseValue",
+        "causeValueSpread",
+        "averageEffectFollowingHighCause",
+        "averageEffectFollowingLowCause",
+        "averageDailyLowCause",
+        "averageDailyHighCause",
+        "principalInvestigator",
+        "causeVariableCombinationOperation",
+        "valuePredictingHighOutcomeExplanation",
+        "averageEffectFollowingHighCauseExplanation",
+        "averageEffectFollowingLowCauseExplanation",
+        "valuePredictingLowOutcomeExplanation",
+        "numberOfUsers",
+        "outcomeDataSources",
+        "correlationIsContradictoryToOptimalValues",
+        "forwardSpearmanCorrelationCoefficient",
+        "minimumProbability",
+        "strongestPearsonCorrelationCoefficient",
+        "pairsOverTimeChartConfig",
+        "correlationsOverOnsetDelaysChartConfig",
+        "correlationsOverDurationsOfActionChartConfig",
+        "onsetDelayWithStrongestPearsonCorrelation",
+        "averageForwardPearsonCorrelationOverOnsetDelays",
+        "averageReversePearsonCorrelationOverOnsetDelays",
+        "pearsonCorrelationWithNoOnsetDelay",
+        "voteStatisticalSignificance",
+        "calculationStartTime",
+        "shareUserMeasurements",
+        "causeUserVariableShareUserMeasurements",
+        "effectUserVariableShareUserMeasurements",
+        "averagePearsonCorrelationCoefficientOverOnsetDelays",
+        "onsetDelayWithStrongestPearsonCorrelationInHours",
+        "causeVariableId",
+        "effectVariableId",
+        "studyLinkStatic",
+        "studyLinkDynamic",
+        "gaugeImage",
+        "imageUrl",
+        "gaugeImageSquare",
+        "onsetDelayInHours",
+        "durationOfActionInHours",
+        "effectVariableDefaultUnitId",
+        "causeVariableDefaultUnitName",
+        "causeVariableDefaultUnitAbbreviatedName",
+        "effectVariableDefaultUnitName",
+        "effectVariableDefaultUnitAbbreviatedName",
+        "rawCauseMeasurementSignificance",
+        "allPairsSignificance",
+        "numberOfDaysSignificance",
+        "rawEffectMeasurementSignificance",
+        "optimalChangeSpread",
+        "optimalChangeSpreadSignificance",
+        "correlationsOverDurationsOfAction",
+        "dataSourcesParagraphForEffect",
+        "dataSourcesParagraphForCause",
+        "instructionsForEffect",
+        "instructionsForCause",
+        "perDaySentenceFragment",
+        "predictsLowEffectChangeSentenceFragment",
+        "predictsHighEffectChangeSentenceFragment",
+        "studyLinkEmail",
+        "distanceFromMiddleToBeHightLowEffect",
+        "numberOfSamples",
+        "effectUnit",
+        "causeVariableImageUrl",
+        "causeVariableIonIcon",
+        "effectVariableImageUrl",
+        "effectVariableIonIcon"
+      ],
+      "properties": {
+        "correlationCoefficient": {
+          "description": "Example: 0.147",
+          "type": "number",
+          "format": "double"
+        },
+        "onsetDelay": {
+          "description": "Example: 0",
+          "type": "integer"
+        },
+        "durationOfAction": {
+          "description": "Example: 604800",
+          "type": "integer"
+        },
+        "numberOfPairs": {
+          "description": "Example: 297",
+          "type": "integer"
+        },
+        "effectSize": {
+          "description": "Example: weakly positive",
+          "type": "string"
+        },
+        "statisticalSignificance": {
+          "description": "Example: 0.99987910063243",
+          "type": "number",
+          "format": "double"
+        },
+        "timestamp": {
+          "description": "Example: 1502080560",
+          "type": "integer"
+        },
+        "reversePearsonCorrelationCoefficient": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "predictivePearsonCorrelationCoefficient": {
+          "description": "Example: 0.147",
+          "type": "number",
+          "format": "double"
+        },
+        "causalityFactor": {
+          "description": "Example: 0.147",
+          "type": "number",
+          "format": "double"
+        },
+        "causeVariableCategoryName": {
+          "description": "Example: Environment",
+          "type": "string"
+        },
+        "effectVariableCategoryName": {
+          "description": "Example: Activity",
+          "type": "string"
+        },
+        "valuePredictingHighOutcome": {
+          "description": "Example: 101187.2",
+          "type": "number",
+          "format": "double"
+        },
+        "valuePredictingLowOutcome": {
+          "description": "Example: 97597.75",
+          "type": "number",
+          "format": "double"
+        },
+        "optimalPearsonProduct": {
+          "description": "Example: 0.063550992332336",
+          "type": "number",
+          "format": "double"
+        },
+        "userVote": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "averageVote": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "causeVariableDefaultUnitId": {
+          "description": "Example: 47",
+          "type": "integer"
+        },
+        "createdAt": {
+          "description": "Example: ",
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "description": "Example: ",
+          "type": "string",
+          "format": "date-time"
+        },
+        "causeChanges": {
+          "description": "Example: 287",
+          "type": "integer"
+        },
+        "effectChanges": {
+          "description": "Example: 295",
+          "type": "integer"
+        },
+        "qmScore": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "error": {
+          "description": "Example: optimalPearsonProduct is not defined",
+          "type": "string"
+        },
+        "predictsHighEffectChange": {
+          "description": "Example: 0.84",
+          "type": "number",
+          "format": "double"
+        },
+        "predictsLowEffectChange": {
+          "description": "Example: -82.6",
+          "type": "number",
+          "format": "double"
+        },
+        "pValue": {
+          "description": "Example: 0",
+          "type": "number",
+          "format": "double"
+        },
+        "tValue": {
+          "description": "Example: 8.1106621038493",
+          "type": "number",
+          "format": "double"
+        },
+        "criticalTValue": {
+          "description": "Example: 1.646",
+          "type": "number",
+          "format": "double"
+        },
+        "confidenceInterval": {
+          "description": "Example: 1.4269359716898",
+          "type": "number",
+          "format": "double"
+        },
+        "experimentStartTime": {
+          "description": "Example: 1464937200",
+          "type": "integer"
+        },
+        "experimentEndTime": {
+          "description": "Example: 1501722000",
+          "type": "integer"
+        },
+        "userId": {
+          "description": "Example: 230",
+          "type": "integer"
+        },
+        "studyResults": {
+          "description": "Example: This analysis suggests that higher Barometric Pressure (Environment) generally predicts higher Reference And Learning Hours (p = 0).  Reference And Learning Hours is, on average, 0.84%  higher after around 101187.2 Barometric Pressure.  After an onset delay of 168 hours, Reference And Learning Hours is, on average, 82.6%  lower than its average over the 168 hours following around 97597.75 Barometric Pressure.  297 data points were used in this analysis.  The value for Barometric Pressure changed 287 times, effectively running 144 separate natural experiments.  The top quartile outcome values are preceded by an average 101187.2 Pa of Barometric Pressure.  The bottom quartile outcome values are preceded by an average 97597.75 Pa of Barometric Pressure.  Forward Pearson Correlation Coefficient was 0.147 (p=0, 95% CI -1.28 to 1.574 onset delay = 0 hours, duration of action = 168 hours) .  The Reverse Pearson Correlation Coefficient was 0 (P=0, 95% CI -1.427 to 1.427, onset delay = -0 hours, duration of action = -168 hours). When the Barometric Pressure value is closer to 101187.2 Pa than 97597.75 Pa, the Reference And Learning Hours value which follows is, on average, 0.84%  percent higher than its typical value.  When the Barometric Pressure value is closer to 97597.75 Pa than 101187.2 Pa, the Reference And Learning Hours value which follows is 0% lower than its typical value.  Reference And Learning Hours is 8.5h (1% higher) on average after days with around 101627.85 Pa Barometric Pressure  Reference And Learning Hours is 1.47h (83% lower) on average after days with around 21023.36 Pa Barometric Pressure",
+          "type": "string"
+        },
+        "dataAnalysis": {
+          "description": "Example: It was assumed that 0 hours would pass before a change in Barometric Pressure would produce an observable change in Reference And Learning Hours.  It was assumed that Barometric Pressure could produce an observable change in Reference And Learning Hours for as much as 7 days after the stimulus event.  ",
+          "type": "string"
+        },
+        "outcomeMaximumAllowedValue": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "predictorMaximumAllowedValue": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "studyLimitations": {
+          "description": "Example: As with any human experiment, it was impossible to control for all potentially confounding variables. \n            \n            Correlation does not necessarily imply correlation.  We can never know for sure if one factor is definitely the cause of an outcome.  \n            However, lack of correlation definitely implies the lack of a causal relationship.  Hence, we can with great \n            confidence rule out non-existent relationships. For instance, if we discover no relationship between mood\n            and an antidepressant this information is just as or even more valuable than the discovery that there is a relationship. \n            <br>\n            <br>\n           \n            We can also take advantage of several characteristics of time series data from many subjects  to infer the likelihood of a causal relationship if we do find a correlational relationship. \n            The criteria for causation are a group of minimal conditions necessary to provide adequate evidence of a causal relationship between an incidence and a possible consequence.\n            The list of the criteria is as follows:\n            <br>\n            1. Strength (effect size): A small association does not mean that there is not a causal effect, though the larger the association, the more likely that it is causal.\n            <br>\n            2. Consistency (reproducibility): Consistent findings observed by different persons in different places with different samples strengthens the likelihood of an effect.\n            <br>\n            3. Specificity: Causation is likely if a very specific population at a specific site and disease with no other likely explanation. The more specific an association between a factor and an effect is, the bigger the probability of a causal relationship.\n            <br>\n            4. Temporality: The effect has to occur after the cause (and if there is an expected delay between the cause and expected effect, then the effect must occur after that delay).\n            <br>\n            5. Biological gradient: Greater exposure should generally lead to greater incidence of the effect. However, in some cases, the mere presence of the factor can trigger the effect. In other cases, an inverse proportion is observed: greater exposure leads to lower incidence.\n            <br>\n            6. Plausibility: A plausible mechanism between cause and effect is helpful.\n            <br>\n            7. Coherence: Coherence between epidemiological and laboratory findings increases the likelihood of an effect.\n            <br>\n            8. Experiment: \"Occasionally it is possible to appeal to experimental evidence\".\n            <br>\n            9. Analogy: The effect of similar factors may be considered.\n            <br>\n            <br>\n             \n             The confidence in a causal relationship is bolstered by the fact that time-precedence was taken into account in all calculations. Furthermore, in accordance with the law of large numbers (LLN), the predictive power and accuracy of these results will continually grow over time.  297 paired data points were used in this analysis.   Assuming that the relationship is merely coincidental, as the participant independently modifies their Barometric Pressure values, the observed strength of the relationship will decline until it is below the threshold of significance.  To it another way, in the case that we do find a spurious correlation, suggesting that banana intake improves mood for instance,\n            one will likely increase their banana intake.  Due to the fact that this correlation is spurious, it is unlikely\n            that you will see a continued and persistent corresponding increase in mood.  So over time, the spurious correlation will\n            naturally dissipate.Furthermore, it will be very enlightening to aggregate this data with the data from other participants  with similar genetic, diseasomic, environmentomic, and demographic profiles.",
+          "type": "string"
+        },
+        "significantDifference": {
+          "description": "Example: true",
+          "type": "boolean"
+        },
+        "significanceExplanation": {
+          "description": "Example: Using a two-tailed t-test with alpha = 0.05, it was determined that the change in Reference And Learning Hours is statistically significant at 95% confidence interval. ",
+          "type": "string"
+        },
+        "strengthLevel": {
+          "description": "Example: very weak",
+          "type": "string"
+        },
+        "confidenceLevel": {
+          "description": "Example: high",
+          "type": "string"
+        },
+        "studyObjective": {
+          "description": "Example: The objective of this study is to determine the nature of the relationship (if any) between the Barometric Pressure and the Reference And Learning Hours. Additionally, we attempt to determine the Barometric Pressure values most likely to produce optimal Reference And Learning Hours values. ",
+          "type": "string"
+        },
+        "studyTitle": {
+          "description": "Example: N1 Study: Barometric Pressure Predicts Higher Reference And Learning Hours",
+          "type": "string"
+        },
+        "dataSources": {
+          "description": "Example: Barometric Pressure data was primarily collected using <a href=\"https://quantimo.do\">QuantiModo</a>.  <a href=\"https://quantimo.do\">QuantiModo</a> is a Chrome extension, Android app, iOS app, and web app that allows you to easily track mood, symptoms, or any outcome you want to optimize in a fraction of a second.  You can also import your data from over 30 other apps and devices like Fitbit, Rescuetime, Jawbone Up, Withings, Facebook, Github, Google Calendar, Runkeeper, MoodPanda, Slice, Google Fit, and more.  <a href=\"https://quantimo.do\">QuantiModo</a> then analyzes your data to identify which hidden factors are most likely to be influencing your mood or symptoms and their optimal daily values.<br>Reference And Learning Hours data was primarily collected using <a href=\"https://www.rescuetime.com/rp/quantimodo/plans\">RescueTime</a>.  Detailed reports show which applications and websites you spent time on. Activities are automatically grouped into pre-defined categories with built-in productivity scores covering thousands of websites and applications. You can customize categories and productivity scores to meet your needs.",
+          "type": "string"
+        },
+        "studyAbstract": {
+          "description": "Example: Your data suggests with a high degree of confidence (p=0) that Barometric Pressure (Environment) has a weakly positive predictive relationship (R=0.147) with Reference And Learning Hours  (Activity).  The highest quartile of Reference And Learning Hours  measurements were observed following an average 101187.2Pa Barometric Pressure.  The lowest quartile of Reference And Learning Hours  measurements were observed following an average 97597.75Pa Barometric Pressure.",
+          "type": "string"
+        },
+        "direction": {
+          "description": "Example: higher",
+          "type": "string"
+        },
+        "predictivePearsonCorrelation": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "predictorExplanation": {
+          "description": "Example: Barometric Pressure Predicts Higher Reference And Learning Hours",
+          "type": "string"
+        },
+        "studyBackground": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "studyDesign": {
+          "description": "Example: This study is based on data donated by one QuantiModo user. Thus, the study design is consistent with an n=1 observational natural experiment. ",
+          "type": "string"
+        },
+        "dataPoints": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "numberOfDays": {
+          "description": "Example: 425",
+          "type": "integer"
+        },
+        "reversePairsCount": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "causeChangesStatisticalSignificance": {
+          "description": "Example: 0.9999299755903",
+          "type": "number",
+          "format": "double"
+        },
+        "causeVariableCategoryId": {
+          "description": "Example: 17",
+          "type": "integer"
+        },
+        "effectVariableCategoryId": {
+          "description": "Example: 14",
+          "type": "integer"
+        },
+        "predictorFillingValue": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "outcomeFillingValue": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "causeNumberOfRawMeasurements": {
+          "description": "Example: 14764",
+          "type": "integer"
+        },
+        "effectNumberOfRawMeasurements": {
+          "description": "Example: 4045",
+          "type": "integer"
+        },
+        "causeNumberOfProcessedDailyMeasurements": {
+          "description": "Example: 1364",
+          "type": "integer"
+        },
+        "effectNumberOfProcessedDailyMeasurements": {
+          "description": "Example: 145",
+          "type": "integer"
+        },
+        "causeVariableMostCommonConnectorId": {
+          "description": "Example: 13",
+          "type": "integer"
+        },
+        "effectVariableMostCommonConnectorId": {
+          "description": "Example: 11",
+          "type": "integer"
+        },
+        "studyLinkFacebook": {
+          "description": "Example: https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fstudy%3FcauseVariableName%3DBarometric%2520Pressure%26effectVariableName%3DReference%2520And%2520Learning%2520Hours%26userId%3D230",
+          "type": "string"
+        },
+        "studyLinkTwitter": {
+          "description": "Example: https://twitter.com/home?status=Barometric%20Pressure%20Predicts%20Higher%20Reference%20And%20Learning%20Hours%20https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fstudy%3FcauseVariableName%3DBarometric%2520Pressure%26effectVariableName%3DReference%2520And%2520Learning%2520Hours%26userId%3D230%20%40quantimodo",
+          "type": "string"
+        },
+        "studyLinkGoogle": {
+          "description": "Example: https://plus.google.com/share?url=https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fstudy%3FcauseVariableName%3DBarometric%2520Pressure%26effectVariableName%3DReference%2520And%2520Learning%2520Hours%26userId%3D230",
+          "type": "string"
+        },
+        "causeVariableName": {
+          "description": "Example: Barometric Pressure",
+          "type": "string"
+        },
+        "effectVariableName": {
+          "description": "Example: Reference And Learning Hours",
+          "type": "string"
+        },
+        "averageEffect": {
+          "description": "Example: 8.4268686868687",
+          "type": "number",
+          "format": "double"
+        },
+        "numberOfLowEffectPairs": {
+          "description": "Example: 57",
+          "type": "integer"
+        },
+        "numberOfHighEffectPairs": {
+          "description": "Example: 27",
+          "type": "integer"
+        },
+        "degreesOfFreedom": {
+          "description": "Example: 200",
+          "type": "integer"
+        },
+        "numberOfUniqueCauseValuesForOptimalValues": {
+          "description": "Example: 201",
+          "type": "integer"
+        },
+        "numberOfUniqueEffectValuesForOptimalValues": {
+          "description": "Example: 264",
+          "type": "integer"
+        },
+        "numberOfCauseChangesForOptimalValues": {
+          "description": "Example: 287",
+          "type": "integer"
+        },
+        "medianOfUpperHalfOfEffectMeasurements": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "medianOfLowerHalfOfEffectMeasurements": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "numberOfEffectChangesForOptimalValues": {
+          "description": "Example: 295",
+          "type": "integer"
+        },
+        "minimumEffectValue": {
+          "description": "Example: 0.18",
+          "type": "number",
+          "format": "double"
+        },
+        "maximumEffectValue": {
+          "description": "Example: 20.38",
+          "type": "number",
+          "format": "double"
+        },
+        "effectValueSpread": {
+          "description": "Example: 20.2",
+          "type": "number",
+          "format": "double"
+        },
+        "minimumCauseValue": {
+          "description": "Example: 5267.5521276596",
+          "type": "number",
+          "format": "double"
+        },
+        "maximumCauseValue": {
+          "description": "Example: 104300",
+          "type": "number",
+          "format": "double"
+        },
+        "causeValueSpread": {
+          "description": "Example: 99032.44787234",
+          "type": "number",
+          "format": "double"
+        },
+        "averageEffectFollowingHighCause": {
+          "description": "Example: 8.5",
+          "type": "number",
+          "format": "double"
+        },
+        "averageEffectFollowingLowCause": {
+          "description": "Example: 1.47",
+          "type": "number",
+          "format": "double"
+        },
+        "averageDailyLowCause": {
+          "description": "Example: 21023.36",
+          "type": "number",
+          "format": "double"
+        },
+        "averageDailyHighCause": {
+          "description": "Example: 101627.85",
+          "type": "number",
+          "format": "double"
+        },
+        "principalInvestigator": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "causeVariableCombinationOperation": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "valuePredictingHighOutcomeExplanation": {
+          "description": "Example: Reference And Learning Hours, on average, 0.84% higher after around 101187.2 Pa Barometric Pressure ",
+          "type": "string"
+        },
+        "averageEffectFollowingHighCauseExplanation": {
+          "description": "Example: Reference And Learning Hours is 8.5h (1% higher) on average after days with around 101627.85 Pa Barometric Pressure",
+          "type": "string"
+        },
+        "averageEffectFollowingLowCauseExplanation": {
+          "description": "Example: Reference And Learning Hours is 1.47h (83% lower) on average after days with around 21023.36 Pa Barometric Pressure",
+          "type": "string"
+        },
+        "valuePredictingLowOutcomeExplanation": {
+          "description": "Example: Reference And Learning Hours, on average, 82.6% lower after around 97597.75 Pa Barometric Pressure ",
+          "type": "string"
+        },
+        "numberOfUsers": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "outcomeDataSources": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "correlationIsContradictoryToOptimalValues": {
+          "description": "Example: false",
+          "type": "boolean"
+        },
+        "forwardSpearmanCorrelationCoefficient": {
+          "description": "Example: -0.26193208156295",
+          "type": "number",
+          "format": "double"
+        },
+        "minimumProbability": {
+          "description": "Example: 0.05",
+          "type": "number",
+          "format": "double"
+        },
+        "strongestPearsonCorrelationCoefficient": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "pairsOverTimeChartConfig": {
+          "description": "Example: ",
+          "type": "string",
+          "format": "date-time"
+        },
+        "correlationsOverOnsetDelaysChartConfig": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "correlationsOverDurationsOfActionChartConfig": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "onsetDelayWithStrongestPearsonCorrelation": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "averageForwardPearsonCorrelationOverOnsetDelays": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "averageReversePearsonCorrelationOverOnsetDelays": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "pearsonCorrelationWithNoOnsetDelay": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "voteStatisticalSignificance": {
+          "description": "Example: 1",
+          "type": "integer"
+        },
+        "calculationStartTime": {
+          "description": "Example: ",
+          "type": "string",
+          "format": "date-time"
+        },
+        "shareUserMeasurements": {
+          "description": "Example: false",
+          "type": "boolean"
+        },
+        "causeUserVariableShareUserMeasurements": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "effectUserVariableShareUserMeasurements": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "averagePearsonCorrelationCoefficientOverOnsetDelays": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "onsetDelayWithStrongestPearsonCorrelationInHours": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "causeVariableId": {
+          "description": "Example: 96380",
+          "type": "integer"
+        },
+        "effectVariableId": {
+          "description": "Example: 111642",
+          "type": "integer"
+        },
+        "studyLinkStatic": {
+          "description": "Example: https://local.quantimo.do/api/v2/study?causeVariableName=Barometric%20Pressure&effectVariableName=Reference%20And%20Learning%20Hours&userId=230",
+          "type": "string"
+        },
+        "studyLinkDynamic": {
+          "description": "Example: https://local.quantimo.do/ionic/Modo/www/index.html#/app/study?causeVariableName=Barometric%20Pressure&effectVariableName=Reference%20And%20Learning%20Hours&userId=230",
+          "type": "string"
+        },
+        "gaugeImage": {
+          "description": "Example: https://s3.amazonaws.com/quantimodo-docs/images/gauge-weakly-positive-relationship.png",
+          "type": "string"
+        },
+        "imageUrl": {
+          "description": "Example: https://s3-us-west-1.amazonaws.com/qmimages/variable_categories_gauges_logo_background/gauge-weakly-positive-relationship_environment_activity_logo_background.png",
+          "type": "string"
+        },
+        "gaugeImageSquare": {
+          "description": "Example: https://s3.amazonaws.com/quantimodo-docs/images/gauge-weakly-positive-relationship-200-200.png",
+          "type": "string"
+        },
+        "onsetDelayInHours": {
+          "description": "Example: 0",
+          "type": "integer"
+        },
+        "durationOfActionInHours": {
+          "description": "Example: 0",
+          "type": "integer"
+        },
+        "effectVariableDefaultUnitId": {
+          "description": "Example: 34",
+          "type": "integer"
+        },
+        "causeVariableDefaultUnitName": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "causeVariableDefaultUnitAbbreviatedName": {
+          "description": "Example: Pa",
+          "type": "string"
+        },
+        "effectVariableDefaultUnitName": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "effectVariableDefaultUnitAbbreviatedName": {
+          "description": "Example: h",
+          "type": "string"
+        },
+        "rawCauseMeasurementSignificance": {
+          "description": "Example: 1",
+          "type": "number",
+          "format": "double"
+        },
+        "allPairsSignificance": {
+          "description": "Example: 0.99994982531794",
+          "type": "number",
+          "format": "double"
+        },
+        "numberOfDaysSignificance": {
+          "description": "Example: 0.99999929612614",
+          "type": "number",
+          "format": "double"
+        },
+        "rawEffectMeasurementSignificance": {
+          "description": "Example: 1",
+          "type": "number",
+          "format": "double"
+        },
+        "optimalChangeSpread": {
+          "description": "Example: 83.44",
+          "type": "number",
+          "format": "double"
+        },
+        "optimalChangeSpreadSignificance": {
+          "description": "Example: 0.99999999999917",
+          "type": "number",
+          "format": "double"
+        },
+        "correlationsOverDurationsOfAction": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "dataSourcesParagraphForEffect": {
+          "description": "Example: Reference And Learning Hours data was primarily collected using <a href=\"https://www.rescuetime.com/rp/quantimodo/plans\">RescueTime</a>.  Detailed reports show which applications and websites you spent time on. Activities are automatically grouped into pre-defined categories with built-in productivity scores covering thousands of websites and applications. You can customize categories and productivity scores to meet your needs.",
+          "type": "string"
+        },
+        "dataSourcesParagraphForCause": {
+          "description": "Example: Barometric Pressure data was primarily collected using <a href=\"https://quantimo.do\">QuantiModo</a>.  <a href=\"https://quantimo.do\">QuantiModo</a> is a Chrome extension, Android app, iOS app, and web app that allows you to easily track mood, symptoms, or any outcome you want to optimize in a fraction of a second.  You can also import your data from over 30 other apps and devices like Fitbit, Rescuetime, Jawbone Up, Withings, Facebook, Github, Google Calendar, Runkeeper, MoodPanda, Slice, Google Fit, and more.  <a href=\"https://quantimo.do\">QuantiModo</a> then analyzes your data to identify which hidden factors are most likely to be influencing your mood or symptoms and their optimal daily values.",
+          "type": "string"
+        },
+        "instructionsForEffect": {
+          "description": "Example: <a href=\"https://www.rescuetime.com/rp/quantimodo/plans\">Obtain RescueTime</a> and use it to record your Reference And Learning Hours. Once you have a <a href=\"https://www.rescuetime.com/rp/quantimodo/plans\">RescueTime</a> account, <a href=\"https://app.quantimo.do/ionic/Modo/www/#/app/import\">connect your  RescueTime account at QuantiModo</a> to automatically import and analyze your data.",
+          "type": "string"
+        },
+        "instructionsForCause": {
+          "description": "Example: <a href=\"https://quantimo.do\">Obtain QuantiModo</a> and use it to record your Barometric Pressure. Once you have a <a href=\"https://quantimo.do\">QuantiModo</a> account, <a href=\"https://app.quantimo.do/ionic/Modo/www/#/app/import\">connect your  QuantiModo account at QuantiModo</a> to automatically import and analyze your data.",
+          "type": "string"
+        },
+        "perDaySentenceFragment": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "predictsLowEffectChangeSentenceFragment": {
+          "description": "Example: , on average, 82.6% ",
+          "type": "string"
+        },
+        "predictsHighEffectChangeSentenceFragment": {
+          "description": "Example: , on average, 0.84% ",
+          "type": "string"
+        },
+        "studyLinkEmail": {
+          "description": "Example: mailto:?subject=N1%20Study%3A%20Barometric%20Pressure%20Predicts%20Higher%20Reference%20And%20Learning%20Hours&body=Check%20out%20my%20study%20at%20https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fstudy%3FcauseVariableName%3DBarometric%2520Pressure%26effectVariableName%3DReference%2520And%2520Learning%2520Hours%26userId%3D230%0A%0AHave%20a%20great%20day!",
+          "type": "string"
+        },
+        "distanceFromMiddleToBeHightLowEffect": {
+          "description": "Example: 25",
+          "type": "integer"
+        },
+        "numberOfSamples": {
+          "description": "Example: 297",
+          "type": "integer"
+        },
+        "effectUnit": {
+          "description": "Example: h",
+          "type": "string"
+        },
+        "causeVariableImageUrl": {
+          "description": "Example: https://maxcdn.icons8.com/Color/PNG/96/Weather/chance_of_storm-96.png",
+          "type": "string"
+        },
+        "causeVariableIonIcon": {
+          "description": "Example: ion-ios-partlysunny",
+          "type": "string"
+        },
+        "effectVariableImageUrl": {
+          "description": "Example: https://maxcdn.icons8.com/Color/PNG/96/Sports/football-96.png",
+          "type": "string"
+        },
+        "effectVariableIonIcon": {
+          "description": "Example: ion-ios-body-outline",
+          "type": "string"
+        }
+      }
+    },
+    "GetStudyResponse": {
+      "type": "object",
+      "required": [
+        "status",
+        "success"
+      ],
+      "properties": {
+        "status": {
+          "type": "integer",
+          "description": "Status code"
+        },
+        "message": {
+          "type": "string",
+          "description": "Message"
+        },
+        "success": {
+          "type": "boolean"
+        },
+        "data": {
+          "$ref": "#/definitions/GetStudyDataResponse"
+        }
+      }
+    },
+    "GetStudyDataResponse": {
+      "required": [
+        "causeProcessedDailyMeasurements",
+        "causeVariable",
+        "charts",
+        "effectProcessedDailyMeasurements",
+        "effectVariable",
+        "pairs",
+        "statistics",
+        "text",
+        "user",
+        "userId"
+      ],
+      "properties": {
+        "causeProcessedDailyMeasurements": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ProcessedDailyMeasurement"
+          }
+        },
+        "causeVariable": {
+          "$ref": "#/definitions/Variable"
+        },
+        "charts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Chart"
+          }
+        },
+        "effectProcessedDailyMeasurements": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ProcessedDailyMeasurement"
+          }
+        },
+        "effectVariable": {
+          "$ref": "#/definitions/Variable"
+        },
+        "pairs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Pair"
+          }
+        },
+        "statistics": {
+          "$ref": "#/definitions/Statistic"
+        },
+        "text": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "user": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "userId": {
+          "description": "Example: 230",
+          "type": "integer"
         }
       }
     }

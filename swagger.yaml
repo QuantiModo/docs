@@ -1680,9 +1680,9 @@ paths:
         - application/json
       responses:
         '200':
-          description: Successful operation
+          description: successful operation
           schema:
-            $ref: '#/definitions/Study'
+            $ref: '#/definitions/GetStudyResponse'
         '401':
           description: Not authenticated
         '404':
@@ -1732,7 +1732,7 @@ definitions:
       success:
         type: boolean
       data:
-        $ref: '#/definitions/GetCorrelationsDataResponse'
+        $ref: '#/definitions/GetStudyDataResponse'
   ConnectorInstruction:
     properties:
       url:
@@ -2267,24 +2267,6 @@ definitions:
           Example:
           https://s3.amazonaws.com/quantimodo-docs/images/gauge-moderately-positive-relationship-200-200.png
         type: string
-      causeDataSource:
-        description: >-
-          Example:
-          {"id":6,"name":"up","connectorClientId":"10RfjEgKr8U","connectorClientSecret":"e17fd34e4bc4642f0c4c99d7acb6e661","displayName":"Up
-          by
-          Jawbone","image":"https:\/\/i.imgur.com\/MXNQy3T.png","getItUrl":"http:\/\/www.amazon.com\/gp\/product\/B00A17IAO0\/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20","shortDescription":"Tracks
-          sleep, exercise, and diet.","longDescription":"UP by Jawbone is a
-          wristband and app that tracks how you sleep, move and eat and then
-          helps you use that information to feel your
-          best.","enabled":1,"affiliate":true,"defaultVariableCategoryName":"Physical
-          Activity","imageHtml":"<a
-          href=\"http:\/\/www.amazon.com\/gp\/product\/B00A17IAO0\/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20\"><img
-          id=\"up_image\" title=\"Up by Jawbone\"
-          src=\"https:\/\/i.imgur.com\/MXNQy3T.png\" alt=\"Up by
-          Jawbone\"><\/a>","linkedDisplayNameHtml":"<a
-          href=\"http:\/\/www.amazon.com\/gp\/product\/B00A17IAO0\/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20\">Up
-          by Jawbone<\/a>"}
-        type: object
       dataSourcesParagraphForCause:
         description: >-
           Example: Sleep Quality data was primarily collected using <a
@@ -2305,26 +2287,6 @@ definitions:
           your  Up by Jawbone account at QuantiModo</a> to automatically import
           and analyze your data.
         type: string
-      effectDataSource:
-        description: >-
-          Example:
-          {"id":72,"name":"quantimodo","displayName":"QuantiModo","image":"https:\/\/app.quantimo.do\/ionic\/Modo\/www\/img\/logos\/quantimodo-logo-qm-rainbow-200-200.png","getItUrl":"https:\/\/quantimo.do","shortDescription":"Tracks
-          anything","longDescription":"QuantiModo is a Chrome extension, Android
-          app, iOS app, and web app that allows you to easily track mood,
-          symptoms, or any outcome you want to optimize in a fraction of a
-          second.  You can also import your data from over 30 other apps and
-          devices like Fitbit, Rescuetime, Jawbone Up, Withings, Facebook,
-          Github, Google Calendar, Runkeeper, MoodPanda, Slice, Google Fit, and
-          more.  QuantiModo then analyzes your data to identify which hidden
-          factors are most likely to be influencing your mood or symptoms and
-          their optimal daily
-          values.","enabled":0,"affiliate":true,"defaultVariableCategoryName":"Foods","imageHtml":"<a
-          href=\"https:\/\/quantimo.do\"><img id=\"quantimodo_image\"
-          title=\"QuantiModo\"
-          src=\"https:\/\/app.quantimo.do\/ionic\/Modo\/www\/img\/logos\/quantimodo-logo-qm-rainbow-200-200.png\"
-          alt=\"QuantiModo\"><\/a>","linkedDisplayNameHtml":"<a
-          href=\"https:\/\/quantimo.do\">QuantiModo<\/a>"}
-        type: object
       dataSourcesParagraphForEffect:
         description: >-
           Example: Overall Mood data was primarily collected using <a
@@ -2768,24 +2730,6 @@ definitions:
           Example:
           https://s3.amazonaws.com/quantimodo-docs/images/gauge-moderately-positive-relationship-200-200.png
         type: string
-      causeDataSource:
-        description: >-
-          Example:
-          {"id":6,"name":"up","connectorClientId":"10RfjEgKr8U","connectorClientSecret":"e17fd34e4bc4642f0c4c99d7acb6e661","displayName":"Up
-          by
-          Jawbone","image":"https:\/\/i.imgur.com\/MXNQy3T.png","getItUrl":"http:\/\/www.amazon.com\/gp\/product\/B00A17IAO0\/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20","shortDescription":"Tracks
-          sleep, exercise, and diet.","longDescription":"UP by Jawbone is a
-          wristband and app that tracks how you sleep, move and eat and then
-          helps you use that information to feel your
-          best.","enabled":1,"affiliate":true,"defaultVariableCategoryName":"Physical
-          Activity","imageHtml":"<a
-          href=\"http:\/\/www.amazon.com\/gp\/product\/B00A17IAO0\/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20\"><img
-          id=\"up_image\" title=\"Up by Jawbone\"
-          src=\"https:\/\/i.imgur.com\/MXNQy3T.png\" alt=\"Up by
-          Jawbone\"><\/a>","linkedDisplayNameHtml":"<a
-          href=\"http:\/\/www.amazon.com\/gp\/product\/B00A17IAO0\/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20\">Up
-          by Jawbone<\/a>"}
-        type: object
       dataSourcesParagraphForCause:
         description: >-
           Example: Sleep Quality data was primarily collected using <a
@@ -2806,26 +2750,6 @@ definitions:
           your  Up by Jawbone account at QuantiModo</a> to automatically import
           and analyze your data.
         type: string
-      effectDataSource:
-        description: >-
-          Example:
-          {"id":72,"name":"quantimodo","displayName":"QuantiModo","image":"https:\/\/app.quantimo.do\/ionic\/Modo\/www\/img\/logos\/quantimodo-logo-qm-rainbow-200-200.png","getItUrl":"https:\/\/quantimo.do","shortDescription":"Tracks
-          anything","longDescription":"QuantiModo is a Chrome extension, Android
-          app, iOS app, and web app that allows you to easily track mood,
-          symptoms, or any outcome you want to optimize in a fraction of a
-          second.  You can also import your data from over 30 other apps and
-          devices like Fitbit, Rescuetime, Jawbone Up, Withings, Facebook,
-          Github, Google Calendar, Runkeeper, MoodPanda, Slice, Google Fit, and
-          more.  QuantiModo then analyzes your data to identify which hidden
-          factors are most likely to be influencing your mood or symptoms and
-          their optimal daily
-          values.","enabled":0,"affiliate":true,"defaultVariableCategoryName":"Foods","imageHtml":"<a
-          href=\"https:\/\/quantimo.do\"><img id=\"quantimodo_image\"
-          title=\"QuantiModo\"
-          src=\"https:\/\/app.quantimo.do\/ionic\/Modo\/www\/img\/logos\/quantimodo-logo-qm-rainbow-200-200.png\"
-          alt=\"QuantiModo\"><\/a>","linkedDisplayNameHtml":"<a
-          href=\"https:\/\/quantimo.do\">QuantiModo<\/a>"}
-        type: object
       dataSourcesParagraphForEffect:
         description: >-
           Example: Overall Mood data was primarily collected using <a
@@ -2993,11 +2917,6 @@ definitions:
       userVariableVariableCategoryName:
         description: 'Example: Treatments'
         type: string
-      humanTime:
-        description: >-
-          Example: {"date":"2017-07-30
-          20:05:30.000000","timezone_type":1,"timezone":"+00:00"}
-        type: object
       unitName:
         description: 'Example: Count'
         type: string
@@ -3055,14 +2974,6 @@ definitions:
       connectorId:
         description: 'Example: 13'
         type: integer
-      noteObject:
-        description: >-
-          Example:
-          {"message":null,"commenter":null,"url":null,"image":null,"icon":null,"description":null,"name":null,"Description":"Transfer
-          from MICHAEL P SINN","Original Description":"Bank
-          Account","Transaction Type":"credit","Account Name":"Mike's Personal
-          PayPal"}
-        type: object
   MeasurementItem:
     required:
       - timestamp
@@ -3954,6 +3865,22 @@ definitions:
       - variableId
       - availableDefaultUnits
       - price
+      - alias
+      - userVariableValence
+      - userVariableWikipediaTitle
+      - informationalUrl
+      - parent
+      - productUrl
+      - wikipediaTitle
+      - userTagVariables
+      - userTaggedVariables
+      - joinedUserTagVariables
+      - ingredientUserTagVariables
+      - ingredientOfUserTagVariables
+      - childUserTagVariables
+      - parentUserTagVariables
+      - commonTagVariables
+      - commonTaggedVariables
     properties:
       parentId:
         description: ID of the parent variable if this variable has any parent
@@ -4498,6 +4425,45 @@ definitions:
         description: 'Example: 95.4'
         type: number
         format: double
+      alias:
+        description: 'Example: '
+        type: string
+      userVariableValence:
+        description: 'Example: '
+        type: string
+      userVariableWikipediaTitle:
+        description: 'Example: '
+        type: string
+      informationalUrl:
+        description: 'Example: '
+        type: string
+      parent:
+        description: 'Example: '
+        type: string
+      productUrl:
+        description: 'Example: '
+        type: string
+      wikipediaTitle:
+        description: 'Example: '
+        type: string
+      userTagVariables:
+        $ref: '#/definitions/UserVariable'
+      userTaggedVariables:
+        $ref: '#/definitions/UserVariable'
+      joinedUserTagVariables:
+        $ref: '#/definitions/UserVariable'
+      ingredientUserTagVariables:
+        $ref: '#/definitions/UserVariable'
+      ingredientOfUserTagVariables:
+        $ref: '#/definitions/UserVariable'
+      childUserTagVariables:
+        $ref: '#/definitions/UserVariable'
+      parentUserTagVariables:
+        $ref: '#/definitions/UserVariable'
+      commonTagVariables:
+        $ref: '#/definitions/Variable'
+      commonTaggedVariables:
+        $ref: '#/definitions/Variable'
   UserVariableDelete:
     required:
       - variableId
@@ -4537,6 +4503,77 @@ definitions:
       - lastSource
       - onsetDelayInHours
       - availableDefaultUnits
+      - alias
+      - clientId
+      - earliestFillingTime
+      - earliestSourceTime
+      - experimentEndTime
+      - experimentStartTime
+      - fillingType
+      - userVariableFillingValue
+      - lastOriginalUnitId
+      - lastOriginalValue
+      - lastProcessedDailyValue
+      - lastSuccessfulUpdateTime
+      - lastUnitId
+      - latestFillingTime
+      - latestUserMeasurementTime
+      - latestSourceTime
+      - maximumRecordedValue
+      - measurementsAtLastAnalysis
+      - minimumRecordedValue
+      - userVariableMostCommonConnectorId
+      - numberOfChanges
+      - numberOfProcessedDailyMeasurements
+      - numberOfUniqueDailyValues
+      - numberOfUserCorrelationsAsCause
+      - numberOfUserCorrelationsAsEffect
+      - outcomeOfInterest
+      - parentId
+      - predictorOfInterest
+      - secondToLastValue
+      - shareUserMeasurements
+      - status
+      - thirdToLastValue
+      - userId
+      - userVariableValence
+      - variableId
+      - userVariableWikipediaTitle
+      - variableFillingValue
+      - informationalUrl
+      - commonVariableMostCommonConnectorId
+      - price
+      - productUrl
+      - wikipediaTitle
+      - commonVariableUpdatedAt
+      - userVariableUpdatedAt
+      - experimentStartTimeString
+      - experimentStartTimeSeconds
+      - experimentEndTimeString
+      - experimentEndTimeSeconds
+      - meanInUserVariableDefaultUnit
+      - lastValueInUserVariableDefaultUnit
+      - secondToLastValueInUserVariableDefaultUnit
+      - thirdToLastValueInUserVariableDefaultUnit
+      - mostCommonValueInUserVariableDefaultUnit
+      - secondMostCommonValueInUserVariableDefaultUnit
+      - thirdMostCommonValueInUserVariableDefaultUnit
+      - chartsLinkStatic
+      - chartsLinkDynamic
+      - chartsLinkFacebook
+      - chartsLinkGoogle
+      - chartsLinkTwitter
+      - chartsLinkEmail
+      - userTagVariables
+      - userTaggedVariables
+      - joinedUserTagVariables
+      - ingredientUserTagVariables
+      - ingredientOfUserTagVariables
+      - childUserTagVariables
+      - parentUserTagVariables
+      - commonTagVariables
+      - commonTaggedVariables
+      - dataSource
     properties:
       id:
         type: integer
@@ -4859,6 +4896,245 @@ definitions:
         type: array
         items:
           $ref: '#/definitions/Unit'
+      alias:
+        description: 'Example: '
+        type: string
+      clientId:
+        description: 'Example: local'
+        type: string
+      earliestFillingTime:
+        description: 'Example: 1362099600'
+        type: integer
+      earliestSourceTime:
+        description: 'Example: 1334473200'
+        type: integer
+      experimentEndTime:
+        description: 'Example: '
+        type: string
+        format: date-time
+      experimentStartTime:
+        description: 'Example: '
+        type: string
+        format: date-time
+      fillingType:
+        description: 'Example: '
+        type: string
+      userVariableFillingValue:
+        description: 'Example: -1'
+        type: number
+        format: double
+      lastOriginalUnitId:
+        description: 'Example: 47'
+        type: integer
+      lastOriginalValue:
+        description: 'Example: 100900'
+        type: number
+        format: double
+      lastProcessedDailyValue:
+        description: 'Example: 100900'
+        type: number
+        format: double
+      lastSuccessfulUpdateTime:
+        description: 'Example: 2017-02-08 17:43:01'
+        type: string
+        format: date-time
+      lastUnitId:
+        description: 'Example: 47'
+        type: integer
+      latestFillingTime:
+        description: 'Example: 1501722000'
+        type: integer
+      latestUserMeasurementTime:
+        description: 'Example: 1501722000'
+        type: integer
+      latestSourceTime:
+        description: 'Example: 1501722000'
+        type: integer
+      maximumRecordedValue:
+        description: 'Example: 104700'
+        type: number
+        format: double
+      measurementsAtLastAnalysis:
+        description: 'Example: 9795'
+        type: integer
+      minimumRecordedValue:
+        description: 'Example: 1008.74'
+        type: number
+        format: double
+      userVariableMostCommonConnectorId:
+        description: 'Example: 13'
+        type: integer
+      numberOfChanges:
+        description: 'Example: 1317'
+        type: integer
+      numberOfProcessedDailyMeasurements:
+        description: 'Example: 1364'
+        type: integer
+      numberOfUniqueDailyValues:
+        description: 'Example: 283'
+        type: integer
+      numberOfUserCorrelationsAsCause:
+        description: 'Example: 155'
+        type: integer
+      numberOfUserCorrelationsAsEffect:
+        description: 'Example: 0'
+        type: integer
+      outcomeOfInterest:
+        description: 'Example: 0'
+        type: integer
+      parentId:
+        description: 'Example: '
+        type: string
+      predictorOfInterest:
+        description: 'Example: 0'
+        type: integer
+      secondToLastValue:
+        description: 'Example: 101800'
+        type: number
+        format: double
+      shareUserMeasurements:
+        description: 'Example: false'
+        type: boolean
+      status:
+        description: 'Example: UPDATED'
+        type: string
+      thirdToLastValue:
+        description: 'Example: 102000'
+        type: number
+        format: double
+      userId:
+        description: 'Example: 230'
+        type: integer
+      userVariableValence:
+        description: 'Example: '
+        type: string
+      variableId:
+        description: 'Example: 96380'
+        type: integer
+      userVariableWikipediaTitle:
+        description: 'Example: '
+        type: string
+      variableFillingValue:
+        description: 'Example: -1'
+        type: number
+        format: double
+      informationalUrl:
+        description: 'Example: '
+        type: string
+      commonVariableMostCommonConnectorId:
+        description: 'Example: 13'
+        type: integer
+      price:
+        description: 'Example: '
+        type: string
+      productUrl:
+        description: 'Example: '
+        type: string
+      wikipediaTitle:
+        description: 'Example: '
+        type: string
+      commonVariableUpdatedAt:
+        description: 'Example: 2017-07-30 20:47:38'
+        type: string
+        format: date-time
+      userVariableUpdatedAt:
+        description: 'Example: 2017-08-04 11:19:31'
+        type: string
+        format: date-time
+      experimentStartTimeString:
+        description: 'Example: '
+        type: string
+        format: date-time
+      experimentStartTimeSeconds:
+        description: 'Example: '
+        type: string
+        format: date-time
+      experimentEndTimeString:
+        description: 'Example: '
+        type: string
+        format: date-time
+      experimentEndTimeSeconds:
+        description: 'Example: '
+        type: string
+        format: date-time
+      meanInUserVariableDefaultUnit:
+        description: 'Example: 101260'
+        type: number
+        format: double
+      lastValueInUserVariableDefaultUnit:
+        description: 'Example: 101600'
+        type: number
+        format: double
+      secondToLastValueInUserVariableDefaultUnit:
+        description: 'Example: 101800'
+        type: number
+        format: double
+      thirdToLastValueInUserVariableDefaultUnit:
+        description: 'Example: 102000'
+        type: number
+        format: double
+      mostCommonValueInUserVariableDefaultUnit:
+        description: 'Example: 101700'
+        type: number
+        format: double
+      secondMostCommonValueInUserVariableDefaultUnit:
+        description: 'Example: 101500'
+        type: number
+        format: double
+      thirdMostCommonValueInUserVariableDefaultUnit:
+        description: 'Example: 101700'
+        type: number
+        format: double
+      chartsLinkStatic:
+        description: >-
+          Example:
+          https://local.quantimo.do/api/v2/charts?variableName=Barometric%20Pressure&userId=230&pngUrl=https%3A%2F%2Fapp.quantimo.do%2Fionic%2FModo%2Fwww%2Fimg%2Fvariable_categories%2Fenvironment.png
+        type: string
+      chartsLinkDynamic:
+        description: >-
+          Example:
+          https://local.quantimo.do/ionic/Modo/www/#/app/charts/Barometric%20Pressure?variableName=Barometric%20Pressure&userId=230&pngUrl=https%3A%2F%2Fapp.quantimo.do%2Fionic%2FModo%2Fwww%2Fimg%2Fvariable_categories%2Fenvironment.png
+        type: string
+      chartsLinkFacebook:
+        description: >-
+          Example:
+          https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fcharts%3FvariableName%3DBarometric%2520Pressure%26userId%3D230%26pngUrl%3Dhttps%253A%252F%252Fapp.quantimo.do%252Fionic%252FModo%252Fwww%252Fimg%252Fvariable_categories%252Fenvironment.png
+        type: string
+      chartsLinkGoogle:
+        description: >-
+          Example:
+          https://plus.google.com/share?url=https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fcharts%3FvariableName%3DBarometric%2520Pressure%26userId%3D230%26pngUrl%3Dhttps%253A%252F%252Fapp.quantimo.do%252Fionic%252FModo%252Fwww%252Fimg%252Fvariable_categories%252Fenvironment.png
+        type: string
+      chartsLinkTwitter:
+        description: >-
+          Example:
+          https://twitter.com/home?status=Check%20out%20my%20Barometric%20Pressure%20data%21%20https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fcharts%3FvariableName%3DBarometric%2520Pressure%26userId%3D230%26pngUrl%3Dhttps%253A%252F%252Fapp.quantimo.do%252Fionic%252FModo%252Fwww%252Fimg%252Fvariable_categories%252Fenvironment.png%20%40quantimodo
+        type: string
+      chartsLinkEmail:
+        description: >-
+          Example:
+          mailto:?subject=Check%20out%20my%20Barometric%20Pressure%20data%21&body=See%20my%20Barometric%20Pressure%20history%20at%20https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fcharts%3FvariableName%3DBarometric%2520Pressure%26userId%3D230%26pngUrl%3Dhttps%253A%252F%252Fapp.quantimo.do%252Fionic%252FModo%252Fwww%252Fimg%252Fvariable_categories%252Fenvironment.png%0A%0AHave%20a%20great%20day!
+        type: string
+      userTagVariables:
+        $ref: '#/definitions/UserVariable'
+      userTaggedVariables:
+        $ref: '#/definitions/UserVariable'
+      joinedUserTagVariables:
+        $ref: '#/definitions/UserVariable'
+      ingredientUserTagVariables:
+        $ref: '#/definitions/UserVariable'
+      ingredientOfUserTagVariables:
+        $ref: '#/definitions/UserVariable'
+      childUserTagVariables:
+        $ref: '#/definitions/UserVariable'
+      parentUserTagVariables:
+        $ref: '#/definitions/UserVariable'
+      commonTagVariables:
+        $ref: '#/definitions/Variable'
+      commonTaggedVariables:
+        $ref: '#/definitions/Variable'
+      dataSource:
+        $ref: '#/definitions/DataSource'
   VariableCategory:
     required:
       - name
@@ -4921,327 +5197,45 @@ definitions:
     required:
       - causeVariable
       - effectVariable
+      - causeProcessedDailyMeasurements
+      - charts
+      - effectProcessedDailyMeasurements
+      - pairs
+      - statistics
+      - text
+      - user
     properties:
-      causeVariable:
-        description: >-
-          Example: {"id":1448,"name":"Sleep
-          Quality","alias":null,"clientId":"oAuthDisabled","userVariableDefaultUnitId":10,"earliestFillingTime":1336338900,"earliestMeasurementTime":1336338900,"earliestSourceTime":1336338900,"experimentEndTime":"2030-01-01
-          06:00:00","experimentStartTime":"2010-03-23
-          01:31:42","fillingType":null,"userVariableFillingValue":null,"kurtosis":2.7220883827049,"lastOriginalUnitId":20,"lastOriginalValue":1,"lastProcessedDailyValue":3,"lastSuccessfulUpdateTime":"2017-03-23
-          02:14:32","lastUnitId":10,"lastValue":3,"latestFillingTime":1406724600,"latestMeasurementTime":1406724600,"latestUserMeasurementTime":1406724600,"latestSourceTime":1483077300,"maximumRecordedValue":5,"mean":3.359,"rawMeasurementsAtLastAnalysis":0,"measurementsAtLastAnalysis":0,"median":3,"minimumRecordedValue":1,"userVariableMostCommonConnectorId":6,"numberOfChanges":171,"numberOfCorrelations":1143,"numberOfProcessedDailyMeasurements":312,"numberOfRawMeasurements":614,"numberOfTrackingReminders":0,"numberOfUniqueValues":null,"numberOfUniqueDailyValues":18,"numberOfUserCorrelationsAsCause":100,"numberOfUserCorrelationsAsEffect":1043,"outcomeOfInterest":null,"parentId":null,"predictorOfInterest":0,"secondToLastValue":0.4464285671711,"shareUserMeasurements":true,"skewness":0.10225665179767,"sources":null,"standardDeviation":0.8688301252527,"status":"CORRELATING","thirdToLastValue":0.47916665673256,"userId":230,"userVariableValence":null,"variance":0.75486578654663,"userVariableVariableCategoryId":6,"variableId":1448,"userVariableWikipediaTitle":null,"defaultUnitId":10,"description":null,"variableFillingValue":-1,"imageUrl":null,"informationalUrl":null,"ionIcon":"ion-happy-outline","mostCommonOriginalUnitId":21,"commonVariableMostCommonConnectorId":6,"numberOfAggregateCorrelationsAsCause":68,"numberOfAggregateCorrelationsAsEffect":336,"numberOfUserVariables":49,"parent":null,"price":null,"productUrl":null,"secondMostCommonValue":4,"thirdMostCommonValue":3,"valence":"positive","variableCategoryId":6,"wikipediaTitle":null,"mostCommonValue":3,"outcome":true,"updatedTime":"2017-07-31
-          15:06:57","updatedAt":"2017-07-31
-          15:06:57","commonVariableUpdatedAt":"2017-07-31
-          15:06:57","userVariableUpdatedAt":"2017-04-18
-          20:54:49","createdAt":"2014-08-01
-          01:30:16","minimumAllowedValue":1,"maximumAllowedValue":5,"onsetDelay":0,"durationOfAction":604800,"combinationOperation":"MEAN","joinWith":null,"causeOnly":false,"public":true,"commonAlias":null,"experimentStartTimeString":"2010-03-23
-          01:31:42","experimentStartTimeSeconds":1269307902,"experimentEndTimeString":"2030-01-01
-          06:00:00","experimentEndTimeSeconds":1893477600,"mostCommonConnectorId":6,"variableCategoryName":"Sleep","svgUrl":"https:\/\/app.quantimo.do\/ionic\/Modo\/www\/img\/variable_categories\/sleep.svg","pngUrl":"https:\/\/app.quantimo.do\/ionic\/Modo\/www\/img\/variable_categories\/sleep.png","pngPath":"img\/variable_categories\/sleep.png","variableCategoryImageUrl":"https:\/\/maxcdn.icons8.com\/Color\/PNG\/96\/Household\/sleeping_in_bed-96.png","fillingValue":null,"manualTracking":true,"userVariableVariableCategoryName":"Sleep","meanInUserVariableDefaultUnit":3,"lastValueInUserVariableDefaultUnit":3,"secondToLastValueInUserVariableDefaultUnit":0,"thirdToLastValueInUserVariableDefaultUnit":0,"mostCommonValueInUserVariableDefaultUnit":3,"secondMostCommonValueInUserVariableDefaultUnit":4,"thirdMostCommonValueInUserVariableDefaultUnit":3,"unitId":10,"unitName":"1
-          to 5
-          Rating","unitAbbreviatedName":"\/5","unitCategoryId":5,"unitCategoryName":"Rating","defaultUnitName":"1
-          to 5
-          Rating","defaultUnitAbbreviatedName":"\/5","defaultUnitCategoryId":5,"defaultUnitCategoryName":"Rating","availableDefaultUnits":[{"id":25,"name":"-4
-          to 4 Rating","abbreviatedName":"-4 to
-          4","categoryName":"Rating","minimumValue":-4,"maximumValue":4,"categoryId":5,"conversionSteps":[{"operation":"ADD","value":4},{"operation":"MULTIPLY","value":12.5}],"advanced":1,"manualTracking":0,"unitCategory":{"name":"Rating","standardUnitAbbreviatedName":"%"}},{"id":20,"name":"0
-          to 1
-          Rating","abbreviatedName":"\/1","categoryName":"Rating","minimumValue":0,"maximumValue":1,"categoryId":5,"conversionSteps":[{"operation":"MULTIPLY","value":100}],"advanced":1,"manualTracking":0,"unitCategory":{"name":"Rating","standardUnitAbbreviatedName":"%"}},{"id":40,"name":"0
-          to 5
-          Rating","abbreviatedName":"\/6","categoryName":"Rating","minimumValue":0,"maximumValue":5,"categoryId":5,"conversionSteps":[{"operation":"MULTIPLY","value":20}],"advanced":1,"manualTracking":0,"unitCategory":{"name":"Rating","standardUnitAbbreviatedName":"%"}},{"id":203,"name":"1
-          to 10
-          Rating","abbreviatedName":"\/10","categoryName":"Rating","minimumValue":1,"maximumValue":10,"categoryId":5,"conversionSteps":[{"operation":"MULTIPLY","value":11.111111111111},{"operation":"ADD","value":-11.111111111111}],"advanced":0,"manualTracking":1,"unitCategory":{"name":"Rating","standardUnitAbbreviatedName":"%"}},{"id":10,"name":"1
-          to 5
-          Rating","abbreviatedName":"\/5","categoryName":"Rating","minimumValue":1,"maximumValue":5,"categoryId":5,"conversionSteps":[{"operation":"MULTIPLY","value":25},{"operation":"ADD","value":-25}],"advanced":0,"manualTracking":1,"unitCategory":{"name":"Rating","standardUnitAbbreviatedName":"%"}},{"id":21,"name":"Percent","abbreviatedName":"%","categoryName":"Rating","minimumValue":null,"maximumValue":null,"categoryId":5,"conversionSteps":[],"advanced":1,"manualTracking":1,"unitCategory":{"name":"Rating","standardUnitAbbreviatedName":"%"}}],"userVariableDefaultUnitName":"1
-          to 5
-          Rating","userVariableDefaultUnitAbbreviatedName":"\/5","userVariableDefaultUnitCategoryId":5,"userVariableDefaultUnitCategoryName":"Rating","variableName":"Sleep
-          Quality","inputType":"happiestFaceIsFive","durationOfActionInHours":168,"onsetDelayInHours":0,"chartsLinkStatic":"https:\/\/local.quantimo.do\/api\/v2\/charts?variableName=Sleep%20Quality&userId=230&pngUrl=https%3A%2F%2Fapp.quantimo.do%2Fionic%2FModo%2Fwww%2Fimg%2Fvariable_categories%2Fsleep.png","chartsLinkDynamic":"https:\/\/local.quantimo.do\/ionic\/Modo\/www\/#\/app\/charts\/Sleep%20Quality?variableName=Sleep%20Quality&userId=230&pngUrl=https%3A%2F%2Fapp.quantimo.do%2Fionic%2FModo%2Fwww%2Fimg%2Fvariable_categories%2Fsleep.png","chartsLinkFacebook":"https:\/\/www.facebook.com\/sharer\/sharer.php?u=https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fcharts%3FvariableName%3DSleep%2520Quality%26userId%3D230%26pngUrl%3Dhttps%253A%252F%252Fapp.quantimo.do%252Fionic%252FModo%252Fwww%252Fimg%252Fvariable_categories%252Fsleep.png","chartsLinkGoogle":"https:\/\/plus.google.com\/share?url=https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fcharts%3FvariableName%3DSleep%2520Quality%26userId%3D230%26pngUrl%3Dhttps%253A%252F%252Fapp.quantimo.do%252Fionic%252FModo%252Fwww%252Fimg%252Fvariable_categories%252Fsleep.png","chartsLinkTwitter":"https:\/\/twitter.com\/home?status=Check%20out%20my%20Sleep%20Quality%20data%21%20https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fcharts%3FvariableName%3DSleep%2520Quality%26userId%3D230%26pngUrl%3Dhttps%253A%252F%252Fapp.quantimo.do%252Fionic%252FModo%252Fwww%252Fimg%252Fvariable_categories%252Fsleep.png%20%40quantimodo","chartsLinkEmail":"mailto:?subject=Check%20out%20my%20Sleep%20Quality%20data%21&body=See%20my%20Sleep%20Quality%20history%20at%20https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fcharts%3FvariableName%3DSleep%2520Quality%26userId%3D230%26pngUrl%3Dhttps%253A%252F%252Fapp.quantimo.do%252Fionic%252FModo%252Fwww%252Fimg%252Fvariable_categories%252Fsleep.png%0A%0AHave%20a%20great%20day!","userTagVariables":[],"userTaggedVariables":[],"joinedUserTagVariables":[],"ingredientUserTagVariables":[],"ingredientOfUserTagVariables":[],"childUserTagVariables":[],"parentUserTagVariables":[],"commonTagVariables":[],"commonTaggedVariables":[],"dataSource":{"id":6,"name":"up","connectorClientId":"10RfjEgKr8U","connectorClientSecret":"e17fd34e4bc4642f0c4c99d7acb6e661","displayName":"Up
-          by
-          Jawbone","image":"https:\/\/i.imgur.com\/MXNQy3T.png","getItUrl":"http:\/\/www.amazon.com\/gp\/product\/B00A17IAO0\/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20","shortDescription":"Tracks
-          sleep, exercise, and diet.","longDescription":"UP by Jawbone is a
-          wristband and app that tracks how you sleep, move and eat and then
-          helps you use that information to feel your
-          best.","enabled":1,"affiliate":true,"defaultVariableCategoryName":"Physical
-          Activity","imageHtml":"<a
-          href=\"http:\/\/www.amazon.com\/gp\/product\/B00A17IAO0\/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20\"><img
-          id=\"up_image\" title=\"Up by Jawbone\"
-          src=\"https:\/\/i.imgur.com\/MXNQy3T.png\" alt=\"Up by
-          Jawbone\"><\/a>","linkedDisplayNameHtml":"<a
-          href=\"http:\/\/www.amazon.com\/gp\/product\/B00A17IAO0\/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20\">Up
-          by Jawbone<\/a>"}}
-        type: object
-      effectVariable:
-        description: >-
-          Example: {"id":1398,"name":"Overall
-          Mood","alias":null,"clientId":"quantimodo","userVariableDefaultUnitId":10,"earliestFillingTime":1336267020,"earliestMeasurementTime":1336267020,"earliestSourceTime":1334473200,"experimentEndTime":null,"experimentStartTime":null,"fillingType":null,"userVariableFillingValue":-1,"kurtosis":5.8376066475804,"lastOriginalUnitId":10,"lastOriginalValue":3,"lastProcessedDailyValue":3,"lastSuccessfulUpdateTime":"2017-08-04
-          09:23:18","lastUnitId":10,"lastValue":3,"latestFillingTime":1501879724,"latestMeasurementTime":1501879724,"latestUserMeasurementTime":1501879724,"latestSourceTime":1501879724,"maximumRecordedValue":5,"mean":2.8654,"rawMeasurementsAtLastAnalysis":0,"measurementsAtLastAnalysis":0,"median":2.875,"minimumRecordedValue":1,"userVariableMostCommonConnectorId":5,"numberOfChanges":1139,"numberOfCorrelations":2172,"numberOfProcessedDailyMeasurements":1492,"numberOfRawMeasurements":11829,"numberOfTrackingReminders":0,"numberOfUniqueValues":5,"numberOfUniqueDailyValues":191,"numberOfUserCorrelationsAsCause":181,"numberOfUserCorrelationsAsEffect":1991,"outcomeOfInterest":1,"parentId":null,"predictorOfInterest":0,"secondToLastValue":1,"shareUserMeasurements":true,"skewness":0.9637141502222,"sources":null,"standardDeviation":0.58645820392122,"status":"CORRELATING","thirdToLastValue":1,"userId":230,"userVariableValence":null,"variance":0.3439332249465,"userVariableVariableCategoryId":1,"variableId":1398,"userVariableWikipediaTitle":null,"defaultUnitId":10,"description":"positive","variableFillingValue":-1,"imageUrl":null,"informationalUrl":null,"ionIcon":"ion-happy-outline","mostCommonOriginalUnitId":10,"commonVariableMostCommonConnectorId":10,"numberOfAggregateCorrelationsAsCause":329,"numberOfAggregateCorrelationsAsEffect":890,"numberOfUserVariables":4003,"parent":null,"price":null,"productUrl":null,"secondMostCommonValue":4,"thirdMostCommonValue":2,"valence":"positive","variableCategoryId":1,"wikipediaTitle":null,"mostCommonValue":3,"outcome":true,"updatedTime":"2017-08-04
-          23:49:15","updatedAt":"2017-08-04
-          23:49:15","commonVariableUpdatedAt":"2017-07-31
-          19:55:38","userVariableUpdatedAt":"2017-08-04
-          23:49:15","createdAt":"2015-11-23
-          14:15:47","minimumAllowedValue":1,"maximumAllowedValue":5,"onsetDelay":0,"durationOfAction":86400,"combinationOperation":"MEAN","joinWith":null,"causeOnly":false,"public":true,"commonAlias":"Mood_(psychology)","experimentStartTimeString":null,"experimentStartTimeSeconds":null,"experimentEndTimeString":null,"experimentEndTimeSeconds":null,"mostCommonConnectorId":5,"variableCategoryName":"Emotions","svgUrl":"https:\/\/app.quantimo.do\/ionic\/Modo\/www\/img\/variable_categories\/emotions.svg","pngUrl":"https:\/\/app.quantimo.do\/ionic\/Modo\/www\/img\/variable_categories\/emotions.png","pngPath":"img\/variable_categories\/emotions.png","variableCategoryImageUrl":"https:\/\/maxcdn.icons8.com\/Color\/PNG\/96\/Cinema\/theatre_mask-96.png","fillingValue":null,"manualTracking":true,"userVariableVariableCategoryName":"Emotions","meanInUserVariableDefaultUnit":3,"lastValueInUserVariableDefaultUnit":3,"secondToLastValueInUserVariableDefaultUnit":1,"thirdToLastValueInUserVariableDefaultUnit":1,"mostCommonValueInUserVariableDefaultUnit":3,"secondMostCommonValueInUserVariableDefaultUnit":4,"thirdMostCommonValueInUserVariableDefaultUnit":2,"unitId":10,"unitName":"1
-          to 5
-          Rating","unitAbbreviatedName":"\/5","unitCategoryId":5,"unitCategoryName":"Rating","defaultUnitName":"1
-          to 5
-          Rating","defaultUnitAbbreviatedName":"\/5","defaultUnitCategoryId":5,"defaultUnitCategoryName":"Rating","availableDefaultUnits":[{"id":25,"name":"-4
-          to 4 Rating","abbreviatedName":"-4 to
-          4","categoryName":"Rating","minimumValue":-4,"maximumValue":4,"categoryId":5,"conversionSteps":[{"operation":"ADD","value":4},{"operation":"MULTIPLY","value":12.5}],"advanced":1,"manualTracking":0,"unitCategory":{"name":"Rating","standardUnitAbbreviatedName":"%"}},{"id":20,"name":"0
-          to 1
-          Rating","abbreviatedName":"\/1","categoryName":"Rating","minimumValue":0,"maximumValue":1,"categoryId":5,"conversionSteps":[{"operation":"MULTIPLY","value":100}],"advanced":1,"manualTracking":0,"unitCategory":{"name":"Rating","standardUnitAbbreviatedName":"%"}},{"id":40,"name":"0
-          to 5
-          Rating","abbreviatedName":"\/6","categoryName":"Rating","minimumValue":0,"maximumValue":5,"categoryId":5,"conversionSteps":[{"operation":"MULTIPLY","value":20}],"advanced":1,"manualTracking":0,"unitCategory":{"name":"Rating","standardUnitAbbreviatedName":"%"}},{"id":203,"name":"1
-          to 10
-          Rating","abbreviatedName":"\/10","categoryName":"Rating","minimumValue":1,"maximumValue":10,"categoryId":5,"conversionSteps":[{"operation":"MULTIPLY","value":11.111111111111},{"operation":"ADD","value":-11.111111111111}],"advanced":0,"manualTracking":1,"unitCategory":{"name":"Rating","standardUnitAbbreviatedName":"%"}},{"id":10,"name":"1
-          to 5
-          Rating","abbreviatedName":"\/5","categoryName":"Rating","minimumValue":1,"maximumValue":5,"categoryId":5,"conversionSteps":[{"operation":"MULTIPLY","value":25},{"operation":"ADD","value":-25}],"advanced":0,"manualTracking":1,"unitCategory":{"name":"Rating","standardUnitAbbreviatedName":"%"}},{"id":21,"name":"Percent","abbreviatedName":"%","categoryName":"Rating","minimumValue":null,"maximumValue":null,"categoryId":5,"conversionSteps":[],"advanced":1,"manualTracking":1,"unitCategory":{"name":"Rating","standardUnitAbbreviatedName":"%"}}],"userVariableDefaultUnitName":"1
-          to 5
-          Rating","userVariableDefaultUnitAbbreviatedName":"\/5","userVariableDefaultUnitCategoryId":5,"userVariableDefaultUnitCategoryName":"Rating","variableName":"Overall
-          Mood","inputType":"happiestFaceIsFive","durationOfActionInHours":24,"onsetDelayInHours":0,"chartsLinkStatic":"https:\/\/local.quantimo.do\/api\/v2\/charts?variableName=Overall%20Mood&userId=230&pngUrl=https%3A%2F%2Fapp.quantimo.do%2Fionic%2FModo%2Fwww%2Fimg%2Fvariable_categories%2Femotions.png","chartsLinkDynamic":"https:\/\/local.quantimo.do\/ionic\/Modo\/www\/#\/app\/charts\/Overall%20Mood?variableName=Overall%20Mood&userId=230&pngUrl=https%3A%2F%2Fapp.quantimo.do%2Fionic%2FModo%2Fwww%2Fimg%2Fvariable_categories%2Femotions.png","chartsLinkFacebook":"https:\/\/www.facebook.com\/sharer\/sharer.php?u=https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fcharts%3FvariableName%3DOverall%2520Mood%26userId%3D230%26pngUrl%3Dhttps%253A%252F%252Fapp.quantimo.do%252Fionic%252FModo%252Fwww%252Fimg%252Fvariable_categories%252Femotions.png","chartsLinkGoogle":"https:\/\/plus.google.com\/share?url=https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fcharts%3FvariableName%3DOverall%2520Mood%26userId%3D230%26pngUrl%3Dhttps%253A%252F%252Fapp.quantimo.do%252Fionic%252FModo%252Fwww%252Fimg%252Fvariable_categories%252Femotions.png","chartsLinkTwitter":"https:\/\/twitter.com\/home?status=Check%20out%20my%20Overall%20Mood%20data%21%20https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fcharts%3FvariableName%3DOverall%2520Mood%26userId%3D230%26pngUrl%3Dhttps%253A%252F%252Fapp.quantimo.do%252Fionic%252FModo%252Fwww%252Fimg%252Fvariable_categories%252Femotions.png%20%40quantimodo","chartsLinkEmail":"mailto:?subject=Check%20out%20my%20Overall%20Mood%20data%21&body=See%20my%20Overall%20Mood%20history%20at%20https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fcharts%3FvariableName%3DOverall%2520Mood%26userId%3D230%26pngUrl%3Dhttps%253A%252F%252Fapp.quantimo.do%252Fionic%252FModo%252Fwww%252Fimg%252Fvariable_categories%252Femotions.png%0A%0AHave%20a%20great%20day!","userTagVariables":[],"userTaggedVariables":[{"id":1919,"name":"Back
-          Pain","alias":null,"clientId":"quantimodo","userVariableDefaultUnitId":10,"earliestFillingTime":1394385660,"earliestMeasurementTime":1394385660,"earliestSourceTime":1334473200,"experimentEndTime":null,"experimentStartTime":null,"fillingType":null,"userVariableFillingValue":-1,"kurtosis":10.590629984947,"lastOriginalUnitId":10,"lastOriginalValue":1,"lastProcessedDailyValue":1,"lastSuccessfulUpdateTime":"2017-02-08
-          05:26:13","lastUnitId":10,"lastValue":1,"latestFillingTime":1501718400,"latestMeasurementTime":1501718400,"latestUserMeasurementTime":1501718400,"latestSourceTime":1501718400,"maximumRecordedValue":4,"mean":1.2363,"rawMeasurementsAtLastAnalysis":291,"measurementsAtLastAnalysis":291,"median":1,"minimumRecordedValue":1,"userVariableMostCommonConnectorId":null,"numberOfChanges":61,"numberOfCorrelations":1088,"numberOfProcessedDailyMeasurements":225,"numberOfRawMeasurements":436,"numberOfTrackingReminders":0,"numberOfUniqueValues":null,"numberOfUniqueDailyValues":7,"numberOfUserCorrelationsAsCause":124,"numberOfUserCorrelationsAsEffect":964,"outcomeOfInterest":1,"parentId":null,"predictorOfInterest":0,"secondToLastValue":2,"shareUserMeasurements":false,"skewness":2.7446737786856,"sources":null,"standardDeviation":0.55217922447658,"status":"UPDATED","thirdToLastValue":2,"userId":230,"userVariableValence":null,"variance":0.30490189594356,"userVariableVariableCategoryId":10,"variableId":1919,"userVariableWikipediaTitle":null,"defaultUnitId":10,"description":"negative","variableFillingValue":-1,"imageUrl":null,"informationalUrl":null,"ionIcon":"ion-sad-outline","mostCommonOriginalUnitId":10,"commonVariableMostCommonConnectorId":null,"numberOfAggregateCorrelationsAsCause":46,"numberOfAggregateCorrelationsAsEffect":451,"numberOfUserVariables":146,"parent":null,"price":null,"productUrl":null,"secondMostCommonValue":4,"thirdMostCommonValue":3,"valence":"negative","variableCategoryId":10,"wikipediaTitle":null,"mostCommonValue":1,"outcome":true,"updatedTime":"2017-08-03
-          05:42:46","updatedAt":"2017-08-03
-          05:42:46","commonVariableUpdatedAt":"2017-07-14
-          02:55:23","userVariableUpdatedAt":"2017-08-03
-          05:42:46","createdAt":"2014-03-09
-          17:22:17","minimumAllowedValue":1,"maximumAllowedValue":5,"onsetDelay":0,"durationOfAction":604800,"combinationOperation":"MEAN","joinWith":null,"causeOnly":false,"public":true,"commonAlias":null,"experimentStartTimeString":null,"experimentStartTimeSeconds":null,"experimentEndTimeString":null,"experimentEndTimeSeconds":null,"mostCommonConnectorId":null,"variableCategoryName":"Symptoms","svgUrl":"https:\/\/app.quantimo.do\/ionic\/Modo\/www\/img\/variable_categories\/symptoms.svg","pngUrl":"https:\/\/app.quantimo.do\/ionic\/Modo\/www\/img\/variable_categories\/symptoms.png","pngPath":"img\/variable_categories\/symptoms.png","variableCategoryImageUrl":"https:\/\/maxcdn.icons8.com\/Color\/PNG\/96\/Messaging\/sad-96.png","fillingValue":null,"manualTracking":true,"userVariableVariableCategoryName":"Symptoms","meanInUserVariableDefaultUnit":1,"lastValueInUserVariableDefaultUnit":1,"secondToLastValueInUserVariableDefaultUnit":2,"thirdToLastValueInUserVariableDefaultUnit":2,"mostCommonValueInUserVariableDefaultUnit":1,"secondMostCommonValueInUserVariableDefaultUnit":4,"thirdMostCommonValueInUserVariableDefaultUnit":3,"unitId":10,"unitName":"1
-          to 5
-          Rating","unitAbbreviatedName":"\/5","unitCategoryId":5,"unitCategoryName":"Rating","defaultUnitName":"1
-          to 5
-          Rating","defaultUnitAbbreviatedName":"\/5","defaultUnitCategoryId":5,"defaultUnitCategoryName":"Rating","availableDefaultUnits":[{"id":25,"name":"-4
-          to 4 Rating","abbreviatedName":"-4 to
-          4","categoryName":"Rating","minimumValue":-4,"maximumValue":4,"categoryId":5,"conversionSteps":[{"operation":"ADD","value":4},{"operation":"MULTIPLY","value":12.5}],"advanced":1,"manualTracking":0,"unitCategory":{"name":"Rating","standardUnitAbbreviatedName":"%"}},{"id":20,"name":"0
-          to 1
-          Rating","abbreviatedName":"\/1","categoryName":"Rating","minimumValue":0,"maximumValue":1,"categoryId":5,"conversionSteps":[{"operation":"MULTIPLY","value":100}],"advanced":1,"manualTracking":0,"unitCategory":{"name":"Rating","standardUnitAbbreviatedName":"%"}},{"id":40,"name":"0
-          to 5
-          Rating","abbreviatedName":"\/6","categoryName":"Rating","minimumValue":0,"maximumValue":5,"categoryId":5,"conversionSteps":[{"operation":"MULTIPLY","value":20}],"advanced":1,"manualTracking":0,"unitCategory":{"name":"Rating","standardUnitAbbreviatedName":"%"}},{"id":203,"name":"1
-          to 10
-          Rating","abbreviatedName":"\/10","categoryName":"Rating","minimumValue":1,"maximumValue":10,"categoryId":5,"conversionSteps":[{"operation":"MULTIPLY","value":11.111111111111},{"operation":"ADD","value":-11.111111111111}],"advanced":0,"manualTracking":1,"unitCategory":{"name":"Rating","standardUnitAbbreviatedName":"%"}},{"id":10,"name":"1
-          to 5
-          Rating","abbreviatedName":"\/5","categoryName":"Rating","minimumValue":1,"maximumValue":5,"categoryId":5,"conversionSteps":[{"operation":"MULTIPLY","value":25},{"operation":"ADD","value":-25}],"advanced":0,"manualTracking":1,"unitCategory":{"name":"Rating","standardUnitAbbreviatedName":"%"}},{"id":21,"name":"Percent","abbreviatedName":"%","categoryName":"Rating","minimumValue":null,"maximumValue":null,"categoryId":5,"conversionSteps":[],"advanced":1,"manualTracking":1,"unitCategory":{"name":"Rating","standardUnitAbbreviatedName":"%"}}],"userVariableDefaultUnitName":"1
-          to 5
-          Rating","userVariableDefaultUnitAbbreviatedName":"\/5","userVariableDefaultUnitCategoryId":5,"userVariableDefaultUnitCategoryName":"Rating","variableName":"Back
-          Pain","inputType":"saddestFaceIsFive","durationOfActionInHours":168,"onsetDelayInHours":0,"chartsLinkStatic":"https:\/\/local.quantimo.do\/api\/v2\/charts?variableName=Back%20Pain&userId=230&pngUrl=https%3A%2F%2Fapp.quantimo.do%2Fionic%2FModo%2Fwww%2Fimg%2Fvariable_categories%2Fsymptoms.png","chartsLinkDynamic":"https:\/\/local.quantimo.do\/ionic\/Modo\/www\/#\/app\/charts\/Back%20Pain?variableName=Back%20Pain&userId=230&pngUrl=https%3A%2F%2Fapp.quantimo.do%2Fionic%2FModo%2Fwww%2Fimg%2Fvariable_categories%2Fsymptoms.png","chartsLinkFacebook":"https:\/\/www.facebook.com\/sharer\/sharer.php?u=https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fcharts%3FvariableName%3DBack%2520Pain%26userId%3D230%26pngUrl%3Dhttps%253A%252F%252Fapp.quantimo.do%252Fionic%252FModo%252Fwww%252Fimg%252Fvariable_categories%252Fsymptoms.png","chartsLinkGoogle":"https:\/\/plus.google.com\/share?url=https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fcharts%3FvariableName%3DBack%2520Pain%26userId%3D230%26pngUrl%3Dhttps%253A%252F%252Fapp.quantimo.do%252Fionic%252FModo%252Fwww%252Fimg%252Fvariable_categories%252Fsymptoms.png","chartsLinkTwitter":"https:\/\/twitter.com\/home?status=Check%20out%20my%20Back%20Pain%20data%21%20https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fcharts%3FvariableName%3DBack%2520Pain%26userId%3D230%26pngUrl%3Dhttps%253A%252F%252Fapp.quantimo.do%252Fionic%252FModo%252Fwww%252Fimg%252Fvariable_categories%252Fsymptoms.png%20%40quantimodo","chartsLinkEmail":"mailto:?subject=Check%20out%20my%20Back%20Pain%20data%21&body=See%20my%20Back%20Pain%20history%20at%20https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fcharts%3FvariableName%3DBack%2520Pain%26userId%3D230%26pngUrl%3Dhttps%253A%252F%252Fapp.quantimo.do%252Fionic%252FModo%252Fwww%252Fimg%252Fvariable_categories%252Fsymptoms.png%0A%0AHave%20a%20great%20day!","tagConversionFactor":1,"tagDisplayText":"Back
-          Pain is tagged with Overall
-          Mood"}],"joinedUserTagVariables":[],"ingredientUserTagVariables":[],"ingredientOfUserTagVariables":[],"childUserTagVariables":[{"id":1919,"name":"Back
-          Pain","alias":null,"clientId":"quantimodo","userVariableDefaultUnitId":10,"earliestFillingTime":1394385660,"earliestMeasurementTime":1394385660,"earliestSourceTime":1334473200,"experimentEndTime":null,"experimentStartTime":null,"fillingType":null,"userVariableFillingValue":-1,"kurtosis":10.590629984947,"lastOriginalUnitId":10,"lastOriginalValue":1,"lastProcessedDailyValue":1,"lastSuccessfulUpdateTime":"2017-02-08
-          05:26:13","lastUnitId":10,"lastValue":1,"latestFillingTime":1501718400,"latestMeasurementTime":1501718400,"latestUserMeasurementTime":1501718400,"latestSourceTime":1501718400,"maximumRecordedValue":4,"mean":1.2363,"rawMeasurementsAtLastAnalysis":291,"measurementsAtLastAnalysis":291,"median":1,"minimumRecordedValue":1,"userVariableMostCommonConnectorId":null,"numberOfChanges":61,"numberOfCorrelations":1088,"numberOfProcessedDailyMeasurements":225,"numberOfRawMeasurements":436,"numberOfTrackingReminders":0,"numberOfUniqueValues":null,"numberOfUniqueDailyValues":7,"numberOfUserCorrelationsAsCause":124,"numberOfUserCorrelationsAsEffect":964,"outcomeOfInterest":1,"parentId":null,"predictorOfInterest":0,"secondToLastValue":2,"shareUserMeasurements":false,"skewness":2.7446737786856,"sources":null,"standardDeviation":0.55217922447658,"status":"UPDATED","thirdToLastValue":2,"userId":230,"userVariableValence":null,"variance":0.30490189594356,"userVariableVariableCategoryId":10,"variableId":1919,"userVariableWikipediaTitle":null,"defaultUnitId":10,"description":"negative","variableFillingValue":-1,"imageUrl":null,"informationalUrl":null,"ionIcon":"ion-sad-outline","mostCommonOriginalUnitId":10,"commonVariableMostCommonConnectorId":null,"numberOfAggregateCorrelationsAsCause":46,"numberOfAggregateCorrelationsAsEffect":451,"numberOfUserVariables":146,"parent":null,"price":null,"productUrl":null,"secondMostCommonValue":4,"thirdMostCommonValue":3,"valence":"negative","variableCategoryId":10,"wikipediaTitle":null,"mostCommonValue":1,"outcome":true,"updatedTime":"2017-08-03
-          05:42:46","updatedAt":"2017-08-03
-          05:42:46","commonVariableUpdatedAt":"2017-07-14
-          02:55:23","userVariableUpdatedAt":"2017-08-03
-          05:42:46","createdAt":"2014-03-09
-          17:22:17","minimumAllowedValue":1,"maximumAllowedValue":5,"onsetDelay":0,"durationOfAction":604800,"combinationOperation":"MEAN","joinWith":null,"causeOnly":false,"public":true,"commonAlias":null,"experimentStartTimeString":null,"experimentStartTimeSeconds":null,"experimentEndTimeString":null,"experimentEndTimeSeconds":null,"mostCommonConnectorId":null,"variableCategoryName":"Symptoms","svgUrl":"https:\/\/app.quantimo.do\/ionic\/Modo\/www\/img\/variable_categories\/symptoms.svg","pngUrl":"https:\/\/app.quantimo.do\/ionic\/Modo\/www\/img\/variable_categories\/symptoms.png","pngPath":"img\/variable_categories\/symptoms.png","variableCategoryImageUrl":"https:\/\/maxcdn.icons8.com\/Color\/PNG\/96\/Messaging\/sad-96.png","fillingValue":null,"manualTracking":true,"userVariableVariableCategoryName":"Symptoms","meanInUserVariableDefaultUnit":1,"lastValueInUserVariableDefaultUnit":1,"secondToLastValueInUserVariableDefaultUnit":2,"thirdToLastValueInUserVariableDefaultUnit":2,"mostCommonValueInUserVariableDefaultUnit":1,"secondMostCommonValueInUserVariableDefaultUnit":4,"thirdMostCommonValueInUserVariableDefaultUnit":3,"unitId":10,"unitName":"1
-          to 5
-          Rating","unitAbbreviatedName":"\/5","unitCategoryId":5,"unitCategoryName":"Rating","defaultUnitName":"1
-          to 5
-          Rating","defaultUnitAbbreviatedName":"\/5","defaultUnitCategoryId":5,"defaultUnitCategoryName":"Rating","availableDefaultUnits":[{"id":25,"name":"-4
-          to 4 Rating","abbreviatedName":"-4 to
-          4","categoryName":"Rating","minimumValue":-4,"maximumValue":4,"categoryId":5,"conversionSteps":[{"operation":"ADD","value":4},{"operation":"MULTIPLY","value":12.5}],"advanced":1,"manualTracking":0,"unitCategory":{"name":"Rating","standardUnitAbbreviatedName":"%"}},{"id":20,"name":"0
-          to 1
-          Rating","abbreviatedName":"\/1","categoryName":"Rating","minimumValue":0,"maximumValue":1,"categoryId":5,"conversionSteps":[{"operation":"MULTIPLY","value":100}],"advanced":1,"manualTracking":0,"unitCategory":{"name":"Rating","standardUnitAbbreviatedName":"%"}},{"id":40,"name":"0
-          to 5
-          Rating","abbreviatedName":"\/6","categoryName":"Rating","minimumValue":0,"maximumValue":5,"categoryId":5,"conversionSteps":[{"operation":"MULTIPLY","value":20}],"advanced":1,"manualTracking":0,"unitCategory":{"name":"Rating","standardUnitAbbreviatedName":"%"}},{"id":203,"name":"1
-          to 10
-          Rating","abbreviatedName":"\/10","categoryName":"Rating","minimumValue":1,"maximumValue":10,"categoryId":5,"conversionSteps":[{"operation":"MULTIPLY","value":11.111111111111},{"operation":"ADD","value":-11.111111111111}],"advanced":0,"manualTracking":1,"unitCategory":{"name":"Rating","standardUnitAbbreviatedName":"%"}},{"id":10,"name":"1
-          to 5
-          Rating","abbreviatedName":"\/5","categoryName":"Rating","minimumValue":1,"maximumValue":5,"categoryId":5,"conversionSteps":[{"operation":"MULTIPLY","value":25},{"operation":"ADD","value":-25}],"advanced":0,"manualTracking":1,"unitCategory":{"name":"Rating","standardUnitAbbreviatedName":"%"}},{"id":21,"name":"Percent","abbreviatedName":"%","categoryName":"Rating","minimumValue":null,"maximumValue":null,"categoryId":5,"conversionSteps":[],"advanced":1,"manualTracking":1,"unitCategory":{"name":"Rating","standardUnitAbbreviatedName":"%"}}],"userVariableDefaultUnitName":"1
-          to 5
-          Rating","userVariableDefaultUnitAbbreviatedName":"\/5","userVariableDefaultUnitCategoryId":5,"userVariableDefaultUnitCategoryName":"Rating","variableName":"Back
-          Pain","inputType":"saddestFaceIsFive","durationOfActionInHours":168,"onsetDelayInHours":0,"chartsLinkStatic":"https:\/\/local.quantimo.do\/api\/v2\/charts?variableName=Back%20Pain&userId=230&pngUrl=https%3A%2F%2Fapp.quantimo.do%2Fionic%2FModo%2Fwww%2Fimg%2Fvariable_categories%2Fsymptoms.png","chartsLinkDynamic":"https:\/\/local.quantimo.do\/ionic\/Modo\/www\/#\/app\/charts\/Back%20Pain?variableName=Back%20Pain&userId=230&pngUrl=https%3A%2F%2Fapp.quantimo.do%2Fionic%2FModo%2Fwww%2Fimg%2Fvariable_categories%2Fsymptoms.png","chartsLinkFacebook":"https:\/\/www.facebook.com\/sharer\/sharer.php?u=https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fcharts%3FvariableName%3DBack%2520Pain%26userId%3D230%26pngUrl%3Dhttps%253A%252F%252Fapp.quantimo.do%252Fionic%252FModo%252Fwww%252Fimg%252Fvariable_categories%252Fsymptoms.png","chartsLinkGoogle":"https:\/\/plus.google.com\/share?url=https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fcharts%3FvariableName%3DBack%2520Pain%26userId%3D230%26pngUrl%3Dhttps%253A%252F%252Fapp.quantimo.do%252Fionic%252FModo%252Fwww%252Fimg%252Fvariable_categories%252Fsymptoms.png","chartsLinkTwitter":"https:\/\/twitter.com\/home?status=Check%20out%20my%20Back%20Pain%20data%21%20https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fcharts%3FvariableName%3DBack%2520Pain%26userId%3D230%26pngUrl%3Dhttps%253A%252F%252Fapp.quantimo.do%252Fionic%252FModo%252Fwww%252Fimg%252Fvariable_categories%252Fsymptoms.png%20%40quantimodo","chartsLinkEmail":"mailto:?subject=Check%20out%20my%20Back%20Pain%20data%21&body=See%20my%20Back%20Pain%20history%20at%20https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fcharts%3FvariableName%3DBack%2520Pain%26userId%3D230%26pngUrl%3Dhttps%253A%252F%252Fapp.quantimo.do%252Fionic%252FModo%252Fwww%252Fimg%252Fvariable_categories%252Fsymptoms.png%0A%0AHave%20a%20great%20day!","tagConversionFactor":1,"tagDisplayText":"Back
-          Pain is tagged with Overall
-          Mood"}],"parentUserTagVariables":[],"commonTagVariables":[],"commonTaggedVariables":[],"dataSource":{"id":72,"name":"quantimodo","displayName":"QuantiModo","image":"https:\/\/app.quantimo.do\/ionic\/Modo\/www\/img\/logos\/quantimodo-logo-qm-rainbow-200-200.png","getItUrl":"https:\/\/quantimo.do","shortDescription":"Tracks
-          anything","longDescription":"QuantiModo is a Chrome extension, Android
-          app, iOS app, and web app that allows you to easily track mood,
-          symptoms, or any outcome you want to optimize in a fraction of a
-          second.  You can also import your data from over 30 other apps and
-          devices like Fitbit, Rescuetime, Jawbone Up, Withings, Facebook,
-          Github, Google Calendar, Runkeeper, MoodPanda, Slice, Google Fit, and
-          more.  QuantiModo then analyzes your data to identify which hidden
-          factors are most likely to be influencing your mood or symptoms and
-          their optimal daily
-          values.","enabled":0,"affiliate":true,"defaultVariableCategoryName":"Foods","imageHtml":"<a
-          href=\"https:\/\/quantimo.do\"><img id=\"quantimodo_image\"
-          title=\"QuantiModo\"
-          src=\"https:\/\/app.quantimo.do\/ionic\/Modo\/www\/img\/logos\/quantimodo-logo-qm-rainbow-200-200.png\"
-          alt=\"QuantiModo\"><\/a>","linkedDisplayNameHtml":"<a
-          href=\"https:\/\/quantimo.do\">QuantiModo<\/a>"}}
-        type: object
-      statistics:
-        description: >-
-          Example:
-          {"correlationCoefficient":0.537,"onsetDelay":0,"durationOfAction":604800,"numberOfPairs":298,"effectSize":"moderately
-          positive","statisticalSignificance":0.98208629357249,"timestamp":1501905598,"reversePearsonCorrelationCoefficient":null,"predictivePearsonCorrelationCoefficient":0.537,"causalityFactor":0.537,"causeVariableCategoryName":"Sleep","effectVariableCategoryName":"Emotions","valuePredictingHighOutcome":4.21,"valuePredictingLowOutcome":3.06,"optimalPearsonProduct":0.71265032912368,"userVote":null,"averageVote":null,"causeVariableDefaultUnitId":10,"createdAt":null,"updatedAt":null,"causeChanges":164,"effectChanges":195,"qmScore":null,"error":"optimalPearsonProduct
-          is not
-          defined","predictsHighEffectChange":17.13,"predictsLowEffectChange":-11.07,"pValue":0,"tValue":9.6961816920828,"criticalTValue":1.646,"confidenceInterval":0.14990034554268,"experimentStartTime":1336338900,"experimentEndTime":1406724600,"userId":230,"studyResults":"This
-          analysis suggests that higher Sleep Quality (Sleep) generally predicts
-          higher Overall Mood (p = 0).  Overall Mood is, on average, 17.13%
-          higher after around 4.21 Sleep Quality.  After an onset delay of 168
-          hours, Overall Mood is, on average, 11.07%  lower than its average
-          over the 168 hours following around 3.06 Sleep Quality.  298 data
-          points were used in this analysis.  The value for Sleep Quality
-          changed 164 times, effectively running 82 separate natural
-          experiments.  The top quartile outcome values are preceded by an
-          average 4.21 \/5 of Sleep Quality.  The bottom quartile outcome values
-          are preceded by an average 3.06 \/5 of Sleep Quality.  Forward Pearson
-          Correlation Coefficient was 0.537 (p=0, 95% CI 0.387 to 0.687 onset
-          delay = 0 hours, duration of action = 168 hours) .  The Reverse
-          Pearson Correlation Coefficient was 0 (P=0, 95% CI -0.15 to 0.15,
-          onset delay = -0 hours, duration of action = -168 hours). When the
-          Sleep Quality value is closer to 4.21 \/5 than 3.06 \/5, the Overall
-          Mood value which follows is, on average, 17.13%  percent higher than
-          its typical value.  When the Sleep Quality value is closer to 3.06 \/5
-          than 4.21 \/5, the Overall Mood value which follows is 0% lower than
-          its typical value.  Overall Mood is 3.62\/5 (16% higher) on average
-          after days with around 4.19\/5 Sleep Quality  Overall Mood is 2.72\/5
-          (13% lower) on average after days with around 1.97\/5 Sleep
-          Quality","dataAnalysis":"It was assumed that 0 hours would pass before
-          a change in Sleep Quality would produce an observable change in
-          Overall Mood.  It was assumed that Sleep Quality could produce an
-          observable change in Overall Mood for as much as 7 days after the
-          stimulus event.
-          ","outcomeMaximumAllowedValue":null,"predictorMaximumAllowedValue":null,"studyLimitations":"As
-          with any human experiment, it was impossible to control for all
-          potentially confounding variables. \n            \n Correlation does
-          not necessarily imply correlation.  We can never know for sure if one
-          factor is definitely the cause of an outcome. \n            However,
-          lack of correlation definitely implies the lack of a causal
-          relationship.  Hence, we can with great \n confidence rule out
-          non-existent relationships. For instance, if we discover no
-          relationship between mood\n            and an antidepressant this
-          information is just as or even more valuable than the discovery that
-          there is a relationship. \n <br>\n            <br>\n
-          \n            We can also take advantage of several characteristics of
-          time series data from many subjects  to infer the likelihood of a
-          causal relationship if we do find a correlational relationship.
-          \n            The criteria for causation are a group of minimal
-          conditions necessary to provide adequate evidence of a causal
-          relationship between an incidence and a possible
-          consequence.\n            The list of the criteria is as
-          follows:\n            <br>\n            1. Strength (effect size): A
-          small association does not mean that there is not a causal effect,
-          though the larger the association, the more likely that it is
-          causal.\n            <br>\n            2. Consistency
-          (reproducibility): Consistent findings observed by different persons
-          in different places with different samples strengthens the likelihood
-          of an effect.\n            <br>\n            3. Specificity: Causation
-          is likely if a very specific population at a specific site and disease
-          with no other likely explanation. The more specific an association
-          between a factor and an effect is, the bigger the probability of a
-          causal relationship.\n            <br>\n            4. Temporality:
-          The effect has to occur after the cause (and if there is an expected
-          delay between the cause and expected effect, then the effect must
-          occur after that delay).\n            <br>\n            5. Biological
-          gradient: Greater exposure should generally lead to greater incidence
-          of the effect. However, in some cases, the mere presence of the factor
-          can trigger the effect. In other cases, an inverse proportion is
-          observed: greater exposure leads to lower incidence.\n
-          <br>\n            6. Plausibility: A plausible mechanism between cause
-          and effect is helpful.\n            <br>\n            7. Coherence:
-          Coherence between epidemiological and laboratory findings increases
-          the likelihood of an effect.\n            <br>\n            8.
-          Experiment: \"Occasionally it is possible to appeal to experimental
-          evidence\".\n            <br>\n            9. Analogy: The effect of
-          similar factors may be considered.\n            <br>\n
-          <br>\n             \n             The confidence in a causal
-          relationship is bolstered by the fact that time-precedence was taken
-          into account in all calculations. Furthermore, in accordance with the
-          law of large numbers (LLN), the predictive power and accuracy of these
-          results will continually grow over time.  298 paired data points were
-          used in this analysis.   Assuming that the relationship is merely
-          coincidental, as the participant independently modifies their Sleep
-          Quality values, the observed strength of the relationship will decline
-          until it is below the threshold of significance.  To it another way,
-          in the case that we do find a spurious correlation, suggesting that
-          banana intake improves mood for instance,\n            one will likely
-          increase their banana intake.  Due to the fact that this correlation
-          is spurious, it is unlikely\n            that you will see a continued
-          and persistent corresponding increase in mood.  So over time, the
-          spurious correlation will\n            naturally
-          dissipate.Furthermore, it will be very enlightening to aggregate this
-          data with the data from other participants  with similar genetic,
-          diseasomic, environmentomic, and demographic
-          profiles.","significantDifference":true,"significanceExplanation":"Using
-          a two-tailed t-test with alpha = 0.05, it was determined that the
-          change in Overall Mood is statistically significant at 95% confidence
-          interval.
-          ","strengthLevel":"moderate","confidenceLevel":"high","studyObjective":"The
-          objective of this study is to determine the nature of the relationship
-          (if any) between the Sleep Quality and the Overall Mood. Additionally,
-          we attempt to determine the Sleep Quality values most likely to
-          produce optimal Overall Mood values. ","studyTitle":"N1 Study: Sleep
-          Quality Predicts Higher Overall Mood","dataSources":"Sleep Quality
-          data was primarily collected using <a
-          href=\"http:\/\/www.amazon.com\/gp\/product\/B00A17IAO0\/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20\">Up
-          by Jawbone<\/a>.  UP by Jawbone is a wristband and app that tracks how
-          you sleep, move and eat and then helps you use that information to
-          feel your best.<br>Overall Mood data was primarily collected using <a
-          href=\"https:\/\/quantimo.do\">QuantiModo<\/a>.  <a
-          href=\"https:\/\/quantimo.do\">QuantiModo<\/a> is a Chrome extension,
-          Android app, iOS app, and web app that allows you to easily track
-          mood, symptoms, or any outcome you want to optimize in a fraction of a
-          second.  You can also import your data from over 30 other apps and
-          devices like Fitbit, Rescuetime, Jawbone Up, Withings, Facebook,
-          Github, Google Calendar, Runkeeper, MoodPanda, Slice, Google Fit, and
-          more.  <a href=\"https:\/\/quantimo.do\">QuantiModo<\/a> then analyzes
-          your data to identify which hidden factors are most likely to be
-          influencing your mood or symptoms and their optimal daily
-          values.","studyAbstract":"Your data suggests with a high degree of
-          confidence (p=0) that Sleep Quality (Sleep) has a moderately positive
-          predictive relationship (R=0.537) with Overall Mood  (Emotions).  The
-          highest quartile of Overall Mood  measurements were observed following
-          an average 4.21\/5 Sleep Quality.  The lowest quartile of Overall
-          Mood  measurements were observed following an average 3.06\/5 Sleep
-          Quality.","direction":"higher","predictivePearsonCorrelation":null,"predictorExplanation":"Sleep
-          Quality Predicts Higher Overall
-          Mood","studyBackground":null,"studyDesign":"This study is based on
-          data donated by one QuantiModo user. Thus, the study design is
-          consistent with an n=1 observational natural experiment.
-          ","dataPoints":null,"numberOfDays":814,"reversePairsCount":null,"causeChangesStatisticalSignificance":0.99577470697973,"causeVariableCategoryId":6,"effectVariableCategoryId":1,"predictorFillingValue":null,"outcomeFillingValue":null,"causeNumberOfRawMeasurements":614,"effectNumberOfRawMeasurements":11829,"causeNumberOfProcessedDailyMeasurements":312,"effectNumberOfProcessedDailyMeasurements":1492,"causeVariableMostCommonConnectorId":6,"effectVariableMostCommonConnectorId":5,"studyLinkFacebook":"https:\/\/www.facebook.com\/sharer\/sharer.php?u=https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fstudy%3FcauseVariableName%3DSleep%2520Quality%26effectVariableName%3DOverall%2520Mood%26userId%3D230","studyLinkTwitter":"https:\/\/twitter.com\/home?status=Sleep%20Quality%20Predicts%20Higher%20Overall%20Mood%20https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fstudy%3FcauseVariableName%3DSleep%2520Quality%26effectVariableName%3DOverall%2520Mood%26userId%3D230%20%40quantimodo","studyLinkGoogle":"https:\/\/plus.google.com\/share?url=https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fstudy%3FcauseVariableName%3DSleep%2520Quality%26effectVariableName%3DOverall%2520Mood%26userId%3D230","causeVariableName":"Sleep
-          Quality","effectVariableName":"Overall
-          Mood","averageEffect":3.1318379141366,"numberOfLowEffectPairs":126,"numberOfHighEffectPairs":46,"degreesOfFreedom":200,"numberOfUniqueCauseValuesForOptimalValues":18,"numberOfUniqueEffectValuesForOptimalValues":49,"numberOfCauseChangesForOptimalValues":164,"medianOfUpperHalfOfEffectMeasurements":null,"medianOfLowerHalfOfEffectMeasurements":null,"numberOfEffectChangesForOptimalValues":195,"minimumEffectValue":2,"maximumEffectValue":5,"effectValueSpread":3,"minimumCauseValue":1,"maximumCauseValue":5,"causeValueSpread":4,"averageEffectFollowingHighCause":3.62,"averageEffectFollowingLowCause":2.72,"averageDailyLowCause":1.97,"averageDailyHighCause":4.19,"principalInvestigator":null,"causeVariableCombinationOperation":null,"valuePredictingHighOutcomeExplanation":"Overall
-          Mood, on average, 17.13% higher after around 4.21\/5 Sleep Quality
-          ","averageEffectFollowingHighCauseExplanation":"Overall Mood is
-          3.62\/5 (16% higher) on average after days with around 4.19\/5 Sleep
-          Quality","averageEffectFollowingLowCauseExplanation":"Overall Mood is
-          2.72\/5 (13% lower) on average after days with around 1.97\/5 Sleep
-          Quality","valuePredictingLowOutcomeExplanation":"Overall Mood, on
-          average, 11.07% lower after around 3.06\/5 Sleep Quality
-          ","numberOfUsers":null,"outcomeDataSources":null,"correlationIsContradictoryToOptimalValues":false,"forwardSpearmanCorrelationCoefficient":0.52191019757404,"minimumProbability":0.05,"strongestPearsonCorrelationCoefficient":null,"pairsOverTimeChartConfig":null,"correlationsOverOnsetDelaysChartConfig":null,"correlationsOverDurationsOfActionChartConfig":null,"onsetDelayWithStrongestPearsonCorrelation":null,"averageForwardPearsonCorrelationOverOnsetDelays":null,"averageReversePearsonCorrelationOverOnsetDelays":null,"pearsonCorrelationWithNoOnsetDelay":null,"voteStatisticalSignificance":0.98630136986301,"calculationStartTime":null,"shareUserMeasurements":true,"causeUserVariableShareUserMeasurements":null,"effectUserVariableShareUserMeasurements":null,"averagePearsonCorrelationCoefficientOverOnsetDelays":null,"onsetDelayWithStrongestPearsonCorrelationInHours":null,"causeVariableId":1448,"effectVariableId":1398,"studyLinkStatic":"https:\/\/local.quantimo.do\/api\/v2\/study?causeVariableName=Sleep%20Quality&effectVariableName=Overall%20Mood&userId=230","studyLinkDynamic":"https:\/\/local.quantimo.do\/ionic\/Modo\/www\/index.html#\/app\/study?causeVariableName=Sleep%20Quality&effectVariableName=Overall%20Mood&userId=230","gaugeImage":"https:\/\/s3.amazonaws.com\/quantimodo-docs\/images\/gauge-moderately-positive-relationship.png","imageUrl":"https:\/\/s3-us-west-1.amazonaws.com\/qmimages\/variable_categories_gauges_logo_background\/gauge-moderately-positive-relationship_sleep_emotions_logo_background.png","gaugeImageSquare":"https:\/\/s3.amazonaws.com\/quantimodo-docs\/images\/gauge-moderately-positive-relationship-200-200.png","onsetDelayInHours":0,"durationOfActionInHours":0,"effectVariableDefaultUnitId":10,"causeVariableDefaultUnitName":null,"causeVariableDefaultUnitAbbreviatedName":"\/5","effectVariableDefaultUnitName":null,"effectVariableDefaultUnitAbbreviatedName":"\/5","rawCauseMeasurementSignificance":0.99999999870747,"allPairsSignificance":0.99995147023968,"numberOfDaysSignificance":0.99999999999836,"rawEffectMeasurementSignificance":1,"optimalChangeSpread":28.2,"optimalChangeSpreadSignificance":0.99991727593444,"correlationsOverDurationsOfAction":null,"dataSourcesParagraphForEffect":"Overall
-          Mood data was primarily collected using <a
-          href=\"https:\/\/quantimo.do\">QuantiModo<\/a>.  <a
-          href=\"https:\/\/quantimo.do\">QuantiModo<\/a> is a Chrome extension,
-          Android app, iOS app, and web app that allows you to easily track
-          mood, symptoms, or any outcome you want to optimize in a fraction of a
-          second.  You can also import your data from over 30 other apps and
-          devices like Fitbit, Rescuetime, Jawbone Up, Withings, Facebook,
-          Github, Google Calendar, Runkeeper, MoodPanda, Slice, Google Fit, and
-          more.  <a href=\"https:\/\/quantimo.do\">QuantiModo<\/a> then analyzes
-          your data to identify which hidden factors are most likely to be
-          influencing your mood or symptoms and their optimal daily
-          values.","dataSourcesParagraphForCause":"Sleep Quality data was
-          primarily collected using <a
-          href=\"http:\/\/www.amazon.com\/gp\/product\/B00A17IAO0\/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20\">Up
-          by Jawbone<\/a>.  UP by Jawbone is a wristband and app that tracks how
-          you sleep, move and eat and then helps you use that information to
-          feel your best.","instructionsForEffect":"<a
-          href=\"https:\/\/quantimo.do\">Obtain QuantiModo<\/a> and use it to
-          record your Overall Mood. Once you have a <a
-          href=\"https:\/\/quantimo.do\">QuantiModo<\/a> account, <a
-          href=\"https:\/\/app.quantimo.do\/ionic\/Modo\/www\/#\/app\/import\">connect
-          your  QuantiModo account at QuantiModo<\/a> to automatically import
-          and analyze your data.","instructionsForCause":"<a
-          href=\"http:\/\/www.amazon.com\/gp\/product\/B00A17IAO0\/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20\">Obtain
-          Up by Jawbone<\/a> and use it to record your Sleep Quality. Once you
-          have a <a
-          href=\"http:\/\/www.amazon.com\/gp\/product\/B00A17IAO0\/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20\">Up
-          by Jawbone<\/a> account, <a
-          href=\"https:\/\/app.quantimo.do\/ionic\/Modo\/www\/#\/app\/import\">connect
-          your  Up by Jawbone account at QuantiModo<\/a> to automatically import
-          and analyze your
-          data.","perDaySentenceFragment":"","predictsLowEffectChangeSentenceFragment":",
-          on average, 11.07% ","predictsHighEffectChangeSentenceFragment":", on
-          average, 17.13%
-          ","studyLinkEmail":"mailto:?subject=N1%20Study%3A%20Sleep%20Quality%20Predicts%20Higher%20Overall%20Mood&body=Check%20out%20my%20study%20at%20https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fstudy%3FcauseVariableName%3DSleep%2520Quality%26effectVariableName%3DOverall%2520Mood%26userId%3D230%0A%0AHave%20a%20great%20day!","distanceFromMiddleToBeHightLowEffect":25,"numberOfSamples":298,"effectUnit":"\/5","causeVariableImageUrl":"https:\/\/maxcdn.icons8.com\/Color\/PNG\/96\/Household\/sleeping_in_bed-96.png","causeVariableIonIcon":"ion-ios-cloudy-night-outline","effectVariableImageUrl":"https:\/\/maxcdn.icons8.com\/Color\/PNG\/96\/Cinema\/theatre_mask-96.png","effectVariableIonIcon":"ion-happy-outline"}
-        type: object
       userId:
         description: 'Example: 230'
         type: integer
+      causeProcessedDailyMeasurements:
+        type: array
+        items:
+          $ref: '#/definitions/ProcessedDailyMeasurement'
+      causeVariable:
+        $ref: '#/definitions/Variable'
+      effectVariable:
+        $ref: '#/definitions/Variable'
+      charts:
+        type: array
+        items:
+          $ref: '#/definitions/Chart'
+      effectProcessedDailyMeasurements:
+        type: array
+        items:
+          $ref: '#/definitions/ProcessedDailyMeasurement'
+      pairs:
+        type: array
+        items:
+          $ref: '#/definitions/Pair'
+      statistics:
+        $ref: '#/definitions/Statistic'
+      text:
+        description: 'Example: '
+        type: string
+      user:
+        description: 'Example: '
+        type: string
   Correlation:
     required:
       - causeVariableName
@@ -5338,10 +5332,8 @@ definitions:
       - studyDesign
       - studyObjective
       - dataSources
-      - causeDataSource
       - dataSourcesParagraphForCause
       - instructionsForCause
-      - effectDataSource
       - dataSourcesParagraphForEffect
       - instructionsForEffect
       - dataAnalysis
@@ -5722,24 +5714,6 @@ definitions:
           data to identify which hidden factors are most likely to be
           influencing your mood or symptoms and their optimal daily values.
         type: string
-      causeDataSource:
-        description: >-
-          Example:
-          {"id":6,"name":"up","connectorClientId":"10RfjEgKr8U","connectorClientSecret":"e17fd34e4bc4642f0c4c99d7acb6e661","displayName":"Up
-          by
-          Jawbone","image":"https:\/\/i.imgur.com\/MXNQy3T.png","getItUrl":"http:\/\/www.amazon.com\/gp\/product\/B00A17IAO0\/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20","shortDescription":"Tracks
-          sleep, exercise, and diet.","longDescription":"UP by Jawbone is a
-          wristband and app that tracks how you sleep, move and eat and then
-          helps you use that information to feel your
-          best.","enabled":1,"affiliate":true,"defaultVariableCategoryName":"Physical
-          Activity","imageHtml":"<a
-          href=\"http:\/\/www.amazon.com\/gp\/product\/B00A17IAO0\/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20\"><img
-          id=\"up_image\" title=\"Up by Jawbone\"
-          src=\"https:\/\/i.imgur.com\/MXNQy3T.png\" alt=\"Up by
-          Jawbone\"><\/a>","linkedDisplayNameHtml":"<a
-          href=\"http:\/\/www.amazon.com\/gp\/product\/B00A17IAO0\/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20\">Up
-          by Jawbone<\/a>"}
-        type: object
       dataSourcesParagraphForCause:
         description: >-
           Example: Sleep Quality data was primarily collected using <a
@@ -5760,26 +5734,6 @@ definitions:
           your  Up by Jawbone account at QuantiModo</a> to automatically import
           and analyze your data.
         type: string
-      effectDataSource:
-        description: >-
-          Example:
-          {"id":72,"name":"quantimodo","displayName":"QuantiModo","image":"https:\/\/app.quantimo.do\/ionic\/Modo\/www\/img\/logos\/quantimodo-logo-qm-rainbow-200-200.png","getItUrl":"https:\/\/quantimo.do","shortDescription":"Tracks
-          anything","longDescription":"QuantiModo is a Chrome extension, Android
-          app, iOS app, and web app that allows you to easily track mood,
-          symptoms, or any outcome you want to optimize in a fraction of a
-          second.  You can also import your data from over 30 other apps and
-          devices like Fitbit, Rescuetime, Jawbone Up, Withings, Facebook,
-          Github, Google Calendar, Runkeeper, MoodPanda, Slice, Google Fit, and
-          more.  QuantiModo then analyzes your data to identify which hidden
-          factors are most likely to be influencing your mood or symptoms and
-          their optimal daily
-          values.","enabled":0,"affiliate":true,"defaultVariableCategoryName":"Foods","imageHtml":"<a
-          href=\"https:\/\/quantimo.do\"><img id=\"quantimodo_image\"
-          title=\"QuantiModo\"
-          src=\"https:\/\/app.quantimo.do\/ionic\/Modo\/www\/img\/logos\/quantimodo-logo-qm-rainbow-200-200.png\"
-          alt=\"QuantiModo\"><\/a>","linkedDisplayNameHtml":"<a
-          href=\"https:\/\/quantimo.do\">QuantiModo<\/a>"}
-        type: object
       dataSourcesParagraphForEffect:
         description: >-
           Example: Overall Mood data was primarily collected using <a
@@ -6026,6 +5980,1405 @@ definitions:
       action:
         description: 'Example: trackAll'
         type: string
+  ProcessedDailyMeasurement:
+    required:
+      - startTimeEpoch
+      - unitId
+      - variableId
+      - variableName
+      - variableCategoryId
+      - value
+      - startDate
+      - note
+      - originalValue
+      - originalUnitId
+      - id
+      - duration
+      - startTimeString
+    properties:
+      startTimeEpoch:
+        description: 'Example: 1464937200'
+        type: integer
+      unitId:
+        description: 'Example: 47'
+        type: integer
+      variableId:
+        description: 'Example: 96380'
+        type: integer
+      variableName:
+        description: 'Example: Barometric Pressure'
+        type: string
+      variableCategoryId:
+        description: 'Example: 17'
+        type: integer
+      value:
+        description: 'Example: 101341.66666667'
+        type: number
+        format: double
+      startDate:
+        description: 'Example: 2016-06-03'
+        type: string
+      note:
+        description: 'Example: '
+        type: string
+      originalValue:
+        description: 'Example: 101800, 101800, 101700, 101600, 101600, 101600'
+        type: string
+      originalUnitId:
+        description: 'Example: 47, 47, 47, 47, 47, 47'
+        type: string
+      id:
+        description: 'Example: '
+        type: string
+      duration:
+        description: 'Example: 0'
+        type: integer
+      startTimeString:
+        description: 'Example: 2016-06-03 07:00:00'
+        type: string
+        format: date-time
+  DataSource:
+    required:
+      - id
+      - name
+      - displayName
+      - image
+      - getItUrl
+      - shortDescription
+      - longDescription
+      - enabled
+      - affiliate
+      - defaultVariableCategoryName
+      - imageHtml
+      - linkedDisplayNameHtml
+      - connectorClientId
+    properties:
+      id:
+        description: 'Example: 72'
+        type: integer
+      name:
+        description: 'Example: quantimodo'
+        type: string
+      displayName:
+        description: 'Example: QuantiModo'
+        type: string
+      image:
+        description: >-
+          Example:
+          https://app.quantimo.do/ionic/Modo/www/img/logos/quantimodo-logo-qm-rainbow-200-200.png
+        type: string
+      getItUrl:
+        description: 'Example: https://quantimo.do'
+        type: string
+      shortDescription:
+        description: 'Example: Tracks anything'
+        type: string
+      longDescription:
+        description: >-
+          Example: QuantiModo is a Chrome extension, Android app, iOS app, and
+          web app that allows you to easily track mood, symptoms, or any outcome
+          you want to optimize in a fraction of a second.  You can also import
+          your data from over 30 other apps and devices like Fitbit, Rescuetime,
+          Jawbone Up, Withings, Facebook, Github, Google Calendar, Runkeeper,
+          MoodPanda, Slice, Google Fit, and more.  QuantiModo then analyzes your
+          data to identify which hidden factors are most likely to be
+          influencing your mood or symptoms and their optimal daily values.
+        type: string
+      enabled:
+        description: 'Example: 0'
+        type: integer
+      affiliate:
+        description: 'Example: true'
+        type: boolean
+      defaultVariableCategoryName:
+        description: 'Example: Foods'
+        type: string
+      imageHtml:
+        description: >-
+          Example: <a href="https://quantimo.do"><img id="quantimodo_image"
+          title="QuantiModo"
+          src="https://app.quantimo.do/ionic/Modo/www/img/logos/quantimodo-logo-qm-rainbow-200-200.png"
+          alt="QuantiModo"></a>
+        type: string
+      linkedDisplayNameHtml:
+        description: 'Example: <a href="https://quantimo.do">QuantiModo</a>'
+        type: string
+      connectorClientId:
+        description: >-
+          Example:
+          ba7d0c12432650e23b3ce924ae2d21e2ff59e7e4e28650759633700af7ed0a30
+        type: string
+  Chart:
+    required:
+      - type
+      - zoomType
+      - chartConfig
+      - chartTitle
+      - chartId
+      - explanation
+      - height
+      - renderTo
+      - animation
+    properties:
+      type:
+        description: 'Example: scatter'
+        type: string
+      zoomType:
+        description: 'Example: xy'
+        type: string
+      chartConfig:
+        $ref: '#/definitions/ChartConfig'
+      chartTitle:
+        description: >-
+          Example: Reference And Learning Hours following Barometric Pressure (R
+          = 0.147)
+        type: string
+      chartId:
+        description: 'Example: correlationScatterPlot'
+        type: string
+      explanation:
+        description: >-
+          Example: The chart above indicates that an increase in Barometric
+          Pressure is usually followed by an increase in Reference And Learning
+          Hours.
+        type: string
+      height:
+        description: 'Example: 300'
+        type: integer
+      renderTo:
+        description: 'Example: BarContainer'
+        type: string
+      animation:
+        $ref: '#/definitions/Animation'
+  Hover:
+    required:
+      - enabled
+      - lineColor
+      - marker
+    properties:
+      enabled:
+        description: 'Example: true'
+        type: boolean
+      lineColor:
+        description: 'Example: rgb(100,100,100)'
+        type: string
+      marker:
+        $ref: '#/definitions/Marker'
+  State:
+    required:
+      - hover
+    properties:
+      hover:
+        $ref: '#/definitions/Hover'
+  Marker:
+    required:
+      - radius
+      - states
+      - enabled
+    properties:
+      radius:
+        description: 'Example: 5'
+        type: integer
+      states:
+        $ref: '#/definitions/State'
+      enabled:
+        description: 'Example: false'
+        type: boolean
+  Tooltip:
+    required:
+      - pointFormat
+      - valueSuffix
+    properties:
+      pointFormat:
+        description: 'Example: {point.x}Pa, {point.y}h'
+        type: string
+      valueSuffix:
+        description: 'Example: Pa'
+        type: string
+  Scatter:
+    required:
+      - marker
+      - states
+      - tooltip
+    properties:
+      marker:
+        $ref: '#/definitions/Marker'
+      states:
+        $ref: '#/definitions/State'
+      tooltip:
+        $ref: '#/definitions/Tooltip'
+  PlotOption:
+    required:
+      - scatter
+      - column
+    properties:
+      scatter:
+        $ref: '#/definitions/Scatter'
+      column:
+        $ref: '#/definitions/Column'
+  Credit:
+    required:
+      - enabled
+    properties:
+      enabled:
+        description: 'Example: false'
+        type: boolean
+  Option:
+    required:
+      - chart
+      - plotOptions
+      - credits
+      - yAxis
+      - title
+      - xAxis
+      - lang
+      - loading
+      - legend
+      - colors
+    properties:
+      chart:
+        $ref: '#/definitions/Chart'
+      plotOptions:
+        $ref: '#/definitions/PlotOption'
+      credits:
+        $ref: '#/definitions/Credit'
+      yAxis:
+        type: array
+        items:
+          $ref: '#/definitions/YAxi'
+      title:
+        $ref: '#/definitions/Title'
+      xAxis:
+        $ref: '#/definitions/XAxi'
+      lang:
+        $ref: '#/definitions/Lang'
+      loading:
+        $ref: '#/definitions/Loading'
+      legend:
+        $ref: '#/definitions/Legend'
+      colors:
+        type: array
+        items:
+          $ref: '#/definitions/Color'
+  Title:
+    required:
+      - enabled
+      - text
+    properties:
+      enabled:
+        description: 'Example: true'
+        type: boolean
+      text:
+        description: 'Example: Barometric Pressure (Pa)'
+        type: string
+  XAxi:
+    required:
+      - title
+      - startOnTick
+      - endOnTick
+      - showLastLabel
+      - text
+      - categories
+    properties:
+      title:
+        $ref: '#/definitions/Title'
+      startOnTick:
+        description: 'Example: true'
+        type: boolean
+      endOnTick:
+        description: 'Example: true'
+        type: boolean
+      showLastLabel:
+        description: 'Example: true'
+        type: boolean
+      text:
+        description: 'Example: Date'
+        type: string
+      categories:
+        type: array
+        items:
+          $ref: '#/definitions/Category'
+  YAxi:
+    required:
+      - title
+      - lineWidth
+      - opposite
+      - min
+      - max
+    properties:
+      title:
+        $ref: '#/definitions/Title'
+      lineWidth:
+        description: 'Example: 1'
+        type: integer
+      opposite:
+        description: 'Example: true'
+        type: boolean
+      min:
+        description: 'Example: -2.68'
+        type: number
+        format: double
+      max:
+        description: 'Example: 372.68'
+        type: number
+        format: double
+  Series:
+    required:
+      - name
+      - color
+      - data
+      - type
+      - tooltip
+      - yAxis
+    properties:
+      name:
+        description: 'Example: Reference And Learning Hours by Barometric Pressure'
+        type: string
+      color:
+        description: 'Example: rgba(223, 83, 83, .5)'
+        type: string
+      data:
+        type: array
+        items:
+          $ref: '#/definitions/Series'
+      type:
+        description: 'Example: spline'
+        type: string
+      tooltip:
+        $ref: '#/definitions/Tooltip'
+      yAxis:
+        description: 'Example: 1'
+        type: integer
+  Subtitle:
+    required:
+      - text
+    properties:
+      text:
+        description: 'Example: '
+        type: string
+  ChartConfig:
+    required:
+      - options
+      - xAxis
+      - yAxis
+      - series
+      - title
+      - subtitle
+      - loading
+    properties:
+      options:
+        $ref: '#/definitions/Option'
+      xAxis:
+        $ref: '#/definitions/XAxi'
+      yAxis:
+        $ref: '#/definitions/YAxi'
+      series:
+        type: array
+        items:
+          $ref: '#/definitions/Series'
+      title:
+        $ref: '#/definitions/Title'
+      subtitle:
+        $ref: '#/definitions/Subtitle'
+      loading:
+        description: 'Example: false'
+        type: boolean
+  Category:
+    properties: {}
+    type: array
+    items:
+      type: string
+  Animation:
+    required:
+      - duration
+    properties:
+      duration:
+        description: 'Example: 0'
+        type: integer
+  Lang:
+    required:
+      - loading
+    properties:
+      loading:
+        description: 'Example: '
+        type: string
+  Style:
+    required:
+      - background
+    properties:
+      background:
+        description: 'Example: url(/res/loading3.gif) no-repeat center'
+        type: string
+  Loading:
+    required:
+      - style
+      - hideDuration
+      - showDuration
+    properties:
+      style:
+        $ref: '#/definitions/Style'
+      hideDuration:
+        description: 'Example: 10'
+        type: integer
+      showDuration:
+        description: 'Example: 10'
+        type: integer
+  Legend:
+    required:
+      - enabled
+    properties:
+      enabled:
+        description: 'Example: false'
+        type: boolean
+  Column:
+    required:
+      - pointPadding
+      - borderWidth
+      - pointWidth
+      - enableMouseTracking
+      - colorByPoint
+    properties:
+      pointPadding:
+        description: 'Example: 0.2'
+        type: number
+        format: double
+      borderWidth:
+        description: 'Example: 0'
+        type: integer
+      pointWidth:
+        description: 'Example: 33.333333333333'
+        type: number
+        format: double
+      enableMouseTracking:
+        description: 'Example: true'
+        type: boolean
+      colorByPoint:
+        description: 'Example: true'
+        type: boolean
+  Color:
+    properties: {}
+    type: array
+    items:
+      type: string
+  Pair:
+    required:
+      - causeMeasurement
+      - effectMeasurement
+      - timestamp
+      - startTimeSting
+      - causeMeasurementValue
+      - effectMeasurementValue
+      - causeVariableDefaultUnitAbbreviatedName
+      - effectVariableDefaultUnitAbbreviatedName
+    properties:
+      causeMeasurement:
+        description: 'Example: 101341.66666667'
+        type: number
+        format: double
+      effectMeasurement:
+        description: 'Example: 7.98'
+        type: number
+        format: double
+      timestamp:
+        description: 'Example: 1464937200'
+        type: integer
+      startTimeSting:
+        description: 'Example: 2016-06-03 07:00:00'
+        type: string
+        format: date-time
+      causeMeasurementValue:
+        description: 'Example: 101341.66666667'
+        type: number
+        format: double
+      effectMeasurementValue:
+        description: 'Example: 7.98'
+        type: number
+        format: double
+      causeVariableDefaultUnitAbbreviatedName:
+        description: 'Example: '
+        type: string
+      effectVariableDefaultUnitAbbreviatedName:
+        description: 'Example: '
+        type: string
+  Statistic:
+    required:
+      - correlationCoefficient
+      - onsetDelay
+      - durationOfAction
+      - numberOfPairs
+      - effectSize
+      - statisticalSignificance
+      - timestamp
+      - reversePearsonCorrelationCoefficient
+      - predictivePearsonCorrelationCoefficient
+      - causalityFactor
+      - causeVariableCategoryName
+      - effectVariableCategoryName
+      - valuePredictingHighOutcome
+      - valuePredictingLowOutcome
+      - optimalPearsonProduct
+      - userVote
+      - averageVote
+      - causeVariableDefaultUnitId
+      - createdAt
+      - updatedAt
+      - causeChanges
+      - effectChanges
+      - qmScore
+      - error
+      - predictsHighEffectChange
+      - predictsLowEffectChange
+      - pValue
+      - tValue
+      - criticalTValue
+      - confidenceInterval
+      - experimentStartTime
+      - experimentEndTime
+      - userId
+      - studyResults
+      - dataAnalysis
+      - outcomeMaximumAllowedValue
+      - predictorMaximumAllowedValue
+      - studyLimitations
+      - significantDifference
+      - significanceExplanation
+      - strengthLevel
+      - confidenceLevel
+      - studyObjective
+      - studyTitle
+      - dataSources
+      - studyAbstract
+      - direction
+      - predictivePearsonCorrelation
+      - predictorExplanation
+      - studyBackground
+      - studyDesign
+      - dataPoints
+      - numberOfDays
+      - reversePairsCount
+      - causeChangesStatisticalSignificance
+      - causeVariableCategoryId
+      - effectVariableCategoryId
+      - predictorFillingValue
+      - outcomeFillingValue
+      - causeNumberOfRawMeasurements
+      - effectNumberOfRawMeasurements
+      - causeNumberOfProcessedDailyMeasurements
+      - effectNumberOfProcessedDailyMeasurements
+      - causeVariableMostCommonConnectorId
+      - effectVariableMostCommonConnectorId
+      - studyLinkFacebook
+      - studyLinkTwitter
+      - studyLinkGoogle
+      - causeVariableName
+      - effectVariableName
+      - averageEffect
+      - numberOfLowEffectPairs
+      - numberOfHighEffectPairs
+      - degreesOfFreedom
+      - numberOfUniqueCauseValuesForOptimalValues
+      - numberOfUniqueEffectValuesForOptimalValues
+      - numberOfCauseChangesForOptimalValues
+      - medianOfUpperHalfOfEffectMeasurements
+      - medianOfLowerHalfOfEffectMeasurements
+      - numberOfEffectChangesForOptimalValues
+      - minimumEffectValue
+      - maximumEffectValue
+      - effectValueSpread
+      - minimumCauseValue
+      - maximumCauseValue
+      - causeValueSpread
+      - averageEffectFollowingHighCause
+      - averageEffectFollowingLowCause
+      - averageDailyLowCause
+      - averageDailyHighCause
+      - principalInvestigator
+      - causeVariableCombinationOperation
+      - valuePredictingHighOutcomeExplanation
+      - averageEffectFollowingHighCauseExplanation
+      - averageEffectFollowingLowCauseExplanation
+      - valuePredictingLowOutcomeExplanation
+      - numberOfUsers
+      - outcomeDataSources
+      - correlationIsContradictoryToOptimalValues
+      - forwardSpearmanCorrelationCoefficient
+      - minimumProbability
+      - strongestPearsonCorrelationCoefficient
+      - pairsOverTimeChartConfig
+      - correlationsOverOnsetDelaysChartConfig
+      - correlationsOverDurationsOfActionChartConfig
+      - onsetDelayWithStrongestPearsonCorrelation
+      - averageForwardPearsonCorrelationOverOnsetDelays
+      - averageReversePearsonCorrelationOverOnsetDelays
+      - pearsonCorrelationWithNoOnsetDelay
+      - voteStatisticalSignificance
+      - calculationStartTime
+      - shareUserMeasurements
+      - causeUserVariableShareUserMeasurements
+      - effectUserVariableShareUserMeasurements
+      - averagePearsonCorrelationCoefficientOverOnsetDelays
+      - onsetDelayWithStrongestPearsonCorrelationInHours
+      - causeVariableId
+      - effectVariableId
+      - studyLinkStatic
+      - studyLinkDynamic
+      - gaugeImage
+      - imageUrl
+      - gaugeImageSquare
+      - onsetDelayInHours
+      - durationOfActionInHours
+      - effectVariableDefaultUnitId
+      - causeVariableDefaultUnitName
+      - causeVariableDefaultUnitAbbreviatedName
+      - effectVariableDefaultUnitName
+      - effectVariableDefaultUnitAbbreviatedName
+      - rawCauseMeasurementSignificance
+      - allPairsSignificance
+      - numberOfDaysSignificance
+      - rawEffectMeasurementSignificance
+      - optimalChangeSpread
+      - optimalChangeSpreadSignificance
+      - correlationsOverDurationsOfAction
+      - dataSourcesParagraphForEffect
+      - dataSourcesParagraphForCause
+      - instructionsForEffect
+      - instructionsForCause
+      - perDaySentenceFragment
+      - predictsLowEffectChangeSentenceFragment
+      - predictsHighEffectChangeSentenceFragment
+      - studyLinkEmail
+      - distanceFromMiddleToBeHightLowEffect
+      - numberOfSamples
+      - effectUnit
+      - causeVariableImageUrl
+      - causeVariableIonIcon
+      - effectVariableImageUrl
+      - effectVariableIonIcon
+    properties:
+      correlationCoefficient:
+        description: 'Example: 0.147'
+        type: number
+        format: double
+      onsetDelay:
+        description: 'Example: 0'
+        type: integer
+      durationOfAction:
+        description: 'Example: 604800'
+        type: integer
+      numberOfPairs:
+        description: 'Example: 297'
+        type: integer
+      effectSize:
+        description: 'Example: weakly positive'
+        type: string
+      statisticalSignificance:
+        description: 'Example: 0.99987910063243'
+        type: number
+        format: double
+      timestamp:
+        description: 'Example: 1502080560'
+        type: integer
+      reversePearsonCorrelationCoefficient:
+        description: 'Example: '
+        type: string
+      predictivePearsonCorrelationCoefficient:
+        description: 'Example: 0.147'
+        type: number
+        format: double
+      causalityFactor:
+        description: 'Example: 0.147'
+        type: number
+        format: double
+      causeVariableCategoryName:
+        description: 'Example: Environment'
+        type: string
+      effectVariableCategoryName:
+        description: 'Example: Activity'
+        type: string
+      valuePredictingHighOutcome:
+        description: 'Example: 101187.2'
+        type: number
+        format: double
+      valuePredictingLowOutcome:
+        description: 'Example: 97597.75'
+        type: number
+        format: double
+      optimalPearsonProduct:
+        description: 'Example: 0.063550992332336'
+        type: number
+        format: double
+      userVote:
+        description: 'Example: '
+        type: string
+      averageVote:
+        description: 'Example: '
+        type: string
+      causeVariableDefaultUnitId:
+        description: 'Example: 47'
+        type: integer
+      createdAt:
+        description: 'Example: '
+        type: string
+        format: date-time
+      updatedAt:
+        description: 'Example: '
+        type: string
+        format: date-time
+      causeChanges:
+        description: 'Example: 287'
+        type: integer
+      effectChanges:
+        description: 'Example: 295'
+        type: integer
+      qmScore:
+        description: 'Example: '
+        type: string
+      error:
+        description: 'Example: optimalPearsonProduct is not defined'
+        type: string
+      predictsHighEffectChange:
+        description: 'Example: 0.84'
+        type: number
+        format: double
+      predictsLowEffectChange:
+        description: 'Example: -82.6'
+        type: number
+        format: double
+      pValue:
+        description: 'Example: 0'
+        type: number
+        format: double
+      tValue:
+        description: 'Example: 8.1106621038493'
+        type: number
+        format: double
+      criticalTValue:
+        description: 'Example: 1.646'
+        type: number
+        format: double
+      confidenceInterval:
+        description: 'Example: 1.4269359716898'
+        type: number
+        format: double
+      experimentStartTime:
+        description: 'Example: 1464937200'
+        type: integer
+      experimentEndTime:
+        description: 'Example: 1501722000'
+        type: integer
+      userId:
+        description: 'Example: 230'
+        type: integer
+      studyResults:
+        description: >-
+          Example: This analysis suggests that higher Barometric Pressure
+          (Environment) generally predicts higher Reference And Learning Hours
+          (p = 0).  Reference And Learning Hours is, on average, 0.84%  higher
+          after around 101187.2 Barometric Pressure.  After an onset delay of
+          168 hours, Reference And Learning Hours is, on average, 82.6%  lower
+          than its average over the 168 hours following around 97597.75
+          Barometric Pressure.  297 data points were used in this analysis.  The
+          value for Barometric Pressure changed 287 times, effectively running
+          144 separate natural experiments.  The top quartile outcome values are
+          preceded by an average 101187.2 Pa of Barometric Pressure.  The bottom
+          quartile outcome values are preceded by an average 97597.75 Pa of
+          Barometric Pressure.  Forward Pearson Correlation Coefficient was
+          0.147 (p=0, 95% CI -1.28 to 1.574 onset delay = 0 hours, duration of
+          action = 168 hours) .  The Reverse Pearson Correlation Coefficient was
+          0 (P=0, 95% CI -1.427 to 1.427, onset delay = -0 hours, duration of
+          action = -168 hours). When the Barometric Pressure value is closer to
+          101187.2 Pa than 97597.75 Pa, the Reference And Learning Hours value
+          which follows is, on average, 0.84%  percent higher than its typical
+          value.  When the Barometric Pressure value is closer to 97597.75 Pa
+          than 101187.2 Pa, the Reference And Learning Hours value which follows
+          is 0% lower than its typical value.  Reference And Learning Hours is
+          8.5h (1% higher) on average after days with around 101627.85 Pa
+          Barometric Pressure  Reference And Learning Hours is 1.47h (83% lower)
+          on average after days with around 21023.36 Pa Barometric Pressure
+        type: string
+      dataAnalysis:
+        description: >-
+          Example: It was assumed that 0 hours would pass before a change in
+          Barometric Pressure would produce an observable change in Reference
+          And Learning Hours.  It was assumed that Barometric Pressure could
+          produce an observable change in Reference And Learning Hours for as
+          much as 7 days after the stimulus event.
+        type: string
+      outcomeMaximumAllowedValue:
+        description: 'Example: '
+        type: string
+      predictorMaximumAllowedValue:
+        description: 'Example: '
+        type: string
+      studyLimitations:
+        description: >-
+          Example: As with any human experiment, it was impossible to control
+          for all potentially confounding variables.
+
+                      Correlation does not necessarily imply correlation.  We can never know for sure if one factor is definitely the cause of an outcome.
+                      However, lack of correlation definitely implies the lack of a causal relationship.  Hence, we can with great
+                      confidence rule out non-existent relationships. For instance, if we discover no relationship between mood
+                      and an antidepressant this information is just as or even more valuable than the discovery that there is a relationship.
+                      <br>
+                      <br>
+
+                      We can also take advantage of several characteristics of time series data from many subjects  to infer the likelihood of a causal relationship if we do find a correlational relationship.
+                      The criteria for causation are a group of minimal conditions necessary to provide adequate evidence of a causal relationship between an incidence and a possible consequence.
+                      The list of the criteria is as follows:
+                      <br>
+                      1. Strength (effect size): A small association does not mean that there is not a causal effect, though the larger the association, the more likely that it is causal.
+                      <br>
+                      2. Consistency (reproducibility): Consistent findings observed by different persons in different places with different samples strengthens the likelihood of an effect.
+                      <br>
+                      3. Specificity: Causation is likely if a very specific population at a specific site and disease with no other likely explanation. The more specific an association between a factor and an effect is, the bigger the probability of a causal relationship.
+                      <br>
+                      4. Temporality: The effect has to occur after the cause (and if there is an expected delay between the cause and expected effect, then the effect must occur after that delay).
+                      <br>
+                      5. Biological gradient: Greater exposure should generally lead to greater incidence of the effect. However, in some cases, the mere presence of the factor can trigger the effect. In other cases, an inverse proportion is observed: greater exposure leads to lower incidence.
+                      <br>
+                      6. Plausibility: A plausible mechanism between cause and effect is helpful.
+                      <br>
+                      7. Coherence: Coherence between epidemiological and laboratory findings increases the likelihood of an effect.
+                      <br>
+                      8. Experiment: "Occasionally it is possible to appeal to experimental evidence".
+                      <br>
+                      9. Analogy: The effect of similar factors may be considered.
+                      <br>
+                      <br>
+
+                       The confidence in a causal relationship is bolstered by the fact that time-precedence was taken into account in all calculations. Furthermore, in accordance with the law of large numbers (LLN), the predictive power and accuracy of these results will continually grow over time.  297 paired data points were used in this analysis.   Assuming that the relationship is merely coincidental, as the participant independently modifies their Barometric Pressure values, the observed strength of the relationship will decline until it is below the threshold of significance.  To it another way, in the case that we do find a spurious correlation, suggesting that banana intake improves mood for instance,
+                      one will likely increase their banana intake.  Due to the fact that this correlation is spurious, it is unlikely
+                      that you will see a continued and persistent corresponding increase in mood.  So over time, the spurious correlation will
+                      naturally dissipate.Furthermore, it will be very enlightening to aggregate this data with the data from other participants  with similar genetic, diseasomic, environmentomic, and demographic profiles.
+        type: string
+      significantDifference:
+        description: 'Example: true'
+        type: boolean
+      significanceExplanation:
+        description: >-
+          Example: Using a two-tailed t-test with alpha = 0.05, it was
+          determined that the change in Reference And Learning Hours is
+          statistically significant at 95% confidence interval.
+        type: string
+      strengthLevel:
+        description: 'Example: very weak'
+        type: string
+      confidenceLevel:
+        description: 'Example: high'
+        type: string
+      studyObjective:
+        description: >-
+          Example: The objective of this study is to determine the nature of the
+          relationship (if any) between the Barometric Pressure and the
+          Reference And Learning Hours. Additionally, we attempt to determine
+          the Barometric Pressure values most likely to produce optimal
+          Reference And Learning Hours values.
+        type: string
+      studyTitle:
+        description: >-
+          Example: N1 Study: Barometric Pressure Predicts Higher Reference And
+          Learning Hours
+        type: string
+      dataSources:
+        description: >-
+          Example: Barometric Pressure data was primarily collected using <a
+          href="https://quantimo.do">QuantiModo</a>.  <a
+          href="https://quantimo.do">QuantiModo</a> is a Chrome extension,
+          Android app, iOS app, and web app that allows you to easily track
+          mood, symptoms, or any outcome you want to optimize in a fraction of a
+          second.  You can also import your data from over 30 other apps and
+          devices like Fitbit, Rescuetime, Jawbone Up, Withings, Facebook,
+          Github, Google Calendar, Runkeeper, MoodPanda, Slice, Google Fit, and
+          more.  <a href="https://quantimo.do">QuantiModo</a> then analyzes your
+          data to identify which hidden factors are most likely to be
+          influencing your mood or symptoms and their optimal daily
+          values.<br>Reference And Learning Hours data was primarily collected
+          using <a
+          href="https://www.rescuetime.com/rp/quantimodo/plans">RescueTime</a>.
+          Detailed reports show which applications and websites you spent time
+          on. Activities are automatically grouped into pre-defined categories
+          with built-in productivity scores covering thousands of websites and
+          applications. You can customize categories and productivity scores to
+          meet your needs.
+        type: string
+      studyAbstract:
+        description: >-
+          Example: Your data suggests with a high degree of confidence (p=0)
+          that Barometric Pressure (Environment) has a weakly positive
+          predictive relationship (R=0.147) with Reference And Learning Hours
+          (Activity).  The highest quartile of Reference And Learning Hours
+          measurements were observed following an average 101187.2Pa Barometric
+          Pressure.  The lowest quartile of Reference And Learning Hours
+          measurements were observed following an average 97597.75Pa Barometric
+          Pressure.
+        type: string
+      direction:
+        description: 'Example: higher'
+        type: string
+      predictivePearsonCorrelation:
+        description: 'Example: '
+        type: string
+      predictorExplanation:
+        description: >-
+          Example: Barometric Pressure Predicts Higher Reference And Learning
+          Hours
+        type: string
+      studyBackground:
+        description: 'Example: '
+        type: string
+      studyDesign:
+        description: >-
+          Example: This study is based on data donated by one QuantiModo user.
+          Thus, the study design is consistent with an n=1 observational natural
+          experiment.
+        type: string
+      dataPoints:
+        description: 'Example: '
+        type: string
+      numberOfDays:
+        description: 'Example: 425'
+        type: integer
+      reversePairsCount:
+        description: 'Example: '
+        type: string
+      causeChangesStatisticalSignificance:
+        description: 'Example: 0.9999299755903'
+        type: number
+        format: double
+      causeVariableCategoryId:
+        description: 'Example: 17'
+        type: integer
+      effectVariableCategoryId:
+        description: 'Example: 14'
+        type: integer
+      predictorFillingValue:
+        description: 'Example: '
+        type: string
+      outcomeFillingValue:
+        description: 'Example: '
+        type: string
+      causeNumberOfRawMeasurements:
+        description: 'Example: 14764'
+        type: integer
+      effectNumberOfRawMeasurements:
+        description: 'Example: 4045'
+        type: integer
+      causeNumberOfProcessedDailyMeasurements:
+        description: 'Example: 1364'
+        type: integer
+      effectNumberOfProcessedDailyMeasurements:
+        description: 'Example: 145'
+        type: integer
+      causeVariableMostCommonConnectorId:
+        description: 'Example: 13'
+        type: integer
+      effectVariableMostCommonConnectorId:
+        description: 'Example: 11'
+        type: integer
+      studyLinkFacebook:
+        description: >-
+          Example:
+          https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fstudy%3FcauseVariableName%3DBarometric%2520Pressure%26effectVariableName%3DReference%2520And%2520Learning%2520Hours%26userId%3D230
+        type: string
+      studyLinkTwitter:
+        description: >-
+          Example:
+          https://twitter.com/home?status=Barometric%20Pressure%20Predicts%20Higher%20Reference%20And%20Learning%20Hours%20https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fstudy%3FcauseVariableName%3DBarometric%2520Pressure%26effectVariableName%3DReference%2520And%2520Learning%2520Hours%26userId%3D230%20%40quantimodo
+        type: string
+      studyLinkGoogle:
+        description: >-
+          Example:
+          https://plus.google.com/share?url=https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fstudy%3FcauseVariableName%3DBarometric%2520Pressure%26effectVariableName%3DReference%2520And%2520Learning%2520Hours%26userId%3D230
+        type: string
+      causeVariableName:
+        description: 'Example: Barometric Pressure'
+        type: string
+      effectVariableName:
+        description: 'Example: Reference And Learning Hours'
+        type: string
+      averageEffect:
+        description: 'Example: 8.4268686868687'
+        type: number
+        format: double
+      numberOfLowEffectPairs:
+        description: 'Example: 57'
+        type: integer
+      numberOfHighEffectPairs:
+        description: 'Example: 27'
+        type: integer
+      degreesOfFreedom:
+        description: 'Example: 200'
+        type: integer
+      numberOfUniqueCauseValuesForOptimalValues:
+        description: 'Example: 201'
+        type: integer
+      numberOfUniqueEffectValuesForOptimalValues:
+        description: 'Example: 264'
+        type: integer
+      numberOfCauseChangesForOptimalValues:
+        description: 'Example: 287'
+        type: integer
+      medianOfUpperHalfOfEffectMeasurements:
+        description: 'Example: '
+        type: string
+      medianOfLowerHalfOfEffectMeasurements:
+        description: 'Example: '
+        type: string
+      numberOfEffectChangesForOptimalValues:
+        description: 'Example: 295'
+        type: integer
+      minimumEffectValue:
+        description: 'Example: 0.18'
+        type: number
+        format: double
+      maximumEffectValue:
+        description: 'Example: 20.38'
+        type: number
+        format: double
+      effectValueSpread:
+        description: 'Example: 20.2'
+        type: number
+        format: double
+      minimumCauseValue:
+        description: 'Example: 5267.5521276596'
+        type: number
+        format: double
+      maximumCauseValue:
+        description: 'Example: 104300'
+        type: number
+        format: double
+      causeValueSpread:
+        description: 'Example: 99032.44787234'
+        type: number
+        format: double
+      averageEffectFollowingHighCause:
+        description: 'Example: 8.5'
+        type: number
+        format: double
+      averageEffectFollowingLowCause:
+        description: 'Example: 1.47'
+        type: number
+        format: double
+      averageDailyLowCause:
+        description: 'Example: 21023.36'
+        type: number
+        format: double
+      averageDailyHighCause:
+        description: 'Example: 101627.85'
+        type: number
+        format: double
+      principalInvestigator:
+        description: 'Example: '
+        type: string
+      causeVariableCombinationOperation:
+        description: 'Example: '
+        type: string
+      valuePredictingHighOutcomeExplanation:
+        description: >-
+          Example: Reference And Learning Hours, on average, 0.84% higher after
+          around 101187.2 Pa Barometric Pressure
+        type: string
+      averageEffectFollowingHighCauseExplanation:
+        description: >-
+          Example: Reference And Learning Hours is 8.5h (1% higher) on average
+          after days with around 101627.85 Pa Barometric Pressure
+        type: string
+      averageEffectFollowingLowCauseExplanation:
+        description: >-
+          Example: Reference And Learning Hours is 1.47h (83% lower) on average
+          after days with around 21023.36 Pa Barometric Pressure
+        type: string
+      valuePredictingLowOutcomeExplanation:
+        description: >-
+          Example: Reference And Learning Hours, on average, 82.6% lower after
+          around 97597.75 Pa Barometric Pressure
+        type: string
+      numberOfUsers:
+        description: 'Example: '
+        type: string
+      outcomeDataSources:
+        description: 'Example: '
+        type: string
+      correlationIsContradictoryToOptimalValues:
+        description: 'Example: false'
+        type: boolean
+      forwardSpearmanCorrelationCoefficient:
+        description: 'Example: -0.26193208156295'
+        type: number
+        format: double
+      minimumProbability:
+        description: 'Example: 0.05'
+        type: number
+        format: double
+      strongestPearsonCorrelationCoefficient:
+        description: 'Example: '
+        type: string
+      pairsOverTimeChartConfig:
+        description: 'Example: '
+        type: string
+        format: date-time
+      correlationsOverOnsetDelaysChartConfig:
+        description: 'Example: '
+        type: string
+      correlationsOverDurationsOfActionChartConfig:
+        description: 'Example: '
+        type: string
+      onsetDelayWithStrongestPearsonCorrelation:
+        description: 'Example: '
+        type: string
+      averageForwardPearsonCorrelationOverOnsetDelays:
+        description: 'Example: '
+        type: string
+      averageReversePearsonCorrelationOverOnsetDelays:
+        description: 'Example: '
+        type: string
+      pearsonCorrelationWithNoOnsetDelay:
+        description: 'Example: '
+        type: string
+      voteStatisticalSignificance:
+        description: 'Example: 1'
+        type: integer
+      calculationStartTime:
+        description: 'Example: '
+        type: string
+        format: date-time
+      shareUserMeasurements:
+        description: 'Example: false'
+        type: boolean
+      causeUserVariableShareUserMeasurements:
+        description: 'Example: '
+        type: string
+      effectUserVariableShareUserMeasurements:
+        description: 'Example: '
+        type: string
+      averagePearsonCorrelationCoefficientOverOnsetDelays:
+        description: 'Example: '
+        type: string
+      onsetDelayWithStrongestPearsonCorrelationInHours:
+        description: 'Example: '
+        type: string
+      causeVariableId:
+        description: 'Example: 96380'
+        type: integer
+      effectVariableId:
+        description: 'Example: 111642'
+        type: integer
+      studyLinkStatic:
+        description: >-
+          Example:
+          https://local.quantimo.do/api/v2/study?causeVariableName=Barometric%20Pressure&effectVariableName=Reference%20And%20Learning%20Hours&userId=230
+        type: string
+      studyLinkDynamic:
+        description: >-
+          Example:
+          https://local.quantimo.do/ionic/Modo/www/index.html#/app/study?causeVariableName=Barometric%20Pressure&effectVariableName=Reference%20And%20Learning%20Hours&userId=230
+        type: string
+      gaugeImage:
+        description: >-
+          Example:
+          https://s3.amazonaws.com/quantimodo-docs/images/gauge-weakly-positive-relationship.png
+        type: string
+      imageUrl:
+        description: >-
+          Example:
+          https://s3-us-west-1.amazonaws.com/qmimages/variable_categories_gauges_logo_background/gauge-weakly-positive-relationship_environment_activity_logo_background.png
+        type: string
+      gaugeImageSquare:
+        description: >-
+          Example:
+          https://s3.amazonaws.com/quantimodo-docs/images/gauge-weakly-positive-relationship-200-200.png
+        type: string
+      onsetDelayInHours:
+        description: 'Example: 0'
+        type: integer
+      durationOfActionInHours:
+        description: 'Example: 0'
+        type: integer
+      effectVariableDefaultUnitId:
+        description: 'Example: 34'
+        type: integer
+      causeVariableDefaultUnitName:
+        description: 'Example: '
+        type: string
+      causeVariableDefaultUnitAbbreviatedName:
+        description: 'Example: Pa'
+        type: string
+      effectVariableDefaultUnitName:
+        description: 'Example: '
+        type: string
+      effectVariableDefaultUnitAbbreviatedName:
+        description: 'Example: h'
+        type: string
+      rawCauseMeasurementSignificance:
+        description: 'Example: 1'
+        type: number
+        format: double
+      allPairsSignificance:
+        description: 'Example: 0.99994982531794'
+        type: number
+        format: double
+      numberOfDaysSignificance:
+        description: 'Example: 0.99999929612614'
+        type: number
+        format: double
+      rawEffectMeasurementSignificance:
+        description: 'Example: 1'
+        type: number
+        format: double
+      optimalChangeSpread:
+        description: 'Example: 83.44'
+        type: number
+        format: double
+      optimalChangeSpreadSignificance:
+        description: 'Example: 0.99999999999917'
+        type: number
+        format: double
+      correlationsOverDurationsOfAction:
+        description: 'Example: '
+        type: string
+      dataSourcesParagraphForEffect:
+        description: >-
+          Example: Reference And Learning Hours data was primarily collected
+          using <a
+          href="https://www.rescuetime.com/rp/quantimodo/plans">RescueTime</a>.
+          Detailed reports show which applications and websites you spent time
+          on. Activities are automatically grouped into pre-defined categories
+          with built-in productivity scores covering thousands of websites and
+          applications. You can customize categories and productivity scores to
+          meet your needs.
+        type: string
+      dataSourcesParagraphForCause:
+        description: >-
+          Example: Barometric Pressure data was primarily collected using <a
+          href="https://quantimo.do">QuantiModo</a>.  <a
+          href="https://quantimo.do">QuantiModo</a> is a Chrome extension,
+          Android app, iOS app, and web app that allows you to easily track
+          mood, symptoms, or any outcome you want to optimize in a fraction of a
+          second.  You can also import your data from over 30 other apps and
+          devices like Fitbit, Rescuetime, Jawbone Up, Withings, Facebook,
+          Github, Google Calendar, Runkeeper, MoodPanda, Slice, Google Fit, and
+          more.  <a href="https://quantimo.do">QuantiModo</a> then analyzes your
+          data to identify which hidden factors are most likely to be
+          influencing your mood or symptoms and their optimal daily values.
+        type: string
+      instructionsForEffect:
+        description: >-
+          Example: <a
+          href="https://www.rescuetime.com/rp/quantimodo/plans">Obtain
+          RescueTime</a> and use it to record your Reference And Learning Hours.
+          Once you have a <a
+          href="https://www.rescuetime.com/rp/quantimodo/plans">RescueTime</a>
+          account, <a
+          href="https://app.quantimo.do/ionic/Modo/www/#/app/import">connect
+          your  RescueTime account at QuantiModo</a> to automatically import and
+          analyze your data.
+        type: string
+      instructionsForCause:
+        description: >-
+          Example: <a href="https://quantimo.do">Obtain QuantiModo</a> and use
+          it to record your Barometric Pressure. Once you have a <a
+          href="https://quantimo.do">QuantiModo</a> account, <a
+          href="https://app.quantimo.do/ionic/Modo/www/#/app/import">connect
+          your  QuantiModo account at QuantiModo</a> to automatically import and
+          analyze your data.
+        type: string
+      perDaySentenceFragment:
+        description: 'Example: '
+        type: string
+      predictsLowEffectChangeSentenceFragment:
+        description: 'Example: , on average, 82.6% '
+        type: string
+      predictsHighEffectChangeSentenceFragment:
+        description: 'Example: , on average, 0.84% '
+        type: string
+      studyLinkEmail:
+        description: >-
+          Example:
+          mailto:?subject=N1%20Study%3A%20Barometric%20Pressure%20Predicts%20Higher%20Reference%20And%20Learning%20Hours&body=Check%20out%20my%20study%20at%20https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fstudy%3FcauseVariableName%3DBarometric%2520Pressure%26effectVariableName%3DReference%2520And%2520Learning%2520Hours%26userId%3D230%0A%0AHave%20a%20great%20day!
+        type: string
+      distanceFromMiddleToBeHightLowEffect:
+        description: 'Example: 25'
+        type: integer
+      numberOfSamples:
+        description: 'Example: 297'
+        type: integer
+      effectUnit:
+        description: 'Example: h'
+        type: string
+      causeVariableImageUrl:
+        description: >-
+          Example:
+          https://maxcdn.icons8.com/Color/PNG/96/Weather/chance_of_storm-96.png
+        type: string
+      causeVariableIonIcon:
+        description: 'Example: ion-ios-partlysunny'
+        type: string
+      effectVariableImageUrl:
+        description: 'Example: https://maxcdn.icons8.com/Color/PNG/96/Sports/football-96.png'
+        type: string
+      effectVariableIonIcon:
+        description: 'Example: ion-ios-body-outline'
+        type: string
+  GetStudyResponse:
+    type: object
+    required:
+      - status
+      - success
+    properties:
+      status:
+        type: integer
+        description: Status code
+      message:
+        type: string
+        description: Message
+      success:
+        type: boolean
+      data:
+        $ref: '#/definitions/GetStudyDataResponse'
+  GetStudyDataResponse:
+    required:
+      - causeProcessedDailyMeasurements
+      - causeVariable
+      - charts
+      - effectProcessedDailyMeasurements
+      - effectVariable
+      - pairs
+      - statistics
+      - text
+      - user
+      - userId
+    properties:
+      causeProcessedDailyMeasurements:
+        type: array
+        items:
+          $ref: '#/definitions/ProcessedDailyMeasurement'
+      causeVariable:
+        $ref: '#/definitions/Variable'
+      charts:
+        type: array
+        items:
+          $ref: '#/definitions/Chart'
+      effectProcessedDailyMeasurements:
+        type: array
+        items:
+          $ref: '#/definitions/ProcessedDailyMeasurement'
+      effectVariable:
+        $ref: '#/definitions/Variable'
+      pairs:
+        type: array
+        items:
+          $ref: '#/definitions/Pair'
+      statistics:
+        $ref: '#/definitions/Statistic'
+      text:
+        description: 'Example: '
+        type: string
+      user:
+        description: 'Example: '
+        type: string
+      userId:
+        description: 'Example: 230'
+        type: integer
 securityDefinitions:
   quantimodo_oauth2:
     type: oauth2
