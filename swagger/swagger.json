@@ -836,7 +836,7 @@
         ],
         "responses": {
           "200": {
-            "description": "successful operation",
+            "description": "Successful operation",
             "schema": {
               "$ref": "#/definitions/GetCorrelationsResponse"
             }
