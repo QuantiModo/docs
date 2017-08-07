@@ -388,7 +388,7 @@ function authenticateQuantiModoSdk() {
     defaultClient = Quantimodo.ApiClient.instance;
     if(process.env.APP_HOST_NAME){defaultClient.basePath = process.env.APP_HOST_NAME + '/api';}
     var quantimodo_oauth2 = defaultClient.authentications['quantimodo_oauth2'];
-    quantimodo_oauth2.accessToken = process.env.QUANTIMODO_ACCESS_TOKEN;
+    quantimodo_oauth2.accessToken = (process.env.QUANTIMODO_ACCESS_TOKEN) ? process.env.QUANTIMODO_ACCESS_TOKEN : 'demo';
 }
 function handleApiResponse(error, data, response) {
     if (error && error.message) {
