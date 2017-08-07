@@ -20,7 +20,7 @@ bugsnag.onBeforeNotify(function (notification) {
     metaData.subsystem = { name: "Your subsystem name" };
 });
 function isTruthy(value) {return (value && value !== "false");}
-var buildDebug = isTruthy(process.env.BUILD_DEBUG);
+var debug = isTruthy(process.env.DEBUG);
 var sdksZippedPath = "./sdks-zipped";
 var sdksUnzippedPath = "./sdks-unzipped";
 var sdksReposPath = './sdk-repos';
@@ -118,7 +118,7 @@ function obfuscateStringify(message, object) {
     if(process.env.QUANTIMODO_ACCESS_TOKEN){message = message.replace(process.env.QUANTIMODO_ACCESS_TOKEN, 'HIDDEN');}
     return message;
 }
-function logDebug(message, object) {if(buildDebug){logInfo(message, object);}}
+function logDebug(message, object) {if(debug){logInfo(message, object);}}
 function logInfo(message, object) {console.log(obfuscateStringify(message, object));}
 function logError(message, object) {
     console.error(obfuscateStringify(message, object));
@@ -395,7 +395,7 @@ function handleApiResponse(error, data, response) {
         logError(response.req.path + "failed: " + error.message, error);
     }
     if(!data || Object.keys(data).length === 0){throw "data not returned from " + response.request.url;}
-    logInfo('API returned data', data);
+    logDebug('API returned data', data);
 }
 gulp.task('get-aggregated-correlations', [], function (callback) {
     var apiInstance = new Quantimodo.AnalyticsApi();
