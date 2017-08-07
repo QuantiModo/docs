@@ -16,7 +16,7 @@ dependencies:
     #- cd swagger-codegen && ./run-in-docker.sh mvn package
     #- sh scripts/generate-v1-sdks-circleci.sh
     #- cd quantimodo_v1_skds/javascript && npm install && npm test
-    - npm install -g gulp
+    - npm install -g gulp browserify
     - npm install
     - gulp 0-download
     - gulp 1-decompress
