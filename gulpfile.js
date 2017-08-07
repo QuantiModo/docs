@@ -394,6 +394,9 @@ gulp.task('3-copy-to-repos', ['browserify'], function(){
         copyOneFoldersContentsToAnotherExceptReadme(getUnzippedPathForSdkLanguage(languages[i]), getRepoPathForSdkLanguage(languages[i]));
     }
 });
+gulp.task('copy-js-sdk-to-node-modules', [], function(){
+    return copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage('javascript'), pathToSwaggerQMNodeModule);
+});
 gulp.task('2-copy-qm-web-js', ['browserify'], function(){
     return gulp.src([getUnzippedPathForSdkLanguage('javascript') + '/quantimodo-web.js']).pipe(gulp.dest(pathToIonic + '/www/custom-lib/'));
 });
@@ -521,7 +524,7 @@ gulp.task('get-user-variables', [], function (callback) {
     }
     apiInstance.getUserVariables({}, qmApiResponseCallback);
 });
-gulp.task('test-endpoints', function (callback) {
+gulp.task('test-endpoints', ['copy-js-sdk-to-node-modules'], function (callback) {
     runSequence(
         'get-aggregated-correlations',
         'get-connectors',
