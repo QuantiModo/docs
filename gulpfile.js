@@ -422,9 +422,14 @@ function authenticateQuantiModoSdk() {
     }
 }
 function convertPathToFilename(path) {
+    path = stripQueryFromPath(path);
     var filename = path.replace('/api/', '');
     filename = filename.replaceAll('/', '-') + '.json';
     return 'responses/' + filename;
+}
+function stripQueryFromPath(path) {
+    var parts = path.split('?');
+    return parts[0];
 }
 function handleApiResponse(error, data, response) {
     if (error && error.message) {
