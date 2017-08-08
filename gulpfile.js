@@ -421,6 +421,11 @@ function authenticateQuantiModoSdk() {
         quantimodo_oauth2.accessToken = 'demo';
     }
 }
+function convertPathToFilename(path) {
+    var filename = path.replace('/api/', '');
+    filename = filename.replaceAll('/', '-') + '.json';
+    return 'responses/' + filename;
+}
 function handleApiResponse(error, data, response) {
     if (error && error.message) {
         logError(response.req.path + " failed: " + error.message, error);
@@ -429,6 +434,7 @@ function handleApiResponse(error, data, response) {
     if(!data || Object.keys(data).length === 0){
         throw "data not returned from " + response.request.url;
     }
+    fs.writeFile(convertPathToFilename(response.req.path), prettyJSONStringify(data));
     logDebug('API returned data', data);
 }
 gulp.task('get-aggregated-correlations', [], function (callback) {
@@ -564,4 +570,23 @@ gulp.task('test-javascript-client', [], function (callback) {
     executeCommand('cd ' + getUnzippedPathForSdkLanguage('javascript') + ' && npm install && npm test ', function () {
         callback();
     });
+});
+function verifyExistenceOfFile(filePath) {
+    return fs.stat(filePath, function (err, stat) {
+        if (!err) {logInfo(filePath + ' exists');} else {throw 'Could not find ' + filePath + ': '+ err;}
+    });
+}
+gulp.task('check-responses', ['test-endpoints'], function (callback) {
+    var apiPaths = [
+        '/api/v3/connectors/list',
+        '/api/v3/measurements',
+        '/api/v3/pairs',
+        '/api/v3/study',
+        '/api/v3/units',
+        '/api/v3/user'
+    ];
+    for(var i = 0; i < apiPaths.length; i++){
+        verifyExistenceOfFile(convertPathToFilename(apiPaths[i]));
+    }
+    callback();
 });
