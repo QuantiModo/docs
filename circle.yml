@@ -37,6 +37,7 @@ general:
     - "node_modules/quantimodo"
     - "sdks-unzipped"
     - "sdks-zipped"
+    - "responses"
 
 deployment:
   prod:
