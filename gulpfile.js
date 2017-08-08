@@ -413,12 +413,12 @@ function authenticateQuantiModoSdk() {
     defaultClient = Quantimodo.ApiClient.instance;
     if(process.env.APP_HOST_NAME){defaultClient.basePath = process.env.APP_HOST_NAME + '/api';}
     var quantimodo_oauth2 = defaultClient.authentications['quantimodo_oauth2'];
-    if(process.env.QUANTIMODO_ACCESS_TOKEN){
+    if(process.env.TEST_ACCESS_TOKEN){
         logInfo("Using process.env.QUANTIMODO_ACCESS_TOKEN");
-        quantimodo_oauth2.accessToken = process.env.QUANTIMODO_ACCESS_TOKEN;
+        quantimodo_oauth2.accessToken = process.env.TEST_ACCESS_TOKEN;
     } else {
-        logInfo("Using demo access token");
-        quantimodo_oauth2.accessToken = 'demo';
+        logInfo("Using test user access token");
+        quantimodo_oauth2.accessToken = '42ff4170172357b7312bb127fb58d5ea464943c1';
     }
 }
 function convertPathToFilename(path) {
@@ -453,13 +453,28 @@ gulp.task('get-connectors', [], function (callback) {
     }
     apiInstance.getConnectors({}, qmApiResponseCallback);
 });
-gulp.task('get-measurements', [], function (callback) {
+gulp.task('get-measurements', ['post-measurements'], function (callback) {
     var apiInstance = new Quantimodo.MeasurementsApi();
+    function qmApiResponseCallback(error, data, response) {
+        handleApiResponse(error, data, response);
+        if(data[0].startTimeEpoch !== currentUnixTime){
+            throw "Could not get measurement we just posted!"
+        }
+        callback();
+    }
+    apiInstance.getMeasurements({sort: '-startTime'}, qmApiResponseCallback);
+});
+const dateTime = Date.now();
+const currentUnixTime = Math.floor(dateTime / 1000);
+gulp.task('post-measurements', [], function (callback) {
+    var apiInstance = new Quantimodo.MeasurementsApi();
+    var options = {};
     function qmApiResponseCallback(error, data, response) {
         handleApiResponse(error, data, response);
         callback();
     }
-    apiInstance.getMeasurements({}, qmApiResponseCallback);
+    apiInstance.postMeasurements({"variableName":"Overall Mood","value":1,"startTimeEpoch":currentUnixTime,"unitAbbreviatedName":"/5","variableCategoryName":"Emotions","combinationOperation":"MEAN"},
+        options, qmApiResponseCallback);
 });
 gulp.task('get-pairs', [], function (callback) {
     var apiInstance = new Quantimodo.MeasurementsApi();
@@ -546,6 +561,7 @@ gulp.task('test-endpoints', [], function (callback) {
         'get-aggregated-correlations',
         'get-connectors',
         'get-measurements',
+        'post-measurements',
         'get-pairs',
         'get-public-variables',
         'get-study',
