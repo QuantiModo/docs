@@ -674,6 +674,27 @@
       "description": "Example: (gt)1",
       "in": "query",
       "type": "string"
+    },
+    "onlyPastParam": {
+      "name": "onlyPast",
+      "required": false,
+      "description": "Example: 1",
+      "in": "query",
+      "type": "boolean"
+    },
+    "doNotConvertParam": {
+      "name": "doNotConvert",
+      "required": false,
+      "description": "Example: 1",
+      "in": "query",
+      "type": "boolean"
+    },
+    "minMaxFilterParam": {
+      "name": "minMaxFilter",
+      "required": false,
+      "description": "Example: 1",
+      "in": "query",
+      "type": "boolean"
     }
   },
   "schemes": [
@@ -1231,6 +1252,15 @@
           },
           {
             "$ref": "#/parameters/clientIdParam"
+          },
+          {
+            "$ref": "#/parameters/doNotConvertParam"
+          },
+          {
+            "$ref": "#/parameters/minMaxFilterParam"
+          },
+          {
+            "$ref": "#/parameters/variableIdParam"
           }
         ],
         "responses": {
@@ -1651,16 +1681,16 @@
           },
           {
             "$ref": "#/parameters/clientIdParam"
+          },
+          {
+            "$ref": "#/parameters/appVersionParam"
           }
         ],
         "responses": {
           "200": {
-            "description": "successful operation",
+            "description": "Successful operation",
             "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/TrackingReminder"
-              }
+              "$ref": "#/definitions/GetTrackingRemindersResponse"
             }
           }
         },
@@ -1698,17 +1728,9 @@
         ],
         "responses": {
           "201": {
-            "description": "successful operation",
+            "description": "Successful operation",
             "schema": {
-              "properties": {
-                "success": {
-                  "type": "boolean"
-                },
-                "data": {
-                  "$ref": "#/definitions/TrackingReminder"
-                }
-              },
-              "type": "object"
+              "$ref": "#/definitions/PostTrackingRemindersResponse"
             }
           }
         },
@@ -1813,11 +1835,17 @@
           },
           {
             "$ref": "#/parameters/clientIdParam"
+          },
+          {
+            "$ref": "#/parameters/onlyPastParam"
+          },
+          {
+            "$ref": "#/parameters/includeDeletedParam"
           }
         ],
         "responses": {
           "200": {
-            "description": "successful operation",
+            "description": "Successful operation",
             "schema": {
               "$ref": "#/definitions/GetTrackingReminderNotificationsResponse"
             }
@@ -1995,6 +2023,15 @@
           },
           {
             "$ref": "#/parameters/sortParam"
+          },
+          {
+            "$ref": "#/parameters/clientIdParam"
+          },
+          {
+            "$ref": "#/parameters/appNameParam"
+          },
+          {
+            "$ref": "#/parameters/appVersionParam"
           }
         ],
         "responses": {
@@ -2659,7 +2696,10 @@
         ],
         "responses": {
           "201": {
-            "description": "Successful operation"
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/PostUserSettingsResponse"
+            }
           },
           "401": {
             "description": "Not authenticated"
@@ -2679,6 +2719,90 @@
             "$ref": "#/parameters/clientIdParam"
           }
         ]
+      }
+    },
+    "/v3/deviceTokens": {
+      "post": {
+        "operationId": "postDeviceTokens",
+        "tags": [
+          "notifications"
+        ],
+        "summary": "Post DeviceTokens",
+        "description": "Post DeviceTokens",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "Successful operation"
+          },
+          "401": {
+            "description": "Not authenticated"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "parameters": []
+      }
+    },
+    "/v3/notificationPreferences": {
+      "get": {
+        "operationId": "getNotificationPreferences",
+        "tags": [
+          "notifications"
+        ],
+        "summary": "Get NotificationPreferences",
+        "description": "Get NotificationPreferences",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          },
+          "401": {
+            "description": "Not authenticated"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "parameters": []
+      }
+    },
+    "/v3/googleIdToken": {
+      "post": {
+        "operationId": "postGoogleIdToken",
+        "tags": [
+          "authentication"
+        ],
+        "summary": "Post GoogleIdToken",
+        "description": "Post GoogleIdToken",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "Successful operation"
+          },
+          "401": {
+            "description": "Not authenticated"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "parameters": []
       }
     }
   },
@@ -4588,6 +4712,40 @@
         "valueAndFrequencyTextDescriptionWithTime": {
           "description": "Example: Rate daily at 09:45 PM",
           "type": "string"
+        },
+        "fillingValue": {
+          "description": "Example: 0",
+          "type": "integer"
+        },
+        "availableDefaultUnits": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Unit"
+          }
+        },
+        "localDailyReminderNotificationTimes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/LocalDailyReminderNotificationTime"
+          }
+        },
+        "localDailyReminderNotificationTimesForAllReminders": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/LocalDailyReminderNotificationTimesForAllReminder"
+          }
+        },
+        "repeating": {
+          "description": "Example: true",
+          "type": "boolean"
+        },
+        "numberOfUniqueValues": {
+          "description": "Example: 1",
+          "type": "integer"
+        },
+        "instructions": {
+          "description": "Example: I am an instruction!",
+          "type": "string"
         }
       }
     },
@@ -5940,6 +6098,24 @@
         },
         "commonTaggedVariables": {
           "$ref": "#/definitions/Variable"
+        },
+        "numberOfNewMeasurements": {
+          "description": "Example: 4",
+          "type": "integer"
+        },
+        "values": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Value"
+          }
+        },
+        "newLatestMeasurementTime": {
+          "description": "Example: 1407019867",
+          "type": "integer"
+        },
+        "newEarliestMeasurementTime": {
+          "description": "Example: 1407019860",
+          "type": "integer"
         }
       }
     },
@@ -9330,6 +9506,162 @@
       "type": "array",
       "items": {
         "$ref": "#/definitions/Variable"
+      }
+    },
+    "PostTrackingRemindersResponse": {
+      "type": "object",
+      "required": [
+        "status",
+        "success"
+      ],
+      "properties": {
+        "status": {
+          "type": "integer",
+          "description": "Status code"
+        },
+        "message": {
+          "type": "string",
+          "description": "Message"
+        },
+        "success": {
+          "type": "boolean"
+        },
+        "data": {
+          "$ref": "#/definitions/PostTrackingRemindersDataResponse"
+        }
+      }
+    },
+    "LocalDailyReminderNotificationTime": {
+      "properties": {
+        "LocalDailyReminderNotificationTime": {
+          "description": "Example: 00:10:00",
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "LocalDailyReminderNotificationTimeArray": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/LocalDailyReminderNotificationTime"
+      }
+    },
+    "LocalDailyReminderNotificationTimesForAllReminder": {
+      "properties": {
+        "LocalDailyReminderNotificationTimesForAllReminder": {
+          "description": "Example: 00:10:00",
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "LocalDailyReminderNotificationTimesForAllReminderArray": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/LocalDailyReminderNotificationTimesForAllReminder"
+      }
+    },
+    "TrackingReminderArray": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/TrackingReminder"
+      }
+    },
+    "PostTrackingRemindersDataResponse": {
+      "properties": {
+        "userVariables": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/UserVariable"
+          }
+        },
+        "trackingReminderNotifications": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TrackingReminderNotification"
+          }
+        },
+        "trackingReminders": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TrackingReminder"
+          }
+        }
+      }
+    },
+    "GetTrackingRemindersResponse": {
+      "type": "object",
+      "required": [
+        "status",
+        "success"
+      ],
+      "properties": {
+        "status": {
+          "type": "integer",
+          "description": "Status code"
+        },
+        "message": {
+          "type": "string",
+          "description": "Message"
+        },
+        "success": {
+          "type": "boolean"
+        },
+        "data": {
+          "$ref": "#/definitions/TrackingRemindersArray"
+        }
+      }
+    },
+    "TrackingRemindersArray": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/TrackingReminder"
+      }
+    },
+    "PostUserSettingsResponse": {
+      "type": "object",
+      "required": [
+        "status",
+        "success"
+      ],
+      "properties": {
+        "status": {
+          "type": "integer",
+          "description": "Status code"
+        },
+        "message": {
+          "type": "string",
+          "description": "Message"
+        },
+        "success": {
+          "type": "boolean"
+        },
+        "data": {
+          "$ref": "#/definitions/PostUserSettingsDataResponse"
+        }
+      }
+    },
+    "PostUserSettingsDataResponse": {
+      "properties": {
+        "purchaseId": {
+          "description": "Example: 1",
+          "type": "integer"
+        }
+      }
+    },
+    "Value": {
+      "properties": {
+        "Value": {
+          "description": "Example: 4",
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "ValueArray": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Value"
       }
     }
   },
