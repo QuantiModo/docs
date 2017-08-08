@@ -424,8 +424,11 @@ function authenticateQuantiModoSdk() {
 function handleApiResponse(error, data, response) {
     if (error && error.message) {
         logError(response.req.path + " failed: " + error.message, error);
+        throw error.message;
     }
-    if(!data || Object.keys(data).length === 0){throw "data not returned from " + response.request.url;}
+    if(!data || Object.keys(data).length === 0){
+        throw "data not returned from " + response.request.url;
+    }
     logDebug('API returned data', data);
 }
 gulp.task('get-aggregated-correlations', [], function (callback) {
