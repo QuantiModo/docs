@@ -695,6 +695,13 @@
       "description": "Example: 1",
       "in": "query",
       "type": "boolean"
+    },
+    "clientUserIdParam": {
+      "name": "clientUserId",
+      "required": false,
+      "description": "Example: 74802",
+      "in": "query",
+      "type": "integer"
     }
   },
   "schemes": [
@@ -774,10 +781,7 @@
           "200": {
             "description": "Successful Operation",
             "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/Connector"
-              }
+               "$ref": "#/definitions/GetConnectorsResponse"
             }
           },
           "401": {
@@ -1317,7 +1321,10 @@
         ],
         "responses": {
           "201": {
-            "description": "Measurements successfully stored"
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/PostMeasurementsResponse"
+            }
           },
           "401": {
             "description": "Not Authenticated"
@@ -2032,6 +2039,9 @@
           },
           {
             "$ref": "#/parameters/appVersionParam"
+          },
+          {
+            "$ref": "#/parameters/clientUserIdParam"
           }
         ],
         "responses": {
@@ -5378,6 +5388,18 @@
           "description": "Example: ",
           "type": "string",
           "format": "date-time"
+        },
+        "refreshToken": {
+          "description": "Example: 6e99b113d85586de1f92468433f2df1e666647cb",
+          "type": "string"
+        },
+        "accessTokenExpires": {
+          "description": "Example: 2018-08-08 02:41:19",
+          "type": "string"
+        },
+        "accessTokenExpiresAtMilliseconds": {
+          "description": "Example: 1533696079000",
+          "type": "integer"
         }
       }
     },
@@ -9612,6 +9634,32 @@
         }
       }
     },
+    "GetConnectorsResponse": {
+      "type": "object",
+      "required": [
+        "status",
+        "success"
+      ],
+      "properties": {
+        "status": {
+          "type": "integer",
+          "description": "Status code"
+        },
+        "message": {
+          "type": "string",
+          "description": "Message"
+        },
+        "success": {
+          "type": "boolean"
+        },
+        "connectors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Connector"
+          }
+        }
+      }
+    },
     "TrackingRemindersArray": {
       "type": "array",
       "items": {
@@ -9662,6 +9710,39 @@
       "type": "array",
       "items": {
         "$ref": "#/definitions/Value"
+      }
+    },
+    "PostMeasurementsResponse": {
+      "type": "object",
+      "required": [
+        "status",
+        "success"
+      ],
+      "properties": {
+        "status": {
+          "type": "integer",
+          "description": "Status code"
+        },
+        "message": {
+          "type": "string",
+          "description": "Message"
+        },
+        "success": {
+          "type": "boolean"
+        },
+        "data": {
+          "$ref": "#/definitions/PostMeasurementsDataResponse"
+        }
+      }
+    },
+    "PostMeasurementsDataResponse": {
+      "properties": {
+        "userVariables": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/UserVariable"
+          }
+        }
       }
     }
   },
