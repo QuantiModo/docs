@@ -558,7 +558,7 @@ gulp.task('test-endpoints', ['copy-js-sdk-to-node-modules'], function (callback)
                 }
                 callback(error);
             });
-    }, 5000);
+    }, 10000);
 
 });
 gulp.task('test-javascript-client', [], function (callback) {
