@@ -392,7 +392,10 @@ gulp.task('3-copy-to-repos', ['browserify'], function(){
         copyOneFoldersContentsToAnotherExceptReadme(getUnzippedPathForSdkLanguage(languages[i]), getRepoPathForSdkLanguage(languages[i]));
     }
 });
-gulp.task('copy-js-sdk-to-node-modules', ['decompress-sdk'], function(){
+gulp.task('delete-qm-node-module', ['decompress-sdk'], function(){
+    return cleanOneFolderExceptGit(pathToQuantiModoNodeModule);
+});
+gulp.task('copy-js-sdk-to-node-modules', ['delete-qm-node-module'], function(){
     language = 'javascript';
     return copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage(language), pathToQuantiModoNodeModule);
 });
@@ -529,7 +532,7 @@ gulp.task('get-user-variables', [], function (callback) {
     }
     apiInstance.getUserVariables({}, qmApiResponseCallback);
 });
-gulp.task('test-endpoints', ['copy-js-sdk-to-node-modules'], function (callback) {
+gulp.task('test-endpoints', [], function (callback) {
     runSequence(
         'get-aggregated-correlations',
         'get-connectors',

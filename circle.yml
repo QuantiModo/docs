@@ -26,6 +26,8 @@ dependencies:
 
 test:
   override:
+    - gulp copy-js-sdk-to-node-modules
+    - sleep 5
     - gulp test-endpoints
 
 general:
