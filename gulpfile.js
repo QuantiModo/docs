@@ -413,6 +413,8 @@ function authenticateQuantiModoSdk() {
     defaultClient = Quantimodo.ApiClient.instance;
     if(process.env.APP_HOST_NAME){defaultClient.basePath = process.env.APP_HOST_NAME + '/api';}
     var quantimodo_oauth2 = defaultClient.authentications['quantimodo_oauth2'];
+    var clientId = defaultClient.authentications['client_id'];
+    clientId.apiKey = "testClient";
     if(process.env.TEST_ACCESS_TOKEN){
         logInfo("Using process.env.QUANTIMODO_ACCESS_TOKEN");
         quantimodo_oauth2.accessToken = process.env.TEST_ACCESS_TOKEN;
@@ -516,7 +518,6 @@ gulp.task('get-tracking-reminder-notifications', [], function (callback) {
 });
 gulp.task('post-tracking-reminders', [], function (callback) {
     var apiInstance = new Quantimodo.RemindersApi();
-    var options = {};
     function qmApiResponseCallback(error, data, response) {
         handleApiResponse(error, data, response);
         callback();
@@ -528,7 +529,7 @@ gulp.task('post-tracking-reminders', [], function (callback) {
         "unitAbbreviatedName" : "/5",
         "instructions" : "I am an instruction!"
     }];
-    apiInstance.postTrackingReminders(postBody, options, qmApiResponseCallback);
+    apiInstance.postTrackingReminders(postBody, qmApiResponseCallback);
 });
 gulp.task('get-tracking-reminders', ['post-tracking-reminders'], function (callback) {
     var apiInstance = new Quantimodo.RemindersApi();

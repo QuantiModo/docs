@@ -1275,7 +1275,7 @@ paths:
         '200':
           description: Successful operation
           schema:
-            $ref: '#/definitions/GetTrackingRemindersResponse'
+            $ref: '#/definitions/TrackingRemindersArray'
       security:
         - access_token: []
         - quantimodo_oauth2:
@@ -1294,9 +1294,9 @@ paths:
         - name: body
           in: body
           description: TrackingReminder that should be stored
-          required: false
+          required: true
           schema:
-            $ref: '#/definitions/TrackingReminder'
+            $ref: '#/definitions/TrackingReminderArray'
       responses:
         '201':
           description: Successful operation
@@ -1339,8 +1339,10 @@ paths:
       operationId: getTrackingReminderNotifications
       tags:
         - reminders
-      summary: Get specific pending tracking reminders
-      description: 'Specfic pending reminder instances that still need to be tracked.  '
+      summary: Get specific tracking reminder notifications
+      description: >-
+        Specific tracking reminder notification instances that still need to be
+        tracked.
       produces:
         - application/json
       parameters:
@@ -1369,15 +1371,15 @@ paths:
       operationId: postTrackingReminderNotifications
       tags:
         - reminders
-      summary: 'Snooze, skip, or track a pending tracking reminder notification'
-      description: 'Snooze, skip, or track a pending tracking reminder notification'
+      summary: 'Snooze, skip, or track a tracking reminder notification'
+      description: 'Snooze, skip, or track a tracking reminder notification'
       produces:
         - application/json
       parameters:
         - $ref: '#/parameters/userIdParam'
         - in: body
           name: body
-          description: Id of the pending reminder to be snoozed
+          description: Id of the tracking reminder notification to be snoozed
           required: true
           schema:
             type: array
@@ -1930,6 +1932,26 @@ paths:
         '500':
           description: Internal server error
       parameters: []
+  /v3/appSettings:
+    get:
+      operationId: getAppSettings
+      tags:
+        - appSettings
+      summary: Get AppSettings
+      description: Get AppSettings
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: Successful operation
+        '401':
+          description: Not authenticated
+        '404':
+          description: Not found
+        '500':
+          description: Internal server error
+      parameters:
+        - $ref: '#/parameters/clientIdParam'
 definitions:
   CommonResponse:
     type: object
@@ -7934,6 +7956,10 @@ definitions:
         type: array
         items:
           $ref: '#/definitions/UserVariable'
+  MeasurementArray:
+    type: array
+    items:
+      $ref: '#/definitions/Measurement'
 securityDefinitions:
   quantimodo_oauth2:
     type: oauth2

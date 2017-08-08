@@ -1694,7 +1694,7 @@
           "200": {
             "description": "Successful operation",
             "schema": {
-              "$ref": "#/definitions/GetTrackingRemindersResponse"
+              "$ref": "#/definitions/TrackingRemindersArray"
             }
           }
         },
