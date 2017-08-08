@@ -738,7 +738,7 @@
         }
       }
     },
-    "/v4/connectors/list": {
+    "/v3/connectors/list": {
       "get": {
         "operationId": "getConnectors",
         "tags": [
@@ -1772,7 +1772,7 @@
         ]
       }
     },
-    "/v4/trackingReminderNotifications": {
+    "/v3/trackingReminderNotifications": {
       "get": {
         "operationId": "getTrackingReminderNotifications",
         "tags": [
@@ -2599,7 +2599,7 @@
         ]
       }
     },
-    "/v4/study": {
+    "/v3/study": {
       "get": {
         "operationId": "getStudy",
         "tags": [
