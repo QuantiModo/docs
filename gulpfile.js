@@ -285,15 +285,18 @@ gulp.task('clean-repos-except-git', [], function(){
         cleanOneFolderExceptGit(getRepoPathForSdkLanguage(languages[i]));
     }
 });
-var requestOptions = {
-    method: 'POST',
-    uri: 'http://generator.swagger.io/api/gen/clients/' + language,
-    body: {
+function getRequestOptions(language) {
+    return {
+        method: 'POST',
+            uri: 'http://generator.swagger.io/api/gen/clients/' + language,
+        body: {
         swaggerUrl: swaggerJsonUrl
     },
-    json: true // Automatically stringifies the body to JSON
-};
+        json: true // Automatically stringifies the body to JSON
+    };
+}
 function downloadSdk(language) {
+    var requestOptions = getRequestOptions(language);
     if (sdkSwaggerCodegenOptions[language]) {
         requestOptions.body.options = sdkSwaggerCodegenOptions[language];
     } else {
@@ -317,7 +320,7 @@ function downloadSdk(language) {
     requestOptions.body.options.artifactVersion = requestOptions.body.options.projectVersion = requestOptions.body.options.packageVarsion =
         requestOptions.body.options.podVersion = getAppVersionNumber();
     requestOptions.body.options.artifactDescription = requestOptions.body.options.projectDescription = swaggerJson.info.description;
-    getSwaggerConfigOptions(language);
+    if(debug){getSwaggerConfigOptions(language);}
     return rp(requestOptions)
         .then(function (parsedBody) {
             return download(parsedBody.link.replace('https', 'http'))
@@ -329,12 +332,11 @@ function downloadSdk(language) {
         });
 }
 function getSwaggerConfigOptions(language) {
-    var getOptionsRequestOptions = JSON.parse(JSON.stringify(requestOptions));
+    var getOptionsRequestOptions = getRequestOptions(language);
     getOptionsRequestOptions.method = "GET";
     return rp(getOptionsRequestOptions)
         .then(function (parsedBody) {
-            logInfo("Generating " + language + " sdk", requestOptions.body.options);
-            logInfo("Available options for " + language, parsedBody);
+            logInfo("Available swagger config options for " + language, parsedBody);
         })
         .catch(function (err) {
             logError(err.error.message);
