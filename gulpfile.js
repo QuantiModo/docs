@@ -467,7 +467,7 @@ gulp.task('get-pairs', [], function (callback) {
         handleApiResponse(error, data, response);
         callback();
     }
-    apiInstance.getMeasurements({causeVariableName: "Sleep Duration", effectVariableName: "Overall Mood"}, qmApiResponseCallback);
+    apiInstance.getPairs({causeVariableName: "Sleep Duration", effectVariableName: "Overall Mood"}, qmApiResponseCallback);
 });
 gulp.task('get-public-variables', [], function (callback) {
     var apiInstance = new Quantimodo.VariablesApi();
