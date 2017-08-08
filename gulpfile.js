@@ -434,7 +434,7 @@ function handleApiResponse(error, data, response) {
     if(!data || Object.keys(data).length === 0){
         throw "data not returned from " + response.request.url;
     }
-    fs.writeFile(convertPathToFilename(response.req.path), prettyJSONStringify(data));
+    fs.writeFileSync(convertPathToFilename(response.req.path), prettyJSONStringify(data));
     logDebug('API returned data', data);
 }
 gulp.task('get-aggregated-correlations', [], function (callback) {
