@@ -469,7 +469,7 @@ parameters:
       your app here
     required: false
     type: string
-  variableIdParam:
+  variableIdBodyParam:
     in: body
     name: variableId
     description: Id of the variable whose measurements should be deleted
@@ -1001,7 +1001,6 @@ paths:
         - $ref: '#/parameters/clientIdParam'
         - $ref: '#/parameters/doNotConvertParam'
         - $ref: '#/parameters/minMaxFilterParam'
-        - $ref: '#/parameters/variableIdParam'
       responses:
         '200':
           description: Successful Operation
@@ -1697,7 +1696,7 @@ paths:
       produces:
         - application/json
       parameters:
-        - $ref: '#/parameters/variableIdParam'
+        - $ref: '#/parameters/variableIdBodyParam'
       responses:
         '204':
           description: Successful operation
@@ -1721,7 +1720,7 @@ paths:
       produces:
         - application/json
       parameters:
-        - $ref: '#/parameters/variableIdParam'
+        - $ref: '#/parameters/variableIdBodyParam'
       responses:
         '201':
           description: Successful operation
