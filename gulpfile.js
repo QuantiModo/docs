@@ -532,30 +532,34 @@ gulp.task('get-user-variables', [], function (callback) {
     }
     apiInstance.getUserVariables({}, qmApiResponseCallback);
 });
-gulp.task('test-endpoints', [], function (callback) {
-    runSequence(
-        'get-aggregated-correlations',
-        'get-connectors',
-        'get-measurements',
-        'get-pairs',
-        'get-public-variables',
-        'get-study',
-        'get-tracking-reminder-notifications',
-        'get-tracking-reminders',
-        'get-unit-categories',
-        'get-units',
-        'get-user',
-        'get-user-correlations',
-        'get-user-variables',
-        function (error) {
-            if (error) {
-                logError(error.message);
-                throw error.message;
-            } else {
-                logInfo('All endpoints work! :D');
-            }
-            callback(error);
-        });
+gulp.task('test-endpoints', ['copy-js-sdk-to-node-modules'], function (callback) {
+    console.log('Waiting for copying to complete...');
+    setTimeout(function() {
+        runSequence(
+            'get-aggregated-correlations',
+            'get-connectors',
+            'get-measurements',
+            'get-pairs',
+            'get-public-variables',
+            'get-study',
+            'get-tracking-reminder-notifications',
+            'get-tracking-reminders',
+            'get-unit-categories',
+            'get-units',
+            'get-user',
+            'get-user-correlations',
+            'get-user-variables',
+            function (error) {
+                if (error) {
+                    logError(error.message);
+                    throw error.message;
+                } else {
+                    logInfo('All endpoints work! :D');
+                }
+                callback(error);
+            });
+    }, 5000);
+
 });
 gulp.task('test-javascript-client', [], function (callback) {
     executeCommand('cd ' + getUnzippedPathForSdkLanguage('javascript') + ' && npm install && npm test ', function () {

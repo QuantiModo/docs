@@ -20,3 +20,5 @@ sdk-repos/
 *.exe
 swagger/example-post-bodies/
 swagger/example-response-bodies/
+
+npm-debug\.log

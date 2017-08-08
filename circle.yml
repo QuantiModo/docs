@@ -10,7 +10,7 @@ machine:
     - docker
 
 dependencies:
-  pre:
+  override:
     - chmod +x -R scripts/*
     #- git clone https://github.com/swagger-api/swagger-codegen
     #- cd swagger-codegen && ./run-in-docker.sh mvn package
@@ -26,8 +26,6 @@ dependencies:
 
 test:
   override:
-    - gulp copy-js-sdk-to-node-modules
-    - sleep 5
     - gulp test-endpoints
 
 general:
