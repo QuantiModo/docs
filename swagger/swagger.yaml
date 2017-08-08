@@ -4750,19 +4750,6 @@ definitions:
         $ref: '#/definitions/Variable'
       commonTaggedVariables:
         $ref: '#/definitions/Variable'
-      numberOfNewMeasurements:
-        description: 'Example: 4'
-        type: integer
-      values:
-        type: array
-        items:
-          $ref: '#/definitions/Value'
-      newLatestMeasurementTime:
-        description: 'Example: 1407019867'
-        type: integer
-      newEarliestMeasurementTime:
-        description: 'Example: 1407019860'
-        type: integer
   UserVariableDelete:
     required:
       - variableId
@@ -7925,16 +7912,6 @@ definitions:
       purchaseId:
         description: 'Example: 1'
         type: integer
-  Value:
-    properties:
-      Value:
-        description: 'Example: 4'
-        type: number
-        format: double
-  ValueArray:
-    type: array
-    items:
-      $ref: '#/definitions/Value'
   PostMeasurementsResponse:
     type: object
     required:
