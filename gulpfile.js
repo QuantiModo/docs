@@ -285,60 +285,59 @@ gulp.task('clean-repos-except-git', [], function(){
         cleanOneFolderExceptGit(getRepoPathForSdkLanguage(languages[i]));
     }
 });
-gulp.task('0-download', ['clean-folders-and-clone-repos'], function () {
-    function downloadSdk(language) {
-        var requestOptions = {
-            method: 'POST',
-            uri: 'http://generator.swagger.io/api/gen/clients/' + language,
-            body: {
-                swaggerUrl: swaggerJsonUrl
-            },
-            json: true // Automatically stringifies the body to JSON
-        };
-        if (sdkSwaggerCodegenOptions[language]) {
-            requestOptions.body.options = sdkSwaggerCodegenOptions[language];
-        } else {
-            requestOptions.body.options = {};
-            requestOptions.body.options.apiPackage = "QuantiModoApi";
-            requestOptions.body.options.artifactId = "quantimodoApi";
-            requestOptions.body.options.authorEmail = "mike@quantimo.do";
-            requestOptions.body.options.authorName = "Mike P. Sinn";
-            requestOptions.body.options.classPrefix = "QM";
-            requestOptions.body.options.developerEmail = "mike@quantimo.do";
-            requestOptions.body.options.developerName = "Mike P. Sinn";
-            requestOptions.body.options.invokerPackage = (sdkSwaggerCodegenOptions[language] && sdkSwaggerCodegenOptions[language].invokerPackage) ? sdkSwaggerCodegenOptions[language].invokerPackage : "quantimodoApi";
-            requestOptions.body.options.modelPackage = "quantimodoApi";
-            requestOptions.body.options.moduleName = "quantimodoApi";
-            requestOptions.body.options.packageName = "quantimodo_api";
-            requestOptions.body.options.packagePath = "QuantiModoClient";
-            requestOptions.body.options.podName = "QuantiModoApi";
-            requestOptions.body.options.podVersion = getAppVersionNumber();
-            requestOptions.body.options.projectName = (sdkSwaggerCodegenOptions[language] && sdkSwaggerCodegenOptions[language].projectName) ? sdkSwaggerCodegenOptions[language].projectName : "quantimodoApi";
-        }
-        requestOptions.body.options.artifactVersion = requestOptions.body.options.projectVersion = requestOptions.body.options.packageVarsion =
-            requestOptions.body.options.podVersion = getAppVersionNumber();
-        requestOptions.body.options.artifactDescription = requestOptions.body.options.projectDescription = swaggerJson.info.description;
-        var sdkName = 'quantimodo-sdk-' + language;
-        var getOptionsRequestOptions = JSON.parse(JSON.stringify(requestOptions));
-        getOptionsRequestOptions.method = "GET";
-        return rp(getOptionsRequestOptions)
-            .then(function (parsedBody) {
-                logInfo("Generating " + language + " sdk", requestOptions.body.options);
-                logInfo("Available options for " + language, parsedBody);
-                return rp(requestOptions)
-                    .then(function (parsedBody) {
-                        return download(parsedBody.link.replace('https', 'http'))
-                            .pipe(rename(getSdkNameForLanguage(language) + '.zip'))
-                            .pipe(gulp.dest(sdksZippedPath));
-                    })
-                    .catch(function (err) {
-                        logError(err.error.message);
-                    });
-            })
-            .catch(function (err) {
-                logError(err.error.message);
-            });
+function downloadSdk(language) {
+    var requestOptions = {
+        method: 'POST',
+        uri: 'http://generator.swagger.io/api/gen/clients/' + language,
+        body: {
+            swaggerUrl: swaggerJsonUrl
+        },
+        json: true // Automatically stringifies the body to JSON
+    };
+    if (sdkSwaggerCodegenOptions[language]) {
+        requestOptions.body.options = sdkSwaggerCodegenOptions[language];
+    } else {
+        requestOptions.body.options = {};
+        requestOptions.body.options.apiPackage = "QuantiModoApi";
+        requestOptions.body.options.artifactId = "quantimodoApi";
+        requestOptions.body.options.authorEmail = "mike@quantimo.do";
+        requestOptions.body.options.authorName = "Mike P. Sinn";
+        requestOptions.body.options.classPrefix = "QM";
+        requestOptions.body.options.developerEmail = "mike@quantimo.do";
+        requestOptions.body.options.developerName = "Mike P. Sinn";
+        requestOptions.body.options.invokerPackage = (sdkSwaggerCodegenOptions[language] && sdkSwaggerCodegenOptions[language].invokerPackage) ? sdkSwaggerCodegenOptions[language].invokerPackage : "quantimodoApi";
+        requestOptions.body.options.modelPackage = "quantimodoApi";
+        requestOptions.body.options.moduleName = "quantimodoApi";
+        requestOptions.body.options.packageName = "quantimodo_api";
+        requestOptions.body.options.packagePath = "QuantiModoClient";
+        requestOptions.body.options.podName = "QuantiModoApi";
+        requestOptions.body.options.podVersion = getAppVersionNumber();
+        requestOptions.body.options.projectName = (sdkSwaggerCodegenOptions[language] && sdkSwaggerCodegenOptions[language].projectName) ? sdkSwaggerCodegenOptions[language].projectName : "quantimodoApi";
     }
+    requestOptions.body.options.artifactVersion = requestOptions.body.options.projectVersion = requestOptions.body.options.packageVarsion =
+        requestOptions.body.options.podVersion = getAppVersionNumber();
+    requestOptions.body.options.artifactDescription = requestOptions.body.options.projectDescription = swaggerJson.info.description;
+    var getOptionsRequestOptions = JSON.parse(JSON.stringify(requestOptions));
+    getOptionsRequestOptions.method = "GET";
+    return rp(getOptionsRequestOptions)
+        .then(function (parsedBody) {
+            logInfo("Generating " + language + " sdk", requestOptions.body.options);
+            logInfo("Available options for " + language, parsedBody);
+            return rp(requestOptions)
+                .then(function (parsedBody) {
+                    return download(parsedBody.link.replace('https', 'http'))
+                        .pipe(rename(getSdkNameForLanguage(language) + '.zip'))
+                        .pipe(gulp.dest(sdksZippedPath));
+                })
+                .catch(function (err) {
+                    logError(err.error.message);
+                });
+        })
+        .catch(function (err) {
+            logError(err.error.message);
+        });
+}
+gulp.task('0-download', ['clean-folders-and-clone-repos'], function () {
     logInfo("Generating sdks with " + swaggerJsonUrl);
     logInfo("See https://github.com/swagger-api/swagger-codegen/tree/master/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages for available clients");
     for(var i = 0; i < languages.length; i++){
@@ -353,6 +352,13 @@ gulp.task('1-decompress', ['clean-repos-except-git'], function () {
         }
         unzipFileToFolder(getZipPathForLanguage(languages[i]), sdksUnzippedPath);
     }
+});
+gulp.task('download-js-sdk', [], function () {
+    logInfo("Generating sdks with " + swaggerJsonUrl);
+    return downloadSdk('javascript');
+});
+gulp.task('decompress-js-sdk', ['download-js-sdk'], function () {
+    return unzipFileToFolder(getZipPathForLanguage('javascript'), sdksUnzippedPath);
 });
 gulp.task('3-copy-to-repos', ['browserify'], function(){
     try {
@@ -371,7 +377,7 @@ gulp.task('3-copy-to-repos', ['browserify'], function(){
         copyOneFoldersContentsToAnotherExceptReadme(getUnzippedPathForSdkLanguage(languages[i]), getRepoPathForSdkLanguage(languages[i]));
     }
 });
-gulp.task('copy-js-sdk-to-node-modules', [], function(){
+gulp.task('copy-js-sdk-to-node-modules', ['decompress-js-sdk'], function(){
     return copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage('javascript'), pathToQuantiModoNodeModule);
 });
 gulp.task('2-copy-qm-web-js', ['browserify'], function(){
