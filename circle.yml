@@ -32,6 +32,7 @@ general:
   artifacts:
     - "swagger-codegen/quantimodo_v1_skds.zip"
     - "swagger-codegen/api-docs.json"
+    - "node_modules/quantimodo"
 
 deployment:
   prod:
