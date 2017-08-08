@@ -33,6 +33,8 @@ general:
     - "swagger-codegen/quantimodo_v1_skds.zip"
     - "swagger-codegen/api-docs.json"
     - "node_modules/quantimodo"
+    - "sdks-unzipped"
+    - "sdks-zipped"
 
 deployment:
   prod:

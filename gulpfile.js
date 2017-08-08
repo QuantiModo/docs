@@ -9,6 +9,7 @@ var ignore = require('gulp-ignore');
 var del = require('del');
 var decompress = require('gulp-decompress');
 var bugsnag = require("bugsnag");
+var q = require('q');
 bugsnag.register("ae7bc49d1285848342342bb5c321a2cf");
 process.on('unhandledRejection', function (err, promise) {
     console.error("Unhandled rejection: " + (err && err.stack || err));
@@ -295,7 +296,9 @@ function getRequestOptions(language) {
         json: true // Automatically stringifies the body to JSON
     };
 }
-function downloadSdk(language) {
+var sdkDownloadLink;
+var language = "javascript";
+function getSdkDownloadLink() {
     var requestOptions = getRequestOptions(language);
     if (sdkSwaggerCodegenOptions[language]) {
         requestOptions.body.options = sdkSwaggerCodegenOptions[language];
@@ -323,13 +326,17 @@ function downloadSdk(language) {
     if(debug){getSwaggerConfigOptions(language);}
     return rp(requestOptions)
         .then(function (parsedBody) {
-            return download(parsedBody.link.replace('https', 'http'))
-                .pipe(rename(getSdkNameForLanguage(language) + '.zip'))
-                .pipe(gulp.dest(sdksZippedPath));
+            sdkDownloadLink = parsedBody.link.replace('https', 'http');
         })
         .catch(function (err) {
             logError(err.error.message);
         });
+}
+
+function downloadSdk() {
+    return download(sdkDownloadLink)
+        .pipe(rename(getSdkNameForLanguage(language) + '.zip'))
+        .pipe(gulp.dest(sdksZippedPath));
 }
 function getSwaggerConfigOptions(language) {
     var getOptionsRequestOptions = getRequestOptions(language);
@@ -346,9 +353,16 @@ gulp.task('0-download', ['clean-folders-and-clone-repos'], function () {
     logInfo("Generating sdks with " + swaggerJsonUrl);
     logInfo("See https://github.com/swagger-api/swagger-codegen/tree/master/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages for available clients");
     for(var i = 0; i < languages.length; i++){
-        if(i === languages.length - 1){ return downloadSdk(languages[i]);}
-        downloadSdk(languages[i]);
+        language = languages[i];
+        if(i === languages.length - 1){ return downloadSdk();}
+        downloadSdk();
     }
+});
+gulp.task('download-one-sdk', ['get-sdk-download-link'], function () {
+    return downloadSdk();
+});
+gulp.task('get-sdk-download-link', [], function () {
+    return getSdkDownloadLink();
 });
 gulp.task('1-decompress', ['clean-repos-except-git'], function () {
     for(var i = 0; i < languages.length; i++) {
@@ -358,12 +372,8 @@ gulp.task('1-decompress', ['clean-repos-except-git'], function () {
         unzipFileToFolder(getZipPathForLanguage(languages[i]), sdksUnzippedPath);
     }
 });
-gulp.task('download-js-sdk', [], function () {
-    logInfo("Generating sdks with " + swaggerJsonUrl);
-    return downloadSdk('javascript');
-});
-gulp.task('decompress-js-sdk', ['download-js-sdk'], function () {
-    return unzipFileToFolder(getZipPathForLanguage('javascript'), sdksUnzippedPath);
+gulp.task('decompress-sdk', ['download-one-sdk'], function () {
+    return unzipFileToFolder(getZipPathForLanguage(language), sdksUnzippedPath);
 });
 gulp.task('3-copy-to-repos', ['browserify'], function(){
     try {
@@ -382,8 +392,9 @@ gulp.task('3-copy-to-repos', ['browserify'], function(){
         copyOneFoldersContentsToAnotherExceptReadme(getUnzippedPathForSdkLanguage(languages[i]), getRepoPathForSdkLanguage(languages[i]));
     }
 });
-gulp.task('copy-js-sdk-to-node-modules', ['decompress-js-sdk'], function(){
-    return copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage('javascript'), pathToQuantiModoNodeModule);
+gulp.task('copy-js-sdk-to-node-modules', ['decompress-sdk'], function(){
+    language = 'javascript';
+    return copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage(language), pathToQuantiModoNodeModule);
 });
 gulp.task('2-copy-qm-web-js', ['browserify'], function(){
     return gulp.src([getUnzippedPathForSdkLanguage('javascript') + '/quantimodo-web.js']).pipe(gulp.dest(pathToIonic + '/www/custom-lib/'));
