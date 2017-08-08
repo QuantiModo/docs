@@ -1724,9 +1724,9 @@
             "name": "body",
             "in": "body",
             "description": "TrackingReminder that should be stored",
-            "required": false,
+            "required": true,
             "schema": {
-              "$ref": "#/definitions/TrackingReminder"
+              "$ref": "#/definitions/TrackingReminderArray"
             }
           }
         ],
@@ -1804,8 +1804,8 @@
         "tags": [
           "reminders"
         ],
-        "summary": "Get specific pending tracking reminders",
-        "description": "Specfic pending reminder instances that still need to be tracked.  ",
+        "summary": "Get specific tracking reminder notifications",
+        "description": "Specific tracking reminder notification instances that still need to be tracked.  ",
         "produces": [
           "application/json"
         ],
@@ -1871,8 +1871,8 @@
         "tags": [
           "reminders"
         ],
-        "summary": "Snooze, skip, or track a pending tracking reminder notification",
-        "description": "Snooze, skip, or track a pending tracking reminder notification",
+        "summary": "Snooze, skip, or track a tracking reminder notification",
+        "description": "Snooze, skip, or track a tracking reminder notification",
         "produces": [
           "application/json"
         ],
@@ -1883,7 +1883,7 @@
           {
             "in": "body",
             "name": "body",
-            "description": "Id of the pending reminder to be snoozed",
+            "description": "Id of the tracking reminder notification to be snoozed",
             "required": true,
             "schema": {
               "type": "array",
@@ -2810,6 +2810,38 @@
           }
         },
         "parameters": []
+      }
+    },
+    "/v3/appSettings": {
+      "get": {
+        "operationId": "getAppSettings",
+        "tags": [
+          "appSettings"
+        ],
+        "summary": "Get AppSettings",
+        "description": "Get AppSettings",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          },
+          "401": {
+            "description": "Not authenticated"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/parameters/clientIdParam"
+          }
+        ]
       }
     }
   },
@@ -9707,6 +9739,12 @@
             "$ref": "#/definitions/UserVariable"
           }
         }
+      }
+    },
+    "MeasurementArray": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Measurement"
       }
     }
   },

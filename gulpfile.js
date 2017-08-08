@@ -471,6 +471,7 @@ gulp.task('get-measurements', ['post-measurements'], function (callback) {
 });
 const dateTime = Date.now();
 const currentUnixTime = Math.floor(dateTime / 1000);
+var testVariableName = 'Unique Test Variable ' + currentUnixTime;
 gulp.task('post-measurements', [], function (callback) {
     var apiInstance = new Quantimodo.MeasurementsApi();
     var options = {};
@@ -478,7 +479,7 @@ gulp.task('post-measurements', [], function (callback) {
         handleApiResponse(error, data, response);
         callback();
     }
-    apiInstance.postMeasurements({"variableName":"Overall Mood","value":1,"startTimeEpoch":currentUnixTime,"unitAbbreviatedName":"/5","variableCategoryName":"Emotions","combinationOperation":"MEAN"},
+    apiInstance.postMeasurements({"variableName":testVariableName ,"value":1,"startTimeEpoch":currentUnixTime, "unitAbbreviatedName":"/5","variableCategoryName":"Emotions","combinationOperation":"MEAN"},
         options, qmApiResponseCallback);
 });
 gulp.task('get-pairs', [], function (callback) {
@@ -513,9 +514,32 @@ gulp.task('get-tracking-reminder-notifications', [], function (callback) {
     }
     apiInstance.getTrackingReminderNotifications({}, qmApiResponseCallback);
 });
-gulp.task('get-tracking-reminders', [], function (callback) {
+gulp.task('post-tracking-reminders', [], function (callback) {
+    var apiInstance = new Quantimodo.RemindersApi();
+    var options = {};
+    function qmApiResponseCallback(error, data, response) {
+        handleApiResponse(error, data, response);
+        callback();
+    }
+    var postBody = [{
+        "variableName" : testVariableName,
+        "reminderFrequency" : 86400,
+        "variableCategoryName" : "Emotions",
+        "unitAbbreviatedName" : "/5",
+        "instructions" : "I am an instruction!"
+    }];
+    apiInstance.postTrackingReminders(postBody, options, qmApiResponseCallback);
+});
+gulp.task('get-tracking-reminders', ['post-tracking-reminders'], function (callback) {
     var apiInstance = new Quantimodo.RemindersApi();
     function qmApiResponseCallback(error, data, response) {
+        var newReminderPresent = false;
+        for(var i = 0; i < data.length; i++){
+            if(data[i].variableName === testVariableName){
+                newReminderPresent = true;
+            }
+        }
+        if(!newReminderPresent){throw "Could not get reminder we just created!";}
         handleApiResponse(error, data, response);
         callback();
     }
