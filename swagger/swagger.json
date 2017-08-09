@@ -4074,6 +4074,10 @@
         "correlationIsContradictoryToOptimalValues": {
           "description": "Example: 1",
           "type": "boolean"
+        },
+        "onsetDelayInHours": {
+          "description": "Example: 0",
+          "type": "integer"
         }
       }
     },
@@ -10298,6 +10302,12 @@
           "description": "Example: ion-happy-outline",
           "type": "string"
         }
+      }
+    },
+    "AggregatedCorrelationArray": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/AggregatedCorrelation"
       }
     }
   },
