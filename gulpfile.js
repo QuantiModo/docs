@@ -434,17 +434,20 @@ function stripQueryFromPath(path) {
     return parts[0];
 }
 function handleApiResponse(error, data, response, requiredProperties) {
+    function getUrlFromResponse(response) {
+        return "https://" + response.request.host + response.req.path;
+    }
     if (error && error.message) {
-        logError(response.req.path + " failed: " + error.message, error);
+        logError(getUrlFromResponse(response) + " request failed: " + error.message, error);
         throw error.message;
     }
     if(!data || Object.keys(data).length === 0){
-        throw "data not returned from " + response.request.url + response.request.path;
+        throw "data not returned from " + getUrlFromResponse(response);
     }
     if(requiredProperties){
         for(var i = 0; i < requiredProperties.length; i++){
             if(!data[requiredProperties[i]]){
-                throw "Required property " + requiredProperties[i] + " not returned from " + response.request.url + response.request.path;
+                throw "Required property " + requiredProperties[i] + " not returned from " + getUrlFromResponse(response);
             }
         }
     }
