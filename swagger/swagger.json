@@ -1688,7 +1688,7 @@
           "200": {
             "description": "Successful operation",
             "schema": {
-              "$ref": "#/definitions/GetTrackingRemindersResponse"
+              "$ref": "#/definitions/TrackingReminderArray"
             }
           }
         },
@@ -4831,6 +4831,10 @@
         },
         "errorMessage": {
           "description": "Example: reminderStartTimeLocal is less than  $user->earliestReminderTime or greater than  $user->latestReminderTime",
+          "type": "string"
+        },
+        "trackingReminderImageUrl": {
+          "description": "Example: Not Found",
           "type": "string"
         }
       }
