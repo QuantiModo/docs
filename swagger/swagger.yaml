@@ -3064,6 +3064,10 @@ definitions:
       onsetDelayInHours:
         description: 'Example: 0'
         type: integer
+      causeDataSource:
+        $ref: '#/definitions/DataSource'
+      effectDataSource:
+        $ref: '#/definitions/DataSource'
   JsonErrorResponse:
     required:
       - status

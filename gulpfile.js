@@ -395,11 +395,11 @@ gulp.task('3-copy-to-repos', ['browserify'], function(){
 gulp.task('delete-qm-node-module', ['decompress-sdk'], function(){
     return cleanOneFolderExceptGit(pathToQuantiModoNodeModule);
 });
-gulp.task('copy-js-sdk-to-node-modules', ['delete-qm-node-module'], function(){
+gulp.task('js-sdk-copy-to-node-modules', ['delete-qm-node-module'], function(){
     language = 'javascript';
     return copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage(language), pathToQuantiModoNodeModule);
 });
-gulp.task('2-copy-qm-web-js', ['browserify'], function(){
+gulp.task('js-sdk-copy-qm-web', ['browserify'], function(){
     return gulp.src([getUnzippedPathForSdkLanguage('javascript') + '/quantimodo-web.js']).pipe(gulp.dest(pathToIonic + '/www/custom-lib/'));
 });
 try {

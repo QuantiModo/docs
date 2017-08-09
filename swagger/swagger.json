@@ -4094,6 +4094,12 @@
         "onsetDelayInHours": {
           "description": "Example: 0",
           "type": "integer"
+        },
+        "causeDataSource": {
+          "$ref": "#/definitions/DataSource"
+        },
+        "effectDataSource": {
+          "$ref": "#/definitions/DataSource"
         }
       }
     },
@@ -9723,10 +9729,6 @@
           "items": {
             "$ref": "#/definitions/Connector"
           }
-        },
-        "errorMessage": {
-          "description": "Example: Invalid argument supplied for foreach()",
-          "type": "string"
         }
       }
     },
