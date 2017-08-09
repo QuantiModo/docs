@@ -7774,6 +7774,19 @@ definitions:
           $ref: '#/definitions/ProcessedDailyMeasurement'
       userStudy:
         $ref: '#/definitions/UserStudy'
+      causeVariable:
+        $ref: '#/definitions/UserVariable'
+      charts:
+        type: array
+        items:
+          $ref: '#/definitions/Chart'
+      effectVariable:
+        $ref: '#/definitions/UserVariable'
+      statistics:
+        $ref: '#/definitions/Statistic'
+      userId:
+        description: 'Example: 230'
+        type: integer
   GetStudyDataResponse:
     required:
       - causeProcessedDailyMeasurements
@@ -7929,7 +7942,6 @@ definitions:
       data:
         $ref: '#/definitions/TrackingRemindersArray'
   GetConnectorsResponse:
-    type: object
     required:
       - status
       - success
