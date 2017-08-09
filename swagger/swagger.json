@@ -2227,7 +2227,7 @@
         "tags": [
           "variables"
         ],
-        "summary": "Get variables with user's settings",
+        "summary": "Get variables along with related user-specific analysis settings and statistics",
         "description": "Get variables for which the user has measurements. If the user has specified variable settings, these are provided instead of the common variable defaults.",
         "produces": [
           "application/json"
@@ -2321,11 +2321,11 @@
     },
     "/v3/public/variables": {
       "get": {
-        "operationId": "getPublicVariables",
+        "operationId": "getCommonVariables",
         "tags": [
           "variables"
         ],
-        "summary": "Get public variables",
+        "summary": "Get common variables with aggregated instead of user-specific data",
         "description": "This endpoint retrieves an array of all public variables. Public variables are things like foods, medications, symptoms, conditions, and anything not unique to a particular user. For instance, a telephone number or name would not be a public variable.",
         "produces": [
           "application/json"

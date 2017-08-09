@@ -1628,10 +1628,10 @@ paths:
             - basic
   /v3/public/variables:
     get:
-      operationId: getPublicVariables
+      operationId: getCommonVariables
       tags:
         - variables
-      summary: Get public variables
+      summary: Get common variables with aggregated instead of user-specific data
       description: >-
         This endpoint retrieves an array of all public variables. Public
         variables are things like foods, medications, symptoms, conditions, and

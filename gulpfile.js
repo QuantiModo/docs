@@ -359,6 +359,7 @@ gulp.task('0-download', ['clean-folders-and-clone-repos'], function () {
     }
 });
 gulp.task('download-one-sdk', ['get-sdk-download-link'], function () {
+    logInfo("Generating " + language + "sdk using " +  swaggerJsonUrl);
     return downloadSdk();
 });
 gulp.task('get-sdk-download-link', [], function () {
