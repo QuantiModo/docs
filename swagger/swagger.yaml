@@ -1686,7 +1686,7 @@ paths:
           schema:
             type: array
             items:
-              $ref: '#/definitions/Variable'
+              $ref: '#/definitions/CommonVariable'
         '401':
           description: Not Authenticated
       security:
@@ -3050,6 +3050,9 @@ definitions:
       correlationIsContradictoryToOptimalValues:
         description: 'Example: 1'
         type: boolean
+      onsetDelayInHours:
+        description: 'Example: 0'
+        type: integer
   JsonErrorResponse:
     required:
       - status
@@ -4774,9 +4777,9 @@ definitions:
       parentUserTagVariables:
         $ref: '#/definitions/UserVariable'
       commonTagVariables:
-        $ref: '#/definitions/Variable'
+        $ref: '#/definitions/CommonVariableArray'
       commonTaggedVariables:
-        $ref: '#/definitions/Variable'
+        $ref: '#/definitions/CommonVariableArray'
   UserVariableDelete:
     required:
       - variableId
@@ -4784,7 +4787,7 @@ definitions:
       variableId:
         type: integer
         description: Id of the variable whose measurements should be deleted
-  Variable:
+  CommonVariable:
     required:
       - name
       - variableCategoryName
@@ -4957,7 +4960,7 @@ definitions:
       joinedVariables:
         type: array
         items:
-          $ref: '#/definitions/Variable'
+          $ref: '#/definitions/CommonVariable'
         description: Array of Variables that are joined with this Variable
       parent:
         type: integer
@@ -4965,7 +4968,7 @@ definitions:
       subVariables:
         type: array
         items:
-          $ref: '#/definitions/Variable'
+          $ref: '#/definitions/CommonVariable'
         description: Array of Variables that are sub variables to this Variable
       onsetDelay:
         type: integer
@@ -5443,9 +5446,9 @@ definitions:
       parentUserTagVariables:
         $ref: '#/definitions/UserVariable'
       commonTagVariables:
-        $ref: '#/definitions/Variable'
+        $ref: '#/definitions/CommonVariable'
       commonTaggedVariables:
-        $ref: '#/definitions/Variable'
+        $ref: '#/definitions/CommonVariable'
       dataSource:
         $ref: '#/definitions/DataSource'
   VariableCategory:
@@ -5620,9 +5623,9 @@ definitions:
         items:
           $ref: '#/definitions/ProcessedDailyMeasurement'
       causeVariable:
-        $ref: '#/definitions/Variable'
+        $ref: '#/definitions/UserVariable'
       effectVariable:
-        $ref: '#/definitions/Variable'
+        $ref: '#/definitions/UserVariable'
       charts:
         type: array
         items:
@@ -7774,7 +7777,7 @@ definitions:
         items:
           $ref: '#/definitions/ProcessedDailyMeasurement'
       causeVariable:
-        $ref: '#/definitions/Variable'
+        $ref: '#/definitions/UserVariable'
       charts:
         type: array
         items:
@@ -7784,7 +7787,7 @@ definitions:
         items:
           $ref: '#/definitions/ProcessedDailyMeasurement'
       effectVariable:
-        $ref: '#/definitions/Variable'
+        $ref: '#/definitions/UserVariable'
       pairs:
         type: array
         items:
@@ -7836,10 +7839,10 @@ definitions:
     type: array
     items:
       $ref: '#/definitions/TrackingReminderNotification'
-  VariableArray:
+  CommonVariableArray:
     type: array
     items:
-      $ref: '#/definitions/Variable'
+      $ref: '#/definitions/CommonVariable'
   PostTrackingRemindersResponse:
     type: object
     required:
@@ -8368,9 +8371,9 @@ definitions:
         description: 'Example: false'
         type: boolean
       causeVariable:
-        $ref: '#/definitions/Variable'
+        $ref: '#/definitions/UserVariable'
       effectVariable:
-        $ref: '#/definitions/Variable'
+        $ref: '#/definitions/UserVariable'
       causeVariableId:
         description: 'Example: 1867'
         type: integer
@@ -8528,6 +8531,10 @@ definitions:
       effectVariableIonIcon:
         description: 'Example: ion-happy-outline'
         type: string
+  AggregatedCorrelationArray:
+    type: array
+    items:
+      $ref: '#/definitions/AggregatedCorrelation'
 securityDefinitions:
   quantimodo_oauth2:
     type: oauth2

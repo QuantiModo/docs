@@ -2421,7 +2421,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/Variable"
+                "$ref": "#/definitions/CommonVariable"
               }
             }
           },
@@ -6164,10 +6164,10 @@
           "$ref": "#/definitions/UserVariable"
         },
         "commonTagVariables": {
-          "$ref": "#/definitions/Variable"
+          "$ref": "#/definitions/CommonVariableArray"
         },
         "commonTaggedVariables": {
-          "$ref": "#/definitions/Variable"
+          "$ref": "#/definitions/CommonVariableArray"
         }
       }
     },
@@ -6182,7 +6182,7 @@
         }
       }
     },
-    "Variable": {
+    "CommonVariable": {
       "required": [
         "name",
         "variableCategoryName",
@@ -6341,7 +6341,7 @@
         "joinedVariables": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Variable"
+            "$ref": "#/definitions/CommonVariable"
           },
           "description": "Array of Variables that are joined with this Variable"
         },
@@ -6352,7 +6352,7 @@
         "subVariables": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Variable"
+            "$ref": "#/definitions/CommonVariable"
           },
           "description": "Array of Variables that are sub variables to this Variable"
         },
@@ -6922,10 +6922,10 @@
           "$ref": "#/definitions/UserVariable"
         },
         "commonTagVariables": {
-          "$ref": "#/definitions/Variable"
+          "$ref": "#/definitions/CommonVariable"
         },
         "commonTaggedVariables": {
-          "$ref": "#/definitions/Variable"
+          "$ref": "#/definitions/CommonVariable"
         },
         "dataSource": {
           "$ref": "#/definitions/DataSource"
@@ -7144,10 +7144,10 @@
           }
         },
         "causeVariable": {
-          "$ref": "#/definitions/Variable"
+          "$ref": "#/definitions/UserVariable"
         },
         "effectVariable": {
-          "$ref": "#/definitions/Variable"
+          "$ref": "#/definitions/UserVariable"
         },
         "charts": {
           "type": "array",
@@ -9482,7 +9482,7 @@
           }
         },
         "causeVariable": {
-          "$ref": "#/definitions/Variable"
+          "$ref": "#/definitions/UserVariable"
         },
         "charts": {
           "type": "array",
@@ -9497,7 +9497,7 @@
           }
         },
         "effectVariable": {
-          "$ref": "#/definitions/Variable"
+          "$ref": "#/definitions/UserVariable"
         },
         "pairs": {
           "type": "array",
@@ -9575,10 +9575,10 @@
         "$ref": "#/definitions/TrackingReminderNotification"
       }
     },
-    "VariableArray": {
+    "CommonVariableArray": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/Variable"
+        "$ref": "#/definitions/CommonVariable"
       }
     },
     "PostTrackingRemindersResponse": {
@@ -10151,10 +10151,10 @@
           "type": "boolean"
         },
         "causeVariable": {
-          "$ref": "#/definitions/Variable"
+          "$ref": "#/definitions/UserVariable"
         },
         "effectVariable": {
-          "$ref": "#/definitions/Variable"
+          "$ref": "#/definitions/UserVariable"
         },
         "causeVariableId": {
           "description": "Example: 1867",
