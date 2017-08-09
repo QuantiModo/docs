@@ -503,13 +503,13 @@ gulp.task('get-pairs', [], function (callback) {
     }
     apiInstance.getPairs({causeVariableName: "Sleep Duration", effectVariableName: "Overall Mood"}, qmApiResponseCallback);
 });
-gulp.task('get-public-variables', [], function (callback) {
+gulp.task('get-common-variables', [], function (callback) {
     var apiInstance = new Quantimodo.VariablesApi();
     function qmApiResponseCallback(error, data, response) {
         handleApiResponse(error, data, response);
         callback();
     }
-    apiInstance.getPublicVariables({}, qmApiResponseCallback);
+    apiInstance.getCommonVariables({}, qmApiResponseCallback);
 });
 gulp.task('get-study', [], function (callback) {
     var apiInstance = new Quantimodo.AnalyticsApi();
