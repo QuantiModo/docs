@@ -1268,7 +1268,7 @@
           "200": {
             "description": "Successful operation",
             "schema": {
-              "$ref": "#/definitions/GetMeasurementsResponse"
+              "$ref": "#/definitions/MeasurementArray"
             }
           },
           "401": {
