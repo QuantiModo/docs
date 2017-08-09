@@ -925,11 +925,9 @@ paths:
         - $ref: '#/parameters/outcomesOfInterestParam'
       responses:
         '200':
-          description: Successful Operation
+          description: Successful operation
           schema:
-            type: array
-            items:
-              $ref: '#/definitions/AggregatedCorrelation'
+            $ref: '#/definitions/GetAggregatedCorrelationsResponse'
         '401':
           description: Not Authenticated
       security:
@@ -1004,11 +1002,9 @@ paths:
         - $ref: '#/parameters/minMaxFilterParam'
       responses:
         '200':
-          description: Successful Operation
+          description: Successful operation
           schema:
-            type: array
-            items:
-              $ref: '#/definitions/Measurement'
+            $ref: '#/definitions/GetMeasurementsResponse'
         '401':
           description: Not Authenticated
       security:
@@ -1241,9 +1237,7 @@ paths:
         '200':
           description: Successful operation
           schema:
-            type: array
-            items:
-              $ref: '#/definitions/Pairs'
+            $ref: '#/definitions/GetPairsResponse'
         '401':
           description: Not Authenticated
       security:
@@ -1276,7 +1270,7 @@ paths:
         '200':
           description: Successful operation
           schema:
-            $ref: '#/definitions/TrackingRemindersArray'
+            $ref: '#/definitions/GetTrackingRemindersResponse'
       security:
         - access_token: []
         - quantimodo_oauth2:
@@ -1684,9 +1678,7 @@ paths:
         '200':
           description: Successful operation
           schema:
-            type: array
-            items:
-              $ref: '#/definitions/CommonVariable'
+            $ref: '#/definitions/GetPublicVariablesResponse'
         '401':
           description: Not Authenticated
       security:
@@ -1846,7 +1838,9 @@ paths:
           schema:
             $ref: '#/definitions/GetStudyResponse'
         '401':
-          description: Not authenticated
+          description: Successful operation
+          schema:
+            $ref: '#/definitions/GetStudyResponse'
         '404':
           description: Not found
         '500':
@@ -1937,26 +1931,6 @@ paths:
         '500':
           description: Internal server error
       parameters: []
-  /v3/appSettings:
-    get:
-      operationId: getAppSettings
-      tags:
-        - appSettings
-      summary: Get AppSettings
-      description: Get AppSettings
-      produces:
-        - application/json
-      responses:
-        '200':
-          description: Successful operation
-        '401':
-          description: Not authenticated
-        '404':
-          description: Not found
-        '500':
-          description: Internal server error
-      parameters:
-        - $ref: '#/parameters/clientIdParam'
 definitions:
   CommonResponse:
     type: object
@@ -2103,6 +2077,9 @@ definitions:
         type: array
         items:
           $ref: '#/definitions/Scope'
+      connectError:
+        description: 'Example: Your token is expired. Please re-connect'
+        type: string
   ConversionStep:
     required:
       - operation
@@ -3375,9 +3352,10 @@ definitions:
           - skip
   TrackingReminder:
     required:
-      - variableId
+      - variableName
       - reminderFrequency
-      - defaultValue
+      - variableCategoryName
+      - unitAbbreviatedName
     properties:
       id:
         description: id
@@ -3636,11 +3614,11 @@ definitions:
       localDailyReminderNotificationTimes:
         type: array
         items:
-          $ref: '#/definitions/LocalDailyReminderNotificationTime'
+          type: string
       localDailyReminderNotificationTimesForAllReminders:
         type: array
         items:
-          $ref: '#/definitions/LocalDailyReminderNotificationTimesForAllReminder'
+          type: string
       repeating:
         description: 'Example: true'
         type: boolean
@@ -3650,6 +3628,14 @@ definitions:
       instructions:
         description: 'Example: I am an instruction!'
         type: string
+      secondDailyReminderTime:
+        description: 'Example: 01:00:00'
+        type: string
+        format: date-time
+      thirdDailyReminderTime:
+        description: 'Example: 20:00:00'
+        type: string
+        format: date-time
   TrackingReminderNotification:
     required:
       - id
@@ -5644,7 +5630,7 @@ definitions:
       charts:
         type: array
         items:
-          $ref: '#/definitions/Chart'
+          $ref: '#/definitions/Highchart'
       effectProcessedDailyMeasurements:
         type: array
         items:
@@ -6279,6 +6265,21 @@ definitions:
       predictorDataSources:
         description: 'Example: RescueTime'
         type: string
+      outcomeMinimumAllowedValue:
+        description: 'Example: 0.1'
+        type: number
+        format: double
+      outcomeMaximumAllowedValue:
+        description: 'Example: 23'
+        type: number
+        format: double
+      causeDataSource:
+        $ref: '#/definitions/DataSource'
+      effectDataSource:
+        $ref: '#/definitions/DataSource'
+      correlationIsContradictoryToOptimalValues:
+        description: 'Example: false'
+        type: boolean
   Explanation:
     required:
       - ionIcon
@@ -6303,7 +6304,6 @@ definitions:
       startTracking:
         $ref: '#/definitions/ExplanationStartTracking'
   GetCorrelationsResponse:
-    type: object
     required:
       - status
       - success
@@ -6929,6 +6929,13 @@ definitions:
       effectVariableDefaultUnitAbbreviatedName:
         description: 'Example: '
         type: string
+      eventAtUnixTime:
+        description: 'Example: 1438876142'
+        type: integer
+      eventAt:
+        description: 'Example: 2015-08-06 15:49:02'
+        type: string
+        format: date-time
   Statistic:
     required:
       - correlationCoefficient
@@ -7749,7 +7756,6 @@ definitions:
         description: 'Example: ion-ios-body-outline'
         type: string
   GetStudyResponse:
-    type: object
     required:
       - status
       - success
@@ -7840,7 +7846,6 @@ definitions:
         description: 'Example: 230'
         type: integer
   GetTrackingReminderNotificationsResponse:
-    type: object
     required:
       - status
       - success
@@ -7880,7 +7885,6 @@ definitions:
     items:
       $ref: '#/definitions/CommonVariable'
   PostTrackingRemindersResponse:
-    type: object
     required:
       - status
       - success
@@ -7934,7 +7938,6 @@ definitions:
         items:
           $ref: '#/definitions/TrackingReminder'
   GetTrackingRemindersResponse:
-    type: object
     required:
       - status
       - success
@@ -7949,6 +7952,228 @@ definitions:
         type: boolean
       data:
         $ref: '#/definitions/TrackingRemindersArray'
+      id:
+        description: 'Example: 30376'
+        type: integer
+      variableName:
+        description: 'Example: Acetyl L-Carnitine By MRM'
+        type: string
+      reminderFrequency:
+        description: 'Example: 86400'
+        type: integer
+      clientId:
+        description: 'Example: ionic'
+        type: string
+      createdAt:
+        description: 'Example: 2016-12-25 10:28:42'
+        type: string
+        format: date-time
+      defaultValue:
+        description: 'Example: 500'
+        type: number
+        format: double
+      trackingReminderId:
+        description: 'Example: 30376'
+        type: integer
+      trackingReminderImageUrl:
+        description: >-
+          Example:
+          https://rximage.nlm.nih.gov/image/images/gallery/original/55111-0129-60_RXNAVIMAGE10_B051D81E.jpg
+        type: string
+      reminderStartTime:
+        description: 'Example: 14:00:00'
+        type: string
+        format: date-time
+      startTrackingDate:
+        description: 'Example: 2016-12-16'
+        type: string
+      stopTrackingDate:
+        description: 'Example: 2017-02-02'
+        type: string
+      updatedAt:
+        description: 'Example: 2017-08-09 19:38:05'
+        type: string
+        format: date-time
+      userId:
+        description: 'Example: 230'
+        type: integer
+      variableId:
+        description: 'Example: 5627291'
+        type: integer
+      combinationOperation:
+        description: 'Example: MEAN'
+        type: string
+      defaultUnitId:
+        description: 'Example: 7'
+        type: integer
+      ionIcon:
+        description: 'Example: ion-ios-medkit-outline'
+        type: string
+      variableCategoryId:
+        description: 'Example: 13'
+        type: integer
+      lastValue:
+        description: 'Example: 500'
+        type: number
+        format: double
+      secondToLastValue:
+        description: 'Example: 250'
+        type: number
+        format: double
+      thirdToLastValue:
+        description: 'Example: 250'
+        type: number
+        format: double
+      userVariableDefaultUnitId:
+        description: 'Example: 7'
+        type: integer
+      userVariableVariableCategoryId:
+        description: 'Example: 13'
+        type: integer
+      numberOfRawMeasurements:
+        description: 'Example: 791'
+        type: integer
+      variableCategoryName:
+        description: 'Example: Treatments'
+        type: string
+      svgUrl:
+        description: >-
+          Example:
+          https://app.quantimo.do/ionic/Modo/www/img/variable_categories/treatments.svg
+        type: string
+      pngUrl:
+        description: >-
+          Example:
+          https://app.quantimo.do/ionic/Modo/www/img/variable_categories/treatments.png
+        type: string
+      pngPath:
+        description: 'Example: img/variable_categories/treatments.png'
+        type: string
+      variableCategoryImageUrl:
+        description: 'Example: https://maxcdn.icons8.com/Color/PNG/96/Healthcare/pill-96.png'
+        type: string
+      fillingValue:
+        description: 'Example: 0'
+        type: integer
+      manualTracking:
+        description: 'Example: true'
+        type: boolean
+      userVariableVariableCategoryName:
+        description: 'Example: Treatments'
+        type: string
+      imageUrl:
+        description: >-
+          Example:
+          https://rximage.nlm.nih.gov/image/images/gallery/original/55111-0129-60_RXNAVIMAGE10_B051D81E.jpg
+        type: string
+      reminderStartTimeLocal:
+        description: 'Example: 09:00:00'
+        type: string
+        format: date-time
+      reminderStartTimeLocalHumanFormatted:
+        description: 'Example: 09:00 AM'
+        type: string
+        format: date-time
+      lastValueInUserVariableDefaultUnit:
+        description: 'Example: 500'
+        type: number
+        format: double
+      secondToLastValueInUserVariableDefaultUnit:
+        description: 'Example: 250'
+        type: number
+        format: double
+      thirdToLastValueInUserVariableDefaultUnit:
+        description: 'Example: 250'
+        type: number
+        format: double
+      unitId:
+        description: 'Example: 7'
+        type: integer
+      unitName:
+        description: 'Example: Milligrams'
+        type: string
+      unitAbbreviatedName:
+        description: 'Example: mg'
+        type: string
+      unitCategoryId:
+        description: 'Example: 3'
+        type: integer
+      unitCategoryName:
+        description: 'Example: Weight'
+        type: string
+      defaultUnitName:
+        description: 'Example: Milligrams'
+        type: string
+      defaultUnitAbbreviatedName:
+        description: 'Example: mg'
+        type: string
+      defaultUnitCategoryId:
+        description: 'Example: 3'
+        type: integer
+      defaultUnitCategoryName:
+        description: 'Example: Weight'
+        type: string
+      availableDefaultUnits:
+        type: array
+        items:
+          $ref: '#/definitions/Unit'
+      userVariableDefaultUnitName:
+        description: 'Example: Milligrams'
+        type: string
+      userVariableDefaultUnitAbbreviatedName:
+        description: 'Example: mg'
+        type: string
+      userVariableDefaultUnitCategoryId:
+        description: 'Example: 3'
+        type: integer
+      userVariableDefaultUnitCategoryName:
+        description: 'Example: Weight'
+        type: string
+      minimumAllowedValue:
+        description: 'Example: 0'
+        type: integer
+      inputType:
+        description: 'Example: value'
+        type: string
+      localDailyReminderNotificationTimes:
+        type: array
+        items:
+          type: string
+      localDailyReminderNotificationTimesForAllReminders:
+        type: array
+        items:
+          type: string
+      reminderStartEpochSeconds:
+        description: 'Example: 1481896800'
+        type: integer
+      nextReminderTimeEpochSeconds:
+        description: 'Example: 1502373600'
+        type: integer
+      firstDailyReminderTime:
+        description: 'Example: 12:00:00'
+        type: string
+        format: date-time
+      secondDailyReminderTime:
+        description: 'Example: 14:00:00'
+        type: string
+        format: date-time
+      frequencyTextDescription:
+        description: 'Example: Daily (ended 2017-02-02)'
+        type: string
+      frequencyTextDescriptionWithTime:
+        description: 'Example: Daily at 09:00 AM (ended 2017-02-02)'
+        type: string
+        format: date-time
+      valueAndFrequencyTextDescription:
+        description: 'Example: 500 mg daily (ended 2017-02-02)'
+        type: string
+      valueAndFrequencyTextDescriptionWithTime:
+        description: 'Example: 500 mg daily at 09:00 AM (ended 2017-02-02)'
+        type: string
+        format: date-time
+      repeating:
+        description: 'Example: true'
+        type: boolean
   GetConnectorsResponse:
     required:
       - status
@@ -7992,7 +8217,6 @@ definitions:
         description: 'Example: 1'
         type: integer
   PostMeasurementsResponse:
-    type: object
     required:
       - status
       - success
@@ -8602,6 +8826,675 @@ definitions:
     type: array
     items:
       $ref: '#/definitions/Highchart'
+  GetAggregatedCorrelationsResponse:
+    properties:
+      causeVariableName:
+        description: 'Example: Very Distracting Time'
+        type: string
+      effectVariableName:
+        description: 'Example: Video Activities'
+        type: string
+      aggregateQMScore:
+        description: 'Example: 0.26756148446253'
+        type: number
+        format: double
+      durationOfAction:
+        description: 'Example: 604800'
+        type: integer
+      correlationCoefficient:
+        description: 'Example: 0.3538'
+        type: number
+        format: double
+      numberOfCorrelations:
+        description: 'Example: 21'
+        type: integer
+      numberOfPairs:
+        description: 'Example: 146'
+        type: integer
+      numberOfUsers:
+        description: 'Example: 21'
+        type: integer
+      onsetDelay:
+        description: 'Example: 0'
+        type: integer
+      optimalPearsonProduct:
+        description: 'Example: 0.20105795420291'
+        type: number
+        format: double
+      statisticalSignificance:
+        description: 'Example: 0.6614'
+        type: number
+        format: double
+      valuePredictingHighOutcome:
+        description: 'Example: 2.03'
+        type: number
+        format: double
+      valuePredictingLowOutcome:
+        description: 'Example: 1.04'
+        type: number
+        format: double
+      causeVariableDefaultUnitId:
+        description: 'Example: 34'
+        type: integer
+      averageDailyHighCause:
+        description: 'Example: 5'
+        type: number
+        format: double
+      averageDailyLowCause:
+        description: 'Example: 1'
+        type: number
+        format: double
+      averageEffect:
+        description: 'Example: 3'
+        type: number
+        format: double
+      averageEffectFollowingHighCause:
+        description: 'Example: 5'
+        type: number
+        format: double
+      averageEffectFollowingLowCause:
+        description: 'Example: 3'
+        type: number
+        format: double
+      causeChanges:
+        description: 'Example: 2984'
+        type: integer
+      causeVariableId:
+        description: 'Example: 5956878'
+        type: integer
+      confidenceInterval:
+        description: 'Example: 0.79069937144827'
+        type: number
+        format: double
+      createdAt:
+        description: 'Example: 2017-08-01 21:49:11'
+        type: string
+        format: date-time
+      criticalTValue:
+        description: 'Example: 1.6604761904762'
+        type: number
+        format: double
+      effectChanges:
+        description: 'Example: 2708'
+        type: integer
+      effectVariableId:
+        description: 'Example: 5956912'
+        type: integer
+      pValue:
+        description: 'Example: 0.09747619047619'
+        type: number
+        format: double
+      predictsHighEffectChange:
+        description: 'Example: 36'
+        type: integer
+      predictsLowEffectChange:
+        description: 'Example: -16'
+        type: integer
+      tValue:
+        description: 'Example: 3.1761820531649'
+        type: number
+        format: double
+      updatedAt:
+        description: 'Example: 2017-08-01 21:50:36'
+        type: string
+        format: date-time
+      causeVariableCombinationOperation:
+        description: 'Example: SUM'
+        type: string
+      causeVariableImageUrl:
+        description: 'Example: https://maxcdn.icons8.com/Color/PNG/96/Business/work-96.png'
+        type: string
+      causeVariableIonIcon:
+        description: 'Example: ion-laptop'
+        type: string
+      causeVariableMostCommonConnectorId:
+        description: 'Example: 11'
+        type: integer
+      causeVariableCategoryId:
+        description: 'Example: 12'
+        type: integer
+      effectVariableCombinationOperation:
+        description: 'Example: SUM'
+        type: string
+      effectVariableDefaultUnitId:
+        description: 'Example: 34'
+        type: integer
+      effectVariableImageUrl:
+        description: 'Example: https://maxcdn.icons8.com/Color/PNG/96/Sports/football-96.png'
+        type: string
+      effectVariableIonIcon:
+        description: 'Example: ion-ios-body-outline'
+        type: string
+      effectVariableMostCommonConnectorId:
+        description: 'Example: 11'
+        type: integer
+      effectVariableCategoryId:
+        description: 'Example: 14'
+        type: integer
+      reversePearsonCorrelationCoefficient:
+        description: 'Example: 0.2077898127704'
+        type: number
+        format: double
+      predictivePearsonCorrelationCoefficient:
+        description: 'Example: 0.14597624010255'
+        type: number
+        format: double
+      durationOfActionInHours:
+        description: 'Example: 168'
+        type: integer
+      onsetDelayInHours:
+        description: 'Example: 0'
+        type: integer
+      qmScore:
+        description: 'Example: 0.26756148446253'
+        type: number
+        format: double
+      forwardPearsonCorrelationCoefficient:
+        description: 'Example: 0.3538'
+        type: number
+        format: double
+      causeVariableCategoryName:
+        description: 'Example: Work'
+        type: string
+      effectVariableCategoryName:
+        description: 'Example: Activity'
+        type: string
+      causeVariableDefaultUnitAbbreviatedName:
+        description: 'Example: h'
+        type: string
+      effectVariableDefaultUnitAbbreviatedName:
+        description: 'Example: h'
+        type: string
+      causeVariableDefaultUnitName:
+        description: 'Example: Hours'
+        type: string
+      effectVariableDefaultUnitName:
+        description: 'Example: Hours'
+        type: string
+      effectUnit:
+        description: 'Example: h'
+        type: string
+      significanceExplanation:
+        description: >-
+          Example: Using a two-tailed t-test with alpha = 0.05, it was
+          determined that the change in Video Activities is statistically
+          significant at 95% confidence interval.
+        type: string
+      significantDifference:
+        description: 'Example: true'
+        type: boolean
+      direction:
+        description: 'Example: higher'
+        type: string
+      effectSize:
+        description: 'Example: moderately positive'
+        type: string
+      predictsHighEffectChangeSentenceFragment:
+        description: 'Example: , on average, 36% '
+        type: string
+      predictsLowEffectChangeSentenceFragment:
+        description: 'Example: , on average, 16% '
+        type: string
+      valuePredictingHighOutcomeExplanation:
+        description: >-
+          Example: Video Activities, on average, 36% higher after around 2.03 h
+          Very Distracting Time
+        type: string
+      averageEffectFollowingHighCauseExplanation:
+        description: >-
+          Example: Video Activities is 5h (67% higher) on average after days
+          with around 5 h Very Distracting Time
+        type: string
+      valuePredictingLowOutcomeExplanation:
+        description: >-
+          Example: Video Activities, on average, 16% lower after around 1.04 h
+          Very Distracting Time
+        type: string
+      strengthLevel:
+        description: 'Example: weak'
+        type: string
+      confidenceLevel:
+        description: 'Example: low'
+        type: string
+      predictorExplanation:
+        description: 'Example: Very Distracting Time Predicts Higher Video Activities'
+        type: string
+      studyTitle:
+        description: >-
+          Example: N1 Study: Very Distracting Time Predicts Higher Video
+          Activities
+        type: string
+      studyAbstract:
+        description: >-
+          Example: Aggregated data from 21 suggests with a low degree of
+          confidence (p=0.097) that Very Distracting Time (Work) has a
+          moderately positive predictive relationship (R=0.354) with Video
+          Activities  (Activity).  The highest quartile of Video Activities
+          measurements were observed following an average 2.03h Very Distracting
+          Time.  The lowest quartile of Video Activities  measurements were
+          observed following an average 1.04h Very Distracting Time.
+        type: string
+      studyLinkStatic:
+        description: >-
+          Example:
+          https://local.quantimo.do/api/v2/study?causeVariableName=Very%20Distracting%20Time&effectVariableName=Video%20Activities
+        type: string
+      studyLinkDynamic:
+        description: >-
+          Example:
+          https://local.quantimo.do/ionic/Modo/www/index.html#/app/study?causeVariableName=Very%20Distracting%20Time&effectVariableName=Video%20Activities
+        type: string
+      studyLinkFacebook:
+        description: >-
+          Example:
+          https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fstudy%3FcauseVariableName%3DVery%2520Distracting%2520Time%26effectVariableName%3DVideo%2520Activities
+        type: string
+      studyLinkGoogle:
+        description: >-
+          Example:
+          https://plus.google.com/share?url=https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fstudy%3FcauseVariableName%3DVery%2520Distracting%2520Time%26effectVariableName%3DVideo%2520Activities
+        type: string
+      studyLinkTwitter:
+        description: >-
+          Example:
+          https://twitter.com/home?status=Very%20Distracting%20Time%20Predicts%20Higher%20Video%20Activities%20https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fstudy%3FcauseVariableName%3DVery%2520Distracting%2520Time%26effectVariableName%3DVideo%2520Activities%20%40quantimodo
+        type: string
+      studyLinkEmail:
+        description: >-
+          Example:
+          mailto:?subject=N1%20Study%3A%20Very%20Distracting%20Time%20Predicts%20Higher%20Video%20Activities&body=Check%20out%20my%20study%20at%20https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fstudy%3FcauseVariableName%3DVery%2520Distracting%2520Time%26effectVariableName%3DVideo%2520Activities%0A%0AHave%20a%20great%20day!
+        type: string
+      gaugeImage:
+        description: >-
+          Example:
+          https://s3.amazonaws.com/quantimodo-docs/images/gauge-moderately-positive-relationship.png
+        type: string
+      gaugeImageSquare:
+        description: >-
+          Example:
+          https://s3.amazonaws.com/quantimodo-docs/images/gauge-moderately-positive-relationship-200-200.png
+        type: string
+      imageUrl:
+        description: >-
+          Example:
+          https://s3-us-west-1.amazonaws.com/qmimages/variable_categories_gauges_logo_background/gauge-moderately-positive-relationship_work_activity_logo_background.png
+        type: string
+  GetAggregatedCorrelationsResponseArray:
+    type: array
+    items:
+      $ref: '#/definitions/GetAggregatedCorrelationsResponse'
+  GetMeasurementsResponse:
+    properties:
+      startTimeEpoch:
+        description: 'Example: 1502306315'
+        type: integer
+      unitId:
+        description: 'Example: 10'
+        type: integer
+      variableId:
+        description: 'Example: 5970988'
+        type: integer
+      variableName:
+        description: 'Example: Unique Test Variable 1502306315'
+        type: string
+      variableCategoryId:
+        description: 'Example: 1'
+        type: integer
+      value:
+        description: 'Example: 1'
+        type: number
+        format: double
+      id:
+        description: 'Example: 1060761015'
+        type: integer
+      originalValue:
+        description: 'Example: 1'
+        type: number
+        format: double
+      originalUnitId:
+        description: 'Example: 10'
+        type: integer
+      clientId:
+        description: 'Example: pImUNsI6T5Ysd81k'
+        type: string
+      sourceName:
+        description: 'Example: pImUNsI6T5Ysd81k'
+        type: string
+      createdAt:
+        description: 'Example: 2017-08-09 19:19:05'
+        type: string
+        format: date-time
+      updatedAt:
+        description: 'Example: 2017-08-09 19:19:05'
+        type: string
+        format: date-time
+      variableCategoryName:
+        description: 'Example: Emotions'
+        type: string
+      userVariableVariableCategoryId:
+        description: 'Example: 1'
+        type: integer
+      ionIcon:
+        description: 'Example: ion-happy-outline'
+        type: string
+      svgUrl:
+        description: >-
+          Example:
+          https://app.quantimo.do/ionic/Modo/www/img/variable_categories/emotions.svg
+        type: string
+      pngUrl:
+        description: >-
+          Example:
+          https://app.quantimo.do/ionic/Modo/www/img/variable_categories/emotions.png
+        type: string
+      pngPath:
+        description: 'Example: img/rating/100/numeric_rating_button_100_1.png'
+        type: string
+      variableCategoryImageUrl:
+        description: >-
+          Example:
+          https://maxcdn.icons8.com/Color/PNG/96/Cinema/theatre_mask-96.png
+        type: string
+      manualTracking:
+        description: 'Example: true'
+        type: boolean
+      userVariableVariableCategoryName:
+        description: 'Example: Emotions'
+        type: string
+      startTimeString:
+        description: 'Example: 2017-08-09T19:18:35+00:00'
+        type: string
+        format: date-time
+      unitName:
+        description: 'Example: 1 to 5 Rating'
+        type: string
+      unitAbbreviatedName:
+        description: 'Example: /5'
+        type: string
+      unitCategoryId:
+        description: 'Example: 5'
+        type: integer
+      unitCategoryName:
+        description: 'Example: Rating'
+        type: string
+      originalUnitName:
+        description: 'Example: 1 to 5 Rating'
+        type: string
+      originalUnitAbbreviatedName:
+        description: 'Example: /5'
+        type: string
+      originalUnitCategoryId:
+        description: 'Example: 5'
+        type: integer
+      originalUnitCategoryName:
+        description: 'Example: Rating'
+        type: string
+      minimumAllowedValue:
+        description: 'Example: 1'
+        type: integer
+      maximumAllowedValue:
+        description: 'Example: 5'
+        type: integer
+      inputType:
+        description: 'Example: oneToFiveNumbers'
+        type: string
+  GetMeasurementsResponseArray:
+    type: array
+    items:
+      $ref: '#/definitions/GetMeasurementsResponse'
+  PairArray:
+    type: array
+    items:
+      $ref: '#/definitions/Pair'
+  GetPairsResponse:
+    properties:
+      causeMeasurementValue:
+        description: 'Example: 2.0166666666667'
+        type: number
+        format: double
+      effectMeasurementValue:
+        description: 'Example: 4'
+        type: number
+        format: double
+      timestamp:
+        description: 'Example: 1438876142'
+        type: integer
+      startTimeString:
+        description: 'Example: 2015-08-06 15:49:02'
+        type: string
+        format: date-time
+      causeMeasurement:
+        description: 'Example: 2.0166666666667'
+        type: number
+        format: double
+      effectMeasurement:
+        description: 'Example: 4'
+        type: number
+        format: double
+  GetPairsResponseArray:
+    type: array
+    items:
+      $ref: '#/definitions/GetPairsResponse'
+  GetPublicVariablesResponse:
+    properties:
+      id:
+        description: 'Example: 1398'
+        type: integer
+      name:
+        description: 'Example: Overall Mood'
+        type: string
+      causeOnly:
+        description: 'Example: false'
+        type: boolean
+      combinationOperation:
+        description: 'Example: MEAN'
+        type: string
+      commonAlias:
+        description: 'Example: Mood_(psychology)'
+        type: string
+      createdAt:
+        description: 'Example: 2015-03-05 05:01:48'
+        type: string
+        format: date-time
+      defaultUnitId:
+        description: 'Example: 10'
+        type: integer
+      unitId:
+        description: 'Example: 10'
+        type: integer
+      description:
+        description: 'Example: positive'
+        type: string
+      ionIcon:
+        description: 'Example: ion-happy-outline'
+        type: string
+      kurtosis:
+        description: 'Example: 4.3527259032083'
+        type: number
+        format: double
+      mean:
+        description: 'Example: 3.1359987410015'
+        type: number
+        format: double
+      median:
+        description: 'Example: 3.1295731659047'
+        type: number
+        format: double
+      mostCommonConnectorId:
+        description: 'Example: 10'
+        type: integer
+      mostCommonOriginalUnitId:
+        description: 'Example: 10'
+        type: integer
+      mostCommonValue:
+        description: 'Example: 3'
+        type: number
+        format: double
+      numberOfAggregateCorrelationsAsCause:
+        description: 'Example: 329'
+        type: integer
+      numberOfAggregateCorrelationsAsEffect:
+        description: 'Example: 890'
+        type: integer
+      numberOfRawMeasurements:
+        description: 'Example: 544298'
+        type: integer
+      numberOfTrackingReminders:
+        description: 'Example: 102'
+        type: integer
+      numberOfUniqueValues:
+        description: 'Example: 7'
+        type: integer
+      numberOfUserVariables:
+        description: 'Example: 4003'
+        type: integer
+      secondMostCommonValue:
+        description: 'Example: 4'
+        type: number
+        format: double
+      skewness:
+        description: 'Example: -0.23360852317166'
+        type: number
+        format: double
+      standardDeviation:
+        description: 'Example: 0.7214901744899'
+        type: number
+        format: double
+      thirdMostCommonValue:
+        description: 'Example: 2'
+        type: number
+        format: double
+      updatedAt:
+        description: 'Example: 2017-07-31 19:55:38'
+        type: string
+        format: date-time
+      valence:
+        description: 'Example: positive'
+        type: string
+      variableCategoryId:
+        description: 'Example: 1'
+        type: integer
+      variance:
+        description: 'Example: 22.541085893948'
+        type: number
+        format: double
+      outcome:
+        description: 'Example: true'
+        type: boolean
+      public:
+        description: 'Example: true'
+        type: boolean
+      minimumAllowedValue:
+        description: 'Example: 1'
+        type: integer
+      maximumAllowedValue:
+        description: 'Example: 5'
+        type: integer
+      onsetDelay:
+        description: 'Example: 0'
+        type: integer
+      durationOfAction:
+        description: 'Example: 86400'
+        type: integer
+      variableCategoryName:
+        description: 'Example: Emotions'
+        type: string
+      userVariableVariableCategoryId:
+        description: 'Example: 1'
+        type: integer
+      svgUrl:
+        description: >-
+          Example:
+          https://app.quantimo.do/ionic/Modo/www/img/variable_categories/emotions.svg
+        type: string
+      pngUrl:
+        description: >-
+          Example:
+          https://app.quantimo.do/ionic/Modo/www/img/variable_categories/emotions.png
+        type: string
+      pngPath:
+        description: 'Example: img/variable_categories/emotions.png'
+        type: string
+      variableCategoryImageUrl:
+        description: >-
+          Example:
+          https://maxcdn.icons8.com/Color/PNG/96/Cinema/theatre_mask-96.png
+        type: string
+      manualTracking:
+        description: 'Example: true'
+        type: boolean
+      userVariableVariableCategoryName:
+        description: 'Example: Emotions'
+        type: string
+      category:
+        description: 'Example: Emotions'
+        type: string
+      durationOfActionInHours:
+        description: 'Example: 24'
+        type: integer
+      onsetDelayInHours:
+        description: 'Example: 0'
+        type: integer
+      variableName:
+        description: 'Example: Overall Mood'
+        type: string
+      numberOfMeasurements:
+        description: 'Example: 544298'
+        type: integer
+      unitName:
+        description: 'Example: 1 to 5 Rating'
+        type: string
+      unitAbbreviatedName:
+        description: 'Example: /5'
+        type: string
+      unitCategoryId:
+        description: 'Example: 5'
+        type: integer
+      unitCategoryName:
+        description: 'Example: Rating'
+        type: string
+      defaultUnitName:
+        description: 'Example: 1 to 5 Rating'
+        type: string
+      defaultUnitAbbreviatedName:
+        description: 'Example: /5'
+        type: string
+      defaultUnitCategoryId:
+        description: 'Example: 5'
+        type: integer
+      defaultUnitCategoryName:
+        description: 'Example: Rating'
+        type: string
+      availableDefaultUnits:
+        type: array
+        items:
+          $ref: '#/definitions/Unit'
+      userVariableDefaultUnitId:
+        description: 'Example: 10'
+        type: integer
+      userVariableDefaultUnitName:
+        description: 'Example: 1 to 5 Rating'
+        type: string
+      userVariableDefaultUnitAbbreviatedName:
+        description: 'Example: /5'
+        type: string
+      userVariableDefaultUnitCategoryId:
+        description: 'Example: 5'
+        type: integer
+      userVariableDefaultUnitCategoryName:
+        description: 'Example: Rating'
+        type: string
+      inputType:
+        description: 'Example: happiestFaceIsFive'
+        type: string
+  GetPublicVariablesResponseArray:
+    type: array
+    items:
+      $ref: '#/definitions/GetPublicVariablesResponse'
+  GetTrackingRemindersResponseArray:
+    type: array
+    items:
+      $ref: '#/definitions/GetTrackingRemindersResponse'
 securityDefinitions:
   quantimodo_oauth2:
     type: oauth2
