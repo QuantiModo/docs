@@ -7199,6 +7199,12 @@
         "user": {
           "description": "Example: ",
           "type": "string"
+        },
+        "highchartArray": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/HighchartArray"
+          }
         }
       }
     },
@@ -9499,6 +9505,12 @@
         "userId": {
           "description": "Example: 230",
           "type": "integer"
+        },
+        "highchartArray": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/HighchartArray"
+          }
         }
       }
     },
@@ -10368,6 +10380,31 @@
       "type": "array",
       "items": {
         "$ref": "#/definitions/Connector"
+      }
+    },
+    "Highchart": {
+      "properties": {
+        "chartConfig": {
+          "$ref": "#/definitions/ChartConfig"
+        },
+        "chartTitle": {
+          "description": "Example: Overall Mood following Sleep Duration (R = -0.173)",
+          "type": "string"
+        },
+        "chartId": {
+          "description": "Example: correlationScatterPlot",
+          "type": "string"
+        },
+        "explanation": {
+          "description": "Example: The chart above indicates that an increase in Sleep Duration is usually followed by an decrease in Overall Mood.",
+          "type": "string"
+        }
+      }
+    },
+    "HighchartArray": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Highchart"
       }
     }
   },

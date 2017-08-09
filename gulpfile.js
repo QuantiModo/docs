@@ -513,10 +513,10 @@ gulp.task('get-public-variables', [], function (callback) {
 gulp.task('get-study', [], function (callback) {
     var apiInstance = new Quantimodo.AnalyticsApi();
     var requiredProperties = [
-        'causeProcessedDailyMeasurements',
-        'effectProcessedDailyMeasurements',
-        'pairs',
-        'userStudy'
+        'causeVariable',
+        'effectVariable',
+        'highchartArray',
+        'statistics'
     ];
     function qmApiResponseCallback(error, data, response) {
         handleApiResponse(error, data, response, requiredProperties);
