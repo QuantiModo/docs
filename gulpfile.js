@@ -609,7 +609,7 @@ gulp.task('test-endpoints', [], function (callback) {
         'get-connectors',
         'get-measurements',
         'get-pairs',
-        'get-public-variables',
+        'get-common-variables',
         'get-study',
         'get-tracking-reminder-notifications',
         'get-tracking-reminders',
