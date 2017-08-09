@@ -863,6 +863,7 @@ paths:
         - $ref: '#/parameters/appNameParam'
         - $ref: '#/parameters/clientIdParam'
         - $ref: '#/parameters/fallbackToStudyForCauseAndEffectParam'
+        - $ref: '#/parameters/fallbackToAggregateCorrelationsParam'
       responses:
         '200':
           description: Successful operation
@@ -1614,6 +1615,10 @@ paths:
         - $ref: '#/parameters/limitParam'
         - $ref: '#/parameters/offsetParam'
         - $ref: '#/parameters/sortParam'
+        - $ref: '#/parameters/includePublicParam'
+        - $ref: '#/parameters/manualTrackingParam'
+        - $ref: '#/parameters/appNameParam'
+        - $ref: '#/parameters/clientIdParam'
       responses:
         '200':
           description: Variables returned
@@ -7960,6 +7965,10 @@ definitions:
     type: array
     items:
       $ref: '#/definitions/Measurement'
+  CorrelationArray:
+    type: array
+    items:
+      $ref: '#/definitions/Correlation'
 securityDefinitions:
   quantimodo_oauth2:
     type: oauth2

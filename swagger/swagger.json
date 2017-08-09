@@ -993,6 +993,9 @@
           },
           {
             "$ref": "#/parameters/fallbackToStudyForCauseAndEffectParam"
+          },
+          {
+            "$ref": "#/parameters/fallbackToAggregateCorrelationsParam"
           }
         ],
         "responses": {
@@ -2285,6 +2288,18 @@
           },
           {
             "$ref": "#/parameters/sortParam"
+          },
+          {
+            "$ref": "#/parameters/includePublicParam"
+          },
+          {
+            "$ref": "#/parameters/manualTrackingParam"
+          },
+          {
+            "$ref": "#/parameters/appNameParam"
+          },
+          {
+            "$ref": "#/parameters/clientIdParam"
           }
         ],
         "responses": {
@@ -9745,6 +9760,12 @@
       "type": "array",
       "items": {
         "$ref": "#/definitions/Measurement"
+      }
+    },
+    "CorrelationArray": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Correlation"
       }
     }
   },
