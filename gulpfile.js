@@ -607,7 +607,6 @@ gulp.task('test-endpoints', [], function (callback) {
         'get-aggregated-correlations',
         'get-connectors',
         'get-measurements',
-        'post-measurements',
         'get-pairs',
         'get-public-variables',
         'get-study',

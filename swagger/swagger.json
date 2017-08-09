@@ -1622,7 +1622,7 @@
           "200": {
             "description": "Successful operation",
             "schema": {
-              "$ref": "#/definitions/GetPairsResponse"
+              "$ref": "#/definitions/PairArray"
             }
           },
           "401": {
@@ -8666,6 +8666,11 @@
           "type": "integer"
         },
         "eventAt": {
+          "description": "Example: 2015-08-06 15:49:02",
+          "type": "string",
+          "format": "date-time"
+        },
+        "startTimeString": {
           "description": "Example: 2015-08-06 15:49:02",
           "type": "string",
           "format": "date-time"
