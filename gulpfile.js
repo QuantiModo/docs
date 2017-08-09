@@ -433,13 +433,20 @@ function stripQueryFromPath(path) {
     var parts = path.split('?');
     return parts[0];
 }
-function handleApiResponse(error, data, response) {
+function handleApiResponse(error, data, response, requiredProperties) {
     if (error && error.message) {
         logError(response.req.path + " failed: " + error.message, error);
         throw error.message;
     }
     if(!data || Object.keys(data).length === 0){
-        throw "data not returned from " + response.request.url;
+        throw "data not returned from " + response.request.url + response.request.path;
+    }
+    if(requiredProperties){
+        for(var i = 0; i < requiredProperties.length; i++){
+            if(!data[requiredProperties[i]]){
+                throw "Required property " + requiredProperties[i] + " not returned from " + response.request.url + response.request.path;
+            }
+        }
     }
     fs.writeFileSync(convertPathToFilename(response.req.path), prettyJSONStringify(data));
     logDebug('API returned data', data);
@@ -502,8 +509,14 @@ gulp.task('get-public-variables', [], function (callback) {
 });
 gulp.task('get-study', [], function (callback) {
     var apiInstance = new Quantimodo.AnalyticsApi();
+    var requiredProperties = [
+        'causeProcessedDailyMeasurements',
+        'effectProcessedDailyMeasurements',
+        'pairs',
+        'userStudy'
+    ];
     function qmApiResponseCallback(error, data, response) {
-        handleApiResponse(error, data, response);
+        handleApiResponse(error, data, response, requiredProperties);
         callback();
     }
     apiInstance.getStudy({causeVariableName: "Sleep Duration", effectVariableName: "Overall Mood"}, qmApiResponseCallback);
