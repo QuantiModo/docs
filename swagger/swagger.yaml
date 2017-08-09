@@ -745,7 +745,7 @@ paths:
         - application/json
       responses:
         '200':
-          description: Successful Operation
+          description: Successful operation
           schema:
             $ref: '#/definitions/GetConnectorsResponse'
         '401':
@@ -2092,6 +2092,17 @@ definitions:
         description: 'Example: 2017-07-31 10:10:34'
         type: string
         format: date-time
+      buttons:
+        type: array
+        items:
+          $ref: '#/definitions/Button'
+      affiliate:
+        description: 'Example: false'
+        type: boolean
+      scopes:
+        type: array
+        items:
+          $ref: '#/definitions/Scope'
   ConversionStep:
     required:
       - operation
@@ -8535,6 +8546,19 @@ definitions:
     type: array
     items:
       $ref: '#/definitions/AggregatedCorrelation'
+  Scope:
+    properties:
+      scalar:
+        description: 'Example: user_likes'
+        type: string
+  ScopeArray:
+    type: array
+    items:
+      $ref: '#/definitions/Scope'
+  ConnectorArray:
+    type: array
+    items:
+      $ref: '#/definitions/Connector'
 securityDefinitions:
   quantimodo_oauth2:
     type: oauth2
