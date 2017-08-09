@@ -2658,7 +2658,7 @@
         ]
       }
     },
-    "/v3/study": {
+    "/v4/study": {
       "get": {
         "operationId": "getStudy",
         "tags": [
