@@ -1116,7 +1116,7 @@
           "200": {
             "description": "Successful operation",
             "schema": {
-              "$ref": "#/definitions/GetAggregatedCorrelationsResponse"
+              "$ref": "#/definitions/AggregatedCorrelationArray"
             }
           },
           "401": {
@@ -4063,6 +4063,34 @@
         },
         "effectDataSource": {
           "$ref": "#/definitions/DataSource"
+        },
+        "causeVariableCommonAlias": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "causeVariableInformationalUrl": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "causeVariableProductUrl": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "effectVariableInformationalUrl": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "effectVariableProductUrl": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "vote": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "perDaySentenceFragment": {
+          "description": "Example: ",
+          "type": "string"
         }
       }
     },
@@ -11019,6 +11047,50 @@
         },
         "imageUrl": {
           "description": "Example: https://s3-us-west-1.amazonaws.com/qmimages/variable_categories_gauges_logo_background/gauge-moderately-positive-relationship_work_activity_logo_background.png",
+          "type": "string"
+        },
+        "averageVote": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "causeVariableCommonAlias": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "causeVariableInformationalUrl": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "causeVariableProductUrl": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "effectVariableCommonAlias": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "effectVariableInformationalUrl": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "effectVariableProductUrl": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "userVote": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "vote": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "perDaySentenceFragment": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "averageEffectFollowingLowCauseExplanation": {
+          "description": "Example: ",
           "type": "string"
         }
       }
