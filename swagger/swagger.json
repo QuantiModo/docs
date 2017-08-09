@@ -6159,25 +6159,25 @@
           "type": "string"
         },
         "userTagVariables": {
-          "$ref": "#/definitions/UserVariable"
+          "$ref": "#/definitions/UserVariableArray"
         },
         "userTaggedVariables": {
-          "$ref": "#/definitions/UserVariable"
+          "$ref": "#/definitions/UserVariableArray"
         },
         "joinedUserTagVariables": {
-          "$ref": "#/definitions/UserVariable"
+          "$ref": "#/definitions/UserVariableArray"
         },
         "ingredientUserTagVariables": {
-          "$ref": "#/definitions/UserVariable"
+          "$ref": "#/definitions/UserVariableArray"
         },
         "ingredientOfUserTagVariables": {
-          "$ref": "#/definitions/UserVariable"
+          "$ref": "#/definitions/UserVariableArray"
         },
         "childUserTagVariables": {
-          "$ref": "#/definitions/UserVariable"
+          "$ref": "#/definitions/UserVariableArray"
         },
         "parentUserTagVariables": {
-          "$ref": "#/definitions/UserVariable"
+          "$ref": "#/definitions/UserVariableArray"
         },
         "commonTagVariables": {
           "$ref": "#/definitions/CommonVariableArray"
@@ -6917,31 +6917,31 @@
           "type": "string"
         },
         "userTagVariables": {
-          "$ref": "#/definitions/UserVariable"
+          "$ref": "#/definitions/UserVariableArray"
         },
         "userTaggedVariables": {
-          "$ref": "#/definitions/UserVariable"
+          "$ref": "#/definitions/UserVariableArray"
         },
         "joinedUserTagVariables": {
-          "$ref": "#/definitions/UserVariable"
+          "$ref": "#/definitions/UserVariableArray"
         },
         "ingredientUserTagVariables": {
-          "$ref": "#/definitions/UserVariable"
+          "$ref": "#/definitions/UserVariableArray"
         },
         "ingredientOfUserTagVariables": {
-          "$ref": "#/definitions/UserVariable"
+          "$ref": "#/definitions/UserVariableArray"
         },
         "childUserTagVariables": {
-          "$ref": "#/definitions/UserVariable"
+          "$ref": "#/definitions/UserVariableArray"
         },
         "parentUserTagVariables": {
-          "$ref": "#/definitions/UserVariable"
+          "$ref": "#/definitions/UserVariableArray"
         },
         "commonTagVariables": {
-          "$ref": "#/definitions/CommonVariable"
+          "$ref": "#/definitions/CommonVariableArray"
         },
         "commonTaggedVariables": {
-          "$ref": "#/definitions/CommonVariable"
+          "$ref": "#/definitions/CommonVariableArray"
         },
         "dataSource": {
           "$ref": "#/definitions/DataSource"
