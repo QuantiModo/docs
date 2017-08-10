@@ -47,4 +47,6 @@ deployment:
   prod:
     branch: master
     commands:
+      - gulp 4-build-and-release-javascript
+      - gulp 5-commit-changes
       #- aws s3 cp ~/docs/swagger-codegen/quantimodo_v1_skds.zip s3://quantimodo-docs/
