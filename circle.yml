@@ -18,14 +18,18 @@ dependencies:
     #- cd quantimodo_v1_skds/javascript && npm install && npm test
     - npm install -g gulp browserify
     - npm install
-    #- gulp 0-download
-    #- gulp 1-decompress
     #- ls ./sdks-unzipped/javascript-client
     #- gulp copy-js-sdk-to-node-modules
     #- ls ./node_modules/quantimodo
 
 test:
   override:
+    - gulp 0-download
+    - sleep 5
+    - gulp 1-decompress
+    - sleep 5
+    - gulp 3-copy-to-repos
+    - sleep 5
     - gulp js-sdk-copy-to-node-modules
     - sleep 5
     - gulp check-responses
