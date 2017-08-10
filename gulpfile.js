@@ -10,6 +10,7 @@ var del = require('del');
 var decompress = require('gulp-decompress');
 var bugsnag = require("bugsnag");
 var q = require('q');
+var unzip = require('gulp-unzip');
 bugsnag.register("ae7bc49d1285848342342bb5c321a2cf");
 process.on('unhandledRejection', function (err, promise) {
     console.error("Unhandled rejection: " + (err && err.stack || err));
@@ -333,11 +334,63 @@ function getSdkDownloadLink() {
         });
 }
 
-function downloadSdk() {
-    return download(sdkDownloadLink)
-        .pipe(rename(getSdkNameForLanguage(language) + '.zip'))
-        .pipe(gulp.dest(sdksZippedPath));
+function getSwaggerDownloadRequestOptions(language) {
+    var requestOptions = getRequestOptions(language);
+    if (sdkSwaggerCodegenOptions[language]) {
+        requestOptions.body.options = sdkSwaggerCodegenOptions[language];
+    } else {
+        requestOptions.body.options = {};
+        requestOptions.body.options.apiPackage = "QuantiModoApi";
+        requestOptions.body.options.artifactId = "quantimodoApi";
+        requestOptions.body.options.authorEmail = "mike@quantimo.do";
+        requestOptions.body.options.authorName = "Mike P. Sinn";
+        requestOptions.body.options.classPrefix = "QM";
+        requestOptions.body.options.developerEmail = "mike@quantimo.do";
+        requestOptions.body.options.developerName = "Mike P. Sinn";
+        requestOptions.body.options.invokerPackage = (sdkSwaggerCodegenOptions[language] && sdkSwaggerCodegenOptions[language].invokerPackage) ? sdkSwaggerCodegenOptions[language].invokerPackage : "quantimodoApi";
+        requestOptions.body.options.modelPackage = "quantimodoApi";
+        requestOptions.body.options.moduleName = "quantimodoApi";
+        requestOptions.body.options.packageName = "quantimodo_api";
+        requestOptions.body.options.packagePath = "QuantiModoClient";
+        requestOptions.body.options.podName = "QuantiModoApi";
+        requestOptions.body.options.podVersion = getAppVersionNumber();
+        requestOptions.body.options.projectName = (sdkSwaggerCodegenOptions[language] && sdkSwaggerCodegenOptions[language].projectName) ? sdkSwaggerCodegenOptions[language].projectName : "quantimodoApi";
+    }
+    requestOptions.body.options.artifactVersion = requestOptions.body.options.projectVersion = requestOptions.body.options.packageVarsion =
+        requestOptions.body.options.podVersion = getAppVersionNumber();
+    requestOptions.body.options.artifactDescription = requestOptions.body.options.projectDescription = swaggerJson.info.description;
+    return requestOptions;
 }
+function downloadSdk(language) {
+    var requestOptions = getSwaggerDownloadRequestOptions(language);
+    if(debug){getSwaggerConfigOptions(language);}
+    return rp(requestOptions)
+        .then(function (parsedBody) {
+            var downloadLink = parsedBody.link.replace('https', 'http');
+            return download(downloadLink)
+                .pipe(rename(getSdkNameForLanguage(language) + '.zip'))
+                .pipe(gulp.dest(sdksZippedPath));
+        })
+        .catch(function (err) {
+            logError(err.error.message);
+        });
+}
+
+function downloadAndUnzipSdk(language, destinationPath) {
+    var requestOptions = getSwaggerDownloadRequestOptions(language);
+    if(debug){getSwaggerConfigOptions(language);}
+    return rp(requestOptions)
+        .then(function (parsedBody) {
+            var downloadLink = parsedBody.link.replace('https', 'http');
+            return download(downloadLink)
+                .pipe(unzip())
+                .pipe(gulp.dest(destinationPath));
+        })
+        .catch(function (err) {
+            logError(err.error.message);
+        });
+}
+
 function getSwaggerConfigOptions(language) {
     var getOptionsRequestOptions = getRequestOptions(language);
     getOptionsRequestOptions.method = "GET";
@@ -353,14 +406,14 @@ gulp.task('0-download', ['clean-folders-and-clone-repos'], function () {
     logInfo("Generating sdks with " + swaggerJsonUrl);
     logInfo("See https://github.com/swagger-api/swagger-codegen/tree/master/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages for available clients");
     for(var i = 0; i < languages.length; i++){
-        language = languages[i];
-        if(i === languages.length - 1){ return downloadSdk();}
-        downloadSdk();
+        if(i === languages.length - 1){ return downloadSdk(languages[i]);}
+        downloadSdk(languages[i]);
     }
 });
-gulp.task('download-one-sdk', ['get-sdk-download-link'], function () {
+gulp.task('js-sdk-download', [], function () {
+    languages = ['javascript'];
     logInfo("Generating " + language + "sdk using " +  swaggerJsonUrl);
-    return downloadSdk();
+    return downloadSdk('javascript');
 });
 gulp.task('get-sdk-download-link', [], function () {
     return getSdkDownloadLink();
@@ -373,7 +426,7 @@ gulp.task('1-decompress', ['clean-repos-except-git'], function () {
         unzipFileToFolder(getZipPathForLanguage(languages[i]), sdksUnzippedPath);
     }
 });
-gulp.task('decompress-sdk', ['download-one-sdk'], function () {
+gulp.task('decompress-sdk', ['js-sdk-download'], function () {
     return unzipFileToFolder(getZipPathForLanguage(language), sdksUnzippedPath);
 });
 gulp.task('3-copy-to-repos', ['browserify'], function(){
@@ -393,12 +446,11 @@ gulp.task('3-copy-to-repos', ['browserify'], function(){
         copyOneFoldersContentsToAnotherExceptReadme(getUnzippedPathForSdkLanguage(languages[i]), getRepoPathForSdkLanguage(languages[i]));
     }
 });
-gulp.task('delete-qm-node-module', ['decompress-sdk'], function(){
+gulp.task('delete-qm-node-module', [], function(){
     return cleanOneFolderExceptGit(pathToQuantiModoNodeModule);
 });
 gulp.task('js-sdk-copy-to-node-modules', ['delete-qm-node-module'], function(){
-    language = 'javascript';
-    return copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage(language), pathToQuantiModoNodeModule);
+    return downloadAndUnzipSdk('javascript', pathToQuantiModoNodeModule);
 });
 gulp.task('js-sdk-copy-qm-web', ['browserify'], function(){
     return gulp.src([getUnzippedPathForSdkLanguage('javascript') + '/quantimodo-web.js']).pipe(gulp.dest(pathToIonic + '/www/custom-lib/'));
