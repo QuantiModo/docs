@@ -26,7 +26,7 @@ dependencies:
 
 test:
   override:
-    - gulp copy-js-sdk-to-node-modules
+    - gulp js-sdk-copy-to-node-modules
     - sleep 5
     - gulp check-responses
 
