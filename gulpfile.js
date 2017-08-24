@@ -578,8 +578,9 @@ gulp.task('get-study', [], function (callback) {
     var requiredProperties = [
         'causeVariable',
         'effectVariable',
-        'highchartArray',
-        'statistics'
+        'highcharts',
+        'statistics',
+        'text'
     ];
     function qmApiResponseCallback(error, data, response) {
         handleApiResponse(error, data, response, requiredProperties);
