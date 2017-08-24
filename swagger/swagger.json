@@ -2817,6 +2817,37 @@
         },
         "parameters": []
       }
+    },
+    "/v3/study/publish": {
+      "post": {
+        "operationId": "postStudyPublish",
+        "tags": [
+          "study"
+        ],
+        "summary": "Post Study Publish",
+        "description": "Post Study Publish",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/PostStudyPublishResponse"
+            }
+          },
+          "401": {
+            "description": "Not authenticated"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "parameters": []
+      }
     }
   },
   "definitions": {
@@ -6200,6 +6231,12 @@
         },
         "commonTaggedVariables": {
           "$ref": "#/definitions/CommonVariableArray"
+        },
+        "variableCategory": {
+          "$ref": "#/definitions/VariableCategory"
+        },
+        "unit": {
+          "$ref": "#/definitions/Unit"
         }
       }
     },
@@ -8667,11 +8704,11 @@
           "format": "double"
         },
         "causeVariableDefaultUnitAbbreviatedName": {
-          "description": "Example: ",
+          "description": "Example: mg",
           "type": "string"
         },
         "effectVariableDefaultUnitAbbreviatedName": {
-          "description": "Example: ",
+          "description": "Example: %",
           "type": "string"
         },
         "eventAtUnixTime": {
@@ -11694,6 +11731,18 @@
         "instructionsForEffectVariable": {
           "description": "Example: <a href=\"https://quantimo.do\">Obtain QuantiModo</a> and use it to record your Overall Mood. Once you have a <a href=\"https://quantimo.do\">QuantiModo</a> account, <a href=\"https://app.quantimo.do/ionic/Modo/www/#/app/import\">connect your  QuantiModo account at QuantiModo</a> to automatically import and analyze your data.",
           "type": "string"
+        }
+      }
+    },
+    "PostStudyPublishResponse": {
+      "properties": {
+        "status": {
+          "description": "Example: ok",
+          "type": "string"
+        },
+        "success": {
+          "description": "Example: true",
+          "type": "boolean"
         }
       }
     }
