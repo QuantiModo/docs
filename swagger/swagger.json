@@ -9580,6 +9580,9 @@
         },
         "participantInstructions": {
           "$ref": "#/definitions/ParticipantInstruction"
+        },
+        "highcharts": {
+          "$ref": "#/definitions/Highchart"
         }
       }
     },
