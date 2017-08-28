@@ -251,6 +251,7 @@ gulp.task('4-build-and-release-javascript', ['check-responses'], function (callb
         executeCommand("cd " + getRepoPathForSdkLanguage('javascript') + " && npm version " + apiVersionNumber + ' && npm publish', function () {
             updateBowerAndPackageJsonVersions(pathToQmDocker);
             updateBowerAndPackageJsonVersions(pathToIonic);
+            updateBowerAndPackageJsonVersions(".");
             callback();
         });
     });
@@ -729,7 +730,7 @@ gulp.task('check-responses', ['test-endpoints'], function (callback) {
         '/api/v3/connectors/list',
         '/api/v3/measurements',
         '/api/v3/pairs',
-        '/api/v3/study',
+        '/api/v4/study',
         '/api/v3/units',
         '/api/v3/user'
     ];
