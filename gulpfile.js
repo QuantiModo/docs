@@ -569,6 +569,7 @@ gulp.task('get-measurements', ['post-measurements'], function (callback) {
 const dateTime = Date.now();
 const currentUnixTime = Math.floor(dateTime / 1000);
 var testVariableName = 'Unique Test Variable ' + currentUnixTime;
+gulp.task('default', ['check-responses']);
 gulp.task('post-measurements', [], function (callback) {
     var apiInstance = new Quantimodo.MeasurementsApi();
     var options = {};
