@@ -579,6 +579,7 @@ gulp.task('post-measurements', [], function (callback) {
     var apiInstance = new Quantimodo.MeasurementsApi();
     var options = {};
     function qmApiResponseCallback(error, data, response) {
+        logInfo(response.request.url + " response", response);
         handleApiResponse(error, data, response);
         callback();
     }
