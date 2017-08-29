@@ -525,6 +525,20 @@ function handleApiResponse(error, data, response, requiredProperties) {
     function getUrlFromResponse(response) {
         return "https://" + response.request.host + response.req.path;
     }
+    function checkRequiredProperties(data, requiredProperties) {
+        var exampleObject = data;
+        if (data.constructor === Array) {
+            exampleObject = data[0];
+        }
+        if (requiredProperties) {
+            for (var i = 0; i < requiredProperties.length; i++) {
+                if (!exampleObject[requiredProperties[i]]) {
+                    logError('Example object', exampleObject);
+                    throw "Required property " + requiredProperties[i] + " not returned from " + getUrlFromResponse(response);
+                }
+            }
+        }
+    }
     if (error && error.message) {
         logError(getUrlFromResponse(response) + " request failed: " + error.message, error);
         throw error.message;
@@ -532,13 +546,7 @@ function handleApiResponse(error, data, response, requiredProperties) {
     if(!data || Object.keys(data).length === 0){
         throw "data not returned from " + getUrlFromResponse(response);
     }
-    if(requiredProperties){
-        for(var i = 0; i < requiredProperties.length; i++){
-            if(!data[requiredProperties[i]]){
-                throw "Required property " + requiredProperties[i] + " not returned from " + getUrlFromResponse(response);
-            }
-        }
-    }
+    checkRequiredProperties(data, requiredProperties);
     fs.writeFileSync(convertPathToFilename(response.req.path), prettyJSONStringify(data));
     logDebug(getUrlFromResponse(response) + ' returned data', data);
 }
@@ -606,7 +614,8 @@ gulp.task('get-pairs', [], function (callback) {
 gulp.task('get-common-variables', [], function (callback) {
     var apiInstance = new Quantimodo.VariablesApi();
     function qmApiResponseCallback(error, data, response) {
-        handleApiResponse(error, data, response);
+        var requiredProperties = ['unitAbbreviatedName'];
+        handleApiResponse(error, data, response, requiredProperties);
         callback();
     }
     apiInstance.getCommonVariables({}, qmApiResponseCallback);
