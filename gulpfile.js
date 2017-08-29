@@ -577,9 +577,13 @@ const currentUnixTime = Math.floor(dateTime / 1000);
 var testVariableName = 'Unique Test Variable ' + currentUnixTime;
 gulp.task('default', ['check-responses']);
 gulp.task('post-measurements', [], function (callback) {
+    var expectedMethod = "POST";
     var apiInstance = new Quantimodo.MeasurementsApi();
     var options = {};
     function qmApiResponseCallback(error, data, response) {
+        if(response.req.method !== expectedMethod){
+            throw "Method should be " + expectedMethod + " but is actually " + response.req.method;
+        }
         //logInfo("POST " + response.request.url + " response body", response.body);
         delete response.text;
         logInfo("POST " + response.request.url + " response", response);
