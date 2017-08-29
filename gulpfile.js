@@ -540,7 +540,7 @@ function handleApiResponse(error, data, response, requiredProperties) {
         }
     }
     fs.writeFileSync(convertPathToFilename(response.req.path), prettyJSONStringify(data));
-    logInfo(getUrlFromResponse(response) + ' returned data', data);
+    logDebug(getUrlFromResponse(response) + ' returned data', data);
 }
 gulp.task('get-aggregated-correlations', [], function (callback) {
     var apiInstance = new Quantimodo.AnalyticsApi();
