@@ -452,7 +452,7 @@ function copySdksFromUnzippedPathToRepos(){
         copyOneFoldersContentsToAnotherExceptReadme(getUnzippedPathForSdkLanguage(languages[i]), getRepoPathForSdkLanguage(languages[i]));
     }
 }
-gulp.task('3-copy-to-repos', ['browserify'], function(){
+gulp.task('js-sdk-copy-everywhere', ['browserify'], function(){
     try {
         copyUnzippedJsSdkToQmDockerNodeModules();
         copyUnzippedJsSdkToIonicNodeModules();
@@ -462,10 +462,12 @@ gulp.task('3-copy-to-repos', ['browserify'], function(){
         logError(error, error);
     }
     try {
-        copyUnzippedJsSdkToApiDocsNodeModules();
+        return copyUnzippedJsSdkToApiDocsNodeModules();
     } catch (error){
         logError(error, error);
     }
+});
+gulp.task('3-copy-to-repos', ['browserify'], function(){
     return copySdksFromUnzippedPathToRepos();
 });
 gulp.task('5-commit-changes', [], function(){
