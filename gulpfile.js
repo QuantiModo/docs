@@ -676,6 +676,7 @@ gulp.task('get-unit-categories', [], function (callback) {
 gulp.task('get-user', [], function (callback) {
     var apiInstance = new Quantimodo.UserApi();
     function qmApiResponseCallback(error, data, response) {
+        logInfo(response.request.url + " response", response);
         handleApiResponse(error, data, response);
         callback();
     }
@@ -699,6 +700,7 @@ gulp.task('get-user-variables', [], function (callback) {
 });
 gulp.task('test-endpoints', [], function (callback) {
     runSequence(
+        'get-user',
         'get-aggregated-correlations',
         'get-connectors',
         'get-measurements',
@@ -709,7 +711,6 @@ gulp.task('test-endpoints', [], function (callback) {
         'get-tracking-reminders',
         'get-unit-categories',
         'get-units',
-        'get-user',
         'get-user-correlations',
         'get-user-variables',
         function (error) {
