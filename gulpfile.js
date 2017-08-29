@@ -567,7 +567,7 @@ gulp.task('get-measurements', ['post-measurements'], function (callback) {
         }
         callback();
     }
-    apiInstance.getMeasurements({sort: '-startTime'}, qmApiResponseCallback);
+    apiInstance.getMeasurements({sort: '-startTime', variableName: testVariableName}, qmApiResponseCallback);
 });
 const dateTime = Date.now();
 const currentUnixTime = Math.floor(dateTime / 1000);
