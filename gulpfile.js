@@ -540,7 +540,7 @@ function handleApiResponse(error, data, response, requiredProperties) {
         }
     }
     fs.writeFileSync(convertPathToFilename(response.req.path), prettyJSONStringify(data));
-    logDebug('API returned data', data);
+    logInfo(getUrlFromResponse(response) + ' returned data', data);
 }
 gulp.task('get-aggregated-correlations', [], function (callback) {
     var apiInstance = new Quantimodo.AnalyticsApi();
@@ -582,8 +582,10 @@ gulp.task('post-measurements', [], function (callback) {
         handleApiResponse(error, data, response);
         callback();
     }
-    apiInstance.postMeasurements({"variableName":testVariableName ,"value":1,"startTimeEpoch":currentUnixTime, "unitAbbreviatedName":"/5","variableCategoryName":"Emotions","combinationOperation":"MEAN"},
-        options, qmApiResponseCallback);
+    var measurement = {"variableName":testVariableName ,"value":1,"startTimeEpoch":currentUnixTime,
+        "unitAbbreviatedName":"/5","variableCategoryName":"Emotions","combinationOperation":"MEAN"};
+    logInfo("Posting measurement", measurement);
+    apiInstance.postMeasurements(measurement, options, qmApiResponseCallback);
 });
 gulp.task('get-pairs', [], function (callback) {
     var apiInstance = new Quantimodo.MeasurementsApi();
