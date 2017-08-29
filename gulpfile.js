@@ -418,7 +418,7 @@ gulp.task('0-download', ['clean-folders-and-clone-repos'], function () {
 });
 gulp.task('js-sdk-download', [], function () {
     languages = ['javascript'];
-    logInfo("Generating " + language + "sdk using " +  swaggerJsonUrl);
+    logInfo("Generating " + language + " sdk using " +  swaggerJsonUrl);
     return downloadSdk('javascript');
 });
 gulp.task('1-decompress', ['clean-repos-except-git'], function () {
