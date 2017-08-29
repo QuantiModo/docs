@@ -1011,6 +1011,7 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - readmeasurements
+  /v3/measurements/post:
     post:
       operationId: postMeasurements
       tags:

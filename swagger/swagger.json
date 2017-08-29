@@ -1285,7 +1285,9 @@
             ]
           }
         ]
-      },
+      }
+    },
+    "/v3/measurements/post": {
       "post": {
         "operationId": "postMeasurements",
         "tags": [
