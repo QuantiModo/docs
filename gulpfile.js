@@ -564,7 +564,7 @@ gulp.task('get-measurements', ['post-measurements'], function (callback) {
         handleApiResponse(error, data, response);
         if(data[0].startTimeEpoch !== currentUnixTime){
             logError("Most recent measurement from " + response.request.url, data[0]);
-            logDebug(response.request.url + " response", response);
+            logDebug("GET " + response.request.url + " response", response);
             throw "Could not get measurement we just posted!"
         }
         callback();
@@ -579,7 +579,7 @@ gulp.task('post-measurements', [], function (callback) {
     var apiInstance = new Quantimodo.MeasurementsApi();
     var options = {};
     function qmApiResponseCallback(error, data, response) {
-        logInfo(response.request.url + " response", response);
+        logInfo("POST " + response.request.url + " response", response);
         handleApiResponse(error, data, response);
         callback();
     }
