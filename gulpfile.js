@@ -561,6 +561,7 @@ gulp.task('get-measurements', ['post-measurements'], function (callback) {
     function qmApiResponseCallback(error, data, response) {
         handleApiResponse(error, data, response);
         if(data[0].startTimeEpoch !== currentUnixTime){
+            logError(response.request.url + " response", response);
             throw "Could not get measurement we just posted!"
         }
         callback();
