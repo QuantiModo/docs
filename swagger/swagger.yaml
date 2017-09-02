@@ -73,13 +73,13 @@ definitions:
       causeVariableCommonAlias:
         description: 'Example: '
         type: string
-      causeVariableDefaultUnitAbbreviatedName:
+      causeVariableUnitAbbreviatedName:
         description: 'Example: /5'
         type: string
-      causeVariableDefaultUnitId:
+      causeVariableUnitId:
         description: Unit Id of the predictor variable
         type: integer
-      causeVariableDefaultUnitName:
+      causeVariableUnitName:
         description: 'Example: 1 to 5 Rating'
         type: string
       causeVariableId:
@@ -207,13 +207,13 @@ definitions:
       effectVariableCommonAlias:
         description: 'Example: Mood_(psychology)'
         type: string
-      effectVariableDefaultUnitAbbreviatedName:
+      effectVariableUnitAbbreviatedName:
         description: 'Example: /5'
         type: string
-      effectVariableDefaultUnitId:
+      effectVariableUnitId:
         description: 'Example: 10'
         type: integer
-      effectVariableDefaultUnitName:
+      effectVariableUnitName:
         description: 'Example: 1 to 5 Rating'
         type: string
       effectVariableId:
@@ -664,7 +664,7 @@ definitions:
       alias:
         description: 'Example: '
         type: string
-      availableDefaultUnits:
+      availableUnits:
         items:
           $ref: '#/definitions/Unit'
         type: array
@@ -746,19 +746,19 @@ definitions:
         type: string
       dataSource:
         $ref: '#/definitions/DataSource'
-      defaultUnitAbbreviatedName:
+      unitAbbreviatedName:
         description: Abbreviated name of the default unit for the variable
         type: string
-      defaultUnitCategoryId:
+      unitCategoryId:
         description: 'Example: 1'
         type: integer
-      defaultUnitCategoryName:
+      unitCategoryName:
         description: 'Example: Duration'
         type: string
-      defaultUnitId:
+      unitId:
         description: Id of the default unit for the variable
         type: integer
-      defaultUnitName:
+      unitName:
         description: 'Example: Hours'
         type: string
       description:
@@ -885,10 +885,6 @@ definitions:
       lastValue:
         description: Last value
         type: integer
-      lastValueInUserVariableDefaultUnit:
-        description: 'Example: 101600'
-        format: double
-        type: number
       latestFillingTime:
         description: 'Example: 1501722000'
         type: integer
@@ -917,10 +913,6 @@ definitions:
         type: number
       mean:
         description: 'Example: 2202.3886251393'
-        format: double
-        type: number
-      meanInUserVariableDefaultUnit:
-        description: 'Example: 101260'
         format: double
         type: number
       measurementsAtLastAnalysis:
@@ -953,10 +945,6 @@ definitions:
       mostCommonValue:
         description: Most common value
         type: integer
-      mostCommonValueInUserVariableDefaultUnit:
-        description: 'Example: 101700'
-        format: double
-        type: number
       name:
         description: User-defined variable display name.
         type: string
@@ -1064,15 +1052,7 @@ definitions:
         description: 'Example: 8'
         format: double
         type: number
-      secondMostCommonValueInUserVariableDefaultUnit:
-        description: 'Example: 101500'
-        format: double
-        type: number
       secondToLastValue:
-        description: 'Example: 101800'
-        format: double
-        type: number
-      secondToLastValueInUserVariableDefaultUnit:
         description: 'Example: 101800'
         format: double
         type: number
@@ -1109,33 +1089,10 @@ definitions:
         description: 'Example: 7'
         format: double
         type: number
-      thirdMostCommonValueInUserVariableDefaultUnit:
-        description: 'Example: 101700'
-        format: double
-        type: number
       thirdToLastValue:
         description: 'Example: 102000'
         format: double
         type: number
-      thirdToLastValueInUserVariableDefaultUnit:
-        description: 'Example: 102000'
-        format: double
-        type: number
-      unitAbbreviatedName:
-        description: 'Example: h'
-        type: string
-      unitCategoryId:
-        description: 'Example: 1'
-        type: integer
-      unitCategoryName:
-        description: 'Example: Duration'
-        type: string
-      unitId:
-        description: 'Example: 34'
-        type: integer
-      unitName:
-        description: 'Example: Hours'
-        type: string
       updated:
         description: When this variable or its settings were last updated
         type: integer
@@ -1146,48 +1103,6 @@ definitions:
       userId:
         description: 'Example: 230'
         type: integer
-      userTaggedVariables:
-        $ref: '#/definitions/UserVariableArray'
-      userTagVariables:
-        $ref: '#/definitions/UserVariableArray'
-      userVariableDefaultUnitAbbreviatedName:
-        description: 'Example: h'
-        type: string
-      userVariableDefaultUnitCategoryId:
-        description: 'Example: 1'
-        type: integer
-      userVariableDefaultUnitCategoryName:
-        description: 'Example: Duration'
-        type: string
-      userVariableDefaultUnitId:
-        description: 'Example: 34'
-        type: integer
-      userVariableDefaultUnitName:
-        description: 'Example: Hours'
-        type: string
-      userVariableFillingValue:
-        description: 'Example: -1'
-        format: double
-        type: number
-      userVariableMostCommonConnectorId:
-        description: 'Example: 13'
-        type: integer
-      userVariableUpdatedAt:
-        description: 'Example: 2017-08-04 11:19:31'
-        format: date-time
-        type: string
-      userVariableValence:
-        description: 'Example: '
-        type: string
-      userVariableVariableCategoryId:
-        description: 'Example: 6'
-        type: integer
-      userVariableVariableCategoryName:
-        description: 'Example: Sleep'
-        type: string
-      userVariableWikipediaTitle:
-        description: 'Example: '
-        type: string
       valence:
         description: 'Example: positive'
         type: string
@@ -1223,7 +1138,7 @@ definitions:
         type: string
     required:
       - alias
-      - availableDefaultUnits
+      - availableUnits
       - causeOnly
       - chartsLinkDynamic
       - chartsLinkEmail
@@ -1239,8 +1154,8 @@ definitions:
       - commonVariableMostCommonConnectorId
       - commonVariableUpdatedAt
       - dataSource
-      - defaultUnitAbbreviatedName
-      - defaultUnitId
+      - unitAbbreviatedName
+      - unitId
       - durationOfAction
       - earliestFillingTime
       - earliestMeasurementTime
@@ -1267,20 +1182,17 @@ definitions:
       - lastUnit
       - lastUnitId
       - lastValue
-      - lastValueInUserVariableDefaultUnit
       - latestFillingTime
       - latestMeasurementTime
       - latestSourceTime
       - latestUserMeasurementTime
       - maximumAllowedValue
       - maximumRecordedValue
-      - meanInUserVariableDefaultUnit
       - measurementsAtLastAnalysis
       - minimumAllowedValue
       - minimumRecordedValue
       - mostCommonUnit
       - mostCommonValue
-      - mostCommonValueInUserVariableDefaultUnit
       - name
       - numberOfChanges
       - numberOfCorrelations
@@ -1300,25 +1212,14 @@ definitions:
       - price
       - productUrl
       - rawMeasurementsAtLastAnalysis
-      - secondMostCommonValueInUserVariableDefaultUnit
       - secondToLastValue
-      - secondToLastValueInUserVariableDefaultUnit
       - shareUserMeasurements
       - sources
       - status
       - subVariables
-      - thirdMostCommonValueInUserVariableDefaultUnit
       - thirdToLastValue
-      - thirdToLastValueInUserVariableDefaultUnit
       - updated
       - userId
-      - userTagVariables
-      - userTaggedVariables
-      - userVariableFillingValue
-      - userVariableMostCommonConnectorId
-      - userVariableUpdatedAt
-      - userVariableValence
-      - userVariableWikipediaTitle
       - variableCategoryName
       - variableFillingValue
       - variableId
@@ -1538,13 +1439,13 @@ definitions:
       causeVariableCombinationOperation:
         description: 'Example: MEAN'
         type: string
-      causeVariableDefaultUnitAbbreviatedName:
+      causeVariableUnitAbbreviatedName:
         description: 'Example: /5'
         type: string
-      causeVariableDefaultUnitId:
+      causeVariableUnitId:
         description: 'Example: 10'
         type: integer
-      causeVariableDefaultUnitName:
+      causeVariableUnitName:
         description: 'Example: 1 to 5 Rating'
         type: string
       causeVariableId:
@@ -1668,13 +1569,13 @@ definitions:
       effectVariableCommonAlias:
         description: 'Example: Mood_(psychology)'
         type: string
-      effectVariableDefaultUnitAbbreviatedName:
+      effectVariableUnitAbbreviatedName:
         description: 'Example: /5'
         type: string
-      effectVariableDefaultUnitId:
+      effectVariableUnitId:
         description: 'Example: 10'
         type: integer
-      effectVariableDefaultUnitName:
+      effectVariableUnitName:
         description: 'Example: 1 to 5 Rating'
         type: string
       effectVariableId:
@@ -2019,9 +1920,9 @@ definitions:
       - causeVariableCategoryId
       - causeVariableCategoryName
       - causeVariableCombinationOperation
-      - causeVariableDefaultUnitAbbreviatedName
-      - causeVariableDefaultUnitId
-      - causeVariableDefaultUnitName
+      - causeVariableUnitAbbreviatedName
+      - causeVariableUnitId
+      - causeVariableUnitName
       - causeVariableId
       - causeVariableImageUrl
       - causeVariableIonIcon
@@ -2047,9 +1948,9 @@ definitions:
       - effectVariableCategoryName
       - effectVariableCombinationOperation
       - effectVariableCommonAlias
-      - effectVariableDefaultUnitAbbreviatedName
-      - effectVariableDefaultUnitId
-      - effectVariableDefaultUnitName
+      - effectVariableUnitAbbreviatedName
+      - effectVariableUnitId
+      - effectVariableUnitName
       - effectVariableId
       - effectVariableImageUrl
       - effectVariableIonIcon
@@ -2284,13 +2185,13 @@ definitions:
       causeVariableCommonAlias:
         description: 'Example: '
         type: string
-      causeVariableDefaultUnitAbbreviatedName:
+      causeVariableUnitAbbreviatedName:
         description: 'Example: h'
         type: string
-      causeVariableDefaultUnitId:
+      causeVariableUnitId:
         description: 'Example: 34'
         type: integer
-      causeVariableDefaultUnitName:
+      causeVariableUnitName:
         description: 'Example: Hours'
         type: string
       causeVariableId:
@@ -2363,13 +2264,13 @@ definitions:
       effectVariableCommonAlias:
         description: 'Example: '
         type: string
-      effectVariableDefaultUnitAbbreviatedName:
+      effectVariableUnitAbbreviatedName:
         description: 'Example: h'
         type: string
-      effectVariableDefaultUnitId:
+      effectVariableUnitId:
         description: 'Example: 34'
         type: integer
-      effectVariableDefaultUnitName:
+      effectVariableUnitName:
         description: 'Example: Hours'
         type: string
       effectVariableId:
@@ -2755,7 +2656,7 @@ definitions:
     type: array
   GetPublicVariablesResponse:
     properties:
-      availableDefaultUnits:
+      availableUnits:
         items:
           $ref: '#/definitions/Unit'
         type: array
@@ -2775,19 +2676,19 @@ definitions:
         description: 'Example: 2015-03-05 05:01:48'
         format: date-time
         type: string
-      defaultUnitAbbreviatedName:
+      unitAbbreviatedName:
         description: 'Example: /5'
         type: string
-      defaultUnitCategoryId:
+      unitCategoryId:
         description: 'Example: 5'
         type: integer
-      defaultUnitCategoryName:
+      unitCategoryName:
         description: 'Example: Rating'
         type: string
-      defaultUnitId:
+      unitId:
         description: 'Example: 10'
         type: integer
-      defaultUnitName:
+      unitName:
         description: 'Example: 1 to 5 Rating'
         type: string
       description:
@@ -2904,38 +2805,23 @@ definitions:
         description: 'Example: 2'
         format: double
         type: number
-      unitAbbreviatedName:
-        description: 'Example: /5'
-        type: string
-      unitCategoryId:
-        description: 'Example: 5'
-        type: integer
-      unitCategoryName:
-        description: 'Example: Rating'
-        type: string
-      unitId:
-        description: 'Example: 10'
-        type: integer
-      unitName:
-        description: 'Example: 1 to 5 Rating'
-        type: string
       updatedAt:
         description: 'Example: 2017-07-31 19:55:38'
         format: date-time
         type: string
-      userVariableDefaultUnitAbbreviatedName:
+      userVariableUnitAbbreviatedName:
         description: 'Example: /5'
         type: string
-      userVariableDefaultUnitCategoryId:
+      userVariableUnitCategoryId:
         description: 'Example: 5'
         type: integer
-      userVariableDefaultUnitCategoryName:
+      userVariableUnitCategoryName:
         description: 'Example: Rating'
         type: string
-      userVariableDefaultUnitId:
+      userVariableUnitId:
         description: 'Example: 10'
         type: integer
-      userVariableDefaultUnitName:
+      userVariableUnitName:
         description: 'Example: 1 to 5 Rating'
         type: string
       userVariableVariableCategoryId:
@@ -3093,7 +2979,7 @@ definitions:
       - success
   GetTrackingRemindersResponse:
     properties:
-      availableDefaultUnits:
+      availableUnits:
         items:
           $ref: '#/definitions/Unit'
         type: array
@@ -3109,19 +2995,19 @@ definitions:
         type: string
       data:
         $ref: '#/definitions/TrackingRemindersArray'
-      defaultUnitAbbreviatedName:
+      unitAbbreviatedName:
         description: 'Example: mg'
         type: string
-      defaultUnitCategoryId:
+      unitCategoryId:
         description: 'Example: 3'
         type: integer
-      defaultUnitCategoryName:
+      unitCategoryName:
         description: 'Example: Weight'
         type: string
-      defaultUnitId:
+      unitId:
         description: 'Example: 7'
         type: integer
-      defaultUnitName:
+      unitName:
         description: 'Example: Milligrams'
         type: string
       defaultValue:
@@ -3157,10 +3043,6 @@ definitions:
         description: 'Example: ion-ios-medkit-outline'
         type: string
       lastValue:
-        description: 'Example: 500'
-        format: double
-        type: number
-      lastValueInUserVariableDefaultUnit:
         description: 'Example: 500'
         format: double
         type: number
@@ -3224,10 +3106,6 @@ definitions:
         description: 'Example: 250'
         format: double
         type: number
-      secondToLastValueInUserVariableDefaultUnit:
-        description: 'Example: 250'
-        format: double
-        type: number
       startTrackingDate:
         description: 'Example: 2016-12-16'
         type: string
@@ -3248,10 +3126,6 @@ definitions:
         description: 'Example: 250'
         format: double
         type: number
-      thirdToLastValueInUserVariableDefaultUnit:
-        description: 'Example: 250'
-        format: double
-        type: number
       trackingReminderId:
         description: 'Example: 30376'
         type: integer
@@ -3260,21 +3134,6 @@ definitions:
           Example:
           https://rximage.nlm.nih.gov/image/images/gallery/original/55111-0129-60_RXNAVIMAGE10_B051D81E.jpg
         type: string
-      unitAbbreviatedName:
-        description: 'Example: mg'
-        type: string
-      unitCategoryId:
-        description: 'Example: 3'
-        type: integer
-      unitCategoryName:
-        description: 'Example: Weight'
-        type: string
-      unitId:
-        description: 'Example: 7'
-        type: integer
-      unitName:
-        description: 'Example: Milligrams'
-        type: string
       updatedAt:
         description: 'Example: 2017-08-09 19:38:05'
         format: date-time
@@ -3282,19 +3141,19 @@ definitions:
       userId:
         description: 'Example: 230'
         type: integer
-      userVariableDefaultUnitAbbreviatedName:
+      userVariableUnitAbbreviatedName:
         description: 'Example: mg'
         type: string
-      userVariableDefaultUnitCategoryId:
+      userVariableUnitCategoryId:
         description: 'Example: 3'
         type: integer
-      userVariableDefaultUnitCategoryName:
+      userVariableUnitCategoryName:
         description: 'Example: Weight'
         type: string
-      userVariableDefaultUnitId:
+      userVariableUnitId:
         description: 'Example: 7'
         type: integer
-      userVariableDefaultUnitName:
+      userVariableUnitName:
         description: 'Example: Milligrams'
         type: string
       userVariableVariableCategoryId:
@@ -3555,19 +3414,19 @@ definitions:
       updatedAt:
         description: 'Example: 2017-07-30 21:08:36'
         type: string
-      userVariableDefaultUnitAbbreviatedName:
+      userVariableUnitAbbreviatedName:
         description: 'Example: count'
         type: string
-      userVariableDefaultUnitCategoryId:
+      userVariableUnitCategoryId:
         description: 'Example: 6'
         type: integer
-      userVariableDefaultUnitCategoryName:
+      userVariableUnitCategoryName:
         description: 'Example: Miscellany'
         type: string
-      userVariableDefaultUnitId:
+      userVariableUnitId:
         description: 'Example: 23'
         type: integer
-      userVariableDefaultUnitName:
+      userVariableUnitName:
         description: 'Example: Count'
         type: string
       userVariableVariableCategoryId:
@@ -3743,7 +3602,7 @@ definitions:
         description: 'Example: 101341.66666667'
         format: double
         type: number
-      causeVariableDefaultUnitAbbreviatedName:
+      causeVariableUnitAbbreviatedName:
         description: 'Example: mg'
         type: string
       effectMeasurement:
@@ -3754,7 +3613,7 @@ definitions:
         description: 'Example: 7.98'
         format: double
         type: number
-      effectVariableDefaultUnitAbbreviatedName:
+      effectVariableUnitAbbreviatedName:
         description: 'Example: %'
         type: string
       eventAt:
@@ -3778,10 +3637,10 @@ definitions:
     required:
       - causeMeasurement
       - causeMeasurementValue
-      - causeVariableDefaultUnitAbbreviatedName
+      - causeVariableUnitAbbreviatedName
       - effectMeasurement
       - effectMeasurementValue
-      - effectVariableDefaultUnitAbbreviatedName
+      - effectVariableUnitAbbreviatedName
       - startTimeSting
       - timestamp
   PairArray:
@@ -4135,13 +3994,13 @@ definitions:
       causeVariableCombinationOperation:
         description: 'Example: '
         type: string
-      causeVariableDefaultUnitAbbreviatedName:
+      causeVariableUnitAbbreviatedName:
         description: 'Example: Pa'
         type: string
-      causeVariableDefaultUnitId:
+      causeVariableUnitId:
         description: 'Example: 47'
         type: integer
-      causeVariableDefaultUnitName:
+      causeVariableUnitName:
         description: 'Example: '
         type: string
       causeVariableId:
@@ -4293,13 +4152,13 @@ definitions:
       effectVariableCategoryName:
         description: 'Example: Activity'
         type: string
-      effectVariableDefaultUnitAbbreviatedName:
+      effectVariableUnitAbbreviatedName:
         description: 'Example: h'
         type: string
-      effectVariableDefaultUnitId:
+      effectVariableUnitId:
         description: 'Example: 34'
         type: integer
-      effectVariableDefaultUnitName:
+      effectVariableUnitName:
         description: 'Example: '
         type: string
       effectVariableId:
@@ -4740,9 +4599,9 @@ definitions:
       - causeVariableCategoryId
       - causeVariableCategoryName
       - causeVariableCombinationOperation
-      - causeVariableDefaultUnitAbbreviatedName
-      - causeVariableDefaultUnitId
-      - causeVariableDefaultUnitName
+      - causeVariableUnitAbbreviatedName
+      - causeVariableUnitId
+      - causeVariableUnitName
       - causeVariableId
       - causeVariableImageUrl
       - causeVariableIonIcon
@@ -4776,9 +4635,9 @@ definitions:
       - effectValueSpread
       - effectVariableCategoryId
       - effectVariableCategoryName
-      - effectVariableDefaultUnitAbbreviatedName
-      - effectVariableDefaultUnitId
-      - effectVariableDefaultUnitName
+      - effectVariableUnitAbbreviatedName
+      - effectVariableUnitId
+      - effectVariableUnitName
       - effectVariableId
       - effectVariableImageUrl
       - effectVariableIonIcon
@@ -5071,7 +4930,7 @@ definitions:
       - valueSuffix
   TrackingReminder:
     properties:
-      availableDefaultUnits:
+      availableUnits:
         items:
           $ref: '#/definitions/Unit'
         type: array
@@ -5088,19 +4947,19 @@ definitions:
         description: 'Example: 2016-05-18 02:24:08'
         format: date-time
         type: string
-      defaultUnitAbbreviatedName:
+      unitAbbreviatedName:
         description: 'Example: /5'
         type: string
-      defaultUnitCategoryId:
+      unitCategoryId:
         description: 'Example: 5'
         type: integer
-      defaultUnitCategoryName:
+      unitCategoryName:
         description: 'Example: Rating'
         type: string
-      defaultUnitId:
+      unitId:
         description: 'Example: 10'
         type: integer
-      defaultUnitName:
+      unitName:
         description: 'Example: 1 to 5 Rating'
         type: string
       defaultValue:
@@ -5148,10 +5007,6 @@ definitions:
         format: date-time
         type: string
       lastValue:
-        description: 'Example: 2'
-        format: double
-        type: number
-      lastValueInUserVariableDefaultUnit:
         description: 'Example: 2'
         format: double
         type: number
@@ -5241,10 +5096,6 @@ definitions:
         description: 'Example: 1'
         format: double
         type: number
-      secondToLastValueInUserVariableDefaultUnit:
-        description: 'Example: 1'
-        format: double
-        type: number
       sms:
         description: True if the reminders should be delivered via SMS
         type: boolean
@@ -5273,30 +5124,11 @@ definitions:
         description: 'Example: 3'
         format: double
         type: number
-      thirdToLastValueInUserVariableDefaultUnit:
-        description: 'Example: 3'
-        format: double
-        type: number
       trackingReminderId:
         description: 'Example: 11841'
         type: integer
       trackingReminderImageUrl:
         description: 'Example: Not Found'
-        type: string
-      unitAbbreviatedName:
-        description: Abbreviated name of the unit to be used when sending measurements
-        type: string
-      unitCategoryId:
-        description: 'Example: 5'
-        type: integer
-      unitCategoryName:
-        description: 'Example: Rating'
-        type: string
-      unitId:
-        description: 'Example: 10'
-        type: integer
-      unitName:
-        description: 'Example: 1 to 5 Rating'
         type: string
       updatedAt:
         description: >-
@@ -5309,19 +5141,19 @@ definitions:
         description: ID of User
         format: int32
         type: integer
-      userVariableDefaultUnitAbbreviatedName:
+      userVariableUnitAbbreviatedName:
         description: 'Example: /5'
         type: string
-      userVariableDefaultUnitCategoryId:
+      userVariableUnitCategoryId:
         description: 'Example: 5'
         type: integer
-      userVariableDefaultUnitCategoryName:
+      userVariableUnitCategoryName:
         description: 'Example: Rating'
         type: string
-      userVariableDefaultUnitId:
+      userVariableUnitId:
         description: 'Example: 10'
         type: integer
-      userVariableDefaultUnitName:
+      userVariableUnitName:
         description: 'Example: 1 to 5 Rating'
         type: string
       userVariableVariableCategoryId:
@@ -5380,7 +5212,7 @@ definitions:
         items:
           $ref: '#/definitions/TrackingReminderNotificationActionArray'
         type: array
-      availableDefaultUnits:
+      availableUnits:
         items:
           $ref: '#/definitions/Unit'
         type: array
@@ -5397,19 +5229,19 @@ definitions:
         description: 'Example: 2017-07-29 20:49:54'
         format: date-time
         type: string
-      defaultUnitAbbreviatedName:
+      unitAbbreviatedName:
         description: 'Example: /5'
         type: string
-      defaultUnitCategoryId:
+      unitCategoryId:
         description: 'Example: 5'
         type: integer
-      defaultUnitCategoryName:
+      unitCategoryName:
         description: 'Example: Rating'
         type: string
-      defaultUnitId:
+      unitId:
         description: 'Example: 10'
         type: integer
-      defaultUnitName:
+      unitName:
         description: 'Example: 1 to 5 Rating'
         type: string
       defaultValue:
@@ -5447,10 +5279,6 @@ definitions:
         description: 'Example: 3'
         format: double
         type: number
-      lastValueInUserVariableDefaultUnit:
-        description: 'Example: 3'
-        format: double
-        type: number
       manualTracking:
         description: 'Example: 1'
         type: boolean
@@ -5461,10 +5289,6 @@ definitions:
         description: 'Example: 1'
         type: integer
       mostCommonValue:
-        description: 'Example: 3'
-        format: double
-        type: number
-      mostCommonValueInUserVariableDefaultUnit:
         description: 'Example: 3'
         format: double
         type: number
@@ -5515,15 +5339,7 @@ definitions:
         description: 'Example: 4'
         format: double
         type: number
-      secondMostCommonValueInUserVariableDefaultUnit:
-        description: 'Example: 4'
-        format: double
-        type: number
       secondToLastValue:
-        description: 'Example: 1'
-        format: double
-        type: number
-      secondToLastValueInUserVariableDefaultUnit:
         description: 'Example: 1'
         format: double
         type: number
@@ -5539,15 +5355,7 @@ definitions:
         description: 'Example: 2'
         format: double
         type: number
-      thirdMostCommonValueInUserVariableDefaultUnit:
-        description: 'Example: 2'
-        format: double
-        type: number
       thirdToLastValue:
-        description: 'Example: 2'
-        format: double
-        type: number
-      thirdToLastValueInUserVariableDefaultUnit:
         description: 'Example: 2'
         format: double
         type: number
@@ -5587,21 +5395,6 @@ definitions:
       trackingReminderNotificationTimeLocal:
         description: 'Example: 15:48:44'
         type: string
-      unitAbbreviatedName:
-        description: Abbreviated name of the unit to be used when sending measurements
-        type: string
-      unitCategoryId:
-        description: 'Example: 5'
-        type: integer
-      unitCategoryName:
-        description: 'Example: Rating'
-        type: string
-      unitId:
-        description: 'Example: 10'
-        type: integer
-      unitName:
-        description: 'Example: 1 to 5 Rating'
-        type: string
       updatedAt:
         description: >-
           When the record in the database was last updated. Use UTC ISO 8601
@@ -5613,19 +5406,19 @@ definitions:
         description: ID of User
         format: int32
         type: integer
-      userVariableDefaultUnitAbbreviatedName:
+      userVariableUnitAbbreviatedName:
         description: 'Example: /5'
         type: string
-      userVariableDefaultUnitCategoryId:
+      userVariableUnitCategoryId:
         description: 'Example: 5'
         type: integer
-      userVariableDefaultUnitCategoryName:
+      userVariableUnitCategoryName:
         description: 'Example: Rating'
         type: string
-      userVariableDefaultUnitId:
+      userVariableUnitId:
         description: 'Example: 10'
         type: integer
-      userVariableDefaultUnitName:
+      userVariableUnitName:
         description: 'Example: 1 to 5 Rating'
         type: string
       userVariableVariableCategoryId:
@@ -5660,7 +5453,7 @@ definitions:
         type: string
     required:
       - actionArray
-      - availableDefaultUnits
+      - availableUnits
       - fillingValue
       - id
       - trackAllActions
@@ -6032,13 +5825,13 @@ definitions:
       causeVariableCombinationOperation:
         description: The way cause measurements are aggregated
         type: string
-      causeVariableDefaultUnitAbbreviatedName:
+      causeVariableUnitAbbreviatedName:
         description: 'Example: /5'
         type: string
-      causeVariableDefaultUnitId:
+      causeVariableUnitId:
         description: Unit Id of the predictor variable
         type: integer
-      causeVariableDefaultUnitName:
+      causeVariableUnitName:
         description: 'Example: 1 to 5 Rating'
         type: string
       causeVariableId:
@@ -6155,13 +5948,13 @@ definitions:
       effectVariableCommonAlias:
         description: 'Example: Mood_(psychology)'
         type: string
-      effectVariableDefaultUnitAbbreviatedName:
+      effectVariableUnitAbbreviatedName:
         description: 'Example: /5'
         type: string
-      effectVariableDefaultUnitId:
+      effectVariableUnitId:
         description: 'Example: 10'
         type: integer
-      effectVariableDefaultUnitName:
+      effectVariableUnitName:
         description: 'Example: 1 to 5 Rating'
         type: string
       effectVariableId:
@@ -6500,10 +6293,10 @@ definitions:
       causeVariableCategoryName:
         description: 'Example: Sleep'
         type: string
-      causeVariableDefaultUnitAbbreviatedName:
+      causeVariableUnitAbbreviatedName:
         description: 'Example: h'
         type: string
-      causeVariableDefaultUnitId:
+      causeVariableUnitId:
         description: 'Example: 34'
         type: integer
       causeVariableId:
@@ -6637,10 +6430,10 @@ definitions:
       effectVariableCategoryName:
         description: 'Example: Emotions'
         type: string
-      effectVariableDefaultUnitAbbreviatedName:
+      effectVariableUnitAbbreviatedName:
         description: 'Example: /5'
         type: string
-      effectVariableDefaultUnitId:
+      effectVariableUnitId:
         description: 'Example: 10'
         type: integer
       effectVariableId:
@@ -7004,7 +6797,7 @@ definitions:
       alias:
         description: 'Example: '
         type: string
-      availableDefaultUnits:
+      availableUnits:
         items:
           $ref: '#/definitions/Unit'
         type: array
@@ -7073,20 +6866,20 @@ definitions:
           `YYYY-MM-DDThh:mm:ss`  datetime format
         format: date-time
         type: string
-      defaultUnitAbbreviatedName:
+      unitAbbreviatedName:
         description: 'Example: count'
         type: string
-      defaultUnitCategoryId:
+      unitCategoryId:
         description: 'Example: 6'
         type: integer
-      defaultUnitCategoryName:
+      unitCategoryName:
         description: 'Example: Miscellany'
         type: string
-      defaultUnitId:
+      unitId:
         description: ID of unit to use for this variable
         format: int32
         type: integer
-      defaultUnitName:
+      unitName:
         description: 'Example: Count'
         type: string
       description:
@@ -7218,10 +7011,6 @@ definitions:
         description: Last Value
         format: float
         type: number
-      lastValueInUserVariableDefaultUnit:
-        description: 'Example: 500'
-        format: double
-        type: number
       latestFillingTime:
         description: Latest filling time
         format: int32
@@ -7270,10 +7059,6 @@ definitions:
         description: Mean
         format: float
         type: number
-      meanInUserVariableDefaultUnit:
-        description: 'Example: 0.31159'
-        format: double
-        type: number
       measurementsAtLastAnalysis:
         description: Number of measurements at last analysis
         format: int32
@@ -7306,10 +7091,6 @@ definitions:
       mostCommonValue:
         description: Most common value
         format: float
-        type: number
-      mostCommonValueInUserVariableDefaultUnit:
-        description: 'Example: 250'
-        format: double
         type: number
       name:
         description: 'Example: Trader Joes Bedtime Tea / Sleepytime Tea (any Brand)'
@@ -7421,15 +7202,7 @@ definitions:
         description: 'Example: 1'
         format: double
         type: number
-      secondMostCommonValueInUserVariableDefaultUnit:
-        description: 'Example: 1'
-        format: double
-        type: number
       secondToLastValue:
-        description: 'Example: 250'
-        format: double
-        type: number
-      secondToLastValueInUserVariableDefaultUnit:
         description: 'Example: 250'
         format: double
         type: number
@@ -7465,35 +7238,12 @@ definitions:
         description: 'Example: 6'
         format: double
         type: number
-      thirdMostCommonValueInUserVariableDefaultUnit:
-        description: 'Example: 6'
-        format: double
-        type: number
       thirdToLastValue:
-        description: 'Example: 250'
-        format: double
-        type: number
-      thirdToLastValueInUserVariableDefaultUnit:
         description: 'Example: 250'
         format: double
         type: number
       unit:
         $ref: '#/definitions/Unit'
-      unitAbbreviatedName:
-        description: 'Example: count'
-        type: string
-      unitCategoryId:
-        description: 'Example: 6'
-        type: integer
-      unitCategoryName:
-        description: 'Example: Miscellany'
-        type: string
-      unitId:
-        description: 'Example: 23'
-        type: integer
-      unitName:
-        description: 'Example: Count'
-        type: string
       updated:
         description: updated
         format: int32
@@ -7516,19 +7266,19 @@ definitions:
         $ref: '#/definitions/UserVariableArray'
       userTagVariables:
         $ref: '#/definitions/UserVariableArray'
-      userVariableDefaultUnitAbbreviatedName:
+      userVariableUnitAbbreviatedName:
         description: 'Example: count'
         type: string
-      userVariableDefaultUnitCategoryId:
+      userVariableUnitCategoryId:
         description: 'Example: 6'
         type: integer
-      userVariableDefaultUnitCategoryName:
+      userVariableUnitCategoryName:
         description: 'Example: Miscellany'
         type: string
-      userVariableDefaultUnitId:
+      userVariableUnitId:
         description: 'Example: 23'
         type: integer
-      userVariableDefaultUnitName:
+      userVariableUnitName:
         description: 'Example: Count'
         type: string
       userVariableFillingValue:
@@ -7589,7 +7339,7 @@ definitions:
         type: string
     required:
       - alias
-      - availableDefaultUnits
+      - availableUnits
       - childUserTagVariables
       - commonTagVariables
       - commonTaggedVariables
@@ -7633,10 +7383,10 @@ definitions:
         description: 'Example: '
         format: date-time
         type: string
-      defaultUnitAbbreviatedName:
+      unitAbbreviatedName:
         description: 'Example: /5'
         type: string
-      defaultUnitId:
+      unitId:
         description: 'Example: 10'
         type: integer
       durationOfAction:

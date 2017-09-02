@@ -92,15 +92,15 @@
           "description": "Example: ",
           "type": "string"
         },
-        "causeVariableDefaultUnitAbbreviatedName": {
+        "causeVariableUnitAbbreviatedName": {
           "description": "Example: /5",
           "type": "string"
         },
-        "causeVariableDefaultUnitId": {
+        "causeVariableUnitId": {
           "description": "Unit Id of the predictor variable",
           "type": "integer"
         },
-        "causeVariableDefaultUnitName": {
+        "causeVariableUnitName": {
           "description": "Example: 1 to 5 Rating",
           "type": "string"
         },
@@ -231,15 +231,15 @@
           "description": "Example: Mood_(psychology)",
           "type": "string"
         },
-        "effectVariableDefaultUnitAbbreviatedName": {
+        "effectVariableUnitAbbreviatedName": {
           "description": "Example: /5",
           "type": "string"
         },
-        "effectVariableDefaultUnitId": {
+        "effectVariableUnitId": {
           "description": "Example: 10",
           "type": "integer"
         },
-        "effectVariableDefaultUnitName": {
+        "effectVariableUnitName": {
           "description": "Example: 1 to 5 Rating",
           "type": "string"
         },
@@ -773,7 +773,7 @@
           "description": "Example: ",
           "type": "string"
         },
-        "availableDefaultUnits": {
+        "availableUnits": {
           "items": {
             "$ref": "#/definitions/Unit"
           },
@@ -853,23 +853,23 @@
         "dataSource": {
           "$ref": "#/definitions/DataSource"
         },
-        "defaultUnitAbbreviatedName": {
+        "unitAbbreviatedName": {
           "description": "Abbreviated name of the default unit for the variable",
           "type": "string"
         },
-        "defaultUnitCategoryId": {
+        "unitCategoryId": {
           "description": "Example: 1",
           "type": "integer"
         },
-        "defaultUnitCategoryName": {
+        "unitCategoryName": {
           "description": "Example: Duration",
           "type": "string"
         },
-        "defaultUnitId": {
+        "unitId": {
           "description": "Id of the default unit for the variable",
           "type": "integer"
         },
-        "defaultUnitName": {
+        "unitName": {
           "description": "Example: Hours",
           "type": "string"
         },
@@ -1016,11 +1016,6 @@
           "description": "Last value",
           "type": "integer"
         },
-        "lastValueInUserVariableDefaultUnit": {
-          "description": "Example: 101600",
-          "format": "double",
-          "type": "number"
-        },
         "latestFillingTime": {
           "description": "Example: 1501722000",
           "type": "integer"
@@ -1053,11 +1048,6 @@
         },
         "mean": {
           "description": "Example: 2202.3886251393",
-          "format": "double",
-          "type": "number"
-        },
-        "meanInUserVariableDefaultUnit": {
-          "description": "Example: 101260",
           "format": "double",
           "type": "number"
         },
@@ -1095,11 +1085,6 @@
         "mostCommonValue": {
           "description": "Most common value",
           "type": "integer"
-        },
-        "mostCommonValueInUserVariableDefaultUnit": {
-          "description": "Example: 101700",
-          "format": "double",
-          "type": "number"
         },
         "name": {
           "description": "User-defined variable display name.",
@@ -1217,17 +1202,7 @@
           "format": "double",
           "type": "number"
         },
-        "secondMostCommonValueInUserVariableDefaultUnit": {
-          "description": "Example: 101500",
-          "format": "double",
-          "type": "number"
-        },
         "secondToLastValue": {
-          "description": "Example: 101800",
-          "format": "double",
-          "type": "number"
-        },
-        "secondToLastValueInUserVariableDefaultUnit": {
           "description": "Example: 101800",
           "format": "double",
           "type": "number"
@@ -1270,40 +1245,10 @@
           "format": "double",
           "type": "number"
         },
-        "thirdMostCommonValueInUserVariableDefaultUnit": {
-          "description": "Example: 101700",
-          "format": "double",
-          "type": "number"
-        },
         "thirdToLastValue": {
           "description": "Example: 102000",
           "format": "double",
           "type": "number"
-        },
-        "thirdToLastValueInUserVariableDefaultUnit": {
-          "description": "Example: 102000",
-          "format": "double",
-          "type": "number"
-        },
-        "unitAbbreviatedName": {
-          "description": "Example: h",
-          "type": "string"
-        },
-        "unitCategoryId": {
-          "description": "Example: 1",
-          "type": "integer"
-        },
-        "unitCategoryName": {
-          "description": "Example: Duration",
-          "type": "string"
-        },
-        "unitId": {
-          "description": "Example: 34",
-          "type": "integer"
-        },
-        "unitName": {
-          "description": "Example: Hours",
-          "type": "string"
         },
         "updated": {
           "description": "When this variable or its settings were last updated",
@@ -1317,62 +1262,6 @@
         "userId": {
           "description": "Example: 230",
           "type": "integer"
-        },
-        "userTaggedVariables": {
-          "$ref": "#/definitions/UserVariableArray"
-        },
-        "userTagVariables": {
-          "$ref": "#/definitions/UserVariableArray"
-        },
-        "userVariableDefaultUnitAbbreviatedName": {
-          "description": "Example: h",
-          "type": "string"
-        },
-        "userVariableDefaultUnitCategoryId": {
-          "description": "Example: 1",
-          "type": "integer"
-        },
-        "userVariableDefaultUnitCategoryName": {
-          "description": "Example: Duration",
-          "type": "string"
-        },
-        "userVariableDefaultUnitId": {
-          "description": "Example: 34",
-          "type": "integer"
-        },
-        "userVariableDefaultUnitName": {
-          "description": "Example: Hours",
-          "type": "string"
-        },
-        "userVariableFillingValue": {
-          "description": "Example: -1",
-          "format": "double",
-          "type": "number"
-        },
-        "userVariableMostCommonConnectorId": {
-          "description": "Example: 13",
-          "type": "integer"
-        },
-        "userVariableUpdatedAt": {
-          "description": "Example: 2017-08-04 11:19:31",
-          "format": "date-time",
-          "type": "string"
-        },
-        "userVariableValence": {
-          "description": "Example: ",
-          "type": "string"
-        },
-        "userVariableVariableCategoryId": {
-          "description": "Example: 6",
-          "type": "integer"
-        },
-        "userVariableVariableCategoryName": {
-          "description": "Example: Sleep",
-          "type": "string"
-        },
-        "userVariableWikipediaTitle": {
-          "description": "Example: ",
-          "type": "string"
         },
         "valence": {
           "description": "Example: positive",
@@ -1415,7 +1304,7 @@
       },
       "required": [
         "alias",
-        "availableDefaultUnits",
+        "availableUnits",
         "causeOnly",
         "chartsLinkDynamic",
         "chartsLinkEmail",
@@ -1431,8 +1320,8 @@
         "commonVariableMostCommonConnectorId",
         "commonVariableUpdatedAt",
         "dataSource",
-        "defaultUnitAbbreviatedName",
-        "defaultUnitId",
+        "unitAbbreviatedName",
+        "unitId",
         "durationOfAction",
         "earliestFillingTime",
         "earliestMeasurementTime",
@@ -1459,20 +1348,17 @@
         "lastUnit",
         "lastUnitId",
         "lastValue",
-        "lastValueInUserVariableDefaultUnit",
         "latestFillingTime",
         "latestMeasurementTime",
         "latestSourceTime",
         "latestUserMeasurementTime",
         "maximumAllowedValue",
         "maximumRecordedValue",
-        "meanInUserVariableDefaultUnit",
         "measurementsAtLastAnalysis",
         "minimumAllowedValue",
         "minimumRecordedValue",
         "mostCommonUnit",
         "mostCommonValue",
-        "mostCommonValueInUserVariableDefaultUnit",
         "name",
         "numberOfChanges",
         "numberOfCorrelations",
@@ -1492,25 +1378,14 @@
         "price",
         "productUrl",
         "rawMeasurementsAtLastAnalysis",
-        "secondMostCommonValueInUserVariableDefaultUnit",
         "secondToLastValue",
-        "secondToLastValueInUserVariableDefaultUnit",
         "shareUserMeasurements",
         "sources",
         "status",
         "subVariables",
-        "thirdMostCommonValueInUserVariableDefaultUnit",
         "thirdToLastValue",
-        "thirdToLastValueInUserVariableDefaultUnit",
         "updated",
         "userId",
-        "userTagVariables",
-        "userTaggedVariables",
-        "userVariableFillingValue",
-        "userVariableMostCommonConnectorId",
-        "userVariableUpdatedAt",
-        "userVariableValence",
-        "userVariableWikipediaTitle",
         "variableCategoryName",
         "variableFillingValue",
         "variableId",
@@ -1788,15 +1663,15 @@
           "description": "Example: MEAN",
           "type": "string"
         },
-        "causeVariableDefaultUnitAbbreviatedName": {
+        "causeVariableUnitAbbreviatedName": {
           "description": "Example: /5",
           "type": "string"
         },
-        "causeVariableDefaultUnitId": {
+        "causeVariableUnitId": {
           "description": "Example: 10",
           "type": "integer"
         },
-        "causeVariableDefaultUnitName": {
+        "causeVariableUnitName": {
           "description": "Example: 1 to 5 Rating",
           "type": "string"
         },
@@ -1849,7 +1724,7 @@
           "type": "number"
         },
         "dataAnalysis": {
-          "description": "Example: It was assumed that 0 hours would pass before a change in Sleep Quality would produce an observable change in Overall Mood.  It was assumed that Sleep Quality could produce an observable change in Overall Mood for as much as 7 days after the stimulus event.  ",
+          "description": "Example: It was assumed that 0 hours would pass before a change in Sleep Quality would produce an observable change in Overall Mood.  It was assumed that Sleep Quality could produce an observable change in Overall Mood for as much as 7 days after the stimulus event.",
           "type": "string"
         },
         "dataSources": {
@@ -1911,15 +1786,15 @@
           "description": "Example: Mood_(psychology)",
           "type": "string"
         },
-        "effectVariableDefaultUnitAbbreviatedName": {
+        "effectVariableUnitAbbreviatedName": {
           "description": "Example: /5",
           "type": "string"
         },
-        "effectVariableDefaultUnitId": {
+        "effectVariableUnitId": {
           "description": "Example: 10",
           "type": "integer"
         },
-        "effectVariableDefaultUnitName": {
+        "effectVariableUnitName": {
           "description": "Example: 1 to 5 Rating",
           "type": "string"
         },
@@ -2090,7 +1965,7 @@
           "type": "boolean"
         },
         "significanceExplanation": {
-          "description": "Example: Using a two-tailed t-test with alpha = 0.05, it was determined that the change in Overall Mood is statistically significant at 95% confidence interval. ",
+          "description": "Example: Using a two-tailed t-test with alpha = 0.05, it was determined that the change in Overall Mood is statistically significant at 95% confidence interval.",
           "type": "string"
         },
         "significantDifference": {
@@ -2112,15 +1987,15 @@
           "type": "number"
         },
         "studyAbstract": {
-          "description": "Example: Your data suggests with a high degree of confidence (p=0) that Sleep Quality (Sleep) has a moderately positive predictive relationship (R=0.538) with Overall Mood  (Emotions).  The highest quartile of Overall Mood  measurements were observed following an average 4.14/5 Sleep Quality.  The lowest quartile of Overall Mood  measurements were observed following an average 3.03/5 Sleep Quality.",
+          "description": "Example: Your data suggests with a high degree of confidence (p=0) that Sleep Quality (Sleep) has a moderately positive predictive relationship (R=0.538) with Overall Mood  (Emotions).  The highest quartile of Overall Mood  measurements were observed following an average 4.14/5 Sleep Quality.  The lowest quartile of Overall Mood measurements were observed following an average 3.03/5 Sleep Quality.",
           "type": "string"
         },
         "studyDesign": {
-          "description": "Example: This study is based on data donated by one QuantiModo user. Thus, the study design is consistent with an n=1 observational natural experiment. ",
+          "description": "Example: This study is based on data donated by one QuantiModo user. Thus, the study design is consistent with an n=1 observational natural experiment.",
           "type": "string"
         },
         "studyLimitations": {
-          "description": "Example: As with any human experiment, it was impossible to control for all potentially confounding variables. \n            \n            Correlation does not necessarily imply correlation.  We can never know for sure if one factor is definitely the cause of an outcome.  \n            However, lack of correlation definitely implies the lack of a causal relationship.  Hence, we can with great \n            confidence rule out non-existent relationships. For instance, if we discover no relationship between mood\n            and an antidepressant this information is just as or even more valuable than the discovery that there is a relationship. \n            <br>\n            <br>\n           \n            We can also take advantage of several characteristics of time series data from many subjects  to infer the likelihood of a causal relationship if we do find a correlational relationship. \n            The criteria for causation are a group of minimal conditions necessary to provide adequate evidence of a causal relationship between an incidence and a possible consequence.\n            The list of the criteria is as follows:\n            <br>\n            1. Strength (effect size): A small association does not mean that there is not a causal effect, though the larger the association, the more likely that it is causal.\n            <br>\n            2. Consistency (reproducibility): Consistent findings observed by different persons in different places with different samples strengthens the likelihood of an effect.\n            <br>\n            3. Specificity: Causation is likely if a very specific population at a specific site and disease with no other likely explanation. The more specific an association between a factor and an effect is, the bigger the probability of a causal relationship.\n            <br>\n            4. Temporality: The effect has to occur after the cause (and if there is an expected delay between the cause and expected effect, then the effect must occur after that delay).\n            <br>\n            5. Biological gradient: Greater exposure should generally lead to greater incidence of the effect. However, in some cases, the mere presence of the factor can trigger the effect. In other cases, an inverse proportion is observed: greater exposure leads to lower incidence.\n            <br>\n            6. Plausibility: A plausible mechanism between cause and effect is helpful.\n            <br>\n            7. Coherence: Coherence between epidemiological and laboratory findings increases the likelihood of an effect.\n            <br>\n            8. Experiment: \"Occasionally it is possible to appeal to experimental evidence\".\n            <br>\n            9. Analogy: The effect of similar factors may be considered.\n            <br>\n            <br>\n             \n             The confidence in a causal relationship is bolstered by the fact that time-precedence was taken into account in all calculations. Furthermore, in accordance with the law of large numbers (LLN), the predictive power and accuracy of these results will continually grow over time.  298 paired data points were used in this analysis.   Assuming that the relationship is merely coincidental, as the participant independently modifies their Sleep Quality values, the observed strength of the relationship will decline until it is below the threshold of significance.  To it another way, in the case that we do find a spurious correlation, suggesting that banana intake improves mood for instance,\n            one will likely increase their banana intake.  Due to the fact that this correlation is spurious, it is unlikely\n            that you will see a continued and persistent corresponding increase in mood.  So over time, the spurious correlation will\n            naturally dissipate.Furthermore, it will be very enlightening to aggregate this data with the data from other participants  with similar genetic, diseasomic, environmentomic, and demographic profiles.",
+          "description": "Example: As with any human experiment, it was impossible to control for all potentially confounding variables.\n\n            Correlation does not necessarily imply correlation.  We can never know for sure if one factor is definitely the cause of an outcome.\n            However, lack of correlation definitely implies the lack of a causal relationship.  Hence, we can with great\n            confidence rule out non-existent relationships. For instance, if we discover no relationship between mood\n            and an antidepressant this information is just as or even more valuable than the discovery that there is a relationship.\n            <br>\n            <br>\n\n            We can also take advantage of several characteristics of time series data from many subjects  to infer the likelihood of a causal relationship if we do find a correlational relationship.\n            The criteria for causation are a group of minimal conditions necessary to provide adequate evidence of a causal relationship between an incidence and a possible consequence.\n            The list of the criteria is as follows:\n            <br>\n            1. Strength (effect size): A small association does not mean that there is not a causal effect, though the larger the association, the more likely that it is causal.\n            <br>\n            2. Consistency (reproducibility): Consistent findings observed by different persons in different places with different samples strengthens the likelihood of an effect.\n            <br>\n            3. Specificity: Causation is likely if a very specific population at a specific site and disease with no other likely explanation. The more specific an association between a factor and an effect is, the bigger the probability of a causal relationship.\n            <br>\n            4. Temporality: The effect has to occur after the cause (and if there is an expected delay between the cause and expected effect, then the effect must occur after that delay).\n            <br>\n            5. Biological gradient: Greater exposure should generally lead to greater incidence of the effect. However, in some cases, the mere presence of the factor can trigger the effect. In other cases, an inverse proportion is observed: greater exposure leads to lower incidence.\n            <br>\n            6. Plausibility: A plausible mechanism between cause and effect is helpful.\n            <br>\n            7. Coherence: Coherence between epidemiological and laboratory findings increases the likelihood of an effect.\n            <br>\n            8. Experiment: \"Occasionally it is possible to appeal to experimental evidence\".\n            <br>\n            9. Analogy: The effect of similar factors may be considered.\n            <br>\n            <br>\n\n             The confidence in a causal relationship is bolstered by the fact that time-precedence was taken into account in all calculations. Furthermore, in accordance with the law of large numbers (LLN), the predictive power and accuracy of these results will continually grow over time.  298 paired data points were used in this analysis.   Assuming that the relationship is merely coincidental, as the participant independently modifies their Sleep Quality values, the observed strength of the relationship will decline until it is below the threshold of significance.  To it another way, in the case that we do find a spurious correlation, suggesting that banana intake improves mood for instance,\n            one will likely increase their banana intake.  Due to the fact that this correlation is spurious, it is unlikely\n            that you will see a continued and persistent corresponding increase in mood.  So over time, the spurious correlation will\n            naturally dissipate.Furthermore, it will be very enlightening to aggregate this data with the data from other participants  with similar genetic, diseasomic, environmentomic, and demographic profiles.",
           "type": "string"
         },
         "studyLinkDynamic": {
@@ -2148,7 +2023,7 @@
           "type": "string"
         },
         "studyObjective": {
-          "description": "Example: The objective of this study is to determine the nature of the relationship (if any) between the Sleep Quality and the Overall Mood. Additionally, we attempt to determine the Sleep Quality values most likely to produce optimal Overall Mood values. ",
+          "description": "Example: The objective of this study is to determine the nature of the relationship (if any) between the Sleep Quality and the Overall Mood. Additionally, we attempt to determine the Sleep Quality values most likely to produce optimal Overall Mood values.",
           "type": "string"
         },
         "studyResults": {
@@ -2187,7 +2062,7 @@
           "type": "number"
         },
         "valuePredictingHighOutcomeExplanation": {
-          "description": "Example: Overall Mood, on average, 17% higher after around 4.14/5 Sleep Quality ",
+          "description": "Example: Overall Mood, on average, 17% higher after around 4.14/5 Sleep Quality",
           "type": "string"
         },
         "valuePredictingLowOutcome": {
@@ -2196,7 +2071,7 @@
           "type": "number"
         },
         "valuePredictingLowOutcomeExplanation": {
-          "description": "Example: Overall Mood, on average, 11% lower after around 3.03/5 Sleep Quality ",
+          "description": "Example: Overall Mood, on average, 11% lower after around 3.03/5 Sleep Quality",
           "type": "string"
         }
       },
@@ -2216,9 +2091,9 @@
         "causeVariableCategoryId",
         "causeVariableCategoryName",
         "causeVariableCombinationOperation",
-        "causeVariableDefaultUnitAbbreviatedName",
-        "causeVariableDefaultUnitId",
-        "causeVariableDefaultUnitName",
+        "causeVariableUnitAbbreviatedName",
+        "causeVariableUnitId",
+        "causeVariableUnitName",
         "causeVariableId",
         "causeVariableImageUrl",
         "causeVariableIonIcon",
@@ -2244,9 +2119,9 @@
         "effectVariableCategoryName",
         "effectVariableCombinationOperation",
         "effectVariableCommonAlias",
-        "effectVariableDefaultUnitAbbreviatedName",
-        "effectVariableDefaultUnitId",
-        "effectVariableDefaultUnitName",
+        "effectVariableUnitAbbreviatedName",
+        "effectVariableUnitId",
+        "effectVariableUnitName",
         "effectVariableId",
         "effectVariableImageUrl",
         "effectVariableIonIcon",
@@ -2511,15 +2386,15 @@
           "description": "Example: ",
           "type": "string"
         },
-        "causeVariableDefaultUnitAbbreviatedName": {
+        "causeVariableUnitAbbreviatedName": {
           "description": "Example: h",
           "type": "string"
         },
-        "causeVariableDefaultUnitId": {
+        "causeVariableUnitId": {
           "description": "Example: 34",
           "type": "integer"
         },
-        "causeVariableDefaultUnitName": {
+        "causeVariableUnitName": {
           "description": "Example: Hours",
           "type": "string"
         },
@@ -2615,15 +2490,15 @@
           "description": "Example: ",
           "type": "string"
         },
-        "effectVariableDefaultUnitAbbreviatedName": {
+        "effectVariableUnitAbbreviatedName": {
           "description": "Example: h",
           "type": "string"
         },
-        "effectVariableDefaultUnitId": {
+        "effectVariableUnitId": {
           "description": "Example: 34",
           "type": "integer"
         },
-        "effectVariableDefaultUnitName": {
+        "effectVariableUnitName": {
           "description": "Example: Hours",
           "type": "string"
         },
@@ -2742,7 +2617,7 @@
           "type": "number"
         },
         "significanceExplanation": {
-          "description": "Example: Using a two-tailed t-test with alpha = 0.05, it was determined that the change in Video Activities is statistically significant at 95% confidence interval. ",
+          "description": "Example: Using a two-tailed t-test with alpha = 0.05, it was determined that the change in Video Activities is statistically significant at 95% confidence interval.",
           "type": "string"
         },
         "significantDifference": {
@@ -2759,7 +2634,7 @@
           "type": "string"
         },
         "studyAbstract": {
-          "description": "Example: Aggregated data from 21 suggests with a low degree of confidence (p=0.097) that Very Distracting Time (Work) has a moderately positive predictive relationship (R=0.354) with Video Activities  (Activity).  The highest quartile of Video Activities  measurements were observed following an average 2.03h Very Distracting Time.  The lowest quartile of Video Activities  measurements were observed following an average 1.04h Very Distracting Time.",
+          "description": "Example: Aggregated data from 21 suggests with a low degree of confidence (p=0.097) that Very Distracting Time (Work) has a moderately positive predictive relationship (R=0.354) with Video Activities  (Activity).  The highest quartile of Video Activities measurements were observed following an average 2.03h Very Distracting Time.  The lowest quartile of Video Activities  measurements were observed following an average 1.04h Very Distracting Time.",
           "type": "string"
         },
         "studyLinkDynamic": {
@@ -2810,7 +2685,7 @@
           "type": "number"
         },
         "valuePredictingHighOutcomeExplanation": {
-          "description": "Example: Video Activities, on average, 36% higher after around 2.03 h Very Distracting Time ",
+          "description": "Example: Video Activities, on average, 36% higher after around 2.03 h Very Distracting Time",
           "type": "string"
         },
         "valuePredictingLowOutcome": {
@@ -2819,7 +2694,7 @@
           "type": "number"
         },
         "valuePredictingLowOutcomeExplanation": {
-          "description": "Example: Video Activities, on average, 16% lower after around 1.04 h Very Distracting Time ",
+          "description": "Example: Video Activities, on average, 16% lower after around 1.04 h Very Distracting Time",
           "type": "string"
         },
         "vote": {
@@ -3090,7 +2965,7 @@
     },
     "GetPublicVariablesResponse": {
       "properties": {
-        "availableDefaultUnits": {
+        "availableUnits": {
           "items": {
             "$ref": "#/definitions/Unit"
           },
@@ -3117,23 +2992,23 @@
           "format": "date-time",
           "type": "string"
         },
-        "defaultUnitAbbreviatedName": {
+        "unitAbbreviatedName": {
           "description": "Example: /5",
           "type": "string"
         },
-        "defaultUnitCategoryId": {
+        "unitCategoryId": {
           "description": "Example: 5",
           "type": "integer"
         },
-        "defaultUnitCategoryName": {
+        "unitCategoryName": {
           "description": "Example: Rating",
           "type": "string"
         },
-        "defaultUnitId": {
+        "unitId": {
           "description": "Example: 10",
           "type": "integer"
         },
-        "defaultUnitName": {
+        "unitName": {
           "description": "Example: 1 to 5 Rating",
           "type": "string"
         },
@@ -3281,48 +3156,28 @@
           "format": "double",
           "type": "number"
         },
-        "unitAbbreviatedName": {
-          "description": "Example: /5",
-          "type": "string"
-        },
-        "unitCategoryId": {
-          "description": "Example: 5",
-          "type": "integer"
-        },
-        "unitCategoryName": {
-          "description": "Example: Rating",
-          "type": "string"
-        },
-        "unitId": {
-          "description": "Example: 10",
-          "type": "integer"
-        },
-        "unitName": {
-          "description": "Example: 1 to 5 Rating",
-          "type": "string"
-        },
         "updatedAt": {
           "description": "Example: 2017-07-31 19:55:38",
           "format": "date-time",
           "type": "string"
         },
-        "userVariableDefaultUnitAbbreviatedName": {
+        "userVariableUnitAbbreviatedName": {
           "description": "Example: /5",
           "type": "string"
         },
-        "userVariableDefaultUnitCategoryId": {
+        "userVariableUnitCategoryId": {
           "description": "Example: 5",
           "type": "integer"
         },
-        "userVariableDefaultUnitCategoryName": {
+        "userVariableUnitCategoryName": {
           "description": "Example: Rating",
           "type": "string"
         },
-        "userVariableDefaultUnitId": {
+        "userVariableUnitId": {
           "description": "Example: 10",
           "type": "integer"
         },
-        "userVariableDefaultUnitName": {
+        "userVariableUnitName": {
           "description": "Example: 1 to 5 Rating",
           "type": "string"
         },
@@ -3545,7 +3400,7 @@
     },
     "GetTrackingRemindersResponse": {
       "properties": {
-        "availableDefaultUnits": {
+        "availableUnits": {
           "items": {
             "$ref": "#/definitions/Unit"
           },
@@ -3567,23 +3422,23 @@
         "data": {
           "$ref": "#/definitions/TrackingRemindersArray"
         },
-        "defaultUnitAbbreviatedName": {
+        "unitAbbreviatedName": {
           "description": "Example: mg",
           "type": "string"
         },
-        "defaultUnitCategoryId": {
+        "unitCategoryId": {
           "description": "Example: 3",
           "type": "integer"
         },
-        "defaultUnitCategoryName": {
+        "unitCategoryName": {
           "description": "Example: Weight",
           "type": "string"
         },
-        "defaultUnitId": {
+        "unitId": {
           "description": "Example: 7",
           "type": "integer"
         },
-        "defaultUnitName": {
+        "unitName": {
           "description": "Example: Milligrams",
           "type": "string"
         },
@@ -3627,11 +3482,6 @@
           "type": "string"
         },
         "lastValue": {
-          "description": "Example: 500",
-          "format": "double",
-          "type": "number"
-        },
-        "lastValueInUserVariableDefaultUnit": {
           "description": "Example: 500",
           "format": "double",
           "type": "number"
@@ -3713,11 +3563,6 @@
           "format": "double",
           "type": "number"
         },
-        "secondToLastValueInUserVariableDefaultUnit": {
-          "description": "Example: 250",
-          "format": "double",
-          "type": "number"
-        },
         "startTrackingDate": {
           "description": "Example: 2016-12-16",
           "type": "string"
@@ -3742,37 +3587,12 @@
           "format": "double",
           "type": "number"
         },
-        "thirdToLastValueInUserVariableDefaultUnit": {
-          "description": "Example: 250",
-          "format": "double",
-          "type": "number"
-        },
         "trackingReminderId": {
           "description": "Example: 30376",
           "type": "integer"
         },
         "trackingReminderImageUrl": {
           "description": "Example: https://rximage.nlm.nih.gov/image/images/gallery/original/55111-0129-60_RXNAVIMAGE10_B051D81E.jpg",
-          "type": "string"
-        },
-        "unitAbbreviatedName": {
-          "description": "Example: mg",
-          "type": "string"
-        },
-        "unitCategoryId": {
-          "description": "Example: 3",
-          "type": "integer"
-        },
-        "unitCategoryName": {
-          "description": "Example: Weight",
-          "type": "string"
-        },
-        "unitId": {
-          "description": "Example: 7",
-          "type": "integer"
-        },
-        "unitName": {
-          "description": "Example: Milligrams",
           "type": "string"
         },
         "updatedAt": {
@@ -3784,23 +3604,23 @@
           "description": "Example: 230",
           "type": "integer"
         },
-        "userVariableDefaultUnitAbbreviatedName": {
+        "userVariableUnitAbbreviatedName": {
           "description": "Example: mg",
           "type": "string"
         },
-        "userVariableDefaultUnitCategoryId": {
+        "userVariableUnitCategoryId": {
           "description": "Example: 3",
           "type": "integer"
         },
-        "userVariableDefaultUnitCategoryName": {
+        "userVariableUnitCategoryName": {
           "description": "Example: Weight",
           "type": "string"
         },
-        "userVariableDefaultUnitId": {
+        "userVariableUnitId": {
           "description": "Example: 7",
           "type": "integer"
         },
-        "userVariableDefaultUnitName": {
+        "userVariableUnitName": {
           "description": "Example: Milligrams",
           "type": "string"
         },
@@ -4152,23 +3972,23 @@
           "description": "Example: 2017-07-30 21:08:36",
           "type": "string"
         },
-        "userVariableDefaultUnitAbbreviatedName": {
+        "userVariableUnitAbbreviatedName": {
           "description": "Example: count",
           "type": "string"
         },
-        "userVariableDefaultUnitCategoryId": {
+        "userVariableUnitCategoryId": {
           "description": "Example: 6",
           "type": "integer"
         },
-        "userVariableDefaultUnitCategoryName": {
+        "userVariableUnitCategoryName": {
           "description": "Example: Miscellany",
           "type": "string"
         },
-        "userVariableDefaultUnitId": {
+        "userVariableUnitId": {
           "description": "Example: 23",
           "type": "integer"
         },
-        "userVariableDefaultUnitName": {
+        "userVariableUnitName": {
           "description": "Example: Count",
           "type": "string"
         },
@@ -4395,7 +4215,7 @@
           "format": "double",
           "type": "number"
         },
-        "causeVariableDefaultUnitAbbreviatedName": {
+        "causeVariableUnitAbbreviatedName": {
           "description": "Example: mg",
           "type": "string"
         },
@@ -4409,7 +4229,7 @@
           "format": "double",
           "type": "number"
         },
-        "effectVariableDefaultUnitAbbreviatedName": {
+        "effectVariableUnitAbbreviatedName": {
           "description": "Example: %",
           "type": "string"
         },
@@ -4440,10 +4260,10 @@
       "required": [
         "causeMeasurement",
         "causeMeasurementValue",
-        "causeVariableDefaultUnitAbbreviatedName",
+        "causeVariableUnitAbbreviatedName",
         "effectMeasurement",
         "effectMeasurementValue",
-        "effectVariableDefaultUnitAbbreviatedName",
+        "effectVariableUnitAbbreviatedName",
         "startTimeSting",
         "timestamp"
       ]
@@ -4912,15 +4732,15 @@
           "description": "Example: ",
           "type": "string"
         },
-        "causeVariableDefaultUnitAbbreviatedName": {
+        "causeVariableUnitAbbreviatedName": {
           "description": "Example: Pa",
           "type": "string"
         },
-        "causeVariableDefaultUnitId": {
+        "causeVariableUnitId": {
           "description": "Example: 47",
           "type": "integer"
         },
-        "causeVariableDefaultUnitName": {
+        "causeVariableUnitName": {
           "description": "Example: ",
           "type": "string"
         },
@@ -4985,7 +4805,7 @@
           "type": "number"
         },
         "dataAnalysis": {
-          "description": "Example: It was assumed that 0 hours would pass before a change in Barometric Pressure would produce an observable change in Reference And Learning Hours.  It was assumed that Barometric Pressure could produce an observable change in Reference And Learning Hours for as much as 7 days after the stimulus event.  ",
+          "description": "Example: It was assumed that 0 hours would pass before a change in Barometric Pressure would produce an observable change in Reference And Learning Hours.  It was assumed that Barometric Pressure could produce an observable change in Reference And Learning Hours for as much as 7 days after the stimulus event.",
           "type": "string"
         },
         "dataPoints": {
@@ -4993,7 +4813,7 @@
           "type": "string"
         },
         "dataSources": {
-          "description": "Example: Barometric Pressure data was primarily collected using <a href=\"https://quantimo.do\">QuantiModo</a>.  <a href=\"https://quantimo.do\">QuantiModo</a> is a Chrome extension, Android app, iOS app, and web app that allows you to easily track mood, symptoms, or any outcome you want to optimize in a fraction of a second.  You can also import your data from over 30 other apps and devices like Fitbit, Rescuetime, Jawbone Up, Withings, Facebook, Github, Google Calendar, Runkeeper, MoodPanda, Slice, Google Fit, and more.  <a href=\"https://quantimo.do\">QuantiModo</a> then analyzes your data to identify which hidden factors are most likely to be influencing your mood or symptoms and their optimal daily values.<br>Reference And Learning Hours data was primarily collected using <a href=\"https://www.rescuetime.com/rp/quantimodo/plans\">RescueTime</a>.  Detailed reports show which applications and websites you spent time on. Activities are automatically grouped into pre-defined categories with built-in productivity scores covering thousands of websites and applications. You can customize categories and productivity scores to meet your needs.",
+          "description": "Example: Barometric Pressure data was primarily collected using <a href=\"https://quantimo.do\">QuantiModo</a>.  <a href=\"https://quantimo.do\">QuantiModo</a> is a Chrome extension, Android app, iOS app, and web app that allows you to easily track mood, symptoms, or any outcome you want to optimize in a fraction of a second.  You can also import your data from over 30 other apps and devices like Fitbit, Rescuetime, Jawbone Up, Withings, Facebook, Github, Google Calendar, Runkeeper, MoodPanda, Slice, Google Fit, and more.  <a href=\"https://quantimo.do\">QuantiModo</a> then analyzes your data to identify which hidden factors are most likely to be influencing your mood or symptoms and their optimal daily values.<br>Reference And Learning Hours data was primarily collected using <a href=\"https://www.rescuetime.com/rp/quantimodo/plans\">RescueTime</a>. Detailed reports show which applications and websites you spent time on. Activities are automatically grouped into pre-defined categories with built-in productivity scores covering thousands of websites and applications. You can customize categories and productivity scores to meet your needs.",
           "type": "string"
         },
         "dataSourcesParagraphForCause": {
@@ -5001,7 +4821,7 @@
           "type": "string"
         },
         "dataSourcesParagraphForEffect": {
-          "description": "Example: Reference And Learning Hours data was primarily collected using <a href=\"https://www.rescuetime.com/rp/quantimodo/plans\">RescueTime</a>.  Detailed reports show which applications and websites you spent time on. Activities are automatically grouped into pre-defined categories with built-in productivity scores covering thousands of websites and applications. You can customize categories and productivity scores to meet your needs.",
+          "description": "Example: Reference And Learning Hours data was primarily collected using <a href=\"https://www.rescuetime.com/rp/quantimodo/plans\">RescueTime</a>. Detailed reports show which applications and websites you spent time on. Activities are automatically grouped into pre-defined categories with built-in productivity scores covering thousands of websites and applications. You can customize categories and productivity scores to meet your needs.",
           "type": "string"
         },
         "degreesOfFreedom": {
@@ -5061,15 +4881,15 @@
           "description": "Example: Activity",
           "type": "string"
         },
-        "effectVariableDefaultUnitAbbreviatedName": {
+        "effectVariableUnitAbbreviatedName": {
           "description": "Example: h",
           "type": "string"
         },
-        "effectVariableDefaultUnitId": {
+        "effectVariableUnitId": {
           "description": "Example: 34",
           "type": "integer"
         },
-        "effectVariableDefaultUnitName": {
+        "effectVariableUnitName": {
           "description": "Example: ",
           "type": "string"
         },
@@ -5339,7 +5159,7 @@
           "type": "boolean"
         },
         "significanceExplanation": {
-          "description": "Example: Using a two-tailed t-test with alpha = 0.05, it was determined that the change in Reference And Learning Hours is statistically significant at 95% confidence interval. ",
+          "description": "Example: Using a two-tailed t-test with alpha = 0.05, it was determined that the change in Reference And Learning Hours is statistically significant at 95% confidence interval.",
           "type": "string"
         },
         "significantDifference": {
@@ -5360,7 +5180,7 @@
           "type": "string"
         },
         "studyAbstract": {
-          "description": "Example: Your data suggests with a high degree of confidence (p=0) that Barometric Pressure (Environment) has a weakly positive predictive relationship (R=0.147) with Reference And Learning Hours  (Activity).  The highest quartile of Reference And Learning Hours  measurements were observed following an average 101187.2Pa Barometric Pressure.  The lowest quartile of Reference And Learning Hours  measurements were observed following an average 97597.75Pa Barometric Pressure.",
+          "description": "Example: Your data suggests with a high degree of confidence (p=0) that Barometric Pressure (Environment) has a weakly positive predictive relationship (R=0.147) with Reference And Learning Hours (Activity).  The highest quartile of Reference And Learning Hours measurements were observed following an average 101187.2Pa Barometric Pressure.  The lowest quartile of Reference And Learning Hours measurements were observed following an average 97597.75Pa Barometric Pressure.",
           "type": "string"
         },
         "studyBackground": {
@@ -5368,11 +5188,11 @@
           "type": "string"
         },
         "studyDesign": {
-          "description": "Example: This study is based on data donated by one QuantiModo user. Thus, the study design is consistent with an n=1 observational natural experiment. ",
+          "description": "Example: This study is based on data donated by one QuantiModo user. Thus, the study design is consistent with an n=1 observational natural experiment.",
           "type": "string"
         },
         "studyLimitations": {
-          "description": "Example: As with any human experiment, it was impossible to control for all potentially confounding variables. \n            \n            Correlation does not necessarily imply correlation.  We can never know for sure if one factor is definitely the cause of an outcome.  \n            However, lack of correlation definitely implies the lack of a causal relationship.  Hence, we can with great \n            confidence rule out non-existent relationships. For instance, if we discover no relationship between mood\n            and an antidepressant this information is just as or even more valuable than the discovery that there is a relationship. \n            <br>\n            <br>\n           \n            We can also take advantage of several characteristics of time series data from many subjects  to infer the likelihood of a causal relationship if we do find a correlational relationship. \n            The criteria for causation are a group of minimal conditions necessary to provide adequate evidence of a causal relationship between an incidence and a possible consequence.\n            The list of the criteria is as follows:\n            <br>\n            1. Strength (effect size): A small association does not mean that there is not a causal effect, though the larger the association, the more likely that it is causal.\n            <br>\n            2. Consistency (reproducibility): Consistent findings observed by different persons in different places with different samples strengthens the likelihood of an effect.\n            <br>\n            3. Specificity: Causation is likely if a very specific population at a specific site and disease with no other likely explanation. The more specific an association between a factor and an effect is, the bigger the probability of a causal relationship.\n            <br>\n            4. Temporality: The effect has to occur after the cause (and if there is an expected delay between the cause and expected effect, then the effect must occur after that delay).\n            <br>\n            5. Biological gradient: Greater exposure should generally lead to greater incidence of the effect. However, in some cases, the mere presence of the factor can trigger the effect. In other cases, an inverse proportion is observed: greater exposure leads to lower incidence.\n            <br>\n            6. Plausibility: A plausible mechanism between cause and effect is helpful.\n            <br>\n            7. Coherence: Coherence between epidemiological and laboratory findings increases the likelihood of an effect.\n            <br>\n            8. Experiment: \"Occasionally it is possible to appeal to experimental evidence\".\n            <br>\n            9. Analogy: The effect of similar factors may be considered.\n            <br>\n            <br>\n             \n             The confidence in a causal relationship is bolstered by the fact that time-precedence was taken into account in all calculations. Furthermore, in accordance with the law of large numbers (LLN), the predictive power and accuracy of these results will continually grow over time.  297 paired data points were used in this analysis.   Assuming that the relationship is merely coincidental, as the participant independently modifies their Barometric Pressure values, the observed strength of the relationship will decline until it is below the threshold of significance.  To it another way, in the case that we do find a spurious correlation, suggesting that banana intake improves mood for instance,\n            one will likely increase their banana intake.  Due to the fact that this correlation is spurious, it is unlikely\n            that you will see a continued and persistent corresponding increase in mood.  So over time, the spurious correlation will\n            naturally dissipate.Furthermore, it will be very enlightening to aggregate this data with the data from other participants  with similar genetic, diseasomic, environmentomic, and demographic profiles.",
+          "description": "Example: As with any human experiment, it was impossible to control for all potentially confounding variables.\n\n            Correlation does not necessarily imply correlation.  We can never know for sure if one factor is definitely the cause of an outcome.\n            However, lack of correlation definitely implies the lack of a causal relationship.  Hence, we can with great\n            confidence rule out non-existent relationships. For instance, if we discover no relationship between mood\n            and an antidepressant this information is just as or even more valuable than the discovery that there is a relationship.\n            <br>\n            <br>\n\n            We can also take advantage of several characteristics of time series data from many subjects  to infer the likelihood of a causal relationship if we do find a correlational relationship.\n            The criteria for causation are a group of minimal conditions necessary to provide adequate evidence of a causal relationship between an incidence and a possible consequence.\n            The list of the criteria is as follows:\n            <br>\n            1. Strength (effect size): A small association does not mean that there is not a causal effect, though the larger the association, the more likely that it is causal.\n            <br>\n            2. Consistency (reproducibility): Consistent findings observed by different persons in different places with different samples strengthens the likelihood of an effect.\n            <br>\n            3. Specificity: Causation is likely if a very specific population at a specific site and disease with no other likely explanation. The more specific an association between a factor and an effect is, the bigger the probability of a causal relationship.\n            <br>\n            4. Temporality: The effect has to occur after the cause (and if there is an expected delay between the cause and expected effect, then the effect must occur after that delay).\n            <br>\n            5. Biological gradient: Greater exposure should generally lead to greater incidence of the effect. However, in some cases, the mere presence of the factor can trigger the effect. In other cases, an inverse proportion is observed: greater exposure leads to lower incidence.\n            <br>\n            6. Plausibility: A plausible mechanism between cause and effect is helpful.\n            <br>\n            7. Coherence: Coherence between epidemiological and laboratory findings increases the likelihood of an effect.\n            <br>\n            8. Experiment: \"Occasionally it is possible to appeal to experimental evidence\".\n            <br>\n            9. Analogy: The effect of similar factors may be considered.\n            <br>\n            <br>\n\n             The confidence in a causal relationship is bolstered by the fact that time-precedence was taken into account in all calculations. Furthermore, in accordance with the law of large numbers (LLN), the predictive power and accuracy of these results will continually grow over time.  297 paired data points were used in this analysis.   Assuming that the relationship is merely coincidental, as the participant independently modifies their Barometric Pressure values, the observed strength of the relationship will decline until it is below the threshold of significance.  To it another way, in the case that we do find a spurious correlation, suggesting that banana intake improves mood for instance,\n            one will likely increase their banana intake.  Due to the fact that this correlation is spurious, it is unlikely\n            that you will see a continued and persistent corresponding increase in mood.  So over time, the spurious correlation will\n            naturally dissipate.Furthermore, it will be very enlightening to aggregate this data with the data from other participants  with similar genetic, diseasomic, environmentomic, and demographic profiles.",
           "type": "string"
         },
         "studyLinkDynamic": {
@@ -5400,7 +5220,7 @@
           "type": "string"
         },
         "studyObjective": {
-          "description": "Example: The objective of this study is to determine the nature of the relationship (if any) between the Barometric Pressure and the Reference And Learning Hours. Additionally, we attempt to determine the Barometric Pressure values most likely to produce optimal Reference And Learning Hours values. ",
+          "description": "Example: The objective of this study is to determine the nature of the relationship (if any) between the Barometric Pressure and the Reference And Learning Hours. Additionally, we attempt to determine the Barometric Pressure values most likely to produce optimal Reference And Learning Hours values.",
           "type": "string"
         },
         "studyResults": {
@@ -5439,7 +5259,7 @@
           "type": "number"
         },
         "valuePredictingHighOutcomeExplanation": {
-          "description": "Example: Reference And Learning Hours, on average, 0.84% higher after around 101187.2 Pa Barometric Pressure ",
+          "description": "Example: Reference And Learning Hours, on average, 0.84% higher after around 101187.2 Pa Barometric Pressure",
           "type": "string"
         },
         "valuePredictingLowOutcome": {
@@ -5448,7 +5268,7 @@
           "type": "number"
         },
         "valuePredictingLowOutcomeExplanation": {
-          "description": "Example: Reference And Learning Hours, on average, 82.6% lower after around 97597.75 Pa Barometric Pressure ",
+          "description": "Example: Reference And Learning Hours, on average, 82.6% lower after around 97597.75 Pa Barometric Pressure",
           "type": "string"
         },
         "voteStatisticalSignificance": {
@@ -5480,9 +5300,9 @@
         "causeVariableCategoryId",
         "causeVariableCategoryName",
         "causeVariableCombinationOperation",
-        "causeVariableDefaultUnitAbbreviatedName",
-        "causeVariableDefaultUnitId",
-        "causeVariableDefaultUnitName",
+        "causeVariableUnitAbbreviatedName",
+        "causeVariableUnitId",
+        "causeVariableUnitName",
         "causeVariableId",
         "causeVariableImageUrl",
         "causeVariableIonIcon",
@@ -5516,9 +5336,9 @@
         "effectValueSpread",
         "effectVariableCategoryId",
         "effectVariableCategoryName",
-        "effectVariableDefaultUnitAbbreviatedName",
-        "effectVariableDefaultUnitId",
-        "effectVariableDefaultUnitName",
+        "effectVariableUnitAbbreviatedName",
+        "effectVariableUnitId",
+        "effectVariableUnitName",
         "effectVariableId",
         "effectVariableImageUrl",
         "effectVariableIonIcon",
@@ -5691,35 +5511,35 @@
     "Text": {
       "properties": {
         "dataAnalysis": {
-          "description": "Example: It was assumed that 0 hours would pass before a change in Very Distracting Time would produce an observable change in Video Activities.  It was assumed that Very Distracting Time could produce an observable change in Video Activities for as much as 7 days after the stimulus event.  ",
+          "description": "Example: It was assumed that 0 hours would pass before a change in Very Distracting Time would produce an observable change in Video Activities.  It was assumed that Very Distracting Time could produce an observable change in Video Activities for as much as 7 days after the stimulus event.",
           "type": "string"
         },
         "dataSources": {
-          "description": "Example: Very Distracting Time data was primarily collected using <a href=\"https://www.rescuetime.com/rp/quantimodo/plans\">RescueTime</a>.  Detailed reports show which applications and websites you spent time on. Activities are automatically grouped into pre-defined categories with built-in productivity scores covering thousands of websites and applications. You can customize categories and productivity scores to meet your needs.<br>Video Activities data was primarily collected using <a href=\"https://www.rescuetime.com/rp/quantimodo/plans\">RescueTime</a>.  Detailed reports show which applications and websites you spent time on. Activities are automatically grouped into pre-defined categories with built-in productivity scores covering thousands of websites and applications. You can customize categories and productivity scores to meet your needs.",
+          "description": "Example: Very Distracting Time data was primarily collected using <a href=\"https://www.rescuetime.com/rp/quantimodo/plans\">RescueTime</a>. Detailed reports show which applications and websites you spent time on. Activities are automatically grouped into pre-defined categories with built-in productivity scores covering thousands of websites and applications. You can customize categories and productivity scores to meet your needs.<br>Video Activities data was primarily collected using <a href=\"https://www.rescuetime.com/rp/quantimodo/plans\">RescueTime</a>. Detailed reports show which applications and websites you spent time on. Activities are automatically grouped into pre-defined categories with built-in productivity scores covering thousands of websites and applications. You can customize categories and productivity scores to meet your needs.",
           "type": "string"
         },
         "significanceExplanation": {
-          "description": "Example: Using a two-tailed t-test with alpha = 0.05, it was determined that the change in Video Activities is statistically significant at 95% confidence interval. ",
+          "description": "Example: Using a two-tailed t-test with alpha = 0.05, it was determined that the change in Video Activities is statistically significant at 95% confidence interval.",
           "type": "string"
         },
         "studyAbstract": {
-          "description": "Example: Aggregated data from 21 suggests with a low degree of confidence (p=0.097) that Very Distracting Time (Work) has a moderately positive predictive relationship (R=0.354) with Video Activities  (Activity).  The highest quartile of Video Activities  measurements were observed following an average 2.03h Very Distracting Timeper day.  The lowest quartile of Video Activities  measurements were observed following an average 1.04h Very Distracting Timeper day.",
+          "description": "Example: Aggregated data from 21 suggests with a low degree of confidence (p=0.097) that Very Distracting Time (Work) has a moderately positive predictive relationship (R=0.354) with Video Activities  (Activity).  The highest quartile of Video Activities measurements were observed following an average 2.03h Very Distracting Timeper day.  The lowest quartile of Video Activities  measurements were observed following an average 1.04h Very Distracting Timeper day.",
           "type": "string"
         },
         "studyDesign": {
-          "description": "Example: This study is based on data donated by  21 QuantiModo users. Thus, the study design is equivalent to the aggregation of 21 separate n=1 observational natural experiments. ",
+          "description": "Example: This study is based on data donated by  21 QuantiModo users. Thus, the study design is equivalent to the aggregation of 21 separate n=1 observational natural experiments.",
           "type": "string"
         },
         "studyLimitations": {
-          "description": "Example: As with any human experiment, it was impossible to control for all potentially confounding variables. \n            Correlation does not necessarily imply correlation.  We can never know for sure if one factor is definitely the cause of an outcome.  \n            However, lack of correlation definitely implies the lack of a causal relationship.  Hence, we can with great \n            confidence rule out non-existent relationships. For instance, if we discover no relationship between mood\n            and an antidepressant this information is just as or even more valuable than the discovery that there is a relationship. \n            <br>\n            <br>\n            We can also take advantage of several characteristics of time series data from many subjects  to infer the likelihood of a causal relationship if we do find a correlational relationship. \n            The criteria for causation are a group of minimal conditions necessary to provide adequate evidence of a causal relationship between an incidence and a possible consequence.\n            The list of the criteria is as follows:\n            <br>\n            1. Strength (effect size): A small association does not mean that there is not a causal effect, though the larger the association, the more likely that it is causal.\n            <br>\n            2. Consistency (reproducibility): Consistent findings observed by different persons in different places with different samples strengthens the likelihood of an effect.\n            <br>\n            3. Specificity: Causation is likely if a very specific population at a specific site and disease with no other likely explanation. The more specific an association between a factor and an effect is, the bigger the probability of a causal relationship.\n            <br>\n            4. Temporality: The effect has to occur after the cause (and if there is an expected delay between the cause and expected effect, then the effect must occur after that delay).\n            <br>\n            5. Biological gradient: Greater exposure should generally lead to greater incidence of the effect. However, in some cases, the mere presence of the factor can trigger the effect. In other cases, an inverse proportion is observed: greater exposure leads to lower incidence.\n            <br>\n            6. Plausibility: A plausible mechanism between cause and effect is helpful.\n            <br>\n            7. Coherence: Coherence between epidemiological and laboratory findings increases the likelihood of an effect.\n            <br>\n            8. Experiment: \"Occasionally it is possible to appeal to experimental evidence\".\n            <br>\n            9. Analogy: The effect of similar factors may be considered.\n            <br>\n            <br>\n             The confidence in a causal relationship is bolstered by the fact that time-precedence was taken into account in all calculations. Furthermore, in accordance with the law of large numbers (LLN), the predictive power and accuracy of these results will continually grow over time.  146 paired data points were used in this analysis.   Assuming that the relationship is merely coincidental, as the participant independently modifies their Very Distracting Time values, the observed strength of the relationship will decline until it is below the threshold of significance.  To it another way, in the case that we do find a spurious correlation, suggesting that banana intake improves mood for instance,\n            one will likely increase their banana intake.  Due to the fact that this correlation is spurious, it is unlikely\n            that you will see a continued and persistent corresponding increase in mood.  So over time, the spurious correlation will\n            naturally dissipate.Furthermore, it will be very enlightening to aggregate this data with the data from other participants  with similar genetic, diseasomic, environmentomic, and demographic profiles.",
+          "description": "Example: As with any human experiment, it was impossible to control for all potentially confounding variables.\n            Correlation does not necessarily imply correlation.  We can never know for sure if one factor is definitely the cause of an outcome.\n            However, lack of correlation definitely implies the lack of a causal relationship.  Hence, we can with great\n            confidence rule out non-existent relationships. For instance, if we discover no relationship between mood\n            and an antidepressant this information is just as or even more valuable than the discovery that there is a relationship.\n            <br>\n            <br>\n            We can also take advantage of several characteristics of time series data from many subjects  to infer the likelihood of a causal relationship if we do find a correlational relationship.\n            The criteria for causation are a group of minimal conditions necessary to provide adequate evidence of a causal relationship between an incidence and a possible consequence.\n            The list of the criteria is as follows:\n            <br>\n            1. Strength (effect size): A small association does not mean that there is not a causal effect, though the larger the association, the more likely that it is causal.\n            <br>\n            2. Consistency (reproducibility): Consistent findings observed by different persons in different places with different samples strengthens the likelihood of an effect.\n            <br>\n            3. Specificity: Causation is likely if a very specific population at a specific site and disease with no other likely explanation. The more specific an association between a factor and an effect is, the bigger the probability of a causal relationship.\n            <br>\n            4. Temporality: The effect has to occur after the cause (and if there is an expected delay between the cause and expected effect, then the effect must occur after that delay).\n            <br>\n            5. Biological gradient: Greater exposure should generally lead to greater incidence of the effect. However, in some cases, the mere presence of the factor can trigger the effect. In other cases, an inverse proportion is observed: greater exposure leads to lower incidence.\n            <br>\n            6. Plausibility: A plausible mechanism between cause and effect is helpful.\n            <br>\n            7. Coherence: Coherence between epidemiological and laboratory findings increases the likelihood of an effect.\n            <br>\n            8. Experiment: \"Occasionally it is possible to appeal to experimental evidence\".\n            <br>\n            9. Analogy: The effect of similar factors may be considered.\n            <br>\n            <br>\n             The confidence in a causal relationship is bolstered by the fact that time-precedence was taken into account in all calculations. Furthermore, in accordance with the law of large numbers (LLN), the predictive power and accuracy of these results will continually grow over time.  146 paired data points were used in this analysis.   Assuming that the relationship is merely coincidental, as the participant independently modifies their Very Distracting Time values, the observed strength of the relationship will decline until it is below the threshold of significance.  To it another way, in the case that we do find a spurious correlation, suggesting that banana intake improves mood for instance,\n            one will likely increase their banana intake.  Due to the fact that this correlation is spurious, it is unlikely\n            that you will see a continued and persistent corresponding increase in mood.  So over time, the spurious correlation will\n            naturally dissipate.Furthermore, it will be very enlightening to aggregate this data with the data from other participants  with similar genetic, diseasomic, environmentomic, and demographic profiles.",
           "type": "string"
         },
         "studyObjective": {
-          "description": "Example: The objective of this study is to determine the nature of the relationship (if any) between the Very Distracting Time and the Video Activities. Additionally, we attempt to determine the Very Distracting Time values most likely to produce optimal Video Activities values. ",
+          "description": "Example: The objective of this study is to determine the nature of the relationship (if any) between the Very Distracting Time and the Video Activities. Additionally, we attempt to determine the Very Distracting Time values most likely to produce optimal Video Activities values.",
           "type": "string"
         },
         "studyResults": {
-          "description": "Example: This analysis suggests that higher Very Distracting Time (Work) generally predicts negative Video Activities (p = 0.097).  Video Activities is, on average, 36%  higher after around 2.03 Very Distracting Time.  After an onset delay of 168 hours, Video Activities is, on average, 16%  lower than its average over the 168 hours following around 1.04 Very Distracting Time.  146 data points were used in this analysis.  The value for Very Distracting Time changed 2984 times, effectively running 1492 separate natural experiments.  The top quartile outcome values are preceded by an average 2.03 h of Very Distracting Time.  The bottom quartile outcome values are preceded by an average 1.04 h of Very Distracting Time.  Forward Pearson Correlation Coefficient was 0.354 (p=0.097, 95% CI -0.437 to 1.144 onset delay = 0 hours, duration of action = 168 hours) .  The Reverse Pearson Correlation Coefficient was 0.208 (P=0.097, 95% CI -0.583 to 0.998, onset delay = -0 hours, duration of action = -168 hours). When the Very Distracting Time value is closer to 2.03 h than 1.04 h, the Video Activities value which follows is, on average, 36%  percent higher than its typical value.  When the Very Distracting Time value is closer to 1.04 h than 2.03 h, the Video Activities value which follows is 0% lower than its typical value.  Video Activities is 5 h (67% higher) on average after days with around 5 h Very Distracting Time",
+          "description": "Example: This analysis suggests that higher Very Distracting Time (Work) generally predicts negative Video Activities (p = 0.097). Video Activities is, on average, 36%  higher after around 2.03 Very Distracting Time.  After an onset delay of 168 hours, Video Activities is, on average, 16%  lower than its average over the 168 hours following around 1.04 Very Distracting Time.  146 data points were used in this analysis.  The value for Very Distracting Time changed 2984 times, effectively running 1492 separate natural experiments. The top quartile outcome values are preceded by an average 2.03 h of Very Distracting Time.  The bottom quartile outcome values are preceded by an average 1.04 h of Very Distracting Time.  Forward Pearson Correlation Coefficient was 0.354 (p=0.097, 95% CI -0.437 to 1.144 onset delay = 0 hours, duration of action = 168 hours) .  The Reverse Pearson Correlation Coefficient was 0.208 (P=0.097, 95% CI -0.583 to 0.998, onset delay = -0 hours, duration of action = -168 hours). When the Very Distracting Time value is closer to 2.03 h than 1.04 h, the Video Activities value which follows is, on average, 36% percent higher than its typical value.  When the Very Distracting Time value is closer to 1.04 h than 2.03 h, the Video Activities value which follows is 0% lower than its typical value.  Video Activities is 5 h (67% higher) on average after days with around 5 h Very Distracting Time",
           "type": "string"
         },
         "studyTitle": {
@@ -5762,7 +5582,7 @@
     },
     "TrackingReminder": {
       "properties": {
-        "availableDefaultUnits": {
+        "availableUnits": {
           "items": {
             "$ref": "#/definitions/Unit"
           },
@@ -5785,23 +5605,23 @@
           "format": "date-time",
           "type": "string"
         },
-        "defaultUnitAbbreviatedName": {
+        "unitAbbreviatedName": {
           "description": "Example: /5",
           "type": "string"
         },
-        "defaultUnitCategoryId": {
+        "unitCategoryId": {
           "description": "Example: 5",
           "type": "integer"
         },
-        "defaultUnitCategoryName": {
+        "unitCategoryName": {
           "description": "Example: Rating",
           "type": "string"
         },
-        "defaultUnitId": {
+        "unitId": {
           "description": "Example: 10",
           "type": "integer"
         },
-        "defaultUnitName": {
+        "unitName": {
           "description": "Example: 1 to 5 Rating",
           "type": "string"
         },
@@ -5815,7 +5635,7 @@
           "type": "boolean"
         },
         "errorMessage": {
-          "description": "Example: reminderStartTimeLocal is less than  $user->earliestReminderTime or greater than  $user->latestReminderTime",
+          "description": "Example: reminderStartTimeLocal is less than $user->earliestReminderTime or greater than  $user->latestReminderTime",
           "type": "string"
         },
         "fillingValue": {
@@ -5858,11 +5678,6 @@
           "type": "string"
         },
         "lastValue": {
-          "description": "Example: 2",
-          "format": "double",
-          "type": "number"
-        },
-        "lastValueInUserVariableDefaultUnit": {
           "description": "Example: 2",
           "format": "double",
           "type": "number"
@@ -5969,11 +5784,6 @@
           "format": "double",
           "type": "number"
         },
-        "secondToLastValueInUserVariableDefaultUnit": {
-          "description": "Example: 1",
-          "format": "double",
-          "type": "number"
-        },
         "sms": {
           "description": "True if the reminders should be delivered via SMS",
           "type": "boolean"
@@ -6002,37 +5812,12 @@
           "format": "double",
           "type": "number"
         },
-        "thirdToLastValueInUserVariableDefaultUnit": {
-          "description": "Example: 3",
-          "format": "double",
-          "type": "number"
-        },
         "trackingReminderId": {
           "description": "Example: 11841",
           "type": "integer"
         },
         "trackingReminderImageUrl": {
           "description": "Example: Not Found",
-          "type": "string"
-        },
-        "unitAbbreviatedName": {
-          "description": "Abbreviated name of the unit to be used when sending measurements",
-          "type": "string"
-        },
-        "unitCategoryId": {
-          "description": "Example: 5",
-          "type": "integer"
-        },
-        "unitCategoryName": {
-          "description": "Example: Rating",
-          "type": "string"
-        },
-        "unitId": {
-          "description": "Example: 10",
-          "type": "integer"
-        },
-        "unitName": {
-          "description": "Example: 1 to 5 Rating",
           "type": "string"
         },
         "updatedAt": {
@@ -6045,23 +5830,23 @@
           "format": "int32",
           "type": "integer"
         },
-        "userVariableDefaultUnitAbbreviatedName": {
+        "userVariableUnitAbbreviatedName": {
           "description": "Example: /5",
           "type": "string"
         },
-        "userVariableDefaultUnitCategoryId": {
+        "userVariableUnitCategoryId": {
           "description": "Example: 5",
           "type": "integer"
         },
-        "userVariableDefaultUnitCategoryName": {
+        "userVariableUnitCategoryName": {
           "description": "Example: Rating",
           "type": "string"
         },
-        "userVariableDefaultUnitId": {
+        "userVariableUnitId": {
           "description": "Example: 10",
           "type": "integer"
         },
-        "userVariableDefaultUnitName": {
+        "userVariableUnitName": {
           "description": "Example: 1 to 5 Rating",
           "type": "string"
         },
@@ -6143,7 +5928,7 @@
           },
           "type": "array"
         },
-        "availableDefaultUnits": {
+        "availableUnits": {
           "items": {
             "$ref": "#/definitions/Unit"
           },
@@ -6166,23 +5951,23 @@
           "format": "date-time",
           "type": "string"
         },
-        "defaultUnitAbbreviatedName": {
+        "unitAbbreviatedName": {
           "description": "Example: /5",
           "type": "string"
         },
-        "defaultUnitCategoryId": {
+        "unitCategoryId": {
           "description": "Example: 5",
           "type": "integer"
         },
-        "defaultUnitCategoryName": {
+        "unitCategoryName": {
           "description": "Example: Rating",
           "type": "string"
         },
-        "defaultUnitId": {
+        "unitId": {
           "description": "Example: 10",
           "type": "integer"
         },
-        "defaultUnitName": {
+        "unitName": {
           "description": "Example: 1 to 5 Rating",
           "type": "string"
         },
@@ -6229,11 +6014,6 @@
           "format": "double",
           "type": "number"
         },
-        "lastValueInUserVariableDefaultUnit": {
-          "description": "Example: 3",
-          "format": "double",
-          "type": "number"
-        },
         "manualTracking": {
           "description": "Example: 1",
           "type": "boolean"
@@ -6247,11 +6027,6 @@
           "type": "integer"
         },
         "mostCommonValue": {
-          "description": "Example: 3",
-          "format": "double",
-          "type": "number"
-        },
-        "mostCommonValueInUserVariableDefaultUnit": {
           "description": "Example: 3",
           "format": "double",
           "type": "number"
@@ -6308,17 +6083,7 @@
           "format": "double",
           "type": "number"
         },
-        "secondMostCommonValueInUserVariableDefaultUnit": {
-          "description": "Example: 4",
-          "format": "double",
-          "type": "number"
-        },
         "secondToLastValue": {
-          "description": "Example: 1",
-          "format": "double",
-          "type": "number"
-        },
-        "secondToLastValueInUserVariableDefaultUnit": {
           "description": "Example: 1",
           "format": "double",
           "type": "number"
@@ -6336,17 +6101,7 @@
           "format": "double",
           "type": "number"
         },
-        "thirdMostCommonValueInUserVariableDefaultUnit": {
-          "description": "Example: 2",
-          "format": "double",
-          "type": "number"
-        },
         "thirdToLastValue": {
-          "description": "Example: 2",
-          "format": "double",
-          "type": "number"
-        },
-        "thirdToLastValueInUserVariableDefaultUnit": {
           "description": "Example: 2",
           "format": "double",
           "type": "number"
@@ -6392,26 +6147,6 @@
           "description": "Example: 15:48:44",
           "type": "string"
         },
-        "unitAbbreviatedName": {
-          "description": "Abbreviated name of the unit to be used when sending measurements",
-          "type": "string"
-        },
-        "unitCategoryId": {
-          "description": "Example: 5",
-          "type": "integer"
-        },
-        "unitCategoryName": {
-          "description": "Example: Rating",
-          "type": "string"
-        },
-        "unitId": {
-          "description": "Example: 10",
-          "type": "integer"
-        },
-        "unitName": {
-          "description": "Example: 1 to 5 Rating",
-          "type": "string"
-        },
         "updatedAt": {
           "description": "When the record in the database was last updated. Use UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`  datetime format. Time zone should be UTC and not local.",
           "format": "date-time",
@@ -6422,23 +6157,23 @@
           "format": "int32",
           "type": "integer"
         },
-        "userVariableDefaultUnitAbbreviatedName": {
+        "userVariableUnitAbbreviatedName": {
           "description": "Example: /5",
           "type": "string"
         },
-        "userVariableDefaultUnitCategoryId": {
+        "userVariableUnitCategoryId": {
           "description": "Example: 5",
           "type": "integer"
         },
-        "userVariableDefaultUnitCategoryName": {
+        "userVariableUnitCategoryName": {
           "description": "Example: Rating",
           "type": "string"
         },
-        "userVariableDefaultUnitId": {
+        "userVariableUnitId": {
           "description": "Example: 10",
           "type": "integer"
         },
-        "userVariableDefaultUnitName": {
+        "userVariableUnitName": {
           "description": "Example: 1 to 5 Rating",
           "type": "string"
         },
@@ -6482,7 +6217,7 @@
       },
       "required": [
         "actionArray",
-        "availableDefaultUnits",
+        "availableUnits",
         "fillingValue",
         "id",
         "trackAllActions"
@@ -6956,15 +6691,15 @@
           "description": "The way cause measurements are aggregated",
           "type": "string"
         },
-        "causeVariableDefaultUnitAbbreviatedName": {
+        "causeVariableUnitAbbreviatedName": {
           "description": "Example: /5",
           "type": "string"
         },
-        "causeVariableDefaultUnitId": {
+        "causeVariableUnitId": {
           "description": "Unit Id of the predictor variable",
           "type": "integer"
         },
-        "causeVariableDefaultUnitName": {
+        "causeVariableUnitName": {
           "description": "Example: 1 to 5 Rating",
           "type": "string"
         },
@@ -7080,15 +6815,15 @@
           "description": "Example: Mood_(psychology)",
           "type": "string"
         },
-        "effectVariableDefaultUnitAbbreviatedName": {
+        "effectVariableUnitAbbreviatedName": {
           "description": "Example: /5",
           "type": "string"
         },
-        "effectVariableDefaultUnitId": {
+        "effectVariableUnitId": {
           "description": "Example: 10",
           "type": "integer"
         },
-        "effectVariableDefaultUnitName": {
+        "effectVariableUnitName": {
           "description": "Example: 1 to 5 Rating",
           "type": "string"
         },
@@ -7463,11 +7198,11 @@
           "description": "Example: Sleep",
           "type": "string"
         },
-        "causeVariableDefaultUnitAbbreviatedName": {
+        "causeVariableUnitAbbreviatedName": {
           "description": "Example: h",
           "type": "string"
         },
-        "causeVariableDefaultUnitId": {
+        "causeVariableUnitId": {
           "description": "Example: 34",
           "type": "integer"
         },
@@ -7521,15 +7256,15 @@
           "type": "number"
         },
         "dataAnalysis": {
-          "description": "Example: It was assumed that 0 hours would pass before a change in Sleep Duration would produce an observable change in Overall Mood.  It was assumed that Sleep Duration could produce an observable change in Overall Mood for as much as 7 days after the stimulus event.  ",
+          "description": "Example: It was assumed that 0 hours would pass before a change in Sleep Duration would produce an observable change in Overall Mood.  It was assumed that Sleep Duration could produce an observable change in Overall Mood for as much as 7 days after the stimulus event.",
           "type": "string"
         },
         "dataSources": {
-          "description": "Example: Sleep Duration data was primarily collected using <a href=\"https://www.amazon.com/Fitbit-Charge-Heart-Fitness-Wristband/dp/B01K9S260E/ref=as_li_ss_tl?ie=UTF8&qid=1493518902&sr=8-3&keywords=fitbit&th=1&linkCode=ll1&tag=quant08-20&linkId=b357b0833de73b0c4e935fd7c13a079e\">Fitbit</a>.  <a href=\"https://www.amazon.com/Fitbit-Charge-Heart-Fitness-Wristband/dp/B01K9S260E/ref=as_li_ss_tl?ie=UTF8&qid=1493518902&sr=8-3&keywords=fitbit&th=1&linkCode=ll1&tag=quant08-20&linkId=b357b0833de73b0c4e935fd7c13a079e\">Fitbit</a> makes activity tracking easy and automatic.<br>Overall Mood data was primarily collected using <a href=\"https://quantimo.do\">QuantiModo</a>.  <a href=\"https://quantimo.do\">QuantiModo</a> is a Chrome extension, Android app, iOS app, and web app that allows you to easily track mood, symptoms, or any outcome you want to optimize in a fraction of a second.  You can also import your data from over 30 other apps and devices like Fitbit, Rescuetime, Jawbone Up, Withings, Facebook, Github, Google Calendar, Runkeeper, MoodPanda, Slice, Google Fit, and more.  <a href=\"https://quantimo.do\">QuantiModo</a> then analyzes your data to identify which hidden factors are most likely to be influencing your mood or symptoms and their optimal daily values.",
+          "description": "Example: Sleep Duration data was primarily collected using <a href=\"https://www.amazon.com/Fitbit-Charge-Heart-Fitness-Wristband/dp/B01K9S260E/ref=as_li_ss_tl?ie=UTF8&qid=1493518902&sr=8-3&keywords=fitbit&th=1&linkCode=ll1&tag=quant08-20&linkId=b357b0833de73b0c4e935fd7c13a079e\">Fitbit</a>. <a href=\"https://www.amazon.com/Fitbit-Charge-Heart-Fitness-Wristband/dp/B01K9S260E/ref=as_li_ss_tl?ie=UTF8&qid=1493518902&sr=8-3&keywords=fitbit&th=1&linkCode=ll1&tag=quant08-20&linkId=b357b0833de73b0c4e935fd7c13a079e\">Fitbit</a> makes activity tracking easy and automatic.<br>Overall Mood data was primarily collected using <a href=\"https://quantimo.do\">QuantiModo</a>.  <a href=\"https://quantimo.do\">QuantiModo</a> is a Chrome extension, Android app, iOS app, and web app that allows you to easily track mood, symptoms, or any outcome you want to optimize in a fraction of a second.  You can also import your data from over 30 other apps and devices like Fitbit, Rescuetime, Jawbone Up, Withings, Facebook, Github, Google Calendar, Runkeeper, MoodPanda, Slice, Google Fit, and more.  <a href=\"https://quantimo.do\">QuantiModo</a> then analyzes your data to identify which hidden factors are most likely to be influencing your mood or symptoms and their optimal daily values.",
           "type": "string"
         },
         "dataSourcesParagraphForCause": {
-          "description": "Example: Sleep Duration data was primarily collected using <a href=\"https://www.amazon.com/Fitbit-Charge-Heart-Fitness-Wristband/dp/B01K9S260E/ref=as_li_ss_tl?ie=UTF8&qid=1493518902&sr=8-3&keywords=fitbit&th=1&linkCode=ll1&tag=quant08-20&linkId=b357b0833de73b0c4e935fd7c13a079e\">Fitbit</a>.  <a href=\"https://www.amazon.com/Fitbit-Charge-Heart-Fitness-Wristband/dp/B01K9S260E/ref=as_li_ss_tl?ie=UTF8&qid=1493518902&sr=8-3&keywords=fitbit&th=1&linkCode=ll1&tag=quant08-20&linkId=b357b0833de73b0c4e935fd7c13a079e\">Fitbit</a> makes activity tracking easy and automatic.",
+          "description": "Example: Sleep Duration data was primarily collected using <a href=\"https://www.amazon.com/Fitbit-Charge-Heart-Fitness-Wristband/dp/B01K9S260E/ref=as_li_ss_tl?ie=UTF8&qid=1493518902&sr=8-3&keywords=fitbit&th=1&linkCode=ll1&tag=quant08-20&linkId=b357b0833de73b0c4e935fd7c13a079e\">Fitbit</a>. <a href=\"https://www.amazon.com/Fitbit-Charge-Heart-Fitness-Wristband/dp/B01K9S260E/ref=as_li_ss_tl?ie=UTF8&qid=1493518902&sr=8-3&keywords=fitbit&th=1&linkCode=ll1&tag=quant08-20&linkId=b357b0833de73b0c4e935fd7c13a079e\">Fitbit</a> makes activity tracking easy and automatic.",
           "type": "string"
         },
         "dataSourcesParagraphForEffect": {
@@ -7595,11 +7330,11 @@
           "description": "Example: Emotions",
           "type": "string"
         },
-        "effectVariableDefaultUnitAbbreviatedName": {
+        "effectVariableUnitAbbreviatedName": {
           "description": "Example: /5",
           "type": "string"
         },
-        "effectVariableDefaultUnitId": {
+        "effectVariableUnitId": {
           "description": "Example: 10",
           "type": "integer"
         },
@@ -7791,7 +7526,7 @@
           "type": "boolean"
         },
         "significanceExplanation": {
-          "description": "Example: Using a two-tailed t-test with alpha = 0.05, it was determined that the change in Overall Mood is statistically significant at 95% confidence interval. ",
+          "description": "Example: Using a two-tailed t-test with alpha = 0.05, it was determined that the change in Overall Mood is statistically significant at 95% confidence interval.",
           "type": "string"
         },
         "significantDifference": {
@@ -7808,15 +7543,15 @@
           "type": "string"
         },
         "studyAbstract": {
-          "description": "Example: Your data suggests with a high degree of confidence (p=0) that Sleep Duration (Sleep) has a weakly negative predictive relationship (R=-0.173) with Overall Mood  (Emotions).  The highest quartile of Overall Mood  measurements were observed following an average 6.79h Sleep Duration.  The lowest quartile of Overall Mood  measurements were observed following an average 7.54h Sleep Duration.",
+          "description": "Example: Your data suggests with a high degree of confidence (p=0) that Sleep Duration (Sleep) has a weakly negative predictive relationship (R=-0.173) with Overall Mood  (Emotions).  The highest quartile of Overall Mood  measurements were observed following an average 6.79h Sleep Duration.  The lowest quartile of Overall Mood measurements were observed following an average 7.54h Sleep Duration.",
           "type": "string"
         },
         "studyDesign": {
-          "description": "Example: This study is based on data donated by one QuantiModo user. Thus, the study design is consistent with an n=1 observational natural experiment. ",
+          "description": "Example: This study is based on data donated by one QuantiModo user. Thus, the study design is consistent with an n=1 observational natural experiment.",
           "type": "string"
         },
         "studyLimitations": {
-          "description": "Example: As with any human experiment, it was impossible to control for all potentially confounding variables. \n            \n            Correlation does not necessarily imply correlation.  We can never know for sure if one factor is definitely the cause of an outcome.  \n            However, lack of correlation definitely implies the lack of a causal relationship.  Hence, we can with great \n            confidence rule out non-existent relationships. For instance, if we discover no relationship between mood\n            and an antidepressant this information is just as or even more valuable than the discovery that there is a relationship. \n            <br>\n            <br>\n           \n            We can also take advantage of several characteristics of time series data from many subjects  to infer the likelihood of a causal relationship if we do find a correlational relationship. \n            The criteria for causation are a group of minimal conditions necessary to provide adequate evidence of a causal relationship between an incidence and a possible consequence.\n            The list of the criteria is as follows:\n            <br>\n            1. Strength (effect size): A small association does not mean that there is not a causal effect, though the larger the association, the more likely that it is causal.\n            <br>\n            2. Consistency (reproducibility): Consistent findings observed by different persons in different places with different samples strengthens the likelihood of an effect.\n            <br>\n            3. Specificity: Causation is likely if a very specific population at a specific site and disease with no other likely explanation. The more specific an association between a factor and an effect is, the bigger the probability of a causal relationship.\n            <br>\n            4. Temporality: The effect has to occur after the cause (and if there is an expected delay between the cause and expected effect, then the effect must occur after that delay).\n            <br>\n            5. Biological gradient: Greater exposure should generally lead to greater incidence of the effect. However, in some cases, the mere presence of the factor can trigger the effect. In other cases, an inverse proportion is observed: greater exposure leads to lower incidence.\n            <br>\n            6. Plausibility: A plausible mechanism between cause and effect is helpful.\n            <br>\n            7. Coherence: Coherence between epidemiological and laboratory findings increases the likelihood of an effect.\n            <br>\n            8. Experiment: \"Occasionally it is possible to appeal to experimental evidence\".\n            <br>\n            9. Analogy: The effect of similar factors may be considered.\n            <br>\n            <br>\n             \n             The confidence in a causal relationship is bolstered by the fact that time-precedence was taken into account in all calculations. Furthermore, in accordance with the law of large numbers (LLN), the predictive power and accuracy of these results will continually grow over time.  1011 paired data points were used in this analysis.   Assuming that the relationship is merely coincidental, as the participant independently modifies their Sleep Duration values, the observed strength of the relationship will decline until it is below the threshold of significance.  To it another way, in the case that we do find a spurious correlation, suggesting that banana intake improves mood for instance,\n            one will likely increase their banana intake.  Due to the fact that this correlation is spurious, it is unlikely\n            that you will see a continued and persistent corresponding increase in mood.  So over time, the spurious correlation will\n            naturally dissipate.Furthermore, it will be very enlightening to aggregate this data with the data from other participants  with similar genetic, diseasomic, environmentomic, and demographic profiles.",
+          "description": "Example: As with any human experiment, it was impossible to control for all potentially confounding variables.\n\n            Correlation does not necessarily imply correlation.  We can never know for sure if one factor is definitely the cause of an outcome.\n            However, lack of correlation definitely implies the lack of a causal relationship.  Hence, we can with great\n            confidence rule out non-existent relationships. For instance, if we discover no relationship between mood\n            and an antidepressant this information is just as or even more valuable than the discovery that there is a relationship.\n            <br>\n            <br>\n\n            We can also take advantage of several characteristics of time series data from many subjects  to infer the likelihood of a causal relationship if we do find a correlational relationship.\n            The criteria for causation are a group of minimal conditions necessary to provide adequate evidence of a causal relationship between an incidence and a possible consequence.\n            The list of the criteria is as follows:\n            <br>\n            1. Strength (effect size): A small association does not mean that there is not a causal effect, though the larger the association, the more likely that it is causal.\n            <br>\n            2. Consistency (reproducibility): Consistent findings observed by different persons in different places with different samples strengthens the likelihood of an effect.\n            <br>\n            3. Specificity: Causation is likely if a very specific population at a specific site and disease with no other likely explanation. The more specific an association between a factor and an effect is, the bigger the probability of a causal relationship.\n            <br>\n            4. Temporality: The effect has to occur after the cause (and if there is an expected delay between the cause and expected effect, then the effect must occur after that delay).\n            <br>\n            5. Biological gradient: Greater exposure should generally lead to greater incidence of the effect. However, in some cases, the mere presence of the factor can trigger the effect. In other cases, an inverse proportion is observed: greater exposure leads to lower incidence.\n            <br>\n            6. Plausibility: A plausible mechanism between cause and effect is helpful.\n            <br>\n            7. Coherence: Coherence between epidemiological and laboratory findings increases the likelihood of an effect.\n            <br>\n            8. Experiment: \"Occasionally it is possible to appeal to experimental evidence\".\n            <br>\n            9. Analogy: The effect of similar factors may be considered.\n            <br>\n            <br>\n\n             The confidence in a causal relationship is bolstered by the fact that time-precedence was taken into account in all calculations. Furthermore, in accordance with the law of large numbers (LLN), the predictive power and accuracy of these results will continually grow over time.  1011 paired data points were used in this analysis.   Assuming that the relationship is merely coincidental, as the participant independently modifies their Sleep Duration values, the observed strength of the relationship will decline until it is below the threshold of significance.  To it another way, in the case that we do find a spurious correlation, suggesting that banana intake improves mood for instance,\n            one will likely increase their banana intake.  Due to the fact that this correlation is spurious, it is unlikely\n            that you will see a continued and persistent corresponding increase in mood.  So over time, the spurious correlation will\n            naturally dissipate.Furthermore, it will be very enlightening to aggregate this data with the data from other participants  with similar genetic, diseasomic, environmentomic, and demographic profiles.",
           "type": "string"
         },
         "studyLinkDynamic": {
@@ -7844,7 +7579,7 @@
           "type": "string"
         },
         "studyObjective": {
-          "description": "Example: The objective of this study is to determine the nature of the relationship (if any) between the Sleep Duration and the Overall Mood. Additionally, we attempt to determine the Sleep Duration values most likely to produce optimal Overall Mood values. ",
+          "description": "Example: The objective of this study is to determine the nature of the relationship (if any) between the Sleep Duration and the Overall Mood. Additionally, we attempt to determine the Sleep Duration values most likely to produce optimal Overall Mood values.",
           "type": "string"
         },
         "studyResults": {
@@ -7874,7 +7609,7 @@
           "type": "number"
         },
         "valuePredictingHighOutcomeExplanation": {
-          "description": "Example: Overall Mood, on average, 3.54% higher after around 6.79 h Sleep Duration ",
+          "description": "Example: Overall Mood, on average, 3.54% higher after around 6.79 h Sleep Duration",
           "type": "string"
         },
         "valuePredictingLowOutcome": {
@@ -7883,7 +7618,7 @@
           "type": "number"
         },
         "valuePredictingLowOutcomeExplanation": {
-          "description": "Example: Overall Mood, on average, 3.25% lower after around 7.54 h Sleep Duration ",
+          "description": "Example: Overall Mood, on average, 3.25% lower after around 7.54 h Sleep Duration",
           "type": "string"
         },
         "voteStatisticalSignificance": {
@@ -7920,7 +7655,7 @@
           "description": "Example: ",
           "type": "string"
         },
-        "availableDefaultUnits": {
+        "availableUnits": {
           "items": {
             "$ref": "#/definitions/Unit"
           },
@@ -7989,24 +7724,24 @@
           "format": "date-time",
           "type": "string"
         },
-        "defaultUnitAbbreviatedName": {
+        "unitAbbreviatedName": {
           "description": "Example: count",
           "type": "string"
         },
-        "defaultUnitCategoryId": {
+        "unitCategoryId": {
           "description": "Example: 6",
           "type": "integer"
         },
-        "defaultUnitCategoryName": {
+        "unitCategoryName": {
           "description": "Example: Miscellany",
           "type": "string"
         },
-        "defaultUnitId": {
+        "unitId": {
           "description": "ID of unit to use for this variable",
           "format": "int32",
           "type": "integer"
         },
-        "defaultUnitName": {
+        "unitName": {
           "description": "Example: Count",
           "type": "string"
         },
@@ -8152,11 +7887,6 @@
           "format": "float",
           "type": "number"
         },
-        "lastValueInUserVariableDefaultUnit": {
-          "description": "Example: 500",
-          "format": "double",
-          "type": "number"
-        },
         "latestFillingTime": {
           "description": "Latest filling time",
           "format": "int32",
@@ -8214,11 +7944,6 @@
           "format": "float",
           "type": "number"
         },
-        "meanInUserVariableDefaultUnit": {
-          "description": "Example: 0.31159",
-          "format": "double",
-          "type": "number"
-        },
         "measurementsAtLastAnalysis": {
           "description": "Number of measurements at last analysis",
           "format": "int32",
@@ -8255,11 +7980,6 @@
         "mostCommonValue": {
           "description": "Most common value",
           "format": "float",
-          "type": "number"
-        },
-        "mostCommonValueInUserVariableDefaultUnit": {
-          "description": "Example: 250",
-          "format": "double",
           "type": "number"
         },
         "name": {
@@ -8388,17 +8108,7 @@
           "format": "double",
           "type": "number"
         },
-        "secondMostCommonValueInUserVariableDefaultUnit": {
-          "description": "Example: 1",
-          "format": "double",
-          "type": "number"
-        },
         "secondToLastValue": {
-          "description": "Example: 250",
-          "format": "double",
-          "type": "number"
-        },
-        "secondToLastValueInUserVariableDefaultUnit": {
           "description": "Example: 250",
           "format": "double",
           "type": "number"
@@ -8439,43 +8149,13 @@
           "format": "double",
           "type": "number"
         },
-        "thirdMostCommonValueInUserVariableDefaultUnit": {
-          "description": "Example: 6",
-          "format": "double",
-          "type": "number"
-        },
         "thirdToLastValue": {
-          "description": "Example: 250",
-          "format": "double",
-          "type": "number"
-        },
-        "thirdToLastValueInUserVariableDefaultUnit": {
           "description": "Example: 250",
           "format": "double",
           "type": "number"
         },
         "unit": {
           "$ref": "#/definitions/Unit"
-        },
-        "unitAbbreviatedName": {
-          "description": "Example: count",
-          "type": "string"
-        },
-        "unitCategoryId": {
-          "description": "Example: 6",
-          "type": "integer"
-        },
-        "unitCategoryName": {
-          "description": "Example: Miscellany",
-          "type": "string"
-        },
-        "unitId": {
-          "description": "Example: 23",
-          "type": "integer"
-        },
-        "unitName": {
-          "description": "Example: Count",
-          "type": "string"
         },
         "updated": {
           "description": "updated",
@@ -8503,23 +8183,23 @@
         "userTagVariables": {
           "$ref": "#/definitions/UserVariableArray"
         },
-        "userVariableDefaultUnitAbbreviatedName": {
+        "userVariableUnitAbbreviatedName": {
           "description": "Example: count",
           "type": "string"
         },
-        "userVariableDefaultUnitCategoryId": {
+        "userVariableUnitCategoryId": {
           "description": "Example: 6",
           "type": "integer"
         },
-        "userVariableDefaultUnitCategoryName": {
+        "userVariableUnitCategoryName": {
           "description": "Example: Miscellany",
           "type": "string"
         },
-        "userVariableDefaultUnitId": {
+        "userVariableUnitId": {
           "description": "Example: 23",
           "type": "integer"
         },
-        "userVariableDefaultUnitName": {
+        "userVariableUnitName": {
           "description": "Example: Count",
           "type": "string"
         },
@@ -8599,7 +8279,7 @@
       },
       "required": [
         "alias",
-        "availableDefaultUnits",
+        "availableUnits",
         "childUserTagVariables",
         "commonTagVariables",
         "commonTaggedVariables",
@@ -8655,11 +8335,11 @@
           "format": "date-time",
           "type": "string"
         },
-        "defaultUnitAbbreviatedName": {
+        "unitAbbreviatedName": {
           "description": "Example: /5",
           "type": "string"
         },
-        "defaultUnitId": {
+        "unitId": {
           "description": "Example: 10",
           "type": "integer"
         },
@@ -10702,7 +10382,7 @@
     },
     "/v3/trackingReminderNotifications": {
       "get": {
-        "description": "Specific tracking reminder notification instances that still need to be tracked.  ",
+        "description": "Specific tracking reminder notification instances that still need to be tracked.",
         "operationId": "getTrackingReminderNotifications",
         "parameters": [
           {
