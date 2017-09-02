@@ -614,7 +614,7 @@ gulp.task('get-pairs', [], function (callback) {
 gulp.task('get-common-variables', [], function (callback) {
     var apiInstance = new Quantimodo.VariablesApi();
     function qmApiResponseCallback(error, data, response) {
-        var requiredProperties = ['unitAbbreviatedName'];
+        var requiredProperties = ['unitAbbreviatedName', 'unit', 'unitName', 'unitId'];
         handleApiResponse(error, data, response, requiredProperties);
         callback();
     }
@@ -709,7 +709,8 @@ gulp.task('get-user-correlations', [], function (callback) {
 gulp.task('get-user-variables', [], function (callback) {
     var apiInstance = new Quantimodo.VariablesApi();
     function qmApiResponseCallback(error, data, response) {
-        handleApiResponse(error, data, response);
+        var requiredProperties = ['unitAbbreviatedName', 'unit', 'unitName', 'unitId'];
+        handleApiResponse(error, data, response, requiredProperties);
         callback();
     }
     apiInstance.getUserVariables({}, qmApiResponseCallback);
