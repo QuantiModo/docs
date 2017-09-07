@@ -599,13 +599,6 @@
         "text"
       ]
     },
-    "Category": {
-      "items": {
-        "type": "string"
-      },
-      "properties": {},
-      "type": "array"
-    },
     "Chart": {
       "properties": {
         "animation": {
@@ -703,13 +696,6 @@
       "required": [
         "background"
       ]
-    },
-    "Color": {
-      "items": {
-        "type": "string"
-      },
-      "properties": {},
-      "type": "array"
     },
     "Column": {
       "properties": {
@@ -4158,7 +4144,7 @@
         },
         "colors": {
           "items": {
-            "$ref": "#/definitions/Color"
+            "type": "string"
           },
           "type": "array"
         },
@@ -8514,7 +8500,7 @@
       "properties": {
         "categories": {
           "items": {
-            "$ref": "#/definitions/Category"
+            "type": "string"
           },
           "type": "array"
         },

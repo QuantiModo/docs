@@ -532,11 +532,6 @@ definitions:
     required:
       - link
       - text
-  Category:
-    items:
-      type: string
-    properties: {}
-    type: array
   Chart:
     properties:
       animation:
@@ -613,11 +608,6 @@ definitions:
         type: string
     required:
       - background
-  Color:
-    items:
-      type: string
-    properties: {}
-    type: array
   Column:
     properties:
       borderWidth:
@@ -3561,7 +3551,7 @@ definitions:
         $ref: '#/definitions/Chart'
       colors:
         items:
-          $ref: '#/definitions/Color'
+          type: string
         type: array
       credits:
         $ref: '#/definitions/Credit'
@@ -4879,27 +4869,27 @@ definitions:
       studyResults:
         description: >-
           Example: This analysis suggests that higher Very Distracting Time
-          (Work) generally predicts negative Video Activities (p = 0.097).
-          Video Activities is, on average, 36%  higher after around 2.03 Very
+          (Work) generally predicts negative Video Activities (p = 0.097). Video
+          Activities is, on average, 36%  higher after around 2.03 Very
           Distracting Time.  After an onset delay of 168 hours, Video Activities
           is, on average, 16%  lower than its average over the 168 hours
           following around 1.04 Very Distracting Time.  146 data points were
           used in this analysis.  The value for Very Distracting Time changed
-          2984 times, effectively running 1492 separate natural experiments.
-          The top quartile outcome values are preceded by an average 2.03 h of
-          Very Distracting Time.  The bottom quartile outcome values are
-          preceded by an average 1.04 h of Very Distracting Time.  Forward
-          Pearson Correlation Coefficient was 0.354 (p=0.097, 95% CI -0.437 to
-          1.144 onset delay = 0 hours, duration of action = 168 hours) .  The
-          Reverse Pearson Correlation Coefficient was 0.208 (P=0.097, 95% CI
-          -0.583 to 0.998, onset delay = -0 hours, duration of action = -168
-          hours). When the Very Distracting Time value is closer to 2.03 h than
-          1.04 h, the Video Activities value which follows is, on average, 36%
-          percent higher than its typical value.  When the Very Distracting Time
-          value is closer to 1.04 h than 2.03 h, the Video Activities value
-          which follows is 0% lower than its typical value.  Video Activities is
-          5 h (67% higher) on average after days with around 5 h Very
-          Distracting Time
+          2984 times, effectively running 1492 separate natural experiments. The
+          top quartile outcome values are preceded by an average 2.03 h of Very
+          Distracting Time.  The bottom quartile outcome values are preceded by
+          an average 1.04 h of Very Distracting Time.  Forward Pearson
+          Correlation Coefficient was 0.354 (p=0.097, 95% CI -0.437 to 1.144
+          onset delay = 0 hours, duration of action = 168 hours) .  The Reverse
+          Pearson Correlation Coefficient was 0.208 (P=0.097, 95% CI -0.583 to
+          0.998, onset delay = -0 hours, duration of action = -168 hours). When
+          the Very Distracting Time value is closer to 2.03 h than 1.04 h, the
+          Video Activities value which follows is, on average, 36% percent
+          higher than its typical value.  When the Very Distracting Time value
+          is closer to 1.04 h than 2.03 h, the Video Activities value which
+          follows is 0% lower than its typical value.  Video Activities is 5 h
+          (67% higher) on average after days with around 5 h Very Distracting
+          Time
         type: string
       studyTitle:
         description: >-
@@ -7528,7 +7518,7 @@ definitions:
     properties:
       categories:
         items:
-          $ref: '#/definitions/Category'
+          type: string
         type: array
       endOnTick:
         description: 'Example: true'
