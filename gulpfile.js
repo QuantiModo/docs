@@ -787,7 +787,7 @@ gulp.task('js-sdk-copy-to-node-modules', ['delete-qm-node-module'], function(){
     language = 'javascript';
     return copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage(language), pathToQuantiModoNodeModule);
 });
-gulp.task('js-sdk-update', function(callback){
+gulp.task('JS-SDK-UPDATE', function(callback){
     language = 'javascript';
     runSequence(
         'clean-unzipped-folders',
