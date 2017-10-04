@@ -797,7 +797,7 @@ gulp.task('JS-SDK-UPDATE', function(callback){
             if (error) {
                 logError(error.message);
             } else {
-                logInfo('SDK RELEASE FINISHED SUCCESSFULLY');
+                logInfo('Run js-sdk-copy-to-node-modules again because it probably ran too early');
             }
             callback(error);
         });
