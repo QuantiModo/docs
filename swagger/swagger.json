@@ -11340,6 +11340,16 @@
             "description": "Internal server error"
           }
         },
+        "security": [
+          {
+            "access_token": []
+          },
+          {
+            "quantimodo_oauth2": [
+              "basic"
+            ]
+          }
+        ],
         "summary": "Get Study",
         "tags": [
           "analytics"
