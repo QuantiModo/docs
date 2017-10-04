@@ -839,6 +839,9 @@
         "dataSource": {
           "$ref": "#/definitions/DataSource"
         },
+        "highcharts": {
+          "$ref": "#/definitions/HighchartArray"
+        },
         "unitAbbreviatedName": {
           "description": "Abbreviated name of the default unit for the variable",
           "type": "string"
@@ -3298,14 +3301,8 @@
         "effectVariable": {
           "$ref": "#/definitions/UserVariable"
         },
-        "highchartArray": {
-          "items": {
-            "$ref": "#/definitions/HighchartArray"
-          },
-          "type": "array"
-        },
         "highcharts": {
-          "$ref": "#/definitions/Highchart"
+          "$ref": "#/definitions/HighchartArray"
         },
         "message": {
           "description": "Message",
@@ -5443,11 +5440,8 @@
         "effectVariable": {
           "$ref": "#/definitions/UserVariable"
         },
-        "highchartArray": {
-          "items": {
-            "$ref": "#/definitions/HighchartArray"
-          },
-          "type": "array"
+        "highcharts": {
+          "$ref": "#/definitions/HighchartArray"
         },
         "pairs": {
           "items": {
@@ -7803,6 +7797,9 @@
         "iconIcon": {
           "description": "Example: ion-sad-outline",
           "type": "string"
+        },
+        "highcharts": {
+          "$ref": "#/definitions/HighchartArray"
         },
         "id": {
           "description": "Example: 95614",
