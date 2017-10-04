@@ -439,7 +439,10 @@ function copyUnzippedJsSdkToIonicCustomLib(){
     return copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage('javascript'), pathToIonic + '/www/custom-lib/quantimodo');
 }
 function copyQmWebJsToIonicCustomLib(){
-    return gulp.src([getUnzippedPathForSdkLanguage('javascript') + 'quantimodo-web.js']).pipe(gulp.dest('/www/custom-lib/'));
+    var pathToIonicCustomLib =  pathToIonic + '/www/custom-lib/';
+    var qmWebJs = getUnzippedPathForSdkLanguage('javascript') + '/quantimodo-web.js';
+    logInfo("Copying " + qmWebJs + " to " + pathToIonicCustomLib);
+    return gulp.src([qmWebJs]).pipe(gulp.dest(pathToIonicCustomLib));
 }
 function copyUnzippedJsSdkToApiDocsNodeModules(){
     return copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage('javascript'), pathToQuantiModoNodeModule);
@@ -456,7 +459,7 @@ gulp.task('js-sdk-copy-everywhere', ['browserify'], function(){
     try {
         copyUnzippedJsSdkToQmDockerNodeModules();
         copyUnzippedJsSdkToIonicNodeModules();
-        copyUnzippedJsSdkToIonicCustomLib();
+        //copyUnzippedJsSdkToIonicCustomLib();
         copyQmWebJsToIonicCustomLib();
     } catch (error){
         logError(error, error);
