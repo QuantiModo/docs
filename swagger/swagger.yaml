@@ -423,7 +423,7 @@ definitions:
           knowledge...
         type: string
       studyDesign:
-        description: This study is based on data donated by one QuantiModo user...
+        description: This study is based on data donated by one user...
         type: string
       studyLimitations:
         description: >-
@@ -736,6 +736,8 @@ definitions:
         type: string
       dataSource:
         $ref: '#/definitions/DataSource'
+      highcharts:
+        $ref: '#/definitions/HighchartArray'
       unitAbbreviatedName:
         description: Abbreviated name of the default unit for the variable
         type: string
@@ -2909,12 +2911,8 @@ definitions:
         type: array
       effectVariable:
         $ref: '#/definitions/UserVariable'
-      highchartArray:
-        items:
-          $ref: '#/definitions/HighchartArray'
-        type: array
       highcharts:
-        $ref: '#/definitions/Highchart'
+        $ref: '#/definitions/HighchartArray'
       message:
         description: Message
         type: string
@@ -4736,10 +4734,8 @@ definitions:
         type: array
       effectVariable:
         $ref: '#/definitions/UserVariable'
-      highchartArray:
-        items:
-          $ref: '#/definitions/HighchartArray'
-        type: array
+      highcharts:
+        $ref: '#/definitions/HighchartArray'
       pairs:
         items:
           $ref: '#/definitions/Pair'
@@ -6945,6 +6941,8 @@ definitions:
       iconIcon:
         description: 'Example: ion-sad-outline'
         type: string
+      highcharts:
+        $ref: '#/definitions/HighchartArray'
       id:
         description: 'Example: 95614'
         type: integer
@@ -7570,16 +7568,16 @@ info:
   contact:
     name: info@quantimo.do
   description: >-
-    QuantiModo makes it easy to retrieve normalized user data from a wide array
-    of devices and applications. [Learn about QuantiModo](https://quantimo.do),
-    check out our [docs](https://github.com/QuantiModo/docs) or contact us at
-    [help.quantimo.do](https://help.quantimo.do).
+    We make it easy to retrieve and analyze normalized user data from a wide
+    array of devices and applications. Check out our [docs and
+    sdk's](https://github.com/QuantiModo/docs) or [contact
+    us](https://help.quantimo.do).
   license:
     name: Apache 2.0
     url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
   termsOfService: 'https://quantimo.do/tos/'
   title: quantimodo
-  version: 5.8.728
+  version: 5.8.100411
 parameters:
   appNameParam:
     description: 'Example: MoodiModo'
@@ -7613,9 +7611,9 @@ parameters:
     type: string
   clientSecretParam:
     description: >-
-      This is the secret for your obtained clientId. QuantiModo uses this to
-      validate that only your application uses the clientId.  Obtain this by
-      creating a free application at
+      This is the secret for your obtained clientId. We use this to ensure that
+      only your application uses the clientId.  Obtain this by creating a free
+      application at
       [https://app.quantimo.do/api/v2/apps](https://app.quantimo.do/api/v2/apps).
     in: query
     name: client_secret
@@ -8731,19 +8729,19 @@ paths:
       description: >-
         Client provides authorization token obtained from
         /api/v3/oauth2/authorize to this endpoint and receives an access token.
-        Access token can then be used to query different API endpoints of
-        QuantiModo. ### Request Access Token After user approves your access to
-        the given scope form the https:/app.quantimo.do/v2/oauth2/authorize
-        endpoint, you'll receive an authorization code to request an access
-        token. This time make a `POST` request to `/api/v2/oauth/access_token`
-        with parameters including: * `grant_type` Can be `authorization_code` or
-        `refresh_token` since we are getting the `access_token` for the first
-        time we don't have a `refresh_token` so this must be
-        `authorization_code`. * `code` Authorization code you received with the
-        previous request. * `redirect_uri` Your application's redirect url. ###
-        Refreshing Access Token Access tokens expire at some point, to continue
-        using our api you need to refresh them with `refresh_token` you received
-        along with the `access_token`. To do this make a `POST` request to
+        Access token can then be used to query API endpoints. ### Request Access
+        Token After user approves your access to the given scope form the
+        https:/app.quantimo.do/v2/oauth2/authorize endpoint, you'll receive an
+        authorization code to request an access token. This time make a `POST`
+        request to `/api/v2/oauth/access_token` with parameters including: *
+        `grant_type` Can be `authorization_code` or `refresh_token` since we are
+        getting the `access_token` for the first time we don't have a
+        `refresh_token` so this must be `authorization_code`. * `code`
+        Authorization code you received with the previous request. *
+        `redirect_uri` Your application's redirect url. ### Refreshing Access
+        Token Access tokens expire at some point, to continue using our api you
+        need to refresh them with `refresh_token` you received along with the
+        `access_token`. To do this make a `POST` request to
         `/api/v2/oauth/access_token` with correct parameters, which are: *
         `grant_type` This time grant type must be `refresh_token` since we have
         it. * `clientId` Your application's client id. * `client_secret` Your
@@ -9213,6 +9211,14 @@ paths:
         variable defaults.
       operationId: getUserVariables
       parameters:
+        - description: >-
+            Return highcharts configs that can be used if you have highcharts.js
+            included on the page.  This only works if the id or name query
+            parameter is also provided.
+          in: query
+          name: includeCharts
+          required: false
+          type: boolean
         - $ref: '#/parameters/numberOfRawMeasurementsParam'
         - $ref: '#/parameters/userIdParam'
         - $ref: '#/parameters/variableCategoryNameParam'
@@ -9380,11 +9386,10 @@ paths:
     post:
       description: >-
         This is to enable users to indicate their opinion on the plausibility of
-        a causal relationship between a treatment and outcome. QuantiModo
-        incorporates crowd-sourced plausibility estimations into their
-        algorithm. This is done allowing user to indicate their view of the
-        plausibility of each relationship with thumbs up/down buttons placed
-        next to each prediction.
+        a causal relationship between a treatment and outcome. We incorporates
+        crowd-sourced plausibility estimations into our algorithm. This is done
+        allowing user to indicate their view of the plausibility of each
+        relationship with thumbs up/down buttons placed next to each prediction.
       operationId: postVote
       parameters:
         - $ref: '#/parameters/userIdParam'

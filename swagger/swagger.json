@@ -10914,6 +10914,13 @@
         "operationId": "getUserVariables",
         "parameters": [
           {
+            "description": "Return highcharts configs that can be used if you have highcharts.js included on the page.  This only works if the id or name query parameter is also provided.",
+            "in": "query",
+            "name": "includeCharts",
+            "required": false,
+            "type": "boolean"
+          },
+          {
             "$ref": "#/parameters/numberOfRawMeasurementsParam"
           },
           {
