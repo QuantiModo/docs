@@ -1218,6 +1218,10 @@
           "description": "Example: UPDATED",
           "type": "string"
         },
+        "subtitle": {
+          "description": "Based on sort filter and can be shown beneath variable name on search list",
+          "type": "string"
+        },
         "subVariables": {
           "description": "Array of Variables that are sub variables to this Variable",
           "items": {
@@ -8125,6 +8129,10 @@
         },
         "status": {
           "description": "status",
+          "type": "string"
+        },
+        "subtitle": {
+          "description": "Based on sort filter and can be shown beneath variable name on search list",
           "type": "string"
         },
         "svgUrl": {
