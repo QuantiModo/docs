@@ -468,6 +468,10 @@
           "description": "This study is based on data donated by one user...",
           "type": "string"
         },
+        "studyInvitation": {
+          "description": "Help us determine if Remeron affects Overall Mood!",
+          "type": "string"
+        },
         "studyLimitations": {
           "description": "As with any human experiment, it was impossible to control for all potentially confounding variables...",
           "type": "string"
@@ -498,6 +502,10 @@
         },
         "studyObjective": {
           "description": "The objective of this study is to determine...",
+          "type": "string"
+        },
+        "studyQuestion": {
+          "description": "Does Remeron affect Overall Mood?",
           "type": "string"
         },
         "studyResults": {
@@ -7007,6 +7015,10 @@
           "description": "This study is based on data donated by one QuantiModo user...",
           "type": "string"
         },
+        "studyInvitation": {
+          "description": "Help us determine if Remeron affects Overall Mood!",
+          "type": "string"
+        },
         "studyLimitations": {
           "description": "As with any human experiment, it was impossible to control for all potentially confounding variables...",
           "type": "string"
@@ -7037,6 +7049,10 @@
         },
         "studyObjective": {
           "description": "The objective of this study is to determine...",
+          "type": "string"
+        },
+        "studyQuestion": {
+          "description": "Does Remeron affect Overall Mood?",
           "type": "string"
         },
         "studyResults": {
