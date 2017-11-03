@@ -9805,16 +9805,25 @@
         "operationId": "getMeasurements",
         "parameters": [
           {
+            "$ref": "#/parameters/variableNameParam"
+          },
+          {
+            "$ref": "#/parameters/sortParam"
+          },
+          {
+            "$ref": "#/parameters/limitParam"
+          },
+          {
+            "$ref": "#/parameters/offsetParam"
+          },
+          {
+            "$ref": "#/parameters/variableCategoryNameParam"
+          },
+          {
             "$ref": "#/parameters/updatedAtParam"
           },
           {
             "$ref": "#/parameters/userIdParam"
-          },
-          {
-            "$ref": "#/parameters/variableNameParam"
-          },
-          {
-            "$ref": "#/parameters/variableCategoryNameParam"
           },
           {
             "$ref": "#/parameters/sourceNameParam"
@@ -9846,15 +9855,6 @@
           },
           {
             "$ref": "#/parameters/groupingTimezoneParam"
-          },
-          {
-            "$ref": "#/parameters/limitParam"
-          },
-          {
-            "$ref": "#/parameters/offsetParam"
-          },
-          {
-            "$ref": "#/parameters/sortParam"
           },
           {
             "$ref": "#/parameters/doNotProcessParam"
