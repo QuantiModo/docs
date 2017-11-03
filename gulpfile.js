@@ -263,6 +263,9 @@ gulp.task('clean-folders', [], function () {
         sdksReposPath + '/**/*'
     ]);
 });
+gulp.task('clean-laravel-vendor', [], function () {
+    return del([laravelVendorPath + '/**/*'], {force: true});
+});
 gulp.task('clean-unzipped-folders', [], function () {
     return del([
         sdksUnzippedPath + '/**/*',
@@ -469,6 +472,10 @@ gulp.task('js-sdk-copy-everywhere', ['browserify'], function(){
     } catch (error){
         logError(error, error);
     }
+});
+var laravelVendorPath = pathToQmDocker + '/laravel/vendor/quantimodo/quantimodo-sdk-php';
+gulp.task('php-sdk-copy-to-laravel', ['clean-laravel-vendor'], function(){
+    return copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage('php'), pathToQmDocker + '/laravel/vendor/quantimodo/quantimodo-sdk-php');
 });
 gulp.task('3-copy-to-repos', ['browserify'], function(){
     return copySdksFromUnzippedPathToRepos();
