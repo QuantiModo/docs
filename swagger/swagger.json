@@ -9279,25 +9279,13 @@
         "operationId": "getAggregatedCorrelations",
         "parameters": [
           {
-            "$ref": "#/parameters/durationOfActionParam"
-          },
-          {
-            "$ref": "#/parameters/userIdParam"
-          },
-          {
             "$ref": "#/parameters/causeVariableNameParam"
-          },
-          {
-            "$ref": "#/parameters/correlationCoefficientParam"
-          },
-          {
-            "$ref": "#/parameters/onsetDelayParam"
           },
           {
             "$ref": "#/parameters/effectVariableNameParam"
           },
           {
-            "$ref": "#/parameters/updatedAtParam"
+            "$ref": "#/parameters/sortParam"
           },
           {
             "$ref": "#/parameters/limitParam"
@@ -9306,10 +9294,22 @@
             "$ref": "#/parameters/offsetParam"
           },
           {
-            "$ref": "#/parameters/sortParam"
+            "$ref": "#/parameters/userIdParam"
+          },
+          {
+            "$ref": "#/parameters/correlationCoefficientParam"
+          },
+          {
+            "$ref": "#/parameters/updatedAtParam"
           },
           {
             "$ref": "#/parameters/outcomesOfInterestParam"
+          },
+          {
+            "$ref": "#/parameters/onsetDelayParam"
+          },
+          {
+            "$ref": "#/parameters/durationOfActionParam"
           }
         ],
         "produces": [
@@ -9600,13 +9600,22 @@
         "operationId": "getUserCorrelations",
         "parameters": [
           {
+            "$ref": "#/parameters/causeVariableNameParam"
+          },
+          {
+            "$ref": "#/parameters/effectVariableNameParam"
+          },
+          {
+            "$ref": "#/parameters/sortParam"
+          },
+          {
             "$ref": "#/parameters/limitParam"
           },
           {
-            "$ref": "#/parameters/userIdParam"
+            "$ref": "#/parameters/offsetParam"
           },
           {
-            "$ref": "#/parameters/causeVariableNameParam"
+            "$ref": "#/parameters/userIdParam"
           },
           {
             "$ref": "#/parameters/correlationCoefficientParam"
@@ -9619,15 +9628,6 @@
           },
           {
             "$ref": "#/parameters/updatedAtParam"
-          },
-          {
-            "$ref": "#/parameters/effectVariableNameParam"
-          },
-          {
-            "$ref": "#/parameters/offsetParam"
-          },
-          {
-            "$ref": "#/parameters/sortParam"
           },
           {
             "$ref": "#/parameters/outcomesOfInterestParam"
@@ -9681,10 +9681,10 @@
         "operationId": "getUserCorrelationExplantions",
         "parameters": [
           {
-            "$ref": "#/parameters/effectVariableNameParam"
+            "$ref": "#/parameters/causeVariableNameParam"
           },
           {
-            "$ref": "#/parameters/causeVariableNameParam"
+            "$ref": "#/parameters/effectVariableNameParam"
           }
         ],
         "produces": [
@@ -10184,13 +10184,16 @@
         "operationId": "getPairs",
         "parameters": [
           {
+            "$ref": "#/parameters/causeVariableNameParam"
+          },
+          {
+            "$ref": "#/parameters/effectVariableNameParam"
+          },
+          {
             "$ref": "#/parameters/effectUnitNameParam"
           },
           {
             "$ref": "#/parameters/userIdParam"
-          },
-          {
-            "$ref": "#/parameters/causeVariableNameParam"
           },
           {
             "$ref": "#/parameters/causeUnitNameParam"
@@ -10200,9 +10203,6 @@
           },
           {
             "$ref": "#/parameters/durationOfActionParam"
-          },
-          {
-            "$ref": "#/parameters/effectVariableNameParam"
           },
           {
             "$ref": "#/parameters/earliestMeasurementTimeParam"
