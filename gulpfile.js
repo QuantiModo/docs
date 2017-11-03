@@ -524,13 +524,24 @@ function stripQueryFromPath(path) {
     var parts = path.split('?');
     return parts[0];
 }
+var variableIsArray = function(variable) {
+    var isAnArray = Array.isArray(variable);
+    if(isAnArray){return true;}
+    var constructorArray = variable.constructor === Array;
+    if(constructorArray){return true;}
+    var instanceOfArray = variable instanceof Array;
+    if(instanceOfArray){return true;}
+    var prototypeArray = Object.prototype.toString.call(variable) === '[object Array]';
+    if(prototypeArray){return true;}
+    return false;
+};
 function handleApiResponse(error, data, response, requiredProperties) {
     function getUrlFromResponse(response) {
         return "https://" + response.request.host + response.req.path;
     }
     function checkRequiredProperties(data, requiredProperties) {
         var exampleObject = data;
-        if (data.constructor === Array) {
+        if (variableIsArray(data)) {
             exampleObject = data[0];
         }
         if (requiredProperties) {
