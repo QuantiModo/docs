@@ -2796,6 +2796,11 @@
           "description": "Example: 0",
           "type": "integer"
         },
+        "modifiedValue": {
+          "description": "Is the user specified default value or falls back to the last value in user unit. Good for initializing input fields",
+          "format": "double",
+          "type": "number"
+        },
         "nextReminderTimeEpochSeconds": {
           "description": "Example: 1502373600",
           "type": "integer"
@@ -4430,6 +4435,11 @@
           "description": "Example: 2017-07-29 20:49:54",
           "format": "date-time",
           "type": "string"
+        },
+        "modifiedValue": {
+          "description": "Is the user specified default value or falls back to the last value in user unit. Good for initializing input fields",
+          "format": "double",
+          "type": "number"
         },
         "unitAbbreviatedName": {
           "description": "Example: /5",
