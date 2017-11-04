@@ -4,576 +4,6 @@
     "application/json"
   ],
   "definitions": {
-    "AggregatedCorrelation": {
-      "properties": {
-        "aggregateQMScore": {
-          "description": "Example: 0.011598441286655",
-          "format": "double",
-          "type": "number"
-        },
-        "averageDailyHighCause": {
-          "description": "",
-          "type": "number"
-        },
-        "averageDailyLowCause": {
-          "description": "",
-          "type": "number"
-        },
-        "averageEffect": {
-          "description": "",
-          "type": "number"
-        },
-        "averageEffectFollowingHighCause": {
-          "description": "",
-          "type": "number"
-        },
-        "averageEffectFollowingHighCauseExplanation": {
-          "description": "",
-          "type": "string"
-        },
-        "averageEffectFollowingLowCause": {
-          "description": "",
-          "type": "number"
-        },
-        "averageEffectFollowingLowCauseExplanation": {
-          "description": "",
-          "type": "string"
-        },
-        "averageForwardPearsonCorrelationOverOnsetDelays": {
-          "description": "Example: 0.396",
-          "format": "double",
-          "type": "number"
-        },
-        "averageReversePearsonCorrelationOverOnsetDelays": {
-          "description": "Example: 0.453667",
-          "format": "double",
-          "type": "number"
-        },
-        "averageVote": {
-          "description": "Average Vote",
-          "type": "number"
-        },
-        "causalityFactor": {
-          "description": "",
-          "type": "number"
-        },
-        "cause": {
-          "description": "Variable name of the cause variable for which the user desires correlations.",
-          "type": "string"
-        },
-        "causeChanges": {
-          "description": "Number of changes in the predictor variable (a.k.a the number of experiments)",
-          "type": "integer"
-        },
-        "causeDataSource": {
-          "$ref": "#/definitions/DataSource"
-        },
-        "causeUnit": {
-          "description": "Unit of the predictor variable",
-          "type": "string"
-        },
-        "causeUserVariableShareUserMeasurements": {
-          "description": "Example: 1",
-          "type": "integer"
-        },
-        "causeVariableCategoryId": {
-          "description": "Example: 6",
-          "type": "integer"
-        },
-        "causeVariableCategoryName": {
-          "description": "Variable category of the cause variable.",
-          "type": "string"
-        },
-        "causeVariableCombinationOperation": {
-          "description": "The way cause measurements are aggregated",
-          "type": "string"
-        },
-        "causeVariableCommonAlias": {
-          "description": "Example: ",
-          "type": "string"
-        },
-        "causeVariableUnitAbbreviatedName": {
-          "description": "Example: /5",
-          "type": "string"
-        },
-        "causeVariableUnitId": {
-          "description": "Unit Id of the predictor variable",
-          "type": "integer"
-        },
-        "causeVariableUnitName": {
-          "description": "Example: 1 to 5 Rating",
-          "type": "string"
-        },
-        "causeVariableId": {
-          "description": "",
-          "type": "integer"
-        },
-        "causeVariableImageUrl": {
-          "description": "",
-          "type": "string"
-        },
-        "causeVariableInformationalUrl": {
-          "description": "Example: ",
-          "type": "string"
-        },
-        "causeVariableIonIcon": {
-          "description": "For use in Ionic apps",
-          "type": "string"
-        },
-        "causeVariableMostCommonConnectorId": {
-          "description": "Example: 6",
-          "type": "integer"
-        },
-        "causeVariableName": {
-          "description": "Variable name of the cause variable for which the user desires correlations.",
-          "type": "string"
-        },
-        "causeVariableProductUrl": {
-          "description": "Example: ",
-          "type": "string"
-        },
-        "confidenceInterval": {
-          "description": "Example: 0.14344467795996",
-          "format": "double",
-          "type": "number"
-        },
-        "confidenceLevel": {
-          "description": "Example: high",
-          "type": "string"
-        },
-        "correlationCoefficient": {
-          "description": "Pearson correlation coefficient between cause and effect measurements",
-          "type": "number"
-        },
-        "correlationIsContradictoryToOptimalValues": {
-          "description": "Example: 1",
-          "type": "boolean"
-        },
-        "createdAt": {
-          "description": "When the record was first created. Use UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`  datetime format",
-          "format": "date-time",
-          "type": "string"
-        },
-        "createdTime": {
-          "description": "Example: 2016-12-28 20:47:30",
-          "format": "date-time",
-          "type": "string"
-        },
-        "criticalTValue": {
-          "description": "Example: 1.646",
-          "format": "double",
-          "type": "number"
-        },
-        "dataAnalysis": {
-          "description": "How the data was analyzed",
-          "type": "string"
-        },
-        "dataSources": {
-          "description": "How the data was obtained",
-          "type": "string"
-        },
-        "dataSourcesParagraphForCause": {
-          "description": "Example: Sleep Quality data was primarily collected using <a href=\"http://www.amazon.com/gp/product/B00A17IAO0/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20\">Up by Jawbone</a>.  UP by Jawbone is a wristband and app that tracks how you sleep, move and eat and then helps you use that information to feel your best.",
-          "type": "string"
-        },
-        "dataSourcesParagraphForEffect": {
-          "description": "Example: Overall Mood data was primarily collected using <a href=\"https://quantimo.do\">QuantiModo</a>.  <a href=\"https://quantimo.do\">QuantiModo</a> is a Chrome extension, Android app, iOS app, and web app that allows you to easily track mood, symptoms, or any outcome you want to optimize in a fraction of a second.  You can also import your data from over 30 other apps and devices like Fitbit, Rescuetime, Jawbone Up, Withings, Facebook, Github, Google Calendar, Runkeeper, MoodPanda, Slice, Google Fit, and more.  <a href=\"https://quantimo.do\">QuantiModo</a> then analyzes your data to identify which hidden factors are most likely to be influencing your mood or symptoms and their optimal daily values.",
-          "type": "string"
-        },
-        "direction": {
-          "description": "Example: higher",
-          "type": "string"
-        },
-        "durationOfAction": {
-          "description": "The amount of time over which a predictor/stimulus event can exert an observable influence on an outcome variable value. For instance, aspirin (stimulus/predictor) typically decreases headache severity for approximately four hours (duration of action) following the onset delay.",
-          "type": "number"
-        },
-        "durationOfActionInHours": {
-          "description": "Example: 168",
-          "type": "integer"
-        },
-        "effect": {
-          "description": "Variable name of the effect variable for which the user desires correlations.",
-          "type": "string"
-        },
-        "effectChanges": {
-          "description": "Example: 193",
-          "type": "integer"
-        },
-        "effectDataSource": {
-          "$ref": "#/definitions/DataSource"
-        },
-        "effectSize": {
-          "description": "Magnitude of the effects of a cause indicating whether it's practically meaningful.",
-          "type": "string"
-        },
-        "effectUnit": {
-          "description": "Example: /5",
-          "type": "string"
-        },
-        "effectUserVariableShareUserMeasurements": {
-          "description": "Example: 1",
-          "type": "integer"
-        },
-        "effectVariableCategoryId": {
-          "description": "Example: 1",
-          "type": "integer"
-        },
-        "effectVariableCategoryName": {
-          "description": "Variable category of the effect variable.",
-          "type": "string"
-        },
-        "effectVariableCombinationOperation": {
-          "description": "Example: MEAN",
-          "type": "string"
-        },
-        "effectVariableCommonAlias": {
-          "description": "Example: Mood_(psychology)",
-          "type": "string"
-        },
-        "effectVariableUnitAbbreviatedName": {
-          "description": "Example: /5",
-          "type": "string"
-        },
-        "effectVariableUnitId": {
-          "description": "Example: 10",
-          "type": "integer"
-        },
-        "effectVariableUnitName": {
-          "description": "Example: 1 to 5 Rating",
-          "type": "string"
-        },
-        "effectVariableId": {
-          "description": "Magnitude of the effects of a cause indicating whether it's practically meaningful.",
-          "type": "string"
-        },
-        "effectVariableImageUrl": {
-          "description": "",
-          "type": "string"
-        },
-        "effectVariableInformationalUrl": {
-          "description": "Example: ",
-          "type": "string"
-        },
-        "effectVariableIonIcon": {
-          "description": "For use in Ionic apps",
-          "type": "string"
-        },
-        "effectVariableMostCommonConnectorId": {
-          "description": "Example: 10",
-          "type": "integer"
-        },
-        "effectVariableName": {
-          "description": "Variable name of the effect variable for which the user desires correlations.",
-          "type": "string"
-        },
-        "effectVariableProductUrl": {
-          "description": "Example: ",
-          "type": "string"
-        },
-        "experimentEndTime": {
-          "description": "Example: 2014-07-30 12:50:00",
-          "format": "date-time",
-          "type": "string"
-        },
-        "experimentStartTime": {
-          "description": "Example: 2012-05-06 21:15:00",
-          "format": "date-time",
-          "type": "string"
-        },
-        "forwardPearsonCorrelationCoefficient": {
-          "description": "Example: 0.0333",
-          "format": "double",
-          "type": "number"
-        },
-        "forwardSpearmanCorrelationCoefficient": {
-          "description": "Example: 0.528359",
-          "format": "double",
-          "type": "number"
-        },
-        "gaugeImage": {
-          "description": "Illustrates the strength of the relationship",
-          "type": "string"
-        },
-        "gaugeImageSquare": {
-          "description": "Example: https://s3.amazonaws.com/quantimodo-docs/images/gauge-moderately-positive-relationship-200-200.png",
-          "type": "string"
-        },
-        "imageUrl": {
-          "description": "Large image for Facebook",
-          "type": "string"
-        },
-        "instructionsForCause": {
-          "description": "Example: <a href=\"http://www.amazon.com/gp/product/B00A17IAO0/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20\">Obtain Up by Jawbone</a> and use it to record your Sleep Quality. Once you have a <a href=\"http://www.amazon.com/gp/product/B00A17IAO0/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20\">Up by Jawbone</a> account, <a href=\"https://app.quantimo.do/ionic/Modo/www/#/app/import\">connect your  Up by Jawbone account at QuantiModo</a> to automatically import and analyze your data.",
-          "type": "string"
-        },
-        "instructionsForEffect": {
-          "description": "Example: <a href=\"https://quantimo.do\">Obtain QuantiModo</a> and use it to record your Overall Mood. Once you have a <a href=\"https://quantimo.do\">QuantiModo</a> account, <a href=\"https://app.quantimo.do/ionic/Modo/www/#/app/import\">connect your  QuantiModo account at QuantiModo</a> to automatically import and analyze your data.",
-          "type": "string"
-        },
-        "numberOfCorrelations": {
-          "description": "Example: 6",
-          "type": "integer"
-        },
-        "numberOfPairs": {
-          "description": "Number of points that went into the correlation calculation",
-          "type": "number"
-        },
-        "numberOfUsers": {
-          "description": "Example: 6",
-          "type": "integer"
-        },
-        "onsetDelay": {
-          "description": "The amount of time in seconds that elapses after the predictor/stimulus event before the outcome as perceived by a self-tracker is known as the onset delay. For example, the onset delay between the time a person takes an aspirin (predictor/stimulus event) and the time a person perceives a change in their headache severity (outcome) is approximately 30 minutes.",
-          "format": "double",
-          "type": "number"
-        },
-        "onsetDelayInHours": {
-          "description": "Example: 0",
-          "type": "integer"
-        },
-        "onsetDelayWithStrongestPearsonCorrelation": {
-          "description": "Example: -86400",
-          "type": "integer"
-        },
-        "onsetDelayWithStrongestPearsonCorrelationInHours": {
-          "description": "Example: -24",
-          "type": "integer"
-        },
-        "optimalPearsonProduct": {
-          "description": "Optimal Pearson Product",
-          "type": "number"
-        },
-        "outcomeDataSources": {
-          "description": "original name of the cause.",
-          "type": "string"
-        },
-        "outcomeFillingValue": {
-          "description": "Example: -1",
-          "type": "integer"
-        },
-        "pearsonCorrelationWithNoOnsetDelay": {
-          "description": "Example: 0.477",
-          "format": "double",
-          "type": "number"
-        },
-        "perDaySentenceFragment": {
-          "description": "Example: ",
-          "type": "string"
-        },
-        "predictivePearsonCorrelation": {
-          "description": "Example: 0.538",
-          "format": "double",
-          "type": "number"
-        },
-        "predictivePearsonCorrelationCoefficient": {
-          "description": "Example: 0.538",
-          "format": "double",
-          "type": "number"
-        },
-        "predictorDataSources": {
-          "description": "Example: RescueTime",
-          "type": "string"
-        },
-        "predictorExplanation": {
-          "description": "HIGHER Remeron predicts HIGHER Overall Mood",
-          "type": "string"
-        },
-        "predictorFillingValue": {
-          "description": "Example: -1",
-          "type": "integer"
-        },
-        "predictorMaximumAllowedValue": {
-          "description": "Example: 160934",
-          "format": "double",
-          "type": "number"
-        },
-        "predictorMinimumAllowedValue": {
-          "description": "Example: 10",
-          "format": "double",
-          "type": "number"
-        },
-        "predictsHighEffectChange": {
-          "description": "Example: 17",
-          "type": "integer"
-        },
-        "predictsHighEffectChangeSentenceFragment": {
-          "description": "Example: , on average, 17% ",
-          "type": "string"
-        },
-        "predictsLowEffectChange": {
-          "description": "Example: -11",
-          "type": "integer"
-        },
-        "predictsLowEffectChangeSentenceFragment": {
-          "description": "Example: , on average, 11% ",
-          "type": "string"
-        },
-        "principalInvestigator": {
-          "description": "Mike Sinn",
-          "type": "string"
-        },
-        "pValue": {
-          "description": "Example: 3.5306635529222E-5",
-          "format": "double",
-          "type": "number"
-        },
-        "qmScore": {
-          "description": "Value representing the significance of the relationship as a function of crowdsourced insights, predictive strength, data quantity, and data quality",
-          "type": "number"
-        },
-        "reverseCorrelation": {
-          "description": "Correlation when cause and effect are reversed. For any causal relationship, the forward correlation should exceed the reverse correlation.",
-          "type": "number"
-        },
-        "reversePearsonCorrelationCoefficient": {
-          "description": "Example: 0.63628232030415",
-          "format": "double",
-          "type": "number"
-        },
-        "shareUserMeasurements": {
-          "description": "Example: 1",
-          "type": "boolean"
-        },
-        "significanceExplanation": {
-          "description": "Using a two-tailed t-test with alpha = 0.05, it was determined that the change...",
-          "type": "string"
-        },
-        "significantDifference": {
-          "description": "Example: 1",
-          "type": "boolean"
-        },
-        "statisticalSignificance": {
-          "description": "A function of the effect size and sample size",
-          "type": "string"
-        },
-        "strengthLevel": {
-          "description": "weak, moderate, strong",
-          "type": "string"
-        },
-        "strongestPearsonCorrelationCoefficient": {
-          "description": "Example: 0.613",
-          "format": "double",
-          "type": "number"
-        },
-        "studyAbstract": {
-          "description": "These data suggest with a high degree of confidence...",
-          "type": "string"
-        },
-        "studyBackground": {
-          "description": "In order to reduce suffering through the advancement of human knowledge...",
-          "type": "string"
-        },
-        "studyDesign": {
-          "description": "This study is based on data donated by one user...",
-          "type": "string"
-        },
-        "studyInvitation": {
-          "description": "Help us determine if Remeron affects Overall Mood!",
-          "type": "string"
-        },
-        "studyLimitations": {
-          "description": "As with any human experiment, it was impossible to control for all potentially confounding variables...",
-          "type": "string"
-        },
-        "studyLinkDynamic": {
-          "description": "Url for the interactive study within the web app",
-          "type": "string"
-        },
-        "studyLinkEmail": {
-          "description": "Example: mailto:?subject=N1%20Study%3A%20Sleep%20Quality%20Predicts%20Higher%20Overall%20Mood&body=Check%20out%20my%20study%20at%20https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fstudy%3FcauseVariableName%3DSleep%2520Quality%26effectVariableName%3DOverall%2520Mood%26userId%3D230%0A%0AHave%20a%20great%20day!",
-          "type": "string"
-        },
-        "studyLinkFacebook": {
-          "description": "Url for sharing the study on Facebook",
-          "type": "string"
-        },
-        "studyLinkGoogle": {
-          "description": "Url for sharing the study on Google+",
-          "type": "string"
-        },
-        "studyLinkStatic": {
-          "description": "Url for sharing the statically rendered study on social media",
-          "type": "string"
-        },
-        "studyLinkTwitter": {
-          "description": "Url for sharing the study on Twitter",
-          "type": "string"
-        },
-        "studyObjective": {
-          "description": "The objective of this study is to determine...",
-          "type": "string"
-        },
-        "studyQuestion": {
-          "description": "Does Remeron affect Overall Mood?",
-          "type": "string"
-        },
-        "studyResults": {
-          "description": "This analysis suggests that...",
-          "type": "string"
-        },
-        "studyTitle": {
-          "description": "N1 Study HIGHER Remeron predicts HIGHER Overall Mood",
-          "type": "string"
-        },
-        "timestamp": {
-          "description": "Time at which correlation was calculated",
-          "type": "number"
-        },
-        "tValue": {
-          "description": "Example: 9.6986079652717",
-          "format": "double",
-          "type": "number"
-        },
-        "updatedAt": {
-          "description": "When the record in the database was last updated. Use UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`  datetime format. Time zone should be UTC and not local.",
-          "format": "date-time",
-          "type": "string"
-        },
-        "updatedTime": {
-          "description": "Example: 2017-05-06 15:40:38",
-          "format": "date-time",
-          "type": "string"
-        },
-        "userId": {
-          "description": "Example: 230",
-          "type": "integer"
-        },
-        "userVote": {
-          "description": "User Vote",
-          "type": "number"
-        },
-        "valuePredictingHighOutcome": {
-          "description": "cause value that predicts an above average effect value (in default unit for cause variable)",
-          "type": "number"
-        },
-        "valuePredictingHighOutcomeExplanation": {
-          "description": "Overall Mood, on average, 34% HIGHER after around 3.98mg Remeron",
-          "type": "string"
-        },
-        "valuePredictingLowOutcome": {
-          "description": "cause value that predicts a below average effect value (in default unit for cause variable)",
-          "type": "number"
-        },
-        "valuePredictingLowOutcomeExplanation": {
-          "description": "Overall Mood, on average, 4% LOWER after around 0mg Remeron",
-          "type": "string"
-        },
-        "vote": {
-          "description": "Example: ",
-          "type": "string"
-        }
-      },
-      "required": [
-        "cause",
-        "correlationCoefficient",
-        "durationOfAction",
-        "effect",
-        "numberOfPairs",
-        "onsetDelay",
-        "timestamp"
-      ]
-    },
     "Animation": {
       "properties": {
         "duration": {
@@ -2068,6 +1498,260 @@
         "valuePredictingLowOutcomeExplanation": {
           "description": "Example: Overall Mood, on average, 11% lower after around 3.03/5 Sleep Quality",
           "type": "string"
+        },
+        "causalityFactor": {
+          "description": "",
+          "type": "number"
+        },
+        "outcomeDataSources": {
+          "description": "original name of the cause.",
+          "type": "string"
+        },
+        "principalInvestigator": {
+          "description": "Mike Sinn",
+          "type": "string"
+        },
+        "reverseCorrelation": {
+          "description": "Correlation when cause and effect are reversed. For any causal relationship, the forward correlation should exceed the reverse correlation.",
+          "type": "number"
+        },
+        "studyBackground": {
+          "description": "In order to reduce suffering through the advancement of human knowledge...",
+          "type": "string"
+        },
+        "studyInvitation": {
+          "description": "Help us determine if Remeron affects Overall Mood!",
+          "type": "string"
+        },
+        "studyQuestion": {
+          "description": "Does Remeron affect Overall Mood?",
+          "type": "string"
+        },
+        "allPairsSignificance": {
+          "description": "Example: 0.99994982531794",
+          "format": "double",
+          "type": "number"
+        },
+        "averagePearsonCorrelationCoefficientOverOnsetDelays": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "calculationStartTime": {
+          "description": "Example: ",
+          "format": "date-time",
+          "type": "string"
+        },
+        "causeChangesStatisticalSignificance": {
+          "description": "Example: 0.9999299755903",
+          "format": "double",
+          "type": "number"
+        },
+        "causeNumberOfProcessedDailyMeasurements": {
+          "description": "Example: 1364",
+          "type": "integer"
+        },
+        "causeNumberOfRawMeasurements": {
+          "description": "Example: 14764",
+          "type": "integer"
+        },
+        "causeValueSpread": {
+          "description": "Example: 99032.44787234",
+          "format": "double",
+          "type": "number"
+        },
+        "correlationsOverDurationsOfAction": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "correlationsOverDurationsOfActionChartConfig": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "correlationsOverOnsetDelaysChartConfig": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "dataPoints": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "degreesOfFreedom": {
+          "description": "Example: 200",
+          "type": "integer"
+        },
+        "distanceFromMiddleToBeHightLowEffect": {
+          "description": "Example: 25",
+          "type": "integer"
+        },
+        "effectNumberOfProcessedDailyMeasurements": {
+          "description": "Example: 145",
+          "type": "integer"
+        },
+        "effectNumberOfRawMeasurements": {
+          "description": "Example: 4045",
+          "type": "integer"
+        },
+        "effectValueSpread": {
+          "description": "Example: 20.2",
+          "format": "double",
+          "type": "number"
+        },
+        "error": {
+          "description": "Example: optimalPearsonProduct is not defined",
+          "type": "string"
+        },
+        "maximumCauseValue": {
+          "description": "Example: 104300",
+          "format": "double",
+          "type": "number"
+        },
+        "maximumEffectValue": {
+          "description": "Example: 20.38",
+          "format": "double",
+          "type": "number"
+        },
+        "medianOfLowerHalfOfEffectMeasurements": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "medianOfUpperHalfOfEffectMeasurements": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "minimumCauseValue": {
+          "description": "Example: 5267.5521276596",
+          "format": "double",
+          "type": "number"
+        },
+        "minimumEffectValue": {
+          "description": "Example: 0.18",
+          "format": "double",
+          "type": "number"
+        },
+        "minimumProbability": {
+          "description": "Example: 0.05",
+          "format": "double",
+          "type": "number"
+        },
+        "numberOfCauseChangesForOptimalValues": {
+          "description": "Example: 287",
+          "type": "integer"
+        },
+        "numberOfDays": {
+          "description": "Example: 425",
+          "type": "integer"
+        },
+        "numberOfDaysSignificance": {
+          "description": "Example: 0.99999929612614",
+          "format": "double",
+          "type": "number"
+        },
+        "numberOfEffectChangesForOptimalValues": {
+          "description": "Example: 295",
+          "type": "integer"
+        },
+        "numberOfHighEffectPairs": {
+          "description": "Example: 27",
+          "type": "integer"
+        },
+        "numberOfLowEffectPairs": {
+          "description": "Example: 57",
+          "type": "integer"
+        },
+        "numberOfSamples": {
+          "description": "Example: 297",
+          "type": "integer"
+        },
+        "numberOfUniqueCauseValuesForOptimalValues": {
+          "description": "Example: 201",
+          "type": "integer"
+        },
+        "numberOfUniqueEffectValuesForOptimalValues": {
+          "description": "Example: 264",
+          "type": "integer"
+        },
+        "numberOfUsers": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "optimalChangeSpread": {
+          "description": "Example: 83.44",
+          "format": "double",
+          "type": "number"
+        },
+        "optimalChangeSpreadSignificance": {
+          "description": "Example: 0.99999999999917",
+          "format": "double",
+          "type": "number"
+        },
+        "pairsOverTimeChartConfig": {
+          "description": "Example: ",
+          "format": "date-time",
+          "type": "string"
+        },
+        "perDaySentenceFragment": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "rawCauseMeasurementSignificance": {
+          "description": "Example: 1",
+          "format": "double",
+          "type": "number"
+        },
+        "rawEffectMeasurementSignificance": {
+          "description": "Example: 1",
+          "format": "double",
+          "type": "number"
+        },
+        "reversePairsCount": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "voteStatisticalSignificance": {
+          "description": "Example: 1",
+          "type": "integer"
+        },
+        "aggregateQMScore": {
+          "description": "Example: 0.011598441286655",
+          "format": "double",
+          "type": "number"
+        },
+        "causeUnit": {
+          "description": "Unit of the predictor variable",
+          "type": "string"
+        },
+        "causeVariableCommonAlias": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "causeVariableInformationalUrl": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "causeVariableProductUrl": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "effectVariableInformationalUrl": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "effectVariableProductUrl": {
+          "description": "Example: ",
+          "type": "string"
+        },
+        "forwardPearsonCorrelationCoefficient": {
+          "description": "Example: 0.0333",
+          "format": "double",
+          "type": "number"
+        },
+        "numberOfCorrelations": {
+          "description": "Example: 6",
+          "type": "integer"
+        },
+        "vote": {
+          "description": "Example: ",
+          "type": "string"
         }
       },
       "required": [
@@ -2863,7 +2547,7 @@
           "type": "array"
         },
         "statistics": {
-          "$ref": "#/definitions/Statistic"
+          "$ref": "#/definitions/Correlation"
         },
         "text": {
           "description": "Example: ",
@@ -2943,7 +2627,7 @@
           "$ref": "#/definitions/ParticipantInstruction"
         },
         "statistics": {
-          "$ref": "#/definitions/Statistic"
+          "$ref": "#/definitions/Correlation"
         },
         "status": {
           "description": "Status code",
@@ -4230,809 +3914,6 @@
         "hover"
       ]
     },
-    "Statistic": {
-      "properties": {
-        "allPairsSignificance": {
-          "description": "Example: 0.99994982531794",
-          "format": "double",
-          "type": "number"
-        },
-        "averageDailyHighCause": {
-          "description": "Example: 101627.85",
-          "format": "double",
-          "type": "number"
-        },
-        "averageDailyLowCause": {
-          "description": "Example: 21023.36",
-          "format": "double",
-          "type": "number"
-        },
-        "averageEffect": {
-          "description": "Example: 8.4268686868687",
-          "format": "double",
-          "type": "number"
-        },
-        "averageEffectFollowingHighCause": {
-          "description": "Example: 8.5",
-          "format": "double",
-          "type": "number"
-        },
-        "averageEffectFollowingHighCauseExplanation": {
-          "description": "Example: Reference And Learning Hours is 8.5h (1% higher) on average after days with around 101627.85 Pa Barometric Pressure",
-          "type": "string"
-        },
-        "averageEffectFollowingLowCause": {
-          "description": "Example: 1.47",
-          "format": "double",
-          "type": "number"
-        },
-        "averageEffectFollowingLowCauseExplanation": {
-          "description": "Example: Reference And Learning Hours is 1.47h (83% lower) on average after days with around 21023.36 Pa Barometric Pressure",
-          "type": "string"
-        },
-        "averageForwardPearsonCorrelationOverOnsetDelays": {
-          "description": "Example: ",
-          "type": "string"
-        },
-        "averagePearsonCorrelationCoefficientOverOnsetDelays": {
-          "description": "Example: ",
-          "type": "string"
-        },
-        "averageReversePearsonCorrelationOverOnsetDelays": {
-          "description": "Example: ",
-          "type": "string"
-        },
-        "averageVote": {
-          "description": "Example: ",
-          "type": "string"
-        },
-        "calculationStartTime": {
-          "description": "Example: ",
-          "format": "date-time",
-          "type": "string"
-        },
-        "causalityFactor": {
-          "description": "Example: 0.147",
-          "format": "double",
-          "type": "number"
-        },
-        "causeChanges": {
-          "description": "Example: 287",
-          "type": "integer"
-        },
-        "causeChangesStatisticalSignificance": {
-          "description": "Example: 0.9999299755903",
-          "format": "double",
-          "type": "number"
-        },
-        "causeNumberOfProcessedDailyMeasurements": {
-          "description": "Example: 1364",
-          "type": "integer"
-        },
-        "causeNumberOfRawMeasurements": {
-          "description": "Example: 14764",
-          "type": "integer"
-        },
-        "causeUserVariableShareUserMeasurements": {
-          "description": "Example: ",
-          "type": "string"
-        },
-        "causeValueSpread": {
-          "description": "Example: 99032.44787234",
-          "format": "double",
-          "type": "number"
-        },
-        "causeVariableCategoryId": {
-          "description": "Example: 17",
-          "type": "integer"
-        },
-        "causeVariableCategoryName": {
-          "description": "Example: Environment",
-          "type": "string"
-        },
-        "causeVariableCombinationOperation": {
-          "description": "Example: ",
-          "type": "string"
-        },
-        "causeVariableUnitAbbreviatedName": {
-          "description": "Example: Pa",
-          "type": "string"
-        },
-        "causeVariableUnitId": {
-          "description": "Example: 47",
-          "type": "integer"
-        },
-        "causeVariableUnitName": {
-          "description": "Example: ",
-          "type": "string"
-        },
-        "causeVariableId": {
-          "description": "Example: 96380",
-          "type": "integer"
-        },
-        "causeVariableImageUrl": {
-          "description": "Example: https://maxcdn.icons8.com/Color/PNG/96/Weather/chance_of_storm-96.png",
-          "type": "string"
-        },
-        "causeVariableIonIcon": {
-          "description": "Example: ion-ios-partlysunny",
-          "type": "string"
-        },
-        "causeVariableMostCommonConnectorId": {
-          "description": "Example: 13",
-          "type": "integer"
-        },
-        "causeVariableName": {
-          "description": "Example: Barometric Pressure",
-          "type": "string"
-        },
-        "confidenceInterval": {
-          "description": "Example: 1.4269359716898",
-          "format": "double",
-          "type": "number"
-        },
-        "confidenceLevel": {
-          "description": "Example: high",
-          "type": "string"
-        },
-        "correlationCoefficient": {
-          "description": "Example: 0.147",
-          "format": "double",
-          "type": "number"
-        },
-        "correlationIsContradictoryToOptimalValues": {
-          "description": "Example: false",
-          "type": "boolean"
-        },
-        "correlationsOverDurationsOfAction": {
-          "description": "Example: ",
-          "type": "string"
-        },
-        "correlationsOverDurationsOfActionChartConfig": {
-          "description": "Example: ",
-          "type": "string"
-        },
-        "correlationsOverOnsetDelaysChartConfig": {
-          "description": "Example: ",
-          "type": "string"
-        },
-        "createdAt": {
-          "description": "Example: ",
-          "format": "date-time",
-          "type": "string"
-        },
-        "criticalTValue": {
-          "description": "Example: 1.646",
-          "format": "double",
-          "type": "number"
-        },
-        "dataAnalysis": {
-          "description": "Example: It was assumed that 0 hours would pass before a change in Barometric Pressure would produce an observable change in Reference And Learning Hours.  It was assumed that Barometric Pressure could produce an observable change in Reference And Learning Hours for as much as 7 days after the stimulus event.",
-          "type": "string"
-        },
-        "dataPoints": {
-          "description": "Example: ",
-          "type": "string"
-        },
-        "dataSources": {
-          "description": "Example: Barometric Pressure data was primarily collected using <a href=\"https://quantimo.do\">QuantiModo</a>.  <a href=\"https://quantimo.do\">QuantiModo</a> is a Chrome extension, Android app, iOS app, and web app that allows you to easily track mood, symptoms, or any outcome you want to optimize in a fraction of a second.  You can also import your data from over 30 other apps and devices like Fitbit, Rescuetime, Jawbone Up, Withings, Facebook, Github, Google Calendar, Runkeeper, MoodPanda, Slice, Google Fit, and more.  <a href=\"https://quantimo.do\">QuantiModo</a> then analyzes your data to identify which hidden factors are most likely to be influencing your mood or symptoms and their optimal daily values.<br>Reference And Learning Hours data was primarily collected using <a href=\"https://www.rescuetime.com/rp/quantimodo/plans\">RescueTime</a>. Detailed reports show which applications and websites you spent time on. Activities are automatically grouped into pre-defined categories with built-in productivity scores covering thousands of websites and applications. You can customize categories and productivity scores to meet your needs.",
-          "type": "string"
-        },
-        "dataSourcesParagraphForCause": {
-          "description": "Example: Barometric Pressure data was primarily collected using <a href=\"https://quantimo.do\">QuantiModo</a>.  <a href=\"https://quantimo.do\">QuantiModo</a> is a Chrome extension, Android app, iOS app, and web app that allows you to easily track mood, symptoms, or any outcome you want to optimize in a fraction of a second.  You can also import your data from over 30 other apps and devices like Fitbit, Rescuetime, Jawbone Up, Withings, Facebook, Github, Google Calendar, Runkeeper, MoodPanda, Slice, Google Fit, and more.  <a href=\"https://quantimo.do\">QuantiModo</a> then analyzes your data to identify which hidden factors are most likely to be influencing your mood or symptoms and their optimal daily values.",
-          "type": "string"
-        },
-        "dataSourcesParagraphForEffect": {
-          "description": "Example: Reference And Learning Hours data was primarily collected using <a href=\"https://www.rescuetime.com/rp/quantimodo/plans\">RescueTime</a>. Detailed reports show which applications and websites you spent time on. Activities are automatically grouped into pre-defined categories with built-in productivity scores covering thousands of websites and applications. You can customize categories and productivity scores to meet your needs.",
-          "type": "string"
-        },
-        "degreesOfFreedom": {
-          "description": "Example: 200",
-          "type": "integer"
-        },
-        "direction": {
-          "description": "Example: higher",
-          "type": "string"
-        },
-        "distanceFromMiddleToBeHightLowEffect": {
-          "description": "Example: 25",
-          "type": "integer"
-        },
-        "durationOfAction": {
-          "description": "Example: 604800",
-          "type": "integer"
-        },
-        "durationOfActionInHours": {
-          "description": "Example: 0",
-          "type": "integer"
-        },
-        "effectChanges": {
-          "description": "Example: 295",
-          "type": "integer"
-        },
-        "effectNumberOfProcessedDailyMeasurements": {
-          "description": "Example: 145",
-          "type": "integer"
-        },
-        "effectNumberOfRawMeasurements": {
-          "description": "Example: 4045",
-          "type": "integer"
-        },
-        "effectSize": {
-          "description": "Example: weakly positive",
-          "type": "string"
-        },
-        "effectUnit": {
-          "description": "Example: h",
-          "type": "string"
-        },
-        "effectUserVariableShareUserMeasurements": {
-          "description": "Example: ",
-          "type": "string"
-        },
-        "effectValueSpread": {
-          "description": "Example: 20.2",
-          "format": "double",
-          "type": "number"
-        },
-        "effectVariableCategoryId": {
-          "description": "Example: 14",
-          "type": "integer"
-        },
-        "effectVariableCategoryName": {
-          "description": "Example: Activity",
-          "type": "string"
-        },
-        "effectVariableUnitAbbreviatedName": {
-          "description": "Example: h",
-          "type": "string"
-        },
-        "effectVariableUnitId": {
-          "description": "Example: 34",
-          "type": "integer"
-        },
-        "effectVariableUnitName": {
-          "description": "Example: ",
-          "type": "string"
-        },
-        "effectVariableId": {
-          "description": "Example: 111642",
-          "type": "integer"
-        },
-        "effectVariableImageUrl": {
-          "description": "Example: https://maxcdn.icons8.com/Color/PNG/96/Sports/football-96.png",
-          "type": "string"
-        },
-        "effectVariableIonIcon": {
-          "description": "Example: ion-ios-body-outline",
-          "type": "string"
-        },
-        "effectVariableMostCommonConnectorId": {
-          "description": "Example: 11",
-          "type": "integer"
-        },
-        "effectVariableName": {
-          "description": "Example: Reference And Learning Hours",
-          "type": "string"
-        },
-        "error": {
-          "description": "Example: optimalPearsonProduct is not defined",
-          "type": "string"
-        },
-        "experimentEndTime": {
-          "description": "Example: 1501722000",
-          "type": "integer"
-        },
-        "experimentStartTime": {
-          "description": "Example: 1464937200",
-          "type": "integer"
-        },
-        "forwardSpearmanCorrelationCoefficient": {
-          "description": "Example: -0.26193208156295",
-          "format": "double",
-          "type": "number"
-        },
-        "gaugeImage": {
-          "description": "Example: https://s3.amazonaws.com/quantimodo-docs/images/gauge-weakly-positive-relationship.png",
-          "type": "string"
-        },
-        "gaugeImageSquare": {
-          "description": "Example: https://s3.amazonaws.com/quantimodo-docs/images/gauge-weakly-positive-relationship-200-200.png",
-          "type": "string"
-        },
-        "imageUrl": {
-          "description": "Example: https://s3-us-west-1.amazonaws.com/qmimages/variable_categories_gauges_logo_background/gauge-weakly-positive-relationship_environment_activity_logo_background.png",
-          "type": "string"
-        },
-        "instructionsForCause": {
-          "description": "Example: <a href=\"https://quantimo.do\">Obtain QuantiModo</a> and use it to record your Barometric Pressure. Once you have a <a href=\"https://quantimo.do\">QuantiModo</a> account, <a href=\"https://app.quantimo.do/ionic/Modo/www/#/app/import\">connect your  QuantiModo account at QuantiModo</a> to automatically import and analyze your data.",
-          "type": "string"
-        },
-        "instructionsForEffect": {
-          "description": "Example: <a href=\"https://www.rescuetime.com/rp/quantimodo/plans\">Obtain RescueTime</a> and use it to record your Reference And Learning Hours. Once you have a <a href=\"https://www.rescuetime.com/rp/quantimodo/plans\">RescueTime</a> account, <a href=\"https://app.quantimo.do/ionic/Modo/www/#/app/import\">connect your  RescueTime account at QuantiModo</a> to automatically import and analyze your data.",
-          "type": "string"
-        },
-        "maximumCauseValue": {
-          "description": "Example: 104300",
-          "format": "double",
-          "type": "number"
-        },
-        "maximumEffectValue": {
-          "description": "Example: 20.38",
-          "format": "double",
-          "type": "number"
-        },
-        "medianOfLowerHalfOfEffectMeasurements": {
-          "description": "Example: ",
-          "type": "string"
-        },
-        "medianOfUpperHalfOfEffectMeasurements": {
-          "description": "Example: ",
-          "type": "string"
-        },
-        "minimumCauseValue": {
-          "description": "Example: 5267.5521276596",
-          "format": "double",
-          "type": "number"
-        },
-        "minimumEffectValue": {
-          "description": "Example: 0.18",
-          "format": "double",
-          "type": "number"
-        },
-        "minimumProbability": {
-          "description": "Example: 0.05",
-          "format": "double",
-          "type": "number"
-        },
-        "numberOfCauseChangesForOptimalValues": {
-          "description": "Example: 287",
-          "type": "integer"
-        },
-        "numberOfDays": {
-          "description": "Example: 425",
-          "type": "integer"
-        },
-        "numberOfDaysSignificance": {
-          "description": "Example: 0.99999929612614",
-          "format": "double",
-          "type": "number"
-        },
-        "numberOfEffectChangesForOptimalValues": {
-          "description": "Example: 295",
-          "type": "integer"
-        },
-        "numberOfHighEffectPairs": {
-          "description": "Example: 27",
-          "type": "integer"
-        },
-        "numberOfLowEffectPairs": {
-          "description": "Example: 57",
-          "type": "integer"
-        },
-        "numberOfPairs": {
-          "description": "Example: 297",
-          "type": "integer"
-        },
-        "numberOfSamples": {
-          "description": "Example: 297",
-          "type": "integer"
-        },
-        "numberOfUniqueCauseValuesForOptimalValues": {
-          "description": "Example: 201",
-          "type": "integer"
-        },
-        "numberOfUniqueEffectValuesForOptimalValues": {
-          "description": "Example: 264",
-          "type": "integer"
-        },
-        "numberOfUsers": {
-          "description": "Example: ",
-          "type": "string"
-        },
-        "onsetDelay": {
-          "description": "Example: 0",
-          "type": "integer"
-        },
-        "onsetDelayInHours": {
-          "description": "Example: 0",
-          "type": "integer"
-        },
-        "onsetDelayWithStrongestPearsonCorrelation": {
-          "description": "Example: ",
-          "type": "string"
-        },
-        "onsetDelayWithStrongestPearsonCorrelationInHours": {
-          "description": "Example: ",
-          "type": "string"
-        },
-        "optimalChangeSpread": {
-          "description": "Example: 83.44",
-          "format": "double",
-          "type": "number"
-        },
-        "optimalChangeSpreadSignificance": {
-          "description": "Example: 0.99999999999917",
-          "format": "double",
-          "type": "number"
-        },
-        "optimalPearsonProduct": {
-          "description": "Example: 0.063550992332336",
-          "format": "double",
-          "type": "number"
-        },
-        "outcomeDataSources": {
-          "description": "Example: ",
-          "type": "string"
-        },
-        "outcomeFillingValue": {
-          "description": "Example: ",
-          "type": "string"
-        },
-        "outcomeMaximumAllowedValue": {
-          "description": "Example: ",
-          "type": "string"
-        },
-        "pairsOverTimeChartConfig": {
-          "description": "Example: ",
-          "format": "date-time",
-          "type": "string"
-        },
-        "pearsonCorrelationWithNoOnsetDelay": {
-          "description": "Example: ",
-          "type": "string"
-        },
-        "perDaySentenceFragment": {
-          "description": "Example: ",
-          "type": "string"
-        },
-        "predictivePearsonCorrelation": {
-          "description": "Example: ",
-          "type": "string"
-        },
-        "predictivePearsonCorrelationCoefficient": {
-          "description": "Example: 0.147",
-          "format": "double",
-          "type": "number"
-        },
-        "predictorExplanation": {
-          "description": "Example: Barometric Pressure Predicts Higher Reference And Learning Hours",
-          "type": "string"
-        },
-        "predictorFillingValue": {
-          "description": "Example: ",
-          "type": "string"
-        },
-        "predictorMaximumAllowedValue": {
-          "description": "Example: ",
-          "type": "string"
-        },
-        "predictsHighEffectChange": {
-          "description": "Example: 0.84",
-          "format": "double",
-          "type": "number"
-        },
-        "predictsHighEffectChangeSentenceFragment": {
-          "description": "Example: , on average, 0.84% ",
-          "type": "string"
-        },
-        "predictsLowEffectChange": {
-          "description": "Example: -82.6",
-          "format": "double",
-          "type": "number"
-        },
-        "predictsLowEffectChangeSentenceFragment": {
-          "description": "Example: , on average, 82.6% ",
-          "type": "string"
-        },
-        "principalInvestigator": {
-          "description": "Example: ",
-          "type": "string"
-        },
-        "pValue": {
-          "description": "Example: 0",
-          "format": "double",
-          "type": "number"
-        },
-        "qmScore": {
-          "description": "Example: ",
-          "type": "string"
-        },
-        "rawCauseMeasurementSignificance": {
-          "description": "Example: 1",
-          "format": "double",
-          "type": "number"
-        },
-        "rawEffectMeasurementSignificance": {
-          "description": "Example: 1",
-          "format": "double",
-          "type": "number"
-        },
-        "reversePairsCount": {
-          "description": "Example: ",
-          "type": "string"
-        },
-        "reversePearsonCorrelationCoefficient": {
-          "description": "Example: ",
-          "type": "string"
-        },
-        "shareUserMeasurements": {
-          "description": "Example: false",
-          "type": "boolean"
-        },
-        "significanceExplanation": {
-          "description": "Example: Using a two-tailed t-test with alpha = 0.05, it was determined that the change in Reference And Learning Hours is statistically significant at 95% confidence interval.",
-          "type": "string"
-        },
-        "significantDifference": {
-          "description": "Example: true",
-          "type": "boolean"
-        },
-        "statisticalSignificance": {
-          "description": "Example: 0.99987910063243",
-          "format": "double",
-          "type": "number"
-        },
-        "strengthLevel": {
-          "description": "Example: very weak",
-          "type": "string"
-        },
-        "strongestPearsonCorrelationCoefficient": {
-          "description": "Example: ",
-          "type": "string"
-        },
-        "studyAbstract": {
-          "description": "Example: Your data suggests with a high degree of confidence (p=0) that Barometric Pressure (Environment) has a weakly positive predictive relationship (R=0.147) with Reference And Learning Hours (Activity).  The highest quartile of Reference And Learning Hours measurements were observed following an average 101187.2Pa Barometric Pressure.  The lowest quartile of Reference And Learning Hours measurements were observed following an average 97597.75Pa Barometric Pressure.",
-          "type": "string"
-        },
-        "studyBackground": {
-          "description": "Example: ",
-          "type": "string"
-        },
-        "studyDesign": {
-          "description": "Example: This study is based on data donated by one QuantiModo user. Thus, the study design is consistent with an n=1 observational natural experiment.",
-          "type": "string"
-        },
-        "studyLimitations": {
-          "description": "Example: As with any human experiment, it was impossible to control for all potentially confounding variables.\n\n            Correlation does not necessarily imply correlation.  We can never know for sure if one factor is definitely the cause of an outcome.\n            However, lack of correlation definitely implies the lack of a causal relationship.  Hence, we can with great\n            confidence rule out non-existent relationships. For instance, if we discover no relationship between mood\n            and an antidepressant this information is just as or even more valuable than the discovery that there is a relationship.\n            <br>\n            <br>\n\n            We can also take advantage of several characteristics of time series data from many subjects  to infer the likelihood of a causal relationship if we do find a correlational relationship.\n            The criteria for causation are a group of minimal conditions necessary to provide adequate evidence of a causal relationship between an incidence and a possible consequence.\n            The list of the criteria is as follows:\n            <br>\n            1. Strength (effect size): A small association does not mean that there is not a causal effect, though the larger the association, the more likely that it is causal.\n            <br>\n            2. Consistency (reproducibility): Consistent findings observed by different persons in different places with different samples strengthens the likelihood of an effect.\n            <br>\n            3. Specificity: Causation is likely if a very specific population at a specific site and disease with no other likely explanation. The more specific an association between a factor and an effect is, the bigger the probability of a causal relationship.\n            <br>\n            4. Temporality: The effect has to occur after the cause (and if there is an expected delay between the cause and expected effect, then the effect must occur after that delay).\n            <br>\n            5. Biological gradient: Greater exposure should generally lead to greater incidence of the effect. However, in some cases, the mere presence of the factor can trigger the effect. In other cases, an inverse proportion is observed: greater exposure leads to lower incidence.\n            <br>\n            6. Plausibility: A plausible mechanism between cause and effect is helpful.\n            <br>\n            7. Coherence: Coherence between epidemiological and laboratory findings increases the likelihood of an effect.\n            <br>\n            8. Experiment: \"Occasionally it is possible to appeal to experimental evidence\".\n            <br>\n            9. Analogy: The effect of similar factors may be considered.\n            <br>\n            <br>\n\n             The confidence in a causal relationship is bolstered by the fact that time-precedence was taken into account in all calculations. Furthermore, in accordance with the law of large numbers (LLN), the predictive power and accuracy of these results will continually grow over time.  297 paired data points were used in this analysis.   Assuming that the relationship is merely coincidental, as the participant independently modifies their Barometric Pressure values, the observed strength of the relationship will decline until it is below the threshold of significance.  To it another way, in the case that we do find a spurious correlation, suggesting that banana intake improves mood for instance,\n            one will likely increase their banana intake.  Due to the fact that this correlation is spurious, it is unlikely\n            that you will see a continued and persistent corresponding increase in mood.  So over time, the spurious correlation will\n            naturally dissipate.Furthermore, it will be very enlightening to aggregate this data with the data from other participants  with similar genetic, diseasomic, environmentomic, and demographic profiles.",
-          "type": "string"
-        },
-        "studyLinkDynamic": {
-          "description": "Example: https://local.quantimo.do/ionic/Modo/www/index.html#/app/study?causeVariableName=Barometric%20Pressure&effectVariableName=Reference%20And%20Learning%20Hours&userId=230",
-          "type": "string"
-        },
-        "studyLinkEmail": {
-          "description": "Example: mailto:?subject=N1%20Study%3A%20Barometric%20Pressure%20Predicts%20Higher%20Reference%20And%20Learning%20Hours&body=Check%20out%20my%20study%20at%20https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fstudy%3FcauseVariableName%3DBarometric%2520Pressure%26effectVariableName%3DReference%2520And%2520Learning%2520Hours%26userId%3D230%0A%0AHave%20a%20great%20day!",
-          "type": "string"
-        },
-        "studyLinkFacebook": {
-          "description": "Example: https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fstudy%3FcauseVariableName%3DBarometric%2520Pressure%26effectVariableName%3DReference%2520And%2520Learning%2520Hours%26userId%3D230",
-          "type": "string"
-        },
-        "studyLinkGoogle": {
-          "description": "Example: https://plus.google.com/share?url=https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fstudy%3FcauseVariableName%3DBarometric%2520Pressure%26effectVariableName%3DReference%2520And%2520Learning%2520Hours%26userId%3D230",
-          "type": "string"
-        },
-        "studyLinkStatic": {
-          "description": "Example: https://local.quantimo.do/api/v2/study?causeVariableName=Barometric%20Pressure&effectVariableName=Reference%20And%20Learning%20Hours&userId=230",
-          "type": "string"
-        },
-        "studyLinkTwitter": {
-          "description": "Example: https://twitter.com/home?status=Barometric%20Pressure%20Predicts%20Higher%20Reference%20And%20Learning%20Hours%20https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fstudy%3FcauseVariableName%3DBarometric%2520Pressure%26effectVariableName%3DReference%2520And%2520Learning%2520Hours%26userId%3D230%20%40quantimodo",
-          "type": "string"
-        },
-        "studyObjective": {
-          "description": "Example: The objective of this study is to determine the nature of the relationship (if any) between the Barometric Pressure and the Reference And Learning Hours. Additionally, we attempt to determine the Barometric Pressure values most likely to produce optimal Reference And Learning Hours values.",
-          "type": "string"
-        },
-        "studyResults": {
-          "description": "Example: This analysis suggests that higher Barometric Pressure (Environment) generally predicts higher Reference And Learning Hours (p = 0).  Reference And Learning Hours is, on average, 0.84%  higher after around 101187.2 Barometric Pressure.  After an onset delay of 168 hours, Reference And Learning Hours is, on average, 82.6%  lower than its average over the 168 hours following around 97597.75 Barometric Pressure.  297 data points were used in this analysis.  The value for Barometric Pressure changed 287 times, effectively running 144 separate natural experiments.  The top quartile outcome values are preceded by an average 101187.2 Pa of Barometric Pressure.  The bottom quartile outcome values are preceded by an average 97597.75 Pa of Barometric Pressure.  Forward Pearson Correlation Coefficient was 0.147 (p=0, 95% CI -1.28 to 1.574 onset delay = 0 hours, duration of action = 168 hours) .  The Reverse Pearson Correlation Coefficient was 0 (P=0, 95% CI -1.427 to 1.427, onset delay = -0 hours, duration of action = -168 hours). When the Barometric Pressure value is closer to 101187.2 Pa than 97597.75 Pa, the Reference And Learning Hours value which follows is, on average, 0.84%  percent higher than its typical value.  When the Barometric Pressure value is closer to 97597.75 Pa than 101187.2 Pa, the Reference And Learning Hours value which follows is 0% lower than its typical value.  Reference And Learning Hours is 8.5h (1% higher) on average after days with around 101627.85 Pa Barometric Pressure  Reference And Learning Hours is 1.47h (83% lower) on average after days with around 21023.36 Pa Barometric Pressure",
-          "type": "string"
-        },
-        "studyTitle": {
-          "description": "Example: N1 Study: Barometric Pressure Predicts Higher Reference And Learning Hours",
-          "type": "string"
-        },
-        "timestamp": {
-          "description": "Example: 1502080560",
-          "type": "integer"
-        },
-        "tValue": {
-          "description": "Example: 8.1106621038493",
-          "format": "double",
-          "type": "number"
-        },
-        "updatedAt": {
-          "description": "Example: ",
-          "format": "date-time",
-          "type": "string"
-        },
-        "userId": {
-          "description": "Example: 230",
-          "type": "integer"
-        },
-        "userVote": {
-          "description": "Example: ",
-          "type": "string"
-        },
-        "valuePredictingHighOutcome": {
-          "description": "Example: 101187.2",
-          "format": "double",
-          "type": "number"
-        },
-        "valuePredictingHighOutcomeExplanation": {
-          "description": "Example: Reference And Learning Hours, on average, 0.84% higher after around 101187.2 Pa Barometric Pressure",
-          "type": "string"
-        },
-        "valuePredictingLowOutcome": {
-          "description": "Example: 97597.75",
-          "format": "double",
-          "type": "number"
-        },
-        "valuePredictingLowOutcomeExplanation": {
-          "description": "Example: Reference And Learning Hours, on average, 82.6% lower after around 97597.75 Pa Barometric Pressure",
-          "type": "string"
-        },
-        "voteStatisticalSignificance": {
-          "description": "Example: 1",
-          "type": "integer"
-        }
-      },
-      "required": [
-        "allPairsSignificance",
-        "averageDailyHighCause",
-        "averageDailyLowCause",
-        "averageEffect",
-        "averageEffectFollowingHighCause",
-        "averageEffectFollowingHighCauseExplanation",
-        "averageEffectFollowingLowCause",
-        "averageEffectFollowingLowCauseExplanation",
-        "averageForwardPearsonCorrelationOverOnsetDelays",
-        "averagePearsonCorrelationCoefficientOverOnsetDelays",
-        "averageReversePearsonCorrelationOverOnsetDelays",
-        "averageVote",
-        "calculationStartTime",
-        "causalityFactor",
-        "causeChanges",
-        "causeChangesStatisticalSignificance",
-        "causeNumberOfProcessedDailyMeasurements",
-        "causeNumberOfRawMeasurements",
-        "causeUserVariableShareUserMeasurements",
-        "causeValueSpread",
-        "causeVariableCategoryId",
-        "causeVariableCategoryName",
-        "causeVariableCombinationOperation",
-        "causeVariableUnitAbbreviatedName",
-        "causeVariableUnitId",
-        "causeVariableUnitName",
-        "causeVariableId",
-        "causeVariableImageUrl",
-        "causeVariableIonIcon",
-        "causeVariableMostCommonConnectorId",
-        "causeVariableName",
-        "confidenceInterval",
-        "confidenceLevel",
-        "correlationCoefficient",
-        "correlationIsContradictoryToOptimalValues",
-        "correlationsOverDurationsOfAction",
-        "correlationsOverDurationsOfActionChartConfig",
-        "correlationsOverOnsetDelaysChartConfig",
-        "createdAt",
-        "criticalTValue",
-        "dataAnalysis",
-        "dataPoints",
-        "dataSources",
-        "dataSourcesParagraphForCause",
-        "dataSourcesParagraphForEffect",
-        "degreesOfFreedom",
-        "direction",
-        "distanceFromMiddleToBeHightLowEffect",
-        "durationOfAction",
-        "durationOfActionInHours",
-        "effectChanges",
-        "effectNumberOfProcessedDailyMeasurements",
-        "effectNumberOfRawMeasurements",
-        "effectSize",
-        "effectUnit",
-        "effectUserVariableShareUserMeasurements",
-        "effectValueSpread",
-        "effectVariableCategoryId",
-        "effectVariableCategoryName",
-        "effectVariableUnitAbbreviatedName",
-        "effectVariableUnitId",
-        "effectVariableUnitName",
-        "effectVariableId",
-        "effectVariableImageUrl",
-        "effectVariableIonIcon",
-        "effectVariableMostCommonConnectorId",
-        "effectVariableName",
-        "error",
-        "experimentEndTime",
-        "experimentStartTime",
-        "forwardSpearmanCorrelationCoefficient",
-        "gaugeImage",
-        "gaugeImageSquare",
-        "imageUrl",
-        "instructionsForCause",
-        "instructionsForEffect",
-        "maximumCauseValue",
-        "maximumEffectValue",
-        "medianOfLowerHalfOfEffectMeasurements",
-        "medianOfUpperHalfOfEffectMeasurements",
-        "minimumCauseValue",
-        "minimumEffectValue",
-        "minimumProbability",
-        "numberOfCauseChangesForOptimalValues",
-        "numberOfDays",
-        "numberOfDaysSignificance",
-        "numberOfEffectChangesForOptimalValues",
-        "numberOfHighEffectPairs",
-        "numberOfLowEffectPairs",
-        "numberOfPairs",
-        "numberOfSamples",
-        "numberOfUniqueCauseValuesForOptimalValues",
-        "numberOfUniqueEffectValuesForOptimalValues",
-        "numberOfUsers",
-        "onsetDelay",
-        "onsetDelayInHours",
-        "onsetDelayWithStrongestPearsonCorrelation",
-        "onsetDelayWithStrongestPearsonCorrelationInHours",
-        "optimalChangeSpread",
-        "optimalChangeSpreadSignificance",
-        "optimalPearsonProduct",
-        "outcomeDataSources",
-        "outcomeFillingValue",
-        "outcomeMaximumAllowedValue",
-        "pValue",
-        "pairsOverTimeChartConfig",
-        "pearsonCorrelationWithNoOnsetDelay",
-        "perDaySentenceFragment",
-        "predictivePearsonCorrelation",
-        "predictivePearsonCorrelationCoefficient",
-        "predictorExplanation",
-        "predictorFillingValue",
-        "predictorMaximumAllowedValue",
-        "predictsHighEffectChange",
-        "predictsHighEffectChangeSentenceFragment",
-        "predictsLowEffectChange",
-        "predictsLowEffectChangeSentenceFragment",
-        "principalInvestigator",
-        "qmScore",
-        "rawCauseMeasurementSignificance",
-        "rawEffectMeasurementSignificance",
-        "reversePairsCount",
-        "reversePearsonCorrelationCoefficient",
-        "shareUserMeasurements",
-        "significanceExplanation",
-        "significantDifference",
-        "statisticalSignificance",
-        "strengthLevel",
-        "strongestPearsonCorrelationCoefficient",
-        "studyAbstract",
-        "studyBackground",
-        "studyDesign",
-        "studyLimitations",
-        "studyLinkDynamic",
-        "studyLinkEmail",
-        "studyLinkFacebook",
-        "studyLinkGoogle",
-        "studyLinkStatic",
-        "studyLinkTwitter",
-        "studyObjective",
-        "studyResults",
-        "studyTitle",
-        "tValue",
-        "timestamp",
-        "updatedAt",
-        "userId",
-        "userVote",
-        "valuePredictingHighOutcome",
-        "valuePredictingHighOutcomeExplanation",
-        "valuePredictingLowOutcome",
-        "valuePredictingLowOutcomeExplanation",
-        "voteStatisticalSignificance"
-      ]
-    },
     "Study": {
       "properties": {
         "causeProcessedDailyMeasurements": {
@@ -5069,7 +3950,7 @@
           "type": "array"
         },
         "statistics": {
-          "$ref": "#/definitions/Statistic"
+          "$ref": "#/definitions/Correlation"
         },
         "text": {
           "description": "Example: ",
@@ -6214,516 +5095,6 @@
         "loginName"
       ]
     },
-    "UserCorrelation": {
-      "properties": {
-        "averageDailyHighCause": {
-          "description": "",
-          "type": "number"
-        },
-        "averageDailyLowCause": {
-          "description": "",
-          "type": "number"
-        },
-        "averageEffect": {
-          "description": "",
-          "type": "number"
-        },
-        "averageEffectFollowingHighCause": {
-          "description": "",
-          "type": "number"
-        },
-        "averageEffectFollowingHighCauseExplanation": {
-          "description": "",
-          "type": "string"
-        },
-        "averageEffectFollowingLowCause": {
-          "description": "",
-          "type": "number"
-        },
-        "averageEffectFollowingLowCauseExplanation": {
-          "description": "",
-          "type": "string"
-        },
-        "averageForwardPearsonCorrelationOverOnsetDelays": {
-          "description": "Example: 0.396",
-          "format": "double",
-          "type": "number"
-        },
-        "averageReversePearsonCorrelationOverOnsetDelays": {
-          "description": "Example: 0.453667",
-          "format": "double",
-          "type": "number"
-        },
-        "averageVote": {
-          "description": "Average Vote",
-          "type": "number"
-        },
-        "causalityFactor": {
-          "description": "",
-          "type": "number"
-        },
-        "cause": {
-          "description": "Variable name of the cause variable for which the user desires correlations.",
-          "type": "string"
-        },
-        "causeChanges": {
-          "description": "Number of changes in the predictor variable (a.k.a the number of experiments)",
-          "type": "integer"
-        },
-        "causeUnit": {
-          "description": "Unit of the predictor variable",
-          "type": "string"
-        },
-        "causeUserVariableShareUserMeasurements": {
-          "description": "Example: 1",
-          "type": "integer"
-        },
-        "causeVariableCategoryId": {
-          "description": "Example: 6",
-          "type": "integer"
-        },
-        "causeVariableCategoryName": {
-          "description": "Variable category of the cause variable.",
-          "type": "string"
-        },
-        "causeVariableCombinationOperation": {
-          "description": "The way cause measurements are aggregated",
-          "type": "string"
-        },
-        "causeVariableUnitAbbreviatedName": {
-          "description": "Example: /5",
-          "type": "string"
-        },
-        "causeVariableUnitId": {
-          "description": "Unit Id of the predictor variable",
-          "type": "integer"
-        },
-        "causeVariableUnitName": {
-          "description": "Example: 1 to 5 Rating",
-          "type": "string"
-        },
-        "causeVariableId": {
-          "description": "",
-          "type": "integer"
-        },
-        "causeVariableImageUrl": {
-          "description": "",
-          "type": "string"
-        },
-        "causeVariableIonIcon": {
-          "description": "For use in Ionic apps",
-          "type": "string"
-        },
-        "causeVariableMostCommonConnectorId": {
-          "description": "Example: 6",
-          "type": "integer"
-        },
-        "causeVariableName": {
-          "description": "Variable name of the cause variable for which the user desires correlations.",
-          "type": "string"
-        },
-        "confidenceInterval": {
-          "description": "Example: 0.14344467795996",
-          "format": "double",
-          "type": "number"
-        },
-        "confidenceLevel": {
-          "description": "Example: high",
-          "type": "string"
-        },
-        "correlationCoefficient": {
-          "description": "Pearson correlation coefficient between cause and effect measurements",
-          "type": "number"
-        },
-        "createdAt": {
-          "description": "When the record was first created. Use UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`  datetime format",
-          "format": "date-time",
-          "type": "string"
-        },
-        "createdTime": {
-          "description": "Example: 2016-12-28 20:47:30",
-          "format": "date-time",
-          "type": "string"
-        },
-        "criticalTValue": {
-          "description": "Example: 1.646",
-          "format": "double",
-          "type": "number"
-        },
-        "dataAnalysis": {
-          "description": "How the data was analyzed",
-          "type": "string"
-        },
-        "dataSources": {
-          "description": "How the data was obtained",
-          "type": "string"
-        },
-        "dataSourcesParagraphForCause": {
-          "description": "Example: Sleep Quality data was primarily collected using <a href=\"http://www.amazon.com/gp/product/B00A17IAO0/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20\">Up by Jawbone</a>.  UP by Jawbone is a wristband and app that tracks how you sleep, move and eat and then helps you use that information to feel your best.",
-          "type": "string"
-        },
-        "dataSourcesParagraphForEffect": {
-          "description": "Example: Overall Mood data was primarily collected using <a href=\"https://quantimo.do\">QuantiModo</a>.  <a href=\"https://quantimo.do\">QuantiModo</a> is a Chrome extension, Android app, iOS app, and web app that allows you to easily track mood, symptoms, or any outcome you want to optimize in a fraction of a second.  You can also import your data from over 30 other apps and devices like Fitbit, Rescuetime, Jawbone Up, Withings, Facebook, Github, Google Calendar, Runkeeper, MoodPanda, Slice, Google Fit, and more.  <a href=\"https://quantimo.do\">QuantiModo</a> then analyzes your data to identify which hidden factors are most likely to be influencing your mood or symptoms and their optimal daily values.",
-          "type": "string"
-        },
-        "direction": {
-          "description": "Example: higher",
-          "type": "string"
-        },
-        "durationOfAction": {
-          "description": "The amount of time over which a predictor/stimulus event can exert an observable influence on an outcome variable value. For instance, aspirin (stimulus/predictor) typically decreases headache severity for approximately four hours (duration of action) following the onset delay.",
-          "type": "number"
-        },
-        "durationOfActionInHours": {
-          "description": "Example: 168",
-          "type": "integer"
-        },
-        "effect": {
-          "description": "Variable name of the effect variable for which the user desires correlations.",
-          "type": "string"
-        },
-        "effectChanges": {
-          "description": "Example: 193",
-          "type": "integer"
-        },
-        "effectSize": {
-          "description": "Magnitude of the effects of a cause indicating whether it's practically meaningful.",
-          "type": "string"
-        },
-        "effectUnit": {
-          "description": "Example: /5",
-          "type": "string"
-        },
-        "effectUserVariableShareUserMeasurements": {
-          "description": "Example: 1",
-          "type": "integer"
-        },
-        "effectVariableCategoryId": {
-          "description": "Example: 1",
-          "type": "integer"
-        },
-        "effectVariableCategoryName": {
-          "description": "Variable category of the effect variable.",
-          "type": "string"
-        },
-        "effectVariableCombinationOperation": {
-          "description": "Example: MEAN",
-          "type": "string"
-        },
-        "effectVariableCommonAlias": {
-          "description": "Example: Mood_(psychology)",
-          "type": "string"
-        },
-        "effectVariableUnitAbbreviatedName": {
-          "description": "Example: /5",
-          "type": "string"
-        },
-        "effectVariableUnitId": {
-          "description": "Example: 10",
-          "type": "integer"
-        },
-        "effectVariableUnitName": {
-          "description": "Example: 1 to 5 Rating",
-          "type": "string"
-        },
-        "effectVariableId": {
-          "description": "Magnitude of the effects of a cause indicating whether it's practically meaningful.",
-          "type": "string"
-        },
-        "effectVariableImageUrl": {
-          "description": "",
-          "type": "string"
-        },
-        "effectVariableIonIcon": {
-          "description": "For use in Ionic apps",
-          "type": "string"
-        },
-        "effectVariableMostCommonConnectorId": {
-          "description": "Example: 10",
-          "type": "integer"
-        },
-        "effectVariableName": {
-          "description": "Variable name of the effect variable for which the user desires correlations.",
-          "type": "string"
-        },
-        "experimentEndTime": {
-          "description": "Example: 2014-07-30 12:50:00",
-          "format": "date-time",
-          "type": "string"
-        },
-        "experimentStartTime": {
-          "description": "Example: 2012-05-06 21:15:00",
-          "format": "date-time",
-          "type": "string"
-        },
-        "forwardSpearmanCorrelationCoefficient": {
-          "description": "Example: 0.528359",
-          "format": "double",
-          "type": "number"
-        },
-        "gaugeImage": {
-          "description": "Illustrates the strength of the relationship",
-          "type": "string"
-        },
-        "gaugeImageSquare": {
-          "description": "Example: https://s3.amazonaws.com/quantimodo-docs/images/gauge-moderately-positive-relationship-200-200.png",
-          "type": "string"
-        },
-        "imageUrl": {
-          "description": "Large image for Facebook",
-          "type": "string"
-        },
-        "instructionsForCause": {
-          "description": "Example: <a href=\"http://www.amazon.com/gp/product/B00A17IAO0/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20\">Obtain Up by Jawbone</a> and use it to record your Sleep Quality. Once you have a <a href=\"http://www.amazon.com/gp/product/B00A17IAO0/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20\">Up by Jawbone</a> account, <a href=\"https://app.quantimo.do/ionic/Modo/www/#/app/import\">connect your  Up by Jawbone account at QuantiModo</a> to automatically import and analyze your data.",
-          "type": "string"
-        },
-        "instructionsForEffect": {
-          "description": "Example: <a href=\"https://quantimo.do\">Obtain QuantiModo</a> and use it to record your Overall Mood. Once you have a <a href=\"https://quantimo.do\">QuantiModo</a> account, <a href=\"https://app.quantimo.do/ionic/Modo/www/#/app/import\">connect your  QuantiModo account at QuantiModo</a> to automatically import and analyze your data.",
-          "type": "string"
-        },
-        "numberOfPairs": {
-          "description": "Number of points that went into the correlation calculation",
-          "type": "number"
-        },
-        "onsetDelay": {
-          "description": "The amount of time in seconds that elapses after the predictor/stimulus event before the outcome as perceived by a self-tracker is known as the onset delay. For example, the onset delay between the time a person takes an aspirin (predictor/stimulus event) and the time a person perceives a change in their headache severity (outcome) is approximately 30 minutes.",
-          "format": "double",
-          "type": "number"
-        },
-        "onsetDelayWithStrongestPearsonCorrelation": {
-          "description": "Example: -86400",
-          "type": "integer"
-        },
-        "onsetDelayWithStrongestPearsonCorrelationInHours": {
-          "description": "Example: -24",
-          "type": "integer"
-        },
-        "optimalPearsonProduct": {
-          "description": "Optimal Pearson Product",
-          "type": "number"
-        },
-        "outcomeDataSources": {
-          "description": "original name of the cause.",
-          "type": "string"
-        },
-        "outcomeFillingValue": {
-          "description": "Example: -1",
-          "type": "integer"
-        },
-        "pearsonCorrelationWithNoOnsetDelay": {
-          "description": "Example: 0.477",
-          "format": "double",
-          "type": "number"
-        },
-        "predictivePearsonCorrelation": {
-          "description": "Example: 0.538",
-          "format": "double",
-          "type": "number"
-        },
-        "predictivePearsonCorrelationCoefficient": {
-          "description": "Example: 0.538",
-          "format": "double",
-          "type": "number"
-        },
-        "predictorDataSources": {
-          "description": "Example: RescueTime",
-          "type": "string"
-        },
-        "predictorExplanation": {
-          "description": "HIGHER Remeron predicts HIGHER Overall Mood",
-          "type": "string"
-        },
-        "predictorFillingValue": {
-          "description": "Example: -1",
-          "type": "integer"
-        },
-        "predictorMaximumAllowedValue": {
-          "description": "Example: 160934",
-          "format": "double",
-          "type": "number"
-        },
-        "predictorMinimumAllowedValue": {
-          "description": "Example: 10",
-          "format": "double",
-          "type": "number"
-        },
-        "predictsHighEffectChange": {
-          "description": "Example: 17",
-          "type": "integer"
-        },
-        "predictsHighEffectChangeSentenceFragment": {
-          "description": "Example: , on average, 17% ",
-          "type": "string"
-        },
-        "predictsLowEffectChange": {
-          "description": "Example: -11",
-          "type": "integer"
-        },
-        "predictsLowEffectChangeSentenceFragment": {
-          "description": "Example: , on average, 11% ",
-          "type": "string"
-        },
-        "principalInvestigator": {
-          "description": "Mike Sinn",
-          "type": "string"
-        },
-        "pValue": {
-          "description": "Example: 3.5306635529222E-5",
-          "format": "double",
-          "type": "number"
-        },
-        "qmScore": {
-          "description": "Value representing the significance of the relationship as a function of crowdsourced insights, predictive strength, data quantity, and data quality",
-          "type": "number"
-        },
-        "reverseCorrelation": {
-          "description": "Correlation when cause and effect are reversed. For any causal relationship, the forward correlation should exceed the reverse correlation.",
-          "type": "number"
-        },
-        "reversePearsonCorrelationCoefficient": {
-          "description": "Example: 0.63628232030415",
-          "format": "double",
-          "type": "number"
-        },
-        "shareUserMeasurements": {
-          "description": "Example: 1",
-          "type": "boolean"
-        },
-        "significanceExplanation": {
-          "description": "Using a two-tailed t-test with alpha = 0.05, it was determined that the change...",
-          "type": "string"
-        },
-        "significantDifference": {
-          "description": "Example: 1",
-          "type": "boolean"
-        },
-        "statisticalSignificance": {
-          "description": "A function of the effect size and sample size",
-          "type": "string"
-        },
-        "strengthLevel": {
-          "description": "weak, moderate, strong",
-          "type": "string"
-        },
-        "strongestPearsonCorrelationCoefficient": {
-          "description": "Example: 0.613",
-          "format": "double",
-          "type": "number"
-        },
-        "studyAbstract": {
-          "description": "These data suggest with a high degree of confidence...",
-          "type": "string"
-        },
-        "studyBackground": {
-          "description": "In order to reduce suffering through the advancement of human knowledge...",
-          "type": "string"
-        },
-        "studyDesign": {
-          "description": "This study is based on data donated by one QuantiModo user...",
-          "type": "string"
-        },
-        "studyInvitation": {
-          "description": "Help us determine if Remeron affects Overall Mood!",
-          "type": "string"
-        },
-        "studyLimitations": {
-          "description": "As with any human experiment, it was impossible to control for all potentially confounding variables...",
-          "type": "string"
-        },
-        "studyLinkDynamic": {
-          "description": "Url for the interactive study within the web app",
-          "type": "string"
-        },
-        "studyLinkEmail": {
-          "description": "Example: mailto:?subject=N1%20Study%3A%20Sleep%20Quality%20Predicts%20Higher%20Overall%20Mood&body=Check%20out%20my%20study%20at%20https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fstudy%3FcauseVariableName%3DSleep%2520Quality%26effectVariableName%3DOverall%2520Mood%26userId%3D230%0A%0AHave%20a%20great%20day!",
-          "type": "string"
-        },
-        "studyLinkFacebook": {
-          "description": "Url for sharing the study on Facebook",
-          "type": "string"
-        },
-        "studyLinkGoogle": {
-          "description": "Url for sharing the study on Google+",
-          "type": "string"
-        },
-        "studyLinkStatic": {
-          "description": "Url for sharing the statically rendered study on social media",
-          "type": "string"
-        },
-        "studyLinkTwitter": {
-          "description": "Url for sharing the study on Twitter",
-          "type": "string"
-        },
-        "studyObjective": {
-          "description": "The objective of this study is to determine...",
-          "type": "string"
-        },
-        "studyQuestion": {
-          "description": "Does Remeron affect Overall Mood?",
-          "type": "string"
-        },
-        "studyResults": {
-          "description": "This analysis suggests that...",
-          "type": "string"
-        },
-        "studyTitle": {
-          "description": "N1 Study HIGHER Remeron predicts HIGHER Overall Mood",
-          "type": "string"
-        },
-        "timestamp": {
-          "description": "Time at which correlation was calculated",
-          "type": "number"
-        },
-        "tValue": {
-          "description": "Example: 9.6986079652717",
-          "format": "double",
-          "type": "number"
-        },
-        "updatedAt": {
-          "description": "When the record in the database was last updated. Use UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`  datetime format. Time zone should be UTC and not local.",
-          "format": "date-time",
-          "type": "string"
-        },
-        "updatedTime": {
-          "description": "Example: 2017-05-06 15:40:38",
-          "format": "date-time",
-          "type": "string"
-        },
-        "userId": {
-          "description": "Example: 230",
-          "type": "integer"
-        },
-        "userVote": {
-          "description": "User Vote",
-          "type": "number"
-        },
-        "valuePredictingHighOutcome": {
-          "description": "cause value that predicts an above average effect value (in default unit for cause variable)",
-          "type": "number"
-        },
-        "valuePredictingHighOutcomeExplanation": {
-          "description": "Overall Mood, on average, 34% HIGHER after around 3.98mg Remeron",
-          "type": "string"
-        },
-        "valuePredictingLowOutcome": {
-          "description": "cause value that predicts a below average effect value (in default unit for cause variable)",
-          "type": "number"
-        },
-        "valuePredictingLowOutcomeExplanation": {
-          "description": "Overall Mood, on average, 4% LOWER after around 0mg Remeron",
-          "type": "string"
-        }
-      },
-      "required": [
-        "cause",
-        "correlationCoefficient",
-        "durationOfAction",
-        "effect",
-        "numberOfPairs",
-        "onsetDelay",
-        "timestamp"
-      ]
-    },
     "UserStudy": {
       "properties": {
         "allPairsSignificance": {
@@ -7151,6 +5522,10 @@
         },
         "studyAbstract": {
           "description": "Example: Your data suggests with a high degree of confidence (p=0) that Sleep Duration (Sleep) has a weakly negative predictive relationship (R=-0.173) with Overall Mood  (Emotions).  The highest quartile of Overall Mood  measurements were observed following an average 6.79h Sleep Duration.  The lowest quartile of Overall Mood measurements were observed following an average 7.54h Sleep Duration.",
+          "type": "string"
+        },
+        "studyBackground": {
+          "description": "In order to reduce suffering through the advancement of human knowledge...",
           "type": "string"
         },
         "studyDesign": {
@@ -8927,7 +7302,7 @@
             "description": "Successful operation",
             "schema": {
               "items": {
-                "$ref": "#/definitions/AggregatedCorrelation"
+                "$ref": "#/definitions/Correlation"
               },
               "type": "array"
             }
@@ -9288,7 +7663,7 @@
     "/v3/correlations/explanations": {
       "get": {
         "description": "Get explanations of  correlations based on data from a single user.",
-        "operationId": "getUserCorrelationExplantions",
+        "operationId": "getUserCorrelationExplanations",
         "parameters": [
           {
             "$ref": "#/parameters/causeVariableNameParam"
@@ -9305,7 +7680,7 @@
             "description": "Successful Operation",
             "schema": {
               "items": {
-                "$ref": "#/definitions/UserCorrelation"
+                "$ref": "#/definitions/Correlation"
               },
               "type": "array"
             }

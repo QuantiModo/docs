@@ -475,7 +475,7 @@ gulp.task('js-sdk-copy-everywhere', ['browserify'], function(){
 });
 var laravelVendorPath = pathToQmDocker + '/laravel/vendor/quantimodo/quantimodo-sdk-php';
 gulp.task('php-sdk-copy-to-laravel', ['clean-laravel-vendor'], function(){
-    return copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage('php'), pathToQmDocker + '/laravel/vendor/quantimodo/quantimodo-sdk-php');
+    return copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage('php') + '/QuantiModoClient', pathToQmDocker + '/laravel/vendor/quantimodo/quantimodo-sdk-php');
 });
 gulp.task('3-copy-to-repos', ['browserify'], function(){
     return copySdksFromUnzippedPathToRepos();
