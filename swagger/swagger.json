@@ -6654,6 +6654,13 @@
       "required": true,
       "type": "string"
     },
+    "connectorNameParam": {
+      "description": "Example: facebook",
+      "in": "query",
+      "name": "connectorName",
+      "required": false,
+      "type": "string"
+    },
     "connectorNamePathParam": {
       "description": "Lowercase system name of the source application or device. Get a list of available connectors from the /v3/connectors/list endpoint.",
       "enum": [
@@ -7822,6 +7829,9 @@
           },
           {
             "$ref": "#/parameters/sourceNameParam"
+          },
+          {
+            "$ref": "#/parameters/connectorNameParam"
           },
           {
             "$ref": "#/parameters/valueParam"
