@@ -1063,7 +1063,7 @@
         },
         "averageVote": {
           "description": "Example: 0.9855",
-          "type": "string"
+          "type": "number"
         },
         "causeChanges": {
           "description": "Example: 164",
@@ -1090,14 +1090,6 @@
         },
         "causeVariableUnitAbbreviatedName": {
           "description": "Example: /5",
-          "type": "string"
-        },
-        "causeVariableUnitId": {
-          "description": "Example: 10",
-          "type": "integer"
-        },
-        "causeVariableUnitName": {
-          "description": "Example: 1 to 5 Rating",
           "type": "string"
         },
         "causeVariableId": {
@@ -1154,14 +1146,6 @@
         },
         "dataSources": {
           "description": "Example: Sleep Quality data was primarily collected using <a href=\"http://www.amazon.com/gp/product/B00A17IAO0/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20\">Up by Jawbone</a>.  UP by Jawbone is a wristband and app that tracks how you sleep, move and eat and then helps you use that information to feel your best.<br>Overall Mood data was primarily collected using <a href=\"https://quantimo.do\">QuantiModo</a>.  <a href=\"https://quantimo.do\">QuantiModo</a> is a Chrome extension, Android app, iOS app, and web app that allows you to easily track mood, symptoms, or any outcome you want to optimize in a fraction of a second.  You can also import your data from over 30 other apps and devices like Fitbit, Rescuetime, Jawbone Up, Withings, Facebook, Github, Google Calendar, Runkeeper, MoodPanda, Slice, Google Fit, and more.  <a href=\"https://quantimo.do\">QuantiModo</a> then analyzes your data to identify which hidden factors are most likely to be influencing your mood or symptoms and their optimal daily values.",
-          "type": "string"
-        },
-        "dataSourcesParagraphForCause": {
-          "description": "Example: Sleep Quality data was primarily collected using <a href=\"http://www.amazon.com/gp/product/B00A17IAO0/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20\">Up by Jawbone</a>.  UP by Jawbone is a wristband and app that tracks how you sleep, move and eat and then helps you use that information to feel your best.",
-          "type": "string"
-        },
-        "dataSourcesParagraphForEffect": {
-          "description": "Example: Overall Mood data was primarily collected using <a href=\"https://quantimo.do\">QuantiModo</a>.  <a href=\"https://quantimo.do\">QuantiModo</a> is a Chrome extension, Android app, iOS app, and web app that allows you to easily track mood, symptoms, or any outcome you want to optimize in a fraction of a second.  You can also import your data from over 30 other apps and devices like Fitbit, Rescuetime, Jawbone Up, Withings, Facebook, Github, Google Calendar, Runkeeper, MoodPanda, Slice, Google Fit, and more.  <a href=\"https://quantimo.do\">QuantiModo</a> then analyzes your data to identify which hidden factors are most likely to be influencing your mood or symptoms and their optimal daily values.",
           "type": "string"
         },
         "direction": {
@@ -1268,14 +1252,6 @@
         },
         "imageUrl": {
           "description": "Example: https://s3-us-west-1.amazonaws.com/qmimages/variable_categories_gauges_logo_background/gauge-moderately-positive-relationship_sleep_emotions_logo_background.png",
-          "type": "string"
-        },
-        "instructionsForCause": {
-          "description": "Example: <a href=\"http://www.amazon.com/gp/product/B00A17IAO0/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20\">Obtain Up by Jawbone</a> and use it to record your Sleep Quality. Once you have a <a href=\"http://www.amazon.com/gp/product/B00A17IAO0/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A17IAO0&linkCode=as2&tag=quant08-20\">Up by Jawbone</a> account, <a href=\"https://app.quantimo.do/ionic/Modo/www/#/app/import\">connect your  Up by Jawbone account at QuantiModo</a> to automatically import and analyze your data.",
-          "type": "string"
-        },
-        "instructionsForEffect": {
-          "description": "Example: <a href=\"https://quantimo.do\">Obtain QuantiModo</a> and use it to record your Overall Mood. Once you have a <a href=\"https://quantimo.do\">QuantiModo</a> account, <a href=\"https://app.quantimo.do/ionic/Modo/www/#/app/import\">connect your  QuantiModo account at QuantiModo</a> to automatically import and analyze your data.",
           "type": "string"
         },
         "numberOfPairs": {
@@ -1459,10 +1435,6 @@
           "description": "Example: N1 Study: Sleep Quality Predicts Higher Overall Mood",
           "type": "string"
         },
-        "timestamp": {
-          "description": "Example: 1494085127",
-          "type": "integer"
-        },
         "tValue": {
           "description": "Example: 9.6986079652717",
           "format": "double",
@@ -1499,10 +1471,6 @@
           "description": "Example: Overall Mood, on average, 11% lower after around 3.03/5 Sleep Quality",
           "type": "string"
         },
-        "causalityFactor": {
-          "description": "",
-          "type": "number"
-        },
         "outcomeDataSources": {
           "description": "original name of the cause.",
           "type": "string"
@@ -1527,11 +1495,6 @@
           "description": "Does Remeron affect Overall Mood?",
           "type": "string"
         },
-        "allPairsSignificance": {
-          "description": "Example: 0.99994982531794",
-          "format": "double",
-          "type": "number"
-        },
         "averagePearsonCorrelationCoefficientOverOnsetDelays": {
           "description": "Example: ",
           "type": "string"
@@ -1541,23 +1504,9 @@
           "format": "date-time",
           "type": "string"
         },
-        "causeChangesStatisticalSignificance": {
-          "description": "Example: 0.9999299755903",
-          "format": "double",
-          "type": "number"
-        },
-        "causeNumberOfProcessedDailyMeasurements": {
-          "description": "Example: 1364",
-          "type": "integer"
-        },
         "causeNumberOfRawMeasurements": {
           "description": "Example: 14764",
           "type": "integer"
-        },
-        "causeValueSpread": {
-          "description": "Example: 99032.44787234",
-          "format": "double",
-          "type": "number"
         },
         "correlationsOverDurationsOfAction": {
           "description": "Example: ",
@@ -1571,127 +1520,21 @@
           "description": "Example: ",
           "type": "string"
         },
-        "dataPoints": {
-          "description": "Example: ",
-          "type": "string"
-        },
         "degreesOfFreedom": {
           "description": "Example: 200",
-          "type": "integer"
-        },
-        "distanceFromMiddleToBeHightLowEffect": {
-          "description": "Example: 25",
           "type": "integer"
         },
         "effectNumberOfProcessedDailyMeasurements": {
           "description": "Example: 145",
           "type": "integer"
         },
-        "effectNumberOfRawMeasurements": {
-          "description": "Example: 4045",
-          "type": "integer"
-        },
-        "effectValueSpread": {
-          "description": "Example: 20.2",
-          "format": "double",
-          "type": "number"
-        },
         "error": {
           "description": "Example: optimalPearsonProduct is not defined",
           "type": "string"
         },
-        "maximumCauseValue": {
-          "description": "Example: 104300",
-          "format": "double",
-          "type": "number"
-        },
-        "maximumEffectValue": {
-          "description": "Example: 20.38",
-          "format": "double",
-          "type": "number"
-        },
-        "medianOfLowerHalfOfEffectMeasurements": {
-          "description": "Example: ",
-          "type": "string"
-        },
-        "medianOfUpperHalfOfEffectMeasurements": {
-          "description": "Example: ",
-          "type": "string"
-        },
-        "minimumCauseValue": {
-          "description": "Example: 5267.5521276596",
-          "format": "double",
-          "type": "number"
-        },
-        "minimumEffectValue": {
-          "description": "Example: 0.18",
-          "format": "double",
-          "type": "number"
-        },
-        "minimumProbability": {
-          "description": "Example: 0.05",
-          "format": "double",
-          "type": "number"
-        },
-        "numberOfCauseChangesForOptimalValues": {
-          "description": "Example: 287",
-          "type": "integer"
-        },
-        "numberOfDays": {
-          "description": "Example: 425",
-          "type": "integer"
-        },
-        "numberOfDaysSignificance": {
-          "description": "Example: 0.99999929612614",
-          "format": "double",
-          "type": "number"
-        },
-        "numberOfEffectChangesForOptimalValues": {
-          "description": "Example: 295",
-          "type": "integer"
-        },
-        "numberOfHighEffectPairs": {
-          "description": "Example: 27",
-          "type": "integer"
-        },
-        "numberOfLowEffectPairs": {
-          "description": "Example: 57",
-          "type": "integer"
-        },
-        "numberOfSamples": {
-          "description": "Example: 297",
-          "type": "integer"
-        },
-        "numberOfUniqueCauseValuesForOptimalValues": {
-          "description": "Example: 201",
-          "type": "integer"
-        },
-        "numberOfUniqueEffectValuesForOptimalValues": {
-          "description": "Example: 264",
-          "type": "integer"
-        },
         "numberOfUsers": {
           "description": "Example: ",
-          "type": "string"
-        },
-        "optimalChangeSpread": {
-          "description": "Example: 83.44",
-          "format": "double",
           "type": "number"
-        },
-        "optimalChangeSpreadSignificance": {
-          "description": "Example: 0.99999999999917",
-          "format": "double",
-          "type": "number"
-        },
-        "pairsOverTimeChartConfig": {
-          "description": "Example: ",
-          "format": "date-time",
-          "type": "string"
-        },
-        "perDaySentenceFragment": {
-          "description": "Example: ",
-          "type": "string"
         },
         "rawCauseMeasurementSignificance": {
           "description": "Example: 1",
@@ -1716,30 +1559,6 @@
           "format": "double",
           "type": "number"
         },
-        "causeUnit": {
-          "description": "Unit of the predictor variable",
-          "type": "string"
-        },
-        "causeVariableCommonAlias": {
-          "description": "Example: ",
-          "type": "string"
-        },
-        "causeVariableInformationalUrl": {
-          "description": "Example: ",
-          "type": "string"
-        },
-        "causeVariableProductUrl": {
-          "description": "Example: ",
-          "type": "string"
-        },
-        "effectVariableInformationalUrl": {
-          "description": "Example: ",
-          "type": "string"
-        },
-        "effectVariableProductUrl": {
-          "description": "Example: ",
-          "type": "string"
-        },
         "forwardPearsonCorrelationCoefficient": {
           "description": "Example: 0.0333",
           "format": "double",
@@ -1751,7 +1570,7 @@
         },
         "vote": {
           "description": "Example: ",
-          "type": "string"
+          "type": "number"
         }
       },
       "required": [
@@ -1767,16 +1586,6 @@
         "averageVote",
         "causeChanges",
         "causeUserVariableShareUserMeasurements",
-        "causeVariableCategoryId",
-        "causeVariableCategoryName",
-        "causeVariableCombinationOperation",
-        "causeVariableUnitAbbreviatedName",
-        "causeVariableUnitId",
-        "causeVariableUnitName",
-        "causeVariableId",
-        "causeVariableImageUrl",
-        "causeVariableIonIcon",
-        "causeVariableMostCommonConnectorId",
         "causeVariableName",
         "confidenceInterval",
         "confidenceLevel",
@@ -1793,18 +1602,6 @@
         "effectChanges",
         "effectSize",
         "effectUnit",
-        "effectUserVariableShareUserMeasurements",
-        "effectVariableCategoryId",
-        "effectVariableCategoryName",
-        "effectVariableCombinationOperation",
-        "effectVariableCommonAlias",
-        "effectVariableUnitAbbreviatedName",
-        "effectVariableUnitId",
-        "effectVariableUnitName",
-        "effectVariableId",
-        "effectVariableImageUrl",
-        "effectVariableIonIcon",
-        "effectVariableMostCommonConnectorId",
         "effectVariableName",
         "experimentEndTime",
         "experimentStartTime",
