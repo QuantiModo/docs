@@ -1250,6 +1250,10 @@
           "description": "Example: https://s3.amazonaws.com/quantimodo-docs/images/gauge-moderately-positive-relationship-200-200.png",
           "type": "string"
         },
+        "gaugeSharingImageUrl": {
+          "description": "Image with gauge and category images",
+          "type": "string"
+        },
         "imageUrl": {
           "description": "Example: https://s3-us-west-1.amazonaws.com/qmimages/variable_categories_gauges_logo_background/gauge-moderately-positive-relationship_sleep_emotions_logo_background.png",
           "type": "string"
@@ -1361,9 +1365,21 @@
           "format": "double",
           "type": "number"
         },
+        "robotSharingImageUrl": {
+          "description": "Image with robot and category images",
+          "type": "string"
+        },
         "shareUserMeasurements": {
           "description": "Example: 1",
           "type": "boolean"
+        },
+        "sharingDescription": {
+          "description": "Example: N1 Study: Sleep Quality Predicts Higher Overall Mood",
+          "type": "string"
+        },
+        "sharingTitle": {
+          "description": "Example: N1 Study: Sleep Quality Predicts Higher Overall Mood",
+          "type": "string"
         },
         "significanceExplanation": {
           "description": "Example: Using a two-tailed t-test with alpha = 0.05, it was determined that the change in Overall Mood is statistically significant at 95% confidence interval.",
