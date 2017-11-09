@@ -4025,6 +4025,10 @@
           "description": "Example: 1",
           "type": "integer"
         },
+        "outcome": {
+          "description": "Indicates whether or not the variable is usually an outcome of interest such as a symptom or emotion",
+          "type": "boolean"
+        },
         "pngPath": {
           "description": "Example: img/variable_categories/symptoms.png",
           "type": "string"
@@ -4346,6 +4350,10 @@
         "numberOfUniqueValues": {
           "description": "Example: 5",
           "type": "integer"
+        },
+        "outcome": {
+          "description": "Indicates whether or not the variable is usually an outcome of interest such as a symptom or emotion",
+          "type": "boolean"
         },
         "pngPath": {
           "description": "Example: img/variable_categories/emotions.png",
