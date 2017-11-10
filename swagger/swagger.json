@@ -4787,7 +4787,6 @@
         },
         "earliestReminderTime": {
           "description": "Earliest time user should get notifications. Example: 05:00:00",
-          "format": "date-time",
           "type": "string"
         },
         "email": {
