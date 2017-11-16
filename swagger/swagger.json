@@ -1511,6 +1511,10 @@
           "description": "Does Remeron affect Overall Mood?",
           "type": "string"
         },
+        "studyHtml":{
+          "description": "Embeddable study HTML including chart svg's",
+          "type": "string"
+        },
         "averagePearsonCorrelationCoefficientOverOnsetDelays": {
           "description": "Example: ",
           "type": "string"
@@ -5364,6 +5368,10 @@
         },
         "studyDesign": {
           "description": "Example: This study is based on data donated by one QuantiModo user. Thus, the study design is consistent with an n=1 observational natural experiment.",
+          "type": "string"
+        },
+        "studyHtml":{
+          "description": "Embeddable study HTML including chart svg's",
           "type": "string"
         },
         "studyLimitations": {
