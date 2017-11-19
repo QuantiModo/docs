@@ -164,9 +164,6 @@
     },
     "CommonResponse": {
       "properties": {
-        "data": {
-          "$ref": "#/definitions/GetStudyDataResponse"
-        },
         "message": {
           "description": "Message",
           "type": "string"
@@ -272,7 +269,10 @@
           "$ref": "#/definitions/DataSource"
         },
         "highcharts": {
-          "$ref": "#/definitions/HighchartArray"
+          "items": {
+            "$ref": "#/definitions/Highchart"
+          },
+          "type": "array"
         },
         "unitAbbreviatedName": {
           "description": "Abbreviated name of the default unit for the variable",
@@ -1614,8 +1614,6 @@
         "criticalTValue",
         "dataAnalysis",
         "dataSources",
-        "dataSourcesParagraphForCause",
-        "dataSourcesParagraphForEffect",
         "direction",
         "durationOfAction",
         "durationOfActionInHours",
@@ -1629,8 +1627,6 @@
         "gaugeImage",
         "gaugeImageSquare",
         "imageUrl",
-        "instructionsForCause",
-        "instructionsForEffect",
         "numberOfPairs",
         "onsetDelay",
         "onsetDelayInHours",
@@ -1671,7 +1667,6 @@
         "studyResults",
         "studyTitle",
         "tValue",
-        "timestamp",
         "updatedAt",
         "userId",
         "userVote",
@@ -2027,12 +2022,6 @@
         }
       }
     },
-    "GetMeasurementsResponseArray": {
-      "items": {
-        "$ref": "#/definitions/GetMeasurementsResponse"
-      },
-      "type": "array"
-    },
     "GetPairsResponse": {
       "properties": {
         "causeMeasurement": {
@@ -2065,271 +2054,6 @@
           "type": "integer"
         }
       }
-    },
-    "GetPairsResponseArray": {
-      "items": {
-        "$ref": "#/definitions/GetPairsResponse"
-      },
-      "type": "array"
-    },
-    "GetPublicVariablesResponse": {
-      "properties": {
-        "availableUnits": {
-          "items": {
-            "$ref": "#/definitions/Unit"
-          },
-          "type": "array"
-        },
-        "category": {
-          "description": "Example: Emotions",
-          "type": "string"
-        },
-        "causeOnly": {
-          "description": "Example: false",
-          "type": "boolean"
-        },
-        "combinationOperation": {
-          "description": "Example: MEAN",
-          "type": "string"
-        },
-        "commonAlias": {
-          "description": "Example: Mood_(psychology)",
-          "type": "string"
-        },
-        "createdAt": {
-          "description": "Example: 2015-03-05 05:01:48",
-          "format": "date-time",
-          "type": "string"
-        },
-        "unitAbbreviatedName": {
-          "description": "Example: /5",
-          "type": "string"
-        },
-        "unitCategoryId": {
-          "description": "Example: 5",
-          "type": "integer"
-        },
-        "unitCategoryName": {
-          "description": "Example: Rating",
-          "type": "string"
-        },
-        "unitId": {
-          "description": "Example: 10",
-          "type": "integer"
-        },
-        "unitName": {
-          "description": "Example: 1 to 5 Rating",
-          "type": "string"
-        },
-        "description": {
-          "description": "Example: positive",
-          "type": "string"
-        },
-        "durationOfAction": {
-          "description": "Example: 86400",
-          "type": "integer"
-        },
-        "durationOfActionInHours": {
-          "description": "Example: 24",
-          "type": "integer"
-        },
-        "id": {
-          "description": "Example: 1398",
-          "type": "integer"
-        },
-        "inputType": {
-          "description": "Example: happiestFaceIsFive",
-          "type": "string"
-        },
-        "ionIcon": {
-          "description": "Example: ion-happy-outline",
-          "type": "string"
-        },
-        "kurtosis": {
-          "description": "Example: 4.3527259032083",
-          "format": "double",
-          "type": "number"
-        },
-        "manualTracking": {
-          "description": "Example: true",
-          "type": "boolean"
-        },
-        "maximumAllowedValue": {
-          "description": "Example: 5",
-          "type": "integer"
-        },
-        "mean": {
-          "description": "Example: 3.1359987410015",
-          "format": "double",
-          "type": "number"
-        },
-        "median": {
-          "description": "Example: 3.1295731659047",
-          "format": "double",
-          "type": "number"
-        },
-        "minimumAllowedValue": {
-          "description": "Example: 1",
-          "type": "integer"
-        },
-        "mostCommonConnectorId": {
-          "description": "Example: 10",
-          "type": "integer"
-        },
-        "mostCommonOriginalUnitId": {
-          "description": "Example: 10",
-          "type": "integer"
-        },
-        "mostCommonValue": {
-          "description": "Example: 3",
-          "format": "double",
-          "type": "number"
-        },
-        "name": {
-          "description": "Example: Overall Mood",
-          "type": "string"
-        },
-        "numberOfAggregateCorrelationsAsCause": {
-          "description": "Example: 329",
-          "type": "integer"
-        },
-        "numberOfAggregateCorrelationsAsEffect": {
-          "description": "Example: 890",
-          "type": "integer"
-        },
-        "numberOfMeasurements": {
-          "description": "Example: 544298",
-          "type": "integer"
-        },
-        "numberOfRawMeasurements": {
-          "description": "Example: 544298",
-          "type": "integer"
-        },
-        "numberOfTrackingReminders": {
-          "description": "Example: 102",
-          "type": "integer"
-        },
-        "numberOfUniqueValues": {
-          "description": "Example: 7",
-          "type": "integer"
-        },
-        "numberOfUserVariables": {
-          "description": "Example: 4003",
-          "type": "integer"
-        },
-        "onsetDelay": {
-          "description": "Example: 0",
-          "type": "integer"
-        },
-        "onsetDelayInHours": {
-          "description": "Example: 0",
-          "type": "integer"
-        },
-        "outcome": {
-          "description": "Example: true",
-          "type": "boolean"
-        },
-        "pngPath": {
-          "description": "Example: img/variable_categories/emotions.png",
-          "type": "string"
-        },
-        "pngUrl": {
-          "description": "Example: https://app.quantimo.do/ionic/Modo/www/img/variable_categories/emotions.png",
-          "type": "string"
-        },
-        "public": {
-          "description": "Example: true",
-          "type": "boolean"
-        },
-        "secondMostCommonValue": {
-          "description": "Example: 4",
-          "format": "double",
-          "type": "number"
-        },
-        "skewness": {
-          "description": "Example: -0.23360852317166",
-          "format": "double",
-          "type": "number"
-        },
-        "standardDeviation": {
-          "description": "Example: 0.7214901744899",
-          "format": "double",
-          "type": "number"
-        },
-        "svgUrl": {
-          "description": "Example: https://app.quantimo.do/ionic/Modo/www/img/variable_categories/emotions.svg",
-          "type": "string"
-        },
-        "thirdMostCommonValue": {
-          "description": "Example: 2",
-          "format": "double",
-          "type": "number"
-        },
-        "updatedAt": {
-          "description": "Example: 2017-07-31 19:55:38",
-          "format": "date-time",
-          "type": "string"
-        },
-        "userVariableUnitAbbreviatedName": {
-          "description": "Example: /5",
-          "type": "string"
-        },
-        "userVariableUnitCategoryId": {
-          "description": "Example: 5",
-          "type": "integer"
-        },
-        "userVariableUnitCategoryName": {
-          "description": "Example: Rating",
-          "type": "string"
-        },
-        "userVariableUnitId": {
-          "description": "Example: 10",
-          "type": "integer"
-        },
-        "userVariableUnitName": {
-          "description": "Example: 1 to 5 Rating",
-          "type": "string"
-        },
-        "userVariableVariableCategoryId": {
-          "description": "Example: 1",
-          "type": "integer"
-        },
-        "userVariableVariableCategoryName": {
-          "description": "Example: Emotions",
-          "type": "string"
-        },
-        "valence": {
-          "description": "Example: positive",
-          "type": "string"
-        },
-        "variableCategoryId": {
-          "description": "Example: 1",
-          "type": "integer"
-        },
-        "variableCategoryImageUrl": {
-          "description": "Example: https://maxcdn.icons8.com/Color/PNG/96/Cinema/theatre_mask-96.png",
-          "type": "string"
-        },
-        "variableCategoryName": {
-          "description": "Example: Emotions",
-          "type": "string"
-        },
-        "variableName": {
-          "description": "Example: Overall Mood",
-          "type": "string"
-        },
-        "variance": {
-          "description": "Example: 22.541085893948",
-          "format": "double",
-          "type": "number"
-        }
-      }
-    },
-    "GetPublicVariablesResponseArray": {
-      "items": {
-        "$ref": "#/definitions/GetPublicVariablesResponse"
-      },
-      "type": "array"
     },
     "GetStudyDataResponse": {
       "properties": {
@@ -2386,7 +2110,6 @@
         "effectProcessedDailyMeasurements",
         "effectVariable",
         "pairs",
-        "statistics",
         "text",
         "user",
         "userId"
@@ -2422,7 +2145,10 @@
           "$ref": "#/definitions/UserVariable"
         },
         "highcharts": {
-          "$ref": "#/definitions/HighchartArray"
+          "items": {
+            "$ref": "#/definitions/Highchart"
+          },
+          "type": "array"
         },
         "message": {
           "description": "Message",
@@ -2775,12 +2501,6 @@
         "success"
       ]
     },
-    "GetTrackingRemindersResponseArray": {
-      "items": {
-        "$ref": "#/definitions/GetTrackingRemindersResponse"
-      },
-      "type": "array"
-    },
     "Highchart": {
       "properties": {
         "chartConfig": {
@@ -2803,12 +2523,6 @@
           "type": "string"
         }
       }
-    },
-    "HighchartArray": {
-      "items": {
-        "$ref": "#/definitions/Highchart"
-      },
-      "type": "array"
     },
     "Hover": {
       "properties": {
@@ -2931,12 +2645,6 @@
           "type": "string"
         }
       }
-    },
-    "LocalDailyReminderNotificationTimesForAllReminderArray": {
-      "items": {
-        "$ref": "#/definitions/LocalDailyReminderNotificationTimesForAllReminder"
-      },
-      "type": "array"
     },
     "Marker": {
       "properties": {
@@ -3738,69 +3446,6 @@
       },
       "required": [
         "hover"
-      ]
-    },
-    "Study": {
-      "properties": {
-        "causeProcessedDailyMeasurements": {
-          "items": {
-            "$ref": "#/definitions/ProcessedDailyMeasurement"
-          },
-          "type": "array"
-        },
-        "causeVariable": {
-          "$ref": "#/definitions/UserVariable"
-        },
-        "charts": {
-          "items": {
-            "$ref": "#/definitions/Highchart"
-          },
-          "type": "array"
-        },
-        "effectProcessedDailyMeasurements": {
-          "items": {
-            "$ref": "#/definitions/ProcessedDailyMeasurement"
-          },
-          "type": "array"
-        },
-        "effectVariable": {
-          "$ref": "#/definitions/UserVariable"
-        },
-        "highcharts": {
-          "$ref": "#/definitions/HighchartArray"
-        },
-        "pairs": {
-          "items": {
-            "$ref": "#/definitions/Pair"
-          },
-          "type": "array"
-        },
-        "statistics": {
-          "$ref": "#/definitions/Correlation"
-        },
-        "text": {
-          "description": "Example: ",
-          "type": "string"
-        },
-        "user": {
-          "description": "Example: ",
-          "type": "string"
-        },
-        "userId": {
-          "description": "Example: 230",
-          "type": "integer"
-        }
-      },
-      "required": [
-        "causeProcessedDailyMeasurements",
-        "causeVariable",
-        "charts",
-        "effectProcessedDailyMeasurements",
-        "effectVariable",
-        "pairs",
-        "statistics",
-        "text",
-        "user"
       ]
     },
     "Subtitle": {
@@ -4722,12 +4367,6 @@
         "unitCategory"
       ]
     },
-    "UnitArray": {
-      "items": {
-        "$ref": "#/definitions/Unit"
-      },
-      "type": "array"
-    },
     "UnitCategory": {
       "properties": {
         "id": {
@@ -5647,7 +5286,10 @@
           "type": "string"
         },
         "highcharts": {
-          "$ref": "#/definitions/HighchartArray"
+          "items": {
+            "$ref": "#/definitions/Highchart"
+          },
+          "type": "array"
         },
         "id": {
           "description": "Example: 95614",
