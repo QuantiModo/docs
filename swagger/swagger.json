@@ -2938,6 +2938,10 @@
         "variableName": {
           "description": "ORIGINAL name of the variable for which we are creating the measurement records",
           "type": "string"
+        },
+        "upc": {
+          "description": "UPC or other barcode scan result",
+          "type": "string"
         }
       },
       "required": [
@@ -3773,6 +3777,10 @@
         },
         "trackingReminderImageUrl": {
           "description": "Example: Not Found",
+          "type": "string"
+        },
+        "upc": {
+          "description": "UPC or other barcode scan result",
           "type": "string"
         },
         "updatedAt": {
@@ -7807,6 +7815,13 @@
           },
           {
             "$ref": "#/parameters/synonymsParam"
+          },
+          {
+            "description": "UPC or other barcode scan result",
+            "in": "query",
+            "name": "upc",
+            "required": false,
+            "type": "string"
           }
         ],
         "produces": [
@@ -8485,7 +8500,14 @@
           },
           {
             "$ref": "#/parameters/clientIdParam"
-          }
+          },
+          {
+            "description": "UPC or other barcode scan result",
+            "in": "query",
+            "name": "upc",
+            "required": false,
+            "type": "string"
+          },
         ],
         "produces": [
           "application/json"
