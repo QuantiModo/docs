@@ -605,6 +605,10 @@
           "format": "double",
           "type": "number"
         },
+        "upc": {
+          "description": "Universal product code or similar",
+          "type": "string"
+        },
         "updated": {
           "description": "When this variable or its settings were last updated",
           "type": "integer"
@@ -1496,6 +1500,10 @@
         "vote": {
           "description": "Example: ",
           "type": "number"
+        },
+        "charts": {
+          "description": "Array of chart svg's, links, and interactive configurations",
+          "type": "array"
         }
       },
       "required": [
@@ -4848,6 +4856,10 @@
         },
         "unit": {
           "$ref": "#/definitions/Unit"
+        },
+        "upc": {
+          "description": "Universal product code or similar",
+          "type": "string"
         },
         "updated": {
           "description": "updated",
