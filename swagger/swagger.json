@@ -4,17 +4,6 @@
     "application/json"
   ],
   "definitions": {
-    "Animation": {
-      "properties": {
-        "duration": {
-          "description": "Example: 0",
-          "type": "integer"
-        }
-      },
-      "required": [
-        "duration"
-      ]
-    },
     "Button": {
       "properties": {
         "link": {
@@ -33,90 +22,31 @@
     },
     "Chart": {
       "properties": {
-        "animation": {
-          "$ref": "#/definitions/Animation"
-        },
-        "chartConfig": {
-          "$ref": "#/definitions/ChartConfig"
+        "highchartConfig": {
+          "description": " Highcharts config that can be used if you have highcharts.js included on the page",
+          "type": "string"
         },
         "chartId": {
           "description": "Example: correlationScatterPlot",
           "type": "string"
         },
         "chartTitle": {
-          "description": "Example: Reference And Learning Hours following Barometric Pressure (R = 0.147)",
+          "description": "Example: Overall Mood following Sleep Duration (R = -0.173)",
           "type": "string"
         },
         "explanation": {
-          "description": "Example: The chart above indicates that an increase in Barometric Pressure is usually followed by an increase in Reference And Learning Hours.",
+          "description": "Example: The chart above indicates that an increase in Sleep Duration is usually followed by an decrease in Overall Mood.",
           "type": "string"
         },
-        "height": {
-          "description": "Example: 300",
-          "type": "integer"
-        },
-        "renderTo": {
-          "description": "Example: BarContainer",
+        "svgUrl": {
+          "description": "Url to a static svg of the chart",
           "type": "string"
         },
-        "type": {
-          "description": "Example: scatter",
-          "type": "string"
-        },
-        "zoomType": {
-          "description": "Example: xy",
+        "svg": {
+          "description": "Url to a static svg of the chart",
           "type": "string"
         }
-      },
-      "required": [
-        "animation",
-        "chartConfig",
-        "chartId",
-        "chartTitle",
-        "explanation",
-        "height",
-        "renderTo",
-        "type",
-        "zoomType"
-      ]
-    },
-    "ChartConfig": {
-      "properties": {
-        "loading": {
-          "description": "Example: false",
-          "type": "boolean"
-        },
-        "options": {
-          "$ref": "#/definitions/Option"
-        },
-        "series": {
-          "items": {
-            "$ref": "#/definitions/Series"
-          },
-          "type": "array"
-        },
-        "subtitle": {
-          "$ref": "#/definitions/Subtitle"
-        },
-        "title": {
-          "$ref": "#/definitions/Title"
-        },
-        "xAxis": {
-          "$ref": "#/definitions/XAxi"
-        },
-        "yAxis": {
-          "$ref": "#/definitions/YAxi"
-        }
-      },
-      "required": [
-        "loading",
-        "options",
-        "series",
-        "subtitle",
-        "title",
-        "xAxis",
-        "yAxis"
-      ]
+      }
     },
     "ChartStyle": {
       "properties": {
@@ -202,6 +132,12 @@
           "description": "A value of 1 indicates that this variable is generally a cause in a causal relationship.  An example of a causeOnly variable would be a variable such as Cloud Cover which would generally not be influenced by the behaviour of the user.",
           "type": "integer"
         },
+        "charts": {
+          "items": {
+            "$ref": "#/definitions/Chart"
+          },
+          "type": "array"
+        },
         "chartsLinkDynamic": {
           "description": "Example: https://local.quantimo.do/ionic/Modo/www/#/app/charts/Barometric%20Pressure?variableName=Barometric%20Pressure&userId=230&pngUrl=https%3A%2F%2Fapp.quantimo.do%2Fionic%2FModo%2Fwww%2Fimg%2Fvariable_categories%2Fenvironment.png",
           "type": "string"
@@ -267,12 +203,6 @@
         },
         "dataSource": {
           "$ref": "#/definitions/DataSource"
-        },
-        "highcharts": {
-          "items": {
-            "$ref": "#/definitions/Highchart"
-          },
-          "type": "array"
         },
         "unitAbbreviatedName": {
           "description": "Abbreviated name of the default unit for the variable",
@@ -970,31 +900,6 @@
         "totalMeasurementsInLastUpdate"
       ]
     },
-    "ConnectorArray": {
-      "items": {
-        "$ref": "#/definitions/Connector"
-      },
-      "type": "array"
-    },
-    "ConnectorInstruction": {
-      "properties": {
-        "parameters": {
-          "description": "parameters array",
-          "items": {
-            "type": "string"
-          },
-          "type": "array"
-        },
-        "url": {
-          "description": "url",
-          "type": "string"
-        },
-        "usePopup": {
-          "description": "usePopup",
-          "type": "boolean"
-        }
-      }
-    },
     "ConversionStep": {
       "properties": {
         "operation": {
@@ -1676,23 +1581,6 @@
         "valuePredictingLowOutcomeExplanation"
       ]
     },
-    "CorrelationArray": {
-      "items": {
-        "$ref": "#/definitions/Correlation"
-      },
-      "type": "array"
-    },
-    "Credit": {
-      "properties": {
-        "enabled": {
-          "description": "Example: false",
-          "type": "boolean"
-        }
-      },
-      "required": [
-        "enabled"
-      ]
-    },
     "DataSource": {
       "properties": {
         "affiliate": {
@@ -1877,184 +1765,6 @@
         "success"
       ]
     },
-    "GetMeasurementsResponse": {
-      "properties": {
-        "clientId": {
-          "description": "Example: pImUNsI6T5Ysd81k",
-          "type": "string"
-        },
-        "createdAt": {
-          "description": "Example: 2017-08-09 19:19:05",
-          "format": "date-time",
-          "type": "string"
-        },
-        "id": {
-          "description": "Example: 1060761015",
-          "type": "integer"
-        },
-        "inputType": {
-          "description": "Example: oneToFiveNumbers",
-          "type": "string"
-        },
-        "ionIcon": {
-          "description": "Example: ion-happy-outline",
-          "type": "string"
-        },
-        "manualTracking": {
-          "description": "Example: true",
-          "type": "boolean"
-        },
-        "maximumAllowedValue": {
-          "description": "Example: 5",
-          "type": "integer"
-        },
-        "minimumAllowedValue": {
-          "description": "Example: 1",
-          "type": "integer"
-        },
-        "originalUnitAbbreviatedName": {
-          "description": "Example: /5",
-          "type": "string"
-        },
-        "originalUnitCategoryId": {
-          "description": "Example: 5",
-          "type": "integer"
-        },
-        "originalUnitCategoryName": {
-          "description": "Example: Rating",
-          "type": "string"
-        },
-        "originalUnitId": {
-          "description": "Example: 10",
-          "type": "integer"
-        },
-        "originalUnitName": {
-          "description": "Example: 1 to 5 Rating",
-          "type": "string"
-        },
-        "originalValue": {
-          "description": "Example: 1",
-          "format": "double",
-          "type": "number"
-        },
-        "pngPath": {
-          "description": "Example: img/rating/100/numeric_rating_button_100_1.png",
-          "type": "string"
-        },
-        "pngUrl": {
-          "description": "Example: https://app.quantimo.do/ionic/Modo/www/img/variable_categories/emotions.png",
-          "type": "string"
-        },
-        "sourceName": {
-          "description": "Example: pImUNsI6T5Ysd81k",
-          "type": "string"
-        },
-        "startTimeEpoch": {
-          "description": "Example: 1502306315",
-          "type": "integer"
-        },
-        "startTimeString": {
-          "description": "Example: 2017-08-09T19:18:35+00:00",
-          "format": "date-time",
-          "type": "string"
-        },
-        "svgUrl": {
-          "description": "Example: https://app.quantimo.do/ionic/Modo/www/img/variable_categories/emotions.svg",
-          "type": "string"
-        },
-        "unitAbbreviatedName": {
-          "description": "Example: /5",
-          "type": "string"
-        },
-        "unitCategoryId": {
-          "description": "Example: 5",
-          "type": "integer"
-        },
-        "unitCategoryName": {
-          "description": "Example: Rating",
-          "type": "string"
-        },
-        "unitId": {
-          "description": "Example: 10",
-          "type": "integer"
-        },
-        "unitName": {
-          "description": "Example: 1 to 5 Rating",
-          "type": "string"
-        },
-        "updatedAt": {
-          "description": "Example: 2017-08-09 19:19:05",
-          "format": "date-time",
-          "type": "string"
-        },
-        "userVariableVariableCategoryId": {
-          "description": "Example: 1",
-          "type": "integer"
-        },
-        "userVariableVariableCategoryName": {
-          "description": "Example: Emotions",
-          "type": "string"
-        },
-        "value": {
-          "description": "Example: 1",
-          "format": "double",
-          "type": "number"
-        },
-        "variableCategoryId": {
-          "description": "Example: 1",
-          "type": "integer"
-        },
-        "variableCategoryImageUrl": {
-          "description": "Example: https://maxcdn.icons8.com/Color/PNG/96/Cinema/theatre_mask-96.png",
-          "type": "string"
-        },
-        "variableCategoryName": {
-          "description": "Example: Emotions",
-          "type": "string"
-        },
-        "variableId": {
-          "description": "Example: 5970988",
-          "type": "integer"
-        },
-        "variableName": {
-          "description": "Example: Unique Test Variable 1502306315",
-          "type": "string"
-        }
-      }
-    },
-    "GetPairsResponse": {
-      "properties": {
-        "causeMeasurement": {
-          "description": "Example: 2.0166666666667",
-          "format": "double",
-          "type": "number"
-        },
-        "causeMeasurementValue": {
-          "description": "Example: 2.0166666666667",
-          "format": "double",
-          "type": "number"
-        },
-        "effectMeasurement": {
-          "description": "Example: 4",
-          "format": "double",
-          "type": "number"
-        },
-        "effectMeasurementValue": {
-          "description": "Example: 4",
-          "format": "double",
-          "type": "number"
-        },
-        "startTimeString": {
-          "description": "Example: 2015-08-06 15:49:02",
-          "format": "date-time",
-          "type": "string"
-        },
-        "timestamp": {
-          "description": "Example: 1438876142",
-          "type": "integer"
-        }
-      }
-    },
     "GetStudyDataResponse": {
       "properties": {
         "causeProcessedDailyMeasurements": {
@@ -2144,12 +1854,6 @@
         "effectVariable": {
           "$ref": "#/definitions/UserVariable"
         },
-        "highcharts": {
-          "items": {
-            "$ref": "#/definitions/Highchart"
-          },
-          "type": "array"
-        },
         "message": {
           "description": "Message",
           "type": "string"
@@ -2227,303 +1931,6 @@
         "success"
       ]
     },
-    "GetTrackingRemindersResponse": {
-      "properties": {
-        "availableUnits": {
-          "items": {
-            "$ref": "#/definitions/Unit"
-          },
-          "type": "array"
-        },
-        "clientId": {
-          "description": "Example: ionic",
-          "type": "string"
-        },
-        "combinationOperation": {
-          "description": "Example: MEAN",
-          "type": "string"
-        },
-        "createdAt": {
-          "description": "Example: 2016-12-25 10:28:42",
-          "format": "date-time",
-          "type": "string"
-        },
-        "data": {
-          "$ref": "#/definitions/TrackingRemindersArray"
-        },
-        "unitAbbreviatedName": {
-          "description": "Example: mg",
-          "type": "string"
-        },
-        "unitCategoryId": {
-          "description": "Example: 3",
-          "type": "integer"
-        },
-        "unitCategoryName": {
-          "description": "Example: Weight",
-          "type": "string"
-        },
-        "unitId": {
-          "description": "Example: 7",
-          "type": "integer"
-        },
-        "unitName": {
-          "description": "Example: Milligrams",
-          "type": "string"
-        },
-        "defaultValue": {
-          "description": "Example: 500",
-          "format": "double",
-          "type": "number"
-        },
-        "fillingValue": {
-          "description": "Example: 0",
-          "type": "integer"
-        },
-        "firstDailyReminderTime": {
-          "description": "Example: 12:00:00",
-          "format": "date-time",
-          "type": "string"
-        },
-        "frequencyTextDescription": {
-          "description": "Example: Daily (ended 2017-02-02)",
-          "type": "string"
-        },
-        "frequencyTextDescriptionWithTime": {
-          "description": "Example: Daily at 09:00 AM (ended 2017-02-02)",
-          "format": "date-time",
-          "type": "string"
-        },
-        "id": {
-          "description": "Example: 30376",
-          "type": "integer"
-        },
-        "imageUrl": {
-          "description": "Example: https://rximage.nlm.nih.gov/image/images/gallery/original/55111-0129-60_RXNAVIMAGE10_B051D81E.jpg",
-          "type": "string"
-        },
-        "inputType": {
-          "description": "Example: value",
-          "type": "string"
-        },
-        "ionIcon": {
-          "description": "Example: ion-ios-medkit-outline",
-          "type": "string"
-        },
-        "lastValue": {
-          "description": "Example: 500",
-          "format": "double",
-          "type": "number"
-        },
-        "localDailyReminderNotificationTimes": {
-          "items": {
-            "type": "string"
-          },
-          "type": "array"
-        },
-        "localDailyReminderNotificationTimesForAllReminders": {
-          "items": {
-            "type": "string"
-          },
-          "type": "array"
-        },
-        "manualTracking": {
-          "description": "Example: true",
-          "type": "boolean"
-        },
-        "message": {
-          "description": "Message",
-          "type": "string"
-        },
-        "minimumAllowedValue": {
-          "description": "Example: 0",
-          "type": "integer"
-        },
-        "modifiedValue": {
-          "description": "Is the user specified default value or falls back to the last value in user unit. Good for initializing input fields",
-          "format": "double",
-          "type": "number"
-        },
-        "nextReminderTimeEpochSeconds": {
-          "description": "Example: 1502373600",
-          "type": "integer"
-        },
-        "numberOfRawMeasurements": {
-          "description": "Example: 791",
-          "type": "integer"
-        },
-        "pngPath": {
-          "description": "Example: img/variable_categories/treatments.png",
-          "type": "string"
-        },
-        "pngUrl": {
-          "description": "Example: https://app.quantimo.do/ionic/Modo/www/img/variable_categories/treatments.png",
-          "type": "string"
-        },
-        "reminderFrequency": {
-          "description": "Example: 86400",
-          "type": "integer"
-        },
-        "reminderStartEpochSeconds": {
-          "description": "Example: 1481896800",
-          "type": "integer"
-        },
-        "reminderStartTime": {
-          "description": "Example: 14:00:00",
-          "format": "date-time",
-          "type": "string"
-        },
-        "reminderStartTimeLocal": {
-          "description": "Example: 09:00:00",
-          "format": "date-time",
-          "type": "string"
-        },
-        "reminderStartTimeLocalHumanFormatted": {
-          "description": "Example: 09:00 AM",
-          "format": "date-time",
-          "type": "string"
-        },
-        "repeating": {
-          "description": "Example: true",
-          "type": "boolean"
-        },
-        "secondDailyReminderTime": {
-          "description": "Example: 14:00:00",
-          "format": "date-time",
-          "type": "string"
-        },
-        "secondToLastValue": {
-          "description": "Example: 250",
-          "format": "double",
-          "type": "number"
-        },
-        "startTrackingDate": {
-          "description": "Example: 2016-12-16",
-          "type": "string"
-        },
-        "status": {
-          "description": "Status code",
-          "type": "integer"
-        },
-        "stopTrackingDate": {
-          "description": "Example: 2017-02-02",
-          "type": "string"
-        },
-        "success": {
-          "type": "boolean"
-        },
-        "svgUrl": {
-          "description": "Example: https://app.quantimo.do/ionic/Modo/www/img/variable_categories/treatments.svg",
-          "type": "string"
-        },
-        "thirdToLastValue": {
-          "description": "Example: 250",
-          "format": "double",
-          "type": "number"
-        },
-        "trackingReminderId": {
-          "description": "Example: 30376",
-          "type": "integer"
-        },
-        "trackingReminderImageUrl": {
-          "description": "Example: https://rximage.nlm.nih.gov/image/images/gallery/original/55111-0129-60_RXNAVIMAGE10_B051D81E.jpg",
-          "type": "string"
-        },
-        "updatedAt": {
-          "description": "Example: 2017-08-09 19:38:05",
-          "format": "date-time",
-          "type": "string"
-        },
-        "userId": {
-          "description": "Example: 230",
-          "type": "integer"
-        },
-        "userVariableUnitAbbreviatedName": {
-          "description": "Example: mg",
-          "type": "string"
-        },
-        "userVariableUnitCategoryId": {
-          "description": "Example: 3",
-          "type": "integer"
-        },
-        "userVariableUnitCategoryName": {
-          "description": "Example: Weight",
-          "type": "string"
-        },
-        "userVariableUnitId": {
-          "description": "Example: 7",
-          "type": "integer"
-        },
-        "userVariableUnitName": {
-          "description": "Example: Milligrams",
-          "type": "string"
-        },
-        "userVariableVariableCategoryId": {
-          "description": "Example: 13",
-          "type": "integer"
-        },
-        "userVariableVariableCategoryName": {
-          "description": "Example: Treatments",
-          "type": "string"
-        },
-        "valueAndFrequencyTextDescription": {
-          "description": "Example: 500 mg daily (ended 2017-02-02)",
-          "type": "string"
-        },
-        "valueAndFrequencyTextDescriptionWithTime": {
-          "description": "Example: 500 mg daily at 09:00 AM (ended 2017-02-02)",
-          "format": "date-time",
-          "type": "string"
-        },
-        "variableCategoryId": {
-          "description": "Example: 13",
-          "type": "integer"
-        },
-        "variableCategoryImageUrl": {
-          "description": "Example: https://maxcdn.icons8.com/Color/PNG/96/Healthcare/pill-96.png",
-          "type": "string"
-        },
-        "variableCategoryName": {
-          "description": "Example: Treatments",
-          "type": "string"
-        },
-        "variableId": {
-          "description": "Example: 5627291",
-          "type": "integer"
-        },
-        "variableName": {
-          "description": "Example: Acetyl L-Carnitine By MRM",
-          "type": "string"
-        }
-      },
-      "required": [
-        "status",
-        "success"
-      ]
-    },
-    "Highchart": {
-      "properties": {
-        "chartConfig": {
-          "$ref": "#/definitions/ChartConfig"
-        },
-        "chartId": {
-          "description": "Example: correlationScatterPlot",
-          "type": "string"
-        },
-        "chartTitle": {
-          "description": "Example: Overall Mood following Sleep Duration (R = -0.173)",
-          "type": "string"
-        },
-        "explanation": {
-          "description": "Example: The chart above indicates that an increase in Sleep Duration is usually followed by an decrease in Overall Mood.",
-          "type": "string"
-        },
-        "svgUrl": {
-          "description": "Url to a static svg of the chart",
-          "type": "string"
-        }
-      }
-    },
     "Hover": {
       "properties": {
         "enabled": {
@@ -2579,72 +1986,6 @@
       "required": [
         "status"
       ]
-    },
-    "Lang": {
-      "properties": {
-        "loading": {
-          "description": "Example: ",
-          "type": "string"
-        }
-      },
-      "required": [
-        "loading"
-      ]
-    },
-    "Legend": {
-      "properties": {
-        "enabled": {
-          "description": "Example: false",
-          "type": "boolean"
-        }
-      },
-      "required": [
-        "enabled"
-      ]
-    },
-    "Loading": {
-      "properties": {
-        "hideDuration": {
-          "description": "Example: 10",
-          "type": "integer"
-        },
-        "showDuration": {
-          "description": "Example: 10",
-          "type": "integer"
-        },
-        "style": {
-          "$ref": "#/definitions/ChartStyle"
-        }
-      },
-      "required": [
-        "hideDuration",
-        "showDuration",
-        "style"
-      ]
-    },
-    "LocalDailyReminderNotificationTime": {
-      "properties": {
-        "LocalDailyReminderNotificationTime": {
-          "description": "Example: 00:10:00",
-          "format": "date-time",
-          "type": "string"
-        }
-      }
-    },
-    "LocalDailyReminderNotificationTimeArray": {
-      "items": {
-        "$ref": "#/definitions/LocalDailyReminderNotificationTime"
-      },
-      "type": "array"
-    },
-    "LocalDailyReminderNotificationTimesForAllReminder": {
-      "properties": {
-        "LocalDailyReminderNotificationTimesForAllReminder": {
-          "description": "Example: 00:10:00",
-          "format": "date-time",
-          "type": "string"
-        }
-      }
     },
     "Marker": {
       "properties": {
@@ -2975,58 +2316,6 @@
         "id"
       ]
     },
-    "Option": {
-      "properties": {
-        "chart": {
-          "$ref": "#/definitions/Chart"
-        },
-        "colors": {
-          "items": {
-            "type": "string"
-          },
-          "type": "array"
-        },
-        "credits": {
-          "$ref": "#/definitions/Credit"
-        },
-        "lang": {
-          "$ref": "#/definitions/Lang"
-        },
-        "legend": {
-          "$ref": "#/definitions/Legend"
-        },
-        "loading": {
-          "$ref": "#/definitions/Loading"
-        },
-        "plotOptions": {
-          "$ref": "#/definitions/PlotOption"
-        },
-        "title": {
-          "$ref": "#/definitions/Title"
-        },
-        "xAxis": {
-          "$ref": "#/definitions/XAxi"
-        },
-        "yAxis": {
-          "items": {
-            "$ref": "#/definitions/YAxi"
-          },
-          "type": "array"
-        }
-      },
-      "required": [
-        "chart",
-        "colors",
-        "credits",
-        "lang",
-        "legend",
-        "loading",
-        "plotOptions",
-        "title",
-        "xAxis",
-        "yAxis"
-      ]
-    },
     "Pair": {
       "properties": {
         "causeMeasurement": {
@@ -3098,17 +2387,6 @@
       },
       "type": "array"
     },
-    "Pairs": {
-      "properties": {
-        "name": {
-          "description": "Category name",
-          "type": "string"
-        }
-      },
-      "required": [
-        "name"
-      ]
-    },
     "PairsOfAveragesForAllUser": {
       "properties": {
         "causeVariableAverageValue": {
@@ -3123,12 +2401,6 @@
         }
       }
     },
-    "PairsOfAveragesForAllUserArray": {
-      "items": {
-        "$ref": "#/definitions/PairsOfAveragesForAllUser"
-      },
-      "type": "array"
-    },
     "ParticipantInstruction": {
       "properties": {
         "instructionsForCauseVariable": {
@@ -3140,20 +2412,6 @@
           "type": "string"
         }
       }
-    },
-    "PlotOption": {
-      "properties": {
-        "column": {
-          "$ref": "#/definitions/Column"
-        },
-        "scatter": {
-          "$ref": "#/definitions/Scatter"
-        }
-      },
-      "required": [
-        "column",
-        "scatter"
-      ]
     },
     "PostCorrelation": {
       "properties": {
@@ -3373,24 +2631,6 @@
         "variableName"
       ]
     },
-    "Scatter": {
-      "properties": {
-        "marker": {
-          "$ref": "#/definitions/Marker"
-        },
-        "states": {
-          "$ref": "#/definitions/State"
-        },
-        "tooltip": {
-          "$ref": "#/definitions/Tooltip"
-        }
-      },
-      "required": [
-        "marker",
-        "states",
-        "tooltip"
-      ]
-    },
     "Scope": {
       "properties": {
         "scalar": {
@@ -3398,12 +2638,6 @@
           "type": "string"
         }
       }
-    },
-    "ScopeArray": {
-      "items": {
-        "$ref": "#/definitions/Scope"
-      },
-      "type": "array"
     },
     "Series": {
       "properties": {
@@ -3450,17 +2684,6 @@
       },
       "required": [
         "hover"
-      ]
-    },
-    "Subtitle": {
-      "properties": {
-        "text": {
-          "description": "Example: ",
-          "type": "string"
-        }
-      },
-      "required": [
-        "text"
       ]
     },
     "Text": {
@@ -4221,12 +3444,6 @@
         "title"
       ]
     },
-    "TrackingReminderNotificationArray": {
-      "items": {
-        "$ref": "#/definitions/TrackingReminderNotification"
-      },
-      "type": "array"
-    },
     "TrackingReminderNotificationPost": {
       "properties": {
         "action": {
@@ -4283,12 +3500,6 @@
         "modifiedValue",
         "title"
       ]
-    },
-    "TrackingRemindersArray": {
-      "items": {
-        "$ref": "#/definitions/TrackingReminder"
-      },
-      "type": "array"
     },
     "Unit": {
       "properties": {
@@ -5137,8 +4348,10 @@
           "type": "boolean"
         },
         "charts": {
-          "description": "Highcharts configs you can use if you add highcharts.js to your page",
-          "type": "object"
+          "items": {
+            "$ref": "#/definitions/Chart"
+          },
+          "type": "array"
         },
         "chartsLinkDynamic": {
           "description": "Example: https://local.quantimo.do/ionic/Modo/www/#/app/charts/Trader%20Joes%20Bedtime%20Tea%20%2F%20Sleepytime%20Tea%20%28any%20Brand%29?variableName=Trader%20Joes%20Bedtime%20Tea%20%2F%20Sleepytime%20Tea%20%28any%20Brand%29&userId=230&pngUrl=https%3A%2F%2Fapp.quantimo.do%2Fionic%2FModo%2Fwww%2Fimg%2Fvariable_categories%2Ftreatments.png",
@@ -5292,12 +4505,6 @@
         "iconIcon": {
           "description": "Example: ion-sad-outline",
           "type": "string"
-        },
-        "highcharts": {
-          "items": {
-            "$ref": "#/definitions/Highchart"
-          },
-          "type": "array"
         },
         "id": {
           "description": "Example: 95614",
@@ -5926,12 +5133,6 @@
         "name"
       ]
     },
-    "VariableCategoryArray": {
-      "items": {
-        "$ref": "#/definitions/VariableCategory"
-      },
-      "type": "array"
-    },
     "Vote": {
       "properties": {
         "causeVariableId": {
@@ -6029,38 +5230,6 @@
         "showLastLabel",
         "startOnTick",
         "text",
-        "title"
-      ]
-    },
-    "YAxi": {
-      "properties": {
-        "lineWidth": {
-          "description": "Example: 1",
-          "type": "integer"
-        },
-        "max": {
-          "description": "Example: 372.68",
-          "format": "double",
-          "type": "number"
-        },
-        "min": {
-          "description": "Example: -2.68",
-          "format": "double",
-          "type": "number"
-        },
-        "opposite": {
-          "description": "Example: true",
-          "type": "boolean"
-        },
-        "title": {
-          "$ref": "#/definitions/Title"
-        }
-      },
-      "required": [
-        "lineWidth",
-        "max",
-        "min",
-        "opposite",
         "title"
       ]
     }
@@ -8436,7 +7605,7 @@
         "operationId": "getUserVariables",
         "parameters": [
           {
-            "description": "Return highcharts configs that can be used if you have highcharts.js included on the page.  This only works if the id or name query parameter is also provided.",
+            "description": "Return Highcharts configs that can be used if you have highcharts.js included on the page.  This only works if the id or name query parameter is also provided.",
             "in": "query",
             "name": "includeCharts",
             "required": false,
