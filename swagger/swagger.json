@@ -7676,7 +7676,7 @@
             "name": "upc",
             "required": false,
             "type": "string"
-          },
+          }
         ],
         "produces": [
           "application/json"
