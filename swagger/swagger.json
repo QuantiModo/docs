@@ -48,50 +48,6 @@
         }
       }
     },
-    "ChartStyle": {
-      "properties": {
-        "background": {
-          "description": "Example: url(/res/loading3.gif) no-repeat center",
-          "type": "string"
-        }
-      },
-      "required": [
-        "background"
-      ]
-    },
-    "Column": {
-      "properties": {
-        "borderWidth": {
-          "description": "Example: 0",
-          "type": "integer"
-        },
-        "colorByPoint": {
-          "description": "Example: true",
-          "type": "boolean"
-        },
-        "enableMouseTracking": {
-          "description": "Example: true",
-          "type": "boolean"
-        },
-        "pointPadding": {
-          "description": "Example: 0.2",
-          "format": "double",
-          "type": "number"
-        },
-        "pointWidth": {
-          "description": "Example: 33.333333333333",
-          "format": "double",
-          "type": "number"
-        }
-      },
-      "required": [
-        "borderWidth",
-        "colorByPoint",
-        "enableMouseTracking",
-        "pointPadding",
-        "pointWidth"
-      ]
-    },
     "CommonResponse": {
       "properties": {
         "message": {
@@ -1500,10 +1456,6 @@
         "vote": {
           "description": "Example: ",
           "type": "number"
-        },
-        "charts": {
-          "description": "Array of chart svg's, links, and interactive configurations",
-          "type": "array"
         }
       },
       "required": [
@@ -2733,22 +2685,6 @@
           "type": "string"
         }
       }
-    },
-    "Title": {
-      "properties": {
-        "enabled": {
-          "description": "Example: true",
-          "type": "boolean"
-        },
-        "text": {
-          "description": "Example: Barometric Pressure (Pa)",
-          "type": "string"
-        }
-      },
-      "required": [
-        "enabled",
-        "text"
-      ]
     },
     "Tooltip": {
       "properties": {
@@ -5201,43 +5137,6 @@
       "required": [
         "cause",
         "effect"
-      ]
-    },
-    "XAxi": {
-      "properties": {
-        "categories": {
-          "items": {
-            "type": "string"
-          },
-          "type": "array"
-        },
-        "endOnTick": {
-          "description": "Example: true",
-          "type": "boolean"
-        },
-        "showLastLabel": {
-          "description": "Example: true",
-          "type": "boolean"
-        },
-        "startOnTick": {
-          "description": "Example: true",
-          "type": "boolean"
-        },
-        "text": {
-          "description": "Example: Date",
-          "type": "string"
-        },
-        "title": {
-          "$ref": "#/definitions/Title"
-        }
-      },
-      "required": [
-        "categories",
-        "endOnTick",
-        "showLastLabel",
-        "startOnTick",
-        "text",
-        "title"
       ]
     }
   },
