@@ -24,7 +24,7 @@
       "properties": {
         "highchartConfig": {
           "description": " Highcharts config that can be used if you have highcharts.js included on the page",
-          "type": "string"
+          "type": "object"
         },
         "chartId": {
           "description": "Example: correlationScatterPlot",
