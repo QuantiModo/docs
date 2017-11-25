@@ -4822,13 +4822,8 @@
           "description": "Comma-separated list of source names to limit variables to those sources",
           "type": "string"
         },
-        "standard_deviation": {
-          "description": "Standard deviation",
-          "format": "float",
-          "type": "number"
-        },
         "standardDeviation": {
-          "description": "Example: 0.46483219855434",
+          "description": "Standard deviation Example: 0.46483219855434",
           "format": "double",
           "type": "number"
         },
