@@ -106,7 +106,10 @@ function obfuscateSecrets(object){
     }
     return object;
 }
-function prettyJSONStringify(object) {return JSON.stringify(object, null, 2);}
+function prettyJSONStringify(object, spaces) {
+    if(!spaces){spaces = 2;}
+    return JSON.stringify(object, null, spaces);
+}
 function obfuscateStringify(message, object) {
     var objectString = '';
     if(object){
@@ -198,6 +201,7 @@ function getRepoPathForSdkLanguage(languageName) {
     return sdksReposPath + '/' + getSdkNameForLanguage(languageName);
 }
 var pathToIonic = '../../../public.built/ionic/Modo';
+var pathToLaravel = '../../../laravel';
 function readJsonFile(pathToFile) {
     logInfo("Reading " + pathToFile);
     return JSON.parse(fs.readFileSync(pathToFile, 'utf8'));
@@ -224,6 +228,7 @@ gulp.task('browserify', [], function (callback) {
         callback();
     });
 });
+
 gulp.task('4-build-and-release-javascript', ['check-responses'], function (callback) {
     function updateBowerAndPackageJsonVersions(path, callback) {
         var bowerJson = readJsonFile(path + '/bower.json');
@@ -475,21 +480,43 @@ gulp.task('js-sdk-copy-everywhere', ['browserify'], function(){
 });
 var laravelVendorPath = pathToQmDocker + '/laravel/vendor/quantimodo/quantimodo-sdk-php';
 gulp.task('php-sdk-copy-to-laravel', ['clean-laravel-vendor'], function(){
-    return copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage('php') + '/QuantiModoClient', pathToQmDocker + '/laravel/vendor/quantimodo/quantimodo-sdk-php');
+    return copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage('php') + '/QuantiModoClient',
+        pathToQmDocker + '/laravel/vendor/quantimodo/quantimodo-sdk-php');
+});
+gulp.task('php-move-client-to-repo-root', [], function(){
+    return copyOneFoldersContentsToAnother(getRepoPathForSdkLanguage('php') + '/QuantiModoClient/**/*',
+        getRepoPathForSdkLanguage('php'));
+});
+gulp.task('php-update-composer', [], function(callback){
+    var composerJson = readJsonFile(pathToLaravel + '/composer.json');
+    composerJson.require["quantimodo/quantimodo-sdk-php"] = apiVersionNumber;
+    return writeToFile(pathToLaravel  + '/composer.json', prettyJSONStringify(composerJson, 4), function () {
+        executeCommand("cd " + pathToLaravel + " && composer update", function () {
+            if(callback){callback();}
+        });
+    });
+});
+gulp.task('php-release', ['php-move-client-to-repo-root'], function(){
+    return commitChanges('php');
 });
 gulp.task('3-copy-to-repos', ['browserify'], function(){
     return copySdksFromUnzippedPathToRepos();
 });
-gulp.task('5-commit-changes', [], function(){
-    function commitChanges(language){
-        return executeCommand("cd " + getRepoPathForSdkLanguage(language) +
-            ' && git checkout README.md' +
-            ' && git add .' +
-            ' && git commit -m "' + apiVersionNumber + '"' +
-            ' && git push' +
-            ' && git tag ' + apiVersionNumber +
-            ' && git push origin ' + apiVersionNumber);
+function commitChanges(language, filesToResetArray){
+    var command = "cd " + getRepoPathForSdkLanguage(language);
+    if(filesToResetArray){
+        for (var i = 0; i < filesToResetArray.length; i++) {
+            command += ' && git checkout ' + filesToRestArray[i];
+        }
     }
+    return executeCommand(command +
+        ' && git add .' +
+        ' && git commit -m "' + apiVersionNumber + '"' +
+        ' && git push' +
+        ' && git tag ' + apiVersionNumber +
+        ' && git push origin ' + apiVersionNumber);
+}
+gulp.task('5-commit-changes', [], function(){
     for(var i = 0; i < languages.length; i++) {
         if(i === languages.length - 1){
             return commitChanges(getUnzippedPathForSdkLanguage(languages[i]));
