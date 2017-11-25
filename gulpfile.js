@@ -487,7 +487,15 @@ gulp.task('php-move-client-to-repo-root', [], function(){
     return copyOneFoldersContentsToAnother(getRepoPathForSdkLanguage('php') + '/QuantiModoClient/**/*',
         getRepoPathForSdkLanguage('php'));
 });
-gulp.task('php-update-composer', [], function(callback){
+gulp.task('php-update-sdk-composer', [], function(){
+    var composerJsonPath = getRepoPathForSdkLanguage('php') + '/composer.json';
+    var composerJson = readJsonFile(composerJsonPath);
+    composerJson.version = apiVersionNumber;
+    return writeToFile(composerJsonPath, prettyJSONStringify(composerJson, 4), function () {
+        return commitChanges('php');
+    });
+});
+gulp.task('php-update-laravel-composer', [], function(callback){
     var composerJson = readJsonFile(pathToLaravel + '/composer.json');
     composerJson.require["quantimodo/quantimodo-sdk-php"] = apiVersionNumber;
     return writeToFile(pathToLaravel  + '/composer.json', prettyJSONStringify(composerJson, 4), function () {
@@ -506,7 +514,7 @@ function commitChanges(language, filesToResetArray){
     var command = "cd " + getRepoPathForSdkLanguage(language);
     if(filesToResetArray){
         for (var i = 0; i < filesToResetArray.length; i++) {
-            command += ' && git checkout ' + filesToRestArray[i];
+            command += ' && git checkout ' + filesToResetArray[i];
         }
     }
     return executeCommand(command +
