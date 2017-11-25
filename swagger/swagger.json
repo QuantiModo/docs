@@ -6562,7 +6562,8 @@
     },
     "/v3/measurements/update": {
       "post": {
-        "description": "Delete a previously submitted measurement",
+        "description": "Update a previously submitted measurement",
+        "operationId": "updateMeasurement",
         "parameters": [
           {
             "description": "The id as well as the new startTime, note, and/or value of the measurement to be updated",

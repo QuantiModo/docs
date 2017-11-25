@@ -499,7 +499,7 @@ gulp.task('php-update-laravel-composer', [], function(callback){
     var composerJson = readJsonFile(pathToLaravel + '/composer.json');
     composerJson.require["quantimodo/quantimodo-sdk-php"] = apiVersionNumber;
     return writeToFile(pathToLaravel  + '/composer.json', prettyJSONStringify(composerJson, 4), function () {
-        executeCommand("cd " + pathToLaravel + " && composer update", function () {
+        executeCommand("cd " + pathToLaravel + " && composer update --ignore-platform-reqs", function () {
             if(callback){callback();}
         });
     });
