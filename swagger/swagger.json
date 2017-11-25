@@ -1891,26 +1891,6 @@
         "success"
       ]
     },
-    "Hover": {
-      "properties": {
-        "enabled": {
-          "description": "Example: true",
-          "type": "boolean"
-        },
-        "lineColor": {
-          "description": "Example: rgb(100,100,100)",
-          "type": "string"
-        },
-        "marker": {
-          "$ref": "#/definitions/Marker"
-        }
-      },
-      "required": [
-        "enabled",
-        "lineColor",
-        "marker"
-      ]
-    },
     "Image": {
       "properties": {
         "height": {
@@ -1930,41 +1910,6 @@
         "height",
         "imageUrl",
         "width"
-      ]
-    },
-    "JsonErrorResponse": {
-      "properties": {
-        "message": {
-          "description": "Error message",
-          "type": "string"
-        },
-        "status": {
-          "description": "Status: \"ok\" or \"error\"",
-          "type": "string"
-        }
-      },
-      "required": [
-        "status"
-      ]
-    },
-    "Marker": {
-      "properties": {
-        "enabled": {
-          "description": "Example: false",
-          "type": "boolean"
-        },
-        "radius": {
-          "description": "Example: 5",
-          "type": "integer"
-        },
-        "states": {
-          "$ref": "#/definitions/State"
-        }
-      },
-      "required": [
-        "enabled",
-        "radius",
-        "states"
       ]
     },
     "Measurement": {
@@ -2373,32 +2318,6 @@
         }
       }
     },
-    "PostCorrelation": {
-      "properties": {
-        "causeVariableName": {
-          "description": "Cause variable name",
-          "type": "string"
-        },
-        "correlation": {
-          "description": "Correlation value",
-          "format": "double",
-          "type": "number"
-        },
-        "effectVariableName": {
-          "description": "Effect variable name",
-          "type": "string"
-        },
-        "vote": {
-          "description": "Vote: 0 or 1",
-          "type": "integer"
-        }
-      },
-      "required": [
-        "causeVariableName",
-        "correlation",
-        "effectVariableName"
-      ]
-    },
     "PostMeasurementsDataResponse": {
       "properties": {
         "userVariables": {
@@ -2598,53 +2517,6 @@
           "type": "string"
         }
       }
-    },
-    "Series": {
-      "properties": {
-        "color": {
-          "description": "Example: rgba(223, 83, 83, .5)",
-          "type": "string"
-        },
-        "data": {
-          "items": {
-            "$ref": "#/definitions/Series"
-          },
-          "type": "array"
-        },
-        "name": {
-          "description": "Example: Reference And Learning Hours by Barometric Pressure",
-          "type": "string"
-        },
-        "tooltip": {
-          "$ref": "#/definitions/Tooltip"
-        },
-        "type": {
-          "description": "Example: spline",
-          "type": "string"
-        },
-        "yAxis": {
-          "description": "Example: 1",
-          "type": "integer"
-        }
-      },
-      "required": [
-        "color",
-        "data",
-        "name",
-        "tooltip",
-        "type",
-        "yAxis"
-      ]
-    },
-    "State": {
-      "properties": {
-        "hover": {
-          "$ref": "#/definitions/Hover"
-        }
-      },
-      "required": [
-        "hover"
-      ]
     },
     "Text": {
       "properties": {
