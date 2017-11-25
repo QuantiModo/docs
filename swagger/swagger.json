@@ -961,14 +961,6 @@
           "description": "Example: 1448",
           "type": "integer"
         },
-        "causeVariableImageUrl": {
-          "description": "Example: https://maxcdn.icons8.com/Color/PNG/96/Household/sleeping_in_bed-96.png",
-          "type": "string"
-        },
-        "causeVariableIonIcon": {
-          "description": "Example: ion-ios-cloudy-night-outline",
-          "type": "string"
-        },
         "causeVariableMostCommonConnectorId": {
           "description": "Example: 6",
           "type": "integer"
@@ -1076,14 +1068,6 @@
           "description": "Example: 1398",
           "type": "integer"
         },
-        "effectVariableImageUrl": {
-          "description": "Example: https://maxcdn.icons8.com/Color/PNG/96/Cinema/theatre_mask-96.png",
-          "type": "string"
-        },
-        "effectVariableIonIcon": {
-          "description": "Example: ion-happy-outline",
-          "type": "string"
-        },
         "effectVariableMostCommonConnectorId": {
           "description": "Example: 10",
           "type": "integer"
@@ -1106,22 +1090,6 @@
           "description": "Example: 0.528359",
           "format": "double",
           "type": "number"
-        },
-        "gaugeImage": {
-          "description": "Example: https://s3.amazonaws.com/quantimodo-docs/images/gauge-moderately-positive-relationship.png",
-          "type": "string"
-        },
-        "gaugeImageSquare": {
-          "description": "Example: https://s3.amazonaws.com/quantimodo-docs/images/gauge-moderately-positive-relationship-200-200.png",
-          "type": "string"
-        },
-        "gaugeSharingImageUrl": {
-          "description": "Image with gauge and category images",
-          "type": "string"
-        },
-        "imageUrl": {
-          "description": "Example: https://s3-us-west-1.amazonaws.com/qmimages/variable_categories_gauges_logo_background/gauge-moderately-positive-relationship_sleep_emotions_logo_background.png",
-          "type": "string"
         },
         "numberOfPairs": {
           "description": "Example: 298",
@@ -1203,17 +1171,9 @@
           "description": "Example: 17",
           "type": "integer"
         },
-        "predictsHighEffectChangeSentenceFragment": {
-          "description": "Example: , on average, 17% ",
-          "type": "string"
-        },
         "predictsLowEffectChange": {
           "description": "Example: -11",
           "type": "integer"
-        },
-        "predictsLowEffectChangeSentenceFragment": {
-          "description": "Example: , on average, 11% ",
-          "type": "string"
         },
         "pValue": {
           "description": "Example: 0.39628900511586",
@@ -1229,10 +1189,6 @@
           "description": "Example: 0.01377184270977",
           "format": "double",
           "type": "number"
-        },
-        "robotSharingImageUrl": {
-          "description": "Image with robot and category images",
-          "type": "string"
         },
         "shareUserMeasurements": {
           "description": "Example: 1",
@@ -1268,52 +1224,17 @@
           "format": "double",
           "type": "number"
         },
-        "studyAbstract": {
-          "description": "Example: Your data suggests with a high degree of confidence (p=0) that Sleep Quality (Sleep) has a moderately positive predictive relationship (R=0.538) with Overall Mood  (Emotions).  The highest quartile of Overall Mood  measurements were observed following an average 4.14/5 Sleep Quality.  The lowest quartile of Overall Mood measurements were observed following an average 3.03/5 Sleep Quality.",
-          "type": "string"
+        "studyImages": {
+          "$ref": "#/definitions/StudyImages"
         },
-        "studyDesign": {
-          "description": "Example: This study is based on data donated by one QuantiModo user. Thus, the study design is consistent with an n=1 observational natural experiment.",
-          "type": "string"
+        "studyLinks": {
+          "$ref": "#/definitions/StudyLinks"
         },
-        "studyLimitations": {
-          "description": "Example: As with any human experiment, it was impossible to control for all potentially confounding variables.\n\n            Correlation does not necessarily imply correlation.  We can never know for sure if one factor is definitely the cause of an outcome.\n            However, lack of correlation definitely implies the lack of a causal relationship.  Hence, we can with great\n            confidence rule out non-existent relationships. For instance, if we discover no relationship between mood\n            and an antidepressant this information is just as or even more valuable than the discovery that there is a relationship.\n            <br>\n            <br>\n\n            We can also take advantage of several characteristics of time series data from many subjects  to infer the likelihood of a causal relationship if we do find a correlational relationship.\n            The criteria for causation are a group of minimal conditions necessary to provide adequate evidence of a causal relationship between an incidence and a possible consequence.\n            The list of the criteria is as follows:\n            <br>\n            1. Strength (effect size): A small association does not mean that there is not a causal effect, though the larger the association, the more likely that it is causal.\n            <br>\n            2. Consistency (reproducibility): Consistent findings observed by different persons in different places with different samples strengthens the likelihood of an effect.\n            <br>\n            3. Specificity: Causation is likely if a very specific population at a specific site and disease with no other likely explanation. The more specific an association between a factor and an effect is, the bigger the probability of a causal relationship.\n            <br>\n            4. Temporality: The effect has to occur after the cause (and if there is an expected delay between the cause and expected effect, then the effect must occur after that delay).\n            <br>\n            5. Biological gradient: Greater exposure should generally lead to greater incidence of the effect. However, in some cases, the mere presence of the factor can trigger the effect. In other cases, an inverse proportion is observed: greater exposure leads to lower incidence.\n            <br>\n            6. Plausibility: A plausible mechanism between cause and effect is helpful.\n            <br>\n            7. Coherence: Coherence between epidemiological and laboratory findings increases the likelihood of an effect.\n            <br>\n            8. Experiment: \"Occasionally it is possible to appeal to experimental evidence\".\n            <br>\n            9. Analogy: The effect of similar factors may be considered.\n            <br>\n            <br>\n\n             The confidence in a causal relationship is bolstered by the fact that time-precedence was taken into account in all calculations. Furthermore, in accordance with the law of large numbers (LLN), the predictive power and accuracy of these results will continually grow over time.  298 paired data points were used in this analysis.   Assuming that the relationship is merely coincidental, as the participant independently modifies their Sleep Quality values, the observed strength of the relationship will decline until it is below the threshold of significance.  To it another way, in the case that we do find a spurious correlation, suggesting that banana intake improves mood for instance,\n            one will likely increase their banana intake.  Due to the fact that this correlation is spurious, it is unlikely\n            that you will see a continued and persistent corresponding increase in mood.  So over time, the spurious correlation will\n            naturally dissipate.Furthermore, it will be very enlightening to aggregate this data with the data from other participants  with similar genetic, diseasomic, environmentomic, and demographic profiles.",
-          "type": "string"
+        "studyText": {
+          "$ref": "#/definitions/StudyText"
         },
-        "studyLinkDynamic": {
-          "description": "Example: https://local.quantimo.do/ionic/Modo/www/index.html#/app/study?causeVariableName=Sleep%20Quality&effectVariableName=Overall%20Mood&userId=230",
-          "type": "string"
-        },
-        "studyLinkEmail": {
-          "description": "Example: mailto:?subject=N1%20Study%3A%20Sleep%20Quality%20Predicts%20Higher%20Overall%20Mood&body=Check%20out%20my%20study%20at%20https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fstudy%3FcauseVariableName%3DSleep%2520Quality%26effectVariableName%3DOverall%2520Mood%26userId%3D230%0A%0AHave%20a%20great%20day!",
-          "type": "string"
-        },
-        "studyLinkFacebook": {
-          "description": "Example: https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fstudy%3FcauseVariableName%3DSleep%2520Quality%26effectVariableName%3DOverall%2520Mood%26userId%3D230",
-          "type": "string"
-        },
-        "studyLinkGoogle": {
-          "description": "Example: https://plus.google.com/share?url=https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fstudy%3FcauseVariableName%3DSleep%2520Quality%26effectVariableName%3DOverall%2520Mood%26userId%3D230",
-          "type": "string"
-        },
-        "studyLinkStatic": {
-          "description": "Example: https://local.quantimo.do/api/v2/study?causeVariableName=Sleep%20Quality&effectVariableName=Overall%20Mood&userId=230",
-          "type": "string"
-        },
-        "studyLinkTwitter": {
-          "description": "Example: https://twitter.com/home?status=Sleep%20Quality%20Predicts%20Higher%20Overall%20Mood%20https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fstudy%3FcauseVariableName%3DSleep%2520Quality%26effectVariableName%3DOverall%2520Mood%26userId%3D230%20%40quantimodo",
-          "type": "string"
-        },
-        "studyObjective": {
-          "description": "Example: The objective of this study is to determine the nature of the relationship (if any) between the Sleep Quality and the Overall Mood. Additionally, we attempt to determine the Sleep Quality values most likely to produce optimal Overall Mood values.",
-          "type": "string"
-        },
-        "studyResults": {
-          "description": "Example: This analysis suggests that higher Sleep Quality (Sleep) generally predicts higher Overall Mood (p = 0).  Overall Mood is, on average, 17%  higher after around 4.14 Sleep Quality.  After an onset delay of 168 hours, Overall Mood is, on average, 11%  lower than its average over the 168 hours following around 3.03 Sleep Quality.  298 data points were used in this analysis.  The value for Sleep Quality changed 164 times, effectively running 82 separate natural experiments.  The top quartile outcome values are preceded by an average 4.14 /5 of Sleep Quality.  The bottom quartile outcome values are preceded by an average 3.03 /5 of Sleep Quality.  Forward Pearson Correlation Coefficient was 0.538 (p=0, 95% CI 0.395 to 0.681 onset delay = 0 hours, duration of action = 168 hours) .  The Reverse Pearson Correlation Coefficient was 0 (P=0, 95% CI -0.143 to 0.143, onset delay = -0 hours, duration of action = -168 hours). When the Sleep Quality value is closer to 4.14 /5 than 3.03 /5, the Overall Mood value which follows is, on average, 17%  percent higher than its typical value.  When the Sleep Quality value is closer to 3.03 /5 than 4.14 /5, the Overall Mood value which follows is 0% lower than its typical value.  Overall Mood is 3.55/5 (15% higher) on average after days with around 4.19/5 Sleep Quality  Overall Mood is 2.65/5 (14% lower) on average after days with around 1.97/5 Sleep Quality",
-          "type": "string"
-        },
-        "studyTitle": {
-          "description": "Example: N1 Study: Sleep Quality Predicts Higher Overall Mood",
+        "studyHtml":{
+          "description": "Embeddable study HTML including chart svg's",
           "type": "string"
         },
         "tValue": {
@@ -1364,29 +1285,8 @@
           "description": "Correlation when cause and effect are reversed. For any causal relationship, the forward correlation should exceed the reverse correlation.",
           "type": "number"
         },
-        "studyBackground": {
-          "description": "In order to reduce suffering through the advancement of human knowledge...",
-          "type": "string"
-        },
-        "studyInvitation": {
-          "description": "Help us determine if Remeron affects Overall Mood!",
-          "type": "string"
-        },
-        "studyQuestion": {
-          "description": "Does Remeron affect Overall Mood?",
-          "type": "string"
-        },
-        "studyHtml":{
-          "description": "Embeddable study HTML including chart svg's",
-          "type": "string"
-        },
         "averagePearsonCorrelationCoefficientOverOnsetDelays": {
           "description": "Example: ",
-          "type": "string"
-        },
-        "calculationStartTime": {
-          "description": "Example: ",
-          "format": "date-time",
           "type": "string"
         },
         "causeNumberOfRawMeasurements": {
@@ -1489,9 +1389,6 @@
         "experimentEndTime",
         "experimentStartTime",
         "forwardSpearmanCorrelationCoefficient",
-        "gaugeImage",
-        "gaugeImageSquare",
-        "imageUrl",
         "numberOfPairs",
         "onsetDelay",
         "onsetDelayInHours",
@@ -1508,9 +1405,7 @@
         "predictorMaximumAllowedValue",
         "predictorMinimumAllowedValue",
         "predictsHighEffectChange",
-        "predictsHighEffectChangeSentenceFragment",
         "predictsLowEffectChange",
-        "predictsLowEffectChangeSentenceFragment",
         "qmScore",
         "reversePearsonCorrelationCoefficient",
         "shareUserMeasurements",
@@ -1519,18 +1414,6 @@
         "statisticalSignificance",
         "strengthLevel",
         "strongestPearsonCorrelationCoefficient",
-        "studyAbstract",
-        "studyDesign",
-        "studyLimitations",
-        "studyLinkDynamic",
-        "studyLinkEmail",
-        "studyLinkFacebook",
-        "studyLinkGoogle",
-        "studyLinkStatic",
-        "studyLinkTwitter",
-        "studyObjective",
-        "studyResults",
-        "studyTitle",
         "tValue",
         "updatedAt",
         "userId",
@@ -1724,48 +1607,6 @@
         "status",
         "success"
       ]
-    },
-    "Study": {
-      "properties": {
-        "causeVariable": {
-          "$ref": "#/definitions/UserVariable"
-        },
-        "charts": {
-          "items": {
-            "$ref": "#/definitions/Chart"
-          },
-          "type": "array"
-        },
-        "chartHtml": {
-          "description": "Embeddable chart html",
-          "type": "string"
-        },
-        "effectVariable": {
-          "$ref": "#/definitions/UserVariable"
-        },
-        "html": {
-          "description": "Embeddable study text html including charts",
-          "type": "string"
-        },
-        "participantInstructions": {
-          "$ref": "#/definitions/ParticipantInstruction"
-        },
-        "statistics": {
-          "$ref": "#/definitions/Correlation"
-        },
-        "status": {
-          "description": "Status code",
-          "type": "integer"
-        },
-        "text": {
-          "$ref": "#/definitions/Text"
-        },
-        "type": {
-          "description": "Example: population",
-          "type": "string"
-        }
-      },
-      "required": ["type"]
     },
     "GetTrackingReminderNotificationsResponse": {
       "properties": {
@@ -2457,7 +2298,132 @@
         }
       }
     },
-    "Text": {
+    "Study": {
+      "properties": {
+        "causeVariable": {
+          "$ref": "#/definitions/UserVariable"
+        },
+        "charts": {
+          "items": {
+            "$ref": "#/definitions/Chart"
+          },
+          "type": "array"
+        },
+        "chartHtml": {
+          "description": "Embeddable chart html",
+          "type": "string"
+        },
+        "effectVariable": {
+          "$ref": "#/definitions/UserVariable"
+        },
+        "html": {
+          "description": "Embeddable study text html including charts",
+          "type": "string"
+        },
+        "participantInstructions": {
+          "$ref": "#/definitions/ParticipantInstruction"
+        },
+        "statistics": {
+          "$ref": "#/definitions/Correlation"
+        },
+        "studyLinks": {
+          "$ref": "#/definitions/StudyLinks"
+        },
+        "studyImages": {
+          "$ref": "#/definitions/StudyImages"
+        },
+        "text": {
+          "$ref": "#/definitions/StudyText"
+        },
+        "type": {
+          "description": "Example: population",
+          "type": "string"
+        }
+      },
+      "required": ["type"]
+    },
+    "StudyImages": {
+      "properties": {
+        "causeVariableImageUrl": {
+          "description": "Example: https://maxcdn.icons8.com/Color/PNG/96/Household/sleeping_in_bed-96.png",
+          "type": "string"
+        },
+        "causeVariableIonIcon": {
+          "description": "Example: ion-ios-cloudy-night-outline",
+          "type": "string"
+        },
+        "effectVariableImageUrl": {
+          "description": "Example: https://maxcdn.icons8.com/Color/PNG/96/Cinema/theatre_mask-96.png",
+          "type": "string"
+        },
+        "effectVariableIonIcon": {
+          "description": "Example: ion-happy-outline",
+          "type": "string"
+        },
+        "gaugeImage": {
+          "description": "Example: https://s3.amazonaws.com/quantimodo-docs/images/gauge-moderately-positive-relationship.png",
+          "type": "string"
+        },
+        "gaugeImageSquare": {
+          "description": "Example: https://s3.amazonaws.com/quantimodo-docs/images/gauge-moderately-positive-relationship-200-200.png",
+          "type": "string"
+        },
+        "gaugeSharingImageUrl": {
+          "description": "Image with gauge and category images",
+          "type": "string"
+        },
+        "imageUrl": {
+          "description": "Example: https://s3-us-west-1.amazonaws.com/qmimages/variable_categories_gauges_logo_background/gauge-moderately-positive-relationship_sleep_emotions_logo_background.png",
+          "type": "string"
+        },
+        "robotSharingImageUrl": {
+          "description": "Image with robot and category images",
+          "type": "string"
+        }
+      },
+      "required": [
+        "gaugeImage",
+        "gaugeImageSquare",
+        "imageUrl"
+      ]
+    },
+    "StudyLinks": {
+      "properties": {
+        "studyLinkEmail": {
+          "description": "Example: mailto:?subject=N1%20Study%3A%20Sleep%20Quality%20Predicts%20Higher%20Overall%20Mood&body=Check%20out%20my%20study%20at%20https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fstudy%3FcauseVariableName%3DSleep%2520Quality%26effectVariableName%3DOverall%2520Mood%26userId%3D230%0A%0AHave%20a%20great%20day!",
+          "type": "string"
+        },
+        "studyLinkFacebook": {
+          "description": "Example: https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fstudy%3FcauseVariableName%3DSleep%2520Quality%26effectVariableName%3DOverall%2520Mood%26userId%3D230",
+          "type": "string"
+        },
+        "studyLinkGoogle": {
+          "description": "Example: https://plus.google.com/share?url=https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fstudy%3FcauseVariableName%3DSleep%2520Quality%26effectVariableName%3DOverall%2520Mood%26userId%3D230",
+          "type": "string"
+        },
+        "studyLinkStatic": {
+          "description": "Example: https://local.quantimo.do/api/v2/study?causeVariableName=Sleep%20Quality&effectVariableName=Overall%20Mood&userId=230",
+          "type": "string"
+        },
+        "studyLinkDynamic": {
+          "description": "Example: https://local.quantimo.do/ionic/Modo/www/index.html#/app/study?causeVariableName=Sleep%20Quality&effectVariableName=Overall%20Mood&userId=230",
+          "type": "string"
+        },
+        "studyLinkTwitter": {
+          "description": "Example: https://twitter.com/home?status=Sleep%20Quality%20Predicts%20Higher%20Overall%20Mood%20https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fstudy%3FcauseVariableName%3DSleep%2520Quality%26effectVariableName%3DOverall%2520Mood%26userId%3D230%20%40quantimodo",
+          "type": "string"
+        }
+      },
+      "required": [
+        "studyLinkDynamic",
+        "studyLinkEmail",
+        "studyLinkFacebook",
+        "studyLinkGoogle",
+        "studyLinkStatic",
+        "studyLinkTwitter"
+      ]
+    },
+    "StudyText": {
       "properties": {
         "dataAnalysis": {
           "description": "Example: It was assumed that 0 hours would pass before a change in Very Distracting Time would produce an observable change in Video Activities.  It was assumed that Very Distracting Time could produce an observable change in Video Activities for as much as 7 days after the stimulus event.",
@@ -2494,8 +2460,28 @@
         "studyTitle": {
           "description": "Example: N1 Study: Very Distracting Time Predicts Negative Video Activities",
           "type": "string"
+        },
+        "studyInvitation": {
+          "description": "Help us determine if Remeron affects Overall Mood!",
+          "type": "string"
+        },
+        "studyQuestion": {
+          "description": "Does Remeron affect Overall Mood?",
+          "type": "string"
+        },
+        "studyBackground": {
+          "description": "In order to reduce suffering through the advancement of human knowledge...",
+          "type": "string"
         }
-      }
+      },
+      "required": [
+        "studyAbstract",
+        "studyDesign",
+        "studyLimitations",
+        "studyObjective",
+        "studyResults",
+        "studyTitle"
+      ]
     },
     "TrackingReminder": {
       "properties": {
