@@ -903,18 +903,10 @@
           "format": "double",
           "type": "number"
         },
-        "averageEffectFollowingHighCauseExplanation": {
-          "description": "Example: Overall Mood is 3.55/5 (15% higher) on average after days with around 4.19/5 Sleep Quality",
-          "type": "string"
-        },
         "averageEffectFollowingLowCause": {
           "description": "Example: 2.65",
           "format": "double",
           "type": "number"
-        },
-        "averageEffectFollowingLowCauseExplanation": {
-          "description": "Example: Overall Mood is 2.65/5 (14% lower) on average after days with around 1.97/5 Sleep Quality",
-          "type": "string"
         },
         "averageForwardPearsonCorrelationOverOnsetDelays": {
           "description": "Example: 0.396",
@@ -1149,10 +1141,6 @@
           "description": "Example: RescueTime",
           "type": "string"
         },
-        "predictorExplanation": {
-          "description": "Example: Sleep Quality Predicts Higher Overall Mood",
-          "type": "string"
-        },
         "predictorFillingValue": {
           "description": "Example: -1",
           "type": "integer"
@@ -1200,10 +1188,6 @@
         },
         "sharingTitle": {
           "description": "Example: N1 Study: Sleep Quality Predicts Higher Overall Mood",
-          "type": "string"
-        },
-        "significanceExplanation": {
-          "description": "Example: Using a two-tailed t-test with alpha = 0.05, it was determined that the change in Overall Mood is statistically significant at 95% confidence interval.",
           "type": "string"
         },
         "significantDifference": {
@@ -1260,18 +1244,10 @@
           "format": "double",
           "type": "number"
         },
-        "valuePredictingHighOutcomeExplanation": {
-          "description": "Example: Overall Mood, on average, 17% higher after around 4.14/5 Sleep Quality",
-          "type": "string"
-        },
         "valuePredictingLowOutcome": {
           "description": "Example: 3.03",
           "format": "double",
           "type": "number"
-        },
-        "valuePredictingLowOutcomeExplanation": {
-          "description": "Example: Overall Mood, on average, 11% lower after around 3.03/5 Sleep Quality",
-          "type": "string"
         },
         "outcomeDataSources": {
           "description": "original name of the cause.",
@@ -1363,9 +1339,7 @@
         "averageDailyLowCause",
         "averageEffect",
         "averageEffectFollowingHighCause",
-        "averageEffectFollowingHighCauseExplanation",
         "averageEffectFollowingLowCause",
-        "averageEffectFollowingLowCauseExplanation",
         "averageForwardPearsonCorrelationOverOnsetDelays",
         "averageReversePearsonCorrelationOverOnsetDelays",
         "averageVote",
@@ -1400,7 +1374,6 @@
         "predictivePearsonCorrelation",
         "predictivePearsonCorrelationCoefficient",
         "predictorDataSources",
-        "predictorExplanation",
         "predictorFillingValue",
         "predictorMaximumAllowedValue",
         "predictorMinimumAllowedValue",
@@ -1409,7 +1382,6 @@
         "qmScore",
         "reversePearsonCorrelationCoefficient",
         "shareUserMeasurements",
-        "significanceExplanation",
         "significantDifference",
         "statisticalSignificance",
         "strengthLevel",
@@ -1419,9 +1391,7 @@
         "userId",
         "userVote",
         "valuePredictingHighOutcome",
-        "valuePredictingHighOutcomeExplanation",
-        "valuePredictingLowOutcome",
-        "valuePredictingLowOutcomeExplanation"
+        "valuePredictingLowOutcome"
       ]
     },
     "DataSource": {
@@ -2460,6 +2430,22 @@
     },
     "StudyText": {
       "properties": {
+        "averageEffectFollowingHighCauseExplanation": {
+          "description": "Example: Overall Mood is 3.55/5 (15% higher) on average after days with around 4.19/5 Sleep Quality",
+          "type": "string"
+        },
+        "averageEffectFollowingLowCauseExplanation": {
+          "description": "Example: Overall Mood is 2.65/5 (14% lower) on average after days with around 1.97/5 Sleep Quality",
+          "type": "string"
+        },
+        "valuePredictingHighOutcomeExplanation": {
+          "description": "Example: Overall Mood, on average, 17% higher after around 4.14/5 Sleep Quality",
+          "type": "string"
+        },
+        "valuePredictingLowOutcomeExplanation": {
+          "description": "Example: Overall Mood, on average, 11% lower after around 3.03/5 Sleep Quality",
+          "type": "string"
+        },
         "dataAnalysis": {
           "description": "Example: It was assumed that 0 hours would pass before a change in Very Distracting Time would produce an observable change in Video Activities.  It was assumed that Very Distracting Time could produce an observable change in Video Activities for as much as 7 days after the stimulus event.",
           "type": "string"
@@ -2506,6 +2492,10 @@
         },
         "studyBackground": {
           "description": "In order to reduce suffering through the advancement of human knowledge...",
+          "type": "string"
+        },
+        "predictorExplanation": {
+          "description": "Example: Sleep Quality Predicts Higher Overall Mood",
           "type": "string"
         }
       },

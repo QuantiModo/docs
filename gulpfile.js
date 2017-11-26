@@ -430,6 +430,11 @@ gulp.task('js-sdk-download', [], function () {
     logInfo("Generating " + language + " sdk using " +  swaggerJsonUrl);
     return downloadSdk('javascript');
 });
+gulp.task('php-sdk-download', [], function () {
+    languages = ['php'];
+    logInfo("Generating " + language + " sdk using " +  swaggerJsonUrl);
+    return downloadSdk('php');
+});
 gulp.task('1-decompress', ['clean-repos-except-git'], function () {
     for(var i = 0; i < languages.length; i++) {
         if(i === languages.length - 1){
@@ -480,9 +485,9 @@ gulp.task('js-sdk-copy-everywhere', ['browserify'], function(){
     }
 });
 var laravelVendorPath = pathToQmDocker + '/laravel/vendor/quantimodo/quantimodo-sdk-php';
-gulp.task('php-sdk-copy-to-laravel', ['clean-laravel-vendor'], function(){
-    return copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage('php') + '/QuantiModoClient',
-        pathToQmDocker + '/laravel/vendor/quantimodo/quantimodo-sdk-php');
+gulp.task('php-sdk-copy-to-repo', ['clean-repos-except-git'], function(){
+    return copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage('php') + '/QuantiModoClient/**/*',
+        getRepoPathForSdkLanguage('php'))
 });
 gulp.task('php-move-client-to-repo-root', [], function(){
     return copyOneFoldersContentsToAnother(getRepoPathForSdkLanguage('php') + '/QuantiModoClient/**/*',
@@ -504,9 +509,6 @@ gulp.task('php-update-laravel-composer', [], function(callback){
             if(callback){callback();}
         });
     });
-});
-gulp.task('php-release', ['php-move-client-to-repo-root'], function(){
-    return commitChanges('php');
 });
 gulp.task('3-copy-to-repos', ['browserify'], function(){
     return copySdksFromUnzippedPathToRepos();
