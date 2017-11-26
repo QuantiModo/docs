@@ -2347,6 +2347,10 @@
           "description": "Embeddable study text html including charts and css styling",
           "type": "string"
         },
+        "statisticsTableHtml": {
+          "description": "Embeddable table with statistics",
+          "type": "string"
+        },
         "chartHtml": {
           "description": "Embeddable chart html",
           "type": "string"
