@@ -43,7 +43,7 @@
           "type": "string"
         },
         "svg": {
-          "description": "Url to a static svg of the chart",
+          "description": "SVG string than can be embedded directly in HTML",
           "type": "string"
         }
       }
