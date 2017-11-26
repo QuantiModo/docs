@@ -416,7 +416,8 @@ function getSwaggerConfigOptions(language) {
             logError(err.error.message);
         });
 }
-gulp.task('0-download', ['clean-folders-and-clone-repos'], function () {
+//gulp.task('0-download', ['clean-folders-and-clone-repos'], function () {
+gulp.task('0-download', [], function () {
     logInfo("Generating sdks with " + swaggerJsonUrl);
     logInfo("See https://github.com/swagger-api/swagger-codegen/tree/master/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages for available clients");
     for(var i = 0; i < languages.length; i++){

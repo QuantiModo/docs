@@ -2340,7 +2340,11 @@
     "StudyHtml": {
       "properties": {
         "fullStudyHtml": {
-          "description": "Embeddable study text html including charts",
+          "description": "Embeddable study text html including charts.  Modifiable css classes are study-title, study-section-header, study-section-body",
+          "type": "string"
+        },
+        "fullStudyHtmlWithCssStyles": {
+          "description": "Embeddable study text html including charts and css styling",
           "type": "string"
         },
         "chartHtml": {
