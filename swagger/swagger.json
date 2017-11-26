@@ -2309,16 +2309,8 @@
           },
           "type": "array"
         },
-        "chartHtml": {
-          "description": "Embeddable chart html",
-          "type": "string"
-        },
         "effectVariable": {
           "$ref": "#/definitions/UserVariable"
-        },
-        "html": {
-          "description": "Embeddable study text html including charts",
-          "type": "string"
         },
         "participantInstructions": {
           "$ref": "#/definitions/ParticipantInstruction"
@@ -2326,11 +2318,14 @@
         "statistics": {
           "$ref": "#/definitions/Correlation"
         },
-        "studyLinks": {
-          "$ref": "#/definitions/StudyLinks"
+        "studyHtml": {
+          "$ref": "#/definitions/StudyHtml"
         },
         "studyImages": {
           "$ref": "#/definitions/StudyImages"
+        },
+        "studyLinks": {
+          "$ref": "#/definitions/StudyLinks"
         },
         "text": {
           "$ref": "#/definitions/StudyText"
@@ -2341,6 +2336,38 @@
         }
       },
       "required": ["type"]
+    },
+    "StudyHtml": {
+      "properties": {
+        "fullStudyHtml": {
+          "description": "Embeddable study text html including charts",
+          "type": "string"
+        },
+        "chartHtml": {
+          "description": "Embeddable chart html",
+          "type": "string"
+        },
+        "downloadButtonsHtml": {
+          "description": "Play Store, App Store, Chrome Web Store",
+          "type": "string"
+        },
+        "studyMetaHtml": {
+          "description": "Facebook, Twitter, Google+",
+          "type": "string"
+        },
+        "studyImageHtml": {
+          "description": "PNG image",
+          "type": "string"
+        },
+        "studyTextHtml": {
+          "description": "Formatting study text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "chartHtml",
+        "fullStudyHtml"
+      ]
     },
     "StudyImages": {
       "properties": {
