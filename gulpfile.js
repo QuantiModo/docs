@@ -253,10 +253,11 @@ gulp.task('4-build-and-release-javascript', [], function (callback) {
         ' && git tag ' + apiVersionNumber +
         ' && git push origin ' + apiVersionNumber +
         ' && bower version ' + apiVersionNumber, function () {
-        executeCommand("cd " + getRepoPathForSdkLanguage('javascript') + " && npm version " + apiVersionNumber + ' && npm publish', function () {
+        executeCommand("cd " + getRepoPathForSdkLanguage('javascript') + " && npm version " + apiVersionNumber +
+            ' && npm publish', function () {
             updateBowerAndPackageJsonVersions(pathToQmDocker);
             updateBowerAndPackageJsonVersions(pathToIonic);
-            updateBowerAndPackageJsonVersions(".");
+            //updateBowerAndPackageJsonVersions(".");
             callback();
         });
     });
