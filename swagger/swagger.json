@@ -135,10 +135,16 @@
           "type": "string"
         },
         "commonTaggedVariables": {
-          "$ref": "#/definitions/CommonVariableArray"
+          "items": {
+            "$ref": "#/definitions/CommonVariable"
+          },
+          "type": "array"
         },
         "commonTagVariables": {
-          "$ref": "#/definitions/CommonVariableArray"
+          "items": {
+            "$ref": "#/definitions/CommonVariable"
+          },
+          "type": "array"
         },
         "commonVariableMostCommonConnectorId": {
           "description": "Example: 13",
@@ -639,12 +645,6 @@
         "variableId"
       ]
     },
-    "CommonVariableArray": {
-      "items": {
-        "$ref": "#/definitions/CommonVariable"
-      },
-      "type": "array"
-    },
     "Connector": {
       "properties": {
         "affiliate": {
@@ -1141,7 +1141,7 @@
         "studyText": {
           "$ref": "#/definitions/StudyText"
         },
-        "studyHtml":{
+        "studyHtml": {
           "description": "Embeddable study HTML including chart svg's",
           "type": "string"
         },
@@ -1503,7 +1503,10 @@
     "GetTrackingReminderNotificationsResponse": {
       "properties": {
         "data": {
-          "$ref": "#/definitions/TrackingReminderNotificationsArray"
+          "items": {
+            "$ref": "#/definitions/TrackingReminderNotification"
+          },
+          "type": "array"
         },
         "message": {
           "description": "Message",
@@ -2227,7 +2230,9 @@
           "type": "string"
         }
       },
-      "required": ["type"]
+      "required": [
+        "type"
+      ]
     },
     "StudyHtml": {
       "properties": {
@@ -2761,12 +2766,6 @@
         "variableName"
       ]
     },
-    "TrackingReminderArray": {
-      "items": {
-        "$ref": "#/definitions/TrackingReminder"
-      },
-      "type": "array"
-    },
     "TrackingReminderDelete": {
       "properties": {
         "id": {
@@ -3140,12 +3139,6 @@
         "action",
         "id"
       ]
-    },
-    "TrackingReminderNotificationsArray": {
-      "items": {
-        "$ref": "#/definitions/TrackingReminderNotification"
-      },
-      "type": "array"
     },
     "TrackingReminderNotificationTrackAllAction": {
       "properties": {
@@ -3549,10 +3542,16 @@
           "type": "string"
         },
         "commonTaggedVariables": {
-          "$ref": "#/definitions/CommonVariableArray"
+          "items": {
+            "$ref": "#/definitions/CommonVariable"
+          },
+          "type": "array"
         },
         "commonTagVariables": {
-          "$ref": "#/definitions/CommonVariableArray"
+          "items": {
+            "$ref": "#/definitions/CommonVariable"
+          },
+          "type": "array"
         },
         "commonVariableMostCommonConnectorId": {
           "description": "Example: 51",
@@ -5650,7 +5649,10 @@
           "200": {
             "description": "Successful operation",
             "schema": {
-              "$ref": "#/definitions/MeasurementArray"
+              "items": {
+                "$ref": "#/definitions/Measurement"
+              },
+              "type": "array"
             }
           },
           "401": {
@@ -6116,7 +6118,10 @@
           "200": {
             "description": "Successful operation",
             "schema": {
-              "$ref": "#/definitions/CommonVariableArray"
+              "items": {
+                "$ref": "#/definitions/CommonVariable"
+              },
+              "type": "array"
             }
           },
           "401": {
@@ -6338,7 +6343,10 @@
           "200": {
             "description": "Successful operation",
             "schema": {
-              "$ref": "#/definitions/TrackingReminderArray"
+              "items": {
+                "$ref": "#/definitions/TrackingReminder"
+              },
+              "type": "array"
             }
           }
         },
@@ -6367,7 +6375,10 @@
             "name": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/TrackingReminderArray"
+              "items": {
+                "$ref": "#/definitions/TrackingReminder"
+              },
+              "type": "array"
             }
           }
         ],
