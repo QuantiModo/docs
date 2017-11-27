@@ -444,6 +444,9 @@ gulp.task('1-decompress', ['clean-repos-except-git'], function () {
         unzipFileToFolder(getZipPathForLanguage(languages[i]), sdksUnzippedPath);
     }
 });
+gulp.task('js-unzip', [], function () {
+    return unzipFileToFolder(getZipPathForLanguage('javascript'), sdksUnzippedPath);
+});
 gulp.task('php-unzip', [], function () {
     return unzipFileToFolder(getZipPathForLanguage('php'), sdksUnzippedPath);
 });
