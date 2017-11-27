@@ -1757,12 +1757,6 @@
         "variableName"
       ]
     },
-    "MeasurementArray": {
-      "items": {
-        "$ref": "#/definitions/Measurement"
-      },
-      "type": "array"
-    },
     "MeasurementDelete": {
       "properties": {
         "startTime": {
@@ -1934,12 +1928,6 @@
         "startTimeSting",
         "timestamp"
       ]
-    },
-    "PairArray": {
-      "items": {
-        "$ref": "#/definitions/Pair"
-      },
-      "type": "array"
     },
     "PairsOfAveragesForAllUser": {
       "properties": {
@@ -6001,7 +5989,10 @@
           "200": {
             "description": "Successful operation",
             "schema": {
-              "$ref": "#/definitions/PairArray"
+              "items": {
+                "$ref": "#/definitions/Pair"
+              },
+              "type": "array"
             }
           },
           "401": {

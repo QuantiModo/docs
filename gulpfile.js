@@ -840,7 +840,7 @@ gulp.task('download-one-sdk', ['js-sdk-get-download-link'], function () {
     logInfo("Generating " + language + " sdk using " +  swaggerJsonUrl);
     return downloadSdk(language);
 });
-gulp.task('download-and-unzip-one-sdk', ['js-sdk-get-download-link'], function () {
+gulp.task('js-sdk-download-and-unzip', ['js-sdk-get-download-link'], function () {
     logInfo("Generating " + language + " sdk using " +  swaggerJsonUrl);
     return downloadAndUnzipSdk(language);
 });
