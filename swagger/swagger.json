@@ -3531,7 +3531,10 @@
           "type": "string"
         },
         "childUserTagVariables": {
-          "$ref": "#/definitions/UserVariableArray"
+          "items": {
+            "$ref": "#/definitions/UserVariable"
+          },
+          "type": "array"
         },
         "clientId": {
           "description": "clientId",
@@ -3672,10 +3675,16 @@
           "type": "string"
         },
         "ingredientOfUserTagVariables": {
-          "$ref": "#/definitions/UserVariableArray"
+          "items": {
+            "$ref": "#/definitions/UserVariable"
+          },
+          "type": "array"
         },
         "ingredientUserTagVariables": {
-          "$ref": "#/definitions/UserVariableArray"
+          "items": {
+            "$ref": "#/definitions/UserVariable"
+          },
+          "type": "array"
         },
         "inputType": {
           "description": "Example: value",
@@ -3686,7 +3695,10 @@
           "type": "string"
         },
         "joinedUserTagVariables": {
-          "$ref": "#/definitions/UserVariableArray"
+          "items": {
+            "$ref": "#/definitions/UserVariable"
+          },
+          "type": "array"
         },
         "joinWith": {
           "description": "The Variable this Variable should be joined with. If the variable is joined with some other variable then it is not shown to user in the list of variables",
@@ -3912,7 +3924,10 @@
           "type": "integer"
         },
         "parentUserTagVariables": {
-          "$ref": "#/definitions/UserVariableArray"
+          "items": {
+            "$ref": "#/definitions/UserVariable"
+          },
+          "type": "array"
         },
         "pngPath": {
           "description": "Example: img/variable_categories/treatments.png",
@@ -4022,10 +4037,16 @@
           "type": "integer"
         },
         "userTaggedVariables": {
-          "$ref": "#/definitions/UserVariableArray"
+          "items": {
+            "$ref": "#/definitions/UserVariable"
+          },
+          "type": "array"
         },
         "userTagVariables": {
-          "$ref": "#/definitions/UserVariableArray"
+          "items": {
+            "$ref": "#/definitions/UserVariable"
+          },
+          "type": "array"
         },
         "userVariableUnitAbbreviatedName": {
           "description": "Example: count",
@@ -4127,12 +4148,6 @@
         "userId",
         "id"
       ]
-    },
-    "UserVariableArray": {
-      "items": {
-        "$ref": "#/definitions/UserVariable"
-      },
-      "type": "array"
     },
     "UserVariableDelete": {
       "properties": {
