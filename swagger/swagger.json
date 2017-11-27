@@ -2222,7 +2222,7 @@
         "studyLinks": {
           "$ref": "#/definitions/StudyLinks"
         },
-        "text": {
+        "studyText": {
           "$ref": "#/definitions/StudyText"
         },
         "type": {
