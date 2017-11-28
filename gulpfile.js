@@ -220,16 +220,21 @@ String.prototype.replaceAll = function(search, replacement) {
     var target = this;
     return target.replace(new RegExp(search, 'g'), replacement);
 };
-gulp.task('browserify', [], function (callback) {
+gulp.task('js-sdk-browserify-unzipped', [], function (callback) {
+    browserify(getUnzippedPathForSdkLanguage('javascript'), callback);
+});
+gulp.task('js-sdk-browserify-repo', [], function (callback) {
+    browserify(getRepoPathForSdkLanguage('javascript'), callback);
+});
+function browserify(path, callback){
     var sourceFile = 'src/index.js';
     var outputFile = 'quantimodo-web.js';
-    executeCommand('cd ' + getUnzippedPathForSdkLanguage('javascript') + ' && npm install -g browserify && browserify ' +
+    executeCommand('cd ' + path + ' && npm install -g browserify && browserify ' +
         sourceFile + ' --standalone Quantimodo > ' + outputFile, function () {
         callback();
     });
-});
-
-gulp.task('js-sdk-release', [], function (callback) {
+}
+gulp.task('js-sdk-release', ['js-sdk-browserify-repo'], function (callback) {
     function updateBowerAndPackageJsonVersions(path, callback) {
         var bowerJson = readJsonFile(path + '/bower.json');
         bowerJson.dependencies.quantimodo = apiVersionNumber;
@@ -479,7 +484,7 @@ function copySdksFromUnzippedPathToRepos(){
         copyOneFoldersContentsToAnotherExceptReadme(getUnzippedPathForSdkLanguage(languages[i]), getRepoPathForSdkLanguage(languages[i]));
     }
 }
-gulp.task('js-sdk-copy-everywhere', ['browserify'], function(){
+gulp.task('js-sdk-copy-everywhere', ['js-sdk-browserify-unzipped'], function(){
     try {
         copyUnzippedJsSdkToRepo();
         copyUnzippedJsSdkToQmDockerNodeModules();
@@ -521,7 +526,7 @@ gulp.task('php-update-laravel-composer', [], function(callback){
         });
     });
 });
-gulp.task('3-copy-to-repos', ['browserify'], function(){
+gulp.task('3-copy-to-repos', ['js-sdk-browserify-unzipped'], function(){
     return copySdksFromUnzippedPathToRepos();
 });
 function commitChanges(language, filesToResetArray){
@@ -546,7 +551,7 @@ gulp.task('5-commit-changes', [], function(){
         commitChanges(getUnzippedPathForSdkLanguage(languages[i]));
     }
 });
-gulp.task('js-sdk-copy-qm-web', ['browserify'], function(){
+gulp.task('js-sdk-copy-qm-web', ['js-sdk-browserify-unzipped'], function(){
     return gulp.src([getUnzippedPathForSdkLanguage('javascript') + '/quantimodo-web.js']).pipe(gulp.dest(pathToIonicCustomLib));
 });
 try {
