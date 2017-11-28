@@ -229,7 +229,7 @@ gulp.task('browserify', [], function (callback) {
     });
 });
 
-gulp.task('4-build-and-release-javascript', [], function (callback) {
+gulp.task('js-sdk-release', [], function (callback) {
     function updateBowerAndPackageJsonVersions(path, callback) {
         var bowerJson = readJsonFile(path + '/bower.json');
         bowerJson.dependencies.quantimodo = apiVersionNumber;
