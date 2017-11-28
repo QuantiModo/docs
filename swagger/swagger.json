@@ -2423,6 +2423,12 @@
     },
     "TrackingReminder": {
       "properties": {
+        "actionArray": {
+          "items": {
+            "$ref": "#/definitions/TrackingReminderNotificationActionArray"
+          },
+          "type": "array"
+        },
         "availableUnits": {
           "items": {
             "$ref": "#/definitions/Unit"
@@ -3465,6 +3471,12 @@
     },
     "UserVariable": {
       "properties": {
+        "actionArray": {
+          "items": {
+            "$ref": "#/definitions/TrackingReminderNotificationActionArray"
+          },
+          "type": "array"
+        },
         "alias": {
           "description": "Example: ",
           "type": "string"
