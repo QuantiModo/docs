@@ -6108,41 +6108,6 @@
             "name": "upc",
             "required": false,
             "type": "string"
-          },
-          {
-            "description": "Id of the tagged variable (i.e. Lollipop) you would like to get variables it can be tagged with (i.e. Sugar) .  Converted measurements of the tagged variable are included in analysis of the tag variable (i.e. ingredient).",
-            "in": "query",
-            "name": "taggedVariableId",
-            "required": false,
-            "type": "integer"
-          },
-          {
-            "description": "Id of the tag variable (i.e. Sugar) you would like to get variables it can be tagged to (i.e. Lollipop) .  Converted measurements of the tagged variable are included in analysis of the tag variable (i.e. ingredient).",
-            "in": "query",
-            "name": "tagVariableId",
-            "required": false,
-            "type": "integer"
-          },
-          {
-            "description": "Id of the variable you would like to get variables that can be joined to.  This is used to merge duplicate variables.   If joinVariableId is specified, this returns only variables eligible to be joined to the variable specified by the joinVariableId",
-            "in": "query",
-            "name": "joinVariableId",
-            "required": false,
-            "type": "integer"
-          },
-          {
-            "description": "Id of the parent variable (i.e. Fruit)  you would like to get eligible child variables (i.e. Apple) for.  Child variable measurements will be included in analysis of the parent variable.  For instance, a child of variable Fruit could be Apple",
-            "in": "query",
-            "name": "parentUserTagVariableId",
-            "required": false,
-            "type": "integer"
-          },
-          {
-            "description": "Id of the child variable (i.e. Apple) you would like to get eligible parent variables (i.e. Fruit) for.  Child variable measurements will be included in analysis of the parent variable.  For instance, a child of variable Fruit could be Apple",
-            "in": "query",
-            "name": "childUserTagVariableId",
-            "required": false,
-            "type": "integer"
           }
         ],
         "produces": [
@@ -6837,6 +6802,41 @@
             "name": "upc",
             "required": false,
             "type": "string"
+          },
+          {
+            "description": "Id of the tagged variable (i.e. Lollipop) you would like to get variables it can be tagged with (i.e. Sugar) .  Converted measurements of the tagged variable are included in analysis of the tag variable (i.e. ingredient).",
+            "in": "query",
+            "name": "taggedVariableId",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Id of the tag variable (i.e. Sugar) you would like to get variables it can be tagged to (i.e. Lollipop) .  Converted measurements of the tagged variable are included in analysis of the tag variable (i.e. ingredient).",
+            "in": "query",
+            "name": "tagVariableId",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Id of the variable you would like to get variables that can be joined to.  This is used to merge duplicate variables.   If joinVariableId is specified, this returns only variables eligible to be joined to the variable specified by the joinVariableId",
+            "in": "query",
+            "name": "joinVariableId",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Id of the parent variable (i.e. Fruit)  you would like to get eligible child variables (i.e. Apple) for.  Child variable measurements will be included in analysis of the parent variable.  For instance, a child of variable Fruit could be Apple",
+            "in": "query",
+            "name": "parentUserTagVariableId",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Id of the child variable (i.e. Apple) you would like to get eligible parent variables (i.e. Fruit) for.  Child variable measurements will be included in analysis of the parent variable.  For instance, a child of variable Fruit could be Apple",
+            "in": "query",
+            "name": "childUserTagVariableId",
+            "required": false,
+            "type": "integer"
           }
         ],
         "produces": [
