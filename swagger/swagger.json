@@ -4596,7 +4596,7 @@
     },
     "/v3/correlations": {
       "get": {
-        "description": "Get a list of correlations that can be used to display top predictors of a given outcome for instance",
+        "description": "Get a list of correlations that can be used to display top predictors of a given outcome like mood, for instance.",
         "operationId": "getCorrelations",
         "parameters": [
           {
@@ -4621,40 +4621,18 @@
             "$ref": "#/parameters/correlationCoefficientParam"
           },
           {
-            "$ref": "#/parameters/onsetDelayParam"
-          },
-          {
-            "$ref": "#/parameters/durationOfActionParam"
-          },
-          {
             "$ref": "#/parameters/updatedAtParam"
           },
           {
             "$ref": "#/parameters/outcomesOfInterestParam"
           },
           {
-            "$ref": "#/parameters/appNameParam"
-          },
-          {
             "$ref": "#/parameters/clientIdParam"
-          },
-          {
-            "$ref": "#/parameters/fallbackToStudyForCauseAndEffectParam"
-          },
-          {
-            "$ref": "#/parameters/fallbackToAggregateCorrelationsParam"
           },
           {
             "description": "Return only public, anonymized and aggregated population data instead of user-specific variables",
             "in": "query",
             "name": "commonOnly",
-            "required": false,
-            "type": "boolean"
-          },
-          {
-            "description": "Return only user-specific data, excluding common aggregated data",
-            "in": "query",
-            "name": "userOnly",
             "required": false,
             "type": "boolean"
           }
