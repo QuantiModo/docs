@@ -243,7 +243,7 @@ gulp.task('js-sdk-release', ['js-sdk-browserify-repo'], function (callback) {
                 var packageJson = readJsonFile(path + '/package.json');
                 packageJson.dependencies.quantimodo = apiVersionNumber;
                 return writeToFile(path  + '/package.json', prettyJSONStringify(packageJson), function () {
-                    executeCommand("cd " + pathToIonic + " && npm install", function () {
+                    executeCommand("cd " + pathToIonic + " && yarn install", function () {
                         if(callback){callback();}
                     });
                 });
@@ -631,7 +631,7 @@ gulp.task('get-aggregated-correlations', [], function (callback) {
         handleApiResponse(error, data, response);
         callback();
     }
-    apiInstance.getAggregatedCorrelations({}, qmApiResponseCallback);
+    apiInstance.getCorrelations({commonOnly: true}, qmApiResponseCallback);
 });
 gulp.task('get-connectors', [], function (callback) {
     var apiInstance = new Quantimodo.ConnectorsApi();
@@ -779,7 +779,7 @@ gulp.task('get-user-correlations', [], function (callback) {
         handleApiResponse(error, data, response);
         callback();
     }
-    apiInstance.getUserCorrelations({}, qmApiResponseCallback);
+    apiInstance.getCorrelations({}, qmApiResponseCallback);
 });
 gulp.task('get-user-variables', [], function (callback) {
     var apiInstance = new Quantimodo.VariablesApi();
