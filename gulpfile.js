@@ -239,7 +239,7 @@ gulp.task('js-sdk-release', ['js-sdk-browserify-repo'], function (callback) {
         var bowerJson = readJsonFile(path + '/bower.json');
         bowerJson.dependencies.quantimodo = apiVersionNumber;
         return writeToFile(path  + '/bower.json', prettyJSONStringify(bowerJson), function () {
-            executeCommand("cd " + pathToIonic + " && bower install", function () {
+            executeCommand("cd " + pathToIonic + " && bower install && yarn install", function () {
                 var packageJson = readJsonFile(path + '/package.json');
                 packageJson.dependencies.quantimodo = apiVersionNumber;
                 return writeToFile(path  + '/package.json', prettyJSONStringify(packageJson), function () {
