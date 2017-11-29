@@ -4391,127 +4391,6 @@
         ]
       }
     },
-    "/v3/aggregatedCorrelations": {
-      "get": {
-        "description": "Get correlations based on the anonymized aggregate data from all QuantiModo users.",
-        "operationId": "getAggregatedCorrelations",
-        "parameters": [
-          {
-            "$ref": "#/parameters/causeVariableNameParam"
-          },
-          {
-            "$ref": "#/parameters/effectVariableNameParam"
-          },
-          {
-            "$ref": "#/parameters/sortParam"
-          },
-          {
-            "$ref": "#/parameters/limitParam"
-          },
-          {
-            "$ref": "#/parameters/offsetParam"
-          },
-          {
-            "$ref": "#/parameters/userIdParam"
-          },
-          {
-            "$ref": "#/parameters/correlationCoefficientParam"
-          },
-          {
-            "$ref": "#/parameters/updatedAtParam"
-          },
-          {
-            "$ref": "#/parameters/outcomesOfInterestParam"
-          },
-          {
-            "$ref": "#/parameters/onsetDelayParam"
-          },
-          {
-            "$ref": "#/parameters/durationOfActionParam"
-          }
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful operation",
-            "schema": {
-              "items": {
-                "$ref": "#/definitions/Correlation"
-              },
-              "type": "array"
-            }
-          },
-          "401": {
-            "description": "Not Authenticated"
-          }
-        },
-        "security": [
-          {
-            "access_token": []
-          },
-          {
-            "quantimodo_oauth2": [
-              "basic"
-            ]
-          }
-        ],
-        "summary": "Get aggregated correlations",
-        "tags": [
-          "analytics"
-        ]
-      },
-      "post": {
-        "description": "Add correlation",
-        "operationId": "postAggregatedCorrelations",
-        "parameters": [
-          {
-            "$ref": "#/parameters/userIdParam"
-          },
-          {
-            "description": "Provides correlation data",
-            "in": "body",
-            "name": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/PostCorrelation"
-            }
-          }
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "responses": {
-          "201": {
-            "description": "Successful Operation"
-          },
-          "400": {
-            "description": "Bad request",
-            "schema": {
-              "$ref": "#/definitions/JsonErrorResponse"
-            }
-          },
-          "401": {
-            "description": "Not Authenticated"
-          }
-        },
-        "security": [
-          {
-            "access_token": []
-          },
-          {
-            "quantimodo_oauth2": [
-              "basic"
-            ]
-          }
-        ],
-        "summary": "Store or Update a Correlation",
-        "tags": [
-          "analytics"
-        ]
-      }
-    },
     "/v3/connect/mobile": {
       "get": {
         "description": "This page is designed to be opened in a webview.  Instead of using popup authentication boxes, it uses redirection. You can include the user's access_token as a URL parameter like https://app.quantimo.do/api/v3/connect/mobile?access_token=123",
@@ -4717,8 +4596,8 @@
     },
     "/v3/correlations": {
       "get": {
-        "description": "Get correlations based on data from a single user.",
-        "operationId": "getUserCorrelations",
+        "description": "Get a list of correlations that can be used to display top predictors of a given outcome for instance",
+        "operationId": "getCorrelations",
         "parameters": [
           {
             "$ref": "#/parameters/causeVariableNameParam"
@@ -4764,6 +4643,20 @@
           },
           {
             "$ref": "#/parameters/fallbackToAggregateCorrelationsParam"
+          },
+          {
+            "description": "Return only public, anonymized and aggregated population data instead of user-specific variables",
+            "in": "query",
+            "name": "commonOnly",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "description": "Return only user-specific data, excluding common aggregated data",
+            "in": "query",
+            "name": "userOnly",
+            "required": false,
+            "type": "boolean"
           }
         ],
         "produces": [
@@ -4799,7 +4692,7 @@
     "/v3/correlations/explanations": {
       "get": {
         "description": "Get explanations of  correlations based on data from a single user.",
-        "operationId": "getUserCorrelationExplanations",
+        "operationId": "getCorrelationExplanations",
         "parameters": [
           {
             "$ref": "#/parameters/causeVariableNameParam"
