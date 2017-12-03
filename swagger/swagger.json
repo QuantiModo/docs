@@ -1189,12 +1189,17 @@
         "variableId": {
           "description": "Variable id of the measurement to be deleted",
           "type": "integer"
+        },
+        "connectorName": {
+          "description": "Name of the connector for which measurements should be deleted",
+          "type": "string"
+        },
+        "clientId": {
+          "description": "Your app's client id",
+          "type": "string"
         }
       },
-      "required": [
-        "startTime",
-        "variableId"
-      ]
+      "required": ["clientId"]
     },
     "MeasurementItem": {
       "properties": {
@@ -1705,6 +1710,26 @@
           "description": "Example: Very Distracting Time data was primarily collected using <a href=\"https://www.rescuetime.com/rp/quantimodo/plans\">RescueTime</a>. Detailed reports show which applications and websites you spent time on. Activities are automatically grouped into pre-defined categories with built-in productivity scores covering thousands of websites and applications. You can customize categories and productivity scores to meet your needs.<br>Video Activities data was primarily collected using <a href=\"https://www.rescuetime.com/rp/quantimodo/plans\">RescueTime</a>. Detailed reports show which applications and websites you spent time on. Activities are automatically grouped into pre-defined categories with built-in productivity scores covering thousands of websites and applications. You can customize categories and productivity scores to meet your needs.",
           "type": "string"
         },
+        "lastCauseDailyValueSentenceExtended": {
+          "description": "Example: Sleep Quality Predicts Higher Overall Mood",
+          "type": "string"
+        },
+        "lastCauseAndOptimalValueSentence": {
+          "description": "Example: Sleep Quality Predicts Higher Overall Mood",
+          "type": "string"
+        },
+        "lastCauseDailyValueSentence": {
+          "description": "Example: Sleep Quality Predicts Higher Overall Mood",
+          "type": "string"
+        },
+        "optimalDailyValueSentence": {
+          "description": "Example: Sleep Quality Predicts Higher Overall Mood",
+          "type": "string"
+        },
+        "predictorExplanation": {
+          "description": "Example: Sleep Quality Predicts Higher Overall Mood",
+          "type": "string"
+        },
         "significanceExplanation": {
           "description": "Example: Using a two-tailed t-test with alpha = 0.05, it was determined that the change in Video Activities is statistically significant at 95% confidence interval.",
           "type": "string"
@@ -1743,10 +1768,6 @@
         },
         "studyBackground": {
           "description": "In order to reduce suffering through the advancement of human knowledge...",
-          "type": "string"
-        },
-        "predictorExplanation": {
-          "description": "Example: Sleep Quality Predicts Higher Overall Mood",
           "type": "string"
         }
       },
@@ -2341,6 +2362,10 @@
         },
         "trackingReminderNotificationTimeLocal": {
           "description": "Example: 15:48:44",
+          "type": "string"
+        },
+        "trackingReminderNotificationTimeLocalHumanString": {
+          "description": "Example: 8PM Sun, May 1",
           "type": "string"
         },
         "updatedAt": {
@@ -3187,11 +3212,6 @@
         },
         "numberOfCorrelations": {
           "description": "Number of correlations for this variable",
-          "format": "int32",
-          "type": "integer"
-        },
-        "numberOfMeasurements": {
-          "description": "Number of measurements",
           "format": "int32",
           "type": "integer"
         },
