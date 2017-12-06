@@ -337,11 +337,11 @@ function getSdkDownloadLink() {
         requestOptions.body.options.packageName = "quantimodo_api";
         requestOptions.body.options.packagePath = "QuantiModoClient";
         requestOptions.body.options.podName = "QuantiModoApi";
-        requestOptions.body.options.podVersion = getAppVersionNumber();
+        //requestOptions.body.options.podVersion = getAppVersionNumber();  // Commented because it makes too many file changes in git
         requestOptions.body.options.projectName = (sdkSwaggerCodegenOptions[language] && sdkSwaggerCodegenOptions[language].projectName) ? sdkSwaggerCodegenOptions[language].projectName : "quantimodoApi";
     }
-    requestOptions.body.options.artifactVersion = requestOptions.body.options.projectVersion = requestOptions.body.options.packageVarsion =
-        requestOptions.body.options.podVersion = getAppVersionNumber();
+    // Commented because it makes too many file changes in git repo
+    //requestOptions.body.options.artifactVersion = requestOptions.body.options.projectVersion = requestOptions.body.options.packageVarsion = requestOptions.body.options.podVersion = getAppVersionNumber();
     requestOptions.body.options.artifactDescription = requestOptions.body.options.projectDescription = swaggerJson.info.description;
     if(debug){getSwaggerConfigOptions(language);}
     return rp(requestOptions)
