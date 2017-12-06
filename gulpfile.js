@@ -234,7 +234,7 @@ function browserify(path, callback){
         callback();
     });
 }
-gulp.task('js-sdk-release', ['js-sdk-browserify-repo'], function (callback) {
+gulp.task('js-sdk-release', [], function (callback) {
     function updateBowerAndPackageJsonVersions(path, callback) {
         var bowerJson = readJsonFile(path + '/bower.json');
         bowerJson.dependencies.quantimodo = apiVersionNumber;
@@ -251,7 +251,7 @@ gulp.task('js-sdk-release', ['js-sdk-browserify-repo'], function (callback) {
         });
     }
     executeCommand("cd " + getRepoPathForSdkLanguage('javascript') +
-        ' && npm install' +
+        //' && npm install' +
         ' && git add .' +
         ' && git commit -m "' + apiVersionNumber + '"' +
         ' && git push' +
