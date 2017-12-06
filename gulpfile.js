@@ -371,11 +371,10 @@ function getSwaggerDownloadRequestOptions(language) {
         requestOptions.body.options.packageName = "quantimodo_api";
         requestOptions.body.options.packagePath = "QuantiModoClient";
         requestOptions.body.options.podName = "QuantiModoApi";
-        requestOptions.body.options.podVersion = getAppVersionNumber();
+        //requestOptions.body.options.podVersion = getAppVersionNumber();
         requestOptions.body.options.projectName = (sdkSwaggerCodegenOptions[language] && sdkSwaggerCodegenOptions[language].projectName) ? sdkSwaggerCodegenOptions[language].projectName : "quantimodoApi";
     }
-    requestOptions.body.options.artifactVersion = requestOptions.body.options.projectVersion = requestOptions.body.options.packageVarsion =
-        requestOptions.body.options.podVersion = getAppVersionNumber();
+    //requestOptions.body.options.artifactVersion = requestOptions.body.options.projectVersion = requestOptions.body.options.packageVersion = requestOptions.body.options.podVersion = getAppVersionNumber();
     requestOptions.body.options.artifactDescription = requestOptions.body.options.projectDescription = swaggerJson.info.description;
     return requestOptions;
 }
@@ -431,7 +430,7 @@ gulp.task('0-download', ['clean-unzipped-folders'], function () {
         downloadSdk(languages[i]);
     }
 });
-gulp.task('js-sdk-download', [], function () {
+gulp.task('js-sdk-download', ['clean-unzipped-folders'], function () {
     languages = ['javascript'];
     logInfo("Generating " + language + " sdk using " +  swaggerJsonUrl);
     return downloadSdk('javascript');
@@ -449,7 +448,7 @@ gulp.task('1-decompress', ['clean-repos-except-git'], function () {
         unzipFileToFolder(getZipPathForLanguage(languages[i]), sdksUnzippedPath);
     }
 });
-gulp.task('js-unzip', [], function () {
+gulp.task('js-unzip', ['clean-repos-except-git'], function () {
     return unzipFileToFolder(getZipPathForLanguage('javascript'), sdksUnzippedPath);
 });
 gulp.task('php-unzip', [], function () {
@@ -487,10 +486,10 @@ function copySdksFromUnzippedPathToRepos(){
 gulp.task('js-sdk-copy-everywhere', ['js-sdk-browserify-unzipped'], function(){
     try {
         copyUnzippedJsSdkToRepo();
-        copyUnzippedJsSdkToQmDockerNodeModules();
-        copyUnzippedJsSdkToIonicNodeModules();
+        //copyUnzippedJsSdkToQmDockerNodeModules();
+        //copyUnzippedJsSdkToIonicNodeModules();
         //copyUnzippedJsSdkToIonicCustomLib();
-        copyQmWebJsToIonicCustomLib();
+        //copyQmWebJsToIonicCustomLib();
     } catch (error){
         logError(error, error);
     }
