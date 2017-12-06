@@ -234,7 +234,7 @@ function browserify(path, callback){
         callback();
     });
 }
-gulp.task('js-sdk-release', [], function (callback) {
+gulp.task('js-4-release', [], function (callback) {
     function updateBowerAndPackageJsonVersions(path, callback) {
         var bowerJson = readJsonFile(path + '/bower.json');
         bowerJson.dependencies.quantimodo = apiVersionNumber;
@@ -430,7 +430,7 @@ gulp.task('0-download', ['clean-unzipped-folders'], function () {
         downloadSdk(languages[i]);
     }
 });
-gulp.task('js-sdk-download', ['clean-unzipped-folders'], function () {
+gulp.task('js-1-download', ['clean-unzipped-folders'], function () {
     languages = ['javascript'];
     logInfo("Generating " + language + " sdk using " +  swaggerJsonUrl);
     return downloadSdk('javascript');
@@ -448,7 +448,7 @@ gulp.task('1-decompress', ['clean-repos-except-git'], function () {
         unzipFileToFolder(getZipPathForLanguage(languages[i]), sdksUnzippedPath);
     }
 });
-gulp.task('js-unzip', ['clean-repos-except-git'], function () {
+gulp.task('js-2-unzip', ['clean-repos-except-git'], function () {
     return unzipFileToFolder(getZipPathForLanguage('javascript'), sdksUnzippedPath);
 });
 gulp.task('php-unzip', [], function () {
@@ -463,15 +463,6 @@ function copyUnzippedJsSdkToIonicNodeModules(){
 function copyUnzippedJsSdkToRepo(){
     return copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage('javascript'), getRepoPathForSdkLanguage('javascript'));
 }
-var pathToIonicCustomLib =  pathToIonic + '/src/custom-lib/';
-function copyUnzippedJsSdkToIonicCustomLib(){
-    return copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage('javascript'), pathToIonicCustomLib + 'quantimodo');
-}
-function copyQmWebJsToIonicCustomLib(){
-    var qmWebJs = getUnzippedPathForSdkLanguage('javascript') + '/quantimodo-web.js';
-    logInfo("Copying " + qmWebJs + " to " + pathToIonicCustomLib);
-    return gulp.src([qmWebJs]).pipe(gulp.dest(pathToIonicCustomLib));
-}
 function copyUnzippedJsSdkToApiDocsNodeModules(){
     return copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage('javascript'), pathToQuantiModoNodeModule);
 }
@@ -483,7 +474,7 @@ function copySdksFromUnzippedPathToRepos(){
         copyOneFoldersContentsToAnotherExceptReadme(getUnzippedPathForSdkLanguage(languages[i]), getRepoPathForSdkLanguage(languages[i]));
     }
 }
-gulp.task('js-sdk-copy-everywhere', ['js-sdk-browserify-unzipped'], function(){
+gulp.task('js-3-copy-everywhere', ['js-sdk-browserify-unzipped'], function(){
     try {
         copyUnzippedJsSdkToRepo();
         //copyUnzippedJsSdkToQmDockerNodeModules();
@@ -549,9 +540,6 @@ gulp.task('5-commit-changes', [], function(){
         }
         commitChanges(getUnzippedPathForSdkLanguage(languages[i]));
     }
-});
-gulp.task('js-sdk-copy-qm-web', ['js-sdk-browserify-unzipped'], function(){
-    return gulp.src([getUnzippedPathForSdkLanguage('javascript') + '/quantimodo-web.js']).pipe(gulp.dest(pathToIonicCustomLib));
 });
 try {
     var Quantimodo = require('quantimodo');
@@ -838,21 +826,6 @@ gulp.task('check-responses', ['test-endpoints'], function (callback) {
         verifyExistenceOfFile(convertPathToFilename(apiPaths[i]));
     }
     callback();
-});
-gulp.task('js-sdk-get-download-link', [], function () {
-    language = "javascript";
-    return getSdkDownloadLink();
-});
-gulp.task('download-one-sdk', ['js-sdk-get-download-link'], function () {
-    logInfo("Generating " + language + " sdk using " +  swaggerJsonUrl);
-    return downloadSdk(language);
-});
-gulp.task('js-sdk-download-and-unzip', ['js-sdk-get-download-link'], function () {
-    logInfo("Generating " + language + " sdk using " +  swaggerJsonUrl);
-    return downloadAndUnzipSdk(language);
-});
-gulp.task('decompress-sdk', ['download-one-sdk'], function () {
-    return unzipFileToFolder(getZipPathForLanguage(language), sdksUnzippedPath);
 });
 gulp.task('delete-qm-node-module', [], function(){
     return cleanOneFolderExceptGit(pathToQuantiModoNodeModule);
