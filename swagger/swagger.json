@@ -555,6 +555,9 @@
           "format": "double",
           "type": "number"
         },
+        "studyHtml": {
+          "$ref": "#/definitions/StudyHtml"
+        },
         "studyImages": {
           "$ref": "#/definitions/StudyImages"
         },
@@ -563,10 +566,6 @@
         },
         "studyText": {
           "$ref": "#/definitions/StudyText"
-        },
-        "studyHtml": {
-          "description": "Embeddable study HTML including chart svg's",
-          "type": "string"
         },
         "tValue": {
           "description": "Example: 9.6986079652717",
