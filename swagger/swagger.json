@@ -356,6 +356,18 @@
           "description": "Example: 168",
           "type": "integer"
         },
+        "degreesOfFreedom": {
+          "description": "Example: 200",
+          "type": "integer"
+        },
+        "effectNumberOfProcessedDailyMeasurements": {
+          "description": "Example: 145",
+          "type": "integer"
+        },
+        "error": {
+          "description": "Example: optimalPearsonProduct is not defined",
+          "type": "string"
+        },
         "effectChanges": {
           "description": "Example: 193",
           "type": "integer"
@@ -625,18 +637,6 @@
         },
         "correlationsOverOnsetDelaysChartConfig": {
           "description": "Example: ",
-          "type": "string"
-        },
-        "degreesOfFreedom": {
-          "description": "Example: 200",
-          "type": "integer"
-        },
-        "effectNumberOfProcessedDailyMeasurements": {
-          "description": "Example: 145",
-          "type": "integer"
-        },
-        "error": {
-          "description": "Example: optimalPearsonProduct is not defined",
           "type": "string"
         },
         "numberOfUsers": {
@@ -1815,7 +1815,7 @@
       "properties": {
         "actionArray": {
           "items": {
-            "$ref": "#/definitions/TrackingReminderNotificationActionArray"
+            "$ref": "#/definitions/TrackingReminderNotificationAction"
           },
           "type": "array"
         },
@@ -1979,6 +1979,10 @@
         "popUp": {
           "description": "True if the reminders should appear as a popup notification",
           "type": "boolean"
+        },
+        "question": {
+          "description": "Example: How is your overall mood?",
+          "type": "string"
         },
         "reminderEndTime": {
           "description": "Latest time of day at which reminders should appear in UTC HH:MM:SS format",
@@ -2163,7 +2167,7 @@
       "properties": {
         "actionArray": {
           "items": {
-            "$ref": "#/definitions/TrackingReminderNotificationActionArray"
+            "$ref": "#/definitions/TrackingReminderNotificationAction"
           },
           "type": "array"
         },
@@ -2303,6 +2307,10 @@
         "popUp": {
           "description": "True if the reminders should appear as a popup notification",
           "type": "boolean"
+        },
+        "question": {
+          "description": "Example: How is your overall mood?",
+          "type": "string"
         },
         "reminderEndTime": {
           "description": "Example: ",
@@ -2475,7 +2483,7 @@
         "trackAllActions"
       ]
     },
-    "TrackingReminderNotificationActionArray": {
+    "TrackingReminderNotificationAction": {
       "properties": {
         "action": {
           "description": "Example: track",
@@ -2490,7 +2498,15 @@
           "type": "integer"
         },
         "title": {
+          "description": "Example: 3/5",
+          "type": "string"
+        },
+        "longTitle": {
           "description": "Example: Rate 3/5",
+          "type": "string"
+        },
+        "shortTitle": {
+          "description": "Example: 3",
           "type": "string"
         }
       },
@@ -2867,7 +2883,7 @@
       "properties": {
         "actionArray": {
           "items": {
-            "$ref": "#/definitions/TrackingReminderNotificationActionArray"
+            "$ref": "#/definitions/TrackingReminderNotificationAction"
           },
           "type": "array"
         },
