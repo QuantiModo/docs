@@ -435,7 +435,7 @@ gulp.task('js-1-download', ['clean-unzipped-folders'], function () {
     logInfo("Generating " + language + " sdk using " +  swaggerJsonUrl);
     return downloadSdk('javascript');
 });
-gulp.task('php-sdk-download', [], function () {
+gulp.task('php-0-sdk-download', [], function () {
     languages = ['php'];
     logInfo("Generating " + language + " sdk using " +  swaggerJsonUrl);
     return downloadSdk('php');
@@ -451,7 +451,7 @@ gulp.task('1-decompress', ['clean-repos-except-git'], function () {
 gulp.task('js-2-unzip', ['clean-repos-except-git'], function () {
     return unzipFileToFolder(getZipPathForLanguage('javascript'), sdksUnzippedPath);
 });
-gulp.task('php-unzip', [], function () {
+gulp.task('php-1-unzip', [], function () {
     return unzipFileToFolder(getZipPathForLanguage('php'), sdksUnzippedPath);
 });
 function copyUnzippedJsSdkToQmDockerNodeModules(){
@@ -491,15 +491,15 @@ gulp.task('js-3-copy-everywhere', ['js-sdk-browserify-unzipped'], function(){
     }
 });
 var laravelVendorPath = pathToQmDocker + '/laravel/vendor/quantimodo/quantimodo-sdk-php';
-gulp.task('php-sdk-copy-to-repo', ['clean-repos-except-git'], function(){
+gulp.task('php-2-sdk-copy-to-repo', ['clean-repos-except-git'], function(){
     return copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage('php') + '/QuantiModoClient/**/*',
         getRepoPathForSdkLanguage('php'))
 });
-gulp.task('php-move-client-to-repo-root', [], function(){
+gulp.task('php-3-move-client-to-repo-root', [], function(){
     return copyOneFoldersContentsToAnother(getRepoPathForSdkLanguage('php') + '/QuantiModoClient/**/*',
         getRepoPathForSdkLanguage('php'));
 });
-gulp.task('php-update-sdk-composer', [], function(){
+gulp.task('php-4-update-sdk-composer', [], function(){
     var composerJsonPath = getRepoPathForSdkLanguage('php') + '/composer.json';
     var composerJson = readJsonFile(composerJsonPath);
     composerJson.version = apiVersionNumber;
@@ -507,7 +507,7 @@ gulp.task('php-update-sdk-composer', [], function(){
         return commitChanges('php');
     });
 });
-gulp.task('php-update-laravel-composer', [], function(callback){
+gulp.task('php-5-update-laravel-composer', [], function(callback){
     var composerJson = readJsonFile(pathToLaravel + '/composer.json');
     composerJson.require["quantimodo/quantimodo-sdk-php"] = apiVersionNumber;
     return writeToFile(pathToLaravel  + '/composer.json', prettyJSONStringify(composerJson, 4), function () {
