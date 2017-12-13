@@ -828,6 +828,10 @@
         "title": {
           "description": "Example: Top Predictors of Overall Mood",
           "type": "string"
+        },
+        "html": {
+          "description": "Embeddable list of study summaries with explanation at the top",
+          "type": "string"
         }
       },
       "required": [
