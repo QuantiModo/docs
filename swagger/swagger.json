@@ -5777,6 +5777,52 @@
         ]
       }
     },
+    "/v3/user/delete": {
+      "delete": {
+        "description": "Delete user account. Only the client app that created a user can delete that user.",
+        "operationId": "deleteUser",
+        "parameters": [
+          {
+            "$ref": "#/parameters/clientIdParam"
+          },
+          {
+            "description": "Example: I hate you!",
+            "in": "query",
+            "name": "reason",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "204": {
+            "description": "Successful Operation",
+            "schema": {
+              "$ref": "#/definitions/CommonResponse"
+            }
+          },
+          "401": {
+            "description": "Not Authenticated"
+          }
+        },
+        "security": [
+          {
+            "access_token": []
+          },
+          {
+            "quantimodo_oauth2": [
+              "writemeasurements"
+            ]
+          }
+        ],
+        "summary": "Delete user",
+        "tags": [
+          "user"
+        ]
+      }
+    },
     "/v3/userSettings": {
       "post": {
         "description": "Post UserSettings",
