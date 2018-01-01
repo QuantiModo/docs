@@ -2011,7 +2011,7 @@
         },
         "reminderStartTimeLocal": {
           "description": "Example: 21:45:20",
-          "format": "date-time",
+          "format": "string",
           "type": "string"
         },
         "reminderStartTimeLocalHumanFormatted": {
