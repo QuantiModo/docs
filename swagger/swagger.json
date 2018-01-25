@@ -1001,6 +1001,10 @@
           "description": "Example: 2017-07-30 21:08:36",
           "type": "string"
         },
+        "displayValueAndUnitString": {
+          "description": "Examples: 3/5, $10, or 1 count",
+          "type": "string"
+        },
         "iconIcon": {
           "description": "Example: ion-sad-outline",
           "type": "string"
