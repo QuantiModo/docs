@@ -81,7 +81,7 @@ var sdkSwaggerCodegenOptions ={
         "gemAuthorEmail": "mike@quantimo.do"
     }
 };
-var majorMinorVersionNumbers = '5.8.';
+var majorMinorVersionNumbers = '5.9.';
 function getPatchVersionNumber() {
     var date = new Date();
     var monthNumber = (date.getMonth() + 1).toString();
@@ -489,6 +489,7 @@ gulp.task('js-3-copy-everywhere', ['js-sdk-browserify-unzipped'], function(){
     } catch (error){
         logError(error, error);
     }
+    console.log("After completion, open repo, discard readme changes and commit new version to Github.  Then you can run js-4-release");
 });
 var laravelVendorPath = pathToQmDocker + '/laravel/vendor/quantimodo/quantimodo-sdk-php';
 gulp.task('php-2-sdk-copy-to-repo', ['clean-repos-except-git'], function(){
