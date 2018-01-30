@@ -1037,29 +1037,17 @@
           "description": "Note of measurement",
           "type": "string"
         },
-        "originalunitAbbreviatedName": {
-          "description": "Original Unit of measurement as originally submitted",
-          "type": "string"
+        "noteObject": {
+          "description": "Additional meta data for the measurement",
+          "type": "object"
         },
-        "originalUnitAbbreviatedName": {
-          "description": "Example: count",
-          "type": "string"
-        },
-        "originalUnitCategoryId": {
-          "description": "Example: 6",
-          "type": "integer"
-        },
-        "originalUnitCategoryName": {
-          "description": "Example: Miscellany",
-          "type": "string"
+        "noteHtml": {
+          "description": "Embeddable HTML with message hyperlinked with associated url",
+          "type": "object"
         },
         "originalUnitId": {
           "description": "Example: 23",
           "type": "integer"
-        },
-        "originalUnitName": {
-          "description": "Example: Count",
-          "type": "string"
         },
         "originalValue": {
           "description": "Original value as originally submitted",
@@ -1115,6 +1103,10 @@
         },
         "updatedAt": {
           "description": "Example: 2017-07-30 21:08:36",
+          "type": "string"
+        },
+        "url": {
+          "description": "Link to associated Facebook like or Github commit, for instance",
           "type": "string"
         },
         "userVariableUnitAbbreviatedName": {
