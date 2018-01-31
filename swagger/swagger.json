@@ -809,6 +809,26 @@
         "shortDescription"
       ]
     },
+    "DeviceToken": {
+        "properties": {
+          "clientId": {
+            "description": "Client id",
+            "type": "string"
+          },
+          "platform": {
+            "description": "ios, android, or web",
+            "type": "string"
+          },
+          "deviceToken": {
+            "description": "The device token",
+            "type": "string"
+          }
+        },
+        "required": [
+          "deviceToken",
+          "platform"
+        ]
+    },
     "Explanation": {
       "properties": {
         "description": {
@@ -4781,9 +4801,19 @@
     },
     "/v3/deviceTokens": {
       "post": {
-        "description": "Post DeviceTokens",
-        "operationId": "postDeviceTokens",
-        "parameters": [],
+        "description": "Post user token for Android, iOS, or web push notifications",
+        "operationId": "postDeviceToken",
+        "parameters": [
+          {
+            "description": "The platform and token",
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/DeviceToken"
+            }
+          }
+        ],
         "produces": [
           "application/json"
         ],
