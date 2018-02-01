@@ -44,6 +44,9 @@
         },
         "collaborators":{
           "description": "",
+          "items": {
+            "$ref": "#/definitions/User"
+          },
           "type": "array"
         },
         "createdAt":{
@@ -56,6 +59,9 @@
         },
         "users":{
           "description": "",
+          "items": {
+            "$ref": "#/definitions/User"
+          },
           "type": "array"
         },
         "redirectUri":{
