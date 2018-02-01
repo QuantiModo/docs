@@ -4558,7 +4558,25 @@
           "200": {
             "description": "Successful operation",
             "schema": {
-              "$ref": "#/definitions/AppSettings"
+              "properties": {
+                "appSettings": {
+                  "$ref": "#/definitions/AppSettings"
+                },
+                "message": {
+                  "description": "Message",
+                  "type": "string"
+                },
+                "status": {
+                  "description": "Status code",
+                  "type": "integer"
+                },
+                "success": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "status"
+              ]
             }
           },
           "401": {
