@@ -4,6 +4,93 @@
     "application/json"
   ],
   "definitions": {
+    "AppSettings": {
+      "properties": {
+        "additionalSettings":{
+          "description": "",
+          "type": "object"
+        },
+        "appDescription":{
+          "description": "",
+          "type": "string"
+        },
+        "appDesign":{
+          "description": "",
+          "type": "object"
+        },
+        "appDisplayName":{
+          "description": "",
+          "type": "string"
+        },
+        "appStatus":{
+          "description": "",
+          "type": "object"
+        },
+        "appType":{
+          "description": "",
+          "type": "string"
+        },
+        "buildEnabled":{
+          "description": "",
+          "type": "string"
+        },
+        "clientId":{
+          "description": "",
+          "type": "string"
+        },
+        "clientSecret":{
+          "description": "",
+          "type": "string"
+        },
+        "collaborators":{
+          "description": "",
+          "type": "array"
+        },
+        "createdAt":{
+          "description": "",
+          "type": "string"
+        },
+        "userId":{
+          "description": "",
+          "type": "string"
+        },
+        "users":{
+          "description": "",
+          "type": "array"
+        },
+        "redirectUri":{
+          "description": "",
+          "type": "string"
+        },
+        "companyName":{
+          "description": "",
+          "type": "string"
+        },
+        "homepageUrl":{
+          "description": "",
+          "type": "string"
+        },
+        "iconUrl":{
+          "description": "",
+          "type": "string"
+        },
+        "longDescription":{
+          "description": "",
+          "type": "string"
+        },
+        "splashScreen":{
+          "description": "",
+          "type": "string"
+        },
+        "textLogo":{
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "clientId"
+      ]
+    },
     "Button": {
       "properties": {
         "link": {
@@ -4442,6 +4529,47 @@
     }
   },
   "paths": {
+    "/v3/appSettings": {
+      "get": {
+        "description": "Get QuantiModo client app settings",
+        "operationId": "getAppSettings",
+        "parameters": [
+          {
+            "$ref": "#/parameters/clientIdParam"
+          },
+          {
+            "$ref": "#/parameters/clientSecretParam"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/AppSettings"
+            }
+          },
+          "401": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/JsonErrorResponse"
+            }
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "summary": "Get client app Settings",
+        "tags": [
+          "AppSettings"
+        ]
+      }
+    },
     "/v2/measurements/exportRequest": {
       "post": {
         "description": "Use this endpoint to schedule a CSV export containing all user measurements to be emailed to the user within 24 hours.",
