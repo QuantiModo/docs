@@ -97,6 +97,27 @@
         "clientId"
       ]
     },
+    "AppSettingsResponse": {
+      "properties": {
+        "appSettings": {
+          "$ref": "#/definitions/AppSettings"
+        },
+        "message": {
+          "description": "Message",
+          "type": "string"
+        },
+        "status": {
+          "description": "Status code",
+          "type": "integer"
+        },
+        "success": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "status"
+      ]
+    },
     "Button": {
       "properties": {
         "link": {
@@ -4558,25 +4579,7 @@
           "200": {
             "description": "Successful operation",
             "schema": {
-              "properties": {
-                "appSettings": {
-                  "$ref": "#/definitions/AppSettings"
-                },
-                "message": {
-                  "description": "Message",
-                  "type": "string"
-                },
-                "status": {
-                  "description": "Status code",
-                  "type": "integer"
-                },
-                "success": {
-                  "type": "boolean"
-                }
-              },
-              "required": [
-                "status"
-              ]
+              "$ref": "#/definitions/AppSettingsResponse"
             }
           },
           "401": {
