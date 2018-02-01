@@ -4544,7 +4544,11 @@
             "$ref": "#/parameters/clientIdParam"
           },
           {
-            "$ref": "#/parameters/clientSecretParam"
+            "description": "Optional, but required to include any user data with response",
+            "in": "query",
+            "name": "client_secret",
+            "required": false,
+            "type": "string"
           }
         ],
         "produces": [
