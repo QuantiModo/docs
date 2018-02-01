@@ -221,10 +221,10 @@ String.prototype.replaceAll = function(search, replacement) {
     return target.replace(new RegExp(search, 'g'), replacement);
 };
 gulp.task('js-sdk-browserify-unzipped', [], function (callback) {
-    browserify(getUnzippedPathForSdkLanguage('javascript'), callback);
+    browserify(getUnzippedPathForSdkLanguage(javascriptFlavor), callback);
 });
 gulp.task('js-sdk-browserify-repo', [], function (callback) {
-    browserify(getRepoPathForSdkLanguage('javascript'), callback);
+    browserify(getRepoPathForSdkLanguage(javascriptFlavor), callback);
 });
 function browserify(path, callback){
     var sourceFile = 'src/index.js';
@@ -250,7 +250,7 @@ gulp.task('js-4-release', [], function (callback) {
             });
         });
     }
-    executeCommand("cd " + getRepoPathForSdkLanguage('javascript') +
+    executeCommand("cd " + getRepoPathForSdkLanguage(javascriptFlavor) +
         //' && npm install' +
         ' && git add .' +
         ' && git commit -m "' + apiVersionNumber + '"' +
@@ -258,7 +258,7 @@ gulp.task('js-4-release', [], function (callback) {
         ' && git tag ' + apiVersionNumber +
         ' && git push origin ' + apiVersionNumber +
         ' && bower version ' + apiVersionNumber, function () {
-        executeCommand("cd " + getRepoPathForSdkLanguage('javascript') + " && npm version " + apiVersionNumber +
+        executeCommand("cd " + getRepoPathForSdkLanguage(javascriptFlavor) + " && npm version " + apiVersionNumber +
             ' && npm publish', function () {
             updateBowerAndPackageJsonVersions(pathToQmDocker);
             updateBowerAndPackageJsonVersions(pathToIonic);
@@ -430,10 +430,12 @@ gulp.task('0-download', ['clean-unzipped-folders'], function () {
         downloadSdk(languages[i]);
     }
 });
+var javascriptFlavor = 'javascript';
+//var javascriptFlavor = 'typescript-fetch';
 gulp.task('js-1-download', ['clean-unzipped-folders'], function () {
-    languages = ['javascript'];
+    languages = [javascriptFlavor];
     logInfo("Generating " + language + " sdk using " +  swaggerJsonUrl);
-    return downloadSdk('javascript');
+    return downloadSdk(javascriptFlavor);
 });
 gulp.task('php-0-sdk-download', [], function () {
     languages = ['php'];
@@ -449,22 +451,22 @@ gulp.task('1-decompress', ['clean-repos-except-git'], function () {
     }
 });
 gulp.task('js-2-unzip', ['clean-repos-except-git'], function () {
-    return unzipFileToFolder(getZipPathForLanguage('javascript'), sdksUnzippedPath);
+    return unzipFileToFolder(getZipPathForLanguage(javascriptFlavor), sdksUnzippedPath);
 });
 gulp.task('php-1-unzip', [], function () {
     return unzipFileToFolder(getZipPathForLanguage('php'), sdksUnzippedPath);
 });
 function copyUnzippedJsSdkToQmDockerNodeModules(){
-    return copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage('javascript'), pathToQmDocker + '/' + pathToQuantiModoNodeModule);
+    return copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage(javascriptFlavor), pathToQmDocker + '/' + pathToQuantiModoNodeModule);
 }
 function copyUnzippedJsSdkToIonicNodeModules(){
-    return copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage('javascript'), pathToIonic + '/' + pathToQuantiModoNodeModule);
+    return copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage(javascriptFlavor), pathToIonic + '/' + pathToQuantiModoNodeModule);
 }
 function copyUnzippedJsSdkToRepo(){
-    return copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage('javascript'), getRepoPathForSdkLanguage('javascript'));
+    return copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage(javascriptFlavor), getRepoPathForSdkLanguage(javascriptFlavor));
 }
 function copyUnzippedJsSdkToApiDocsNodeModules(){
-    return copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage('javascript'), pathToQuantiModoNodeModule);
+    return copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage(javascriptFlavor), pathToQuantiModoNodeModule);
 }
 function copySdksFromUnzippedPathToRepos(){
     for(var i = 0; i < languages.length; i++) {
@@ -805,7 +807,7 @@ gulp.task('test-endpoints', [], function (callback) {
         });
 });
 gulp.task('test-javascript-client', [], function (callback) {
-    executeCommand('cd ' + getUnzippedPathForSdkLanguage('javascript') + ' && npm install && npm test ', function () {
+    executeCommand('cd ' + getUnzippedPathForSdkLanguage(javascriptFlavor) + ' && npm install && npm test ', function () {
         callback();
     });
 });
@@ -832,11 +834,11 @@ gulp.task('delete-qm-node-module', [], function(){
     return cleanOneFolderExceptGit(pathToQuantiModoNodeModule);
 });
 gulp.task('js-sdk-copy-to-node-modules', ['delete-qm-node-module'], function(){
-    language = 'javascript';
+    language = javascriptFlavor;
     return copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage(language), pathToQuantiModoNodeModule);
 });
 gulp.task('JS-SDK-UPDATE', function(callback){
-    language = 'javascript';
+    language = javascriptFlavor;
     runSequence(
         'clean-unzipped-folders',
         'download-and-unzip-one-sdk',

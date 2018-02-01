@@ -1195,6 +1195,10 @@
           "description": "Example: https://app.quantimo.do/ionic/Modo/www/img/variable_categories/treatments.png",
           "type": "string"
         },
+        "productUrl": {
+          "description": "Link to associated product for purchase",
+          "type": "string"
+        },
         "sourceName": {
           "description": "Application or device used to record the measurement values",
           "type": "string"
