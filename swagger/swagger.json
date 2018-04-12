@@ -188,6 +188,10 @@
           "description": "Example: false",
           "type": "boolean"
         },
+        "backgroundColor": {
+          "description": "Background color HEX code that matches the icon",
+          "type": "string"
+        },
         "buttons": {
           "items": {
             "$ref": "#/definitions/Button"
