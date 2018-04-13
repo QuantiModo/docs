@@ -645,9 +645,9 @@ gulp.task('get-measurements', ['post-measurements'], function (callback) {
     }
     apiInstance.getMeasurements({sort: '-startTime', variableName: testVariableName}, qmApiResponseCallback);
 });
-const dateTime = Date.now();
-const currentUnixTime = Math.floor(dateTime / 1000);
-var testVariableName = 'Unique Test Variable ' + currentUnixTime;
+var dateTime = Date.now();
+var currentUnixTime = Math.floor(dateTime / 1000);
+var testVariableName = currentUnixTime + ' Unique Test Variable';
 gulp.task('default', ['check-responses']);
 gulp.task('post-measurements', [], function (callback) {
     var expectedMethod = "POST";
@@ -683,16 +683,16 @@ gulp.task('get-common-variables', [], function (callback) {
         handleApiResponse(error, data, response, requiredProperties);
         callback();
     }
-    apiInstance.getCommonVariables({}, qmApiResponseCallback);
+    apiInstance.getVariables({commonOnly: true}, qmApiResponseCallback);
 });
 gulp.task('get-study', [], function (callback) {
     var apiInstance = new Quantimodo.AnalyticsApi();
     var requiredProperties = [
         'causeVariable',
         'effectVariable',
-        'highcharts',
+        'charts',
         'statistics',
-        'text'
+        'studyText'
     ];
     function qmApiResponseCallback(error, data, response) {
         handleApiResponse(error, data, response, requiredProperties);
@@ -728,7 +728,8 @@ gulp.task('get-tracking-reminders', ['post-tracking-reminders'], function (callb
     function qmApiResponseCallback(error, data, response) {
         var newReminderPresent = false;
         for(var i = 0; i < data.length; i++){
-            if(data[i].variableName === testVariableName){
+            var currentName = data[i].variableName;
+            if(currentName === testVariableName){
                 newReminderPresent = true;
             }
         }
@@ -778,7 +779,7 @@ gulp.task('get-user-variables', [], function (callback) {
         handleApiResponse(error, data, response, requiredProperties);
         callback();
     }
-    apiInstance.getUserVariables({}, qmApiResponseCallback);
+    apiInstance.getVariables({userOnly: true}, qmApiResponseCallback);
 });
 gulp.task('test-endpoints', [], function (callback) {
     runSequence(
