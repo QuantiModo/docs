@@ -3973,7 +3973,7 @@
       "description": "This is the secret for your obtained clientId. We use this to ensure that only your application uses the clientId.  Obtain this by creating a free application at [https://app.quantimo.do/api/v2/apps](https://app.quantimo.do/api/v2/apps).",
       "in": "query",
       "name": "client_secret",
-      "required": true,
+      "required": false,
       "type": "string"
     },
     "clientUserIdParam": {
