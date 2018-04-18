@@ -204,7 +204,7 @@
         },
         "connected": {
           "description": "True if the authenticated user has this connector enabled",
-          "type": "string"
+          "type": "boolean"
         },
         "connectError": {
           "description": "Example: Your token is expired. Please re-connect",
@@ -212,7 +212,7 @@
         },
         "connectInstructions": {
           "description": "URL and parameters used when connecting to a service",
-          "type": "string"
+          "$ref": "#/definitions/ConnectInstructions"
         },
         "connectorClientId": {
           "description": "Example: 225078261031461",
@@ -284,10 +284,6 @@
           "description": "Connector lowercase system name",
           "type": "string"
         },
-        "oauth": {
-          "description": "Example: {}",
-          "type": "object"
-        },
         "scopes": {
           "items": {
             "type": "string"
@@ -331,6 +327,28 @@
         "lastUpdate",
         "name",
         "totalMeasurementsInLastUpdate"
+      ]
+    },
+    "ConnectInstructions": {
+      "properties": {
+        "parameters": {
+          "items": {
+            "type": "object"
+          },
+          "description": "Create a form with these fields and post the key and user submitted value to the provided connect url",
+          "type": "array"
+        },
+        "url": {
+          "description": "URL to open to connect",
+          "type": "string"
+        },
+        "usePopup": {
+          "description": "True if should open auth window in popup",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "url"
       ]
     },
     "ConversionStep": {
