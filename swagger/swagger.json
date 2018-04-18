@@ -4397,14 +4397,14 @@
       "description": "Id of the tagged variable (i.e. Lollipop) you would like to get variables it can be tagged with (i.e. Sugar).  Converted measurements of the tagged variable are included in analysis of the tag variable (i.e. ingredient).",
       "in": "query",
       "name": "taggedVariableId",
-      "required": true,
+      "required": false,
       "type": "integer"
     },
     "tagVariableIdParam": {
       "description": "Id of the tag variable (i.e. Sugar) you would like to get variables it can be tagged to (i.e. Lollipop).  Converted measurements of the tagged variable are included in analysis of the tag variable (i.e. ingredient).",
       "in": "query",
       "name": "tagVariableId",
-      "required": true,
+      "required": false,
       "type": "integer"
     },
     "unitAbbreviatedNameParam": {
