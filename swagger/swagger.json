@@ -125,7 +125,19 @@
           "type": "string"
         },
         "text": {
-          "description": "Example: Start Tracking",
+          "description": "Example: Connect",
+          "type": "string"
+        },
+        "ionIcon": {
+          "description": "Example: ion-refresh",
+          "type": "string"
+        },
+        "color": {
+          "description": "Example: #f2f2f2",
+          "type": "string"
+        },
+        "additionalInformation": {
+          "description": "Example: connect",
           "type": "string"
         }
       },
