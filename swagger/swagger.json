@@ -294,7 +294,7 @@
           "description": "Example: Tracks social interaction. QuantiModo requires permission to access your Facebook \"user likes\" and \"user posts\".",
           "type": "string"
         },
-        "spreadSheetUpload": {
+        "spreadsheetUpload": {
           "description": "True if the user must upload a spreadsheet.  Post the uploaded spreadsheet with your clientId and user accessToken to https://app.quantimo.do/api/v2/spreadsheetUpload",
           "type": "boolean"
         },
