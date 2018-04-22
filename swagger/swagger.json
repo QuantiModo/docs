@@ -296,7 +296,15 @@
           "description": "Connector lowercase system name",
           "type": "string"
         },
+        "platforms": {
+          "description": "Platforms (chrome, android, ios, web) that you can connect on.",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
         "scopes": {
+          "description": "Required connector scopes",
           "items": {
             "type": "string"
           },
