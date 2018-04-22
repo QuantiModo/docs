@@ -86,8 +86,10 @@ function getPatchVersionNumber() {
     var date = new Date();
     var monthNumber = (date.getMonth() + 1).toString();
     var dayOfMonth = ('0' + date.getDate()).slice(-2);
-    var hourOfDay = ('0' + date.getHours()).slice(-2);
-    return monthNumber + dayOfMonth + hourOfDay;
+    var hourOfDay = date.getHours();
+    var hourOfDayString = ('0' + hourOfDay).slice(-2);
+    //hourOfDayString = "72"; // Manually set if need to release more than once per hour
+    return monthNumber + dayOfMonth + hourOfDayString;
 }
 var apiVersionNumber = majorMinorVersionNumbers + getPatchVersionNumber();
 logInfo("API version is " + apiVersionNumber);

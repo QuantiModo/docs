@@ -2775,7 +2775,8 @@
             "Rating",
             "Temperature",
             "Volume",
-            "Weight"
+            "Weight",
+            "Count"
           ],
           "type": "string"
         },
@@ -4054,7 +4055,10 @@
         "up",
         "whatpulse",
         "withings",
-        "worldweatheronline"
+        "worldweatheronline",
+        "foursquare",
+        "strava",
+        "gmail"
       ],
       "in": "path",
       "name": "connectorName",
@@ -4329,6 +4333,19 @@
       "required": false,
       "type": "boolean"
     },
+    "platform": {
+      "description": "Example: chrome, android, ios, web",
+      "in": "query",
+      "name": "platform",
+      "required": false,
+      "type": "string",
+      "enum": [
+        "chrome",
+        "android",
+        "ios",
+        "web"
+      ]
+    },
     "publicEffectOrCauseParam": {
       "description": "Example: ",
       "in": "query",
@@ -4456,7 +4473,7 @@
       "type": "integer"
     },
     "unitNameParam": {
-      "description": "Example: 86400",
+      "description": "Example: Milligrams",
       "enum": [
         "% Recommended Daily Allowance",
         "-4 to 4 Rating",
@@ -4509,7 +4526,12 @@
         "Torr",
         "Units",
         "Yes/No",
-        "per Minute"
+        "per Minute",
+        "Doses",
+        "Quarts",
+        "Ounces",
+        "International Units",
+        "Meters per Second"
       ],
       "in": "query",
       "name": "unitName",
@@ -4616,6 +4638,9 @@
           },
           {
             "$ref": "#/parameters/clientSecretParam"
+          },
+          {
+            "$ref": "#/parameters/platform"
           }
         ],
         "produces": [
@@ -4722,6 +4747,9 @@
           },
           {
             "$ref": "#/parameters/clientIdParam"
+          },
+          {
+            "$ref": "#/parameters/platform"
           }
         ],
         "produces": [
@@ -4927,6 +4955,9 @@
             "name": "commonOnly",
             "required": false,
             "type": "boolean"
+          },
+          {
+            "$ref": "#/parameters/platform"
           }
         ],
         "produces": [
@@ -5077,6 +5108,9 @@
         "parameters": [
           {
             "$ref": "#/parameters/clientIdParam"
+          },
+          {
+            "$ref": "#/parameters/platform"
           }
         ],
         "produces": [
@@ -5167,6 +5201,9 @@
           },
           {
             "$ref": "#/parameters/minMaxFilterParam"
+          },
+          {
+            "$ref": "#/parameters/platform"
           }
         ],
         "produces": [
@@ -5393,6 +5430,9 @@
           },
           {
             "$ref": "#/parameters/stateParam"
+          },
+          {
+            "$ref": "#/parameters/platform"
           }
         ],
         "produces": [
@@ -5450,6 +5490,9 @@
           },
           {
             "$ref": "#/parameters/stateParam"
+          },
+          {
+            "$ref": "#/parameters/platform"
           }
         ],
         "produces": [
@@ -5625,6 +5668,9 @@
           },
           {
             "$ref": "#/parameters/includeDeletedParam"
+          },
+          {
+            "$ref": "#/parameters/platform"
           }
         ],
         "produces": [
@@ -5678,6 +5724,9 @@
           },
           {
             "$ref": "#/parameters/clientIdParam"
+          },
+          {
+            "$ref": "#/parameters/platform"
           }
         ],
         "produces": [
@@ -5744,6 +5793,9 @@
           },
           {
             "$ref": "#/parameters/appVersionParam"
+          },
+          {
+            "$ref": "#/parameters/platform"
           }
         ],
         "produces": [
@@ -5976,6 +6028,9 @@
           },
           {
             "$ref": "#/parameters/clientUserIdParam"
+          },
+          {
+            "$ref": "#/parameters/platform"
           }
         ],
         "produces": [
@@ -6022,6 +6077,9 @@
             "name": "reason",
             "required": true,
             "type": "string"
+          },
+          {
+            "$ref": "#/parameters/platform"
           }
         ],
         "produces": [
@@ -6064,6 +6122,9 @@
           },
           {
             "$ref": "#/parameters/clientIdParam"
+          },
+          {
+            "$ref": "#/parameters/platform"
           }
         ],
         "produces": [
@@ -6317,6 +6378,9 @@
             "name": "userOnly",
             "required": false,
             "type": "boolean"
+          },
+          {
+            "$ref": "#/parameters/platform"
           }
         ],
         "produces": [
@@ -6387,6 +6451,9 @@
           },
           {
             "$ref": "#/parameters/synonymsParam"
+          },
+          {
+            "$ref": "#/parameters/platform"
           }
         ],
         "produces": [
@@ -6664,6 +6731,9 @@
           },
           {
             "$ref": "#/parameters/includeChartsParam"
+          },
+          {
+            "$ref": "#/parameters/platform"
           }
         ],
         "produces": [
