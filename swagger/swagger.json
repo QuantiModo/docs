@@ -4249,6 +4249,13 @@
       "required": false,
       "type": "integer"
     },
+    "log": {
+      "description": "Username or email",
+      "in": "query",
+      "name": "log",
+      "required": false,
+      "type": "string"
+    },
     "manualTrackingParam": {
       "description": "Example: ",
       "in": "query",
@@ -4358,6 +4365,13 @@
       "description": "Example: ",
       "in": "query",
       "name": "publicEffectOrCause",
+      "required": false,
+      "type": "string"
+    },
+    "pwd": {
+      "description": "User password",
+      "in": "query",
+      "name": "pwd",
       "required": false,
       "type": "string"
     },
@@ -6039,6 +6053,12 @@
           },
           {
             "$ref": "#/parameters/platform"
+          },
+          {
+            "$ref": "#/parameters/log"
+          },
+          {
+            "$ref": "#/parameters/pwd"
           }
         ],
         "produces": [
