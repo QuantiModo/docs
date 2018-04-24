@@ -239,8 +239,7 @@
           "type": "string"
         },
         "createdAt": {
-          "description": "Example: 2000-01-01 00:00:00",
-          "format": "date-time",
+          "description": "Example: 2000-01-01 00:00:00 UTC ISO 8601 `YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
         "defaultVariableCategoryName": {
@@ -272,8 +271,7 @@
           "type": "string"
         },
         "lastSuccessfulUpdatedAt": {
-          "description": "Example: 2017-07-31 10:10:34",
-          "format": "date-time",
+          "description": "Example: 2017-07-31 10:10:34 UTC ISO 8601 `YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
         "lastUpdate": {
@@ -323,13 +321,11 @@
           "type": "integer"
         },
         "updatedAt": {
-          "description": "Example: 2017-07-31 10:10:34",
-          "format": "date-time",
+          "description": "Example: 2017-07-31 10:10:34 UTC ISO 8601 `YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
         "updateRequestedAt": {
-          "description": "Example: 2017-07-18 05:16:31",
-          "format": "date-time",
+          "description": "Example: 2017-07-18 05:16:31 UTC ISO 8601 `YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
         "updateStatus": {
@@ -495,8 +491,7 @@
           "type": "boolean"
         },
         "createdAt": {
-          "description": "Example: 2016-12-28 20:47:30",
-          "format": "date-time",
+          "description": "Example: 2016-12-28 20:47:30 UTC ISO 8601 `YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
         "criticalTValue": {
@@ -588,13 +583,11 @@
           "type": "string"
         },
         "experimentEndTime": {
-          "description": "Example: 2014-07-30 12:50:00",
-          "format": "date-time",
+          "description": "Example: 2014-07-30 12:50:00 UTC ISO 8601 `YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
         "experimentStartTime": {
-          "description": "Example: 2012-05-06 21:15:00",
-          "format": "date-time",
+          "description": "Example: 2012-05-06 21:15:00 UTC ISO 8601 `YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
         "forwardSpearmanCorrelationCoefficient": {
@@ -745,8 +738,7 @@
           "type": "number"
         },
         "updatedAt": {
-          "description": "Example: 2017-05-06 15:40:38",
-          "format": "date-time",
+          "description": "Example: 2017-05-06 15:40:38 UTC ISO 8601 `YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
         "userId": {
@@ -800,7 +792,7 @@
           "type": "string"
         },
         "numberOfUsers": {
-          "description": "Example: ",
+          "description": "Example: 1",
           "type": "number"
         },
         "rawCauseMeasurementSignificance": {
@@ -814,7 +806,7 @@
           "type": "number"
         },
         "reversePairsCount": {
-          "description": "Example: ",
+          "description": "Example: 1",
           "type": "string"
         },
         "voteStatisticalSignificance": {
@@ -836,7 +828,7 @@
           "type": "integer"
         },
         "vote": {
-          "description": "Example: ",
+          "description": "Example: 1 or 0",
           "type": "number"
         }
       },
@@ -1506,22 +1498,15 @@
           "type": "string"
         },
         "eventAt": {
-          "description": "Example: 2015-08-06 15:49:02",
-          "format": "date-time",
+          "description": "Example: 2015-08-06 15:49:02 UTC ISO 8601 `YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
         "eventAtUnixTime": {
           "description": "Example: 1438876142",
           "type": "integer"
         },
-        "startTimeSting": {
-          "description": "Example: 2016-06-03 07:00:00",
-          "format": "date-time",
-          "type": "string"
-        },
         "startTimeString": {
-          "description": "Example: 2015-08-06 15:49:02",
-          "format": "date-time",
+          "description": "Example: 2015-08-06 15:49:02 UTC ISO 8601 `YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
         "timestamp": {
@@ -2022,8 +2007,7 @@
           "type": "string"
         },
         "createdAt": {
-          "description": "Example: 2016-05-18 02:24:08",
-          "format": "date-time",
+          "description": "Example: 2016-05-18 02:24:08 UTC ISO 8601 `YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
         "unitAbbreviatedName": {
@@ -2064,8 +2048,7 @@
           "type": "integer"
         },
         "firstDailyReminderTime": {
-          "description": "Example: 02:45:20",
-          "format": "date-time",
+          "description": "Example: 02:45:20 in UTC timezone",
           "type": "string"
         },
         "frequencyTextDescription": {
@@ -2094,8 +2077,7 @@
           "type": "string"
         },
         "lastTracked": {
-          "description": "UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`  timestamp for the last time a measurement was received for this user and variable",
-          "format": "date-time",
+          "description": "UTC ISO 8601 `YYYY-MM-DDThh:mm:ss` timestamp for the last time a measurement was received for this user and variable",
           "type": "string"
         },
         "lastValue": {
@@ -2105,7 +2087,6 @@
         },
         "latestTrackingReminderNotificationReminderTime": {
           "description": "UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`  timestamp for the reminder time of the latest tracking reminder notification that has been pre-emptively generated in the database",
-          "format": "date-time",
           "type": "string"
         },
         "localDailyReminderNotificationTimes": {
@@ -2200,7 +2181,6 @@
         },
         "reminderStartTimeLocalHumanFormatted": {
           "description": "Example: 09:45 PM",
-          "format": "date-time",
           "type": "string"
         },
         "repeating": {
@@ -2209,7 +2189,6 @@
         },
         "secondDailyReminderTime": {
           "description": "Example: 01:00:00",
-          "format": "date-time",
           "type": "string"
         },
         "secondToLastValue": {
@@ -2237,7 +2216,6 @@
         },
         "thirdDailyReminderTime": {
           "description": "Example: 20:00:00",
-          "format": "date-time",
           "type": "string"
         },
         "thirdToLastValue": {
@@ -2259,7 +2237,6 @@
         },
         "updatedAt": {
           "description": "When the record in the database was last updated. Use UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`  datetime format. Time zone should be UTC and not local.",
-          "format": "date-time",
           "type": "string"
         },
         "userId": {
@@ -2378,8 +2355,7 @@
           "type": "string"
         },
         "createdAt": {
-          "description": "Example: 2017-07-29 20:49:54",
-          "format": "date-time",
+          "description": "Example: 2017-07-29 20:49:54 UTC ISO 8601 `YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
         "modifiedValue": {
@@ -2472,8 +2448,7 @@
           "type": "boolean"
         },
         "notifiedAt": {
-          "description": "Example: ",
-          "format": "date-time",
+          "description": "Example: UTC ISO 8601 `YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
         "numberOfUniqueValues": {
@@ -2505,8 +2480,7 @@
           "type": "string"
         },
         "reminderEndTime": {
-          "description": "Example: ",
-          "format": "date-time",
+          "description": "Example: 01-01-2018",
           "type": "string"
         },
         "reminderFrequency": {
@@ -2523,7 +2497,6 @@
         },
         "reminderTime": {
           "description": "UTC ISO 8601 `YYYY-MM-DDThh:mm:ss` timestamp for the specific time the variable should be tracked in UTC.  This will be used for the measurement startTime if the track endpoint is used.",
-          "format": "date-time",
           "type": "string"
         },
         "secondMostCommonValue": {
@@ -2584,7 +2557,6 @@
         },
         "trackingReminderNotificationTime": {
           "description": "UTC ISO 8601 `YYYY-MM-DDThh:mm:ss` timestamp for the specific time the variable should be tracked in UTC.  This will be used for the measurement startTime if the track endpoint is used.",
-          "format": "date-time",
           "type": "string"
         },
         "trackingReminderNotificationTimeEpoch": {
@@ -2601,7 +2573,6 @@
         },
         "updatedAt": {
           "description": "When the record in the database was last updated. Use UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`  datetime format. Time zone should be UTC and not local.",
-          "format": "date-time",
           "type": "string"
         },
         "userId": {
@@ -2659,7 +2630,7 @@
           "type": "integer"
         },
         "variableImageUrl": {
-          "description": "Example: ",
+          "description": "Example: https://image.png",
           "type": "string"
         },
         "variableName": {
@@ -2952,7 +2923,7 @@
           "type": "string"
         },
         "lastSmsTrackingReminderNotificationId": {
-          "description": "Example: ",
+          "description": "Example: 1",
           "type": "string"
         },
         "latestReminderTime": {
@@ -2968,11 +2939,11 @@
           "type": "string"
         },
         "phoneNumber": {
-          "description": "Example: ",
+          "description": "Example: 618-391-0002",
           "type": "string"
         },
         "phoneVerificationCode": {
-          "description": "Example: ",
+          "description": "Example: 1234",
           "type": "string"
         },
         "pushNotificationsEnabled": {
@@ -3016,8 +2987,7 @@
           "type": "string"
         },
         "subscriptionEndsAt": {
-          "description": "Example: ",
-          "format": "date-time",
+          "description": "UTC ISO 8601 `YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
         "subscriptionProvider": {
@@ -3033,8 +3003,7 @@
           "type": "boolean"
         },
         "userRegistered": {
-          "description": "Example: 2013-12-03 15:25:13",
-          "format": "date-time",
+          "description": "Example: 2013-12-03 15:25:13 UTC ISO 8601 `YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
         "userUrl": {
@@ -3081,7 +3050,7 @@
           "type": "array"
         },
         "alias": {
-          "description": "Example: ",
+          "description": "Alternative name",
           "type": "string"
         },
         "availableUnits": {
@@ -3157,13 +3126,11 @@
           "type": "integer"
         },
         "commonVariableUpdatedAt": {
-          "description": "Example: 2017-02-07 23:43:39",
-          "format": "date-time",
+          "description": "Example: 2017-02-07 23:43:39 UTC ISO 8601 `YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
         "createdAt": {
           "description": "When the record was first created. Use UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`  datetime format",
-          "format": "date-time",
           "type": "string"
         },
         "unitAbbreviatedName": {
@@ -3221,7 +3188,6 @@
         },
         "experimentEndTime": {
           "description": "Latest measurement start_time to be used in analysis. Use UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`  datetime format",
-          "format": "date-time",
           "type": "string"
         },
         "experimentEndTimeSeconds": {
@@ -3229,13 +3195,11 @@
           "type": "integer"
         },
         "experimentEndTimeString": {
-          "description": "Example: 2030-01-01 06:00:00",
-          "format": "date-time",
+          "description": "Example: 2030-01-01 06:00:00 UTC ISO 8601 `YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
         "experimentStartTime": {
           "description": "Earliest measurement start_time to be used in analysis. Use UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`  datetime format",
-          "format": "date-time",
           "type": "string"
         },
         "experimentStartTimeSeconds": {
@@ -3243,8 +3207,7 @@
           "type": "integer"
         },
         "experimentStartTimeString": {
-          "description": "Example: 2010-03-23 01:31:42",
-          "format": "date-time",
+          "description": "Example: 2010-03-23 01:31:42 UTC ISO 8601 `YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
         "fillingType": {
@@ -3269,7 +3232,7 @@
           "type": "string"
         },
         "informationalUrl": {
-          "description": "Example: ",
+          "description": "Example: https://google.com",
           "type": "string"
         },
         "ingredientOfUserTagVariables": {
@@ -3324,8 +3287,7 @@
           "type": "number"
         },
         "lastSuccessfulUpdateTime": {
-          "description": "When this variable or its settings were last updated",
-          "format": "date-time",
+          "description": "When this variable or its settings were last updated UTC ISO 8601 `YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
         "lastUnitId": {
@@ -3508,7 +3470,7 @@
           "type": "integer"
         },
         "parent": {
-          "description": "Example: ",
+          "description": "",
           "type": "string"
         },
         "parentId": {
@@ -3615,13 +3577,11 @@
           "type": "integer"
         },
         "updatedAt": {
-          "description": "When the record in the database was last updated. Use UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`  datetime format",
-          "format": "date-time",
+          "description": "When the record in the database was last updated. Use UTC ISO 8601 `YYYY-MM-DDThh:mm:ss` datetime format",
           "type": "string"
         },
         "updatedTime": {
           "description": "Example: 2017-07-30 14:58:26",
-          "format": "date-time",
           "type": "string"
         },
         "userId": {
@@ -3672,11 +3632,10 @@
         },
         "userVariableUpdatedAt": {
           "description": "Example: 2017-07-30 14:58:26",
-          "format": "date-time",
           "type": "string"
         },
         "userVariableValence": {
-          "description": "Example: ",
+          "description": "Example: positive or negative",
           "type": "string"
         },
         "userVariableVariableCategoryId": {
@@ -3788,8 +3747,7 @@
           "type": "string"
         },
         "createdTime": {
-          "description": "Example: ",
-          "format": "date-time",
+          "description": "UTC ISO 8601 `YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
         "unitAbbreviatedName": {
@@ -3881,8 +3839,7 @@
           "type": "integer"
         },
         "updatedTime": {
-          "description": "Example: ",
-          "format": "date-time",
+          "description": "UTC ISO 8601 `YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
         "variableCategoryName": {
@@ -3909,8 +3866,7 @@
           "type": "string"
         },
         "createdAt": {
-          "description": "When the record was first created. Use UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`  datetime format",
-          "format": "date-time",
+          "description": "When the record was first created. Use UTC ISO 8601 `YYYY-MM-DDThh:mm:ss` datetime format",
           "type": "string"
         },
         "effectVariableId": {
@@ -3923,8 +3879,7 @@
           "type": "integer"
         },
         "updatedAt": {
-          "description": "When the record in the database was last updated. Use UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`  datetime format",
-          "format": "date-time",
+          "description": "When the record in the database was last updated. Use UTC ISO 8601 `YYYY-MM-DDThh:mm:ss` datetime format",
           "type": "string"
         },
         "userId": {
@@ -4123,7 +4078,7 @@
       "type": "string"
     },
     "effectOrCauseParam": {
-      "description": "Example: ",
+      "description": "Provided variable is the effect or cause",
       "in": "query",
       "name": "effectOrCause",
       "required": false,
@@ -4144,7 +4099,7 @@
       "type": "string"
     },
     "exactMatchParam": {
-      "description": "Example: ",
+      "description": "Require exact match",
       "in": "query",
       "name": "exactMatch",
       "required": false,
@@ -4200,14 +4155,14 @@
       "type": "boolean"
     },
     "includeDeletedParam": {
-      "description": "Example: ",
+      "description": "Include deleted variables",
       "in": "query",
       "name": "includeDeleted",
       "required": false,
       "type": "boolean"
     },
     "includePrivateParam": {
-      "description": "Example: ",
+      "description": "Include non-public variables in results",
       "in": "query",
       "name": "includePrivate",
       "required": false,
@@ -4257,7 +4212,7 @@
       "type": "string"
     },
     "manualTrackingParam": {
-      "description": "Example: ",
+      "description": "Only include variables tracked manually by the user",
       "in": "query",
       "name": "manualTracking",
       "required": false,

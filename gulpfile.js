@@ -254,6 +254,8 @@ gulp.task('js-4-release', [], function (callback) {
     }
     executeCommand("cd " + getRepoPathForSdkLanguage(javascriptFlavor) +
         //' && npm install' +
+        ' && git checkout HEAD -- README.md' +
+        ' && git checkout HEAD -- package.json' +
         ' && git add .' +
         ' && git commit -m "' + apiVersionNumber + '"' +
         ' && git push' +
