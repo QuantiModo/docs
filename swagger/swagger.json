@@ -239,7 +239,7 @@
           "type": "string"
         },
         "createdAt": {
-          "description": "Example: 2000-01-01 00:00:00 UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`",
+          "description": "Example: 2000-01-01 00:00:00 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
         "defaultVariableCategoryName": {
@@ -271,7 +271,7 @@
           "type": "string"
         },
         "lastSuccessfulUpdatedAt": {
-          "description": "Example: 2017-07-31 10:10:34 UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`",
+          "description": "Example: 2017-07-31 10:10:34 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
         "lastUpdate": {
@@ -321,11 +321,11 @@
           "type": "integer"
         },
         "updatedAt": {
-          "description": "Example: 2017-07-31 10:10:34 UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`",
+          "description": "Example: 2017-07-31 10:10:34 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
         "updateRequestedAt": {
-          "description": "Example: 2017-07-18 05:16:31 UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`",
+          "description": "Example: 2017-07-18 05:16:31 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
         "updateStatus": {
@@ -491,7 +491,7 @@
           "type": "boolean"
         },
         "createdAt": {
-          "description": "Example: 2016-12-28 20:47:30 UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`",
+          "description": "Example: 2016-12-28 20:47:30 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
         "criticalTValue": {
@@ -583,11 +583,11 @@
           "type": "string"
         },
         "experimentEndTime": {
-          "description": "Example: 2014-07-30 12:50:00 UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`",
+          "description": "Example: 2014-07-30 12:50:00 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
         "experimentStartTime": {
-          "description": "Example: 2012-05-06 21:15:00 UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`",
+          "description": "Example: 2012-05-06 21:15:00 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
         "forwardSpearmanCorrelationCoefficient": {
@@ -738,7 +738,7 @@
           "type": "number"
         },
         "updatedAt": {
-          "description": "Example: 2017-05-06 15:40:38 UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`",
+          "description": "Example: 2017-05-06 15:40:38 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
         "userId": {
@@ -1250,7 +1250,7 @@
           "type": "integer"
         },
         "startTimeString": {
-          "description": "Start Time for the measurement event in UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`",
+          "description": "Start Time for the measurement event in UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
         "svgUrl": {
@@ -1498,7 +1498,7 @@
           "type": "string"
         },
         "eventAt": {
-          "description": "Example: 2015-08-06 15:49:02 UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`",
+          "description": "Example: 2015-08-06 15:49:02 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
         "eventAtUnixTime": {
@@ -1506,7 +1506,7 @@
           "type": "integer"
         },
         "startTimeString": {
-          "description": "Example: 2015-08-06 15:49:02 UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`",
+          "description": "Example: 2015-08-06 15:49:02 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
         "timestamp": {
@@ -2007,7 +2007,7 @@
           "type": "string"
         },
         "createdAt": {
-          "description": "Example: 2016-05-18 02:24:08 UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`",
+          "description": "Example: 2016-05-18 02:24:08 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
         "unitAbbreviatedName": {
@@ -2077,7 +2077,7 @@
           "type": "string"
         },
         "lastTracked": {
-          "description": "UTC ISO 8601 `YYYY-MM-DDThh:mm:ss` timestamp for the last time a measurement was received for this user and variable",
+          "description": "UTC ISO 8601 YYYY-MM-DDThh:mm:ss timestamp for the last time a measurement was received for this user and variable",
           "type": "string"
         },
         "lastValue": {
@@ -2086,7 +2086,7 @@
           "type": "number"
         },
         "latestTrackingReminderNotificationReminderTime": {
-          "description": "UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`  timestamp for the reminder time of the latest tracking reminder notification that has been pre-emptively generated in the database",
+          "description": "UTC ISO 8601 YYYY-MM-DDThh:mm:ss  timestamp for the reminder time of the latest tracking reminder notification that has been pre-emptively generated in the database",
           "type": "string"
         },
         "localDailyReminderNotificationTimes": {
@@ -2236,7 +2236,7 @@
           "type": "string"
         },
         "updatedAt": {
-          "description": "When the record in the database was last updated. Use UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`  datetime format. Time zone should be UTC and not local.",
+          "description": "When the record in the database was last updated. Use UTC ISO 8601 YYYY-MM-DDThh:mm:ss  datetime format. Time zone should be UTC and not local.",
           "type": "string"
         },
         "userId": {
@@ -2355,7 +2355,7 @@
           "type": "string"
         },
         "createdAt": {
-          "description": "Example: 2017-07-29 20:49:54 UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`",
+          "description": "Example: 2017-07-29 20:49:54 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
         "modifiedValue": {
@@ -2448,7 +2448,7 @@
           "type": "boolean"
         },
         "notifiedAt": {
-          "description": "Example: UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`",
+          "description": "Example: UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
         "numberOfUniqueValues": {
@@ -2496,7 +2496,7 @@
           "type": "string"
         },
         "reminderTime": {
-          "description": "UTC ISO 8601 `YYYY-MM-DDThh:mm:ss` timestamp for the specific time the variable should be tracked in UTC.  This will be used for the measurement startTime if the track endpoint is used.",
+          "description": "UTC ISO 8601 YYYY-MM-DDThh:mm:ss timestamp for the specific time the variable should be tracked in UTC.  This will be used for the measurement startTime if the track endpoint is used.",
           "type": "string"
         },
         "secondMostCommonValue": {
@@ -2556,7 +2556,7 @@
           "type": "integer"
         },
         "trackingReminderNotificationTime": {
-          "description": "UTC ISO 8601 `YYYY-MM-DDThh:mm:ss` timestamp for the specific time the variable should be tracked in UTC.  This will be used for the measurement startTime if the track endpoint is used.",
+          "description": "UTC ISO 8601 YYYY-MM-DDThh:mm:ss timestamp for the specific time the variable should be tracked in UTC.  This will be used for the measurement startTime if the track endpoint is used.",
           "type": "string"
         },
         "trackingReminderNotificationTimeEpoch": {
@@ -2572,7 +2572,7 @@
           "type": "string"
         },
         "updatedAt": {
-          "description": "When the record in the database was last updated. Use UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`  datetime format. Time zone should be UTC and not local.",
+          "description": "When the record in the database was last updated. Use UTC ISO 8601 YYYY-MM-DDThh:mm:ss  datetime format. Time zone should be UTC and not local.",
           "type": "string"
         },
         "userId": {
@@ -2987,7 +2987,7 @@
           "type": "string"
         },
         "subscriptionEndsAt": {
-          "description": "UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`",
+          "description": "UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
         "subscriptionProvider": {
@@ -3003,7 +3003,7 @@
           "type": "boolean"
         },
         "userRegistered": {
-          "description": "Example: 2013-12-03 15:25:13 UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`",
+          "description": "Example: 2013-12-03 15:25:13 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
         "userUrl": {
@@ -3126,11 +3126,11 @@
           "type": "integer"
         },
         "commonVariableUpdatedAt": {
-          "description": "Example: 2017-02-07 23:43:39 UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`",
+          "description": "Example: 2017-02-07 23:43:39 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
         "createdAt": {
-          "description": "When the record was first created. Use UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`  datetime format",
+          "description": "When the record was first created. Use UTC ISO 8601 YYYY-MM-DDThh:mm:ss  datetime format",
           "type": "string"
         },
         "unitAbbreviatedName": {
@@ -3187,7 +3187,7 @@
           "type": "string"
         },
         "experimentEndTime": {
-          "description": "Latest measurement start_time to be used in analysis. Use UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`  datetime format",
+          "description": "Latest measurement start_time to be used in analysis. Use UTC ISO 8601 YYYY-MM-DDThh:mm:ss  datetime format",
           "type": "string"
         },
         "experimentEndTimeSeconds": {
@@ -3195,11 +3195,11 @@
           "type": "integer"
         },
         "experimentEndTimeString": {
-          "description": "Example: 2030-01-01 06:00:00 UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`",
+          "description": "Example: 2030-01-01 06:00:00 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
         "experimentStartTime": {
-          "description": "Earliest measurement start_time to be used in analysis. Use UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`  datetime format",
+          "description": "Earliest measurement start_time to be used in analysis. Use UTC ISO 8601 YYYY-MM-DDThh:mm:ss  datetime format",
           "type": "string"
         },
         "experimentStartTimeSeconds": {
@@ -3207,7 +3207,7 @@
           "type": "integer"
         },
         "experimentStartTimeString": {
-          "description": "Example: 2010-03-23 01:31:42 UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`",
+          "description": "Example: 2010-03-23 01:31:42 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
         "fillingType": {
@@ -3287,7 +3287,7 @@
           "type": "number"
         },
         "lastSuccessfulUpdateTime": {
-          "description": "When this variable or its settings were last updated UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`",
+          "description": "When this variable or its settings were last updated UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
         "lastUnitId": {
@@ -3577,7 +3577,7 @@
           "type": "integer"
         },
         "updatedAt": {
-          "description": "When the record in the database was last updated. Use UTC ISO 8601 `YYYY-MM-DDThh:mm:ss` datetime format",
+          "description": "When the record in the database was last updated. Use UTC ISO 8601 YYYY-MM-DDThh:mm:ss datetime format",
           "type": "string"
         },
         "updatedTime": {
@@ -3747,7 +3747,7 @@
           "type": "string"
         },
         "createdTime": {
-          "description": "UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`",
+          "description": "UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
         "unitAbbreviatedName": {
@@ -3839,7 +3839,7 @@
           "type": "integer"
         },
         "updatedTime": {
-          "description": "UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`",
+          "description": "UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
         "variableCategoryName": {
@@ -3866,7 +3866,7 @@
           "type": "string"
         },
         "createdAt": {
-          "description": "When the record was first created. Use UTC ISO 8601 `YYYY-MM-DDThh:mm:ss` datetime format",
+          "description": "When the record was first created. Use UTC ISO 8601 YYYY-MM-DDThh:mm:ss datetime format",
           "type": "string"
         },
         "effectVariableId": {
@@ -3879,7 +3879,7 @@
           "type": "integer"
         },
         "updatedAt": {
-          "description": "When the record in the database was last updated. Use UTC ISO 8601 `YYYY-MM-DDThh:mm:ss` datetime format",
+          "description": "When the record in the database was last updated. Use UTC ISO 8601 YYYY-MM-DDThh:mm:ss datetime format",
           "type": "string"
         },
         "userId": {
@@ -4036,7 +4036,7 @@
       "type": "string"
     },
     "createdAtParam": {
-      "description": "When the record was first created. Use UTC ISO 8601 `YYYY-MM-DDThh:mm:ss` datetime format. Time zone should be UTC and not local.",
+      "description": "When the record was first created. Use UTC ISO 8601 YYYY-MM-DDThh:mm:ss datetime format. Time zone should be UTC and not local.",
       "in": "query",
       "name": "createdAt",
       "required": false,
@@ -4071,7 +4071,7 @@
       "type": "string"
     },
     "earliestMeasurementTimeParam": {
-      "description": "Excluded records with measurement times earlier than this value. Use UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`  datetime format. Time zone should be UTC and not local.",
+      "description": "Excluded records with measurement times earlier than this value. Use UTC ISO 8601 YYYY-MM-DDThh:mm:ss  datetime format. Time zone should be UTC and not local.",
       "in": "query",
       "name": "earliestMeasurementTime",
       "required": false,
@@ -4190,7 +4190,7 @@
       "type": "string"
     },
     "latestMeasurementTimeParam": {
-      "description": "Excluded records with measurement times later than this value. Use UTC ISO 8601 `YYYY-MM-DDThh:mm:ss`  datetime format. Time zone should be UTC and not local.",
+      "description": "Excluded records with measurement times later than this value. Use UTC ISO 8601 YYYY-MM-DDThh:mm:ss  datetime format. Time zone should be UTC and not local.",
       "in": "query",
       "name": "latestMeasurementTime",
       "required": false,
@@ -4516,7 +4516,7 @@
       "type": "string"
     },
     "updatedAtParam": {
-      "description": "When the record was last updated. Use UTC ISO 8601 `YYYY-MM-DDThh:mm:ss` datetime format. Time zone should be UTC and not local.",
+      "description": "When the record was last updated. Use UTC ISO 8601 YYYY-MM-DDThh:mm:ss datetime format. Time zone should be UTC and not local.",
       "in": "query",
       "name": "updatedAt",
       "required": false,
