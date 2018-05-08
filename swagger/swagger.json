@@ -1345,6 +1345,10 @@
         "variableName": {
           "description": "Name of the variable for which we are creating the measurement records",
           "type": "string"
+        },
+        "displayName": {
+          "description": "Example: Trader Joe's Bedtime Tea",
+          "type": "string"
         }
       },
       "required": [
@@ -2010,6 +2014,10 @@
           "description": "Example: 2016-05-18 02:24:08 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
+        "displayName": {
+          "description": "Example: Trader Joe's Bedtime Tea",
+          "type": "string"
+        },
         "unitAbbreviatedName": {
           "description": "Example: /5",
           "type": "string"
@@ -2356,6 +2364,10 @@
         },
         "createdAt": {
           "description": "Example: 2017-07-29 20:49:54 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
+          "type": "string"
+        },
+        "displayName": {
+          "description": "Example: Trader Joe's Bedtime Tea",
           "type": "string"
         },
         "modifiedValue": {
@@ -3156,6 +3168,10 @@
         },
         "description": {
           "description": "Example: negative",
+          "type": "string"
+        },
+        "displayName": {
+          "description": "Example: Trader Joe's Bedtime Tea",
           "type": "string"
         },
         "durationOfAction": {
@@ -6839,7 +6855,7 @@
       "name": "user"
     },
     {
-      "description": "Can be used for search autocomplete for data types like symptoms, foods and treatments and include statistics",
+      "description": "Can be used for search auto-complete for data types like symptoms, foods and treatments and include statistics",
       "externalDocs": {
         "description": "Search for a variable",
         "url": "https://app.quantimo.do/ionic/Modo/www/#/app/reminder-search?accessToken=demo"
