@@ -4178,21 +4178,21 @@
       "type": "boolean"
     },
     "includePrivateParam": {
-      "description": "Include non-public variables in results",
+      "description": "Include user-specific variables in results",
       "in": "query",
       "name": "includePrivate",
       "required": false,
       "type": "boolean"
     },
     "includePublicParam": {
-      "description": "Example: true",
+      "description": "Include variables the user has no measurements for",
       "in": "query",
       "name": "includePublic",
       "required": false,
       "type": "boolean"
     },
     "includeTagsParam": {
-      "description": "Example: true",
+      "description": "Return parent, child, duplicate, and ingredient variables",
       "in": "query",
       "name": "includeTags",
       "required": false,
