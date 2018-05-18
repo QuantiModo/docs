@@ -6380,6 +6380,9 @@
           },
           {
             "$ref": "#/parameters/platform"
+          },
+          {
+            "$ref": "#/parameters/includeTagsParam"
           }
         ],
         "produces": [
