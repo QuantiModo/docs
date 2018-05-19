@@ -3104,6 +3104,7 @@
           "type": "string"
         },
         "childUserTagVariables": {
+          "description": "An example of a parent category variable would be Fruit when tagged with the child sub-type variables Apple.  Child variable (Apple) measurements will be included when the parent category (Fruit) is analyzed.  This allows us to see how Fruit consumption might be affecting without having to record both Fruit and Apple intake.",
           "items": {
             "$ref": "#/definitions/Variable"
           },
@@ -3485,16 +3486,8 @@
           "description": "Example: 1",
           "type": "integer"
         },
-        "parent": {
-          "description": "",
-          "type": "string"
-        },
-        "parentId": {
-          "description": "ID of the parent variable if this variable has any parent",
-          "format": "int32",
-          "type": "integer"
-        },
         "parentUserTagVariables": {
+          "description": "An example of a parent category variable would be Fruit when tagged with the child sub-type variables Apple.  Child variable (Apple) measurements will be included when the parent category (Fruit) is analyzed.  This allows us to see how Fruit consumption might be affecting without having to record both Fruit and Apple intake.",
           "items": {
             "$ref": "#/definitions/Variable"
           },
@@ -6351,14 +6344,14 @@
             "type": "integer"
           },
           {
-            "description": "Id of the parent variable (i.e. Fruit)  you would like to get eligible child variables (i.e. Apple) for.  Child variable measurements will be included in analysis of the parent variable.  For instance, a child of variable Fruit could be Apple",
+            "description": "Id of the parent category variable (i.e. Fruit) you would like to get eligible child sub-type variables (i.e. Apple) for.  Child variable measurements will be included in analysis of the parent variable.  For instance, a child sub-type of the parent category Fruit could be Apple.  When Apple is tagged with the parent category Fruit, Apple measurements will be included when Fruit is analyzed.",
             "in": "query",
             "name": "parentUserTagVariableId",
             "required": false,
             "type": "integer"
           },
           {
-            "description": "Id of the child variable (i.e. Apple) you would like to get eligible parent variables (i.e. Fruit) for.  Child variable measurements will be included in analysis of the parent variable.  For instance, a child of variable Fruit could be Apple",
+            "description": "Id of the child sub-type variable (i.e. Apple) you would like to get eligible parent variables (i.e. Fruit) for.  Child variable measurements will be included in analysis of the parent variable.  For instance, a child sub-type of the parent category Fruit could be Apple. When Apple is tagged with the parent category Fruit, Apple measurements will be included when Fruit is analyzed.",
             "in": "query",
             "name": "childUserTagVariableId",
             "required": false,
