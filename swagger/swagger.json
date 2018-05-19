@@ -3273,6 +3273,7 @@
           "type": "string"
         },
         "joinedUserTagVariables": {
+          "description": "Joining can be used used to merge duplicate variables. For instance, if two variables called Apples (Red Delicious) and Red Delicious Apples are joined, when one of them is analyzed, the measurements for the other will be included as well.",
           "items": {
             "$ref": "#/definitions/Variable"
           },
@@ -6337,7 +6338,7 @@
             "$ref": "#/parameters/tagVariableIdParam"
           },
           {
-            "description": "Id of the variable you would like to get variables that can be joined to.  This is used to merge duplicate variables.   If joinVariableId is specified, this returns only variables eligible to be joined to the variable specified by the joinVariableId",
+            "description": "Id of the variable you would like to get variables that can be joined to.  This is used to merge duplicate variables.   If joinVariableId is specified, this returns only variables eligible to be joined to the variable specified by the joinVariableId.",
             "in": "query",
             "name": "joinVariableId",
             "required": false,
