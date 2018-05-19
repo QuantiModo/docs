@@ -3103,8 +3103,15 @@
           "description": "Example: https://twitter.com/home?status=Check%20out%20my%20Trader%20Joes%20Bedtime%20Tea%20%2F%20Sleepytime%20Tea%20%28any%20Brand%29%20data%21%20https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fcharts%3FvariableName%3DTrader%2520Joes%2520Bedtime%2520Tea%2520%252F%2520Sleepytime%2520Tea%2520%2528any%2520Brand%2529%26userId%3D230%26pngUrl%3Dhttps%253A%252F%252Fapp.quantimo.do%252Fionic%252FModo%252Fwww%252Fimg%252Fvariable_categories%252Ftreatments.png%20%40quantimodo",
           "type": "string"
         },
+        "childCommonTagVariables": {
+          "description": "Commonly defined for all users. An example of a parent category variable would be Fruit when tagged with the child sub-type variables Apple.  Child variable (Apple) measurements will be included when the parent category (Fruit) is analyzed.  This allows us to see how Fruit consumption might be affecting without having to record both Fruit and Apple intake.",
+          "items": {
+            "$ref": "#/definitions/Variable"
+          },
+          "type": "array"
+        },
         "childUserTagVariables": {
-          "description": "An example of a parent category variable would be Fruit when tagged with the child sub-type variables Apple.  Child variable (Apple) measurements will be included when the parent category (Fruit) is analyzed.  This allows us to see how Fruit consumption might be affecting without having to record both Fruit and Apple intake.",
+          "description": "User-defined. An example of a parent category variable would be Fruit when tagged with the child sub-type variables Apple.  Child variable (Apple) measurements will be included when the parent category (Fruit) is analyzed.  This allows us to see how Fruit consumption might be affecting without having to record both Fruit and Apple intake.",
           "items": {
             "$ref": "#/definitions/Variable"
           },
@@ -3252,15 +3259,29 @@
           "description": "Example: https://google.com",
           "type": "string"
         },
+        "ingredientOfCommonTagVariables": {
+          "description": "Commonly defined for all users. IngredientOf variable measurements will be included in analysis of the ingredient variable.  For instance, a ingredient of the variable Lollypop could be Sugar.  This way you only have to record Lollypop consumption and we can use this data to see how sugar might be affecting you.",
+          "items": {
+            "$ref": "#/definitions/Variable"
+          },
+          "type": "array"
+        },
+        "ingredientCommonTagVariables": {
+          "description": "Commonly defined for all users. IngredientOf variable measurements will be included in analysis of the ingredient variable.  For instance, a ingredient of the variable Lollypop could be Sugar.  This way you only have to record Lollypop consumption and we can use this data to see how sugar might be affecting you.",
+          "items": {
+            "$ref": "#/definitions/Variable"
+          },
+          "type": "array"
+        },
         "ingredientOfUserTagVariables": {
-          "description": "IngredientOf variable measurements will be included in analysis of the ingredient variable.  For instance, a ingredient of the variable Lollypop could be Sugar.  This way you only have to record Lollypop consumption and we can use this data to see how sugar might be affecting you.",
+          "description": "User-specific IngredientOf variable measurements will be included in analysis of the ingredient variable.  For instance, a ingredient of the variable Lollypop could be Sugar.  This way you only have to record Lollypop consumption and we can use this data to see how sugar might be affecting you.",
           "items": {
             "$ref": "#/definitions/Variable"
           },
           "type": "array"
         },
         "ingredientUserTagVariables": {
-          "description": "IngredientOf variable measurements will be included in analysis of the ingredient variable.  For instance, a ingredient of the variable Lollypop could be Sugar.  This way you only have to record Lollypop consumption and we can use this data to see how sugar might be affecting you.",
+          "description": "User-specific IngredientOf variable measurements will be included in analysis of the ingredient variable.  For instance, a ingredient of the variable Lollypop could be Sugar.  This way you only have to record Lollypop consumption and we can use this data to see how sugar might be affecting you.",
           "items": {
             "$ref": "#/definitions/Variable"
           },
@@ -3274,8 +3295,15 @@
           "description": "",
           "type": "string"
         },
+        "joinedCommonTagVariables": {
+          "description": "Commonly defined for all users.  Joining can be used used to merge duplicate variables. For instance, if two variables called Apples (Red Delicious) and Red Delicious Apples are joined, when one of them is analyzed, the measurements for the other will be included as well.",
+          "items": {
+            "$ref": "#/definitions/Variable"
+          },
+          "type": "array"
+        },
         "joinedUserTagVariables": {
-          "description": "Joining can be used used to merge duplicate variables. For instance, if two variables called Apples (Red Delicious) and Red Delicious Apples are joined, when one of them is analyzed, the measurements for the other will be included as well.",
+          "description": "User-defined. Joining can be used used to merge duplicate variables. For instance, if two variables called Apples (Red Delicious) and Red Delicious Apples are joined, when one of them is analyzed, the measurements for the other will be included as well.",
           "items": {
             "$ref": "#/definitions/Variable"
           },
@@ -3489,8 +3517,15 @@
           "description": "Example: 1",
           "type": "integer"
         },
+        "parentCommonTagVariables": {
+          "description": "Commonly defined for all users.  An example of a parent category variable would be Fruit when tagged with the child sub-type variables Apple.  Child variable (Apple) measurements will be included when the parent category (Fruit) is analyzed.  This allows us to see how Fruit consumption might be affecting without having to record both Fruit and Apple intake.",
+          "items": {
+            "$ref": "#/definitions/Variable"
+          },
+          "type": "array"
+        },
         "parentUserTagVariables": {
-          "description": "An example of a parent category variable would be Fruit when tagged with the child sub-type variables Apple.  Child variable (Apple) measurements will be included when the parent category (Fruit) is analyzed.  This allows us to see how Fruit consumption might be affecting without having to record both Fruit and Apple intake.",
+          "description": "User-defined. An example of a parent category variable would be Fruit when tagged with the child sub-type variables Apple.  Child variable (Apple) measurements will be included when the parent category (Fruit) is analyzed.  This allows us to see how Fruit consumption might be affecting without having to record both Fruit and Apple intake.",
           "items": {
             "$ref": "#/definitions/Variable"
           },
