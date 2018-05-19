@@ -3253,12 +3253,14 @@
           "type": "string"
         },
         "ingredientOfUserTagVariables": {
+          "description": "IngredientOf variable measurements will be included in analysis of the ingredient variable.  For instance, a ingredient of the variable Lollypop could be Sugar.  This way you only have to record Lollypop consumption and we can use this data to see how sugar might be affecting you.",
           "items": {
             "$ref": "#/definitions/Variable"
           },
           "type": "array"
         },
         "ingredientUserTagVariables": {
+          "description": "IngredientOf variable measurements will be included in analysis of the ingredient variable.  For instance, a ingredient of the variable Lollypop could be Sugar.  This way you only have to record Lollypop consumption and we can use this data to see how sugar might be affecting you.",
           "items": {
             "$ref": "#/definitions/Variable"
           },
@@ -6359,14 +6361,14 @@
             "type": "integer"
           },
           {
-            "description": "Id of the ingredient variable (i.e. Fructose)  you would like to get eligible ingredientOf variables (i.e. Apple) for.  IngredientOf variable measurements will be included in analysis of the ingredient variable.  For instance, a ingredientOf of variable Fruit could be Apple",
+            "description": "Id of the ingredient variable (i.e. Fructose)  you would like to get eligible ingredientOf variables (i.e. Apple) for.  IngredientOf variable measurements will be included in analysis of the ingredient variable.  For instance, a ingredientOf of variable Fruit could be Apple.",
             "in": "query",
             "name": "ingredientUserTagVariableId",
             "required": false,
             "type": "integer"
           },
           {
-            "description": "Id of the ingredientOf variable (i.e. Apple) you would like to get eligible ingredient variables (i.e. Fructose) for.  IngredientOf variable measurements will be included in analysis of the ingredient variable.  For instance, a ingredientOf of variable Fruit could be Apple",
+            "description": "Id of the ingredientOf variable (i.e. Apple) you would like to get eligible ingredient variables (i.e. Fructose) for.  IngredientOf variable measurements will be included in analysis of the ingredient variable.  For instance, a ingredientOf of variable Fruit could be Apple.",
             "in": "query",
             "name": "ingredientOfUserTagVariableId",
             "required": false,
