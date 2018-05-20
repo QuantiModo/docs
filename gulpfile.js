@@ -236,7 +236,7 @@ function browserify(path, callback){
         callback();
     });
 }
-gulp.task('js-4-release', [], function (callback) {
+gulp.task('js-5-release', [], function (callback) {
     function updateBowerAndPackageJsonVersions(path, callback) {
         var bowerJson = readJsonFile(path + '/bower.json');
         bowerJson.dependencies.quantimodo = apiVersionNumber;
@@ -497,6 +497,9 @@ gulp.task('js-3-copy-everywhere', ['js-sdk-browserify-unzipped'], function(){
     }
     console.log("After completion, open repo, discard readme changes and commit new version to Github.  Then you can run js-4-release");
 });
+gulp.task('js-4-reset-package-json-readme', [], function(){
+    resetPackageJsonAndReadme();
+});
 var laravelVendorPath = pathToQmDocker + '/laravel/vendor/quantimodo/quantimodo-sdk-php';
 gulp.task('php-2-sdk-copy-to-repo', ['clean-repos-except-git'], function(){
     return copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage('php') + '/QuantiModoClient/**/*',
@@ -539,6 +542,10 @@ function commitChanges(language, filesToResetArray){
         ' && git push' +
         ' && git tag ' + apiVersionNumber +
         ' && git push origin ' + apiVersionNumber);
+}
+function resetPackageJsonAndReadme(){
+    var command = "cd " + getRepoPathForSdkLanguage(language) + ' && git checkout package.json && git checkout README.md';
+    executeCommand(command);
 }
 gulp.task('5-commit-changes', [], function(){
     for(var i = 0; i < languages.length; i++) {
