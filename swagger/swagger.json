@@ -2978,6 +2978,10 @@
           "description": "Example: 1",
           "type": "boolean"
         },
+        "shareAllData": {
+          "description": "Share all studies, charts, and measurement data with all other users",
+          "type": "boolean"
+        },
         "smsNotificationsEnabled": {
           "description": "Example: false",
           "type": "boolean"
@@ -6162,6 +6166,15 @@
           },
           {
             "$ref": "#/parameters/platform"
+          },
+          {
+            "description": "User settings to update",
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
           }
         ],
         "produces": [
