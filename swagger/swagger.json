@@ -4377,6 +4377,13 @@
       "required": false,
       "type": "string"
     },
+    "recalculate": {
+      "description": "Recalculate instead of using cached analysis",
+      "in": "query",
+      "name": "recalculate",
+      "required": false,
+      "type": "boolean"
+    },
     "redirectUriParam": {
       "description": "The redirect URI is the URL within your client application that will receive the OAuth2 credentials.",
       "in": "query",
@@ -6781,6 +6788,9 @@
           },
           {
             "$ref": "#/parameters/platform"
+          },
+          {
+            "$ref": "#/parameters/recalculate"
           }
         ],
         "produces": [
