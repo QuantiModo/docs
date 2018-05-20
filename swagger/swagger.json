@@ -6435,6 +6435,9 @@
           },
           {
             "$ref": "#/parameters/includeTagsParam"
+          },
+          {
+            "$ref": "#/parameters/recalculate"
           }
         ],
         "produces": [
