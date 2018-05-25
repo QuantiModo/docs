@@ -4613,6 +4613,13 @@
       "required": false,
       "type": "integer"
     },
+    "variableIdParam": {
+      "description": "Example: 13",
+      "in": "query",
+      "name": "variableId",
+      "required": false,
+      "type": "integer"
+    },
     "variableCategoryNameParam": {
       "description": "Limit results to a specific variable category",
       "enum": [
@@ -6451,6 +6458,9 @@
           },
           {
             "$ref": "#/parameters/recalculate"
+          },
+          {
+            "$ref": "#/parameters/variableIdParam"
           }
         ],
         "produces": [
