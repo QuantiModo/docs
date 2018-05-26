@@ -1,5 +1,7 @@
 # QuantiModo API
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/QuantiModo/docs.svg)](https://greenkeeper.io/)
+
 - Sign in/Sign up, and add some data at
 [https://app.quantimo.do](https://app.quantimo.do) to try out the API foryourself
 
