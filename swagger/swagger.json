@@ -290,6 +290,10 @@
           "description": "Example: Got 412 new measurements on 2017-07-31 10:10:34",
           "type": "string"
         },
+        "mobileConnectMethod": {
+          "description": "Mobile connect method: webview, cordova, google, spreadsheet, or ip",
+          "type": "string"
+        },
         "name": {
           "description": "Connector lowercase system name",
           "type": "string"
