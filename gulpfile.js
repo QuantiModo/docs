@@ -308,6 +308,7 @@ gulp.task('clean-repos-except-git', [], function(){
     for(var i = 0; i < languages.length; i++) {
         if(i === languages.length - 1){ return cleanOneFolderExceptGit(getRepoPathForSdkLanguage(languages[i]));}
         cleanOneFolderExceptGit(getRepoPathForSdkLanguage(languages[i]));
+        executeCommand("cd " + getRepoPathForSdkLanguage(languages[i]) + " && git pull");
     }
 });
 function getRequestOptions(language) {
