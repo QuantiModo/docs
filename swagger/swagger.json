@@ -305,6 +305,10 @@
           },
           "type": "array"
         },
+        "premium": {
+          "description": "True if connection requires upgrade",
+          "type": "boolean"
+        },
         "scopes": {
           "description": "Required connector scopes",
           "items": {
