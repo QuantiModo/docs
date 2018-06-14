@@ -174,6 +174,49 @@
         }
       }
     },
+    "StudyCharts": {
+      "description": "An object with various chart properties each property contain and svg and Highcharts configuration",
+      "properties": {
+        "populationTraitScatterPlot": {
+          "$ref": "#/definitions/Chart"
+        },
+        "outcomeDistributionColumnChart": {
+          "$ref": "#/definitions/Chart"
+        },
+        "predictorDistributionColumnChart": {
+          "$ref": "#/definitions/Chart"
+        },
+        "correlationScatterPlot": {
+          "$ref": "#/definitions/Chart"
+        },
+        "pairsOverTimeLineChart": {
+          "$ref": "#/definitions/Chart"
+        }
+      }
+    },
+    "VariableCharts": {
+      "description": "An object with various chart properties each property contain and svg and Highcharts configuration",
+      "properties": {
+        "hourlyColumnChart": {
+          "$ref": "#/definitions/Chart"
+        },
+        "monthlyColumnChart": {
+          "$ref": "#/definitions/Chart"
+        },
+        "distributionColumnChart": {
+          "$ref": "#/definitions/Chart"
+        },
+        "weekdayColumnChart": {
+          "$ref": "#/definitions/Chart"
+        },
+        "lineChartWithoutSmoothing": {
+          "$ref": "#/definitions/Chart"
+        },
+        "lineChartWithSmoothing": {
+          "$ref": "#/definitions/Chart"
+        }
+      }
+    },
     "CommonResponse": {
       "properties": {
         "message": {
@@ -290,6 +333,10 @@
           "description": "Example: Got 412 new measurements on 2017-07-31 10:10:34",
           "type": "string"
         },
+        "mobileConnectMethod": {
+          "description": "Mobile connect method: webview, cordova, google, spreadsheet, or ip",
+          "type": "string"
+        },
         "name": {
           "description": "Connector lowercase system name",
           "type": "string"
@@ -300,6 +347,10 @@
             "type": "string"
           },
           "type": "array"
+        },
+        "premium": {
+          "description": "True if connection requires upgrade",
+          "type": "boolean"
         },
         "scopes": {
           "description": "Required connector scopes",
@@ -1705,6 +1756,12 @@
           },
           "type": "array"
         },
+        "studyCharts": {
+          "items": {
+            "$ref": "#/definitions/StudyCharts"
+          },
+          "type": "array"
+        },
         "effectVariable": {
           "$ref": "#/definitions/Variable"
         },
@@ -3080,8 +3137,7 @@
           "type": "boolean"
         },
         "charts": {
-          "description": "An object with various chart properties each property contain and svg and Highcharts configuration",
-          "type": "object"
+          "$ref": "#/definitions/VariableCharts"
         },
         "chartsLinkDynamic": {
           "description": "Example: https://local.quantimo.do/ionic/Modo/www/#/app/charts/Trader%20Joes%20Bedtime%20Tea%20%2F%20Sleepytime%20Tea%20%28any%20Brand%29?variableName=Trader%20Joes%20Bedtime%20Tea%20%2F%20Sleepytime%20Tea%20%28any%20Brand%29&userId=230&pngUrl=https%3A%2F%2Fapp.quantimo.do%2Fionic%2FModo%2Fwww%2Fimg%2Fvariable_categories%2Ftreatments.png",

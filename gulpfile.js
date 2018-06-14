@@ -308,6 +308,7 @@ gulp.task('clean-repos-except-git', [], function(){
     for(var i = 0; i < languages.length; i++) {
         if(i === languages.length - 1){ return cleanOneFolderExceptGit(getRepoPathForSdkLanguage(languages[i]));}
         cleanOneFolderExceptGit(getRepoPathForSdkLanguage(languages[i]));
+        executeCommand("cd " + getRepoPathForSdkLanguage(languages[i]) + " && git pull");
     }
 });
 function getRequestOptions(language) {
@@ -573,7 +574,7 @@ function authenticateQuantiModoSdk() {
         quantimodo_oauth2.accessToken = process.env.TEST_ACCESS_TOKEN;
     } else {
         logInfo("Using test user access token");
-        quantimodo_oauth2.accessToken = '42ff4170172357b7312bb127fb58d5ea464943c1';
+        quantimodo_oauth2.accessToken = process.env.QUANTIMODO_ACCESS_TOKEN;
     }
 }
 function convertPathToFilename(path) {
