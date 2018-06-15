@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "engines": {
     "node": "6.9.4",
-    "npm": "3.6.0"
+    "npm": "6.1.0"
   },
   "description": "",
   "main": "index.js",
@@ -25,10 +25,10 @@
     "gulp-ignore": "^2.0.2",
     "gulp-rename": "^1.2.0",
     "gulp-unzip": "^1.0.0",
-    "q": "^1.4.1"
-    "quantimodo": "5.9.60814",
+    "q": "^1.4.1
     "request-promise": "^4.2.1",
     "run-sequence": "^2.2.1",
+    "quantimodo": "5.9.61414",
     "unzip": "latest"
   },
   "devDependencies": {}
