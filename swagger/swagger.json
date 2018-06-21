@@ -2944,6 +2944,10 @@
           "description": "Example: 1",
           "type": "boolean"
         },
+        "createdAt": {
+          "description": "When the record was first created. Use UTC ISO 8601 YYYY-MM-DDThh:mm:ss  datetime format",
+          "type": "string"
+        },
         "displayName": {
           "description": "User display name",
           "type": "string"
@@ -3071,6 +3075,10 @@
         "trackLocation": {
           "description": "Example: 1",
           "type": "boolean"
+        },
+        "updatedAt": {
+          "description": "When the record in the database was last updated. Use UTC ISO 8601 YYYY-MM-DDThh:mm:ss datetime format",
+          "type": "string"
         },
         "userRegistered": {
           "description": "Example: 2013-12-03 15:25:13 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
