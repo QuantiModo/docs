@@ -1757,10 +1757,7 @@
           "type": "array"
         },
         "studyCharts": {
-          "items": {
-            "$ref": "#/definitions/StudyCharts"
-          },
-          "type": "array"
+          "$ref": "#/definitions/StudyCharts"
         },
         "effectVariable": {
           "$ref": "#/definitions/Variable"
