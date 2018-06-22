@@ -5740,6 +5740,59 @@
         ]
       }
     },
+    "/v3/sharing/delete": {
+      "delete": {
+        "description": "Remove access to user data for a given client_id associated with a given individual, app, or study",
+        "operationId": "deleteShare",
+        "parameters": [
+          {
+            "description": "Client id of the individual, study, or app that the user wishes to no longer have access to their data",
+            "in": "query",
+            "name": "clientIdToRevoke",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Example: I hate you!",
+            "in": "query",
+            "name": "reason",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "$ref": "#/parameters/platform"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "204": {
+            "description": "Successful Operation",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          "401": {
+            "description": "Not Authenticated"
+          }
+        },
+        "security": [
+          {
+            "access_token": []
+          },
+          {
+            "quantimodo_oauth2": [
+              "writemeasurements"
+            ]
+          }
+        ],
+        "summary": "Delete share",
+        "tags": [
+          "user"
+        ]
+      }
+    },
     "/v3/study/publish": {
       "post": {
         "description": "Post Study Publish",
@@ -6890,55 +6943,6 @@
         "summary": "Delete vote",
         "tags": [
           "analytics"
-        ]
-      }
-    },
-    "/v3/sharing/delete": {
-      "delete": {
-        "description": "Remove access to user data for a given client_id associated with a given individual, app, or study",
-        "operationId": "deleteShare",
-        "parameters": [
-          {
-            "$ref": "#/parameters/clientIdParam"
-          },
-          {
-            "description": "Example: I hate you!",
-            "in": "query",
-            "name": "reason",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "$ref": "#/parameters/platform"
-          }
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "responses": {
-          "204": {
-            "description": "Successful Operation",
-            "schema": {
-              "$ref": "#/definitions/CommonResponse"
-            }
-          },
-          "401": {
-            "description": "Not Authenticated"
-          }
-        },
-        "security": [
-          {
-            "access_token": []
-          },
-          {
-            "quantimodo_oauth2": [
-              "writemeasurements"
-            ]
-          }
-        ],
-        "summary": "Delete share",
-        "tags": [
-          "user"
         ]
       }
     },
