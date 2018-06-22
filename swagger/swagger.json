@@ -5756,7 +5756,7 @@
             "description": "Example: I hate you!",
             "in": "query",
             "name": "reason",
-            "required": true,
+            "required": false,
             "type": "string"
           },
           {
