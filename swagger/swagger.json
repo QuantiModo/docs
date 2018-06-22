@@ -2920,6 +2920,13 @@
           "description": "Is user administrator",
           "type": "boolean"
         },
+        "authorizedClients": {
+          "description": "Apps, studies, and individuals who have access to user's data",
+          "items": {
+            "$ref": "#/definitions/AppSettings"
+          },
+          "type": "array"
+        },
         "avatar": {
           "description": "Example: https://lh6.googleusercontent.com/-BHr4hyUWqZU/AAAAAAAAAAI/AAAAAAAIG28/2Lv0en738II/photo.jpg?sz=50",
           "type": "string"
@@ -4258,6 +4265,13 @@
       "name": "groupingWidth",
       "required": false,
       "type": "integer"
+    },
+    "includeAuthorizedClientsParam": {
+      "description": "Return list of apps, studies, and individuals with access to user data",
+      "in": "query",
+      "name": "includeAuthorizedClients",
+      "required": false,
+      "type": "boolean"
     },
     "includeChartsParam": {
       "description": "Highcharts configs that can be used if you have highcharts.js included on the page.  This only works if the id or name query parameter is also provided.",
@@ -6140,6 +6154,9 @@
           },
           {
             "$ref": "#/parameters/pwd"
+          },
+          {
+            "$ref": "#/parameters/includeAuthorizedClientsParam"
           }
         ],
         "produces": [
