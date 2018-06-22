@@ -118,6 +118,36 @@
         "status"
       ]
     },
+    "AuthorizedClients": {
+      "properties": {
+        "apps": {
+          "description": "Applications with access to user measurements for all variables",
+          "items": {
+            "$ref": "#/definitions/AppSettings"
+          },
+          "type": "array"
+        },
+        "individuals": {
+          "description": "Individuals such as physicians or family members with access to user measurements for all variables",
+          "items": {
+            "$ref": "#/definitions/AppSettings"
+          },
+          "type": "array"
+        },
+        "studies": {
+          "description": "Studies with access to generally anonymous user measurements for a specific predictor and outcome variable",
+          "items": {
+            "$ref": "#/definitions/AppSettings"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "apps",
+        "individuals",
+        "studies"
+      ]
+    },
     "Button": {
       "properties": {
         "link": {
@@ -2921,11 +2951,7 @@
           "type": "boolean"
         },
         "authorizedClients": {
-          "description": "Apps, studies, and individuals who have access to user's data",
-          "items": {
-            "$ref": "#/definitions/AppSettings"
-          },
-          "type": "array"
+          "$ref": "#/definitions/AuthorizedClients"
         },
         "avatar": {
           "description": "Example: https://lh6.googleusercontent.com/-BHr4hyUWqZU/AAAAAAAAAAI/AAAAAAAIG28/2Lv0en738II/photo.jpg?sz=50",
@@ -6864,6 +6890,55 @@
         "summary": "Delete vote",
         "tags": [
           "analytics"
+        ]
+      }
+    },
+    "/v3/sharing/delete": {
+      "delete": {
+        "description": "Remove access to user data for a given client_id associated with a given individual, app, or study",
+        "operationId": "deleteShare",
+        "parameters": [
+          {
+            "$ref": "#/parameters/clientIdParam"
+          },
+          {
+            "description": "Example: I hate you!",
+            "in": "query",
+            "name": "reason",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "$ref": "#/parameters/platform"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "204": {
+            "description": "Successful Operation",
+            "schema": {
+              "$ref": "#/definitions/CommonResponse"
+            }
+          },
+          "401": {
+            "description": "Not Authenticated"
+          }
+        },
+        "security": [
+          {
+            "access_token": []
+          },
+          {
+            "quantimodo_oauth2": [
+              "writemeasurements"
+            ]
+          }
+        ],
+        "summary": "Delete share",
+        "tags": [
+          "user"
         ]
       }
     },
