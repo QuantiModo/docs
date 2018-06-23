@@ -4573,6 +4573,13 @@
       "required": false,
       "type": "string"
     },
+    "studyClientIdParam": {
+      "description": "Client id for the cohort study you want",
+      "in": "query",
+      "name": "studyClientId",
+      "required": false,
+      "type": "string"
+    },
     "synonymsParam": {
       "description": "Example: %McDonalds hotcake%",
       "in": "query",
@@ -5795,9 +5802,93 @@
     },
     "/v3/study/publish": {
       "post": {
+        "description": "Make a study and all it's data publicly visible by anyone",
+        "operationId": "postStudyPublish",
+        "parameters": [
+          {
+            "$ref": "#/parameters/causeVariableNameParam"
+          },
+          {
+            "$ref": "#/parameters/effectVariableNameParam"
+          },
+          {
+            "$ref": "#/parameters/userIdParam"
+          },
+          {
+            "$ref": "#/parameters/appNameParam"
+          },
+          {
+            "$ref": "#/parameters/clientIdParam"
+          },
+          {
+            "$ref": "#/parameters/includeChartsParam"
+          },
+          {
+            "$ref": "#/parameters/platform"
+          },
+          {
+            "$ref": "#/parameters/recalculate"
+          },
+          {
+            "$ref": "#/parameters/studyClientIdParam"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/PostStudyPublishResponse"
+            }
+          },
+          "401": {
+            "description": "Not authenticated"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "summary": "Post Study Publish",
+        "tags": [
+          "study"
+        ]
+      }
+    },
+    "/v3/study/join": {
+      "post": {
         "description": "Post Study Publish",
         "operationId": "postStudyPublish",
-        "parameters": [],
+        "parameters": [
+          {
+            "$ref": "#/parameters/causeVariableNameParam"
+          },
+          {
+            "$ref": "#/parameters/effectVariableNameParam"
+          },
+          {
+            "$ref": "#/parameters/userIdParam"
+          },
+          {
+            "$ref": "#/parameters/appNameParam"
+          },
+          {
+            "$ref": "#/parameters/clientIdParam"
+          },
+          {
+            "$ref": "#/parameters/includeChartsParam"
+          },
+          {
+            "$ref": "#/parameters/platform"
+          },
+          {
+            "$ref": "#/parameters/studyClientIdParam"
+          }
+        ],
         "produces": [
           "application/json"
         ],
@@ -6974,6 +7065,9 @@
           },
           {
             "$ref": "#/parameters/recalculate"
+          },
+          {
+            "$ref": "#/parameters/studyClientIdParam"
           }
         ],
         "produces": [
