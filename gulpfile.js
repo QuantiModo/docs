@@ -263,7 +263,7 @@ gulp.task('js-5-release', [], function (callback) {
         ' && git push origin ' + apiVersionNumber +
         ' && bower version ' + apiVersionNumber, function () {
         executeCommand("cd " + getRepoPathForSdkLanguage(javascriptFlavor) + " && npm version " + apiVersionNumber +
-            ' && npm publish', function () {
+            ' && npm publish && git push && git push origin ' + apiVersionNumber, function () {
             updateBowerAndPackageJsonVersions(pathToQmDocker);
             updateBowerAndPackageJsonVersions(pathToIonic);
             //updateBowerAndPackageJsonVersions(".");
