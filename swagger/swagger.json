@@ -5800,6 +5800,78 @@
         ]
       }
     },
+    "/v3/studies/open": {
+      "get": {
+        "description": "Get Open Studies",
+        "operationId": "getOpenStudies",
+        "parameters": [
+          {
+            "$ref": "#/parameters/causeVariableNameParam"
+          },
+          {
+            "$ref": "#/parameters/effectVariableNameParam"
+          },
+          {
+            "$ref": "#/parameters/userIdParam"
+          },
+          {
+            "$ref": "#/parameters/appNameParam"
+          },
+          {
+            "$ref": "#/parameters/clientIdParam"
+          },
+          {
+            "$ref": "#/parameters/includeChartsParam"
+          },
+          {
+            "$ref": "#/parameters/platform"
+          },
+          {
+            "$ref": "#/parameters/recalculate"
+          },
+          {
+            "$ref": "#/parameters/studyClientIdParam"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/Study"
+            }
+          },
+          "401": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/JsonErrorResponse"
+            }
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "security": [
+          {
+            "access_token": []
+          },
+          {
+            "quantimodo_oauth2": [
+              "basic"
+            ]
+          }
+        ],
+        "summary": "Get Study",
+        "tags": [
+          "analytics"
+        ]
+      }
+    },
     "/v3/study/publish": {
       "post": {
         "description": "Make a study and all it's data publicly visible by anyone",
@@ -5855,7 +5927,7 @@
         },
         "summary": "Post Study Publish",
         "tags": [
-          "study"
+          "analytics"
         ]
       }
     },
@@ -5880,13 +5952,7 @@
             "$ref": "#/parameters/clientIdParam"
           },
           {
-            "$ref": "#/parameters/includeChartsParam"
-          },
-          {
             "$ref": "#/parameters/platform"
-          },
-          {
-            "$ref": "#/parameters/studyClientIdParam"
           }
         ],
         "produces": [
@@ -5911,7 +5977,7 @@
         },
         "summary": "Post Study Publish",
         "tags": [
-          "study"
+          "analytics"
         ]
       }
     },
