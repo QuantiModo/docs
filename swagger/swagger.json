@@ -5874,8 +5874,8 @@
     },
     "/v3/study/publish": {
       "post": {
-        "description": "Make a study and all it's data publicly visible by anyone",
-        "operationId": "postStudyPublish",
+        "description": "Make a study and all related measurements publicly visible by anyone",
+        "operationId": "publishStudy",
         "parameters": [
           {
             "$ref": "#/parameters/causeVariableNameParam"
@@ -5925,7 +5925,7 @@
             "description": "Internal server error"
           }
         },
-        "summary": "Post Study Publish",
+        "summary": "Publish Study",
         "tags": [
           "analytics"
         ]
@@ -5933,8 +5933,8 @@
     },
     "/v3/study/join": {
       "post": {
-        "description": "Post Study Publish",
-        "operationId": "postStudyPublish",
+        "description": "Anonymously share measurements for specified variables",
+        "operationId": "joinStudy",
         "parameters": [
           {
             "$ref": "#/parameters/causeVariableNameParam"
@@ -5975,7 +5975,7 @@
             "description": "Internal server error"
           }
         },
-        "summary": "Post Study Publish",
+        "summary": "Join Study",
         "tags": [
           "analytics"
         ]
