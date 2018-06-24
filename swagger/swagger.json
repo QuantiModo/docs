@@ -5984,6 +5984,13 @@
             "type": "string"
           },
           {
+            "description": "Space separated list of scopes to grant to the recipient (i.e. readmeasurements, writemeasurements, measurements:read",
+            "in": "query",
+            "name": "scopes",
+            "required": false,
+            "type": "string"
+          },
+          {
             "$ref": "#/parameters/platform"
           },
           {
@@ -6608,7 +6615,7 @@
     },
     "/v3/trackingReminders/delete": {
       "delete": {
-        "description": "Delete previously created tracking reminder",
+        "description": "Stop getting notifications to record data for a variable.  Previously recorded measurements will be preserved.",
         "operationId": "deleteTrackingReminder",
         "parameters": [
           {
@@ -6648,7 +6655,7 @@
             ]
           }
         ],
-        "summary": "Delete tracking reminder",
+        "summary": "Delete Tracking Reminder",
         "tags": [
           "reminders"
         ]
@@ -7391,7 +7398,7 @@
     },
     "/v3/votes": {
       "post": {
-        "description": "This is to enable users to indicate their opinion on the plausibility of a causal relationship between a treatment and outcome. We incorporates crowd-sourced plausibility estimations into our algorithm. This is done allowing user to indicate their view of the plausibility of each relationship with thumbs up/down buttons placed next to each prediction.",
+        "description": "I am really good at finding correlations and even compensating for various onset delays and durations of action. However, you are much better than me at knowing if there's a way that a given factor could plausibly influence an outcome. You can help me learn and get better at my predictions by pressing the thumbs down button for relationships that you think are coincidences and thumbs up once that make logic sense.",
         "operationId": "postVote",
         "parameters": [
           {
