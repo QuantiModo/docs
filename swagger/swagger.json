@@ -1208,6 +1208,32 @@
         "success"
       ]
     },
+    "GetSharesResponse": {
+      "properties": {
+        "authorizedClients": {
+          "$ref": "#/definitions/AuthorizedClients"
+        },
+        "description": {
+          "description": "Message",
+          "type": "string"
+        },
+        "message": {
+          "description": "Message",
+          "type": "string"
+        },
+        "status": {
+          "description": "Status code",
+          "type": "integer"
+        },
+        "success": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "status",
+        "success"
+      ]
+    },
     "GetTrackingReminderNotificationsResponse": {
       "properties": {
         "data": {
@@ -5848,7 +5874,7 @@
           "200": {
             "description": "Successful Operation",
             "schema": {
-              "$ref": "#/definitions/AuthorizedClients"
+              "$ref": "#/definitions/GetSharesResponse"
             }
           },
           "401": {
