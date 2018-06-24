@@ -4579,6 +4579,13 @@
       "required": false,
       "type": "string"
     },
+    "sharingEmailParam": {
+      "description": "Enter the email address of the friend, family member, or health-care provider that you would like to give access to your measurements",
+      "in": "body",
+      "name": "emailAddress",
+      "required": true,
+      "type": "string"
+    },
     "sortParam": {
       "description": "Sort by one of the listed field names. If the field name is prefixed with `-`, it will sort in descending order.",
       "in": "query",
@@ -5928,36 +5935,32 @@
         "operationId": "inviteShare",
         "parameters": [
           {
-            "description": "Email address of the individual that the user wishes to have access to their measurements",
-            "in": "query",
-            "name": "emailAddress",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/sharingEmailParam"
           },
           {
             "description": "Name of the individual that the user wishes to have access to their measurements",
-            "in": "query",
+            "in": "body",
             "name": "name",
-            "required": true,
+            "required": false,
             "type": "string"
           },
           {
             "description": "Example: I would like to share my measurements with you!",
-            "in": "query",
+            "in": "body",
             "name": "emailSubject",
             "required": false,
             "type": "string"
           },
           {
             "description": "Example: I would like to share my data with you so you can help me identify find discover hidden causes of and new treatments for my illness.",
-            "in": "query",
+            "in": "body",
             "name": "emailBody",
             "required": false,
             "type": "string"
           },
           {
             "description": "Space separated list of scopes to grant to the recipient (i.e. readmeasurements, writemeasurements, measurements:read",
-            "in": "query",
+            "in": "body",
             "name": "scopes",
             "required": false,
             "type": "string"
