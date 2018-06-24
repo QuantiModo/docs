@@ -4849,7 +4849,7 @@
   "paths": {
     "/v3/appSettings": {
       "get": {
-        "description": "Get QuantiModo client app settings",
+        "description": "Get the settings for your application configurable at https://build.quantimo.do",
         "operationId": "getAppSettings",
         "parameters": [
           {
@@ -5893,7 +5893,7 @@
         ],
         "summary": "Get Authorized Apps, Studies, and Individuals",
         "tags": [
-          "user"
+          "shares"
         ]
       }
     },
@@ -5946,7 +5946,77 @@
         ],
         "summary": "Delete share",
         "tags": [
-          "user"
+          "shares"
+        ]
+      }
+    },
+    "/v3/shares/invite": {
+      "post": {
+        "description": "Invite someone to view your measurements",
+        "operationId": "inviteShare",
+        "parameters": [
+          {
+            "description": "Email address of the individual that the user wishes to have access to their measurements",
+            "in": "query",
+            "name": "emailAddress",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Name of the individual that the user wishes to have access to their measurements",
+            "in": "query",
+            "name": "name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Example: I would like to share my measurements with you!",
+            "in": "query",
+            "name": "emailSubject",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Example: I would like to share my data with you so you can help me identify find discover hidden causes of and new treatments for my illness.",
+            "in": "query",
+            "name": "emailBody",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "$ref": "#/parameters/platform"
+          },
+          {
+            "$ref": "#/parameters/clientIdParam"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "204": {
+            "description": "Successful Operation",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          "401": {
+            "description": "Not Authenticated"
+          }
+        },
+        "security": [
+          {
+            "access_token": []
+          },
+          {
+            "quantimodo_oauth2": [
+              "writemeasurements"
+            ]
+          }
+        ],
+        "summary": "Delete share",
+        "tags": [
+          "shares"
         ]
       }
     },
@@ -6024,7 +6094,7 @@
         ],
         "summary": "Get Open Studies",
         "tags": [
-          "analytics"
+          "studies"
         ]
       }
     },
@@ -6099,7 +6169,7 @@
         ],
         "summary": "Get studies you have joined",
         "tags": [
-          "analytics"
+          "studies"
         ]
       }
     },
@@ -6168,7 +6238,7 @@
         ],
         "summary": "Get studies you have joined",
         "tags": [
-          "analytics"
+          "studies"
         ]
       }
     },
