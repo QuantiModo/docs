@@ -102,20 +102,18 @@
         "appSettings": {
           "$ref": "#/definitions/AppSettings"
         },
-        "message": {
-          "description": "Message",
+        "description": {
+          "description": "Can be used as body of help info popup",
           "type": "string"
         },
-        "status": {
-          "description": "Status code",
-          "type": "integer"
-        },
-        "success": {
-          "type": "boolean"
+        "summary": {
+          "description": "Can be used as title in help info popup",
+          "type": "string"
         }
       },
       "required": [
-        "status"
+        "description",
+        "summary"
       ]
     },
     "AuthorizedClients": {
@@ -249,21 +247,18 @@
     },
     "CommonResponse": {
       "properties": {
-        "message": {
-          "description": "Message",
+        "description": {
+          "description": "Can be used as body of help info popup",
           "type": "string"
         },
-        "status": {
-          "description": "Status code",
-          "type": "integer"
-        },
-        "success": {
-          "type": "boolean"
+        "summary": {
+          "description": "Can be used as title in help info popup",
+          "type": "string"
         }
       },
       "required": [
-        "status",
-        "success"
+        "description",
+        "summary"
       ],
       "type": "object"
     },
@@ -1123,21 +1118,18 @@
           },
           "type": "array"
         },
-        "message": {
-          "description": "Message",
+        "description": {
+          "description": "Can be used as body of help info popup",
           "type": "string"
         },
-        "status": {
-          "description": "Status code",
-          "type": "integer"
-        },
-        "success": {
-          "type": "boolean"
+        "summary": {
+          "description": "Can be used as title in help info popup",
+          "type": "string"
         }
       },
       "required": [
-        "status",
-        "success"
+        "description",
+        "summary"
       ]
     },
     "GetCorrelationsDataResponse": {
@@ -1162,21 +1154,18 @@
         "data": {
           "$ref": "#/definitions/GetCorrelationsDataResponse"
         },
-        "message": {
-          "description": "Message",
+        "description": {
+          "description": "Can be used as body of help info popup",
           "type": "string"
         },
-        "status": {
-          "description": "Status code",
-          "type": "integer"
-        },
-        "success": {
-          "type": "boolean"
+        "summary": {
+          "description": "Can be used as title in help info popup",
+          "type": "string"
         }
       },
       "required": [
-        "status",
-        "success"
+        "description",
+        "summary"
       ]
     },
     "GetStudiesResponse": {
@@ -1188,24 +1177,17 @@
           "type": "array"
         },
         "description": {
-          "description": "Message",
+          "description": "Can be used as body of help info popup",
           "type": "string"
         },
-        "message": {
-          "description": "Message",
+        "summary": {
+          "description": "Can be used as title in help info popup",
           "type": "string"
-        },
-        "status": {
-          "description": "Status code",
-          "type": "integer"
-        },
-        "success": {
-          "type": "boolean"
         }
       },
       "required": [
-        "status",
-        "success"
+        "description",
+        "summary"
       ]
     },
     "GetSharesResponse": {
@@ -1214,24 +1196,17 @@
           "$ref": "#/definitions/AuthorizedClients"
         },
         "description": {
-          "description": "Message",
+          "description": "Can be used as body of help info popup",
           "type": "string"
         },
-        "message": {
-          "description": "Message",
+        "summary": {
+          "description": "Can be used as title in help info popup",
           "type": "string"
-        },
-        "status": {
-          "description": "Status code",
-          "type": "integer"
-        },
-        "success": {
-          "type": "boolean"
         }
       },
       "required": [
-        "status",
-        "success"
+        "description",
+        "summary"
       ]
     },
     "GetTrackingReminderNotificationsResponse": {
@@ -1242,21 +1217,18 @@
           },
           "type": "array"
         },
-        "message": {
-          "description": "Message",
+        "description": {
+          "description": "Can be used as body of help info popup",
           "type": "string"
         },
-        "status": {
-          "description": "Status code",
-          "type": "integer"
-        },
-        "success": {
-          "type": "boolean"
+        "summary": {
+          "description": "Can be used as title in help info popup",
+          "type": "string"
         }
       },
       "required": [
-        "status",
-        "success"
+        "description",
+        "summary"
       ]
     },
     "Image": {
