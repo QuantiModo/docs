@@ -4644,7 +4644,7 @@
     "studyClientIdParam": {
       "description": "Client id for the cohort study you want",
       "in": "query",
-      "name": "studyClientId",
+      "name": "studyId",
       "required": false,
       "type": "string"
     },
@@ -6293,10 +6293,7 @@
         "operationId": "joinStudy",
         "parameters": [
           {
-            "$ref": "#/parameters/causeVariableNameParam"
-          },
-          {
-            "$ref": "#/parameters/effectVariableNameParam"
+            "$ref": "#/parameters/studyClientIdParam"
           },
           {
             "$ref": "#/parameters/predictorVariableNameParam"
