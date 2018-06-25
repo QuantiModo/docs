@@ -1802,6 +1802,33 @@
         }
       }
     },
+    "ShareInvitationBody": {
+      "properties": {
+        "emailAddress": {
+          "description": "Enter the email address of the friend, family member, or health-care provider that you would like to give access to your measurements",
+          "type": "string"
+        },
+        "name": {
+          "description": "Name of the individual that the user wishes to have access to their measurements",
+          "type": "string"
+        },
+        "emailSubject": {
+          "description": "Example: I would like to share my measurements with you!",
+          "type": "string"
+        },
+        "emailBody": {
+          "description": "Example: I would like to share my data with you so you can help me identify find discover hidden causes of and new treatments for my illness.",
+          "type": "string"
+        },
+        "scopes":{
+          "description": "Space separated list of scopes to grant to the recipient (i.e. readmeasurements, writemeasurements, measurements:read",
+          "type": "string"
+        }
+      },
+      "required": [
+        "emailAddress"
+      ]
+    },
     "Study": {
       "properties": {
         "causeVariable": {
@@ -4579,13 +4606,6 @@
       "required": false,
       "type": "string"
     },
-    "sharingEmailParam": {
-      "description": "Enter the email address of the friend, family member, or health-care provider that you would like to give access to your measurements",
-      "in": "body",
-      "name": "emailAddress",
-      "required": true,
-      "type": "string"
-    },
     "sortParam": {
       "description": "Sort by one of the listed field names. If the field name is prefixed with `-`, it will sort in descending order.",
       "in": "query",
@@ -5935,35 +5955,13 @@
         "operationId": "inviteShare",
         "parameters": [
           {
-            "$ref": "#/parameters/sharingEmailParam"
-          },
-          {
-            "description": "Name of the individual that the user wishes to have access to their measurements",
+            "description": "Details about person to share with",
             "in": "body",
-            "name": "name",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "description": "Example: I would like to share my measurements with you!",
-            "in": "body",
-            "name": "emailSubject",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "description": "Example: I would like to share my data with you so you can help me identify find discover hidden causes of and new treatments for my illness.",
-            "in": "body",
-            "name": "emailBody",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "description": "Space separated list of scopes to grant to the recipient (i.e. readmeasurements, writemeasurements, measurements:read",
-            "in": "body",
-            "name": "scopes",
-            "required": false,
-            "type": "string"
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ShareInvitationBody"
+            }
           },
           {
             "$ref": "#/parameters/platform"
