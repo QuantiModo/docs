@@ -1924,6 +1924,26 @@
         "emailAddress"
       ]
     },
+    "StudyCreationBody": {
+      "properties": {
+        "predictorVariableName": {
+          "description": "Name of predictor variable",
+          "type": "string"
+        },
+        "outcomeVariableName": {
+          "description": "Name of the outcome variable",
+          "type": "string"
+        },
+        "studyTitle": {
+          "description": "Title of your study (optional)",
+          "type": "string"
+        }
+      },
+      "required": [
+        "predictorVariableName",
+        "outcomeVariableName"
+      ]
+    },
     "Study": {
       "properties": {
         "type": {
@@ -6441,10 +6461,13 @@
         "operationId": "createStudy",
         "parameters": [
           {
-            "$ref": "#/parameters/predictorVariableNameParam"
-          },
-          {
-            "$ref": "#/parameters/outcomeVariableNameParam"
+            "description": "Details about the study you want to create",
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/StudyCreationBody"
+            }
           },
           {
             "$ref": "#/parameters/clientIdParam"
