@@ -6104,6 +6104,100 @@
         ]
       }
     },
+    "/v3/studies": {
+      "get": {
+        "description": "If you have enough data, this will be a list of your personal studies, otherwise it will consist of aggregated population studies.",
+        "operationId": "getStudies",
+        "parameters": [
+          {
+            "$ref": "#/parameters/predictorVariableNameParam"
+          },
+          {
+            "$ref": "#/parameters/outcomeVariableNameParam"
+          },
+          {
+            "$ref": "#/parameters/userIdParam"
+          },
+          {
+            "$ref": "#/parameters/clientIdParam"
+          },
+          {
+            "$ref": "#/parameters/includeChartsParam"
+          },
+          {
+            "$ref": "#/parameters/platform"
+          },
+          {
+            "$ref": "#/parameters/recalculate"
+          },
+          {
+            "$ref": "#/parameters/studyClientIdParam"
+          },
+          {
+            "$ref": "#/parameters/sortParam"
+          },
+          {
+            "$ref": "#/parameters/limitParam"
+          },
+          {
+            "$ref": "#/parameters/offsetParam"
+          },
+          {
+            "$ref": "#/parameters/correlationCoefficientParam"
+          },
+          {
+            "$ref": "#/parameters/updatedAtParam"
+          },
+          {
+            "$ref": "#/parameters/outcomesOfInterestParam"
+          },
+          {
+            "description": "Return only public, anonymized and aggregated population data instead of user-specific studies",
+            "in": "query",
+            "name": "commonOnly",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/GetStudiesResponse"
+            }
+          },
+          "401": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/JsonErrorResponse"
+            }
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "security": [
+          {
+            "access_token": []
+          },
+          {
+            "quantimodo_oauth2": [
+              "basic"
+            ]
+          }
+        ],
+        "summary": "Get Personal or Population Studies",
+        "tags": [
+          "studies"
+        ]
+      }
+    },
     "/v3/studies/open": {
       "get": {
         "description": "These are studies that anyone can join and share their data for the predictor and outcome variables of interest.",
