@@ -24,3 +24,5 @@ swagger/example-response-bodies/
 npm-debug\.log
 responses/*.json
 codegen/
+oax/
+swagger-ui/

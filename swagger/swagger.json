@@ -6359,6 +6359,16 @@
             "description": "Internal server error"
           }
         },
+        "security": [
+          {
+            "access_token": []
+          },
+          {
+            "quantimodo_oauth2": [
+              "basic"
+            ]
+          }
+        ],
         "summary": "Publish Your Study",
         "tags": [
           "studies"
@@ -6409,6 +6419,16 @@
             "description": "Internal server error"
           }
         },
+        "security": [
+          {
+            "access_token": []
+          },
+          {
+            "quantimodo_oauth2": [
+              "basic"
+            ]
+          }
+        ],
         "summary": "Join a Study",
         "tags": [
           "studies"
@@ -6425,9 +6445,6 @@
           },
           {
             "$ref": "#/parameters/outcomeVariableNameParam"
-          },
-          {
-            "$ref": "#/parameters/userIdParam"
           },
           {
             "$ref": "#/parameters/clientIdParam"
@@ -6456,6 +6473,16 @@
             "description": "Internal server error"
           }
         },
+        "security": [
+          {
+            "access_token": []
+          },
+          {
+            "quantimodo_oauth2": [
+              "basic"
+            ]
+          }
+        ],
         "summary": "Create a Cohort Study",
         "tags": [
           "studies"
