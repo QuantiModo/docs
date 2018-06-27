@@ -5056,9 +5056,6 @@
         "operationId": "getConnectors",
         "parameters": [
           {
-            "$ref": "#/parameters/appNameParam"
-          },
-          {
             "$ref": "#/parameters/clientIdParam"
           },
           {
@@ -5516,9 +5513,6 @@
             "$ref": "#/parameters/doNotProcessParam"
           },
           {
-            "$ref": "#/parameters/appNameParam"
-          },
-          {
             "$ref": "#/parameters/clientIdParam"
           },
           {
@@ -5946,9 +5940,6 @@
             "$ref": "#/parameters/clientIdParam"
           },
           {
-            "$ref": "#/parameters/appNameParam"
-          },
-          {
             "$ref": "#/parameters/appVersionParam"
           },
           {
@@ -6114,9 +6105,6 @@
           },
           {
             "$ref": "#/parameters/userIdParam"
-          },
-          {
-            "$ref": "#/parameters/appNameParam"
           },
           {
             "$ref": "#/parameters/clientIdParam"
@@ -6338,9 +6326,6 @@
             "$ref": "#/parameters/userIdParam"
           },
           {
-            "$ref": "#/parameters/appNameParam"
-          },
-          {
             "$ref": "#/parameters/clientIdParam"
           },
           {
@@ -6400,9 +6385,6 @@
             "$ref": "#/parameters/userIdParam"
           },
           {
-            "$ref": "#/parameters/appNameParam"
-          },
-          {
             "$ref": "#/parameters/clientIdParam"
           },
           {
@@ -6448,9 +6430,6 @@
           },
           {
             "$ref": "#/parameters/userIdParam"
-          },
-          {
-            "$ref": "#/parameters/appNameParam"
           },
           {
             "$ref": "#/parameters/clientIdParam"
@@ -6515,9 +6494,6 @@
             "$ref": "#/parameters/reminderTimeParam"
           },
           {
-            "$ref": "#/parameters/appNameParam"
-          },
-          {
             "$ref": "#/parameters/clientIdParam"
           },
           {
@@ -6575,9 +6551,6 @@
               },
               "type": "array"
             }
-          },
-          {
-            "$ref": "#/parameters/appNameParam"
           },
           {
             "$ref": "#/parameters/clientIdParam"
@@ -6641,9 +6614,6 @@
           },
           {
             "$ref": "#/parameters/sortParam"
-          },
-          {
-            "$ref": "#/parameters/appNameParam"
           },
           {
             "$ref": "#/parameters/clientIdParam"
@@ -6878,9 +6848,6 @@
             "$ref": "#/parameters/clientIdParam"
           },
           {
-            "$ref": "#/parameters/appNameParam"
-          },
-          {
             "$ref": "#/parameters/appVersionParam"
           },
           {
@@ -6983,9 +6950,6 @@
         "description": "Post UserSettings",
         "operationId": "postUserSettings",
         "parameters": [
-          {
-            "$ref": "#/parameters/appNameParam"
-          },
           {
             "$ref": "#/parameters/clientIdParam"
           },
@@ -7180,9 +7144,6 @@
             "$ref": "#/parameters/manualTrackingParam"
           },
           {
-            "$ref": "#/parameters/appNameParam"
-          },
-          {
             "$ref": "#/parameters/clientIdParam"
           },
           {
@@ -7331,9 +7292,6 @@
           },
           {
             "$ref": "#/parameters/searchPhraseParam"
-          },
-          {
-            "$ref": "#/parameters/appNameParam"
           },
           {
             "$ref": "#/parameters/exactMatchParam"
@@ -7626,9 +7584,6 @@
           },
           {
             "$ref": "#/parameters/userIdParam"
-          },
-          {
-            "$ref": "#/parameters/appNameParam"
           },
           {
             "$ref": "#/parameters/clientIdParam"
