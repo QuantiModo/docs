@@ -149,23 +149,23 @@
     "Button": {
       "properties": {
         "link": {
-          "description": "Example: https://local.quantimo.do",
+          "description": "Ex: https://local.quantimo.do",
           "type": "string"
         },
         "text": {
-          "description": "Example: Connect",
+          "description": "Ex: Connect",
           "type": "string"
         },
         "ionIcon": {
-          "description": "Example: ion-refresh",
+          "description": "Ex: ion-refresh",
           "type": "string"
         },
         "color": {
-          "description": "Example: #f2f2f2",
+          "description": "Ex: #f2f2f2",
           "type": "string"
         },
         "additionalInformation": {
-          "description": "Example: connect",
+          "description": "Ex: connect",
           "type": "string"
         }
       },
@@ -181,15 +181,15 @@
           "type": "object"
         },
         "chartId": {
-          "description": "Example: correlationScatterPlot",
+          "description": "Ex: correlationScatterPlot",
           "type": "string"
         },
         "chartTitle": {
-          "description": "Example: Overall Mood following Sleep Duration (R = -0.173)",
+          "description": "Ex: Overall Mood following Sleep Duration (R = -0.173)",
           "type": "string"
         },
         "explanation": {
-          "description": "Example: The chart above indicates that an increase in Sleep Duration is usually followed by an decrease in Overall Mood.",
+          "description": "Ex: The chart above indicates that an increase in Sleep Duration is usually followed by an decrease in Overall Mood.",
           "type": "string"
         },
         "svgUrl": {
@@ -265,7 +265,7 @@
     "Connector": {
       "properties": {
         "affiliate": {
-          "description": "Example: false",
+          "description": "Ex: false",
           "type": "boolean"
         },
         "backgroundColor": {
@@ -279,7 +279,7 @@
           "type": "array"
         },
         "clientId": {
-          "description": "Example: ghostInspector",
+          "description": "Your QuantiModo client id can be obtained by creating an app at https://builder.quantimo.do",
           "type": "string"
         },
         "connected": {
@@ -287,7 +287,7 @@
           "type": "boolean"
         },
         "connectError": {
-          "description": "Example: Your token is expired. Please re-connect",
+          "description": "Ex: Your token is expired. Please re-connect",
           "type": "string"
         },
         "connectInstructions": {
@@ -295,23 +295,23 @@
           "$ref": "#/definitions/ConnectInstructions"
         },
         "connectorClientId": {
-          "description": "Example: 225078261031461",
+          "description": "Ex: 225078261031461",
           "type": "string"
         },
         "connectorId": {
-          "description": "Example: 8",
+          "description": "Ex: 8",
           "type": "integer"
         },
         "connectStatus": {
-          "description": "Example: CONNECTED",
+          "description": "Ex: CONNECTED",
           "type": "string"
         },
         "createdAt": {
-          "description": "Example: 2000-01-01 00:00:00 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
+          "description": "Ex: 2000-01-01 00:00:00 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
         "defaultVariableCategoryName": {
-          "description": "Example: Social Interactions",
+          "description": "Ex: Social Interactions",
           "type": "string"
         },
         "displayName": {
@@ -319,7 +319,7 @@
           "type": "string"
         },
         "enabled": {
-          "description": "Example: 1",
+          "description": "Ex: 1",
           "type": "integer"
         },
         "getItUrl": {
@@ -335,11 +335,11 @@
           "type": "string"
         },
         "imageHtml": {
-          "description": "Example: <a href=\"http://www.facebook.com\"><img id=\"facebook_image\" title=\"Facebook\" src=\"https://i.imgur.com/GhwqK4f.png\" alt=\"Facebook\"></a>",
+          "description": "Ex: <a href=\"http://www.facebook.com\"><img id=\"facebook_image\" title=\"Facebook\" src=\"https://i.imgur.com/GhwqK4f.png\" alt=\"Facebook\"></a>",
           "type": "string"
         },
         "lastSuccessfulUpdatedAt": {
-          "description": "Example: 2017-07-31 10:10:34 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
+          "description": "Ex: 2017-07-31 10:10:34 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
         "lastUpdate": {
@@ -347,15 +347,15 @@
           "type": "integer"
         },
         "linkedDisplayNameHtml": {
-          "description": "Example: <a href=\"http://www.facebook.com\">Facebook</a>",
+          "description": "Ex: <a href=\"http://www.facebook.com\">Facebook</a>",
           "type": "string"
         },
         "longDescription": {
-          "description": "Example: Facebook is a social networking website where users may create a personal profile, add other users as friends, and exchange messages.",
+          "description": "Ex: Facebook is a social networking website where users may create a personal profile, add other users as friends, and exchange messages.",
           "type": "string"
         },
         "message": {
-          "description": "Example: Got 412 new measurements on 2017-07-31 10:10:34",
+          "description": "Ex: Got 412 new measurements on 2017-07-31 10:10:34",
           "type": "string"
         },
         "mobileConnectMethod": {
@@ -385,7 +385,7 @@
           "type": "array"
         },
         "shortDescription": {
-          "description": "Example: Tracks social interaction. QuantiModo requires permission to access your Facebook \"user likes\" and \"user posts\".",
+          "description": "Ex: Tracks social interaction. QuantiModo requires permission to access your Facebook \"user likes\" and \"user posts\".",
           "type": "string"
         },
         "spreadsheetUpload": {
@@ -397,19 +397,19 @@
           "type": "integer"
         },
         "updatedAt": {
-          "description": "Example: 2017-07-31 10:10:34 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
+          "description": "Ex: 2017-07-31 10:10:34 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
         "updateRequestedAt": {
-          "description": "Example: 2017-07-18 05:16:31 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
+          "description": "Ex: 2017-07-18 05:16:31 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
         "updateStatus": {
-          "description": "Example: UPDATED",
+          "description": "Ex: UPDATED",
           "type": "string"
         },
         "userId": {
-          "description": "Example: 230",
+          "description": "Ex: 230",
           "type": "integer"
         }
       },
@@ -471,328 +471,328 @@
     "Correlation": {
       "properties": {
         "averageDailyHighCause": {
-          "description": "Example: 4.19",
+          "description": "Ex: 4.19",
           "format": "double",
           "type": "number"
         },
         "averageDailyLowCause": {
-          "description": "Example: 1.97",
+          "description": "Ex: 1.97",
           "format": "double",
           "type": "number"
         },
         "averageEffect": {
-          "description": "Example: 3.0791054117396",
+          "description": "Ex: 3.0791054117396",
           "format": "double",
           "type": "number"
         },
         "averageEffectFollowingHighCause": {
-          "description": "Example: 3.55",
+          "description": "Ex: 3.55",
           "format": "double",
           "type": "number"
         },
         "averageEffectFollowingLowCause": {
-          "description": "Example: 2.65",
+          "description": "Ex: 2.65",
           "format": "double",
           "type": "number"
         },
         "averageForwardPearsonCorrelationOverOnsetDelays": {
-          "description": "Example: 0.396",
+          "description": "Ex: 0.396",
           "format": "double",
           "type": "number"
         },
         "averageReversePearsonCorrelationOverOnsetDelays": {
-          "description": "Example: 0.453667",
+          "description": "Ex: 0.453667",
           "format": "double",
           "type": "number"
         },
         "averageVote": {
-          "description": "Example: 0.9855",
+          "description": "Ex: 0.9855",
           "type": "number"
         },
         "causeChanges": {
-          "description": "Example: 164",
+          "description": "Ex: 164",
           "type": "integer"
         },
         "causeDataSource": {
           "$ref": "#/definitions/DataSource"
         },
         "causeUserVariableShareUserMeasurements": {
-          "description": "Example: 1",
+          "description": "Ex: 1",
           "type": "integer"
         },
         "causeVariableCategoryId": {
-          "description": "Example: 6",
+          "description": "Ex: 6",
           "type": "integer"
         },
         "causeVariableCategoryName": {
-          "description": "Example: Sleep",
+          "description": "Ex: Sleep",
           "type": "string"
         },
         "causeVariableCombinationOperation": {
-          "description": "Example: MEAN",
+          "description": "Ex: MEAN",
           "type": "string"
         },
         "causeVariableUnitAbbreviatedName": {
-          "description": "Example: /5",
+          "description": "Ex: /5",
           "type": "string"
         },
         "causeVariableId": {
-          "description": "Example: 1448",
+          "description": "Ex: 1448",
           "type": "integer"
         },
         "causeVariableMostCommonConnectorId": {
-          "description": "Example: 6",
+          "description": "Ex: 6",
           "type": "integer"
         },
         "causeVariableName": {
-          "description": "Example: Sleep Quality",
+          "description": "Ex: Sleep Quality",
           "type": "string"
         },
         "confidenceInterval": {
-          "description": "Example: 0.14344467795996",
+          "description": "Ex: 0.14344467795996",
           "format": "double",
           "type": "number"
         },
         "confidenceLevel": {
-          "description": "Example: high",
+          "description": "Ex: high",
           "type": "string"
         },
         "correlationCoefficient": {
-          "description": "Example: 0.538",
+          "description": "Ex: 0.538",
           "format": "double",
           "type": "number"
         },
         "correlationIsContradictoryToOptimalValues": {
-          "description": "Example: false",
+          "description": "Ex: false",
           "type": "boolean"
         },
         "createdAt": {
-          "description": "Example: 2016-12-28 20:47:30 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
+          "description": "Ex: 2016-12-28 20:47:30 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
         "criticalTValue": {
-          "description": "Example: 1.646",
+          "description": "Ex: 1.646",
           "format": "double",
           "type": "number"
         },
         "direction": {
-          "description": "Example: higher",
+          "description": "Ex: higher",
           "type": "string"
         },
         "durationOfAction": {
-          "description": "Example: 604800",
+          "description": "Ex: 604800",
           "type": "integer"
         },
         "durationOfActionInHours": {
-          "description": "Example: 168",
+          "description": "Ex: 168",
           "type": "integer"
         },
         "degreesOfFreedom": {
-          "description": "Example: 200",
+          "description": "Ex: 200",
           "type": "integer"
         },
         "effectNumberOfProcessedDailyMeasurements": {
-          "description": "Example: 145",
+          "description": "Ex: 145",
           "type": "integer"
         },
         "error": {
-          "description": "Example: optimalPearsonProduct is not defined",
+          "description": "Ex: optimalPearsonProduct is not defined",
           "type": "string"
         },
         "effectChanges": {
-          "description": "Example: 193",
+          "description": "Ex: 193",
           "type": "integer"
         },
         "effectDataSource": {
           "$ref": "#/definitions/DataSource"
         },
         "effectSize": {
-          "description": "Example: moderately positive",
+          "description": "Ex: moderately positive",
           "type": "string"
         },
         "effectUnit": {
-          "description": "Example: /5",
+          "description": "Ex: /5",
           "type": "string"
         },
         "effectUserVariableShareUserMeasurements": {
-          "description": "Example: 1",
+          "description": "Ex: 1",
           "type": "integer"
         },
         "effectVariableCategoryId": {
-          "description": "Example: 1",
+          "description": "Ex: 1",
           "type": "integer"
         },
         "effectVariableCategoryName": {
-          "description": "Example: Emotions",
+          "description": "Ex: Emotions",
           "type": "string"
         },
         "effectVariableCombinationOperation": {
-          "description": "Example: MEAN",
+          "description": "Ex: MEAN",
           "type": "string"
         },
         "effectVariableCommonAlias": {
-          "description": "Example: Mood_(psychology)",
+          "description": "Ex: Mood_(psychology)",
           "type": "string"
         },
         "effectVariableUnitAbbreviatedName": {
-          "description": "Example: /5",
+          "description": "Ex: /5",
           "type": "string"
         },
         "effectVariableUnitId": {
-          "description": "Example: 10",
+          "description": "Ex: 10",
           "type": "integer"
         },
         "effectVariableUnitName": {
-          "description": "Example: 1 to 5 Rating",
+          "description": "Ex: 1 to 5 Rating",
           "type": "string"
         },
         "effectVariableId": {
-          "description": "Example: 1398",
+          "description": "Ex: 1398",
           "type": "integer"
         },
         "effectVariableMostCommonConnectorId": {
-          "description": "Example: 10",
+          "description": "Ex: 10",
           "type": "integer"
         },
         "effectVariableName": {
-          "description": "Example: Overall Mood",
+          "description": "Ex: Overall Mood",
           "type": "string"
         },
         "experimentEndTime": {
-          "description": "Example: 2014-07-30 12:50:00 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
+          "description": "Ex: 2014-07-30 12:50:00 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
         "experimentStartTime": {
-          "description": "Example: 2012-05-06 21:15:00 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
+          "description": "Ex: 2012-05-06 21:15:00 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
         "forwardSpearmanCorrelationCoefficient": {
-          "description": "Example: 0.528359",
+          "description": "Ex: 0.528359",
           "format": "double",
           "type": "number"
         },
         "numberOfPairs": {
-          "description": "Example: 298",
+          "description": "Ex: 298",
           "type": "integer"
         },
         "onsetDelay": {
-          "description": "Example: 0",
+          "description": "Ex: 0",
           "type": "integer"
         },
         "onsetDelayInHours": {
-          "description": "Example: 0",
+          "description": "Ex: 0",
           "type": "integer"
         },
         "onsetDelayWithStrongestPearsonCorrelation": {
-          "description": "Example: -86400",
+          "description": "Ex: -86400",
           "type": "integer"
         },
         "onsetDelayWithStrongestPearsonCorrelationInHours": {
-          "description": "Example: -24",
+          "description": "Ex: -24",
           "type": "integer"
         },
         "optimalPearsonProduct": {
-          "description": "Example: 0.68582816186982",
+          "description": "Ex: 0.68582816186982",
           "format": "double",
           "type": "number"
         },
         "outcomeFillingValue": {
-          "description": "Example: -1",
+          "description": "Ex: -1",
           "type": "integer"
         },
         "outcomeMaximumAllowedValue": {
-          "description": "Example: 23",
+          "description": "Ex: 23",
           "format": "double",
           "type": "number"
         },
         "outcomeMinimumAllowedValue": {
-          "description": "Example: 0.1",
+          "description": "Ex: 0.1",
           "format": "double",
           "type": "number"
         },
         "pearsonCorrelationWithNoOnsetDelay": {
-          "description": "Example: 0.477",
+          "description": "Ex: 0.477",
           "format": "double",
           "type": "number"
         },
         "predictivePearsonCorrelation": {
-          "description": "Example: 0.538",
+          "description": "Ex: 0.538",
           "format": "double",
           "type": "number"
         },
         "predictivePearsonCorrelationCoefficient": {
-          "description": "Example: 0.538",
+          "description": "Ex: 0.538",
           "format": "double",
           "type": "number"
         },
         "predictorDataSources": {
-          "description": "Example: RescueTime",
+          "description": "Ex: RescueTime",
           "type": "string"
         },
         "predictorFillingValue": {
-          "description": "Example: -1",
+          "description": "Ex: -1",
           "type": "integer"
         },
         "predictorMaximumAllowedValue": {
-          "description": "Example: 200",
+          "description": "Ex: 200",
           "format": "double",
           "type": "number"
         },
         "predictorMinimumAllowedValue": {
-          "description": "Example: 30",
+          "description": "Ex: 30",
           "format": "double",
           "type": "number"
         },
         "predictsHighEffectChange": {
-          "description": "Example: 17",
+          "description": "Ex: 17",
           "type": "integer"
         },
         "predictsLowEffectChange": {
-          "description": "Example: -11",
+          "description": "Ex: -11",
           "type": "integer"
         },
         "pValue": {
-          "description": "Example: 0.39628900511586",
+          "description": "Ex: 0.39628900511586",
           "format": "double",
           "type": "number"
         },
         "qmScore": {
-          "description": "Example: 0.528",
+          "description": "Ex: 0.528",
           "format": "double",
           "type": "number"
         },
         "reversePearsonCorrelationCoefficient": {
-          "description": "Example: 0.01377184270977",
+          "description": "Ex: 0.01377184270977",
           "format": "double",
           "type": "number"
         },
         "shareUserMeasurements": {
-          "description": "Example: 1",
+          "description": "Ex: 1",
           "type": "boolean"
         },
         "sharingDescription": {
-          "description": "Example: N1 Study: Sleep Quality Predicts Higher Overall Mood",
+          "description": "Ex: N1 Study: Sleep Quality Predicts Higher Overall Mood",
           "type": "string"
         },
         "sharingTitle": {
-          "description": "Example: N1 Study: Sleep Quality Predicts Higher Overall Mood",
+          "description": "Ex: N1 Study: Sleep Quality Predicts Higher Overall Mood",
           "type": "string"
         },
         "significantDifference": {
-          "description": "Example: 1",
+          "description": "Ex: 1",
           "type": "boolean"
         },
         "statisticalSignificance": {
-          "description": "Example: 0.9813",
+          "description": "Ex: 0.9813",
           "format": "double",
           "type": "number"
         },
         "strengthLevel": {
-          "description": "Example: moderate",
+          "description": "Ex: moderate",
           "type": "string"
         },
         "strongestPearsonCorrelationCoefficient": {
-          "description": "Example: 0.613",
+          "description": "Ex: 0.613",
           "format": "double",
           "type": "number"
         },
@@ -809,29 +809,29 @@
           "$ref": "#/definitions/StudyText"
         },
         "tValue": {
-          "description": "Example: 9.6986079652717",
+          "description": "Ex: 9.6986079652717",
           "format": "double",
           "type": "number"
         },
         "updatedAt": {
-          "description": "Example: 2017-05-06 15:40:38 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
+          "description": "Ex: 2017-05-06 15:40:38 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
         "userId": {
-          "description": "Example: 230",
+          "description": "Ex: 230",
           "type": "integer"
         },
         "userVote": {
-          "description": "Example: 1",
+          "description": "Ex: 1",
           "type": "integer"
         },
         "valuePredictingHighOutcome": {
-          "description": "Example: 4.14",
+          "description": "Ex: 4.14",
           "format": "double",
           "type": "number"
         },
         "valuePredictingLowOutcome": {
-          "description": "Example: 3.03",
+          "description": "Ex: 3.03",
           "format": "double",
           "type": "number"
         },
@@ -848,63 +848,63 @@
           "type": "number"
         },
         "averagePearsonCorrelationCoefficientOverOnsetDelays": {
-          "description": "Example: ",
+          "description": "Ex: ",
           "type": "string"
         },
         "causeNumberOfRawMeasurements": {
-          "description": "Example: 14764",
+          "description": "Ex: 14764",
           "type": "integer"
         },
         "correlationsOverDurationsOfAction": {
-          "description": "Example: ",
+          "description": "Ex: ",
           "type": "string"
         },
         "correlationsOverDurationsOfActionChartConfig": {
-          "description": "Example: ",
+          "description": "Ex: ",
           "type": "string"
         },
         "correlationsOverOnsetDelaysChartConfig": {
-          "description": "Example: ",
+          "description": "Ex: ",
           "type": "string"
         },
         "numberOfUsers": {
-          "description": "Example: 1",
+          "description": "Ex: 1",
           "type": "number"
         },
         "rawCauseMeasurementSignificance": {
-          "description": "Example: 1",
+          "description": "Ex: 1",
           "format": "double",
           "type": "number"
         },
         "rawEffectMeasurementSignificance": {
-          "description": "Example: 1",
+          "description": "Ex: 1",
           "format": "double",
           "type": "number"
         },
         "reversePairsCount": {
-          "description": "Example: 1",
+          "description": "Ex: 1",
           "type": "string"
         },
         "voteStatisticalSignificance": {
-          "description": "Example: 1",
+          "description": "Ex: 1",
           "type": "integer"
         },
         "aggregateQMScore": {
-          "description": "Example: 0.011598441286655",
+          "description": "Ex: 0.011598441286655",
           "format": "double",
           "type": "number"
         },
         "forwardPearsonCorrelationCoefficient": {
-          "description": "Example: 0.0333",
+          "description": "Ex: 0.0333",
           "format": "double",
           "type": "number"
         },
         "numberOfCorrelations": {
-          "description": "Example: 6",
+          "description": "Ex: 6",
           "type": "integer"
         },
         "vote": {
-          "description": "Example: 1 or 0",
+          "description": "Ex: 1 or 0",
           "type": "number"
         }
       },
@@ -969,55 +969,55 @@
     "DataSource": {
       "properties": {
         "affiliate": {
-          "description": "Example: true",
+          "description": "Ex: true",
           "type": "boolean"
         },
         "connectorClientId": {
-          "description": "Example: ba7d0c12432650e23b3ce924ae2d21e2ff59e7e4e28650759633700af7ed0a30",
+          "description": "Ex: ba7d0c12432650e23b3ce924ae2d21e2ff59e7e4e28650759633700af7ed0a30",
           "type": "string"
         },
         "defaultVariableCategoryName": {
-          "description": "Example: Foods",
+          "description": "Ex: Foods",
           "type": "string"
         },
         "displayName": {
-          "description": "Example: QuantiModo",
+          "description": "Ex: QuantiModo",
           "type": "string"
         },
         "enabled": {
-          "description": "Example: 0",
+          "description": "Ex: 0",
           "type": "integer"
         },
         "getItUrl": {
-          "description": "Example: https://quantimo.do",
+          "description": "Ex: https://quantimo.do",
           "type": "string"
         },
         "id": {
-          "description": "Example: 72",
+          "description": "Ex: 72",
           "type": "integer"
         },
         "image": {
-          "description": "Example: https://app.quantimo.do/ionic/Modo/www/img/logos/quantimodo-logo-qm-rainbow-200-200.png",
+          "description": "Ex: https://quantimodo.quantimo.do/ionic/Modo/www/img/logos/quantimodo-logo-qm-rainbow-200-200.png",
           "type": "string"
         },
         "imageHtml": {
-          "description": "Example: <a href=\"https://quantimo.do\"><img id=\"quantimodo_image\" title=\"QuantiModo\" src=\"https://app.quantimo.do/ionic/Modo/www/img/logos/quantimodo-logo-qm-rainbow-200-200.png\" alt=\"QuantiModo\"></a>",
+          "description": "Ex: <a href=\"https://quantimo.do\"><img id=\"quantimodo_image\" title=\"QuantiModo\" src=\"https://quantimodo.quantimo.do/ionic/Modo/www/img/logos/quantimodo-logo-qm-rainbow-200-200.png\" alt=\"QuantiModo\"></a>",
           "type": "string"
         },
         "linkedDisplayNameHtml": {
-          "description": "Example: <a href=\"https://quantimo.do\">QuantiModo</a>",
+          "description": "Ex: <a href=\"https://quantimo.do\">QuantiModo</a>",
           "type": "string"
         },
         "longDescription": {
-          "description": "Example: QuantiModo is a Chrome extension, Android app, iOS app, and web app that allows you to easily track mood, symptoms, or any outcome you want to optimize in a fraction of a second.  You can also import your data from over 30 other apps and devices like Fitbit, Rescuetime, Jawbone Up, Withings, Facebook, Github, Google Calendar, Runkeeper, MoodPanda, Slice, Google Fit, and more.  QuantiModo then analyzes your data to identify which hidden factors are most likely to be influencing your mood or symptoms and their optimal daily values.",
+          "description": "Ex: QuantiModo is a Chrome extension, Android app, iOS app, and web app that allows you to easily track mood, symptoms, or any outcome you want to optimize in a fraction of a second.  You can also import your data from over 30 other apps and devices like Fitbit, Rescuetime, Jawbone Up, Withings, Facebook, Github, Google Calendar, Runkeeper, MoodPanda, Slice, Google Fit, and more.  QuantiModo then analyzes your data to identify which hidden factors are most likely to be influencing your mood or symptoms and their optimal daily values.",
           "type": "string"
         },
         "name": {
-          "description": "Example: quantimodo",
+          "description": "Ex: quantimodo",
           "type": "string"
         },
         "shortDescription": {
-          "description": "Example: Tracks anything",
+          "description": "Ex: Tracks anything",
           "type": "string"
         }
       },
@@ -1060,21 +1060,21 @@
     "Explanation": {
       "properties": {
         "description": {
-          "description": "Example: These factors are most predictive of Overall Mood based on your own data.",
+          "description": "Ex: These factors are most predictive of Overall Mood based on your own data.",
           "type": "string"
         },
         "image": {
           "$ref": "#/definitions/Image"
         },
         "ionIcon": {
-          "description": "Example: ion-ios-person",
+          "description": "Ex: ion-ios-person",
           "type": "string"
         },
         "startTracking": {
           "$ref": "#/definitions/ExplanationStartTracking"
         },
         "title": {
-          "description": "Example: Top Predictors of Overall Mood",
+          "description": "Ex: Top Predictors of Overall Mood",
           "type": "string"
         },
         "html": {
@@ -1096,11 +1096,11 @@
           "$ref": "#/definitions/Button"
         },
         "description": {
-          "description": "Example: The more data I have the more accurate your results will be so track regularly!",
+          "description": "Ex: The more data I have the more accurate your results will be so track regularly!",
           "type": "string"
         },
         "title": {
-          "description": "Example: Improve Accuracy",
+          "description": "Ex: Improve Accuracy",
           "type": "string"
         }
       },
@@ -1142,6 +1142,14 @@
         },
         "explanation": {
           "$ref": "#/definitions/Explanation"
+        },
+        "description": {
+          "description": "Can be used as body of help info popup",
+          "type": "string"
+        },
+        "summary": {
+          "description": "Can be used as title in help info popup",
+          "type": "string"
         }
       },
       "required": [
@@ -1234,15 +1242,15 @@
     "Image": {
       "properties": {
         "height": {
-          "description": "Example: 240",
+          "description": "Ex: 240",
           "type": "string"
         },
         "imageUrl": {
-          "description": "Example: https://www.filepicker.io/api/file/TjmeNWS5Q2SFmtJlUGLf",
+          "description": "Ex: https://www.filepicker.io/api/file/TjmeNWS5Q2SFmtJlUGLf",
           "type": "string"
         },
         "width": {
-          "description": "Example: 224",
+          "description": "Ex: 224",
           "type": "string"
         }
       },
@@ -1261,6 +1269,14 @@
         "status": {
           "description": "Status: \"ok\" or \"error\"",
           "type": "string"
+        },
+        "description": {
+          "description": "Can be used as body of help info popup",
+          "type": "string"
+        },
+        "summary": {
+          "description": "Can be used as title in help info popup",
+          "type": "string"
         }
       },
       "required": [
@@ -1270,15 +1286,15 @@
     "Measurement": {
       "properties": {
         "clientId": {
-          "description": "Example: quantimodo",
+          "description": "Ex: quantimodo",
           "type": "string"
         },
         "connectorId": {
-          "description": "Example: 13",
+          "description": "Ex: 13",
           "type": "integer"
         },
         "createdAt": {
-          "description": "Example: 2017-07-30 21:08:36",
+          "description": "Ex: 2017-07-30 21:08:36",
           "type": "string"
         },
         "displayValueAndUnitString": {
@@ -1286,31 +1302,31 @@
           "type": "string"
         },
         "iconIcon": {
-          "description": "Example: ion-sad-outline",
+          "description": "Ex: ion-sad-outline",
           "type": "string"
         },
         "id": {
-          "description": "Example: 1051466127",
+          "description": "Ex: 1051466127",
           "type": "integer"
         },
         "inputType": {
-          "description": "Example: value",
+          "description": "Ex: value",
           "type": "string"
         },
         "ionIcon": {
-          "description": "Example: ion-ios-medkit-outline",
+          "description": "Ex: ion-ios-medkit-outline",
           "type": "string"
         },
         "manualTracking": {
-          "description": "Example: 1",
+          "description": "Ex: 1",
           "type": "boolean"
         },
         "maximumAllowedValue": {
-          "description": "Example: 5",
+          "description": "Ex: 5",
           "type": "integer"
         },
         "minimumAllowedValue": {
-          "description": "Example: 1",
+          "description": "Ex: 1",
           "type": "integer"
         },
         "note": {
@@ -1326,7 +1342,7 @@
           "type": "object"
         },
         "originalUnitId": {
-          "description": "Example: 23",
+          "description": "Ex: 23",
           "type": "integer"
         },
         "originalValue": {
@@ -1334,11 +1350,11 @@
           "type": "integer"
         },
         "pngPath": {
-          "description": "Example: img/variable_categories/treatments.png",
+          "description": "Ex: img/variable_categories/treatments.png",
           "type": "string"
         },
         "pngUrl": {
-          "description": "Example: https://app.quantimo.do/ionic/Modo/www/img/variable_categories/treatments.png",
+          "description": "Ex: https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/treatments.png",
           "type": "string"
         },
         "productUrl": {
@@ -1350,7 +1366,7 @@
           "type": "string"
         },
         "startDate": {
-          "description": "Example: 2014-08-27",
+          "description": "Ex: 2014-08-27",
           "type": "string"
         },
         "startTimeEpoch": {
@@ -1362,7 +1378,7 @@
           "type": "string"
         },
         "svgUrl": {
-          "description": "Example: https://app.quantimo.do/ionic/Modo/www/img/variable_categories/treatments.svg",
+          "description": "Ex: https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/treatments.svg",
           "type": "string"
         },
         "unitAbbreviatedName": {
@@ -1370,23 +1386,23 @@
           "type": "string"
         },
         "unitCategoryId": {
-          "description": "Example: 6",
+          "description": "Ex: 6",
           "type": "integer"
         },
         "unitCategoryName": {
-          "description": "Example: Miscellany",
+          "description": "Ex: Miscellany",
           "type": "string"
         },
         "unitId": {
-          "description": "Example: 23",
+          "description": "Ex: 23",
           "type": "integer"
         },
         "unitName": {
-          "description": "Example: Count",
+          "description": "Ex: Count",
           "type": "string"
         },
         "updatedAt": {
-          "description": "Example: 2017-07-30 21:08:36",
+          "description": "Ex: 2017-07-30 21:08:36",
           "type": "string"
         },
         "url": {
@@ -1394,35 +1410,35 @@
           "type": "string"
         },
         "userVariableUnitAbbreviatedName": {
-          "description": "Example: count",
+          "description": "Ex: count",
           "type": "string"
         },
         "userVariableUnitCategoryId": {
-          "description": "Example: 6",
+          "description": "Ex: 6",
           "type": "integer"
         },
         "userVariableUnitCategoryName": {
-          "description": "Example: Miscellany",
+          "description": "Ex: Miscellany",
           "type": "string"
         },
         "userVariableUnitId": {
-          "description": "Example: 23",
+          "description": "Ex: 23",
           "type": "integer"
         },
         "userVariableUnitName": {
-          "description": "Example: Count",
+          "description": "Ex: Count",
           "type": "string"
         },
         "userVariableVariableCategoryId": {
-          "description": "Example: 13",
+          "description": "Ex: 13",
           "type": "integer"
         },
         "userVariableVariableCategoryName": {
-          "description": "Example: Treatments",
+          "description": "Ex: Treatments",
           "type": "string"
         },
         "valence": {
-          "description": "Example: negative",
+          "description": "Ex: negative",
           "type": "string"
         },
         "value": {
@@ -1431,23 +1447,23 @@
           "type": "number"
         },
         "variableCategoryId": {
-          "description": "Example: 13",
+          "description": "Ex: 13",
           "type": "integer"
         },
         "variableCategoryImageUrl": {
-          "description": "Example: https://maxcdn.icons8.com/Color/PNG/96/Healthcare/pill-96.png",
+          "description": "Ex: https://maxcdn.icons8.com/Color/PNG/96/Healthcare/pill-96.png",
           "type": "string"
         },
         "variableCategoryName": {
-          "description": "Example: Treatments",
+          "description": "Ex: Treatments",
           "type": "string"
         },
         "variableDescription": {
-          "description": "Example: negative",
+          "description": "Ex: negative",
           "type": "string"
         },
         "variableId": {
-          "description": "Example: 5956846",
+          "description": "Ex: 5956846",
           "type": "integer"
         },
         "variableName": {
@@ -1455,7 +1471,7 @@
           "type": "string"
         },
         "displayName": {
-          "description": "Example: Trader Joe's Bedtime Tea",
+          "description": "Ex: Trader Joe's Bedtime Tea",
           "type": "string"
         }
       },
@@ -1582,47 +1598,47 @@
     "Pair": {
       "properties": {
         "causeMeasurement": {
-          "description": "Example: 101341.66666667",
+          "description": "Ex: 101341.66666667",
           "format": "double",
           "type": "number"
         },
         "causeMeasurementValue": {
-          "description": "Example: 101341.66666667",
+          "description": "Ex: 101341.66666667",
           "format": "double",
           "type": "number"
         },
         "causeVariableUnitAbbreviatedName": {
-          "description": "Example: mg",
+          "description": "Ex: mg",
           "type": "string"
         },
         "effectMeasurement": {
-          "description": "Example: 7.98",
+          "description": "Ex: 7.98",
           "format": "double",
           "type": "number"
         },
         "effectMeasurementValue": {
-          "description": "Example: 7.98",
+          "description": "Ex: 7.98",
           "format": "double",
           "type": "number"
         },
         "effectVariableUnitAbbreviatedName": {
-          "description": "Example: %",
+          "description": "Ex: %",
           "type": "string"
         },
         "eventAt": {
-          "description": "Example: 2015-08-06 15:49:02 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
+          "description": "Ex: 2015-08-06 15:49:02 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
         "eventAtUnixTime": {
-          "description": "Example: 1438876142",
+          "description": "Ex: 1438876142",
           "type": "integer"
         },
         "startTimeString": {
-          "description": "Example: 2015-08-06 15:49:02 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
+          "description": "Ex: 2015-08-06 15:49:02 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
         "timestamp": {
-          "description": "Example: 1464937200",
+          "description": "Ex: 1464937200",
           "type": "integer"
         }
       },
@@ -1640,11 +1656,11 @@
     "ParticipantInstruction": {
       "properties": {
         "instructionsForCauseVariable": {
-          "description": "Example: <a href=\"https://www.amazon.com/Fitbit-Charge-Heart-Fitness-Wristband/dp/B01K9S260E/ref=as_li_ss_tl?ie=UTF8&qid=1493518902&sr=8-3&keywords=fitbit&th=1&linkCode=ll1&tag=quant08-20&linkId=b357b0833de73b0c4e935fd7c13a079e\">Obtain Fitbit</a> and use it to record your Sleep Duration. Once you have a <a href=\"https://www.amazon.com/Fitbit-Charge-Heart-Fitness-Wristband/dp/B01K9S260E/ref=as_li_ss_tl?ie=UTF8&qid=1493518902&sr=8-3&keywords=fitbit&th=1&linkCode=ll1&tag=quant08-20&linkId=b357b0833de73b0c4e935fd7c13a079e\">Fitbit</a> account, <a href=\"https://app.quantimo.do/ionic/Modo/www/#/app/import\">connect your  Fitbit account at QuantiModo</a> to automatically import and analyze your data.",
+          "description": "Ex: <a href=\"https://www.amazon.com/Fitbit-Charge-Heart-Fitness-Wristband/dp/B01K9S260E/ref=as_li_ss_tl?ie=UTF8&qid=1493518902&sr=8-3&keywords=fitbit&th=1&linkCode=ll1&tag=quant08-20&linkId=b357b0833de73b0c4e935fd7c13a079e\">Obtain Fitbit</a> and use it to record your Sleep Duration. Once you have a <a href=\"https://www.amazon.com/Fitbit-Charge-Heart-Fitness-Wristband/dp/B01K9S260E/ref=as_li_ss_tl?ie=UTF8&qid=1493518902&sr=8-3&keywords=fitbit&th=1&linkCode=ll1&tag=quant08-20&linkId=b357b0833de73b0c4e935fd7c13a079e\">Fitbit</a> account, <a href=\"https://quantimodo.quantimo.do/ionic/Modo/www/#/app/import\">connect your  Fitbit account at QuantiModo</a> to automatically import and analyze your data.",
           "type": "string"
         },
         "instructionsForEffectVariable": {
-          "description": "Example: <a href=\"https://quantimo.do\">Obtain QuantiModo</a> and use it to record your Overall Mood. Once you have a <a href=\"https://quantimo.do\">QuantiModo</a> account, <a href=\"https://app.quantimo.do/ionic/Modo/www/#/app/import\">connect your  QuantiModo account at QuantiModo</a> to automatically import and analyze your data.",
+          "description": "Ex: <a href=\"https://quantimo.do\">Obtain QuantiModo</a> and use it to record your Overall Mood. Once you have a <a href=\"https://quantimo.do\">QuantiModo</a> account, <a href=\"https://quantimodo.quantimo.do/ionic/Modo/www/#/app/import\">connect your  QuantiModo account at QuantiModo</a> to automatically import and analyze your data.",
           "type": "string"
         }
       }
@@ -1682,6 +1698,14 @@
             "$ref": "#/definitions/Variable"
           },
           "type": "array"
+        },
+        "description": {
+          "description": "Can be used as body of help info popup",
+          "type": "string"
+        },
+        "summary": {
+          "description": "Can be used as title in help info popup",
+          "type": "string"
         }
       }
     },
@@ -1700,6 +1724,14 @@
         },
         "success": {
           "type": "boolean"
+        },
+        "description": {
+          "description": "Can be used as body of help info popup",
+          "type": "string"
+        },
+        "summary": {
+          "description": "Can be used as title in help info popup",
+          "type": "string"
         }
       },
       "required": [
@@ -1710,12 +1742,43 @@
     "PostStudyPublishResponse": {
       "properties": {
         "status": {
-          "description": "Example: ok",
+          "description": "Ex: ok",
           "type": "string"
         },
         "success": {
-          "description": "Example: true",
+          "description": "Ex: true",
           "type": "boolean"
+        },
+        "description": {
+          "description": "Can be used as body of help info popup",
+          "type": "string"
+        },
+        "summary": {
+          "description": "Can be used as title in help info popup",
+          "type": "string"
+        }
+      }
+    },
+    "PostStudyCreateResponse": {
+      "properties": {
+        "study": {
+          "$ref": "#/definitions/Study"
+        },
+        "status": {
+          "description": "Ex: ok",
+          "type": "string"
+        },
+        "success": {
+          "description": "Ex: true",
+          "type": "boolean"
+        },
+        "description": {
+          "description": "Can be used as body of help info popup",
+          "type": "string"
+        },
+        "summary": {
+          "description": "Can be used as title in help info popup",
+          "type": "string"
         }
       }
     },
@@ -1738,6 +1801,14 @@
             "$ref": "#/definitions/Variable"
           },
           "type": "array"
+        },
+        "description": {
+          "description": "Can be used as body of help info popup",
+          "type": "string"
+        },
+        "summary": {
+          "description": "Can be used as title in help info popup",
+          "type": "string"
         }
       }
     },
@@ -1756,6 +1827,14 @@
         },
         "success": {
           "type": "boolean"
+        },
+        "description": {
+          "description": "Can be used as body of help info popup",
+          "type": "string"
+        },
+        "summary": {
+          "description": "Can be used as title in help info popup",
+          "type": "string"
         }
       },
       "required": [
@@ -1766,8 +1845,16 @@
     "PostUserSettingsDataResponse": {
       "properties": {
         "purchaseId": {
-          "description": "Example: 1",
+          "description": "Ex: 1",
           "type": "integer"
+        },
+        "description": {
+          "description": "Can be used as body of help info popup",
+          "type": "string"
+        },
+        "summary": {
+          "description": "Can be used as title in help info popup",
+          "type": "string"
         }
       }
     },
@@ -1786,6 +1873,14 @@
         },
         "success": {
           "type": "boolean"
+        },
+        "description": {
+          "description": "Can be used as body of help info popup",
+          "type": "string"
+        },
+        "summary": {
+          "description": "Can be used as title in help info popup",
+          "type": "string"
         }
       },
       "required": [
@@ -1797,7 +1892,7 @@
     "Scope": {
       "properties": {
         "scalar": {
-          "description": "Example: user_likes",
+          "description": "Ex: user_likes",
           "type": "string"
         }
       }
@@ -1813,11 +1908,11 @@
           "type": "string"
         },
         "emailSubject": {
-          "description": "Example: I would like to share my measurements with you!",
+          "description": "Ex: I would like to share my measurements with you!",
           "type": "string"
         },
         "emailBody": {
-          "description": "Example: I would like to share my data with you so you can help me identify find discover hidden causes of and new treatments for my illness.",
+          "description": "Ex: I would like to share my data with you so you can help me identify find discover hidden causes of and new treatments for my illness.",
           "type": "string"
         },
         "scopes":{
@@ -1865,7 +1960,7 @@
           "$ref": "#/definitions/StudyText"
         },
         "type": {
-          "description": "Example: population",
+          "description": "Ex: population",
           "type": "string"
         },
         "userId": {
@@ -1940,27 +2035,27 @@
     "StudyImages": {
       "properties": {
         "causeVariableImageUrl": {
-          "description": "Example: https://maxcdn.icons8.com/Color/PNG/96/Household/sleeping_in_bed-96.png",
+          "description": "Ex: https://maxcdn.icons8.com/Color/PNG/96/Household/sleeping_in_bed-96.png",
           "type": "string"
         },
         "causeVariableIonIcon": {
-          "description": "Example: ion-ios-cloudy-night-outline",
+          "description": "Ex: ion-ios-cloudy-night-outline",
           "type": "string"
         },
         "effectVariableImageUrl": {
-          "description": "Example: https://maxcdn.icons8.com/Color/PNG/96/Cinema/theatre_mask-96.png",
+          "description": "Ex: https://maxcdn.icons8.com/Color/PNG/96/Cinema/theatre_mask-96.png",
           "type": "string"
         },
         "effectVariableIonIcon": {
-          "description": "Example: ion-happy-outline",
+          "description": "Ex: ion-happy-outline",
           "type": "string"
         },
         "gaugeImage": {
-          "description": "Example: https://s3.amazonaws.com/quantimodo-docs/images/gauge-moderately-positive-relationship.png",
+          "description": "Ex: https://s3.amazonaws.com/quantimodo-docs/images/gauge-moderately-positive-relationship.png",
           "type": "string"
         },
         "gaugeImageSquare": {
-          "description": "Example: https://s3.amazonaws.com/quantimodo-docs/images/gauge-moderately-positive-relationship-200-200.png",
+          "description": "Ex: https://s3.amazonaws.com/quantimodo-docs/images/gauge-moderately-positive-relationship-200-200.png",
           "type": "string"
         },
         "gaugeSharingImageUrl": {
@@ -1968,7 +2063,7 @@
           "type": "string"
         },
         "imageUrl": {
-          "description": "Example: https://s3-us-west-1.amazonaws.com/qmimages/variable_categories_gauges_logo_background/gauge-moderately-positive-relationship_sleep_emotions_logo_background.png",
+          "description": "Ex: https://s3-us-west-1.amazonaws.com/qmimages/variable_categories_gauges_logo_background/gauge-moderately-positive-relationship_sleep_emotions_logo_background.png",
           "type": "string"
         },
         "robotSharingImageUrl": {
@@ -1985,27 +2080,27 @@
     "StudyLinks": {
       "properties": {
         "studyLinkEmail": {
-          "description": "Example: mailto:?subject=N1%20Study%3A%20Sleep%20Quality%20Predicts%20Higher%20Overall%20Mood&body=Check%20out%20my%20study%20at%20https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fstudy%3FcauseVariableName%3DSleep%2520Quality%26effectVariableName%3DOverall%2520Mood%26userId%3D230%0A%0AHave%20a%20great%20day!",
+          "description": "Ex: mailto:?subject=N1%20Study%3A%20Sleep%20Quality%20Predicts%20Higher%20Overall%20Mood&body=Check%20out%20my%20study%20at%20https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fstudy%3FcauseVariableName%3DSleep%2520Quality%26effectVariableName%3DOverall%2520Mood%26userId%3D230%0A%0AHave%20a%20great%20day!",
           "type": "string"
         },
         "studyLinkFacebook": {
-          "description": "Example: https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fstudy%3FcauseVariableName%3DSleep%2520Quality%26effectVariableName%3DOverall%2520Mood%26userId%3D230",
+          "description": "Ex: https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fstudy%3FcauseVariableName%3DSleep%2520Quality%26effectVariableName%3DOverall%2520Mood%26userId%3D230",
           "type": "string"
         },
         "studyLinkGoogle": {
-          "description": "Example: https://plus.google.com/share?url=https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fstudy%3FcauseVariableName%3DSleep%2520Quality%26effectVariableName%3DOverall%2520Mood%26userId%3D230",
+          "description": "Ex: https://plus.google.com/share?url=https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fstudy%3FcauseVariableName%3DSleep%2520Quality%26effectVariableName%3DOverall%2520Mood%26userId%3D230",
           "type": "string"
         },
         "studyLinkStatic": {
-          "description": "Example: https://local.quantimo.do/api/v2/study?causeVariableName=Sleep%20Quality&effectVariableName=Overall%20Mood&userId=230",
+          "description": "Ex: https://local.quantimo.do/api/v2/study?causeVariableName=Sleep%20Quality&effectVariableName=Overall%20Mood&userId=230",
           "type": "string"
         },
         "studyLinkDynamic": {
-          "description": "Example: https://local.quantimo.do/ionic/Modo/www/index.html#/app/study?causeVariableName=Sleep%20Quality&effectVariableName=Overall%20Mood&userId=230",
+          "description": "Ex: https://local.quantimo.do/ionic/Modo/www/index.html#/app/study?causeVariableName=Sleep%20Quality&effectVariableName=Overall%20Mood&userId=230",
           "type": "string"
         },
         "studyLinkTwitter": {
-          "description": "Example: https://twitter.com/home?status=Sleep%20Quality%20Predicts%20Higher%20Overall%20Mood%20https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fstudy%3FcauseVariableName%3DSleep%2520Quality%26effectVariableName%3DOverall%2520Mood%26userId%3D230%20%40quantimodo",
+          "description": "Ex: https://twitter.com/home?status=Sleep%20Quality%20Predicts%20Higher%20Overall%20Mood%20https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fstudy%3FcauseVariableName%3DSleep%2520Quality%26effectVariableName%3DOverall%2520Mood%26userId%3D230%20%40quantimodo",
           "type": "string"
         }
       },
@@ -2021,83 +2116,83 @@
     "StudyText": {
       "properties": {
         "averageEffectFollowingHighCauseExplanation": {
-          "description": "Example: Overall Mood is 3.55/5 (15% higher) on average after days with around 4.19/5 Sleep Quality",
+          "description": "Ex: Overall Mood is 3.55/5 (15% higher) on average after days with around 4.19/5 Sleep Quality",
           "type": "string"
         },
         "averageEffectFollowingLowCauseExplanation": {
-          "description": "Example: Overall Mood is 2.65/5 (14% lower) on average after days with around 1.97/5 Sleep Quality",
+          "description": "Ex: Overall Mood is 2.65/5 (14% lower) on average after days with around 1.97/5 Sleep Quality",
           "type": "string"
         },
         "valuePredictingHighOutcomeExplanation": {
-          "description": "Example: Overall Mood, on average, 17% higher after around 4.14/5 Sleep Quality",
+          "description": "Ex: Overall Mood, on average, 17% higher after around 4.14/5 Sleep Quality",
           "type": "string"
         },
         "valuePredictingLowOutcomeExplanation": {
-          "description": "Example: Overall Mood, on average, 11% lower after around 3.03/5 Sleep Quality",
+          "description": "Ex: Overall Mood, on average, 11% lower after around 3.03/5 Sleep Quality",
           "type": "string"
         },
         "dataAnalysis": {
-          "description": "Example: It was assumed that 0 hours would pass before a change in Very Distracting Time would produce an observable change in Video Activities.  It was assumed that Very Distracting Time could produce an observable change in Video Activities for as much as 7 days after the stimulus event.",
+          "description": "Ex: It was assumed that 0 hours would pass before a change in Very Distracting Time would produce an observable change in Video Activities.  It was assumed that Very Distracting Time could produce an observable change in Video Activities for as much as 7 days after the stimulus event.",
           "type": "string"
         },
         "dataSources": {
-          "description": "Example: Very Distracting Time data was primarily collected using <a href=\"https://www.rescuetime.com/rp/quantimodo/plans\">RescueTime</a>. Detailed reports show which applications and websites you spent time on. Activities are automatically grouped into pre-defined categories with built-in productivity scores covering thousands of websites and applications. You can customize categories and productivity scores to meet your needs.<br>Video Activities data was primarily collected using <a href=\"https://www.rescuetime.com/rp/quantimodo/plans\">RescueTime</a>. Detailed reports show which applications and websites you spent time on. Activities are automatically grouped into pre-defined categories with built-in productivity scores covering thousands of websites and applications. You can customize categories and productivity scores to meet your needs.",
+          "description": "Ex: Very Distracting Time data was primarily collected using <a href=\"https://www.rescuetime.com/rp/quantimodo/plans\">RescueTime</a>. Detailed reports show which applications and websites you spent time on. Activities are automatically grouped into pre-defined categories with built-in productivity scores covering thousands of websites and applications. You can customize categories and productivity scores to meet your needs.<br>Video Activities data was primarily collected using <a href=\"https://www.rescuetime.com/rp/quantimodo/plans\">RescueTime</a>. Detailed reports show which applications and websites you spent time on. Activities are automatically grouped into pre-defined categories with built-in productivity scores covering thousands of websites and applications. You can customize categories and productivity scores to meet your needs.",
           "type": "string"
         },
         "dataSourcesParagraphForCause": {
-          "description": "Example: Very Distracting Time data was primarily collected using <a href=\"https://www.rescuetime.com/rp/quantimodo/plans\">RescueTime</a>. Detailed reports show which applications and websites you spent time on. Activities are automatically grouped into pre-defined categories with built-in productivity scores covering thousands of websites and applications. You can customize categories and productivity scores to meet your needs.<br>Video Activities data was primarily collected using <a href=\"https://www.rescuetime.com/rp/quantimodo/plans\">RescueTime</a>. Detailed reports show which applications and websites you spent time on. Activities are automatically grouped into pre-defined categories with built-in productivity scores covering thousands of websites and applications. You can customize categories and productivity scores to meet your needs.",
+          "description": "Ex: Very Distracting Time data was primarily collected using <a href=\"https://www.rescuetime.com/rp/quantimodo/plans\">RescueTime</a>. Detailed reports show which applications and websites you spent time on. Activities are automatically grouped into pre-defined categories with built-in productivity scores covering thousands of websites and applications. You can customize categories and productivity scores to meet your needs.<br>Video Activities data was primarily collected using <a href=\"https://www.rescuetime.com/rp/quantimodo/plans\">RescueTime</a>. Detailed reports show which applications and websites you spent time on. Activities are automatically grouped into pre-defined categories with built-in productivity scores covering thousands of websites and applications. You can customize categories and productivity scores to meet your needs.",
           "type": "string"
         },
         "dataSourcesParagraphForEffect": {
-          "description": "Example: Very Distracting Time data was primarily collected using <a href=\"https://www.rescuetime.com/rp/quantimodo/plans\">RescueTime</a>. Detailed reports show which applications and websites you spent time on. Activities are automatically grouped into pre-defined categories with built-in productivity scores covering thousands of websites and applications. You can customize categories and productivity scores to meet your needs.<br>Video Activities data was primarily collected using <a href=\"https://www.rescuetime.com/rp/quantimodo/plans\">RescueTime</a>. Detailed reports show which applications and websites you spent time on. Activities are automatically grouped into pre-defined categories with built-in productivity scores covering thousands of websites and applications. You can customize categories and productivity scores to meet your needs.",
+          "description": "Ex: Very Distracting Time data was primarily collected using <a href=\"https://www.rescuetime.com/rp/quantimodo/plans\">RescueTime</a>. Detailed reports show which applications and websites you spent time on. Activities are automatically grouped into pre-defined categories with built-in productivity scores covering thousands of websites and applications. You can customize categories and productivity scores to meet your needs.<br>Video Activities data was primarily collected using <a href=\"https://www.rescuetime.com/rp/quantimodo/plans\">RescueTime</a>. Detailed reports show which applications and websites you spent time on. Activities are automatically grouped into pre-defined categories with built-in productivity scores covering thousands of websites and applications. You can customize categories and productivity scores to meet your needs.",
           "type": "string"
         },
         "lastCauseDailyValueSentenceExtended": {
-          "description": "Example: Sleep Quality Predicts Higher Overall Mood",
+          "description": "Ex: Sleep Quality Predicts Higher Overall Mood",
           "type": "string"
         },
         "lastCauseAndOptimalValueSentence": {
-          "description": "Example: Sleep Quality Predicts Higher Overall Mood",
+          "description": "Ex: Sleep Quality Predicts Higher Overall Mood",
           "type": "string"
         },
         "lastCauseDailyValueSentence": {
-          "description": "Example: Sleep Quality Predicts Higher Overall Mood",
+          "description": "Ex: Sleep Quality Predicts Higher Overall Mood",
           "type": "string"
         },
         "optimalDailyValueSentence": {
-          "description": "Example: Sleep Quality Predicts Higher Overall Mood",
+          "description": "Ex: Sleep Quality Predicts Higher Overall Mood",
           "type": "string"
         },
         "predictorExplanation": {
-          "description": "Example: Sleep Quality Predicts Higher Overall Mood",
+          "description": "Ex: Sleep Quality Predicts Higher Overall Mood",
           "type": "string"
         },
         "significanceExplanation": {
-          "description": "Example: Using a two-tailed t-test with alpha = 0.05, it was determined that the change in Video Activities is statistically significant at 95% confidence interval.",
+          "description": "Ex: Using a two-tailed t-test with alpha = 0.05, it was determined that the change in Video Activities is statistically significant at 95% confidence interval.",
           "type": "string"
         },
         "studyAbstract": {
-          "description": "Example: Aggregated data from 21 suggests with a low degree of confidence (p=0.097) that Very Distracting Time (Work) has a moderately positive predictive relationship (R=0.354) with Video Activities  (Activity).  The highest quartile of Video Activities measurements were observed following an average 2.03h Very Distracting Timeper day.  The lowest quartile of Video Activities  measurements were observed following an average 1.04h Very Distracting Timeper day.",
+          "description": "Ex: Aggregated data from 21 suggests with a low degree of confidence (p=0.097) that Very Distracting Time (Work) has a moderately positive predictive relationship (R=0.354) with Video Activities  (Activity).  The highest quartile of Video Activities measurements were observed following an average 2.03h Very Distracting Timeper day.  The lowest quartile of Video Activities  measurements were observed following an average 1.04h Very Distracting Timeper day.",
           "type": "string"
         },
         "studyDesign": {
-          "description": "Example: This study is based on data donated by  21 QuantiModo users. Thus, the study design is equivalent to the aggregation of 21 separate n=1 observational natural experiments.",
+          "description": "Ex: This study is based on data donated by  21 QuantiModo users. Thus, the study design is equivalent to the aggregation of 21 separate n=1 observational natural experiments.",
           "type": "string"
         },
         "studyLimitations": {
-          "description": "Example: As with any human experiment, it was impossible to control for all potentially confounding variables.\n            Correlation does not necessarily imply correlation.  We can never know for sure if one factor is definitely the cause of an outcome.\n            However, lack of correlation definitely implies the lack of a causal relationship.  Hence, we can with great\n            confidence rule out non-existent relationships. For instance, if we discover no relationship between mood\n            and an antidepressant this information is just as or even more valuable than the discovery that there is a relationship.\n            <br>\n            <br>\n            We can also take advantage of several characteristics of time series data from many subjects  to infer the likelihood of a causal relationship if we do find a correlational relationship.\n            The criteria for causation are a group of minimal conditions necessary to provide adequate evidence of a causal relationship between an incidence and a possible consequence.\n            The list of the criteria is as follows:\n            <br>\n            1. Strength (effect size): A small association does not mean that there is not a causal effect, though the larger the association, the more likely that it is causal.\n            <br>\n            2. Consistency (reproducibility): Consistent findings observed by different persons in different places with different samples strengthens the likelihood of an effect.\n            <br>\n            3. Specificity: Causation is likely if a very specific population at a specific site and disease with no other likely explanation. The more specific an association between a factor and an effect is, the bigger the probability of a causal relationship.\n            <br>\n            4. Temporality: The effect has to occur after the cause (and if there is an expected delay between the cause and expected effect, then the effect must occur after that delay).\n            <br>\n            5. Biological gradient: Greater exposure should generally lead to greater incidence of the effect. However, in some cases, the mere presence of the factor can trigger the effect. In other cases, an inverse proportion is observed: greater exposure leads to lower incidence.\n            <br>\n            6. Plausibility: A plausible mechanism between cause and effect is helpful.\n            <br>\n            7. Coherence: Coherence between epidemiological and laboratory findings increases the likelihood of an effect.\n            <br>\n            8. Experiment: \"Occasionally it is possible to appeal to experimental evidence\".\n            <br>\n            9. Analogy: The effect of similar factors may be considered.\n            <br>\n            <br>\n             The confidence in a causal relationship is bolstered by the fact that time-precedence was taken into account in all calculations. Furthermore, in accordance with the law of large numbers (LLN), the predictive power and accuracy of these results will continually grow over time.  146 paired data points were used in this analysis.   Assuming that the relationship is merely coincidental, as the participant independently modifies their Very Distracting Time values, the observed strength of the relationship will decline until it is below the threshold of significance.  To it another way, in the case that we do find a spurious correlation, suggesting that banana intake improves mood for instance,\n            one will likely increase their banana intake.  Due to the fact that this correlation is spurious, it is unlikely\n            that you will see a continued and persistent corresponding increase in mood.  So over time, the spurious correlation will\n            naturally dissipate.Furthermore, it will be very enlightening to aggregate this data with the data from other participants  with similar genetic, diseasomic, environmentomic, and demographic profiles.",
+          "description": "Ex: As with any human experiment, it was impossible to control for all potentially confounding variables.\n            Correlation does not necessarily imply correlation.  We can never know for sure if one factor is definitely the cause of an outcome.\n            However, lack of correlation definitely implies the lack of a causal relationship.  Hence, we can with great\n            confidence rule out non-existent relationships. For instance, if we discover no relationship between mood\n            and an antidepressant this information is just as or even more valuable than the discovery that there is a relationship.\n            <br>\n            <br>\n            We can also take advantage of several characteristics of time series data from many subjects  to infer the likelihood of a causal relationship if we do find a correlational relationship.\n            The criteria for causation are a group of minimal conditions necessary to provide adequate evidence of a causal relationship between an incidence and a possible consequence.\n            The list of the criteria is as follows:\n            <br>\n            1. Strength (effect size): A small association does not mean that there is not a causal effect, though the larger the association, the more likely that it is causal.\n            <br>\n            2. Consistency (reproducibility): Consistent findings observed by different persons in different places with different samples strengthens the likelihood of an effect.\n            <br>\n            3. Specificity: Causation is likely if a very specific population at a specific site and disease with no other likely explanation. The more specific an association between a factor and an effect is, the bigger the probability of a causal relationship.\n            <br>\n            4. Temporality: The effect has to occur after the cause (and if there is an expected delay between the cause and expected effect, then the effect must occur after that delay).\n            <br>\n            5. Biological gradient: Greater exposure should generally lead to greater incidence of the effect. However, in some cases, the mere presence of the factor can trigger the effect. In other cases, an inverse proportion is observed: greater exposure leads to lower incidence.\n            <br>\n            6. Plausibility: A plausible mechanism between cause and effect is helpful.\n            <br>\n            7. Coherence: Coherence between epidemiological and laboratory findings increases the likelihood of an effect.\n            <br>\n            8. Experiment: \"Occasionally it is possible to appeal to experimental evidence\".\n            <br>\n            9. Analogy: The effect of similar factors may be considered.\n            <br>\n            <br>\n             The confidence in a causal relationship is bolstered by the fact that time-precedence was taken into account in all calculations. Furthermore, in accordance with the law of large numbers (LLN), the predictive power and accuracy of these results will continually grow over time.  146 paired data points were used in this analysis.   Assuming that the relationship is merely coincidental, as the participant independently modifies their Very Distracting Time values, the observed strength of the relationship will decline until it is below the threshold of significance.  To it another way, in the case that we do find a spurious correlation, suggesting that banana intake improves mood for instance,\n            one will likely increase their banana intake.  Due to the fact that this correlation is spurious, it is unlikely\n            that you will see a continued and persistent corresponding increase in mood.  So over time, the spurious correlation will\n            naturally dissipate.Furthermore, it will be very enlightening to aggregate this data with the data from other participants  with similar genetic, diseasomic, environmentomic, and demographic profiles.",
           "type": "string"
         },
         "studyObjective": {
-          "description": "Example: The objective of this study is to determine the nature of the relationship (if any) between the Very Distracting Time and the Video Activities. Additionally, we attempt to determine the Very Distracting Time values most likely to produce optimal Video Activities values.",
+          "description": "Ex: The objective of this study is to determine the nature of the relationship (if any) between the Very Distracting Time and the Video Activities. Additionally, we attempt to determine the Very Distracting Time values most likely to produce optimal Video Activities values.",
           "type": "string"
         },
         "studyResults": {
-          "description": "Example: This analysis suggests that higher Very Distracting Time (Work) generally predicts negative Video Activities (p = 0.097). Video Activities is, on average, 36%  higher after around 2.03 Very Distracting Time.  After an onset delay of 168 hours, Video Activities is, on average, 16%  lower than its average over the 168 hours following around 1.04 Very Distracting Time.  146 data points were used in this analysis.  The value for Very Distracting Time changed 2984 times, effectively running 1492 separate natural experiments. The top quartile outcome values are preceded by an average 2.03 h of Very Distracting Time.  The bottom quartile outcome values are preceded by an average 1.04 h of Very Distracting Time.  Forward Pearson Correlation Coefficient was 0.354 (p=0.097, 95% CI -0.437 to 1.144 onset delay = 0 hours, duration of action = 168 hours) .  The Reverse Pearson Correlation Coefficient was 0.208 (P=0.097, 95% CI -0.583 to 0.998, onset delay = -0 hours, duration of action = -168 hours). When the Very Distracting Time value is closer to 2.03 h than 1.04 h, the Video Activities value which follows is, on average, 36% percent higher than its typical value.  When the Very Distracting Time value is closer to 1.04 h than 2.03 h, the Video Activities value which follows is 0% lower than its typical value.  Video Activities is 5 h (67% higher) on average after days with around 5 h Very Distracting Time",
+          "description": "Ex: This analysis suggests that higher Very Distracting Time (Work) generally predicts negative Video Activities (p = 0.097). Video Activities is, on average, 36%  higher after around 2.03 Very Distracting Time.  After an onset delay of 168 hours, Video Activities is, on average, 16%  lower than its average over the 168 hours following around 1.04 Very Distracting Time.  146 data points were used in this analysis.  The value for Very Distracting Time changed 2984 times, effectively running 1492 separate natural experiments. The top quartile outcome values are preceded by an average 2.03 h of Very Distracting Time.  The bottom quartile outcome values are preceded by an average 1.04 h of Very Distracting Time.  Forward Pearson Correlation Coefficient was 0.354 (p=0.097, 95% CI -0.437 to 1.144 onset delay = 0 hours, duration of action = 168 hours) .  The Reverse Pearson Correlation Coefficient was 0.208 (P=0.097, 95% CI -0.583 to 0.998, onset delay = -0 hours, duration of action = -168 hours). When the Very Distracting Time value is closer to 2.03 h than 1.04 h, the Video Activities value which follows is, on average, 36% percent higher than its typical value.  When the Very Distracting Time value is closer to 1.04 h than 2.03 h, the Video Activities value which follows is 0% lower than its typical value.  Video Activities is 5 h (67% higher) on average after days with around 5 h Very Distracting Time",
           "type": "string"
         },
         "studyTitle": {
-          "description": "Example: N1 Study: Very Distracting Time Predicts Negative Video Activities",
+          "description": "Ex: N1 Study: Very Distracting Time Predicts Negative Video Activities",
           "type": "string"
         },
         "studyInvitation": {
@@ -2137,7 +2232,7 @@
           "type": "array"
         },
         "clientId": {
-          "description": "clientId",
+          "description": "Your QuantiModo client id can be obtained by creating an app at https://builder.quantimo.do",
           "type": "string"
         },
         "combinationOperation": {
@@ -2149,31 +2244,31 @@
           "type": "string"
         },
         "createdAt": {
-          "description": "Example: 2016-05-18 02:24:08 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
+          "description": "Ex: 2016-05-18 02:24:08 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
         "displayName": {
-          "description": "Example: Trader Joe's Bedtime Tea",
+          "description": "Ex: Trader Joe's Bedtime Tea",
           "type": "string"
         },
         "unitAbbreviatedName": {
-          "description": "Example: /5",
+          "description": "Ex: /5",
           "type": "string"
         },
         "unitCategoryId": {
-          "description": "Example: 5",
+          "description": "Ex: 5",
           "type": "integer"
         },
         "unitCategoryName": {
-          "description": "Example: Rating",
+          "description": "Ex: Rating",
           "type": "string"
         },
         "unitId": {
-          "description": "Example: 10",
+          "description": "Ex: 10",
           "type": "integer"
         },
         "unitName": {
-          "description": "Example: 1 to 5 Rating",
+          "description": "Ex: 1 to 5 Rating",
           "type": "string"
         },
         "defaultValue": {
@@ -2186,23 +2281,23 @@
           "type": "boolean"
         },
         "errorMessage": {
-          "description": "Example: reminderStartTimeLocal is less than $user->earliestReminderTime or greater than  $user->latestReminderTime",
+          "description": "Ex: reminderStartTimeLocal is less than $user->earliestReminderTime or greater than  $user->latestReminderTime",
           "type": "string"
         },
         "fillingValue": {
-          "description": "Example: 0",
+          "description": "Ex: 0",
           "type": "integer"
         },
         "firstDailyReminderTime": {
-          "description": "Example: 02:45:20 in UTC timezone",
+          "description": "Ex: 02:45:20 in UTC timezone",
           "type": "string"
         },
         "frequencyTextDescription": {
-          "description": "Example: Daily",
+          "description": "Ex: Daily",
           "type": "string"
         },
         "frequencyTextDescriptionWithTime": {
-          "description": "Example: Daily at 09:45 PM",
+          "description": "Ex: Daily at 09:45 PM",
           "type": "string"
         },
         "id": {
@@ -2211,15 +2306,15 @@
           "type": "integer"
         },
         "inputType": {
-          "description": "Example: saddestFaceIsFive",
+          "description": "Ex: saddestFaceIsFive",
           "type": "string"
         },
         "instructions": {
-          "description": "Example: I am an instruction!",
+          "description": "Ex: I am an instruction!",
           "type": "string"
         },
         "ionIcon": {
-          "description": "Example: ion-sad-outline",
+          "description": "Ex: ion-sad-outline",
           "type": "string"
         },
         "lastTracked": {
@@ -2227,7 +2322,7 @@
           "type": "string"
         },
         "lastValue": {
-          "description": "Example: 2",
+          "description": "Ex: 2",
           "format": "double",
           "type": "number"
         },
@@ -2248,19 +2343,19 @@
           "type": "array"
         },
         "manualTracking": {
-          "description": "Example: 1",
+          "description": "Ex: 1",
           "type": "boolean"
         },
         "maximumAllowedValue": {
-          "description": "Example: 5",
+          "description": "Ex: 5",
           "type": "integer"
         },
         "minimumAllowedValue": {
-          "description": "Example: 1",
+          "description": "Ex: 1",
           "type": "integer"
         },
         "nextReminderTimeEpochSeconds": {
-          "description": "Example: 1501555520",
+          "description": "Ex: 1501555520",
           "type": "integer"
         },
         "notificationBar": {
@@ -2268,11 +2363,11 @@
           "type": "boolean"
         },
         "numberOfRawMeasurements": {
-          "description": "Example: 445",
+          "description": "Ex: 445",
           "type": "integer"
         },
         "numberOfUniqueValues": {
-          "description": "Example: 1",
+          "description": "Ex: 1",
           "type": "integer"
         },
         "outcome": {
@@ -2280,11 +2375,11 @@
           "type": "boolean"
         },
         "pngPath": {
-          "description": "Example: img/variable_categories/symptoms.png",
+          "description": "Ex: img/variable_categories/symptoms.png",
           "type": "string"
         },
         "pngUrl": {
-          "description": "Example: https://app.quantimo.do/ionic/Modo/www/img/variable_categories/symptoms.png",
+          "description": "Ex: https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/symptoms.png",
           "type": "string"
         },
         "productUrl": {
@@ -2296,7 +2391,7 @@
           "type": "boolean"
         },
         "question": {
-          "description": "Example: How is your overall mood?",
+          "description": "Ex: How is your overall mood?",
           "type": "string"
         },
         "reminderEndTime": {
@@ -2313,7 +2408,7 @@
           "type": "string"
         },
         "reminderStartEpochSeconds": {
-          "description": "Example: 1469760320",
+          "description": "Ex: 1469760320",
           "type": "integer"
         },
         "reminderStartTime": {
@@ -2321,24 +2416,24 @@
           "type": "string"
         },
         "reminderStartTimeLocal": {
-          "description": "Example: 21:45:20",
+          "description": "Ex: 21:45:20",
           "format": "string",
           "type": "string"
         },
         "reminderStartTimeLocalHumanFormatted": {
-          "description": "Example: 09:45 PM",
+          "description": "Ex: 09:45 PM",
           "type": "string"
         },
         "repeating": {
-          "description": "Example: true",
+          "description": "Ex: true",
           "type": "boolean"
         },
         "secondDailyReminderTime": {
-          "description": "Example: 01:00:00",
+          "description": "Ex: 01:00:00",
           "type": "string"
         },
         "secondToLastValue": {
-          "description": "Example: 1",
+          "description": "Ex: 1",
           "format": "double",
           "type": "number"
         },
@@ -2357,24 +2452,24 @@
           "type": "string"
         },
         "svgUrl": {
-          "description": "Example: https://app.quantimo.do/ionic/Modo/www/img/variable_categories/symptoms.svg",
+          "description": "Ex: https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/symptoms.svg",
           "type": "string"
         },
         "thirdDailyReminderTime": {
-          "description": "Example: 20:00:00",
+          "description": "Ex: 20:00:00",
           "type": "string"
         },
         "thirdToLastValue": {
-          "description": "Example: 3",
+          "description": "Ex: 3",
           "format": "double",
           "type": "number"
         },
         "trackingReminderId": {
-          "description": "Example: 11841",
+          "description": "Ex: 11841",
           "type": "integer"
         },
         "trackingReminderImageUrl": {
-          "description": "Example: Not Found",
+          "description": "Ex: Not Found",
           "type": "string"
         },
         "upc": {
@@ -2391,51 +2486,51 @@
           "type": "integer"
         },
         "userVariableUnitAbbreviatedName": {
-          "description": "Example: /5",
+          "description": "Ex: /5",
           "type": "string"
         },
         "userVariableUnitCategoryId": {
-          "description": "Example: 5",
+          "description": "Ex: 5",
           "type": "integer"
         },
         "userVariableUnitCategoryName": {
-          "description": "Example: Rating",
+          "description": "Ex: Rating",
           "type": "string"
         },
         "userVariableUnitId": {
-          "description": "Example: 10",
+          "description": "Ex: 10",
           "type": "integer"
         },
         "userVariableUnitName": {
-          "description": "Example: 1 to 5 Rating",
+          "description": "Ex: 1 to 5 Rating",
           "type": "string"
         },
         "userVariableVariableCategoryId": {
-          "description": "Example: 10",
+          "description": "Ex: 10",
           "type": "integer"
         },
         "userVariableVariableCategoryName": {
-          "description": "Example: Symptoms",
+          "description": "Ex: Symptoms",
           "type": "string"
         },
         "valence": {
-          "description": "Example: negative",
+          "description": "Ex: negative",
           "type": "string"
         },
         "valueAndFrequencyTextDescription": {
-          "description": "Example: Rate daily",
+          "description": "Ex: Rate daily",
           "type": "string"
         },
         "valueAndFrequencyTextDescriptionWithTime": {
-          "description": "Example: Rate daily at 09:45 PM",
+          "description": "Ex: Rate daily at 09:45 PM",
           "type": "string"
         },
         "variableCategoryId": {
-          "description": "Example: 10",
+          "description": "Ex: 10",
           "type": "integer"
         },
         "variableCategoryImageUrl": {
-          "description": "Example: https://maxcdn.icons8.com/Color/PNG/96/Messaging/sad-96.png",
+          "description": "Ex: https://maxcdn.icons8.com/Color/PNG/96/Messaging/sad-96.png",
           "type": "string"
         },
         "variableCategoryName": {
@@ -2443,7 +2538,7 @@
           "type": "string"
         },
         "variableDescription": {
-          "description": "Example: negative",
+          "description": "Ex: negative",
           "type": "string"
         },
         "variableId": {
@@ -2489,7 +2584,7 @@
           "type": "array"
         },
         "clientId": {
-          "description": "clientId",
+          "description": "Your QuantiModo client id can be obtained by creating an app at https://builder.quantimo.do",
           "type": "string"
         },
         "combinationOperation": {
@@ -2501,11 +2596,11 @@
           "type": "string"
         },
         "createdAt": {
-          "description": "Example: 2017-07-29 20:49:54 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
+          "description": "Ex: 2017-07-29 20:49:54 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
         "displayName": {
-          "description": "Example: Trader Joe's Bedtime Tea",
+          "description": "Ex: Trader Joe's Bedtime Tea",
           "type": "string"
         },
         "modifiedValue": {
@@ -2514,23 +2609,23 @@
           "type": "number"
         },
         "unitAbbreviatedName": {
-          "description": "Example: /5",
+          "description": "Ex: /5",
           "type": "string"
         },
         "unitCategoryId": {
-          "description": "Example: 5",
+          "description": "Ex: 5",
           "type": "integer"
         },
         "unitCategoryName": {
-          "description": "Example: Rating",
+          "description": "Ex: Rating",
           "type": "string"
         },
         "unitId": {
-          "description": "Example: 10",
+          "description": "Ex: 10",
           "type": "integer"
         },
         "unitName": {
-          "description": "Example: 1 to 5 Rating",
+          "description": "Ex: 1 to 5 Rating",
           "type": "string"
         },
         "defaultValue": {
@@ -2539,7 +2634,7 @@
           "type": "number"
         },
         "description": {
-          "description": "Example: positive",
+          "description": "Ex: positive",
           "type": "string"
         },
         "email": {
@@ -2547,11 +2642,11 @@
           "type": "boolean"
         },
         "fillingValue": {
-          "description": "Example: 0",
+          "description": "Ex: 0",
           "type": "integer"
         },
         "iconIcon": {
-          "description": "Example: ion-sad-outline",
+          "description": "Ex: ion-sad-outline",
           "type": "string"
         },
         "id": {
@@ -2560,36 +2655,36 @@
           "type": "integer"
         },
         "imageUrl": {
-          "description": "Example: https://rximage.nlm.nih.gov/image/images/gallery/original/55111-0129-60_RXNAVIMAGE10_B051D81E.jpg",
+          "description": "Ex: https://rximage.nlm.nih.gov/image/images/gallery/original/55111-0129-60_RXNAVIMAGE10_B051D81E.jpg",
           "type": "string"
         },
         "inputType": {
-          "description": "Example: happiestFaceIsFive",
+          "description": "Ex: happiestFaceIsFive",
           "type": "string"
         },
         "ionIcon": {
-          "description": "Example: ion-happy-outline",
+          "description": "Ex: ion-happy-outline",
           "type": "string"
         },
         "lastValue": {
-          "description": "Example: 3",
+          "description": "Ex: 3",
           "format": "double",
           "type": "number"
         },
         "manualTracking": {
-          "description": "Example: 1",
+          "description": "Ex: 1",
           "type": "boolean"
         },
         "maximumAllowedValue": {
-          "description": "Example: 5",
+          "description": "Ex: 5",
           "type": "integer"
         },
         "minimumAllowedValue": {
-          "description": "Example: 1",
+          "description": "Ex: 1",
           "type": "integer"
         },
         "mostCommonValue": {
-          "description": "Example: 3",
+          "description": "Ex: 3",
           "format": "double",
           "type": "number"
         },
@@ -2598,11 +2693,11 @@
           "type": "boolean"
         },
         "notifiedAt": {
-          "description": "Example: UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
+          "description": "Ex: UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
         "numberOfUniqueValues": {
-          "description": "Example: 5",
+          "description": "Ex: 5",
           "type": "integer"
         },
         "outcome": {
@@ -2610,11 +2705,11 @@
           "type": "boolean"
         },
         "pngPath": {
-          "description": "Example: img/variable_categories/emotions.png",
+          "description": "Ex: img/variable_categories/emotions.png",
           "type": "string"
         },
         "pngUrl": {
-          "description": "Example: https://app.quantimo.do/ionic/Modo/www/img/variable_categories/emotions.png",
+          "description": "Ex: https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/emotions.png",
           "type": "string"
         },
         "popUp": {
@@ -2626,15 +2721,15 @@
           "type": "string"
         },
         "question": {
-          "description": "Example: How is your overall mood?",
+          "description": "Ex: How is your overall mood?",
           "type": "string"
         },
         "reminderEndTime": {
-          "description": "Example: 01-01-2018",
+          "description": "Ex: 01-01-2018",
           "type": "string"
         },
         "reminderFrequency": {
-          "description": "How often user should be reminded in seconds. Example: 86400",
+          "description": "How often user should be reminded in seconds. Ex: 86400",
           "type": "integer"
         },
         "reminderSound": {
@@ -2650,12 +2745,12 @@
           "type": "string"
         },
         "secondMostCommonValue": {
-          "description": "Example: 4",
+          "description": "Ex: 4",
           "format": "double",
           "type": "number"
         },
         "secondToLastValue": {
-          "description": "Example: 1",
+          "description": "Ex: 1",
           "format": "double",
           "type": "number"
         },
@@ -2664,25 +2759,25 @@
           "type": "boolean"
         },
         "svgUrl": {
-          "description": "Example: https://app.quantimo.do/ionic/Modo/www/img/variable_categories/emotions.svg",
+          "description": "Ex: https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/emotions.svg",
           "type": "string"
         },
         "thirdMostCommonValue": {
-          "description": "Example: 2",
+          "description": "Ex: 2",
           "format": "double",
           "type": "number"
         },
         "thirdToLastValue": {
-          "description": "Example: 2",
+          "description": "Ex: 2",
           "format": "double",
           "type": "number"
         },
         "title": {
-          "description": "Example: Rate Overall Mood",
+          "description": "Ex: Rate Overall Mood",
           "type": "string"
         },
         "total": {
-          "description": "Example: 3",
+          "description": "Ex: 3",
           "format": "double",
           "type": "number"
         },
@@ -2698,11 +2793,11 @@
           "type": "integer"
         },
         "trackingReminderImageUrl": {
-          "description": "Example: https://rximage.nlm.nih.gov/image/images/gallery/original/55111-0129-60_RXNAVIMAGE10_B051D81E.jpg",
+          "description": "Ex: https://rximage.nlm.nih.gov/image/images/gallery/original/55111-0129-60_RXNAVIMAGE10_B051D81E.jpg",
           "type": "string"
         },
         "trackingReminderNotificationId": {
-          "description": "Example: 5072482",
+          "description": "Ex: 5072482",
           "type": "integer"
         },
         "trackingReminderNotificationTime": {
@@ -2710,15 +2805,15 @@
           "type": "string"
         },
         "trackingReminderNotificationTimeEpoch": {
-          "description": "Example: 1501534124",
+          "description": "Ex: 1501534124",
           "type": "integer"
         },
         "trackingReminderNotificationTimeLocal": {
-          "description": "Example: 15:48:44",
+          "description": "Ex: 15:48:44",
           "type": "string"
         },
         "trackingReminderNotificationTimeLocalHumanString": {
-          "description": "Example: 8PM Sun, May 1",
+          "description": "Ex: 8PM Sun, May 1",
           "type": "string"
         },
         "updatedAt": {
@@ -2731,43 +2826,43 @@
           "type": "integer"
         },
         "userVariableUnitAbbreviatedName": {
-          "description": "Example: /5",
+          "description": "Ex: /5",
           "type": "string"
         },
         "userVariableUnitCategoryId": {
-          "description": "Example: 5",
+          "description": "Ex: 5",
           "type": "integer"
         },
         "userVariableUnitCategoryName": {
-          "description": "Example: Rating",
+          "description": "Ex: Rating",
           "type": "string"
         },
         "userVariableUnitId": {
-          "description": "Example: 10",
+          "description": "Ex: 10",
           "type": "integer"
         },
         "userVariableUnitName": {
-          "description": "Example: 1 to 5 Rating",
+          "description": "Ex: 1 to 5 Rating",
           "type": "string"
         },
         "userVariableVariableCategoryId": {
-          "description": "Example: 1",
+          "description": "Ex: 1",
           "type": "integer"
         },
         "userVariableVariableCategoryName": {
-          "description": "Example: Emotions",
+          "description": "Ex: Emotions",
           "type": "string"
         },
         "valence": {
-          "description": "Example: positive",
+          "description": "Ex: positive",
           "type": "string"
         },
         "variableCategoryId": {
-          "description": "Example: 1",
+          "description": "Ex: 1",
           "type": "integer"
         },
         "variableCategoryImageUrl": {
-          "description": "Example: https://maxcdn.icons8.com/Color/PNG/96/Cinema/theatre_mask-96.png",
+          "description": "Ex: https://maxcdn.icons8.com/Color/PNG/96/Cinema/theatre_mask-96.png",
           "type": "string"
         },
         "variableCategoryName": {
@@ -2780,7 +2875,7 @@
           "type": "integer"
         },
         "variableImageUrl": {
-          "description": "Example: https://image.png",
+          "description": "Ex: https://image.png",
           "type": "string"
         },
         "variableName": {
@@ -2799,27 +2894,27 @@
     "TrackingReminderNotificationAction": {
       "properties": {
         "action": {
-          "description": "Example: track",
+          "description": "Ex: track",
           "type": "string"
         },
         "callback": {
-          "description": "Example: trackThreeRatingAction",
+          "description": "Ex: trackThreeRatingAction",
           "type": "string"
         },
         "modifiedValue": {
-          "description": "Example: 3",
+          "description": "Ex: 3",
           "type": "integer"
         },
         "title": {
-          "description": "Example: 3/5",
+          "description": "Ex: 3/5",
           "type": "string"
         },
         "longTitle": {
-          "description": "Example: Rate 3/5",
+          "description": "Ex: Rate 3/5",
           "type": "string"
         },
         "shortTitle": {
-          "description": "Example: 3",
+          "description": "Ex: 3",
           "type": "string"
         }
       },
@@ -2858,19 +2953,19 @@
     "TrackingReminderNotificationTrackAllAction": {
       "properties": {
         "action": {
-          "description": "Example: trackAll",
+          "description": "Ex: trackAll",
           "type": "string"
         },
         "callback": {
-          "description": "Example: trackThreeRatingAction",
+          "description": "Ex: trackThreeRatingAction",
           "type": "string"
         },
         "modifiedValue": {
-          "description": "Example: 3",
+          "description": "Ex: 3",
           "type": "integer"
         },
         "title": {
-          "description": "Example: Rate 3/5 for all",
+          "description": "Ex: Rate 3/5 for all",
           "type": "string"
         }
       },
@@ -2888,7 +2983,7 @@
           "type": "string"
         },
         "advanced": {
-          "description": "Example: 1",
+          "description": "Ex: 1",
           "type": "integer"
         },
         "category": {
@@ -2910,11 +3005,11 @@
           "type": "string"
         },
         "categoryId": {
-          "description": "Example: 6",
+          "description": "Ex: 6",
           "type": "integer"
         },
         "categoryName": {
-          "description": "Example: Miscellany",
+          "description": "Ex: Miscellany",
           "type": "string"
         },
         "conversionSteps": {
@@ -2925,11 +3020,11 @@
           "type": "array"
         },
         "id": {
-          "description": "Example: 29",
+          "description": "Ex: 29",
           "type": "integer"
         },
         "manualTracking": {
-          "description": "Example: 0",
+          "description": "Ex: 0",
           "type": "integer"
         },
         "maximumAllowedValue": {
@@ -2938,7 +3033,7 @@
           "type": "number"
         },
         "maximumValue": {
-          "description": "Example: 4",
+          "description": "Ex: 4",
           "type": "integer"
         },
         "minimumAllowedValue": {
@@ -2947,7 +3042,7 @@
           "type": "number"
         },
         "minimumValue": {
-          "description": "Example: 0",
+          "description": "Ex: 0",
           "type": "integer"
         },
         "name": {
@@ -2993,11 +3088,11 @@
           "type": "string"
         },
         "accessTokenExpires": {
-          "description": "Example: 2018-08-08 02:41:19",
+          "description": "Ex: 2018-08-08 02:41:19",
           "type": "string"
         },
         "accessTokenExpiresAtMilliseconds": {
-          "description": "Example: 1533696079000",
+          "description": "Ex: 1533696079000",
           "type": "integer"
         },
         "administrator": {
@@ -3008,27 +3103,27 @@
           "$ref": "#/definitions/AuthorizedClients"
         },
         "avatar": {
-          "description": "Example: https://lh6.googleusercontent.com/-BHr4hyUWqZU/AAAAAAAAAAI/AAAAAAAIG28/2Lv0en738II/photo.jpg?sz=50",
+          "description": "Ex: https://lh6.googleusercontent.com/-BHr4hyUWqZU/AAAAAAAAAAI/AAAAAAAIG28/2Lv0en738II/photo.jpg?sz=50",
           "type": "string"
         },
         "avatarImage": {
-          "description": "Example: https://lh6.googleusercontent.com/-BHr4hyUWqZU/AAAAAAAAAAI/AAAAAAAIG28/2Lv0en738II/photo.jpg?sz=50",
+          "description": "Ex: https://lh6.googleusercontent.com/-BHr4hyUWqZU/AAAAAAAAAAI/AAAAAAAIG28/2Lv0en738II/photo.jpg?sz=50",
           "type": "string"
         },
         "capabilities": {
-          "description": "Example: a:1:{s:13:\"administrator\";b:1;}",
+          "description": "Ex: a:1:{s:13:\"administrator\";b:1;}",
           "type": "string"
         },
         "clientId": {
-          "description": "Example: quantimodo",
+          "description": "Ex: quantimodo",
           "type": "string"
         },
         "clientUserId": {
-          "description": "Example: 118444693184829555362",
+          "description": "Ex: 118444693184829555362",
           "type": "string"
         },
         "combineNotifications": {
-          "description": "Example: 1",
+          "description": "Ex: 1",
           "type": "boolean"
         },
         "createdAt": {
@@ -3040,7 +3135,7 @@
           "type": "string"
         },
         "earliestReminderTime": {
-          "description": "Earliest time user should get notifications. Example: 05:00:00",
+          "description": "Earliest time user should get notifications. Ex: 05:00:00",
           "type": "string"
         },
         "email": {
@@ -3048,23 +3143,23 @@
           "type": "string"
         },
         "firstName": {
-          "description": "Example: Mike",
+          "description": "Ex: Mike",
           "type": "string"
         },
         "getPreviewBuilds": {
-          "description": "Example: false",
+          "description": "Ex: false",
           "type": "boolean"
         },
         "hasAndroidApp": {
-          "description": "Example: false",
+          "description": "Ex: false",
           "type": "boolean"
         },
         "hasChromeExtension": {
-          "description": "Example: false",
+          "description": "Ex: false",
           "type": "boolean"
         },
         "hasIosApp": {
-          "description": "Example: false",
+          "description": "Ex: false",
           "type": "boolean"
         },
         "id": {
@@ -3072,19 +3167,19 @@
           "type": "integer"
         },
         "lastFour": {
-          "description": "Example: 2009",
+          "description": "Ex: 2009",
           "type": "string"
         },
         "lastName": {
-          "description": "Example: Sinn",
+          "description": "Ex: Sinn",
           "type": "string"
         },
         "lastSmsTrackingReminderNotificationId": {
-          "description": "Example: 1",
+          "description": "Ex: 1",
           "type": "string"
         },
         "latestReminderTime": {
-          "description": "Latest time user should get notifications. Example: 23:00:00",
+          "description": "Latest time user should get notifications. Ex: 23:00:00",
           "type": "string"
         },
         "loginName": {
@@ -3092,35 +3187,35 @@
           "type": "string"
         },
         "password": {
-          "description": "Example: PASSWORD",
+          "description": "Ex: PASSWORD",
           "type": "string"
         },
         "phoneNumber": {
-          "description": "Example: 618-391-0002",
+          "description": "Ex: 618-391-0002",
           "type": "string"
         },
         "phoneVerificationCode": {
-          "description": "Example: 1234",
+          "description": "Ex: 1234",
           "type": "string"
         },
         "pushNotificationsEnabled": {
-          "description": "Example: 1",
+          "description": "Ex: 1",
           "type": "boolean"
         },
         "refreshToken": {
-          "description": "Example: 6e99b113d85586de1f92468433f2df1e666647cb",
+          "description": "Ex: 6e99b113d85586de1f92468433f2df1e666647cb",
           "type": "string"
         },
         "roles": {
-          "description": "Example: [\"admin\"]",
+          "description": "Ex: [\"admin\"]",
           "type": "string"
         },
         "sendPredictorEmails": {
-          "description": "Example: 1",
+          "description": "Ex: 1",
           "type": "boolean"
         },
         "sendReminderNotificationEmails": {
-          "description": "Example: 1",
+          "description": "Ex: 1",
           "type": "boolean"
         },
         "shareAllData": {
@@ -3128,23 +3223,23 @@
           "type": "boolean"
         },
         "smsNotificationsEnabled": {
-          "description": "Example: false",
+          "description": "Ex: false",
           "type": "boolean"
         },
         "stripeActive": {
-          "description": "Example: 1",
+          "description": "Ex: 1",
           "type": "boolean"
         },
         "stripeId": {
-          "description": "Example: cus_A8CEmcvl8jwLhV",
+          "description": "Ex: cus_A8CEmcvl8jwLhV",
           "type": "string"
         },
         "stripePlan": {
-          "description": "Example: monthly7",
+          "description": "Ex: monthly7",
           "type": "string"
         },
         "stripeSubscription": {
-          "description": "Example: sub_ANTx3nOE7nzjQf",
+          "description": "Ex: sub_ANTx3nOE7nzjQf",
           "type": "string"
         },
         "subscriptionEndsAt": {
@@ -3152,15 +3247,15 @@
           "type": "string"
         },
         "subscriptionProvider": {
-          "description": "Example: google",
+          "description": "Ex: google",
           "type": "string"
         },
         "timeZoneOffset": {
-          "description": "Example: 300",
+          "description": "Ex: 300",
           "type": "integer"
         },
         "trackLocation": {
-          "description": "Example: 1",
+          "description": "Ex: 1",
           "type": "boolean"
         },
         "updatedAt": {
@@ -3168,11 +3263,11 @@
           "type": "string"
         },
         "userRegistered": {
-          "description": "Example: 2013-12-03 15:25:13 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
+          "description": "Ex: 2013-12-03 15:25:13 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
         "userUrl": {
-          "description": "Example: https://plus.google.com/+MikeSinn",
+          "description": "Ex: https://plus.google.com/+MikeSinn",
           "type": "string"
         }
       },
@@ -3232,27 +3327,27 @@
           "$ref": "#/definitions/VariableCharts"
         },
         "chartsLinkDynamic": {
-          "description": "Example: https://local.quantimo.do/ionic/Modo/www/#/app/charts/Trader%20Joes%20Bedtime%20Tea%20%2F%20Sleepytime%20Tea%20%28any%20Brand%29?variableName=Trader%20Joes%20Bedtime%20Tea%20%2F%20Sleepytime%20Tea%20%28any%20Brand%29&userId=230&pngUrl=https%3A%2F%2Fapp.quantimo.do%2Fionic%2FModo%2Fwww%2Fimg%2Fvariable_categories%2Ftreatments.png",
+          "description": "Ex: https://local.quantimo.do/ionic/Modo/www/#/app/charts/Trader%20Joes%20Bedtime%20Tea%20%2F%20Sleepytime%20Tea%20%28any%20Brand%29?variableName=Trader%20Joes%20Bedtime%20Tea%20%2F%20Sleepytime%20Tea%20%28any%20Brand%29&userId=230&pngUrl=https%3A%2F%2Fapp.quantimo.do%2Fionic%2FModo%2Fwww%2Fimg%2Fvariable_categories%2Ftreatments.png",
           "type": "string"
         },
         "chartsLinkEmail": {
-          "description": "Example: mailto:?subject=Check%20out%20my%20Trader%20Joes%20Bedtime%20Tea%20%2F%20Sleepytime%20Tea%20%28any%20Brand%29%20data%21&body=See%20my%20Trader%20Joes%20Bedtime%20Tea%20%2F%20Sleepytime%20Tea%20%28any%20Brand%29%20history%20at%20https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fcharts%3FvariableName%3DTrader%2520Joes%2520Bedtime%2520Tea%2520%252F%2520Sleepytime%2520Tea%2520%2528any%2520Brand%2529%26userId%3D230%26pngUrl%3Dhttps%253A%252F%252Fapp.quantimo.do%252Fionic%252FModo%252Fwww%252Fimg%252Fvariable_categories%252Ftreatments.png%0A%0AHave%20a%20great%20day!",
+          "description": "Ex: mailto:?subject=Check%20out%20my%20Trader%20Joes%20Bedtime%20Tea%20%2F%20Sleepytime%20Tea%20%28any%20Brand%29%20data%21&body=See%20my%20Trader%20Joes%20Bedtime%20Tea%20%2F%20Sleepytime%20Tea%20%28any%20Brand%29%20history%20at%20https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fcharts%3FvariableName%3DTrader%2520Joes%2520Bedtime%2520Tea%2520%252F%2520Sleepytime%2520Tea%2520%2528any%2520Brand%2529%26userId%3D230%26pngUrl%3Dhttps%253A%252F%252Fapp.quantimo.do%252Fionic%252FModo%252Fwww%252Fimg%252Fvariable_categories%252Ftreatments.png%0A%0AHave%20a%20great%20day!",
           "type": "string"
         },
         "chartsLinkFacebook": {
-          "description": "Example: https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fcharts%3FvariableName%3DTrader%2520Joes%2520Bedtime%2520Tea%2520%252F%2520Sleepytime%2520Tea%2520%2528any%2520Brand%2529%26userId%3D230%26pngUrl%3Dhttps%253A%252F%252Fapp.quantimo.do%252Fionic%252FModo%252Fwww%252Fimg%252Fvariable_categories%252Ftreatments.png",
+          "description": "Ex: https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fcharts%3FvariableName%3DTrader%2520Joes%2520Bedtime%2520Tea%2520%252F%2520Sleepytime%2520Tea%2520%2528any%2520Brand%2529%26userId%3D230%26pngUrl%3Dhttps%253A%252F%252Fapp.quantimo.do%252Fionic%252FModo%252Fwww%252Fimg%252Fvariable_categories%252Ftreatments.png",
           "type": "string"
         },
         "chartsLinkGoogle": {
-          "description": "Example: https://plus.google.com/share?url=https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fcharts%3FvariableName%3DTrader%2520Joes%2520Bedtime%2520Tea%2520%252F%2520Sleepytime%2520Tea%2520%2528any%2520Brand%2529%26userId%3D230%26pngUrl%3Dhttps%253A%252F%252Fapp.quantimo.do%252Fionic%252FModo%252Fwww%252Fimg%252Fvariable_categories%252Ftreatments.png",
+          "description": "Ex: https://plus.google.com/share?url=https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fcharts%3FvariableName%3DTrader%2520Joes%2520Bedtime%2520Tea%2520%252F%2520Sleepytime%2520Tea%2520%2528any%2520Brand%2529%26userId%3D230%26pngUrl%3Dhttps%253A%252F%252Fapp.quantimo.do%252Fionic%252FModo%252Fwww%252Fimg%252Fvariable_categories%252Ftreatments.png",
           "type": "string"
         },
         "chartsLinkStatic": {
-          "description": "Example: https://local.quantimo.do/api/v2/charts?variableName=Trader%20Joes%20Bedtime%20Tea%20%2F%20Sleepytime%20Tea%20%28any%20Brand%29&userId=230&pngUrl=https%3A%2F%2Fapp.quantimo.do%2Fionic%2FModo%2Fwww%2Fimg%2Fvariable_categories%2Ftreatments.png",
+          "description": "Ex: https://local.quantimo.do/api/v2/charts?variableName=Trader%20Joes%20Bedtime%20Tea%20%2F%20Sleepytime%20Tea%20%28any%20Brand%29&userId=230&pngUrl=https%3A%2F%2Fapp.quantimo.do%2Fionic%2FModo%2Fwww%2Fimg%2Fvariable_categories%2Ftreatments.png",
           "type": "string"
         },
         "chartsLinkTwitter": {
-          "description": "Example: https://twitter.com/home?status=Check%20out%20my%20Trader%20Joes%20Bedtime%20Tea%20%2F%20Sleepytime%20Tea%20%28any%20Brand%29%20data%21%20https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fcharts%3FvariableName%3DTrader%2520Joes%2520Bedtime%2520Tea%2520%252F%2520Sleepytime%2520Tea%2520%2528any%2520Brand%2529%26userId%3D230%26pngUrl%3Dhttps%253A%252F%252Fapp.quantimo.do%252Fionic%252FModo%252Fwww%252Fimg%252Fvariable_categories%252Ftreatments.png%20%40quantimodo",
+          "description": "Ex: https://twitter.com/home?status=Check%20out%20my%20Trader%20Joes%20Bedtime%20Tea%20%2F%20Sleepytime%20Tea%20%28any%20Brand%29%20data%21%20https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fcharts%3FvariableName%3DTrader%2520Joes%2520Bedtime%2520Tea%2520%252F%2520Sleepytime%2520Tea%2520%2528any%2520Brand%2529%26userId%3D230%26pngUrl%3Dhttps%253A%252F%252Fapp.quantimo.do%252Fionic%252FModo%252Fwww%252Fimg%252Fvariable_categories%252Ftreatments.png%20%40quantimodo",
           "type": "string"
         },
         "childCommonTagVariables": {
@@ -3270,15 +3365,15 @@
           "type": "array"
         },
         "clientId": {
-          "description": "clientId",
+          "description": "Your QuantiModo client id can be obtained by creating an app at https://builder.quantimo.do",
           "type": "string"
         },
         "combinationOperation": {
-          "description": "Example: MEAN",
+          "description": "Ex: MEAN",
           "type": "string"
         },
         "commonAlias": {
-          "description": "Example: Anxiety / Nervousness",
+          "description": "Ex: Anxiety / Nervousness",
           "type": "string"
         },
         "commonTaggedVariables": {
@@ -3294,11 +3389,11 @@
           "type": "array"
         },
         "commonVariableMostCommonConnectorId": {
-          "description": "Example: 51",
+          "description": "Ex: 51",
           "type": "integer"
         },
         "commonVariableUpdatedAt": {
-          "description": "Example: 2017-02-07 23:43:39 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
+          "description": "Ex: 2017-02-07 23:43:39 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
         "createdAt": {
@@ -3306,15 +3401,15 @@
           "type": "string"
         },
         "unitAbbreviatedName": {
-          "description": "Example: count",
+          "description": "Ex: count",
           "type": "string"
         },
         "unitCategoryId": {
-          "description": "Example: 6",
+          "description": "Ex: 6",
           "type": "integer"
         },
         "unitCategoryName": {
-          "description": "Example: Miscellany",
+          "description": "Ex: Miscellany",
           "type": "string"
         },
         "unitId": {
@@ -3323,15 +3418,15 @@
           "type": "integer"
         },
         "unitName": {
-          "description": "Example: Count",
+          "description": "Ex: Count",
           "type": "string"
         },
         "description": {
-          "description": "Example: negative",
+          "description": "Ex: negative",
           "type": "string"
         },
         "displayName": {
-          "description": "Example: Trader Joe's Bedtime Tea",
+          "description": "Ex: Trader Joe's Bedtime Tea",
           "type": "string"
         },
         "durationOfAction": {
@@ -3340,7 +3435,7 @@
           "type": "integer"
         },
         "durationOfActionInHours": {
-          "description": "Example: 168",
+          "description": "Ex: 168",
           "type": "integer"
         },
         "earliestFillingTime": {
@@ -3367,11 +3462,11 @@
           "type": "string"
         },
         "experimentEndTimeSeconds": {
-          "description": "Example: 1893477600",
+          "description": "Ex: 1893477600",
           "type": "integer"
         },
         "experimentEndTimeString": {
-          "description": "Example: 2030-01-01 06:00:00 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
+          "description": "Ex: 2030-01-01 06:00:00 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
         "experimentStartTime": {
@@ -3379,11 +3474,11 @@
           "type": "string"
         },
         "experimentStartTimeSeconds": {
-          "description": "Example: 1269307902",
+          "description": "Ex: 1269307902",
           "type": "integer"
         },
         "experimentStartTimeString": {
-          "description": "Example: 2010-03-23 01:31:42 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
+          "description": "Ex: 2010-03-23 01:31:42 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
         "fillingType": {
@@ -3396,11 +3491,11 @@
           "type": "number"
         },
         "iconIcon": {
-          "description": "Example: ion-sad-outline",
+          "description": "Ex: ion-sad-outline",
           "type": "string"
         },
         "id": {
-          "description": "Example: 95614",
+          "description": "Ex: 95614",
           "type": "integer"
         },
         "imageUrl": {
@@ -3408,7 +3503,7 @@
           "type": "string"
         },
         "informationalUrl": {
-          "description": "Example: https://google.com",
+          "description": "Ex: https://google.com",
           "type": "string"
         },
         "ingredientOfCommonTagVariables": {
@@ -3440,7 +3535,7 @@
           "type": "array"
         },
         "inputType": {
-          "description": "Example: value",
+          "description": "Ex: value",
           "type": "string"
         },
         "ionIcon": {
@@ -3482,7 +3577,7 @@
           "type": "integer"
         },
         "lastProcessedDailyValue": {
-          "description": "Example: 500",
+          "description": "Ex: 500",
           "format": "double",
           "type": "number"
         },
@@ -3516,7 +3611,7 @@
           "type": "integer"
         },
         "latestUserMeasurementTime": {
-          "description": "Example: 1501383600",
+          "description": "Ex: 1501383600",
           "type": "integer"
         },
         "latitude": {
@@ -3534,7 +3629,7 @@
           "type": "number"
         },
         "manualTracking": {
-          "description": "Example: 1",
+          "description": "Ex: 1",
           "type": "boolean"
         },
         "maximumAllowedValue": {
@@ -3548,7 +3643,7 @@
           "type": "number"
         },
         "maximumRecordedValue": {
-          "description": "Example: 1",
+          "description": "Ex: 1",
           "format": "double",
           "type": "number"
         },
@@ -3578,11 +3673,11 @@
           "type": "number"
         },
         "mostCommonConnectorId": {
-          "description": "Example: 51",
+          "description": "Ex: 51",
           "type": "integer"
         },
         "mostCommonOriginalUnitId": {
-          "description": "Example: 23",
+          "description": "Ex: 23",
           "type": "integer"
         },
         "mostCommonUnitId": {
@@ -3596,15 +3691,15 @@
           "type": "number"
         },
         "name": {
-          "description": "Example: Trader Joes Bedtime Tea / Sleepytime Tea (any Brand)",
+          "description": "Ex: Trader Joes Bedtime Tea / Sleepytime Tea (any Brand)",
           "type": "string"
         },
         "numberOfAggregateCorrelationsAsCause": {
-          "description": "Example: 1",
+          "description": "Ex: 1",
           "type": "integer"
         },
         "numberOfAggregateCorrelationsAsEffect": {
-          "description": "Example: 310",
+          "description": "Ex: 310",
           "type": "integer"
         },
         "numberOfChanges": {
@@ -3623,11 +3718,11 @@
           "type": "integer"
         },
         "numberOfRawMeasurements": {
-          "description": "Example: 295",
+          "description": "Ex: 295",
           "type": "integer"
         },
         "numberOfTrackingReminders": {
-          "description": "Example: 1",
+          "description": "Ex: 1",
           "type": "integer"
         },
         "numberOfUniqueDailyValues": {
@@ -3636,19 +3731,19 @@
           "type": "number"
         },
         "numberOfUniqueValues": {
-          "description": "Example: 2",
+          "description": "Ex: 2",
           "type": "integer"
         },
         "numberOfUserCorrelationsAsCause": {
-          "description": "Example: 115",
+          "description": "Ex: 115",
           "type": "integer"
         },
         "numberOfUserCorrelationsAsEffect": {
-          "description": "Example: 29014",
+          "description": "Ex: 29014",
           "type": "integer"
         },
         "numberOfUserVariables": {
-          "description": "Example: 2",
+          "description": "Ex: 2",
           "type": "integer"
         },
         "onsetDelay": {
@@ -3657,7 +3752,7 @@
           "type": "integer"
         },
         "onsetDelayInHours": {
-          "description": "Example: 0.5",
+          "description": "Ex: 0.5",
           "format": "double",
           "type": "number"
         },
@@ -3666,7 +3761,7 @@
           "type": "boolean"
         },
         "outcomeOfInterest": {
-          "description": "Example: 1",
+          "description": "Ex: 1",
           "type": "integer"
         },
         "parentCommonTagVariables": {
@@ -3684,19 +3779,19 @@
           "type": "array"
         },
         "pngPath": {
-          "description": "Example: img/variable_categories/treatments.png",
+          "description": "Ex: img/variable_categories/treatments.png",
           "type": "string"
         },
         "pngUrl": {
-          "description": "Example: https://app.quantimo.do/ionic/Modo/www/img/variable_categories/treatments.png",
+          "description": "Ex: https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/treatments.png",
           "type": "string"
         },
         "predictorOfInterest": {
-          "description": "Example: 0",
+          "description": "Ex: 0",
           "type": "integer"
         },
         "price": {
-          "description": "Example: 95.4",
+          "description": "Ex: 95.4",
           "format": "double",
           "type": "number"
         },
@@ -3710,21 +3805,21 @@
           "type": "integer"
         },
         "rawMeasurementsAtLastAnalysis": {
-          "description": "Example: 131",
+          "description": "Ex: 131",
           "type": "integer"
         },
         "secondMostCommonValue": {
-          "description": "Example: 1",
+          "description": "Ex: 1",
           "format": "double",
           "type": "number"
         },
         "secondToLastValue": {
-          "description": "Example: 250",
+          "description": "Ex: 250",
           "format": "double",
           "type": "number"
         },
         "shareUserMeasurements": {
-          "description": "Example: 1",
+          "description": "Ex: 1",
           "type": "boolean"
         },
         "skewness": {
@@ -3737,7 +3832,7 @@
           "type": "string"
         },
         "standardDeviation": {
-          "description": "Standard deviation Example: 0.46483219855434",
+          "description": "Standard deviation Ex: 0.46483219855434",
           "format": "double",
           "type": "number"
         },
@@ -3750,16 +3845,16 @@
           "type": "string"
         },
         "svgUrl": {
-          "description": "Example: https://app.quantimo.do/ionic/Modo/www/img/variable_categories/treatments.svg",
+          "description": "Ex: https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/treatments.svg",
           "type": "string"
         },
         "thirdMostCommonValue": {
-          "description": "Example: 6",
+          "description": "Ex: 6",
           "format": "double",
           "type": "number"
         },
         "thirdToLastValue": {
-          "description": "Example: 250",
+          "description": "Ex: 250",
           "format": "double",
           "type": "number"
         },
@@ -3780,7 +3875,7 @@
           "type": "string"
         },
         "updatedTime": {
-          "description": "Example: 2017-07-30 14:58:26",
+          "description": "Ex: 2017-07-30 14:58:26",
           "type": "string"
         },
         "userId": {
@@ -3801,52 +3896,52 @@
           "type": "array"
         },
         "userVariableUnitAbbreviatedName": {
-          "description": "Example: count",
+          "description": "Ex: count",
           "type": "string"
         },
         "userVariableUnitCategoryId": {
-          "description": "Example: 6",
+          "description": "Ex: 6",
           "type": "integer"
         },
         "userVariableUnitCategoryName": {
-          "description": "Example: Miscellany",
+          "description": "Ex: Miscellany",
           "type": "string"
         },
         "userVariableUnitId": {
-          "description": "Example: 23",
+          "description": "Ex: 23",
           "type": "integer"
         },
         "userVariableUnitName": {
-          "description": "Example: Count",
+          "description": "Ex: Count",
           "type": "string"
         },
         "userVariableFillingValue": {
-          "description": "Example: -1",
+          "description": "Ex: -1",
           "format": "double",
           "type": "number"
         },
         "userVariableMostCommonConnectorId": {
-          "description": "Example: 51",
+          "description": "Ex: 51",
           "type": "integer"
         },
         "userVariableUpdatedAt": {
-          "description": "Example: 2017-07-30 14:58:26",
+          "description": "Ex: 2017-07-30 14:58:26",
           "type": "string"
         },
         "userVariableValence": {
-          "description": "Example: positive or negative",
+          "description": "Ex: positive or negative",
           "type": "string"
         },
         "userVariableVariableCategoryId": {
-          "description": "Example: 13",
+          "description": "Ex: 13",
           "type": "integer"
         },
         "userVariableVariableCategoryName": {
-          "description": "Example: Treatments",
+          "description": "Ex: Treatments",
           "type": "string"
         },
         "userVariableWikipediaTitle": {
-          "description": "Example: ",
+          "description": "Ex: ",
           "type": "string"
         },
         "variableCategory": {
@@ -3875,15 +3970,15 @@
           "type": "string"
         },
         "valence": {
-          "description": "Example: positive",
+          "description": "Ex: positive",
           "type": "string"
         },
         "variableCategoryId": {
-          "description": "Example: 6",
+          "description": "Ex: 6",
           "type": "integer"
         },
         "variableCategoryImageUrl": {
-          "description": "Example: https://maxcdn.icons8.com/Color/PNG/96/Household/sleeping_in_bed-96.png",
+          "description": "Ex: https://maxcdn.icons8.com/Color/PNG/96/Household/sleeping_in_bed-96.png",
           "type": "string"
         },
         "variableCategoryName": {
@@ -3891,25 +3986,25 @@
           "type": "string"
         },
         "variableFillingValue": {
-          "description": "Example: -1",
+          "description": "Ex: -1",
           "format": "double",
           "type": "number"
         },
         "variableId": {
-          "description": "Example: 96380",
+          "description": "Ex: 96380",
           "type": "integer"
         },
         "variableName": {
-          "description": "Example: Sleep Duration",
+          "description": "Ex: Sleep Duration",
           "type": "string"
         },
         "variance": {
-          "description": "Example: 115947037.40816",
+          "description": "Ex: 115947037.40816",
           "format": "double",
           "type": "number"
         },
         "wikipediaTitle": {
-          "description": "Example: ",
+          "description": "Ex: ",
           "type": "string"
         }
       },
@@ -3934,15 +4029,15 @@
     "VariableCategory": {
       "properties": {
         "appType": {
-          "description": "Example: mood",
+          "description": "Ex: mood",
           "type": "string"
         },
         "causeOnly": {
-          "description": "Example: false",
+          "description": "Ex: false",
           "type": "boolean"
         },
         "combinationOperation": {
-          "description": "Example: MEAN",
+          "description": "Ex: MEAN",
           "type": "string"
         },
         "createdTime": {
@@ -3950,55 +4045,55 @@
           "type": "string"
         },
         "unitAbbreviatedName": {
-          "description": "Example: /5",
+          "description": "Ex: /5",
           "type": "string"
         },
         "unitId": {
-          "description": "Example: 10",
+          "description": "Ex: 10",
           "type": "integer"
         },
         "durationOfAction": {
-          "description": "Example: 86400",
+          "description": "Ex: 86400",
           "type": "integer"
         },
         "fillingValue": {
-          "description": "Example: -1",
+          "description": "Ex: -1",
           "type": "integer"
         },
         "helpText": {
-          "description": "Example: What emotion do you want to rate?",
+          "description": "Ex: What emotion do you want to rate?",
           "type": "string"
         },
         "id": {
-          "description": "Example: 1",
+          "description": "Ex: 1",
           "type": "integer"
         },
         "imageUrl": {
-          "description": "Example: https://maxcdn.icons8.com/Color/PNG/96/Cinema/theatre_mask-96.png",
+          "description": "Ex: https://maxcdn.icons8.com/Color/PNG/96/Cinema/theatre_mask-96.png",
           "type": "string"
         },
         "ionIcon": {
-          "description": "Example: ion-happy-outline",
+          "description": "Ex: ion-happy-outline",
           "type": "string"
         },
         "manualTracking": {
-          "description": "Example: true",
+          "description": "Ex: true",
           "type": "boolean"
         },
         "maximumAllowedValue": {
-          "description": "Example: ",
+          "description": "Ex: ",
           "type": "string"
         },
         "measurementSynonymSingularLowercase": {
-          "description": "Example: rating",
+          "description": "Ex: rating",
           "type": "string"
         },
         "minimumAllowedValue": {
-          "description": "Example: ",
+          "description": "Ex: ",
           "type": "string"
         },
         "moreInfo": {
-          "description": "Example: Do you have any emotions that fluctuate regularly?  If so, add them so I can try to determine which factors are influencing them.",
+          "description": "Ex: Do you have any emotions that fluctuate regularly?  If so, add them so I can try to determine which factors are influencing them.",
           "type": "string"
         },
         "name": {
@@ -4006,35 +4101,35 @@
           "type": "string"
         },
         "onsetDelay": {
-          "description": "Example: 0",
+          "description": "Ex: 0",
           "type": "integer"
         },
         "outcome": {
-          "description": "Example: true",
+          "description": "Ex: true",
           "type": "boolean"
         },
         "pngPath": {
-          "description": "Example: img/variable_categories/emotions.png",
+          "description": "Ex: img/variable_categories/emotions.png",
           "type": "string"
         },
         "pngUrl": {
-          "description": "Example: https://app.quantimo.do/ionic/Modo/www/img/variable_categories/emotions.png",
+          "description": "Ex: https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/emotions.png",
           "type": "string"
         },
         "public": {
-          "description": "Example: true",
+          "description": "Ex: true",
           "type": "boolean"
         },
         "svgPath": {
-          "description": "Example: img/variable_categories/emotions.svg",
+          "description": "Ex: img/variable_categories/emotions.svg",
           "type": "string"
         },
         "svgUrl": {
-          "description": "Example: https://app.quantimo.do/ionic/Modo/www/img/variable_categories/emotions.svg",
+          "description": "Ex: https://quantimodo.quantimo.do/ionic/Modo/www/img/variable_categories/emotions.svg",
           "type": "string"
         },
         "updated": {
-          "description": "Example: 1",
+          "description": "Ex: 1",
           "type": "integer"
         },
         "updatedTime": {
@@ -4042,11 +4137,11 @@
           "type": "string"
         },
         "variableCategoryName": {
-          "description": "Example: Emotions",
+          "description": "Ex: Emotions",
           "type": "string"
         },
         "variableCategoryNameSingular": {
-          "description": "Example: Emotion",
+          "description": "Ex: Emotion",
           "type": "string"
         }
       },
@@ -4061,7 +4156,7 @@
           "type": "integer"
         },
         "clientId": {
-          "description": "clientId",
+          "description": "Your QuantiModo client id can be obtained by creating an app at https://builder.quantimo.do",
           "type": "string"
         },
         "createdAt": {
@@ -4132,14 +4227,14 @@
   },
   "parameters": {
     "appNameParam": {
-      "description": "Example: MoodiModo",
+      "description": "Ex: MoodiModo",
       "in": "query",
       "name": "appName",
       "required": false,
       "type": "string"
     },
     "appVersionParam": {
-      "description": "Example: 2.1.1.0",
+      "description": "Ex: 2.1.1.0",
       "in": "query",
       "name": "appVersion",
       "required": false,
@@ -4153,21 +4248,21 @@
       "type": "string"
     },
     "causeVariableNameParam": {
-      "description": "Deprecated: Variable name of the hypothetical cause variable.  Example: Sleep Duration",
+      "description": "Deprecated: Name of the hypothetical predictor variable.  Ex: Sleep Duration",
       "in": "query",
       "name": "causeVariableName",
       "required": false,
       "type": "string"
     },
     "predictorVariableNameParam": {
-      "description": "Variable name of the hypothetical cause variable.  Example: Sleep Duration",
+      "description": "Name of the hypothetical predictor variable.  Ex: Sleep Duration",
       "in": "query",
       "name": "causeVariableName",
       "required": false,
       "type": "string"
     },
     "clientIdParam": {
-      "description": "Example: oauth_test_client",
+      "description": "Your QuantiModo client id can be obtained by creating an app at https://builder.quantimo.do",
       "in": "query",
       "name": "clientId",
       "required": false,
@@ -4181,7 +4276,7 @@
       "type": "string"
     },
     "clientUserIdParam": {
-      "description": "Example: 74802",
+      "description": "Ex: 74802",
       "in": "query",
       "name": "clientUserId",
       "required": false,
@@ -4195,7 +4290,7 @@
       "type": "string"
     },
     "connectorNameParam": {
-      "description": "Example: facebook",
+      "description": "Ex: facebook",
       "in": "query",
       "name": "connectorName",
       "required": false,
@@ -4249,21 +4344,21 @@
       "type": "string"
     },
     "doNotConvertParam": {
-      "description": "Example: 1",
+      "description": "Ex: 1",
       "in": "query",
       "name": "doNotConvert",
       "required": false,
       "type": "boolean"
     },
     "doNotCreateNewCommonVariablesParam": {
-      "description": "Example: ",
+      "description": "Ex: ",
       "in": "query",
       "name": "doNotCreateNewCommonVariables",
       "required": false,
       "type": "boolean"
     },
     "doNotProcessParam": {
-      "description": "Example: true",
+      "description": "Ex: true",
       "in": "query",
       "name": "doNotProcess",
       "required": false,
@@ -4298,14 +4393,14 @@
       "type": "string"
     },
     "effectVariableNameParam": {
-      "description": "Deprecated: Variable name of the hypothetical effect variable.  Example: Overall Mood",
+      "description": "Deprecated: Name of the hypothetical outcome variable.  Ex: Overall Mood",
       "in": "query",
       "name": "effectVariableName",
       "required": false,
       "type": "string"
     },
     "outcomeVariableNameParam": {
-      "description": "Variable name of the hypothetical effect variable.  Example: Overall Mood",
+      "description": "Name of the hypothetical outcome variable.  Ex: Overall Mood",
       "in": "query",
       "name": "effectVariableName",
       "required": false,
@@ -4319,21 +4414,21 @@
       "type": "boolean"
     },
     "fallbackToAggregateCorrelationsParam": {
-      "description": "Example: true",
+      "description": "Ex: true",
       "in": "query",
       "name": "fallbackToAggregateCorrelations",
       "required": false,
       "type": "boolean"
     },
     "fallbackToAggregatedCorrelationsParam": {
-      "description": "Example: true",
+      "description": "Ex: true",
       "in": "query",
       "name": "fallbackToAggregatedCorrelations",
       "required": false,
       "type": "boolean"
     },
     "fallbackToStudyForCauseAndEffectParam": {
-      "description": "Example: 1",
+      "description": "Ex: 1",
       "in": "query",
       "name": "fallbackToStudyForCauseAndEffect",
       "required": false,
@@ -4439,28 +4534,28 @@
       "type": "boolean"
     },
     "maximumReminderTimeUtcStringParam": {
-      "description": "Example: 2017-08-08T23:20:11+00:00",
+      "description": "Ex: 2017-08-08T23:20:11+00:00",
       "in": "query",
       "name": "maximumReminderTimeUtcString",
       "required": false,
       "type": "string"
     },
     "minimumReminderTimeUtcStringParam": {
-      "description": "Example: 2017-08-06T23:20:11+00:00",
+      "description": "Ex: 2017-08-06T23:20:11+00:00",
       "in": "query",
       "name": "minimumReminderTimeUtcString",
       "required": false,
       "type": "string"
     },
     "minMaxFilterParam": {
-      "description": "Example: 1",
+      "description": "Ex: 1",
       "in": "query",
       "name": "minMaxFilter",
       "required": false,
       "type": "boolean"
     },
     "numberOfAggregatedCorrelationsAsEffectParam": {
-      "description": "Example: (gt)1",
+      "description": "Ex: (gt)1",
       "in": "query",
       "name": "numberOfAggregatedCorrelationsAsEffect",
       "required": false,
@@ -4474,14 +4569,14 @@
       "type": "string"
     },
     "numberOfUserCorrelationsAsCauseParam": {
-      "description": "Example: (gt)1",
+      "description": "Ex: (gt)1",
       "in": "query",
       "name": "numberOfUserCorrelationsAsCause",
       "required": false,
       "type": "string"
     },
     "numberOfUserCorrelationsAsEffectParam": {
-      "description": "Example: (gt)1",
+      "description": "Ex: (gt)1",
       "in": "query",
       "name": "numberOfUserCorrelationsAsEffect",
       "required": false,
@@ -4496,7 +4591,7 @@
       "type": "integer"
     },
     "onlyPastParam": {
-      "description": "Example: 1",
+      "description": "Ex: 1",
       "in": "query",
       "name": "onlyPast",
       "required": false,
@@ -4510,7 +4605,7 @@
       "type": "string"
     },
     "outcomeParam": {
-      "description": "Example: true",
+      "description": "Ex: true",
       "in": "query",
       "name": "outcome",
       "required": false,
@@ -4524,7 +4619,7 @@
       "type": "boolean"
     },
     "platform": {
-      "description": "Example: chrome, android, ios, web",
+      "description": "Ex: chrome, android, ios, web",
       "in": "query",
       "name": "platform",
       "required": false,
@@ -4537,7 +4632,7 @@
       ]
     },
     "publicEffectOrCauseParam": {
-      "description": "Example: ",
+      "description": "Ex: ",
       "in": "query",
       "name": "publicEffectOrCause",
       "required": false,
@@ -4565,21 +4660,21 @@
       "type": "string"
     },
     "reminderFrequencyParam": {
-      "description": "How often user should be reminded in seconds. Example: 86400",
+      "description": "How often user should be reminded in seconds. Ex: 86400",
       "in": "query",
       "name": "reminderFrequency",
       "required": false,
       "type": "string"
     },
     "reminderStartTimeParam": {
-      "description": "Example: 20:00:00",
+      "description": "Ex: 20:00:00",
       "in": "query",
       "name": "reminderStartTime",
       "required": false,
       "type": "string"
     },
     "reminderTimeParam": {
-      "description": "Example: (lt)2017-07-31 21:43:26",
+      "description": "Ex: (lt)2017-07-31 21:43:26",
       "in": "query",
       "name": "reminderTime",
       "required": false,
@@ -4600,7 +4695,7 @@
       "type": "string"
     },
     "searchPhraseParam": {
-      "description": "Example: %Body Fat%",
+      "description": "Ex: %Body Fat%",
       "in": "query",
       "name": "searchPhrase",
       "required": false,
@@ -4621,7 +4716,7 @@
       "type": "string"
     },
     "startTrackingDateParam": {
-      "description": "Example: 2017-08-07",
+      "description": "Ex: 2017-08-07",
       "in": "query",
       "name": "startTrackingDate",
       "required": false,
@@ -4635,7 +4730,7 @@
       "type": "string"
     },
     "stopTrackingDateParam": {
-      "description": "Example: 2117-08-07",
+      "description": "Ex: 2117-08-07",
       "in": "query",
       "name": "stopTrackingDate",
       "required": false,
@@ -4649,7 +4744,7 @@
       "type": "string"
     },
     "synonymsParam": {
-      "description": "Example: %McDonalds hotcake%",
+      "description": "Ex: %McDonalds hotcake%",
       "in": "query",
       "name": "synonyms",
       "required": false,
@@ -4670,21 +4765,21 @@
       "type": "integer"
     },
     "unitAbbreviatedNameParam": {
-      "description": "Example: /5",
+      "description": "Ex: /5",
       "in": "query",
       "name": "unitAbbreviatedName",
       "required": false,
       "type": "string"
     },
     "unitIdParam": {
-      "description": "Example: 10",
+      "description": "Ex: 10",
       "in": "query",
       "name": "unitId",
       "required": false,
       "type": "integer"
     },
     "unitNameParam": {
-      "description": "Example: Milligrams",
+      "description": "Ex: Milligrams",
       "enum": [
         "% Recommended Daily Allowance",
         "-4 to 4 Rating",
@@ -4783,14 +4878,14 @@
       "type": "string"
     },
     "variableCategoryIdParam": {
-      "description": "Example: 13",
+      "description": "Ex: 13",
       "in": "query",
       "name": "variableCategoryId",
       "required": false,
       "type": "integer"
     },
     "variableIdParam": {
-      "description": "Example: 13",
+      "description": "Ex: 13",
       "in": "query",
       "name": "variableId",
       "required": false,
@@ -4884,7 +4979,7 @@
             "description": "Internal server error"
           }
         },
-        "summary": "Get client app Settings",
+        "summary": "Get client app settings",
         "tags": [
           "AppSettings"
         ]
@@ -5909,7 +6004,7 @@
             "type": "string"
           },
           {
-            "description": "Example: I hate you!",
+            "description": "Ex: I hate you!",
             "in": "query",
             "name": "reason",
             "required": false,
@@ -6072,7 +6167,7 @@
             ]
           }
         ],
-        "summary": "Get Open Studies",
+        "summary": "These are open studies that anyone can join",
         "tags": [
           "studies"
         ]
@@ -6147,7 +6242,7 @@
             ]
           }
         ],
-        "summary": "Get studies you have joined",
+        "summary": "Studies You Have Joined",
         "tags": [
           "studies"
         ]
@@ -6155,7 +6250,7 @@
     },
     "/v3/studies/created": {
       "get": {
-        "description": "These are studies that you have created.",
+        "description": "These are cohort studies that you have created.",
         "operationId": "getStudiesCreated",
         "parameters": [
           {
@@ -6216,7 +6311,7 @@
             ]
           }
         ],
-        "summary": "Get studies you have joined",
+        "summary": "Get cohort studies you have created",
         "tags": [
           "studies"
         ]
@@ -6281,9 +6376,9 @@
             "description": "Internal server error"
           }
         },
-        "summary": "Publish Study",
+        "summary": "Publish Your Study",
         "tags": [
-          "analytics"
+          "studies"
         ]
       }
     },
@@ -6334,9 +6429,59 @@
             "description": "Internal server error"
           }
         },
-        "summary": "Join Study",
+        "summary": "Join a Study",
         "tags": [
-          "analytics"
+          "studies"
+        ]
+      }
+    },
+    "/v3/study/create": {
+      "post": {
+        "description": "Create a cohort study examining the relationship between a predictor and outcome variable. You will be given a study id which you can invite participants to join and share their measurements for the specified variables.",
+        "operationId": "createStudy",
+        "parameters": [
+          {
+            "$ref": "#/parameters/predictorVariableNameParam"
+          },
+          {
+            "$ref": "#/parameters/outcomeVariableNameParam"
+          },
+          {
+            "$ref": "#/parameters/userIdParam"
+          },
+          {
+            "$ref": "#/parameters/appNameParam"
+          },
+          {
+            "$ref": "#/parameters/clientIdParam"
+          },
+          {
+            "$ref": "#/parameters/platform"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/PostStudyPublishResponse"
+            }
+          },
+          "401": {
+            "description": "Not authenticated"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "summary": "Create a Cohort Study",
+        "tags": [
+          "studies"
         ]
       }
     },
@@ -6793,7 +6938,7 @@
             "$ref": "#/parameters/clientIdParam"
           },
           {
-            "description": "Example: I hate you!",
+            "description": "Ex: I hate you!",
             "in": "query",
             "name": "reason",
             "required": true,
@@ -7410,7 +7555,7 @@
         ],
         "summary": "Post or update vote",
         "tags": [
-          "analytics"
+          "studies"
         ]
       }
     },
@@ -7458,7 +7603,7 @@
         ],
         "summary": "Delete vote",
         "tags": [
-          "analytics"
+          "studies"
         ]
       }
     },
@@ -7536,7 +7681,7 @@
         ],
         "summary": "Get Study",
         "tags": [
-          "analytics"
+          "studies"
         ]
       }
     }
@@ -7562,9 +7707,9 @@
       "authorizationUrl": "https://app.quantimo.do/api/v2/oauth/authorize",
       "flow": "accessCode",
       "scopes": {
-        "basic": "Allows you to read user info (display name, email, etc).",
-        "readmeasurements": "Allows one to read a user's data",
-        "writemeasurements": "Allows you to write user data"
+        "basic": "Allows you to read user info (display name, email, etc)",
+        "readmeasurements": "Allows one to read a user's measurements",
+        "writemeasurements": "Allows you to write user measurements"
       },
       "tokenUrl": "https://app.quantimo.do/api/v2/oauth/token",
       "type": "oauth2"
@@ -7576,7 +7721,7 @@
       "description": "Identify the strongest predictors of a given outcome and generate studies",
       "externalDocs": {
         "description": "Try it out",
-        "url": "https://app.quantimo.do/ionic/Modo/www/index.html#/app/predictor-search"
+        "url": "https://quantimodo.quantimo.do/ionic/Modo/www/index.html#/app/predictor-search"
       },
       "name": "analytics"
     },
@@ -7584,7 +7729,7 @@
       "description": "Import data from third-party apps and devices like Fitbit and Mint.",
       "externalDocs": {
         "description": "Import your data now",
-        "url": "https://app.quantimo.do/ionic/Modo/www/#/app/import"
+        "url": "https://quantimodo.quantimo.do/ionic/Modo/www/#/app/import"
       },
       "name": "connectors"
     },
@@ -7592,7 +7737,7 @@
       "description": "Measurements are any value that can be recorded like daily steps, a mood rating, or apples eaten.",
       "externalDocs": {
         "description": "See it in action",
-        "url": "https://app.quantimo.do/ionic/Modo/www/#/app/history-all-category/Anything?accessToken=demo"
+        "url": "https://quantimodo.quantimo.do/ionic/Modo/www/#/app/history-all-category/Anything?accessToken=demo"
       },
       "name": "measurements"
     },
@@ -7600,7 +7745,7 @@
       "description": "Users can be reminded to track certain variables at a specified frequency with a default value.",
       "externalDocs": {
         "description": "See it in action",
-        "url": "https://app.quantimo.do/ionic/Modo/www/#/app/reminders-inbox?accessToken=demo"
+        "url": "https://quantimodo.quantimo.do/ionic/Modo/www/#/app/reminders-inbox?accessToken=demo"
       },
       "name": "reminders"
     },
@@ -7608,7 +7753,7 @@
       "description": "Available units for measurements",
       "externalDocs": {
         "description": "See it in action",
-        "url": "https://app.quantimo.do/ionic/Modo/www/#/app/measurement-search?accessToken=demo"
+        "url": "https://quantimodo.quantimo.do/ionic/Modo/www/#/app/measurement-search?accessToken=demo"
       },
       "name": "units"
     },
@@ -7616,7 +7761,7 @@
       "description": "Get or update user info and settings",
       "externalDocs": {
         "description": "See it in action",
-        "url": "https://app.quantimo.do/ionic/Modo/www/#/app/settings?accessToken=demo"
+        "url": "https://quantimodo.quantimo.do/ionic/Modo/www/#/app/settings?accessToken=demo"
       },
       "name": "user"
     },
@@ -7624,9 +7769,17 @@
       "description": "Can be used for search auto-complete for data types like symptoms, foods and treatments and include statistics",
       "externalDocs": {
         "description": "Search for a variable",
-        "url": "https://app.quantimo.do/ionic/Modo/www/#/app/reminder-search?accessToken=demo"
+        "url": "https://quantimodo.quantimo.do/ionic/Modo/www/#/app/reminder-search?accessToken=demo"
       },
       "name": "variables"
+    },
+    {
+      "description": "Automatically generated natural language studies examining the relationship between a predictor and outcome variable including charts.",
+      "externalDocs": {
+        "description": "Search for a study",
+        "url": "https://quantimodo.quantimo.do/ionic/Modo/www/#/app/studies"
+      },
+      "name": "studies"
     }
   ]
 }
