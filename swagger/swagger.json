@@ -1926,14 +1926,20 @@
     },
     "Study": {
       "properties": {
+        "type": {
+          "description": "Ex: population, cohort, or individual",
+          "type": "string"
+        },
+        "userId": {
+          "description": "The user id of the principal investigator or subject if an individual studies",
+          "type": "string"
+        },
+        "studyId": {
+          "description": "ID of the cohort study which is necessary to allow participants to join",
+          "type": "string"
+        },
         "causeVariable": {
           "$ref": "#/definitions/Variable"
-        },
-        "charts": {
-          "items": {
-            "$ref": "#/definitions/Chart"
-          },
-          "type": "array"
         },
         "studyCharts": {
           "$ref": "#/definitions/StudyCharts"
@@ -1958,14 +1964,6 @@
         },
         "studyText": {
           "$ref": "#/definitions/StudyText"
-        },
-        "type": {
-          "description": "Ex: population",
-          "type": "string"
-        },
-        "userId": {
-          "description": "The user id if an individual study",
-          "type": "string"
         }
       },
       "required": [
@@ -6445,7 +6443,7 @@
           "201": {
             "description": "Successful operation",
             "schema": {
-              "$ref": "#/definitions/PostStudyPublishResponse"
+              "$ref": "#/definitions/PostStudyCreateResponse"
             }
           },
           "401": {
