@@ -1984,6 +1984,10 @@
         },
         "studyText": {
           "$ref": "#/definitions/StudyText"
+        },
+        "joined": {
+          "description": "True if you are sharing your data with this study",
+          "type": "boolean"
         }
       },
       "required": [
