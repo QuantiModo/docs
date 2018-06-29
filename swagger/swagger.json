@@ -2097,6 +2097,10 @@
     },
     "StudyLinks": {
       "properties": {
+        "studyJoinLink": {
+          "description": "Share this link with potential study participants",
+          "type": "string"
+        },
         "studyLinkEmail": {
           "description": "Ex: mailto:?subject=N1%20Study%3A%20Sleep%20Quality%20Predicts%20Higher%20Overall%20Mood&body=Check%20out%20my%20study%20at%20https%3A%2F%2Flocal.quantimo.do%2Fapi%2Fv2%2Fstudy%3FcauseVariableName%3DSleep%2520Quality%26effectVariableName%3DOverall%2520Mood%26userId%3D230%0A%0AHave%20a%20great%20day!",
           "type": "string"
@@ -4354,6 +4358,13 @@
       "required": false,
       "type": "string"
     },
+    "createdParam": {
+      "description": "These are studies that you have created",
+      "in": "query",
+      "name": "created",
+      "required": false,
+      "type": "boolean"
+    },
     "createdAtParam": {
       "description": "When the record was first created. Use UTC ISO 8601 YYYY-MM-DDThh:mm:ss datetime format. Time zone should be UTC and not local.",
       "in": "query",
@@ -4515,6 +4526,13 @@
       "required": false,
       "type": "boolean"
     },
+    "joinedParam": {
+      "description": "These are studies that you have joined",
+      "in": "query",
+      "name": "joined",
+      "required": false,
+      "type": "boolean"
+    },
     "lastSourceParam": {
       "description": "Limit variables to those which measurements were last submitted by a specific source. So if you have a client application and you only want variables that were last updated by your app, you can include the name of your app here",
       "in": "query",
@@ -4622,6 +4640,13 @@
       "required": false,
       "type": "string"
     },
+    "openParam": {
+      "description": "These are studies that anyone can join",
+      "in": "query",
+      "name": "open",
+      "required": false,
+      "type": "boolean"
+    },
     "outcomeParam": {
       "description": "Ex: true",
       "in": "query",
@@ -4648,6 +4673,20 @@
         "ios",
         "web"
       ]
+    },
+    "populationParam": {
+      "description": "These are studies based on the entire population of users that have shared their data",
+      "in": "query",
+      "name": "population",
+      "required": false,
+      "type": "boolean"
+    },
+    "principalInvestigatorUserIdParam": {
+      "description": "These are studies created by a specific principal investigator",
+      "in": "query",
+      "name": "principalInvestigatorUserId",
+      "required": false,
+      "type": "integer"
     },
     "publicEffectOrCauseParam": {
       "description": "Ex: ",
@@ -6152,11 +6191,19 @@
             "$ref": "#/parameters/outcomesOfInterestParam"
           },
           {
-            "description": "Return only public, anonymized and aggregated population data instead of user-specific studies",
-            "in": "query",
-            "name": "commonOnly",
-            "required": false,
-            "type": "boolean"
+            "$ref": "#/parameters/principalInvestigatorUserIdParam"
+          },
+          {
+            "$ref": "#/parameters/openParam"
+          },
+          {
+            "$ref": "#/parameters/joinedParam"
+          },
+          {
+            "$ref": "#/parameters/createdParam"
+          },
+          {
+            "$ref": "#/parameters/populationParam"
           }
         ],
         "produces": [
