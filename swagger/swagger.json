@@ -604,7 +604,7 @@
           "type": "number"
         },
         "shareUserMeasurements": {
-          "description": "Ex: 1",
+          "description": "Would you like to make this study publicly visible?",
           "type": "boolean"
         },
         "sharingDescription": {
@@ -1882,11 +1882,19 @@
         "causeVariable": {
           "$ref": "#/definitions/Variable"
         },
+        "causeVariableName": {
+          "description": "Ex: Sleep Quality",
+          "type": "string"
+        },
         "studyCharts": {
           "$ref": "#/definitions/StudyCharts"
         },
         "effectVariable": {
           "$ref": "#/definitions/Variable"
+        },
+        "effectVariableName": {
+          "description": "Ex: Overall Mood",
+          "type": "string"
         },
         "participantInstructions": {
           "$ref": "#/definitions/ParticipantInstruction"
@@ -1903,8 +1911,14 @@
         "studyLinks": {
           "$ref": "#/definitions/StudyLinks"
         },
+        "studySharing": {
+          "$ref": "#/definitions/StudySharing"
+        },
         "studyText": {
           "$ref": "#/definitions/StudyText"
+        },
+        "studyVotes": {
+          "$ref": "#/definitions/StudyVotes"
         },
         "joined": {
           "description": "True if you are sharing your data with this study",
@@ -2060,6 +2074,27 @@
         "studyLinkTwitter"
       ]
     },
+    "StudySharing": {
+      "properties": {
+        "shareUserMeasurements": {
+          "description": "Would you like to make this study publicly visible?",
+          "type": "boolean"
+        },
+        "sharingDescription": {
+          "description": "Ex: N1 Study: Sleep Quality Predicts Higher Overall Mood",
+          "type": "string"
+        },
+        "sharingTitle": {
+          "description": "Ex: N1 Study: Sleep Quality Predicts Higher Overall Mood",
+          "type": "string"
+        }
+      },
+      "required": [
+        "shareUserMeasurements",
+        "sharingDescription",
+        "sharingTitle"
+      ]
+    },
     "StudyText": {
       "properties": {
         "averageEffectFollowingHighCauseExplanation": {
@@ -2162,6 +2197,22 @@
         "studyObjective",
         "studyResults",
         "studyTitle"
+      ]
+    },
+    "StudyVotes": {
+      "properties": {
+        "averageVote": {
+          "description": "Average of all user votes with 1 representing an up-vote and 0 representing a down-vote. Ex: 0.9855",
+          "type": "number"
+        },
+        "userVote": {
+          "description": "1 if the current user has up-voted the study and 0 if they down-voted it. Null means no vote. Ex: 1 or 0 or null",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "averageVote",
+        "userVote"
       ]
     },
     "TrackingReminder": {
@@ -3756,7 +3807,7 @@
           "type": "number"
         },
         "shareUserMeasurements": {
-          "description": "Ex: 1",
+          "description": "Would you like to make your measurements publicly visible?",
           "type": "boolean"
         },
         "skewness": {
