@@ -26,7 +26,7 @@
     "gulp-rename": "^1.2.0",
     "gulp-unzip": "^1.0.0",
     "q": "^1.4.1",
-    "quantimodo": "5.9.61414",
+    "quantimodo": "5.9.63016",
     "request-promise": "^4.2.1",
     "run-sequence": "^2.0.0",
     "unzip": "latest"
