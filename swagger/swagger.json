@@ -843,6 +843,10 @@
           "description": "Ex: CONNECTED",
           "type": "string"
         },
+        "count": {
+          "description": "Number of measurements from this source or number of users who have measurements from this source",
+          "type": "integer"
+        },
         "createdAt": {
           "description": "Ex: 2000-01-01 00:00:00 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
           "type": "string"
@@ -1118,11 +1122,29 @@
           "type": "array"
         },
         "description": {
-          "description": "Can be used as body of help info popup",
+          "description": "Ex: These factors are most predictive of Overall Mood based on your own data.",
           "type": "string"
         },
         "summary": {
           "description": "Can be used as title in help info popup",
+          "type": "string"
+        },
+        "image": {
+          "$ref": "#/definitions/Image"
+        },
+        "ionIcon": {
+          "description": "Ex: ion-ios-person",
+          "type": "string"
+        },
+        "startTracking": {
+          "$ref": "#/definitions/ExplanationStartTracking"
+        },
+        "title": {
+          "description": "Ex: Top Predictors of Overall Mood",
+          "type": "string"
+        },
+        "html": {
+          "description": "Embeddable list of study summaries with explanation at the top",
           "type": "string"
         }
       },
