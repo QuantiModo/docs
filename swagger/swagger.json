@@ -1982,6 +1982,10 @@
         "studySummaryBoxHtml": {
           "description": "",
           "type": "string"
+        },
+        "trackingInstructionsHtml": {
+          "description": "Instructions for study participation",
+          "type": "string"
         }
       },
       "required": [
