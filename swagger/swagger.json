@@ -2034,6 +2034,41 @@
         "imageUrl"
       ]
     },
+    "StudyJoinResponse": {
+      "properties": {
+        "study": {
+          "$ref": "#/definitions/Study"
+        },
+        "trackingReminders": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TrackingReminder"
+          }
+        },
+        "trackingReminderNotifications": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TrackingReminderNotification"
+          }
+        },
+        "status": {
+          "description": "Ex: ok",
+          "type": "string"
+        },
+        "success": {
+          "description": "Ex: true",
+          "type": "boolean"
+        },
+        "description": {
+          "description": "Can be used as body of help info popup",
+          "type": "string"
+        },
+        "summary": {
+          "description": "Can be used as title in help info popup",
+          "type": "string"
+        }
+      }
+    },
     "StudyLinks": {
       "properties": {
         "studyJoinLink": {
@@ -6428,7 +6463,7 @@
           "201": {
             "description": "Successful operation",
             "schema": {
-              "$ref": "#/definitions/PostStudyPublishResponse"
+              "$ref": "#/definitions/StudyJoinResponse"
             }
           },
           "401": {
