@@ -1951,6 +1951,10 @@
           "description": "Embeddable study html including charts and css styling",
           "type": "string"
         },
+        "participantInstructionsHtml": {
+          "description": "Instructions for study participation",
+          "type": "string"
+        },
         "statisticsTableHtml": {
           "description": "Embeddable table with statistics",
           "type": "string"
@@ -1981,10 +1985,6 @@
         },
         "studySummaryBoxHtml": {
           "description": "",
-          "type": "string"
-        },
-        "trackingInstructionsHtml": {
-          "description": "Instructions for study participation",
           "type": "string"
         }
       },
@@ -2182,6 +2182,10 @@
         },
         "optimalDailyValueSentence": {
           "description": "Ex: Sleep Quality Predicts Higher Overall Mood",
+          "type": "string"
+        },
+        "participantInstructions": {
+          "description": "Instructions for study participation",
           "type": "string"
         },
         "predictorExplanation": {
