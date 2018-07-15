@@ -857,6 +857,10 @@
           },
           "type": "array"
         },
+        "card": {
+          "description": "Card containing instructions, image, text, link and relevant import buttons",
+          "$ref": "#/definitions/Card"
+        },
         "clientId": {
           "description": "Your QuantiModo client id can be obtained by creating an app at https://builder.quantimo.do",
           "type": "string"
@@ -971,9 +975,9 @@
           "description": "Ex: Tracks anything",
           "type": "string"
         },
-        "spreadsheetUpload": {
-          "description": "True if the user must upload a spreadsheet.  Post the uploaded spreadsheet with your clientId and user accessToken to https://app.quantimo.do/api/v2/spreadsheetUpload",
-          "type": "boolean"
+        "spreadsheetUploadLink": {
+          "description": "URL to POST a spreadsheet to (if available for this data source)",
+          "type": "string"
         },
         "totalMeasurementsInLastUpdate": {
           "description": "Number of measurements obtained during latest update",
