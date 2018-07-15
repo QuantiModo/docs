@@ -174,6 +174,44 @@
         "text"
       ]
     },
+    "Card": {
+      "properties": {
+        "title": {
+          "description": "Ex: Title",
+          "type": "string"
+        },
+        "subTitle": {
+          "description": "Ex: subTitle",
+          "type": "string"
+        },
+        "content": {
+          "description": "Ex: Content",
+          "type": "string"
+        },
+        "htmlContent": {
+          "description": "Ex: <div>Content</div>",
+          "type": "string"
+        },
+        "buttons": {
+          "items": {
+            "$ref": "#/definitions/Button"
+          },
+          "type": "array"
+        },
+        "image": {
+          "description": "Larger image of variable dimensions",
+          "type": "string"
+        },
+        "avatar": {
+          "description": "Smaller square image",
+          "type": "string"
+        }
+      },
+      "required": [
+        "link",
+        "text"
+      ]
+    },
     "Chart": {
       "properties": {
         "highchartConfig": {
@@ -3884,6 +3922,14 @@
           "description": "Ex: 250",
           "format": "double",
           "type": "number"
+        },
+        "trackingInstructions": {
+          "description": "HTML instructions for tracking",
+          "type": "string"
+        },
+        "trackingInstructionsCard": {
+          "description": "Instructions for tracking with buttons and images",
+          "$ref": "#/definitions/Card"
         },
         "unit": {
           "$ref": "#/definitions/Unit"
