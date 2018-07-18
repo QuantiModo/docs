@@ -1917,6 +1917,7 @@
       ]
     },
     "Study": {
+      "description": "A study analyzes the relationship between a predictor variable like gluten-intake and an outcome of interest such as overall mood.",
       "properties": {
         "type": {
           "description": "Ex: population, cohort, or individual",
@@ -6561,7 +6562,7 @@
     },
     "/v3/study/create": {
       "post": {
-        "description": "Create a cohort study examining the relationship between a predictor and outcome variable. You will be given a study id which you can invite participants to join and share their measurements for the specified variables.",
+        "description": "Create an individual, group, or population study examining the relationship between a predictor and outcome variable. You will be given a study id which you can invite participants to join and share their measurements for the specified variables.",
         "operationId": "createStudy",
         "parameters": [
           {
