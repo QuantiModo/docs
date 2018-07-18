@@ -2369,6 +2369,10 @@
           "format": "float",
           "type": "number"
         },
+        "enabled": {
+          "description": "If a tracking reminder is enabled, tracking reminder notifications will be generated for this variable.",
+          "type": "boolean"
+        },
         "email": {
           "description": "True if the reminders should be delivered via email",
           "type": "boolean"
