@@ -1954,6 +1954,10 @@
         "statistics": {
           "$ref": "#/definitions/Correlation"
         },
+        "studyCard": {
+          "description": "Contains a summary, images, sharing buttons, and links",
+          "$ref": "#/definitions/Card"
+        },
         "studyHtml": {
           "$ref": "#/definitions/StudyHtml"
         },
