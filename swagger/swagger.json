@@ -205,6 +205,10 @@
         "avatar": {
           "description": "Smaller square image",
           "type": "string"
+        },
+        "link": {
+          "description": "A link to a web page or something. Not much more to say about that.",
+          "type": "string"
         }
       },
       "required": [
