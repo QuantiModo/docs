@@ -1152,6 +1152,10 @@
         "summary": {
           "description": "Can be used as title in help info popup",
           "type": "string"
+        },
+        "avatar": {
+          "description": "Square icon png url",
+          "type": "string"
         }
       },
       "required": [
@@ -1177,6 +1181,10 @@
         },
         "image": {
           "$ref": "#/definitions/Image"
+        },
+        "avatar": {
+          "description": "Square icon png url",
+          "type": "string"
         },
         "ionIcon": {
           "description": "Ex: ion-ios-person",
