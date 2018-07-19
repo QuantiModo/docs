@@ -2098,6 +2098,10 @@
         "robotSharingImageUrl": {
           "description": "Image with robot and category images",
           "type": "string"
+        },
+        "avatar": {
+          "description": "Avatar of the principal investigator",
+          "type": "string"
         }
       },
       "required": [
@@ -3226,6 +3230,10 @@
         "capabilities": {
           "description": "Ex: a:1:{s:13:\"administrator\";b:1;}",
           "type": "string"
+        },
+        "card": {
+          "description": "Avatar and info",
+          "$ref": "#/definitions/Card"
         },
         "clientId": {
           "description": "Ex: quantimodo",
