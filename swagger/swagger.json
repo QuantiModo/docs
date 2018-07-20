@@ -4800,7 +4800,7 @@
       "type": "string"
     },
     "studyClientIdParam": {
-      "description": "Client id for the cohort study you want",
+      "description": "Client id for the study you want",
       "in": "query",
       "name": "studyId",
       "required": false,
@@ -6389,7 +6389,7 @@
     },
     "/v3/studies/created": {
       "get": {
-        "description": "These are cohort studies that you have created.",
+        "description": "These are studies that you have created.",
         "operationId": "getStudiesCreated",
         "parameters": [
           {
@@ -6450,7 +6450,7 @@
             ]
           }
         ],
-        "summary": "Get cohort studies you have created",
+        "summary": "Get studies you have created",
         "tags": [
           "studies"
         ]
@@ -6639,7 +6639,7 @@
             ]
           }
         ],
-        "summary": "Create a Cohort Study",
+        "summary": "Create a Study",
         "tags": [
           "studies"
         ]
