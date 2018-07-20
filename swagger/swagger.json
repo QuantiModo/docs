@@ -1901,11 +1901,11 @@
     },
     "StudyCreationBody": {
       "properties": {
-        "predictorVariableName": {
+        "causeVariableName": {
           "description": "Name of predictor variable",
           "type": "string"
         },
-        "outcomeVariableName": {
+        "effectVariableName": {
           "description": "Name of the outcome variable",
           "type": "string"
         },
@@ -1924,8 +1924,9 @@
         }
       },
       "required": [
-        "predictorVariableName",
-        "outcomeVariableName"
+        "causeVariableName",
+        "effectVariableName",
+        "type"
       ]
     },
     "Study": {
