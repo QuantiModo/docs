@@ -176,20 +176,8 @@
     },
     "Card": {
       "properties": {
-        "title": {
-          "description": "Ex: Title",
-          "type": "string"
-        },
-        "subTitle": {
-          "description": "Ex: subTitle",
-          "type": "string"
-        },
-        "content": {
-          "description": "Ex: Content",
-          "type": "string"
-        },
-        "htmlContent": {
-          "description": "Ex: <div>Content</div>",
+        "avatar": {
+          "description": "Smaller square image",
           "type": "string"
         },
         "buttons": {
@@ -198,22 +186,38 @@
           },
           "type": "array"
         },
+        "content": {
+          "description": "Ex: Content",
+          "type": "string"
+        },
+        "html": {
+          "description": "HTML for the entire card.",
+          "type": "string"
+        },
+        "htmlContent": {
+          "description": "Ex: <div>Content</div>",
+          "type": "string"
+        },
+        "image": {
+          "description": "Larger image of variable dimensions",
+          "type": "string"
+        },
+        "link": {
+          "description": "A link to a web page or something. Not much more to say about that.",
+          "type": "string"
+        },
         "sharingButtons": {
           "items": {
             "$ref": "#/definitions/Button"
           },
           "type": "array"
         },
-        "image": {
-          "description": "Larger image of variable dimensions",
+        "subTitle": {
+          "description": "Ex: subTitle",
           "type": "string"
         },
-        "avatar": {
-          "description": "Smaller square image",
-          "type": "string"
-        },
-        "link": {
-          "description": "A link to a web page or something. Not much more to say about that.",
+        "title": {
+          "description": "Ex: Title",
           "type": "string"
         }
       },
