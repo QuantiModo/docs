@@ -161,10 +161,10 @@
           "type": "string"
         },
         "confirmationText":{
-          "description": "Text to show user before executing functionToCall",
+          "description": "Text to show user before executing functionName",
           "type": "string"
         },
-        "functionToCall": {
+        "functionName": {
           "description": "Name of function to call",
           "type": "string"
         },
@@ -185,15 +185,15 @@
           "type": "string"
         },
         "successToastText":{
-          "description": "Text to show user after executing functionToCall",
+          "description": "Text to show user after executing functionName",
           "type": "string"
         },
         "successAlertTitle":{
-          "description": "Text to show user after executing functionToCall",
+          "description": "Text to show user after executing functionName",
           "type": "string"
         },
         "successAlertBody":{
-          "description": "Text to show user after executing functionToCall",
+          "description": "Text to show user after executing functionName",
           "type": "string"
         },
         "text": {
