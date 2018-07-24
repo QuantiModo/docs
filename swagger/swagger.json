@@ -184,7 +184,15 @@
           "description": "Ex: https://local.quantimo.do",
           "type": "string"
         },
-        "successText":{
+        "successToastText":{
+          "description": "Text to show user after executing functionToCall",
+          "type": "string"
+        },
+        "successAlertTitle":{
+          "description": "Text to show user after executing functionToCall",
+          "type": "string"
+        },
+        "successAlertBody":{
           "description": "Text to show user after executing functionToCall",
           "type": "string"
         },
