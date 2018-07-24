@@ -160,7 +160,7 @@
           "description": "Ex: #f2f2f2",
           "type": "string"
         },
-        "function": {
+        "functionToCall": {
           "description": "Name of function to call",
           "type": "string"
         },
@@ -3872,6 +3872,14 @@
         "numberOfCorrelations": {
           "description": "Number of correlations for this variable",
           "format": "int32",
+          "type": "integer"
+        },
+        "numberOfCorrelationsAsCause": {
+          "description": "numberOfAggregateCorrelationsAsCause plus numberOfUserCorrelationsAsCause",
+          "type": "integer"
+        },
+        "numberOfCorrelationsAsEffect": {
+          "description": "numberOfAggregateCorrelationsAsEffect plus numberOfUserCorrelationsAsEffect",
           "type": "integer"
         },
         "numberOfProcessedDailyMeasurements": {
