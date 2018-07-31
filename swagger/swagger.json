@@ -2415,6 +2415,30 @@
           },
           "type": "array"
         },
+        "bestStudyLink": {
+          "description": "Link to study comparing variable with strongest relationship for user or population",
+          "type": "string"
+        },
+        "bestUserStudyLink": {
+          "description": "Link to study comparing variable with strongest relationship for user",
+          "type": "string"
+        },
+        "bestPopulationStudyLink": {
+          "description": "Link to study comparing variable with strongest relationship for population",
+          "type": "string"
+        },
+        "optimalValueMessage": {
+          "description": "Description of relationship with variable with strongest relationship for user or population",
+          "type": "string"
+        },
+        "commonOptimalValueMessage": {
+          "description": "Description of relationship with variable with strongest relationship for population",
+          "type": "string"
+        },
+        "userOptimalValueMessage": {
+          "description": "Description of relationship with variable with strongest relationship for user",
+          "type": "string"
+        },
         "clientId": {
           "description": "Your QuantiModo client id can be obtained by creating an app at https://builder.quantimo.do",
           "type": "string"
@@ -2770,6 +2794,30 @@
             "$ref": "#/definitions/Unit"
           },
           "type": "array"
+        },
+        "bestStudyLink": {
+          "description": "Link to study comparing variable with strongest relationship for user or population",
+          "type": "string"
+        },
+        "bestUserStudyLink": {
+          "description": "Link to study comparing variable with strongest relationship for user",
+          "type": "string"
+        },
+        "bestPopulationStudyLink": {
+          "description": "Link to study comparing variable with strongest relationship for population",
+          "type": "string"
+        },
+        "optimalValueMessage": {
+          "description": "Description of relationship with variable with strongest relationship for user or population",
+          "type": "string"
+        },
+        "commonOptimalValueMessage": {
+          "description": "Description of relationship with variable with strongest relationship for population",
+          "type": "string"
+        },
+        "userOptimalValueMessage": {
+          "description": "Description of relationship with variable with strongest relationship for user",
+          "type": "string"
         },
         "clientId": {
           "description": "Your QuantiModo client id can be obtained by creating an app at https://builder.quantimo.do",
@@ -3510,6 +3558,30 @@
             "$ref": "#/definitions/Unit"
           },
           "type": "array"
+        },
+        "bestStudyLink": {
+          "description": "Link to study comparing variable with strongest relationship for user or population",
+          "type": "string"
+        },
+        "bestUserStudyLink": {
+          "description": "Link to study comparing variable with strongest relationship for user",
+          "type": "string"
+        },
+        "bestPopulationStudyLink": {
+          "description": "Link to study comparing variable with strongest relationship for population",
+          "type": "string"
+        },
+        "optimalValueMessage": {
+          "description": "Description of relationship with variable with strongest relationship for user or population",
+          "type": "string"
+        },
+        "commonOptimalValueMessage": {
+          "description": "Description of relationship with variable with strongest relationship for population",
+          "type": "string"
+        },
+        "userOptimalValueMessage": {
+          "description": "Description of relationship with variable with strongest relationship for user",
+          "type": "string"
         },
         "causeOnly": {
           "description": "A value of 1 indicates that this variable is generally a cause in a causal relationship.  An example of a causeOnly variable would be a variable such as Cloud Cover which would generally not be influenced by the behaviour of the user",
