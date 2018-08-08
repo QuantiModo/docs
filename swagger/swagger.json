@@ -2819,6 +2819,10 @@
           "description": "Description of relationship with variable with strongest relationship for user",
           "type": "string"
         },
+        "card": {
+          "description": "Card with options for tracking.",
+          "$ref": "#/definitions/Card"
+        },
         "clientId": {
           "description": "Your QuantiModo client id can be obtained by creating an app at https://builder.quantimo.do",
           "type": "string"
@@ -2908,7 +2912,7 @@
           "type": "number"
         },
         "manualTracking": {
-          "description": "Ex: 1",
+          "description": "True if this variable is normally tracked via manual user input rather than automatic imports",
           "type": "boolean"
         },
         "maximumAllowedValue": {
@@ -5138,6 +5142,13 @@
       "name": "variableName",
       "required": false,
       "type": "string"
+    },
+    "conciseParam": {
+      "description": "Only return field required for variable auto-complete searches.  The smaller size allows for storing more variable results locally reducing API requests.",
+      "in": "query",
+      "name": "concise",
+      "required": false,
+      "type": "boolean"
     }
   },
   "paths": {
@@ -7572,6 +7583,9 @@
           },
           {
             "$ref": "#/parameters/variableIdParam"
+          },
+          {
+            "$ref": "#/parameters/conciseParam"
           }
         ],
         "produces": [
