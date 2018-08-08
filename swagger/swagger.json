@@ -1364,6 +1364,10 @@
     },
     "Measurement": {
       "properties": {
+        "card": {
+          "description": "Card containing image, text, link and relevant buttons",
+          "$ref": "#/definitions/Card"
+        },
         "clientId": {
           "description": "Ex: quantimodo",
           "type": "string"
@@ -2438,6 +2442,10 @@
         "userOptimalValueMessage": {
           "description": "Description of relationship with variable with strongest relationship for user",
           "type": "string"
+        },
+        "card": {
+          "description": "Card containing instructions, image, text, link and relevant import buttons",
+          "$ref": "#/definitions/Card"
         },
         "clientId": {
           "description": "Your QuantiModo client id can be obtained by creating an app at https://builder.quantimo.do",
@@ -3586,6 +3594,10 @@
         "userOptimalValueMessage": {
           "description": "Description of relationship with variable with strongest relationship for user",
           "type": "string"
+        },
+        "card": {
+          "description": "Card containing instructions, image, text, link and relevant import buttons",
+          "$ref": "#/definitions/Card"
         },
         "causeOnly": {
           "description": "A value of 1 indicates that this variable is generally a cause in a causal relationship.  An example of a causeOnly variable would be a variable such as Cloud Cover which would generally not be influenced by the behaviour of the user",
