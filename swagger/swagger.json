@@ -2614,6 +2614,10 @@
           "description": "Ex: How is your overall mood?",
           "type": "string"
         },
+        "longQuestion": {
+          "description": "Ex: How is your overall mood on a scale of 1 to 5??",
+          "type": "string"
+        },
         "reminderEndTime": {
           "description": "Latest time of day at which reminders should appear in UTC HH:MM:SS format",
           "type": "string"
@@ -2970,6 +2974,10 @@
         },
         "question": {
           "description": "Ex: How is your overall mood?",
+          "type": "string"
+        },
+        "longQuestion": {
+          "description": "Ex: How is your overall mood on a scale of 1 to 5??",
           "type": "string"
         },
         "reminderEndTime": {
@@ -4081,6 +4089,14 @@
           "description": "Is variable public",
           "format": "int32",
           "type": "integer"
+        },
+        "question": {
+          "description": "Ex: How is your overall mood?",
+          "type": "string"
+        },
+        "longQuestion": {
+          "description": "Ex: How is your overall mood on a scale of 1 to 5??",
+          "type": "string"
         },
         "rawMeasurementsAtLastAnalysis": {
           "description": "Ex: 131",
