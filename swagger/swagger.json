@@ -1230,7 +1230,6 @@
           "type": "boolean"
         },
         "submitButton": {
-          "description": "What do you expect?",
           "$ref": "#/definitions/Button"
         },
         "type": {
