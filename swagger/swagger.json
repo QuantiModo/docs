@@ -1163,6 +1163,10 @@
           "description": "",
           "type": "string"
         },
+        "id": {
+          "description": "HTML element id",
+          "type": "string"
+        },
         "image": {
           "description": "",
           "type": "string"
@@ -1171,8 +1175,12 @@
           "description": "",
           "type": "string"
         },
-        "id": {
-          "description": "HTML element id",
+        "labelLeft": {
+          "description": "",
+          "type": "string"
+        },
+        "labelRight": {
+          "description": "",
           "type": "string"
         },
         "link": {
