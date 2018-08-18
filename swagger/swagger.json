@@ -7,89 +7,89 @@
     "AppSettings": {
       "properties": {
         "additionalSettings":{
-          "description": "",
+          "description": "What do you expect?",
           "type": "object"
         },
         "appDescription":{
-          "description": "",
+          "description": "What do you expect?",
           "type": "string"
         },
         "appDesign":{
-          "description": "",
+          "description": "What do you expect?",
           "type": "object"
         },
         "appDisplayName":{
-          "description": "",
+          "description": "What do you expect?",
           "type": "string"
         },
         "appStatus":{
-          "description": "",
+          "description": "What do you expect?",
           "type": "object"
         },
         "appType":{
-          "description": "",
+          "description": "What do you expect?",
           "type": "string"
         },
         "buildEnabled":{
-          "description": "",
+          "description": "What do you expect?",
           "type": "string"
         },
         "clientId":{
-          "description": "",
+          "description": "What do you expect?",
           "type": "string"
         },
         "clientSecret":{
-          "description": "",
+          "description": "What do you expect?",
           "type": "string"
         },
         "collaborators":{
-          "description": "",
+          "description": "What do you expect?",
           "items": {
             "$ref": "#/definitions/User"
           },
           "type": "array"
         },
         "createdAt":{
-          "description": "",
+          "description": "What do you expect?",
           "type": "string"
         },
         "userId":{
-          "description": "",
+          "description": "What do you expect?",
           "type": "string"
         },
         "users":{
-          "description": "",
+          "description": "What do you expect?",
           "items": {
             "$ref": "#/definitions/User"
           },
           "type": "array"
         },
         "redirectUri":{
-          "description": "",
+          "description": "What do you expect?",
           "type": "string"
         },
         "companyName":{
-          "description": "",
+          "description": "What do you expect?",
           "type": "string"
         },
         "homepageUrl":{
-          "description": "",
+          "description": "What do you expect?",
           "type": "string"
         },
         "iconUrl":{
-          "description": "",
+          "description": "What do you expect?",
           "type": "string"
         },
         "longDescription":{
-          "description": "",
+          "description": "What do you expect?",
           "type": "string"
         },
         "splashScreen":{
-          "description": "",
+          "description": "What do you expect?",
           "type": "string"
         },
         "textLogo":{
-          "description": "",
+          "description": "What do you expect?",
           "type": "string"
         }
       },
@@ -1154,19 +1154,19 @@
     "InputField": {
       "properties": {
         "displayName": {
-          "description": "",
+          "description": "What do you expect?",
           "type": "string"
         },
         "helpText": {
-          "description": "",
+          "description": "What do you expect?",
           "type": "string"
         },
         "hint": {
-          "description": "",
+          "description": "What do you expect?",
           "type": "string"
         },
         "icon": {
-          "description": "",
+          "description": "What do you expect?",
           "type": "string"
         },
         "id": {
@@ -1174,39 +1174,39 @@
           "type": "string"
         },
         "image": {
-          "description": "",
+          "description": "What do you expect?",
           "type": "string"
         },
         "key": {
-          "description": "",
+          "description": "What do you expect?",
           "type": "string"
         },
         "labelLeft": {
-          "description": "",
+          "description": "What do you expect?",
           "type": "string"
         },
         "labelRight": {
-          "description": "",
+          "description": "What do you expect?",
           "type": "string"
         },
         "link": {
-          "description": "",
+          "description": "What do you expect?",
           "type": "string"
         },
         "maxLength": {
-          "description": "",
+          "description": "What do you expect?",
           "type": "integer"
         },
         "maxValue": {
-          "description": "",
+          "description": "What do you expect?",
           "type": "number"
         },
         "minLength": {
-          "description": "",
+          "description": "What do you expect?",
           "type": "integer"
         },
         "minValue": {
-          "description": "",
+          "description": "What do you expect?",
           "type": "number"
         },
         "options": {
@@ -1218,11 +1218,11 @@
           "type": "string"
         },
         "postUrl": {
-          "description": "",
+          "description": "What do you expect?",
           "type": "string"
         },
         "required": {
-          "description": "",
+          "description": "What do you expect?",
           "type": "boolean"
         },
         "show": {
@@ -1230,7 +1230,7 @@
           "type": "boolean"
         },
         "submitButton": {
-          "description": "",
+          "description": "What do you expect?",
           "$ref": "#/definitions/Button"
         },
         "type": {
@@ -1255,7 +1255,7 @@
           "type": "string"
         },
         "value": {
-          "description": "",
+          "description": "What do you expect?",
           "type": "string"
         }
       },
@@ -2244,11 +2244,11 @@
           "type": "string"
         },
         "socialSharingButtonHtml": {
-          "description": "",
+          "description": "What do you expect?",
           "type": "string"
         },
         "studySummaryBoxHtml": {
-          "description": "",
+          "description": "What do you expect?",
           "type": "string"
         }
       },
@@ -3898,7 +3898,7 @@
           "type": "integer"
         },
         "imageUrl": {
-          "description": "",
+          "description": "What do you expect?",
           "type": "string"
         },
         "informationalUrl": {
@@ -3938,7 +3938,7 @@
           "type": "string"
         },
         "ionIcon": {
-          "description": "",
+          "description": "What do you expect?",
           "type": "string"
         },
         "joinedCommonTagVariables": {
