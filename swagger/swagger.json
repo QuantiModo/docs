@@ -216,6 +216,12 @@
     },
     "Card": {
       "properties": {
+        "actionSheetButtons": {
+          "items": {
+            "$ref": "#/definitions/Button"
+          },
+          "type": "array"
+        },
         "avatar": {
           "description": "Smaller square image",
           "type": "string"
