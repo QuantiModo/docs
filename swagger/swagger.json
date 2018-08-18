@@ -1223,6 +1223,10 @@
           "description": "Ex: Title",
           "type": "boolean"
         },
+        "submitButton": {
+          "description": "",
+          "$ref": "#/definitions/Button"
+        },
         "type": {
           "description": "Ex: Title",
           "enum": [
