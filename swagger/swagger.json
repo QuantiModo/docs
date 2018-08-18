@@ -2546,13 +2546,25 @@
           "description": "Link to study comparing variable with strongest relationship for user or population",
           "type": "string"
         },
+        "bestStudyCard": {
+          "description": "Description of relationship with variable with strongest relationship for user or population",
+          "$ref": "#/definitions/Card"
+        },
         "bestUserStudyLink": {
           "description": "Link to study comparing variable with strongest relationship for user",
           "type": "string"
         },
+        "bestUserStudyCard": {
+          "description": "Description of relationship with variable with strongest relationship for user",
+          "$ref": "#/definitions/Card"
+        },
         "bestPopulationStudyLink": {
           "description": "Link to study comparing variable with strongest relationship for population",
           "type": "string"
+        },
+        "bestPopulationStudyCard": {
+          "description": "Description of relationship with variable with strongest relationship for population",
+          "$ref": "#/definitions/Card"
         },
         "optimalValueMessage": {
           "description": "Description of relationship with variable with strongest relationship for user or population",
@@ -2934,13 +2946,25 @@
           "description": "Link to study comparing variable with strongest relationship for user or population",
           "type": "string"
         },
+        "bestStudyCard": {
+          "description": "Description of relationship with variable with strongest relationship for user or population",
+          "$ref": "#/definitions/Card"
+        },
         "bestUserStudyLink": {
           "description": "Link to study comparing variable with strongest relationship for user",
           "type": "string"
         },
+        "bestUserStudyCard": {
+          "description": "Description of relationship with variable with strongest relationship for user",
+          "$ref": "#/definitions/Card"
+        },
         "bestPopulationStudyLink": {
           "description": "Link to study comparing variable with strongest relationship for population",
           "type": "string"
+        },
+        "bestPopulationStudyCard": {
+          "description": "Description of relationship with variable with strongest relationship for population",
+          "$ref": "#/definitions/Card"
         },
         "optimalValueMessage": {
           "description": "Description of relationship with variable with strongest relationship for user or population",
@@ -3706,13 +3730,25 @@
           "description": "Link to study comparing variable with strongest relationship for user or population",
           "type": "string"
         },
+        "bestStudyCard": {
+          "description": "Description of relationship with variable with strongest relationship for user or population",
+          "$ref": "#/definitions/Card"
+        },
         "bestUserStudyLink": {
           "description": "Link to study comparing variable with strongest relationship for user",
           "type": "string"
         },
+        "bestUserStudyCard": {
+          "description": "Description of relationship with variable with strongest relationship for user",
+          "$ref": "#/definitions/Card"
+        },
         "bestPopulationStudyLink": {
           "description": "Link to study comparing variable with strongest relationship for population",
           "type": "string"
+        },
+        "bestPopulationStudyCard": {
+          "description": "Description of relationship with variable with strongest relationship for population",
+          "$ref": "#/definitions/Card"
         },
         "optimalValueMessage": {
           "description": "Description of relationship with variable with strongest relationship for user or population",
