@@ -234,6 +234,10 @@
           "description": "Ex: Content",
           "type": "string"
         },
+        "headerTitle": {
+          "description": "Ex: Title",
+          "type": "string"
+        },
         "html": {
           "description": "HTML for the entire card.",
           "type": "string"
@@ -241,6 +245,12 @@
         "htmlContent": {
           "description": "Ex: <div>Content</div>",
           "type": "string"
+        },
+        "iconButtons": {
+          "items": {
+            "$ref": "#/definitions/Button"
+          },
+          "type": "array"
         },
         "id": {
           "description": "HTML element id",
@@ -250,6 +260,12 @@
           "description": "Larger image of variable dimensions",
           "type": "string"
         },
+        "inputFields": {
+          "items": {
+            "$ref": "#/definitions/InputField"
+          },
+          "type": "array"
+        },
         "ionIcon": {
           "description": "Ex: ion-refresh",
           "type": "string"
@@ -257,6 +273,12 @@
         "link": {
           "description": "A link to a web page or something. Not much more to say about that.",
           "type": "string"
+        },
+        "parameters": {
+          "items": {
+            "$ref": "#/definitions/InputField"
+          },
+          "type": "array"
         },
         "sharingBody": {
           "description": "Ex: sharingBody",
@@ -272,6 +294,10 @@
           "description": "Ex: sharingTitle",
           "type": "string"
         },
+        "subHeader": {
+          "description": "Ex: subTitle",
+          "type": "string"
+        },
         "subTitle": {
           "description": "Ex: subTitle",
           "type": "string"
@@ -282,8 +308,7 @@
         }
       },
       "required": [
-        "link",
-        "text"
+        "id"
       ]
     },
     "Chart": {
@@ -311,49 +336,6 @@
         "svg": {
           "description": "SVG string than can be embedded directly in HTML",
           "type": "string"
-        }
-      }
-    },
-    "StudyCharts": {
-      "description": "An object with various chart properties each property contain and svg and Highcharts configuration",
-      "properties": {
-        "populationTraitScatterPlot": {
-          "$ref": "#/definitions/Chart"
-        },
-        "outcomeDistributionColumnChart": {
-          "$ref": "#/definitions/Chart"
-        },
-        "predictorDistributionColumnChart": {
-          "$ref": "#/definitions/Chart"
-        },
-        "correlationScatterPlot": {
-          "$ref": "#/definitions/Chart"
-        },
-        "pairsOverTimeLineChart": {
-          "$ref": "#/definitions/Chart"
-        }
-      }
-    },
-    "VariableCharts": {
-      "description": "An object with various chart properties each property contain and svg and Highcharts configuration",
-      "properties": {
-        "hourlyColumnChart": {
-          "$ref": "#/definitions/Chart"
-        },
-        "monthlyColumnChart": {
-          "$ref": "#/definitions/Chart"
-        },
-        "distributionColumnChart": {
-          "$ref": "#/definitions/Chart"
-        },
-        "weekdayColumnChart": {
-          "$ref": "#/definitions/Chart"
-        },
-        "lineChartWithoutSmoothing": {
-          "$ref": "#/definitions/Chart"
-        },
-        "lineChartWithSmoothing": {
-          "$ref": "#/definitions/Chart"
         }
       }
     },
@@ -1161,6 +1143,107 @@
         "button",
         "description",
         "title"
+      ]
+    },
+    "InputField": {
+      "properties": {
+        "displayName": {
+          "description": "",
+          "type": "string"
+        },
+        "helpText": {
+          "description": "",
+          "type": "string"
+        },
+        "hint": {
+          "description": "",
+          "type": "string"
+        },
+        "icon": {
+          "description": "",
+          "type": "string"
+        },
+        "image": {
+          "description": "",
+          "type": "string"
+        },
+        "key": {
+          "description": "",
+          "type": "string"
+        },
+        "id": {
+          "description": "HTML element id",
+          "type": "string"
+        },
+        "link": {
+          "description": "",
+          "type": "string"
+        },
+        "maxLength": {
+          "description": "",
+          "type": "integer"
+        },
+        "maxValue": {
+          "description": "",
+          "type": "number"
+        },
+        "minLength": {
+          "description": "",
+          "type": "integer"
+        },
+        "minValue": {
+          "description": "",
+          "type": "number"
+        },
+        "options": {
+          "description": "Ex: sharingTitle",
+          "type": "array"
+        },
+        "placeholder": {
+          "description": "Ex: Title",
+          "type": "string"
+        },
+        "postUrl": {
+          "description": "",
+          "type": "string"
+        },
+        "required": {
+          "description": "",
+          "type": "boolean"
+        },
+        "show": {
+          "description": "Ex: Title",
+          "type": "boolean"
+        },
+        "type": {
+          "description": "Ex: Title",
+          "enum": [
+            "check_box",
+            "date",
+            "email",
+            "number",
+            "postal_code",
+            "select_option",
+            "string",
+            "switch",
+            "text_area",
+            "unit",
+            "variable_category"
+          ],
+          "type": "string"
+        },
+        "validationPattern": {
+          "description": "See http://html5pattern.com/ for examples",
+          "type": "string"
+        },
+        "value": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "displayName",
+        "type"
       ]
     },
     "GetConnectorsResponse": {
@@ -1973,36 +2056,6 @@
         "emailAddress"
       ]
     },
-    "StudyCreationBody": {
-      "properties": {
-        "causeVariableName": {
-          "description": "Name of predictor variable",
-          "type": "string"
-        },
-        "effectVariableName": {
-          "description": "Name of the outcome variable",
-          "type": "string"
-        },
-        "studyTitle": {
-          "description": "Title of your study (optional)",
-          "type": "string"
-        },
-        "type": {
-          "description": "Individual studies are based on data of a single user. Group studies are based on data from a specific group of individuals who have joined.  Global studies are based on aggregated and anonymously shared data from all users.",
-          "type": "string",
-          "enum": [
-            "individual",
-            "group",
-            "global"
-          ]
-        }
-      },
-      "required": [
-        "causeVariableName",
-        "effectVariableName",
-        "type"
-      ]
-    },
     "Study": {
       "description": "A study analyzes the relationship between a predictor variable like gluten-intake and an outcome of interest such as overall mood.",
       "properties": {
@@ -2069,6 +2122,56 @@
         }
       },
       "required": [
+        "type"
+      ]
+    },
+    "StudyCharts": {
+      "description": "An object with various chart properties each property contain and svg and Highcharts configuration",
+      "properties": {
+        "populationTraitScatterPlot": {
+          "$ref": "#/definitions/Chart"
+        },
+        "outcomeDistributionColumnChart": {
+          "$ref": "#/definitions/Chart"
+        },
+        "predictorDistributionColumnChart": {
+          "$ref": "#/definitions/Chart"
+        },
+        "correlationScatterPlot": {
+          "$ref": "#/definitions/Chart"
+        },
+        "pairsOverTimeLineChart": {
+          "$ref": "#/definitions/Chart"
+        }
+      }
+    },
+    "StudyCreationBody": {
+      "properties": {
+        "causeVariableName": {
+          "description": "Name of predictor variable",
+          "type": "string"
+        },
+        "effectVariableName": {
+          "description": "Name of the outcome variable",
+          "type": "string"
+        },
+        "studyTitle": {
+          "description": "Title of your study (optional)",
+          "type": "string"
+        },
+        "type": {
+          "description": "Individual studies are based on data of a single user. Group studies are based on data from a specific group of individuals who have joined.  Global studies are based on aggregated and anonymously shared data from all users.",
+          "type": "string",
+          "enum": [
+            "individual",
+            "group",
+            "global"
+          ]
+        }
+      },
+      "required": [
+        "causeVariableName",
+        "effectVariableName",
         "type"
       ]
     },
@@ -4464,6 +4567,29 @@
       "required": [
         "name"
       ]
+    },
+    "VariableCharts": {
+      "description": "An object with various chart properties each property contain and svg and Highcharts configuration",
+      "properties": {
+        "hourlyColumnChart": {
+          "$ref": "#/definitions/Chart"
+        },
+        "monthlyColumnChart": {
+          "$ref": "#/definitions/Chart"
+        },
+        "distributionColumnChart": {
+          "$ref": "#/definitions/Chart"
+        },
+        "weekdayColumnChart": {
+          "$ref": "#/definitions/Chart"
+        },
+        "lineChartWithoutSmoothing": {
+          "$ref": "#/definitions/Chart"
+        },
+        "lineChartWithSmoothing": {
+          "$ref": "#/definitions/Chart"
+        }
+      }
     },
     "Vote": {
       "properties": {
