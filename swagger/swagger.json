@@ -1210,8 +1210,11 @@
           "type": "number"
         },
         "options": {
-          "description": "Ex: sharingTitle",
-          "type": "array"
+          "description": "Selector list options",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         },
         "placeholder": {
           "description": "Ex: Title",
