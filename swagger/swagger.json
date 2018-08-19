@@ -148,6 +148,10 @@
     },
     "Button": {
       "properties": {
+        "accessibilityText": {
+          "description": "Ex: connect",
+          "type": "string"
+        },
         "action": {
           "description": "Action data",
           "type": "object"
@@ -172,6 +176,10 @@
           "description": "Data to provide to functionName",
           "type": "object"
         },
+        "html": {
+          "description": "Ex: connect",
+          "type": "string"
+        },
         "id": {
           "description": "HTML element id",
           "type": "string"
@@ -187,6 +195,14 @@
         "link": {
           "description": "Ex: https://local.quantimo.do",
           "type": "string"
+        },
+        "stateName": {
+          "description": "State to go to",
+          "type": "string"
+        },
+        "stateParams": {
+          "description": "Data to provide to the state",
+          "type": "object"
         },
         "successToastText":{
           "description": "Text to show user after executing functionName",
