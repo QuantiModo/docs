@@ -242,6 +242,10 @@
           "description": "Smaller square image",
           "type": "string"
         },
+        "avatarCircular": {
+          "description": "Smaller circular image",
+          "type": "string"
+        },
         "backgroundColor": {
           "description": "Ex: #f2f2f2",
           "type": "string"
@@ -295,6 +299,10 @@
             "$ref": "#/definitions/InputField"
           },
           "type": "array"
+        },
+        "selectedButton": {
+          "description": "Button that the user clicked and the provided function parameters",
+          "$ref": "#/definitions/Button"
         },
         "sharingBody": {
           "description": "Ex: sharingBody",
@@ -1095,24 +1103,24 @@
       ]
     },
     "DeviceToken": {
-        "properties": {
-          "clientId": {
-            "description": "Client id",
-            "type": "string"
-          },
-          "platform": {
-            "description": "ios, android, or web",
-            "type": "string"
-          },
-          "deviceToken": {
-            "description": "The device token",
-            "type": "string"
-          }
+      "properties": {
+        "clientId": {
+          "description": "Client id",
+          "type": "string"
         },
-        "required": [
-          "deviceToken",
-          "platform"
-        ]
+        "platform": {
+          "description": "ios, android, or web",
+          "type": "string"
+        },
+        "deviceToken": {
+          "description": "The device token",
+          "type": "string"
+        }
+      },
+      "required": [
+        "deviceToken",
+        "platform"
+      ]
     },
     "Explanation": {
       "properties": {
@@ -1413,6 +1421,29 @@
       "required": [
         "description",
         "summary"
+      ]
+    },
+    "FeedResponse": {
+      "properties": {
+        "cards": {
+          "items": {
+            "$ref": "#/definitions/Card"
+          },
+          "type": "array"
+        },
+        "description": {
+          "description": "Tracking reminder notifications, messages, and study result cards that can be displayed in user feed or stream",
+          "type": "string"
+        },
+        "summary": {
+          "description": "Tracking reminder notifications, messages, and study results",
+          "type": "string"
+        }
+      },
+      "required": [
+        "description",
+        "summary",
+        "cards"
       ]
     },
     "GetTrackingReminderNotificationsResponse": {
@@ -5829,6 +5860,119 @@
         "summary": "Post DeviceTokens",
         "tags": [
           "notifications"
+        ]
+      }
+    },
+    "/v3/feed": {
+      "get": {
+        "description": "Tracking reminder notifications, messages, and study results",
+        "operationId": "getFeed",
+        "parameters": [
+          {
+            "$ref": "#/parameters/sortParam"
+          },
+          {
+            "$ref": "#/parameters/userIdParam"
+          },
+          {
+            "$ref": "#/parameters/createdAtParam"
+          },
+          {
+            "$ref": "#/parameters/updatedAtParam"
+          },
+          {
+            "$ref": "#/parameters/limitParam"
+          },
+          {
+            "$ref": "#/parameters/offsetParam"
+          },
+          {
+            "$ref": "#/parameters/clientIdParam"
+          },
+          {
+            "$ref": "#/parameters/platform"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/FeedResponse"
+            }
+          }
+        },
+        "security": [
+          {
+            "access_token": []
+          },
+          {
+            "quantimodo_oauth2": [
+              "basic"
+            ]
+          }
+        ],
+        "summary": "Tracking reminder notifications, messages, and study results",
+        "tags": [
+          "feed"
+        ]
+      },
+      "post": {
+        "description": "Post user actions on feed cards",
+        "operationId": "postFeed",
+        "parameters": [
+          {
+            "$ref": "#/parameters/userIdParam"
+          },
+          {
+            "description": "Id of the tracking reminder notification to be snoozed",
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "description": "Array of cards to take action on",
+              "items": {
+                "$ref": "#/definitions/Card"
+              },
+              "type": "array"
+            }
+          },
+          {
+            "$ref": "#/parameters/clientIdParam"
+          },
+          {
+            "$ref": "#/parameters/platform"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "Returns new feed cards",
+            "schema": {
+              "$ref": "#/definitions/FeedResponse"
+            }
+          },
+          "401": {
+            "description": "Not Authenticated"
+          }
+        },
+        "security": [
+          {
+            "access_token": []
+          },
+          {
+            "quantimodo_oauth2": [
+              "basic"
+            ]
+          }
+        ],
+        "summary": "Post user interactions with feed",
+        "tags": [
+          "feed"
         ]
       }
     },
