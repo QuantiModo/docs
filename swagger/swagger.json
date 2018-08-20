@@ -250,6 +250,12 @@
           "description": "Ex: #f2f2f2",
           "type": "string"
         },
+        "buttons": {
+          "items": {
+            "$ref": "#/definitions/Button"
+          },
+          "type": "array"
+        },
         "content": {
           "description": "Ex: Content",
           "type": "string"
@@ -265,12 +271,6 @@
         "htmlContent": {
           "description": "Ex: <div>Content</div>",
           "type": "string"
-        },
-        "iconButtons": {
-          "items": {
-            "$ref": "#/definitions/Button"
-          },
-          "type": "array"
         },
         "id": {
           "description": "HTML element id",
@@ -325,12 +325,6 @@
         "subTitle": {
           "description": "Ex: subTitle",
           "type": "string"
-        },
-        "textButtons": {
-          "items": {
-            "$ref": "#/definitions/Button"
-          },
-          "type": "array"
         },
         "title": {
           "description": "Ex: Title",
