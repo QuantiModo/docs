@@ -172,8 +172,8 @@
           "description": "Name of function to call",
           "type": "string"
         },
-        "functionParameters": {
-          "description": "Data to provide to functionName",
+        "parameters": {
+          "description": "Data to provide to functionName or be copied to the card parameters when button is clicked and card is posted to the API",
           "type": "object"
         },
         "html": {
@@ -295,10 +295,8 @@
           "type": "string"
         },
         "parameters": {
-          "items": {
-            "$ref": "#/definitions/InputField"
-          },
-          "type": "array"
+          "description": "Key value pairs derived from user input fields, button clicks, or preset defaults",
+          "type": "object"
         },
         "selectedButton": {
           "description": "Button that the user clicked and the provided function parameters",
