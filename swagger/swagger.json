@@ -650,16 +650,16 @@
           "type": "number"
         },
         "outcomeFillingValue": {
-          "description": "Ex: -1",
+          "description": "Ex: -1. Unit: User-specified or common.",
           "type": "integer"
         },
         "outcomeMaximumAllowedValue": {
-          "description": "Ex: 23",
+          "description": "Ex: 23. Unit: User-specified or common.",
           "format": "double",
           "type": "number"
         },
         "outcomeMinimumAllowedValue": {
-          "description": "Ex: 0.1",
+          "description": "Ex: 0.1. Unit: User-specified or common.",
           "format": "double",
           "type": "number"
         },
@@ -683,25 +683,25 @@
           "type": "string"
         },
         "predictorFillingValue": {
-          "description": "Ex: -1",
+          "description": "Ex: -1. Unit: User-specified or common.",
           "type": "integer"
         },
         "predictorMaximumAllowedValue": {
-          "description": "Ex: 200",
+          "description": "Ex: 200. Unit: User-specified or common.",
           "format": "double",
           "type": "number"
         },
         "predictorMinimumAllowedValue": {
-          "description": "Ex: 30",
+          "description": "Ex: 30. Unit: User-specified or common.",
           "format": "double",
           "type": "number"
         },
         "predictsHighEffectChange": {
-          "description": "Ex: 17",
+          "description": "Ex: 17. Unit: User-specified or common.",
           "type": "integer"
         },
         "predictsLowEffectChange": {
-          "description": "Ex: -11",
+          "description": "Ex: -11. Unit: User-specified or common.",
           "type": "integer"
         },
         "pValue": {
@@ -1547,12 +1547,14 @@
           "type": "boolean"
         },
         "maximumAllowedValue": {
-          "description": "Ex: 5",
-          "type": "integer"
+          "description": "Ex: 5. Unit: User-specified or common.",
+          "format": "double",
+          "type": "number"
         },
         "minimumAllowedValue": {
-          "description": "Ex: 1",
-          "type": "integer"
+          "description": "Ex: 1. Unit: User-specified or common.",
+          "format": "double",
+          "type": "number"
         },
         "note": {
           "description": "Note of measurement",
@@ -1571,8 +1573,9 @@
           "type": "integer"
         },
         "originalValue": {
-          "description": "Original value as originally submitted",
-          "type": "integer"
+          "description": "Original value submitted. Unit: Originally submitted.",
+          "format": "double",
+          "type": "number"
         },
         "pngPath": {
           "description": "Ex: img/variable_categories/treatments.png",
@@ -1680,7 +1683,32 @@
           "type": "string"
         },
         "variableCategoryName": {
-          "description": "Ex: Treatments",
+          "description": "Ex: Emotions, Treatments, Symptoms...",
+          "enum": [
+            "Activity",
+            "Books",
+            "Causes of Illness",
+            "Cognitive Performance",
+            "Conditions",
+            "Emotions",
+            "Environment",
+            "Foods",
+            "Goals",
+            "Locations",
+            "Miscellaneous",
+            "Movies and TV",
+            "Music",
+            "Nutrients",
+            "Payments",
+            "Physical Activities",
+            "Physique",
+            "Sleep",
+            "Social Interactions",
+            "Software",
+            "Symptoms",
+            "Treatments",
+            "Vital Signs"
+          ],
           "type": "string"
         },
         "variableDescription": {
@@ -1777,7 +1805,32 @@
           "type": "string"
         },
         "variableCategoryName": {
-          "description": "Variable category name",
+          "description": "Ex: Emotions, Treatments, Symptoms...",
+          "enum": [
+            "Activity",
+            "Books",
+            "Causes of Illness",
+            "Cognitive Performance",
+            "Conditions",
+            "Emotions",
+            "Environment",
+            "Foods",
+            "Goals",
+            "Locations",
+            "Miscellaneous",
+            "Movies and TV",
+            "Music",
+            "Nutrients",
+            "Payments",
+            "Physical Activities",
+            "Physique",
+            "Sleep",
+            "Social Interactions",
+            "Software",
+            "Symptoms",
+            "Treatments",
+            "Vital Signs"
+          ],
           "type": "string"
         },
         "variableName": {
@@ -2506,7 +2559,7 @@
           "type": "string"
         },
         "studyAbstract": {
-          "description": "Ex: Aggregated data from 21 suggests with a low degree of confidence (p=0.097) that Very Distracting Time (Work) has a moderately positive predictive relationship (R=0.354) with Video Activities  (Activity).  The highest quartile of Video Activities measurements were observed following an average 2.03h Very Distracting Timeper day.  The lowest quartile of Video Activities  measurements were observed following an average 1.04h Very Distracting Timeper day.",
+          "description": "Ex: Aggregated data from 21 suggests with a low degree of confidence (p=0.097) that Very Distracting Time has a moderately positive predictive relationship (R=0.354) with Video Activities  (Activity).  The highest quartile of Video Activities measurements were observed following an average 2.03h Very Distracting Timeper day.  The lowest quartile of Video Activities  measurements were observed following an average 1.04h Very Distracting Timeper day.",
           "type": "string"
         },
         "studyDesign": {
@@ -2522,7 +2575,7 @@
           "type": "string"
         },
         "studyResults": {
-          "description": "Ex: This analysis suggests that higher Very Distracting Time (Work) generally predicts negative Video Activities (p = 0.097). Video Activities is, on average, 36%  higher after around 2.03 Very Distracting Time.  After an onset delay of 168 hours, Video Activities is, on average, 16%  lower than its average over the 168 hours following around 1.04 Very Distracting Time.  146 data points were used in this analysis.  The value for Very Distracting Time changed 2984 times, effectively running 1492 separate natural experiments. The top quartile outcome values are preceded by an average 2.03 h of Very Distracting Time.  The bottom quartile outcome values are preceded by an average 1.04 h of Very Distracting Time.  Forward Pearson Correlation Coefficient was 0.354 (p=0.097, 95% CI -0.437 to 1.144 onset delay = 0 hours, duration of action = 168 hours) .  The Reverse Pearson Correlation Coefficient was 0.208 (P=0.097, 95% CI -0.583 to 0.998, onset delay = -0 hours, duration of action = -168 hours). When the Very Distracting Time value is closer to 2.03 h than 1.04 h, the Video Activities value which follows is, on average, 36% percent higher than its typical value.  When the Very Distracting Time value is closer to 1.04 h than 2.03 h, the Video Activities value which follows is 0% lower than its typical value.  Video Activities is 5 h (67% higher) on average after days with around 5 h Very Distracting Time",
+          "description": "Ex: This analysis suggests that higher Very Distracting Time generally predicts negative Video Activities (p = 0.097). Video Activities is, on average, 36%  higher after around 2.03 Very Distracting Time.  After an onset delay of 168 hours, Video Activities is, on average, 16%  lower than its average over the 168 hours following around 1.04 Very Distracting Time.  146 data points were used in this analysis.  The value for Very Distracting Time changed 2984 times, effectively running 1492 separate natural experiments. The top quartile outcome values are preceded by an average 2.03 h of Very Distracting Time.  The bottom quartile outcome values are preceded by an average 1.04 h of Very Distracting Time.  Forward Pearson Correlation Coefficient was 0.354 (p=0.097, 95% CI -0.437 to 1.144 onset delay = 0 hours, duration of action = 168 hours) .  The Reverse Pearson Correlation Coefficient was 0.208 (P=0.097, 95% CI -0.583 to 0.998, onset delay = -0 hours, duration of action = -168 hours). When the Very Distracting Time value is closer to 2.03 h than 1.04 h, the Video Activities value which follows is, on average, 36% percent higher than its typical value.  When the Very Distracting Time value is closer to 1.04 h than 2.03 h, the Video Activities value which follows is 0% lower than its typical value.  Video Activities is 5 h (67% higher) on average after days with around 5 h Very Distracting Time",
           "type": "string"
         },
         "studyTitle": {
@@ -2662,7 +2715,7 @@
           "type": "string"
         },
         "defaultValue": {
-          "description": "Default value to use for the measurement when tracking",
+          "description": "Default value to use for the measurement when tracking. Unit: User-specified or common.",
           "format": "float",
           "type": "number"
         },
@@ -2679,7 +2732,7 @@
           "type": "string"
         },
         "fillingValue": {
-          "description": "Ex: 0",
+          "description": "Ex: 0. Unit: User-specified or common.",
           "type": "integer"
         },
         "firstDailyReminderTime": {
@@ -2741,12 +2794,14 @@
           "type": "boolean"
         },
         "maximumAllowedValue": {
-          "description": "Ex: 5",
-          "type": "integer"
+          "description": "Ex: 5. Unit: User-specified or common.",
+          "format": "double",
+          "type": "number"
         },
         "minimumAllowedValue": {
-          "description": "Ex: 1",
-          "type": "integer"
+          "description": "Ex: 1. Unit: User-specified or common.",
+          "format": "double",
+          "type": "number"
         },
         "nextReminderTimeEpochSeconds": {
           "description": "Ex: 1501555520",
@@ -2831,7 +2886,7 @@
           "type": "string"
         },
         "secondToLastValue": {
-          "description": "Ex: 1",
+          "description": "Ex: 1. Unit: User-specified or common.",
           "format": "double",
           "type": "number"
         },
@@ -2932,7 +2987,32 @@
           "type": "string"
         },
         "variableCategoryName": {
-          "description": "Name of the variable category to be used when sending measurements",
+          "description": "Ex: Emotions, Treatments, Symptoms...",
+          "enum": [
+            "Activity",
+            "Books",
+            "Causes of Illness",
+            "Cognitive Performance",
+            "Conditions",
+            "Emotions",
+            "Environment",
+            "Foods",
+            "Goals",
+            "Locations",
+            "Miscellaneous",
+            "Movies and TV",
+            "Music",
+            "Nutrients",
+            "Payments",
+            "Physical Activities",
+            "Physique",
+            "Sleep",
+            "Social Interactions",
+            "Software",
+            "Symptoms",
+            "Treatments",
+            "Vital Signs"
+          ],
           "type": "string"
         },
         "variableDescription": {
@@ -3042,7 +3122,7 @@
           "type": "string"
         },
         "modifiedValue": {
-          "description": "Is the user specified default value or falls back to the last value in user unit. Good for initializing input fields",
+          "description": "Is the user specified default value or falls back to the last value in user unit. Good for initializing input fields. Unit: User-specified or common.",
           "format": "double",
           "type": "number"
         },
@@ -3308,7 +3388,32 @@
           "type": "string"
         },
         "variableCategoryName": {
-          "description": "Name of the variable category to be used when sending measurements",
+          "description": "Ex: Emotions, Treatments, Symptoms...",
+          "enum": [
+            "Activity",
+            "Books",
+            "Causes of Illness",
+            "Cognitive Performance",
+            "Conditions",
+            "Emotions",
+            "Environment",
+            "Foods",
+            "Goals",
+            "Locations",
+            "Miscellaneous",
+            "Movies and TV",
+            "Music",
+            "Nutrients",
+            "Payments",
+            "Physical Activities",
+            "Physique",
+            "Sleep",
+            "Social Interactions",
+            "Software",
+            "Symptoms",
+            "Treatments",
+            "Vital Signs"
+          ],
           "type": "string"
         },
         "variableId": {
@@ -3756,7 +3861,7 @@
           "type": "array"
         },
         "alias": {
-          "description": "Alternative name",
+          "description": "User-Defined Variable Setting:  Alternative display name",
           "type": "string"
         },
         "availableUnits": {
@@ -3806,7 +3911,7 @@
           "$ref": "#/definitions/Card"
         },
         "causeOnly": {
-          "description": "A value of 1 indicates that this variable is generally a cause in a causal relationship.  An example of a causeOnly variable would be a variable such as Cloud Cover which would generally not be influenced by the behaviour of the user",
+          "description": "User-Defined Variable Setting: True indicates that this variable is generally a cause in a causal relationship.  An example of a causeOnly variable would be a variable such as Cloud Cover which would generally not be influenced by the behaviour of the user",
           "type": "boolean"
         },
         "charts": {
@@ -3844,7 +3949,7 @@
           "type": "array"
         },
         "childUserTagVariables": {
-          "description": "User-defined. An example of a parent category variable would be Fruit when tagged with the child sub-type variables Apple.  Child variable (Apple) measurements will be included when the parent category (Fruit) is analyzed.  This allows us to see how Fruit consumption might be affecting without having to record both Fruit and Apple intake.",
+          "description": "User-Defined Variable Setting: An example of a parent category variable would be Fruit when tagged with the child sub-type variables Apple.  Child variable (Apple) measurements will be included when the parent category (Fruit) is analyzed.  This allows us to see how Fruit consumption might be affecting without having to record both Fruit and Apple intake.",
           "items": {
             "$ref": "#/definitions/Variable"
           },
@@ -3855,7 +3960,11 @@
           "type": "string"
         },
         "combinationOperation": {
-          "description": "Ex: MEAN",
+          "description": "User Variable Setting: Way to aggregate measurements over time. Options are MEAN or SUM. SUM should be used for things like minutes of exercise.  If you use MEAN for exercise, then a person might exercise more minutes in one day but add separate measurements that were smaller.  So when we are doing correlational analysis, we would think that the person exercised less that day even though they exercised more.  Conversely, we must use MEAN for things such as ratings which cannot be SUMMED.",
+          "enum": [
+            "MEAN",
+            "SUM"
+          ],
           "type": "string"
         },
         "commonAlias": {
@@ -3874,14 +3983,6 @@
           },
           "type": "array"
         },
-        "commonVariableMostCommonConnectorId": {
-          "description": "Ex: 51",
-          "type": "integer"
-        },
-        "commonVariableUpdatedAt": {
-          "description": "Ex: 2017-02-07 23:43:39 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
-          "type": "string"
-        },
         "createdAt": {
           "description": "When the record was first created. Use UTC ISO 8601 YYYY-MM-DDThh:mm:ss  datetime format",
           "type": "string"
@@ -3898,7 +3999,7 @@
           }
         },
         "description": {
-          "description": "Ex: negative",
+          "description": "User Variable Setting: Ex: Summary to be used in studies.",
           "type": "string"
         },
         "displayName": {
@@ -3911,7 +4012,7 @@
           "type": "integer"
         },
         "durationOfActionInHours": {
-          "description": "Ex: 168",
+          "description": "User-Defined Variable Setting: The amount of time over which a predictor/stimulus event can exert an observable influence on an outcome variable value. For instance, aspirin (stimulus/predictor) typically decreases headache severity for approximately four hours (duration of action) following the onset delay.  Unit: Hours",
           "type": "integer"
         },
         "earliestFillingTime": {
@@ -3930,39 +4031,28 @@
           "type": "integer"
         },
         "errorMessage": {
-          "description": "error_message",
+          "description": "Error message from last analysis",
           "type": "string"
         },
         "experimentEndTime": {
-          "description": "Latest measurement start_time to be used in analysis. Use UTC ISO 8601 YYYY-MM-DDThh:mm:ss  datetime format",
-          "type": "string"
-        },
-        "experimentEndTimeSeconds": {
-          "description": "Ex: 1893477600",
-          "type": "integer"
-        },
-        "experimentEndTimeString": {
-          "description": "Ex: 2030-01-01 06:00:00 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
+          "description": "User-Defined Variable Setting: Latest measurement time to be used in analysis. Format: UTC ISO 8601 YYYY-MM-DDThh:mm:ss.",
           "type": "string"
         },
         "experimentStartTime": {
-          "description": "Earliest measurement start_time to be used in analysis. Use UTC ISO 8601 YYYY-MM-DDThh:mm:ss  datetime format",
-          "type": "string"
-        },
-        "experimentStartTimeSeconds": {
-          "description": "Ex: 1269307902",
-          "type": "integer"
-        },
-        "experimentStartTimeString": {
-          "description": "Ex: 2010-03-23 01:31:42 UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
+          "description": "User-Defined Variable Setting: Earliest measurement time to be used in analysis. Format: UTC ISO 8601 YYYY-MM-DDThh:mm:ss.",
           "type": "string"
         },
         "fillingType": {
-          "description": "0 -> No filling, 1 -> Use filling-value",
+          "description": "User Variable Setting: When it comes to analysis to determine the effects of this variable, knowing when it did not occur is as important as knowing when it did occur. For example, if you are tracking a medication, it is important to know when you did not take it, but you do not have to log zero values for all the days when you haven't taken it. Hence, you can specify a filling value (typically 0) to insert whenever data is missing.",
+          "enum": [
+            "none",
+            "zero-filling",
+            "value-filling"
+          ],
           "type": "string"
         },
         "fillingValue": {
-          "description": "When it comes to analysis to determine the effects of this variable, knowing when it did not occur is as important as knowing when it did occur. For example, if you are tracking a medication, it is important to know when you did not take it, but you do not have to log zero values for all the days when you haven't taken it. Hence, you can specify a filling value (typically 0) to insert whenever data is missing.",
+          "description": "User Variable Setting: When it comes to analysis to determine the effects of this variable, knowing when it did not occur is as important as knowing when it did occur. For example, if you are tracking a medication, it is important to know when you did not take it, but you do not have to log zero values for all the days when you haven't taken it. Hence, you can specify a filling value (typically 0) to insert whenever data is missing.  Unit: User-specified or common.",
           "format": "float",
           "type": "number"
         },
@@ -3997,21 +4087,21 @@
           "type": "array"
         },
         "ingredientOfUserTagVariables": {
-          "description": "User-specific IngredientOf variable measurements will be included in analysis of the ingredient variable.  For instance, a ingredient of the variable Lollypop could be Sugar.  This way you only have to record Lollypop consumption and we can use this data to see how sugar might be affecting you.",
+          "description": "User Variable Setting: IngredientOf variable measurements will be included in analysis of the ingredient variable.  For instance, a ingredient of the variable Lollypop could be Sugar.  This way you only have to record Lollypop consumption and we can use this data to see how sugar might be affecting you.",
           "items": {
             "$ref": "#/definitions/Variable"
           },
           "type": "array"
         },
         "ingredientUserTagVariables": {
-          "description": "User-specific IngredientOf variable measurements will be included in analysis of the ingredient variable.  For instance, a ingredient of the variable Lollypop could be Sugar.  This way you only have to record Lollypop consumption and we can use this data to see how sugar might be affecting you.",
+          "description": "User Variable Setting: IngredientOf variable measurements will be included in analysis of the ingredient variable.  For instance, a ingredient of the variable Lollypop could be Sugar.  This way you only have to record Lollypop consumption and we can use this data to see how sugar might be affecting you.",
           "items": {
             "$ref": "#/definitions/Variable"
           },
           "type": "array"
         },
         "inputType": {
-          "description": "Ex: value",
+          "description": "Type of input field to show for recording measurements",
           "type": "string"
         },
         "ionIcon": {
@@ -4026,14 +4116,14 @@
           "type": "array"
         },
         "joinedUserTagVariables": {
-          "description": "User-defined. Joining can be used used to merge duplicate variables. For instance, if two variables called Apples (Red Delicious) and Red Delicious Apples are joined, when one of them is analyzed, the measurements for the other will be included as well.",
+          "description": "User Variable Setting: Joining can be used used to merge duplicate variables. For instance, if two variables called Apples (Red Delicious) and Red Delicious Apples are joined, when one of them is analyzed, the measurements for the other will be included as well.",
           "items": {
             "$ref": "#/definitions/Variable"
           },
           "type": "array"
         },
         "joinWith": {
-          "description": "The Variable this Variable should be joined with. If the variable is joined with some other variable then it is not shown to user in the list of variables",
+          "description": "Duplicate variables. If the variable is joined with some other variable then it is not shown to user in the list of variables",
           "format": "int32",
           "type": "integer"
         },
@@ -4042,18 +4132,8 @@
           "format": "float",
           "type": "number"
         },
-        "lastOriginalUnitId": {
-          "description": "ID of last original Unit",
-          "format": "int32",
-          "type": "integer"
-        },
-        "lastOriginalValue": {
-          "description": "Last original value which is stored",
-          "format": "int32",
-          "type": "integer"
-        },
         "lastProcessedDailyValue": {
-          "description": "Ex: 500",
+          "description": "Calculated Statistic: Ex: 500. Unit: User-specified or common.",
           "format": "double",
           "type": "number"
         },
@@ -4061,13 +4141,8 @@
           "description": "When this variable or its settings were last updated UTC ISO 8601 YYYY-MM-DDThh:mm:ss",
           "type": "string"
         },
-        "lastUnitId": {
-          "description": "ID of last Unit",
-          "format": "int32",
-          "type": "integer"
-        },
         "lastValue": {
-          "description": "Last Value",
+          "description": "Calculated Statistic: Last measurement value in the common unit or user unit if different. Unit: User-specified or common.",
           "format": "float",
           "type": "number"
         },
@@ -4077,21 +4152,21 @@
           "type": "integer"
         },
         "latestMeasurementTime": {
-          "description": "Latest measurement time",
+          "description": "Latest measurement time. Format: Unix-time epoch seconds.",
           "format": "int32",
           "type": "integer"
         },
         "latestSourceTime": {
-          "description": "Latest source time",
+          "description": "Latest source time. Format: Unix-time epoch seconds.",
           "format": "int32",
           "type": "integer"
         },
         "latestUserMeasurementTime": {
-          "description": "Ex: 1501383600",
+          "description": "Ex: 1501383600. Format: Unix-time epoch seconds.",
           "type": "integer"
         },
         "latitude": {
-          "description": "Latitude",
+          "description": "Latitude. Unit: User-specified or common.",
           "format": "float",
           "type": "number"
         },
@@ -4105,26 +4180,31 @@
           "type": "number"
         },
         "manualTracking": {
-          "description": "Ex: 1",
+          "description": "True if the variable is an emotion or symptom rating that is not typically automatically collected by a device or app.",
           "type": "boolean"
         },
+        "maximumAllowedDailyValue": {
+          "description": "User Variable Setting: The maximum allowed value a daily aggregated measurement. Unit: User-specified or common.",
+          "format": "float",
+          "type": "number"
+        },
         "maximumAllowedValue": {
-          "description": "The maximum allowed value for measurements. While you can record a value above this maximum, it will be excluded from the correlation analysis.",
+          "description": "User Variable Setting: The maximum allowed value a single measurement. While you can record a value above this maximum, it will be excluded from the correlation analysis.  Unit: User-specified or common.",
           "format": "float",
           "type": "number"
         },
         "maximumRecordedDailyValue": {
-          "description": "Maximum recorded daily value of this variable",
+          "description": "Calculated Statistic: Maximum recorded daily value of this variable. Unit: User-specified or common.",
           "format": "float",
           "type": "number"
         },
         "maximumRecordedValue": {
-          "description": "Ex: 1",
+          "description": "Calculated Statistic: Ex: 1. Unit: User-specified or common.",
           "format": "double",
           "type": "number"
         },
         "mean": {
-          "description": "Mean",
+          "description": "Mean. Unit: User-specified or common.",
           "format": "float",
           "type": "number"
         },
@@ -4139,12 +4219,22 @@
           "type": "number"
         },
         "minimumAllowedValue": {
-          "description": "The minimum allowed value for measurements. While you can record a value below this minimum, it will be excluded from the correlation analysis.",
+          "description": "User-Defined Variable Setting: The minimum allowed value a single measurement. While you can record a value below this minimum, it will be excluded from the correlation analysis. Unit: User-specified or common",
+          "format": "float",
+          "type": "number"
+        },
+        "minimumAllowedDailyValue": {
+          "description": "User-Defined Variable Setting: The minimum allowed value a daily aggregated measurement.  For instance, you might set to 100 for steps to keep erroneous 0 daily steps out of the analysis. Unit: User-specified or common.",
+          "format": "float",
+          "type": "number"
+        },
+        "minimumNonZeroValue": {
+          "description": "User-Defined Variable Setting: The minimum allowed non-zero value a single measurement.  For instance, you might set to 100 mL for steps to keep erroneous 0 daily steps out of the analysis. Unit: User-specified or common.",
           "format": "float",
           "type": "number"
         },
         "minimumRecordedValue": {
-          "description": "Minimum recorded value of this variable",
+          "description": "Minimum recorded value of this variable. Unit: User-specified or common.",
           "format": "float",
           "type": "number"
         },
@@ -4162,7 +4252,7 @@
           "type": "integer"
         },
         "mostCommonValue": {
-          "description": "Most common value",
+          "description": "Calculated Statistic: Most common value. Unit: User-specified or common.",
           "format": "float",
           "type": "number"
         },
@@ -4236,17 +4326,17 @@
           "type": "integer"
         },
         "onsetDelayInHours": {
-          "description": "Ex: 0.5",
+          "description": "User Variable Setting: The amount of time in seconds that elapses after the predictor/stimulus event before the outcome as perceived by a self-tracker is known as the onset delay. For example, the onset delay between the time a person takes an aspirin (predictor/stimulus event) and the time a person perceives a change in their headache severity (outcome) is approximately 30 minutes.",
           "format": "double",
           "type": "number"
         },
         "outcome": {
-          "description": "Outcome variables (those with `outcome` == 1) are variables for which a human would generally want to identify the influencing factors. These include symptoms of illness, physique, mood, cognitive performance, etc.  Generally correlation calculations are only performed on outcome variables",
+          "description": "User Variable Setting: True for variables for which a human would generally want to identify the influencing factors. These include symptoms of illness, physique, mood, cognitive performance, etc.  Generally correlation calculations are only performed on outcome variables",
           "type": "boolean"
         },
         "outcomeOfInterest": {
-          "description": "Ex: 1",
-          "type": "integer"
+          "description": "Do you want to receive updates on newly discovered factors influencing this variable?",
+          "type": "boolean"
         },
         "parentCommonTagVariables": {
           "description": "Commonly defined for all users.  An example of a parent category variable would be Fruit when tagged with the child sub-type variables Apple.  Child variable (Apple) measurements will be included when the parent category (Fruit) is analyzed.  This allows us to see how Fruit consumption might be affecting without having to record both Fruit and Apple intake.",
@@ -4284,9 +4374,8 @@
           "type": "string"
         },
         "public": {
-          "description": "Is variable public",
-          "format": "int32",
-          "type": "integer"
+          "description": "Should this variable show up in automcomplete searches for users who do not already have measurements for it?",
+          "type": "boolean"
         },
         "question": {
           "description": "Ex: How is your overall mood?",
@@ -4301,12 +4390,12 @@
           "type": "integer"
         },
         "secondMostCommonValue": {
-          "description": "Ex: 1",
+          "description": "Calculated Statistic: Ex: 1. Unit: User-specified or common.",
           "format": "double",
           "type": "number"
         },
         "secondToLastValue": {
-          "description": "Ex: 250",
+          "description": "Calculated Statistic: Ex: 250. Unit: User-specified or common.",
           "format": "double",
           "type": "number"
         },
@@ -4337,12 +4426,12 @@
           "type": "string"
         },
         "thirdMostCommonValue": {
-          "description": "Ex: 6",
+          "description": "Calculated Statistic: Ex: 6. Unit: User-specified or common.",
           "format": "double",
           "type": "number"
         },
         "thirdToLastValue": {
-          "description": "Ex: 250",
+          "description": "Calculated Statistic: Ex: 250. Unit: User-specified or common.",
           "format": "double",
           "type": "number"
         },
@@ -4375,7 +4464,7 @@
           "type": "integer"
         },
         "unitName": {
-          "description": "Ex: Count",
+          "description": "User Variable Setting: Count",
           "type": "string"
         },
         "upc": {
@@ -4432,35 +4521,6 @@
           "description": "Ex: Count",
           "type": "string"
         },
-        "userVariableFillingValue": {
-          "description": "Ex: -1",
-          "format": "double",
-          "type": "number"
-        },
-        "userVariableMostCommonConnectorId": {
-          "description": "Ex: 51",
-          "type": "integer"
-        },
-        "userVariableUpdatedAt": {
-          "description": "Ex: 2017-07-30 14:58:26",
-          "type": "string"
-        },
-        "userVariableValence": {
-          "description": "Ex: positive or negative",
-          "type": "string"
-        },
-        "userVariableVariableCategoryId": {
-          "description": "Ex: 13",
-          "type": "integer"
-        },
-        "userVariableVariableCategoryName": {
-          "description": "Ex: Treatments",
-          "type": "string"
-        },
-        "userVariableWikipediaTitle": {
-          "description": "Ex: ",
-          "type": "string"
-        },
         "variableCategory": {
           "$ref": "#/definitions/VariableCategory"
         },
@@ -4471,18 +4531,6 @@
           },
           "type": "array"
         },
-        "lastSource": {
-          "description": "Last source",
-          "type": "integer"
-        },
-        "lastUnit": {
-          "description": "Last unit",
-          "type": "string"
-        },
-        "mostCommonUnit": {
-          "description": "Most common unit",
-          "type": "string"
-        },
         "valence": {
           "description": "Ex: positive",
           "type": "string"
@@ -4491,18 +4539,34 @@
           "description": "Ex: 6",
           "type": "integer"
         },
-        "variableCategoryImageUrl": {
-          "description": "Ex: https://maxcdn.icons8.com/Color/PNG/96/Household/sleeping_in_bed-96.png",
-          "type": "string"
-        },
         "variableCategoryName": {
-          "description": "Variable category like Mood, Sleep, Physical Activity, Treatment, Symptom, etc.",
+          "description": "User Variable Setting: Variable category like Emotions, Sleep, Physical Activities, Treatments, Symptoms, etc.",
+          "enum": [
+            "Activity",
+            "Books",
+            "Causes of Illness",
+            "Cognitive Performance",
+            "Conditions",
+            "Emotions",
+            "Environment",
+            "Foods",
+            "Goals",
+            "Locations",
+            "Miscellaneous",
+            "Movies and TV",
+            "Music",
+            "Nutrients",
+            "Payments",
+            "Physical Activities",
+            "Physique",
+            "Sleep",
+            "Social Interactions",
+            "Software",
+            "Symptoms",
+            "Treatments",
+            "Vital Signs"
+          ],
           "type": "string"
-        },
-        "variableFillingValue": {
-          "description": "Ex: -1",
-          "format": "double",
-          "type": "number"
         },
         "variableId": {
           "description": "Ex: 96380",
@@ -4513,12 +4577,12 @@
           "type": "string"
         },
         "variance": {
-          "description": "Ex: 115947037.40816",
+          "description": "Statistic: Ex: 115947037.40816",
           "format": "double",
           "type": "number"
         },
         "wikipediaTitle": {
-          "description": "Ex: ",
+          "description": "User Variable Setting: You can help to improve the studies by pasting the title of the most appropriate Wikipedia article for this variable",
           "type": "string"
         }
       },
@@ -4571,7 +4635,7 @@
           "type": "integer"
         },
         "fillingValue": {
-          "description": "Ex: -1",
+          "description": "Ex: -1. Unit: Variable category default unit.",
           "type": "integer"
         },
         "helpText": {
@@ -4595,7 +4659,7 @@
           "type": "boolean"
         },
         "maximumAllowedValue": {
-          "description": "Ex: ",
+          "description": "Unit: Variable category default unit.",
           "type": "string"
         },
         "measurementSynonymSingularLowercase": {
@@ -4603,7 +4667,7 @@
           "type": "string"
         },
         "minimumAllowedValue": {
-          "description": "Ex: ",
+          "description": "Unit: Variable category default unit.",
           "type": "string"
         },
         "moreInfo": {
@@ -4651,7 +4715,32 @@
           "type": "string"
         },
         "variableCategoryName": {
-          "description": "Ex: Emotions",
+          "description": "Ex: Emotions, Treatments, Symptoms...",
+          "enum": [
+            "Activity",
+            "Books",
+            "Causes of Illness",
+            "Cognitive Performance",
+            "Conditions",
+            "Emotions",
+            "Environment",
+            "Foods",
+            "Goals",
+            "Locations",
+            "Miscellaneous",
+            "Movies and TV",
+            "Music",
+            "Nutrients",
+            "Payments",
+            "Physical Activities",
+            "Physique",
+            "Sleep",
+            "Social Interactions",
+            "Software",
+            "Symptoms",
+            "Treatments",
+            "Vital Signs"
+          ],
           "type": "string"
         },
         "variableCategoryNameSingular": {
@@ -4719,8 +4808,21 @@
           "type": "integer"
         },
         "value": {
-          "description": "Vote: 0 (for implausible) or 1 (for plausible)",
-          "type": "boolean"
+          "description": "Vote down for implausible/not-useful or up for plausible/useful. Vote none to delete a previous vote.",
+          "enum": [
+            "up",
+            "down",
+            "none"
+          ],
+          "type": "string"
+        },
+        "type": {
+          "description": "Your QuantiModo client id can be obtained by creating an app at https://builder.quantimo.do",
+          "enum": [
+            "causality",
+            "usefulness"
+          ],
+          "type": "string"
         }
       },
       "required": [
@@ -5345,9 +5447,9 @@
       "type": "integer"
     },
     "variableCategoryNameParam": {
-      "description": "Limit results to a specific variable category",
+      "description": "Ex: Emotions, Treatments, Symptoms...",
       "enum": [
-        "Activity",
+        "Activities",
         "Books",
         "Causes of Illness",
         "Cognitive Performance",
@@ -5369,7 +5471,7 @@
         "Symptoms",
         "Treatments",
         "Vital Signs",
-        "Work"
+        "Goals"
       ],
       "in": "query",
       "name": "variableCategoryName",
@@ -8142,7 +8244,7 @@
     },
     "/v3/variableCategories": {
       "get": {
-        "description": "The variable categories include Activity, Causes of Illness, Cognitive Performance, Conditions, Environment, Foods, Location, Miscellaneous, Mood, Nutrition, Physical Activity, Physique, Sleep, Social Interactions, Symptoms, Treatments, Vital Signs, and Work.",
+        "description": "The variable categories include Activity, Causes of Illness, Cognitive Performance, Conditions, Environment, Foods, Location, Miscellaneous, Mood, Nutrition, Physical Activity, Physique, Sleep, Social Interactions, Symptoms, Treatments, Vital Signs, and Goals.",
         "operationId": "getVariableCategories",
         "produces": [
           "application/json"
