@@ -223,6 +223,10 @@
         "tooltip": {
           "description": "Ex: This is a tooltip",
           "type": "string"
+        },
+        "webhookUrl": {
+          "description": "Post here on button click",
+          "type": "string"
         }
       },
       "required": [
@@ -297,6 +301,12 @@
         "parameters": {
           "description": "Key value pairs derived from user input fields, button clicks, or preset defaults",
           "type": "object"
+        },
+        "relatedCards": {
+          "items": {
+            "$ref": "#/definitions/Card"
+          },
+          "type": "array"
         },
         "selectedButton": {
           "description": "Button that the user clicked and the provided function parameters",
