@@ -4864,6 +4864,1049 @@
         "cause",
         "effect"
       ]
+    },
+    "Activity": {
+      "required": [
+        "id",
+        "userId",
+        "component",
+        "type",
+        "action",
+        "content",
+        "primaryLink",
+        "itemId",
+        "secondaryItemId",
+        "dateRecorded",
+        "hideSitewide",
+        "mpttLeft",
+        "mpttRight",
+        "isSpam"
+      ],
+      "properties": {
+        "id": {
+          "description": "What do you expect?",
+          "type": "integer"
+        },
+        "userId": {
+          "description": "What do you expect?",
+          "type": "integer"
+        },
+        "component": {
+          "description": "What do you expect?",
+          "type": "string"
+        },
+        "type": {
+          "description": "What do you expect?",
+          "type": "string"
+        },
+        "action": {
+          "description": "What do you expect?",
+          "type": "string"
+        },
+        "content": {
+          "description": "What do you expect?",
+          "type": "string"
+        },
+        "primaryLink": {
+          "description": "What do you expect?",
+          "type": "string"
+        },
+        "itemId": {
+          "description": "What do you expect?",
+          "type": "integer"
+        },
+        "secondaryItemId": {
+          "description": "What do you expect?",
+          "type": "integer"
+        },
+        "dateRecorded": {
+          "description": "What do you expect?",
+          "type": "string"
+        },
+        "hideSitewide": {
+          "description": "What do you expect?",
+          "type": "integer"
+        },
+        "mpttLeft": {
+          "description": "What do you expect?",
+          "type": "integer"
+        },
+        "mpttRight": {
+          "description": "What do you expect?",
+          "type": "integer"
+        },
+        "isSpam": {
+          "description": "What do you expect?",
+          "type": "integer"
+        },
+        "metaDataArray": {
+          "description": "Additional activity key-value data",
+          "items": {
+            "type": "object"
+          },
+          "type": "array"
+        }
+      }
+    },
+    "ActivitiesResponse": {
+      "required": [
+        "activities"
+      ],
+      "properties": {
+        "activities": {
+          "items": {
+            "$ref": "#/definitions/Activity"
+          },
+          "type": "array"
+        },
+        "description": {
+          "description": "Activity",
+          "type": "string"
+        },
+        "summary": {
+          "description": "Activity",
+          "type": "string"
+        },
+        "image": {
+          "$ref": "#/definitions/Image"
+        },
+        "avatar": {
+          "description": "Square icon png url",
+          "type": "string"
+        },
+        "ionIcon": {
+          "description": "Ex: ion-ios-person",
+          "type": "string"
+        },
+        "html": {
+          "description": "Embeddable list of study summaries with explanation at the top",
+          "type": "string"
+        }
+      }
+    },
+    "Friend": {
+      "required": [
+        "id",
+        "initiatorUserId",
+        "friendUserId",
+        "isConfirmed",
+        "isLimited",
+        "dateCreated"
+      ],
+      "properties": {
+        "id": {
+          "description": "What do you expect?",
+          "type": "integer"
+        },
+        "initiatorUserId": {
+          "description": "What do you expect?",
+          "type": "integer"
+        },
+        "friendUserId": {
+          "description": "What do you expect?",
+          "type": "integer"
+        },
+        "isConfirmed": {
+          "description": "What do you expect?",
+          "type": "integer"
+        },
+        "isLimited": {
+          "description": "What do you expect?",
+          "type": "integer"
+        },
+        "dateCreated": {
+          "description": "What do you expect?",
+          "type": "string"
+        },
+        "metaDataArray": {
+          "description": "Additional friend key-value data",
+          "items": {
+            "type": "object"
+          },
+          "type": "array"
+        }
+      }
+    },
+    "FriendsResponse": {
+      "required": [
+        "friends"
+      ],
+      "properties": {
+        "friends": {
+          "items": {
+            "$ref": "#/definitions/Friend"
+          },
+          "type": "array"
+        },
+        "description": {
+          "description": "Friend",
+          "type": "string"
+        },
+        "summary": {
+          "description": "Friend",
+          "type": "string"
+        },
+        "image": {
+          "$ref": "#/definitions/Image"
+        },
+        "avatar": {
+          "description": "Square icon png url",
+          "type": "string"
+        },
+        "ionIcon": {
+          "description": "Ex: ion-ios-person",
+          "type": "string"
+        },
+        "html": {
+          "description": "Embeddable list of study summaries with explanation at the top",
+          "type": "string"
+        }
+      }
+    },
+    "Group": {
+      "required": [
+        "id",
+        "creatorId",
+        "name",
+        "slug",
+        "description",
+        "status",
+        "parentId",
+        "enableForum",
+        "dateCreated"
+      ],
+      "properties": {
+        "id": {
+          "description": "What do you expect?",
+          "type": "integer"
+        },
+        "creatorId": {
+          "description": "What do you expect?",
+          "type": "integer"
+        },
+        "name": {
+          "description": "What do you expect?",
+          "type": "string"
+        },
+        "slug": {
+          "description": "What do you expect?",
+          "type": "string"
+        },
+        "description": {
+          "description": "What do you expect?",
+          "type": "string"
+        },
+        "status": {
+          "description": "What do you expect?",
+          "type": "string"
+        },
+        "parentId": {
+          "description": "What do you expect?",
+          "type": "integer"
+        },
+        "enableForum": {
+          "description": "What do you expect?",
+          "type": "integer"
+        },
+        "dateCreated": {
+          "description": "What do you expect?",
+          "type": "string"
+        },
+        "metaDataArray": {
+          "description": "Additional group key-value data",
+          "items": {
+            "type": "object"
+          },
+          "type": "array"
+        }
+      }
+    },
+    "GroupsResponse": {
+      "required": [
+        "groups"
+      ],
+      "properties": {
+        "groups": {
+          "items": {
+            "$ref": "#/definitions/Group"
+          },
+          "type": "array"
+        },
+        "description": {
+          "description": "Group",
+          "type": "string"
+        },
+        "summary": {
+          "description": "Group",
+          "type": "string"
+        },
+        "image": {
+          "$ref": "#/definitions/Image"
+        },
+        "avatar": {
+          "description": "Square icon png url",
+          "type": "string"
+        },
+        "ionIcon": {
+          "description": "Ex: ion-ios-person",
+          "type": "string"
+        },
+        "html": {
+          "description": "Embeddable list of study summaries with explanation at the top",
+          "type": "string"
+        }
+      }
+    },
+    "GroupsMember": {
+      "required": [
+        "id",
+        "groupId",
+        "userId",
+        "inviterId",
+        "isAdmin",
+        "isMod",
+        "userTitle",
+        "dateModified",
+        "comments",
+        "isConfirmed",
+        "isBanned",
+        "inviteSent"
+      ],
+      "properties": {
+        "id": {
+          "description": "What do you expect?",
+          "type": "integer"
+        },
+        "groupId": {
+          "description": "What do you expect?",
+          "type": "integer"
+        },
+        "userId": {
+          "description": "What do you expect?",
+          "type": "integer"
+        },
+        "inviterId": {
+          "description": "What do you expect?",
+          "type": "integer"
+        },
+        "isAdmin": {
+          "description": "What do you expect?",
+          "type": "integer"
+        },
+        "isMod": {
+          "description": "What do you expect?",
+          "type": "integer"
+        },
+        "userTitle": {
+          "description": "What do you expect?",
+          "type": "string"
+        },
+        "dateModified": {
+          "description": "What do you expect?",
+          "type": "string"
+        },
+        "comments": {
+          "description": "What do you expect?",
+          "type": "string"
+        },
+        "isConfirmed": {
+          "description": "What do you expect?",
+          "type": "integer"
+        },
+        "isBanned": {
+          "description": "What do you expect?",
+          "type": "integer"
+        },
+        "inviteSent": {
+          "description": "What do you expect?",
+          "type": "integer"
+        },
+        "metaDataArray": {
+          "description": "Additional groupsmember key-value data",
+          "items": {
+            "type": "object"
+          },
+          "type": "array"
+        }
+      }
+    },
+    "GroupsMembersResponse": {
+      "required": [
+        "groupsMembers"
+      ],
+      "properties": {
+        "groupsMembers": {
+          "items": {
+            "$ref": "#/definitions/GroupsMember"
+          },
+          "type": "array"
+        },
+        "description": {
+          "description": "GroupsMember",
+          "type": "string"
+        },
+        "summary": {
+          "description": "GroupsMember",
+          "type": "string"
+        },
+        "image": {
+          "$ref": "#/definitions/Image"
+        },
+        "avatar": {
+          "description": "Square icon png url",
+          "type": "string"
+        },
+        "ionIcon": {
+          "description": "Ex: ion-ios-person",
+          "type": "string"
+        },
+        "html": {
+          "description": "Embeddable list of study summaries with explanation at the top",
+          "type": "string"
+        }
+      }
+    },
+    "MessagesMessage": {
+      "required": [
+        "id",
+        "threadId",
+        "senderId",
+        "subject",
+        "message",
+        "dateSent"
+      ],
+      "properties": {
+        "id": {
+          "description": "What do you expect?",
+          "type": "integer"
+        },
+        "threadId": {
+          "description": "What do you expect?",
+          "type": "integer"
+        },
+        "senderId": {
+          "description": "What do you expect?",
+          "type": "integer"
+        },
+        "subject": {
+          "description": "What do you expect?",
+          "type": "string"
+        },
+        "message": {
+          "description": "What do you expect?",
+          "type": "string"
+        },
+        "dateSent": {
+          "description": "What do you expect?",
+          "type": "string"
+        },
+        "metaDataArray": {
+          "description": "Additional messagesmessage key-value data",
+          "items": {
+            "type": "object"
+          },
+          "type": "array"
+        }
+      }
+    },
+    "MessagesMessagesResponse": {
+      "required": [
+        "messagesMessages"
+      ],
+      "properties": {
+        "messagesMessages": {
+          "items": {
+            "$ref": "#/definitions/MessagesMessage"
+          },
+          "type": "array"
+        },
+        "description": {
+          "description": "MessagesMessage",
+          "type": "string"
+        },
+        "summary": {
+          "description": "MessagesMessage",
+          "type": "string"
+        },
+        "image": {
+          "$ref": "#/definitions/Image"
+        },
+        "avatar": {
+          "description": "Square icon png url",
+          "type": "string"
+        },
+        "ionIcon": {
+          "description": "Ex: ion-ios-person",
+          "type": "string"
+        },
+        "html": {
+          "description": "Embeddable list of study summaries with explanation at the top",
+          "type": "string"
+        }
+      }
+    },
+    "MessagesNotice": {
+      "required": [
+        "id",
+        "subject",
+        "message",
+        "dateSent",
+        "isActive"
+      ],
+      "properties": {
+        "id": {
+          "description": "What do you expect?",
+          "type": "integer"
+        },
+        "subject": {
+          "description": "What do you expect?",
+          "type": "string"
+        },
+        "message": {
+          "description": "What do you expect?",
+          "type": "string"
+        },
+        "dateSent": {
+          "description": "What do you expect?",
+          "type": "string"
+        },
+        "isActive": {
+          "description": "What do you expect?",
+          "type": "integer"
+        },
+        "metaDataArray": {
+          "description": "Additional messagesnotice key-value data",
+          "items": {
+            "type": "object"
+          },
+          "type": "array"
+        }
+      }
+    },
+    "MessagesNoticesResponse": {
+      "required": [
+        "messagesNotices"
+      ],
+      "properties": {
+        "messagesNotices": {
+          "items": {
+            "$ref": "#/definitions/MessagesNotice"
+          },
+          "type": "array"
+        },
+        "description": {
+          "description": "MessagesNotice",
+          "type": "string"
+        },
+        "summary": {
+          "description": "MessagesNotice",
+          "type": "string"
+        },
+        "image": {
+          "$ref": "#/definitions/Image"
+        },
+        "avatar": {
+          "description": "Square icon png url",
+          "type": "string"
+        },
+        "ionIcon": {
+          "description": "Ex: ion-ios-person",
+          "type": "string"
+        },
+        "html": {
+          "description": "Embeddable list of study summaries with explanation at the top",
+          "type": "string"
+        }
+      }
+    },
+    "MessagesRecipient": {
+      "required": [
+        "id",
+        "userId",
+        "threadId",
+        "unreadCount",
+        "senderOnly",
+        "isDeleted"
+      ],
+      "properties": {
+        "id": {
+          "description": "What do you expect?",
+          "type": "integer"
+        },
+        "userId": {
+          "description": "What do you expect?",
+          "type": "integer"
+        },
+        "threadId": {
+          "description": "What do you expect?",
+          "type": "integer"
+        },
+        "unreadCount": {
+          "description": "What do you expect?",
+          "type": "integer"
+        },
+        "senderOnly": {
+          "description": "What do you expect?",
+          "type": "integer"
+        },
+        "isDeleted": {
+          "description": "What do you expect?",
+          "type": "integer"
+        },
+        "metaDataArray": {
+          "description": "Additional messagesrecipient key-value data",
+          "items": {
+            "type": "object"
+          },
+          "type": "array"
+        }
+      }
+    },
+    "MessagesRecipientsResponse": {
+      "required": [
+        "messagesRecipients"
+      ],
+      "properties": {
+        "messagesRecipients": {
+          "items": {
+            "$ref": "#/definitions/MessagesRecipient"
+          },
+          "type": "array"
+        },
+        "description": {
+          "description": "MessagesRecipient",
+          "type": "string"
+        },
+        "summary": {
+          "description": "MessagesRecipient",
+          "type": "string"
+        },
+        "image": {
+          "$ref": "#/definitions/Image"
+        },
+        "avatar": {
+          "description": "Square icon png url",
+          "type": "string"
+        },
+        "ionIcon": {
+          "description": "Ex: ion-ios-person",
+          "type": "string"
+        },
+        "html": {
+          "description": "Embeddable list of study summaries with explanation at the top",
+          "type": "string"
+        }
+      }
+    },
+    "Notification": {
+      "required": [
+        "id",
+        "userId",
+        "itemId",
+        "secondaryItemId",
+        "componentName",
+        "componentAction",
+        "dateNotified",
+        "isNew"
+      ],
+      "properties": {
+        "id": {
+          "description": "What do you expect?",
+          "type": "integer"
+        },
+        "userId": {
+          "description": "What do you expect?",
+          "type": "integer"
+        },
+        "itemId": {
+          "description": "What do you expect?",
+          "type": "integer"
+        },
+        "secondaryItemId": {
+          "description": "What do you expect?",
+          "type": "integer"
+        },
+        "componentName": {
+          "description": "What do you expect?",
+          "type": "string"
+        },
+        "componentAction": {
+          "description": "What do you expect?",
+          "type": "string"
+        },
+        "dateNotified": {
+          "description": "What do you expect?",
+          "type": "string"
+        },
+        "isNew": {
+          "description": "What do you expect?",
+          "type": "integer"
+        },
+        "metaDataArray": {
+          "description": "Additional notification key-value data",
+          "items": {
+            "type": "object"
+          },
+          "type": "array"
+        }
+      }
+    },
+    "NotificationsResponse": {
+      "required": [
+        "notifications"
+      ],
+      "properties": {
+        "notifications": {
+          "items": {
+            "$ref": "#/definitions/Notification"
+          },
+          "type": "array"
+        },
+        "description": {
+          "description": "Notification",
+          "type": "string"
+        },
+        "summary": {
+          "description": "Notification",
+          "type": "string"
+        },
+        "image": {
+          "$ref": "#/definitions/Image"
+        },
+        "avatar": {
+          "description": "Square icon png url",
+          "type": "string"
+        },
+        "ionIcon": {
+          "description": "Ex: ion-ios-person",
+          "type": "string"
+        },
+        "html": {
+          "description": "Embeddable list of study summaries with explanation at the top",
+          "type": "string"
+        }
+      }
+    },
+    "UserBlog": {
+      "required": [
+        "id",
+        "userId",
+        "blogId"
+      ],
+      "properties": {
+        "id": {
+          "description": "What do you expect?",
+          "type": "integer"
+        },
+        "userId": {
+          "description": "What do you expect?",
+          "type": "integer"
+        },
+        "blogId": {
+          "description": "What do you expect?",
+          "type": "integer"
+        },
+        "metaDataArray": {
+          "description": "Additional userblog key-value data",
+          "items": {
+            "type": "object"
+          },
+          "type": "array"
+        }
+      }
+    },
+    "UserBlogsResponse": {
+      "required": [
+        "userBlogs"
+      ],
+      "properties": {
+        "userBlogs": {
+          "items": {
+            "$ref": "#/definitions/UserBlog"
+          },
+          "type": "array"
+        },
+        "description": {
+          "description": "UserBlog",
+          "type": "string"
+        },
+        "summary": {
+          "description": "UserBlog",
+          "type": "string"
+        },
+        "image": {
+          "$ref": "#/definitions/Image"
+        },
+        "avatar": {
+          "description": "Square icon png url",
+          "type": "string"
+        },
+        "ionIcon": {
+          "description": "Ex: ion-ios-person",
+          "type": "string"
+        },
+        "html": {
+          "description": "Embeddable list of study summaries with explanation at the top",
+          "type": "string"
+        }
+      }
+    },
+    "XprofileDatum": {
+      "required": [
+        "id",
+        "fieldId",
+        "userId",
+        "value",
+        "lastUpdated"
+      ],
+      "properties": {
+        "id": {
+          "description": "What do you expect?",
+          "type": "integer"
+        },
+        "fieldId": {
+          "description": "What do you expect?",
+          "type": "integer"
+        },
+        "userId": {
+          "description": "What do you expect?",
+          "type": "integer"
+        },
+        "value": {
+          "description": "What do you expect?",
+          "type": "string"
+        },
+        "lastUpdated": {
+          "description": "What do you expect?",
+          "type": "string"
+        },
+        "metaDataArray": {
+          "description": "Additional xprofiledatum key-value data",
+          "items": {
+            "type": "object"
+          },
+          "type": "array"
+        }
+      }
+    },
+    "XprofileDataResponse": {
+      "required": [
+        "xprofileData"
+      ],
+      "properties": {
+        "xprofileData": {
+          "items": {
+            "$ref": "#/definitions/XprofileDatum"
+          },
+          "type": "array"
+        },
+        "description": {
+          "description": "XprofileDatum",
+          "type": "string"
+        },
+        "summary": {
+          "description": "XprofileDatum",
+          "type": "string"
+        },
+        "image": {
+          "$ref": "#/definitions/Image"
+        },
+        "avatar": {
+          "description": "Square icon png url",
+          "type": "string"
+        },
+        "ionIcon": {
+          "description": "Ex: ion-ios-person",
+          "type": "string"
+        },
+        "html": {
+          "description": "Embeddable list of study summaries with explanation at the top",
+          "type": "string"
+        }
+      }
+    },
+    "XprofileField": {
+      "required": [
+        "id",
+        "groupId",
+        "parentId",
+        "type",
+        "name",
+        "description",
+        "isRequired",
+        "isDefaultOption",
+        "fieldOrder",
+        "optionOrder",
+        "orderBy",
+        "canDelete"
+      ],
+      "properties": {
+        "id": {
+          "description": "What do you expect?",
+          "type": "integer"
+        },
+        "groupId": {
+          "description": "What do you expect?",
+          "type": "integer"
+        },
+        "parentId": {
+          "description": "What do you expect?",
+          "type": "integer"
+        },
+        "type": {
+          "description": "What do you expect?",
+          "type": "string"
+        },
+        "name": {
+          "description": "What do you expect?",
+          "type": "string"
+        },
+        "description": {
+          "description": "What do you expect?",
+          "type": "string"
+        },
+        "isRequired": {
+          "description": "What do you expect?",
+          "type": "integer"
+        },
+        "isDefaultOption": {
+          "description": "What do you expect?",
+          "type": "integer"
+        },
+        "fieldOrder": {
+          "description": "What do you expect?",
+          "type": "integer"
+        },
+        "optionOrder": {
+          "description": "What do you expect?",
+          "type": "integer"
+        },
+        "orderBy": {
+          "description": "What do you expect?",
+          "type": "string"
+        },
+        "canDelete": {
+          "description": "What do you expect?",
+          "type": "integer"
+        },
+        "metaDataArray": {
+          "description": "Additional xprofilefield key-value data",
+          "items": {
+            "type": "object"
+          },
+          "type": "array"
+        }
+      }
+    },
+    "XprofileFieldsResponse": {
+      "required": [
+        "xprofileFields"
+      ],
+      "properties": {
+        "xprofileFields": {
+          "items": {
+            "$ref": "#/definitions/XprofileField"
+          },
+          "type": "array"
+        },
+        "description": {
+          "description": "XprofileField",
+          "type": "string"
+        },
+        "summary": {
+          "description": "XprofileField",
+          "type": "string"
+        },
+        "image": {
+          "$ref": "#/definitions/Image"
+        },
+        "avatar": {
+          "description": "Square icon png url",
+          "type": "string"
+        },
+        "ionIcon": {
+          "description": "Ex: ion-ios-person",
+          "type": "string"
+        },
+        "html": {
+          "description": "Embeddable list of study summaries with explanation at the top",
+          "type": "string"
+        }
+      }
+    },
+    "XprofileGroup": {
+      "required": [
+        "id",
+        "name",
+        "description",
+        "groupOrder",
+        "canDelete"
+      ],
+      "properties": {
+        "id": {
+          "description": "What do you expect?",
+          "type": "integer"
+        },
+        "name": {
+          "description": "What do you expect?",
+          "type": "string"
+        },
+        "description": {
+          "description": "What do you expect?",
+          "type": "string"
+        },
+        "groupOrder": {
+          "description": "What do you expect?",
+          "type": "integer"
+        },
+        "canDelete": {
+          "description": "What do you expect?",
+          "type": "integer"
+        },
+        "metaDataArray": {
+          "description": "Additional xprofilegroup key-value data",
+          "items": {
+            "type": "object"
+          },
+          "type": "array"
+        }
+      }
+    },
+    "XprofileGroupsResponse": {
+      "required": [
+        "xprofileGroups"
+      ],
+      "properties": {
+        "xprofileGroups": {
+          "items": {
+            "$ref": "#/definitions/XprofileGroup"
+          },
+          "type": "array"
+        },
+        "description": {
+          "description": "XprofileGroup",
+          "type": "string"
+        },
+        "summary": {
+          "description": "XprofileGroup",
+          "type": "string"
+        },
+        "image": {
+          "$ref": "#/definitions/Image"
+        },
+        "avatar": {
+          "description": "Square icon png url",
+          "type": "string"
+        },
+        "ionIcon": {
+          "description": "Ex: ion-ios-person",
+          "type": "string"
+        },
+        "html": {
+          "description": "Embeddable list of study summaries with explanation at the top",
+          "type": "string"
+        }
+      }
     }
   },
   "host": "app.quantimo.do",
@@ -8463,6 +9506,1806 @@
         "summary": "Get Study",
         "tags": [
           "studies"
+        ]
+      }
+    },
+    "/v3/activities": {
+      "get": {
+        "operationId": "getActivities",
+        "tags": [
+          "Activities"
+        ],
+        "summary": "Get Activities",
+        "description": "Get Activities",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/ActivitiesResponse"
+              },
+              "type": "array"
+            }
+          },
+          "401": {
+            "description": "Not authenticated"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/parameters/sortParam"
+          },
+          {
+            "$ref": "#/parameters/limitParam"
+          },
+          {
+            "$ref": "#/parameters/offsetParam"
+          },
+          {
+            "$ref": "#/parameters/updatedAtParam"
+          },
+          {
+            "$ref": "#/parameters/userIdParam"
+          },
+          {
+            "$ref": "#/parameters/createdAtParam"
+          },
+          {
+            "description": "Id",
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "$ref": "#/parameters/clientIdParam"
+          },
+          {
+            "$ref": "#/parameters/platform"
+          }
+        ],
+        "security": [
+          {
+            "access_token": []
+          },
+          {
+            "quantimodo_oauth2": [
+              "readmeasurements"
+            ]
+          }
+        ]
+      },
+      "post": {
+        "operationId": "postActivities",
+        "tags": [
+          "Activities"
+        ],
+        "summary": "Post Activities",
+        "description": "Post Activities",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "Successful operation",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/ActivitiesResponse"
+              },
+              "type": "array"
+            }
+          },
+          "401": {
+            "description": "Not authenticated"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/parameters/sortParam"
+          },
+          {
+            "$ref": "#/parameters/limitParam"
+          },
+          {
+            "$ref": "#/parameters/offsetParam"
+          },
+          {
+            "$ref": "#/parameters/updatedAtParam"
+          },
+          {
+            "$ref": "#/parameters/userIdParam"
+          },
+          {
+            "$ref": "#/parameters/createdAtParam"
+          },
+          {
+            "description": "Id",
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "$ref": "#/parameters/clientIdParam"
+          },
+          {
+            "$ref": "#/parameters/platform"
+          }
+        ],
+        "security": [
+          {
+            "access_token": []
+          },
+          {
+            "quantimodo_oauth2": [
+              "readmeasurements"
+            ]
+          }
+        ]
+      }
+    },
+    "/v3/friends": {
+      "get": {
+        "operationId": "getFriends",
+        "tags": [
+          "Friends"
+        ],
+        "summary": "Get Friends",
+        "description": "Get Friends",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/FriendsResponse"
+              },
+              "type": "array"
+            }
+          },
+          "401": {
+            "description": "Not authenticated"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/parameters/sortParam"
+          },
+          {
+            "$ref": "#/parameters/limitParam"
+          },
+          {
+            "$ref": "#/parameters/offsetParam"
+          },
+          {
+            "$ref": "#/parameters/updatedAtParam"
+          },
+          {
+            "$ref": "#/parameters/userIdParam"
+          },
+          {
+            "$ref": "#/parameters/createdAtParam"
+          },
+          {
+            "description": "Id",
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "$ref": "#/parameters/clientIdParam"
+          },
+          {
+            "$ref": "#/parameters/platform"
+          }
+        ],
+        "security": [
+          {
+            "access_token": []
+          },
+          {
+            "quantimodo_oauth2": [
+              "readmeasurements"
+            ]
+          }
+        ]
+      },
+      "post": {
+        "operationId": "postFriends",
+        "tags": [
+          "Friends"
+        ],
+        "summary": "Post Friends",
+        "description": "Post Friends",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "Successful operation",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/FriendsResponse"
+              },
+              "type": "array"
+            }
+          },
+          "401": {
+            "description": "Not authenticated"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/parameters/sortParam"
+          },
+          {
+            "$ref": "#/parameters/limitParam"
+          },
+          {
+            "$ref": "#/parameters/offsetParam"
+          },
+          {
+            "$ref": "#/parameters/updatedAtParam"
+          },
+          {
+            "$ref": "#/parameters/userIdParam"
+          },
+          {
+            "$ref": "#/parameters/createdAtParam"
+          },
+          {
+            "description": "Id",
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "$ref": "#/parameters/clientIdParam"
+          },
+          {
+            "$ref": "#/parameters/platform"
+          }
+        ],
+        "security": [
+          {
+            "access_token": []
+          },
+          {
+            "quantimodo_oauth2": [
+              "readmeasurements"
+            ]
+          }
+        ]
+      }
+    },
+    "/v3/groups": {
+      "get": {
+        "operationId": "getGroups",
+        "tags": [
+          "Groups"
+        ],
+        "summary": "Get Groups",
+        "description": "Get Groups",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/GroupsResponse"
+              },
+              "type": "array"
+            }
+          },
+          "401": {
+            "description": "Not authenticated"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/parameters/sortParam"
+          },
+          {
+            "$ref": "#/parameters/limitParam"
+          },
+          {
+            "$ref": "#/parameters/offsetParam"
+          },
+          {
+            "$ref": "#/parameters/updatedAtParam"
+          },
+          {
+            "$ref": "#/parameters/userIdParam"
+          },
+          {
+            "$ref": "#/parameters/createdAtParam"
+          },
+          {
+            "description": "Id",
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "$ref": "#/parameters/clientIdParam"
+          },
+          {
+            "$ref": "#/parameters/platform"
+          }
+        ],
+        "security": [
+          {
+            "access_token": []
+          },
+          {
+            "quantimodo_oauth2": [
+              "readmeasurements"
+            ]
+          }
+        ]
+      },
+      "post": {
+        "operationId": "postGroups",
+        "tags": [
+          "Groups"
+        ],
+        "summary": "Post Groups",
+        "description": "Post Groups",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "Successful operation",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/GroupsResponse"
+              },
+              "type": "array"
+            }
+          },
+          "401": {
+            "description": "Not authenticated"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/parameters/sortParam"
+          },
+          {
+            "$ref": "#/parameters/limitParam"
+          },
+          {
+            "$ref": "#/parameters/offsetParam"
+          },
+          {
+            "$ref": "#/parameters/updatedAtParam"
+          },
+          {
+            "$ref": "#/parameters/userIdParam"
+          },
+          {
+            "$ref": "#/parameters/createdAtParam"
+          },
+          {
+            "description": "Id",
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "$ref": "#/parameters/clientIdParam"
+          },
+          {
+            "$ref": "#/parameters/platform"
+          }
+        ],
+        "security": [
+          {
+            "access_token": []
+          },
+          {
+            "quantimodo_oauth2": [
+              "readmeasurements"
+            ]
+          }
+        ]
+      }
+    },
+    "/v3/groupsMembers": {
+      "get": {
+        "operationId": "getGroupsMembers",
+        "tags": [
+          "Groups"
+        ],
+        "summary": "Get GroupsMembers",
+        "description": "Get GroupsMembers",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/GroupsMembersResponse"
+              },
+              "type": "array"
+            }
+          },
+          "401": {
+            "description": "Not authenticated"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/parameters/sortParam"
+          },
+          {
+            "$ref": "#/parameters/limitParam"
+          },
+          {
+            "$ref": "#/parameters/offsetParam"
+          },
+          {
+            "$ref": "#/parameters/updatedAtParam"
+          },
+          {
+            "$ref": "#/parameters/userIdParam"
+          },
+          {
+            "$ref": "#/parameters/createdAtParam"
+          },
+          {
+            "description": "Id",
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "$ref": "#/parameters/clientIdParam"
+          },
+          {
+            "$ref": "#/parameters/platform"
+          }
+        ],
+        "security": [
+          {
+            "access_token": []
+          },
+          {
+            "quantimodo_oauth2": [
+              "readmeasurements"
+            ]
+          }
+        ]
+      },
+      "post": {
+        "operationId": "postGroupsMembers",
+        "tags": [
+          "Groups"
+        ],
+        "summary": "Post GroupsMembers",
+        "description": "Post GroupsMembers",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "Successful operation",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/GroupsMembersResponse"
+              },
+              "type": "array"
+            }
+          },
+          "401": {
+            "description": "Not authenticated"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/parameters/sortParam"
+          },
+          {
+            "$ref": "#/parameters/limitParam"
+          },
+          {
+            "$ref": "#/parameters/offsetParam"
+          },
+          {
+            "$ref": "#/parameters/updatedAtParam"
+          },
+          {
+            "$ref": "#/parameters/userIdParam"
+          },
+          {
+            "$ref": "#/parameters/createdAtParam"
+          },
+          {
+            "description": "Id",
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "$ref": "#/parameters/clientIdParam"
+          },
+          {
+            "$ref": "#/parameters/platform"
+          }
+        ],
+        "security": [
+          {
+            "access_token": []
+          },
+          {
+            "quantimodo_oauth2": [
+              "readmeasurements"
+            ]
+          }
+        ]
+      }
+    },
+    "/v3/messagesMessages": {
+      "get": {
+        "operationId": "getMessagesMessages",
+        "tags": [
+          "Messages"
+        ],
+        "summary": "Get MessagesMessages",
+        "description": "Get MessagesMessages",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/MessagesMessagesResponse"
+              },
+              "type": "array"
+            }
+          },
+          "401": {
+            "description": "Not authenticated"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/parameters/sortParam"
+          },
+          {
+            "$ref": "#/parameters/limitParam"
+          },
+          {
+            "$ref": "#/parameters/offsetParam"
+          },
+          {
+            "$ref": "#/parameters/updatedAtParam"
+          },
+          {
+            "$ref": "#/parameters/userIdParam"
+          },
+          {
+            "$ref": "#/parameters/createdAtParam"
+          },
+          {
+            "description": "Id",
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "$ref": "#/parameters/clientIdParam"
+          },
+          {
+            "$ref": "#/parameters/platform"
+          }
+        ],
+        "security": [
+          {
+            "access_token": []
+          },
+          {
+            "quantimodo_oauth2": [
+              "readmeasurements"
+            ]
+          }
+        ]
+      },
+      "post": {
+        "operationId": "postMessagesMessages",
+        "tags": [
+          "Messages"
+        ],
+        "summary": "Post MessagesMessages",
+        "description": "Post MessagesMessages",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "Successful operation",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/MessagesMessagesResponse"
+              },
+              "type": "array"
+            }
+          },
+          "401": {
+            "description": "Not authenticated"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/parameters/sortParam"
+          },
+          {
+            "$ref": "#/parameters/limitParam"
+          },
+          {
+            "$ref": "#/parameters/offsetParam"
+          },
+          {
+            "$ref": "#/parameters/updatedAtParam"
+          },
+          {
+            "$ref": "#/parameters/userIdParam"
+          },
+          {
+            "$ref": "#/parameters/createdAtParam"
+          },
+          {
+            "description": "Id",
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "$ref": "#/parameters/clientIdParam"
+          },
+          {
+            "$ref": "#/parameters/platform"
+          }
+        ],
+        "security": [
+          {
+            "access_token": []
+          },
+          {
+            "quantimodo_oauth2": [
+              "readmeasurements"
+            ]
+          }
+        ]
+      }
+    },
+    "/v3/messagesNotices": {
+      "get": {
+        "operationId": "getMessagesNotices",
+        "tags": [
+          "Messages"
+        ],
+        "summary": "Get MessagesNotices",
+        "description": "Get MessagesNotices",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/MessagesNoticesResponse"
+              },
+              "type": "array"
+            }
+          },
+          "401": {
+            "description": "Not authenticated"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/parameters/sortParam"
+          },
+          {
+            "$ref": "#/parameters/limitParam"
+          },
+          {
+            "$ref": "#/parameters/offsetParam"
+          },
+          {
+            "$ref": "#/parameters/updatedAtParam"
+          },
+          {
+            "$ref": "#/parameters/userIdParam"
+          },
+          {
+            "$ref": "#/parameters/createdAtParam"
+          },
+          {
+            "description": "Id",
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "$ref": "#/parameters/clientIdParam"
+          },
+          {
+            "$ref": "#/parameters/platform"
+          }
+        ],
+        "security": [
+          {
+            "access_token": []
+          },
+          {
+            "quantimodo_oauth2": [
+              "readmeasurements"
+            ]
+          }
+        ]
+      },
+      "post": {
+        "operationId": "postMessagesNotices",
+        "tags": [
+          "Messages"
+        ],
+        "summary": "Post MessagesNotices",
+        "description": "Post MessagesNotices",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "Successful operation",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/MessagesNoticesResponse"
+              },
+              "type": "array"
+            }
+          },
+          "401": {
+            "description": "Not authenticated"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/parameters/sortParam"
+          },
+          {
+            "$ref": "#/parameters/limitParam"
+          },
+          {
+            "$ref": "#/parameters/offsetParam"
+          },
+          {
+            "$ref": "#/parameters/updatedAtParam"
+          },
+          {
+            "$ref": "#/parameters/userIdParam"
+          },
+          {
+            "$ref": "#/parameters/createdAtParam"
+          },
+          {
+            "description": "Id",
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "$ref": "#/parameters/clientIdParam"
+          },
+          {
+            "$ref": "#/parameters/platform"
+          }
+        ],
+        "security": [
+          {
+            "access_token": []
+          },
+          {
+            "quantimodo_oauth2": [
+              "readmeasurements"
+            ]
+          }
+        ]
+      }
+    },
+    "/v3/messagesRecipients": {
+      "get": {
+        "operationId": "getMessagesRecipients",
+        "tags": [
+          "Messages"
+        ],
+        "summary": "Get MessagesRecipients",
+        "description": "Get MessagesRecipients",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/MessagesRecipientsResponse"
+              },
+              "type": "array"
+            }
+          },
+          "401": {
+            "description": "Not authenticated"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/parameters/sortParam"
+          },
+          {
+            "$ref": "#/parameters/limitParam"
+          },
+          {
+            "$ref": "#/parameters/offsetParam"
+          },
+          {
+            "$ref": "#/parameters/updatedAtParam"
+          },
+          {
+            "$ref": "#/parameters/userIdParam"
+          },
+          {
+            "$ref": "#/parameters/createdAtParam"
+          },
+          {
+            "description": "Id",
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "$ref": "#/parameters/clientIdParam"
+          },
+          {
+            "$ref": "#/parameters/platform"
+          }
+        ],
+        "security": [
+          {
+            "access_token": []
+          },
+          {
+            "quantimodo_oauth2": [
+              "readmeasurements"
+            ]
+          }
+        ]
+      },
+      "post": {
+        "operationId": "postMessagesRecipients",
+        "tags": [
+          "Messages"
+        ],
+        "summary": "Post MessagesRecipients",
+        "description": "Post MessagesRecipients",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "Successful operation",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/MessagesRecipientsResponse"
+              },
+              "type": "array"
+            }
+          },
+          "401": {
+            "description": "Not authenticated"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/parameters/sortParam"
+          },
+          {
+            "$ref": "#/parameters/limitParam"
+          },
+          {
+            "$ref": "#/parameters/offsetParam"
+          },
+          {
+            "$ref": "#/parameters/updatedAtParam"
+          },
+          {
+            "$ref": "#/parameters/userIdParam"
+          },
+          {
+            "$ref": "#/parameters/createdAtParam"
+          },
+          {
+            "description": "Id",
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "$ref": "#/parameters/clientIdParam"
+          },
+          {
+            "$ref": "#/parameters/platform"
+          }
+        ],
+        "security": [
+          {
+            "access_token": []
+          },
+          {
+            "quantimodo_oauth2": [
+              "readmeasurements"
+            ]
+          }
+        ]
+      }
+    },
+    "/v3/notifications": {
+      "get": {
+        "operationId": "getNotifications",
+        "tags": [
+          "Notifications"
+        ],
+        "summary": "Get Notifications",
+        "description": "Get Notifications",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/NotificationsResponse"
+              },
+              "type": "array"
+            }
+          },
+          "401": {
+            "description": "Not authenticated"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/parameters/sortParam"
+          },
+          {
+            "$ref": "#/parameters/limitParam"
+          },
+          {
+            "$ref": "#/parameters/offsetParam"
+          },
+          {
+            "$ref": "#/parameters/updatedAtParam"
+          },
+          {
+            "$ref": "#/parameters/userIdParam"
+          },
+          {
+            "$ref": "#/parameters/createdAtParam"
+          },
+          {
+            "description": "Id",
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "$ref": "#/parameters/clientIdParam"
+          },
+          {
+            "$ref": "#/parameters/platform"
+          }
+        ],
+        "security": [
+          {
+            "access_token": []
+          },
+          {
+            "quantimodo_oauth2": [
+              "readmeasurements"
+            ]
+          }
+        ]
+      },
+      "post": {
+        "operationId": "postNotifications",
+        "tags": [
+          "Notifications"
+        ],
+        "summary": "Post Notifications",
+        "description": "Post Notifications",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "Successful operation",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/NotificationsResponse"
+              },
+              "type": "array"
+            }
+          },
+          "401": {
+            "description": "Not authenticated"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/parameters/sortParam"
+          },
+          {
+            "$ref": "#/parameters/limitParam"
+          },
+          {
+            "$ref": "#/parameters/offsetParam"
+          },
+          {
+            "$ref": "#/parameters/updatedAtParam"
+          },
+          {
+            "$ref": "#/parameters/userIdParam"
+          },
+          {
+            "$ref": "#/parameters/createdAtParam"
+          },
+          {
+            "description": "Id",
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "$ref": "#/parameters/clientIdParam"
+          },
+          {
+            "$ref": "#/parameters/platform"
+          }
+        ],
+        "security": [
+          {
+            "access_token": []
+          },
+          {
+            "quantimodo_oauth2": [
+              "readmeasurements"
+            ]
+          }
+        ]
+      }
+    },
+    "/v3/userBlogs": {
+      "get": {
+        "operationId": "getUserBlogs",
+        "tags": [
+          "User"
+        ],
+        "summary": "Get UserBlogs",
+        "description": "Get UserBlogs",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/UserBlogsResponse"
+              },
+              "type": "array"
+            }
+          },
+          "401": {
+            "description": "Not authenticated"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/parameters/sortParam"
+          },
+          {
+            "$ref": "#/parameters/limitParam"
+          },
+          {
+            "$ref": "#/parameters/offsetParam"
+          },
+          {
+            "$ref": "#/parameters/updatedAtParam"
+          },
+          {
+            "$ref": "#/parameters/userIdParam"
+          },
+          {
+            "$ref": "#/parameters/createdAtParam"
+          },
+          {
+            "description": "Id",
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "$ref": "#/parameters/clientIdParam"
+          },
+          {
+            "$ref": "#/parameters/platform"
+          }
+        ],
+        "security": [
+          {
+            "access_token": []
+          },
+          {
+            "quantimodo_oauth2": [
+              "readmeasurements"
+            ]
+          }
+        ]
+      },
+      "post": {
+        "operationId": "postUserBlogs",
+        "tags": [
+          "User"
+        ],
+        "summary": "Post UserBlogs",
+        "description": "Post UserBlogs",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "Successful operation",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/UserBlogsResponse"
+              },
+              "type": "array"
+            }
+          },
+          "401": {
+            "description": "Not authenticated"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/parameters/sortParam"
+          },
+          {
+            "$ref": "#/parameters/limitParam"
+          },
+          {
+            "$ref": "#/parameters/offsetParam"
+          },
+          {
+            "$ref": "#/parameters/updatedAtParam"
+          },
+          {
+            "$ref": "#/parameters/userIdParam"
+          },
+          {
+            "$ref": "#/parameters/createdAtParam"
+          },
+          {
+            "description": "Id",
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "$ref": "#/parameters/clientIdParam"
+          },
+          {
+            "$ref": "#/parameters/platform"
+          }
+        ],
+        "security": [
+          {
+            "access_token": []
+          },
+          {
+            "quantimodo_oauth2": [
+              "readmeasurements"
+            ]
+          }
+        ]
+      }
+    },
+    "/v3/xprofileData": {
+      "get": {
+        "operationId": "getXprofileData",
+        "tags": [
+          "Xprofile"
+        ],
+        "summary": "Get XprofileData",
+        "description": "Get XprofileData",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/XprofileDataResponse"
+              },
+              "type": "array"
+            }
+          },
+          "401": {
+            "description": "Not authenticated"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/parameters/sortParam"
+          },
+          {
+            "$ref": "#/parameters/limitParam"
+          },
+          {
+            "$ref": "#/parameters/offsetParam"
+          },
+          {
+            "$ref": "#/parameters/updatedAtParam"
+          },
+          {
+            "$ref": "#/parameters/userIdParam"
+          },
+          {
+            "$ref": "#/parameters/createdAtParam"
+          },
+          {
+            "description": "Id",
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "$ref": "#/parameters/clientIdParam"
+          },
+          {
+            "$ref": "#/parameters/platform"
+          }
+        ],
+        "security": [
+          {
+            "access_token": []
+          },
+          {
+            "quantimodo_oauth2": [
+              "readmeasurements"
+            ]
+          }
+        ]
+      },
+      "post": {
+        "operationId": "postXprofileData",
+        "tags": [
+          "Xprofile"
+        ],
+        "summary": "Post XprofileData",
+        "description": "Post XprofileData",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "Successful operation",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/XprofileDataResponse"
+              },
+              "type": "array"
+            }
+          },
+          "401": {
+            "description": "Not authenticated"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/parameters/sortParam"
+          },
+          {
+            "$ref": "#/parameters/limitParam"
+          },
+          {
+            "$ref": "#/parameters/offsetParam"
+          },
+          {
+            "$ref": "#/parameters/updatedAtParam"
+          },
+          {
+            "$ref": "#/parameters/userIdParam"
+          },
+          {
+            "$ref": "#/parameters/createdAtParam"
+          },
+          {
+            "description": "Id",
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "$ref": "#/parameters/clientIdParam"
+          },
+          {
+            "$ref": "#/parameters/platform"
+          }
+        ],
+        "security": [
+          {
+            "access_token": []
+          },
+          {
+            "quantimodo_oauth2": [
+              "readmeasurements"
+            ]
+          }
+        ]
+      }
+    },
+    "/v3/xprofileFields": {
+      "get": {
+        "operationId": "getXprofileFields",
+        "tags": [
+          "Xprofile"
+        ],
+        "summary": "Get XprofileFields",
+        "description": "Get XprofileFields",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/XprofileFieldsResponse"
+              },
+              "type": "array"
+            }
+          },
+          "401": {
+            "description": "Not authenticated"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/parameters/sortParam"
+          },
+          {
+            "$ref": "#/parameters/limitParam"
+          },
+          {
+            "$ref": "#/parameters/offsetParam"
+          },
+          {
+            "$ref": "#/parameters/updatedAtParam"
+          },
+          {
+            "$ref": "#/parameters/userIdParam"
+          },
+          {
+            "$ref": "#/parameters/createdAtParam"
+          },
+          {
+            "description": "Id",
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "$ref": "#/parameters/clientIdParam"
+          },
+          {
+            "$ref": "#/parameters/platform"
+          }
+        ],
+        "security": [
+          {
+            "access_token": []
+          },
+          {
+            "quantimodo_oauth2": [
+              "readmeasurements"
+            ]
+          }
+        ]
+      },
+      "post": {
+        "operationId": "postXprofileFields",
+        "tags": [
+          "Xprofile"
+        ],
+        "summary": "Post XprofileFields",
+        "description": "Post XprofileFields",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "Successful operation",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/XprofileFieldsResponse"
+              },
+              "type": "array"
+            }
+          },
+          "401": {
+            "description": "Not authenticated"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/parameters/sortParam"
+          },
+          {
+            "$ref": "#/parameters/limitParam"
+          },
+          {
+            "$ref": "#/parameters/offsetParam"
+          },
+          {
+            "$ref": "#/parameters/updatedAtParam"
+          },
+          {
+            "$ref": "#/parameters/userIdParam"
+          },
+          {
+            "$ref": "#/parameters/createdAtParam"
+          },
+          {
+            "description": "Id",
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "$ref": "#/parameters/clientIdParam"
+          },
+          {
+            "$ref": "#/parameters/platform"
+          }
+        ],
+        "security": [
+          {
+            "access_token": []
+          },
+          {
+            "quantimodo_oauth2": [
+              "readmeasurements"
+            ]
+          }
+        ]
+      }
+    },
+    "/v3/xprofileGroups": {
+      "get": {
+        "operationId": "getXprofileGroups",
+        "tags": [
+          "Xprofile"
+        ],
+        "summary": "Get XprofileGroups",
+        "description": "Get XprofileGroups",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/XprofileGroupsResponse"
+              },
+              "type": "array"
+            }
+          },
+          "401": {
+            "description": "Not authenticated"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/parameters/sortParam"
+          },
+          {
+            "$ref": "#/parameters/limitParam"
+          },
+          {
+            "$ref": "#/parameters/offsetParam"
+          },
+          {
+            "$ref": "#/parameters/updatedAtParam"
+          },
+          {
+            "$ref": "#/parameters/userIdParam"
+          },
+          {
+            "$ref": "#/parameters/createdAtParam"
+          },
+          {
+            "description": "Id",
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "$ref": "#/parameters/clientIdParam"
+          },
+          {
+            "$ref": "#/parameters/platform"
+          }
+        ],
+        "security": [
+          {
+            "access_token": []
+          },
+          {
+            "quantimodo_oauth2": [
+              "readmeasurements"
+            ]
+          }
+        ]
+      },
+      "post": {
+        "operationId": "postXprofileGroups",
+        "tags": [
+          "Xprofile"
+        ],
+        "summary": "Post XprofileGroups",
+        "description": "Post XprofileGroups",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "Successful operation",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/XprofileGroupsResponse"
+              },
+              "type": "array"
+            }
+          },
+          "401": {
+            "description": "Not authenticated"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/parameters/sortParam"
+          },
+          {
+            "$ref": "#/parameters/limitParam"
+          },
+          {
+            "$ref": "#/parameters/offsetParam"
+          },
+          {
+            "$ref": "#/parameters/updatedAtParam"
+          },
+          {
+            "$ref": "#/parameters/userIdParam"
+          },
+          {
+            "$ref": "#/parameters/createdAtParam"
+          },
+          {
+            "description": "Id",
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "$ref": "#/parameters/clientIdParam"
+          },
+          {
+            "$ref": "#/parameters/platform"
+          }
+        ],
+        "security": [
+          {
+            "access_token": []
+          },
+          {
+            "quantimodo_oauth2": [
+              "readmeasurements"
+            ]
+          }
         ]
       }
     }
