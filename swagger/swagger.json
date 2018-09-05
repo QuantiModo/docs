@@ -6,89 +6,89 @@
   "definitions": {
     "AppSettings": {
       "properties": {
-        "additionalSettings":{
+        "additionalSettings": {
           "description": "What do you expect?",
           "type": "object"
         },
-        "appDescription":{
+        "appDescription": {
           "description": "What do you expect?",
           "type": "string"
         },
-        "appDesign":{
+        "appDesign": {
           "description": "What do you expect?",
           "type": "object"
         },
-        "appDisplayName":{
+        "appDisplayName": {
           "description": "What do you expect?",
           "type": "string"
         },
-        "appStatus":{
+        "appStatus": {
           "description": "What do you expect?",
           "type": "object"
         },
-        "appType":{
+        "appType": {
           "description": "What do you expect?",
           "type": "string"
         },
-        "buildEnabled":{
+        "buildEnabled": {
           "description": "What do you expect?",
           "type": "string"
         },
-        "clientId":{
+        "clientId": {
           "description": "What do you expect?",
           "type": "string"
         },
-        "clientSecret":{
+        "clientSecret": {
           "description": "What do you expect?",
           "type": "string"
         },
-        "collaborators":{
+        "collaborators": {
           "description": "What do you expect?",
           "items": {
             "$ref": "#/definitions/User"
           },
           "type": "array"
         },
-        "createdAt":{
+        "createdAt": {
           "description": "What do you expect?",
           "type": "string"
         },
-        "userId":{
+        "userId": {
           "description": "What do you expect?",
           "type": "string"
         },
-        "users":{
+        "users": {
           "description": "What do you expect?",
           "items": {
             "$ref": "#/definitions/User"
           },
           "type": "array"
         },
-        "redirectUri":{
+        "redirectUri": {
           "description": "What do you expect?",
           "type": "string"
         },
-        "companyName":{
+        "companyName": {
           "description": "What do you expect?",
           "type": "string"
         },
-        "homepageUrl":{
+        "homepageUrl": {
           "description": "What do you expect?",
           "type": "string"
         },
-        "iconUrl":{
+        "iconUrl": {
           "description": "What do you expect?",
           "type": "string"
         },
-        "longDescription":{
+        "longDescription": {
           "description": "What do you expect?",
           "type": "string"
         },
-        "splashScreen":{
+        "splashScreen": {
           "description": "What do you expect?",
           "type": "string"
         },
-        "textLogo":{
+        "textLogo": {
           "description": "What do you expect?",
           "type": "string"
         }
@@ -164,7 +164,7 @@
           "description": "Ex: #f2f2f2",
           "type": "string"
         },
-        "confirmationText":{
+        "confirmationText": {
           "description": "Text to show user before executing functionName",
           "type": "string"
         },
@@ -204,15 +204,15 @@
           "description": "Data to provide to the state",
           "type": "object"
         },
-        "successToastText":{
+        "successToastText": {
           "description": "Text to show user after executing functionName",
           "type": "string"
         },
-        "successAlertTitle":{
+        "successAlertTitle": {
           "description": "Text to show user after executing functionName",
           "type": "string"
         },
-        "successAlertBody":{
+        "successAlertBody": {
           "description": "Text to show user after executing functionName",
           "type": "string"
         },
@@ -1768,7 +1768,9 @@
           "type": "string"
         }
       },
-      "required": ["clientId"]
+      "required": [
+        "clientId"
+      ]
     },
     "MeasurementItem": {
       "properties": {
@@ -2172,7 +2174,7 @@
           "description": "Ex: I would like to share my data with you so you can help me identify find discover hidden causes of and new treatments for my illness.",
           "type": "string"
         },
-        "scopes":{
+        "scopes": {
           "description": "Space separated list of scopes to grant to the recipient (i.e. readmeasurements, writemeasurements, measurements:read",
           "type": "string"
         }
