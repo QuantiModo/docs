@@ -260,6 +260,12 @@
           },
           "type": "array"
         },
+        "buttonsSecondary": {
+          "items": {
+            "$ref": "#/definitions/Button"
+          },
+          "type": "array"
+        },
         "content": {
           "description": "Ex: Content",
           "type": "string"
