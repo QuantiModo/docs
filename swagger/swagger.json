@@ -2200,7 +2200,7 @@
           "description": "The user id of the principal investigator or subject if an individual studies",
           "type": "string"
         },
-        "studyId": {
+        "id": {
           "description": "ID of the cohort study which is necessary to allow participants to join",
           "type": "string"
         },
