@@ -1,0 +1,10 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "package.json",
+        "scripts/node_angular_sdk/package.json"
+      ]
+    }
+  }
+}

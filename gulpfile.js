@@ -10,6 +10,7 @@ var del = require('del');
 var decompress = require('gulp-decompress');
 var bugsnag = require("bugsnag");
 var q = require('q');
+var unzip = require('gulp-unzip');
 bugsnag.register("ae7bc49d1285848342342bb5c321a2cf");
 process.on('unhandledRejection', function (err, promise) {
     console.error("Unhandled rejection: " + (err && err.stack || err));
@@ -80,13 +81,15 @@ var sdkSwaggerCodegenOptions ={
         "gemAuthorEmail": "mike@quantimo.do"
     }
 };
-var majorMinorVersionNumbers = '5.8.';
+var majorMinorVersionNumbers = '5.9.';
 function getPatchVersionNumber() {
     var date = new Date();
     var monthNumber = (date.getMonth() + 1).toString();
     var dayOfMonth = ('0' + date.getDate()).slice(-2);
-    var hourOfDay = ('0' + date.getHours()).slice(-2);
-    return monthNumber + dayOfMonth + hourOfDay;
+    var hourOfDay = date.getHours();
+    var hourOfDayString = ('0' + hourOfDay).slice(-2);
+    //hourOfDayString = "72"; // Manually set if need to release more than once per hour
+    return monthNumber + dayOfMonth + hourOfDayString;
 }
 var apiVersionNumber = majorMinorVersionNumbers + getPatchVersionNumber();
 logInfo("API version is " + apiVersionNumber);
@@ -105,7 +108,10 @@ function obfuscateSecrets(object){
     }
     return object;
 }
-function prettyJSONStringify(object) {return JSON.stringify(object, null, 2);}
+function prettyJSONStringify(object, spaces) {
+    if(!spaces){spaces = 2;}
+    return JSON.stringify(object, null, spaces);
+}
 function obfuscateStringify(message, object) {
     var objectString = '';
     if(object){
@@ -143,7 +149,8 @@ function executeCommand(command, callback) {
         if(callback){callback(err);}
     });
 }
-var swaggerJsonUrl = 'https://raw.githubusercontent.com/QuantiModo/docs/master/swagger/swagger.json';
+var swaggerJsonUrl = 'https://raw.githubusercontent.com/QuantiModo/docs/develop/swagger/swagger.json';
+//swaggerJsonUrl = 'https://utopia.quantimo.do:4443/api/docs/swagger/swagger.json';
 function clone(organization, repoName, destinationFolder, callback){
     var repoUrl = 'https://github.com/' + organization + '/' + repoName;
     var repoFolder = destinationFolder + '/' + repoName;
@@ -197,6 +204,7 @@ function getRepoPathForSdkLanguage(languageName) {
     return sdksReposPath + '/' + getSdkNameForLanguage(languageName);
 }
 var pathToIonic = '../../../public.built/ionic/Modo';
+var pathToLaravel = '../../../laravel';
 function readJsonFile(pathToFile) {
     logInfo("Reading " + pathToFile);
     return JSON.parse(fs.readFileSync(pathToFile, 'utf8'));
@@ -211,46 +219,55 @@ function unzipFileToFolder(sourceFile, destinationFolder) {
 }
 var pathToQmDocker = "../../..";
 var pathToQuantiModoNodeModule = 'node_modules/quantimodo';
-
 String.prototype.replaceAll = function(search, replacement) {
     var target = this;
     return target.replace(new RegExp(search, 'g'), replacement);
 };
-gulp.task('browserify', [], function (callback) {
+gulp.task('js-sdk-browserify-unzipped', [], function (callback) {
+    browserify(getUnzippedPathForSdkLanguage(javascriptFlavor), callback);
+});
+gulp.task('js-sdk-browserify-repo', [], function (callback) {
+    browserify(getRepoPathForSdkLanguage(javascriptFlavor), callback);
+});
+function browserify(path, callback){
     var sourceFile = 'src/index.js';
     var outputFile = 'quantimodo-web.js';
-    executeCommand('cd ' + getUnzippedPathForSdkLanguage('javascript') + ' && npm install -g browserify && browserify ' +
+    executeCommand('cd ' + path + ' && npm install -g browserify && browserify ' +
         sourceFile + ' --standalone Quantimodo > ' + outputFile, function () {
         callback();
     });
-});
-gulp.task('4-build-and-release-javascript', ['get-units'], function (callback) {
+}
+gulp.task('js-5-release', [], function (callback) {
     function updateBowerAndPackageJsonVersions(path, callback) {
         var bowerJson = readJsonFile(path + '/bower.json');
         bowerJson.dependencies.quantimodo = apiVersionNumber;
         return writeToFile(path  + '/bower.json', prettyJSONStringify(bowerJson), function () {
-            executeCommand("cd " + pathToIonic + " && bower install", function () {
+            executeCommand("cd " + pathToIonic + " && bower install && yarn install", function () {
                 var packageJson = readJsonFile(path + '/package.json');
                 packageJson.dependencies.quantimodo = apiVersionNumber;
                 return writeToFile(path  + '/package.json', prettyJSONStringify(packageJson), function () {
-                    executeCommand("cd " + pathToIonic + " && npm install", function () {
+                    executeCommand("cd " + pathToIonic + " && yarn install", function () {
                         if(callback){callback();}
                     });
                 });
             });
         });
     }
-    executeCommand("cd " + getRepoPathForSdkLanguage('javascript') +
-        ' && npm install' +
+    executeCommand("cd " + getRepoPathForSdkLanguage(javascriptFlavor) +
+        //' && npm install' +
+        ' && git checkout HEAD -- README.md' +
+        ' && git checkout HEAD -- package.json' +
         ' && git add .' +
         ' && git commit -m "' + apiVersionNumber + '"' +
         ' && git push' +
         ' && git tag ' + apiVersionNumber +
         ' && git push origin ' + apiVersionNumber +
         ' && bower version ' + apiVersionNumber, function () {
-        executeCommand("cd " + getRepoPathForSdkLanguage('javascript') + " && npm version " + apiVersionNumber + ' && npm publish', function () {
+        executeCommand("cd " + getRepoPathForSdkLanguage(javascriptFlavor) + " && npm version " + apiVersionNumber +
+            ' && npm publish && git push && git push origin ' + apiVersionNumber, function () {
             updateBowerAndPackageJsonVersions(pathToQmDocker);
             updateBowerAndPackageJsonVersions(pathToIonic);
+            //updateBowerAndPackageJsonVersions(".");
             callback();
         });
     });
@@ -260,6 +277,14 @@ gulp.task('clean-folders', [], function () {
         sdksZippedPath + '/**/*',
         sdksUnzippedPath + '/**/*',
         sdksReposPath + '/**/*'
+    ]);
+});
+gulp.task('clean-laravel-vendor', [], function () {
+    return del([laravelVendorPath + '/**/*'], {force: true});
+});
+gulp.task('clean-unzipped-folders', [], function () {
+    return del([
+        sdksUnzippedPath + '/**/*',
     ]);
 });
 gulp.task('clone-repos', [], function (callback) {
@@ -284,6 +309,7 @@ gulp.task('clean-repos-except-git', [], function(){
     for(var i = 0; i < languages.length; i++) {
         if(i === languages.length - 1){ return cleanOneFolderExceptGit(getRepoPathForSdkLanguage(languages[i]));}
         cleanOneFolderExceptGit(getRepoPathForSdkLanguage(languages[i]));
+        executeCommand("cd " + getRepoPathForSdkLanguage(languages[i]) + " && git pull");
     }
 });
 function getRequestOptions(language) {
@@ -317,11 +343,11 @@ function getSdkDownloadLink() {
         requestOptions.body.options.packageName = "quantimodo_api";
         requestOptions.body.options.packagePath = "QuantiModoClient";
         requestOptions.body.options.podName = "QuantiModoApi";
-        requestOptions.body.options.podVersion = getAppVersionNumber();
+        //requestOptions.body.options.podVersion = getAppVersionNumber();  // Commented because it makes too many file changes in git
         requestOptions.body.options.projectName = (sdkSwaggerCodegenOptions[language] && sdkSwaggerCodegenOptions[language].projectName) ? sdkSwaggerCodegenOptions[language].projectName : "quantimodoApi";
     }
-    requestOptions.body.options.artifactVersion = requestOptions.body.options.projectVersion = requestOptions.body.options.packageVarsion =
-        requestOptions.body.options.podVersion = getAppVersionNumber();
+    // Commented because it makes too many file changes in git repo
+    //requestOptions.body.options.artifactVersion = requestOptions.body.options.projectVersion = requestOptions.body.options.packageVarsion = requestOptions.body.options.podVersion = getAppVersionNumber();
     requestOptions.body.options.artifactDescription = requestOptions.body.options.projectDescription = swaggerJson.info.description;
     if(debug){getSwaggerConfigOptions(language);}
     return rp(requestOptions)
@@ -332,11 +358,63 @@ function getSdkDownloadLink() {
             logError(err.error.message);
         });
 }
-
-function downloadSdk() {
-    return download(sdkDownloadLink)
-        .pipe(rename(getSdkNameForLanguage(language) + '.zip'))
-        .pipe(gulp.dest(sdksZippedPath));
+function getSwaggerDownloadRequestOptions(language) {
+    var requestOptions = getRequestOptions(language);
+    if (sdkSwaggerCodegenOptions[language]) {
+        requestOptions.body.options = sdkSwaggerCodegenOptions[language];
+    } else {
+        requestOptions.body.options = {};
+        requestOptions.body.options.apiPackage = "QuantiModoApi";
+        requestOptions.body.options.artifactId = "quantimodoApi";
+        requestOptions.body.options.authorEmail = "mike@quantimo.do";
+        requestOptions.body.options.authorName = "Mike P. Sinn";
+        requestOptions.body.options.classPrefix = "QM";
+        requestOptions.body.options.developerEmail = "mike@quantimo.do";
+        requestOptions.body.options.developerName = "Mike P. Sinn";
+        requestOptions.body.options.invokerPackage = (sdkSwaggerCodegenOptions[language] && sdkSwaggerCodegenOptions[language].invokerPackage) ? sdkSwaggerCodegenOptions[language].invokerPackage : "quantimodoApi";
+        requestOptions.body.options.modelPackage = "quantimodoApi";
+        requestOptions.body.options.moduleName = "quantimodoApi";
+        requestOptions.body.options.packageName = "quantimodo_api";
+        requestOptions.body.options.packagePath = "QuantiModoClient";
+        requestOptions.body.options.podName = "QuantiModoApi";
+        //requestOptions.body.options.podVersion = getAppVersionNumber();
+        requestOptions.body.options.projectName = (sdkSwaggerCodegenOptions[language] && sdkSwaggerCodegenOptions[language].projectName) ? sdkSwaggerCodegenOptions[language].projectName : "quantimodoApi";
+    }
+    //requestOptions.body.options.artifactVersion = requestOptions.body.options.projectVersion = requestOptions.body.options.packageVersion = requestOptions.body.options.podVersion = getAppVersionNumber();
+    requestOptions.body.options.artifactDescription = requestOptions.body.options.projectDescription = swaggerJson.info.description;
+    return requestOptions;
+}
+function downloadSdk(language) {
+    var requestOptions = getSwaggerDownloadRequestOptions(language);
+    if(debug){getSwaggerConfigOptions(language);}
+    return rp(requestOptions)
+        .then(function (parsedBody) {
+            var downloadLink = parsedBody.link.replace('https', 'http');
+            return download(downloadLink)
+                .pipe(rename(getSdkNameForLanguage(language) + '.zip'))
+                .pipe(gulp.dest(sdksZippedPath));
+        })
+        .catch(function (err) {
+            logError(err.error.message);
+        });
+}
+function downloadAndUnzipSdk(language, destinationPath) {
+    if(!destinationPath){
+        destinationPath = sdksUnzippedPath;
+    }
+    logInfo("Downloading and unzipping " + language + " sdk to " + destinationPath);
+    var requestOptions = getSwaggerDownloadRequestOptions(language);
+    if(debug){getSwaggerConfigOptions(language);}
+    return rp(requestOptions)
+        .then(function (parsedBody) {
+            var downloadLink = parsedBody.link.replace('https', 'http');
+            return download(downloadLink)
+                .pipe(unzip())
+                .pipe(gulp.dest(destinationPath));
+        })
+        .catch(function (err) {
+            logError(err.error.message);
+        });
 }
 function getSwaggerConfigOptions(language) {
     var getOptionsRequestOptions = getRequestOptions(language);
@@ -349,20 +427,26 @@ function getSwaggerConfigOptions(language) {
             logError(err.error.message);
         });
 }
-gulp.task('0-download', ['clean-folders-and-clone-repos'], function () {
+//gulp.task('0-download', ['clean-folders-and-clone-repos'], function () {
+gulp.task('0-download', ['clean-unzipped-folders'], function () {
     logInfo("Generating sdks with " + swaggerJsonUrl);
     logInfo("See https://github.com/swagger-api/swagger-codegen/tree/master/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages for available clients");
     for(var i = 0; i < languages.length; i++){
-        language = languages[i];
-        if(i === languages.length - 1){ return downloadSdk();}
-        downloadSdk();
+        if(i === languages.length - 1){ return downloadSdk(languages[i]);}
+        downloadSdk(languages[i]);
     }
 });
-gulp.task('download-one-sdk', ['get-sdk-download-link'], function () {
-    return downloadSdk();
+var javascriptFlavor = 'javascript';
+//var javascriptFlavor = 'typescript-fetch';
+gulp.task('js-1-download', ['clean-unzipped-folders'], function () {
+    languages = [javascriptFlavor];
+    logInfo("Generating " + language + " sdk using " +  swaggerJsonUrl);
+    return downloadSdk(javascriptFlavor);
 });
-gulp.task('get-sdk-download-link', [], function () {
-    return getSdkDownloadLink();
+gulp.task('php-0-sdk-download', [], function () {
+    languages = ['php'];
+    logInfo("Generating " + language + " sdk using " +  swaggerJsonUrl);
+    return downloadSdk('php');
 });
 gulp.task('1-decompress', ['clean-repos-except-git'], function () {
     for(var i = 0; i < languages.length; i++) {
@@ -372,35 +456,112 @@ gulp.task('1-decompress', ['clean-repos-except-git'], function () {
         unzipFileToFolder(getZipPathForLanguage(languages[i]), sdksUnzippedPath);
     }
 });
-gulp.task('decompress-sdk', ['download-one-sdk'], function () {
-    return unzipFileToFolder(getZipPathForLanguage(language), sdksUnzippedPath);
+gulp.task('js-2-unzip', ['clean-repos-except-git'], function () {
+    return unzipFileToFolder(getZipPathForLanguage(javascriptFlavor), sdksUnzippedPath);
 });
-gulp.task('3-copy-to-repos', ['browserify'], function(){
-    try {
-        copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage('javascript'), pathToQmDocker + '/' + pathToQuantiModoNodeModule);
-        copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage('javascript'), pathToIonic + '/' + pathToQuantiModoNodeModule);
-        copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage('javascript'), pathToIonic + '/www/custom-lib/quantimodo');
-        gulp.src([getUnzippedPathForSdkLanguage('javascript') + 'quantimodo-web.js']).pipe(gulp.dest('/www/custom-lib/'));
-    } catch (error){
-        logError(error, error);
-    }
-    copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage('javascript'), pathToQuantiModoNodeModule);
+gulp.task('php-1-unzip', [], function () {
+    return unzipFileToFolder(getZipPathForLanguage('php'), sdksUnzippedPath);
+});
+function copyUnzippedJsSdkToQmDockerNodeModules(){
+    return copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage(javascriptFlavor), pathToQmDocker + '/' + pathToQuantiModoNodeModule);
+}
+function copyUnzippedJsSdkToIonicNodeModules(){
+    return copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage(javascriptFlavor), pathToIonic + '/' + pathToQuantiModoNodeModule);
+}
+function copyUnzippedJsSdkToRepo(){
+    return copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage(javascriptFlavor), getRepoPathForSdkLanguage(javascriptFlavor));
+}
+function copyUnzippedJsSdkToApiDocsNodeModules(){
+    return copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage(javascriptFlavor), pathToQuantiModoNodeModule);
+}
+function copyUnzippedJsSdkToIonicSrcLibForTesting(){
+    return copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage(javascriptFlavor), pathToIonic+'/src/lib/quantimodo');
+}
+gulp.task('js-copy-to-src-lib', [], function(){
+    return copyUnzippedJsSdkToIonicSrcLibForTesting();
+});
+function copySdksFromUnzippedPathToRepos(){
     for(var i = 0; i < languages.length; i++) {
         if(i === languages.length - 1){
             return copyOneFoldersContentsToAnotherExceptReadme(getUnzippedPathForSdkLanguage(languages[i]), getRepoPathForSdkLanguage(languages[i]));
         }
         copyOneFoldersContentsToAnotherExceptReadme(getUnzippedPathForSdkLanguage(languages[i]), getRepoPathForSdkLanguage(languages[i]));
     }
+}
+gulp.task('js-3-copy-everywhere', ['js-sdk-browserify-unzipped'], function(){
+    try {
+        copyUnzippedJsSdkToRepo();
+        //copyUnzippedJsSdkToQmDockerNodeModules();
+        //copyUnzippedJsSdkToIonicNodeModules();
+        copyUnzippedJsSdkToIonicSrcLibForTesting();
+        //copyQmWebJsToIonicCustomLib();
+    } catch (error){
+        logError(error, error);
+    }
+    try {
+        return copyUnzippedJsSdkToApiDocsNodeModules();
+    } catch (error){
+        logError(error, error);
+    }
+    console.log("After completion, open repo, discard readme changes and commit new version to Github.  Then you can run js-4-release");
 });
-gulp.task('delete-qm-node-module', ['decompress-sdk'], function(){
-    return cleanOneFolderExceptGit(pathToQuantiModoNodeModule);
+gulp.task('js-4-reset-package-json-readme', [], function(){
+    resetPackageJsonAndReadme();
 });
-gulp.task('js-sdk-copy-to-node-modules', ['delete-qm-node-module'], function(){
-    language = 'javascript';
-    return copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage(language), pathToQuantiModoNodeModule);
+var laravelVendorPath = pathToQmDocker + '/laravel/vendor/quantimodo/quantimodo-sdk-php';
+gulp.task('php-2-sdk-copy-to-repo', ['clean-repos-except-git'], function(){
+    return copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage('php') + '/QuantiModoClient/**/*',
+        getRepoPathForSdkLanguage('php'))
 });
-gulp.task('js-sdk-copy-qm-web', ['browserify'], function(){
-    return gulp.src([getUnzippedPathForSdkLanguage('javascript') + '/quantimodo-web.js']).pipe(gulp.dest(pathToIonic + '/www/custom-lib/'));
+gulp.task('php-3-move-client-to-repo-root', [], function(){
+    return copyOneFoldersContentsToAnother(getRepoPathForSdkLanguage('php') + '/QuantiModoClient/**/*',
+        getRepoPathForSdkLanguage('php'));
+});
+gulp.task('php-4-update-sdk-composer', [], function(){
+    var composerJsonPath = getRepoPathForSdkLanguage('php') + '/composer.json';
+    var composerJson = readJsonFile(composerJsonPath);
+    composerJson.version = apiVersionNumber;
+    return writeToFile(composerJsonPath, prettyJSONStringify(composerJson, 4), function () {
+        return commitChanges('php');
+    });
+});
+gulp.task('php-5-update-laravel-composer', [], function(callback){
+    var composerJson = readJsonFile(pathToLaravel + '/composer.json');
+    composerJson.require["quantimodo/quantimodo-sdk-php"] = apiVersionNumber;
+    return writeToFile(pathToLaravel  + '/composer.json', prettyJSONStringify(composerJson, 4), function () {
+        executeCommand("cd " + pathToLaravel + " && composer update --ignore-platform-reqs", function () {
+            if(callback){callback();}
+        });
+    });
+});
+gulp.task('3-copy-to-repos', ['js-sdk-browserify-unzipped'], function(){
+    return copySdksFromUnzippedPathToRepos();
+});
+function commitChanges(language, filesToResetArray){
+    var command = "cd " + getRepoPathForSdkLanguage(language);
+    if(filesToResetArray){
+        for (var i = 0; i < filesToResetArray.length; i++) {
+            command += ' && git checkout ' + filesToResetArray[i];
+        }
+    }
+    return executeCommand(command +
+        ' && git add .' +
+        ' && git commit -m "' + apiVersionNumber + '"' +
+        ' && git push' +
+        ' && git tag ' + apiVersionNumber +
+        ' && git push origin ' + apiVersionNumber);
+}
+function resetPackageJsonAndReadme(){
+    var command = "cd " + getRepoPathForSdkLanguage(language) + ' && git checkout package.json && git checkout README.md';
+    executeCommand(command);
+}
+gulp.task('5-commit-changes', [], function(){
+    for(var i = 0; i < languages.length; i++) {
+        if(i === languages.length - 1){
+            return commitChanges(getUnzippedPathForSdkLanguage(languages[i]));
+        }
+        commitChanges(getUnzippedPathForSdkLanguage(languages[i]));
+    }
 });
 try {
     var Quantimodo = require('quantimodo');
@@ -420,7 +581,7 @@ function authenticateQuantiModoSdk() {
         quantimodo_oauth2.accessToken = process.env.TEST_ACCESS_TOKEN;
     } else {
         logInfo("Using test user access token");
-        quantimodo_oauth2.accessToken = '42ff4170172357b7312bb127fb58d5ea464943c1';
+        quantimodo_oauth2.accessToken = process.env.QUANTIMODO_ACCESS_TOKEN;
     }
 }
 function convertPathToFilename(path) {
@@ -433,9 +594,34 @@ function stripQueryFromPath(path) {
     var parts = path.split('?');
     return parts[0];
 }
+var variableIsArray = function(variable) {
+    var isAnArray = Array.isArray(variable);
+    if(isAnArray){return true;}
+    var constructorArray = variable.constructor === Array;
+    if(constructorArray){return true;}
+    var instanceOfArray = variable instanceof Array;
+    if(instanceOfArray){return true;}
+    var prototypeArray = Object.prototype.toString.call(variable) === '[object Array]';
+    if(prototypeArray){return true;}
+    return false;
+};
 function handleApiResponse(error, data, response, requiredProperties) {
     function getUrlFromResponse(response) {
         return "https://" + response.request.host + response.req.path;
+    }
+    function checkRequiredProperties(data, requiredProperties) {
+        var exampleObject = data;
+        if (variableIsArray(data)) {
+            exampleObject = data[0];
+        }
+        if (requiredProperties) {
+            for (var i = 0; i < requiredProperties.length; i++) {
+                if (!exampleObject[requiredProperties[i]]) {
+                    logError('Example object', exampleObject);
+                    throw "Required property " + requiredProperties[i] + " not returned from " + getUrlFromResponse(response);
+                }
+            }
+        }
     }
     if (error && error.message) {
         logError(getUrlFromResponse(response) + " request failed: " + error.message, error);
@@ -444,15 +630,9 @@ function handleApiResponse(error, data, response, requiredProperties) {
     if(!data || Object.keys(data).length === 0){
         throw "data not returned from " + getUrlFromResponse(response);
     }
-    if(requiredProperties){
-        for(var i = 0; i < requiredProperties.length; i++){
-            if(!data[requiredProperties[i]]){
-                throw "Required property " + requiredProperties[i] + " not returned from " + getUrlFromResponse(response);
-            }
-        }
-    }
+    checkRequiredProperties(data, requiredProperties);
     fs.writeFileSync(convertPathToFilename(response.req.path), prettyJSONStringify(data));
-    logDebug('API returned data', data);
+    logDebug(getUrlFromResponse(response) + ' returned data', data);
 }
 gulp.task('get-aggregated-correlations', [], function (callback) {
     var apiInstance = new Quantimodo.AnalyticsApi();
@@ -460,7 +640,7 @@ gulp.task('get-aggregated-correlations', [], function (callback) {
         handleApiResponse(error, data, response);
         callback();
     }
-    apiInstance.getAggregatedCorrelations({}, qmApiResponseCallback);
+    apiInstance.getCorrelations({commonOnly: true}, qmApiResponseCallback);
 });
 gulp.task('get-connectors', [], function (callback) {
     var apiInstance = new Quantimodo.ConnectorsApi();
@@ -471,28 +651,41 @@ gulp.task('get-connectors', [], function (callback) {
     apiInstance.getConnectors({}, qmApiResponseCallback);
 });
 gulp.task('get-measurements', ['post-measurements'], function (callback) {
+    // If this isn't working try waiting a few seconds after
     var apiInstance = new Quantimodo.MeasurementsApi();
     function qmApiResponseCallback(error, data, response) {
         handleApiResponse(error, data, response);
         if(data[0].startTimeEpoch !== currentUnixTime){
+            logError("Most recent measurement from " + response.request.url, data[0]);
+            logDebug("GET " + response.request.url + " response", response);
             throw "Could not get measurement we just posted!"
         }
         callback();
     }
-    apiInstance.getMeasurements({sort: '-startTime'}, qmApiResponseCallback);
+    apiInstance.getMeasurements({sort: '-startTime', variableName: testVariableName}, qmApiResponseCallback);
 });
-const dateTime = Date.now();
-const currentUnixTime = Math.floor(dateTime / 1000);
-var testVariableName = 'Unique Test Variable ' + currentUnixTime;
+var dateTime = Date.now();
+var currentUnixTime = Math.floor(dateTime / 1000);
+var testVariableName = currentUnixTime + ' Unique Test Variable';
+gulp.task('default', ['check-responses']);
 gulp.task('post-measurements', [], function (callback) {
+    var expectedMethod = "POST";
     var apiInstance = new Quantimodo.MeasurementsApi();
     var options = {};
     function qmApiResponseCallback(error, data, response) {
+        if(response.req.method !== expectedMethod){
+            throw "Method should be " + expectedMethod + " but is actually " + response.req.method;
+        }
+        //logInfo("POST " + response.request.url + " response body", response.body);
+        delete response.text;
+        logInfo("POST " + response.request.url + " response", response);
         handleApiResponse(error, data, response);
         callback();
     }
-    apiInstance.postMeasurements({"variableName":testVariableName ,"value":1,"startTimeEpoch":currentUnixTime, "unitAbbreviatedName":"/5","variableCategoryName":"Emotions","combinationOperation":"MEAN"},
-        options, qmApiResponseCallback);
+    var measurement = {"variableName":testVariableName ,"value":1,"startTimeEpoch":currentUnixTime,
+        "unitAbbreviatedName":"/5","variableCategoryName":"Emotions","combinationOperation":"MEAN"};
+    logInfo("Posting measurement", measurement);
+    apiInstance.postMeasurements(measurement, options, qmApiResponseCallback);
 });
 gulp.task('get-pairs', [], function (callback) {
     var apiInstance = new Quantimodo.MeasurementsApi();
@@ -502,21 +695,23 @@ gulp.task('get-pairs', [], function (callback) {
     }
     apiInstance.getPairs({causeVariableName: "Sleep Duration", effectVariableName: "Overall Mood"}, qmApiResponseCallback);
 });
-gulp.task('get-public-variables', [], function (callback) {
+gulp.task('get-common-variables', [], function (callback) {
     var apiInstance = new Quantimodo.VariablesApi();
     function qmApiResponseCallback(error, data, response) {
-        handleApiResponse(error, data, response);
+        var requiredProperties = ['unitAbbreviatedName', 'unit', 'unitName', 'unitId'];
+        handleApiResponse(error, data, response, requiredProperties);
         callback();
     }
-    apiInstance.getPublicVariables({}, qmApiResponseCallback);
+    apiInstance.getVariables({commonOnly: true}, qmApiResponseCallback);
 });
 gulp.task('get-study', [], function (callback) {
     var apiInstance = new Quantimodo.AnalyticsApi();
     var requiredProperties = [
         'causeVariable',
         'effectVariable',
-        'highchartArray',
-        'statistics'
+        'charts',
+        'statistics',
+        'studyText'
     ];
     function qmApiResponseCallback(error, data, response) {
         handleApiResponse(error, data, response, requiredProperties);
@@ -552,7 +747,8 @@ gulp.task('get-tracking-reminders', ['post-tracking-reminders'], function (callb
     function qmApiResponseCallback(error, data, response) {
         var newReminderPresent = false;
         for(var i = 0; i < data.length; i++){
-            if(data[i].variableName === testVariableName){
+            var currentName = data[i].variableName;
+            if(currentName === testVariableName){
                 newReminderPresent = true;
             }
         }
@@ -581,6 +777,7 @@ gulp.task('get-unit-categories', [], function (callback) {
 gulp.task('get-user', [], function (callback) {
     var apiInstance = new Quantimodo.UserApi();
     function qmApiResponseCallback(error, data, response) {
+        logInfo(response.request.url + " response", response);
         handleApiResponse(error, data, response);
         callback();
     }
@@ -592,32 +789,33 @@ gulp.task('get-user-correlations', [], function (callback) {
         handleApiResponse(error, data, response);
         callback();
     }
-    apiInstance.getUserCorrelations({}, qmApiResponseCallback);
+    apiInstance.getCorrelations({}, qmApiResponseCallback);
 });
 gulp.task('get-user-variables', [], function (callback) {
     var apiInstance = new Quantimodo.VariablesApi();
     function qmApiResponseCallback(error, data, response) {
-        handleApiResponse(error, data, response);
+        var requiredProperties = ['unitAbbreviatedName', 'unit', 'unitName', 'unitId'];
+        handleApiResponse(error, data, response, requiredProperties);
         callback();
     }
-    apiInstance.getUserVariables({}, qmApiResponseCallback);
+    apiInstance.getVariables({userOnly: true}, qmApiResponseCallback);
 });
 gulp.task('test-endpoints', [], function (callback) {
     runSequence(
+        'post-measurements',
+        'get-user',
         'get-aggregated-correlations',
         'get-connectors',
-        'get-measurements',
-        'post-measurements',
         'get-pairs',
-        'get-public-variables',
+        'get-common-variables',
         'get-study',
         'get-tracking-reminder-notifications',
         'get-tracking-reminders',
         'get-unit-categories',
         'get-units',
-        'get-user',
         'get-user-correlations',
         'get-user-variables',
+        'get-measurements',
         function (error) {
             if (error) {
                 logError(error.message);
@@ -629,7 +827,7 @@ gulp.task('test-endpoints', [], function (callback) {
         });
 });
 gulp.task('test-javascript-client', [], function (callback) {
-    executeCommand('cd ' + getUnzippedPathForSdkLanguage('javascript') + ' && npm install && npm test ', function () {
+    executeCommand('cd ' + getUnzippedPathForSdkLanguage(javascriptFlavor) + ' && npm install && npm test ', function () {
         callback();
     });
 });
@@ -643,7 +841,7 @@ gulp.task('check-responses', ['test-endpoints'], function (callback) {
         '/api/v3/connectors/list',
         '/api/v3/measurements',
         '/api/v3/pairs',
-        '/api/v3/study',
+        '/api/v4/study',
         '/api/v3/units',
         '/api/v3/user'
     ];
@@ -651,4 +849,26 @@ gulp.task('check-responses', ['test-endpoints'], function (callback) {
         verifyExistenceOfFile(convertPathToFilename(apiPaths[i]));
     }
     callback();
+});
+gulp.task('delete-qm-node-module', [], function(){
+    return cleanOneFolderExceptGit(pathToQuantiModoNodeModule);
+});
+gulp.task('js-sdk-copy-to-node-modules', ['delete-qm-node-module'], function(){
+    language = javascriptFlavor;
+    return copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage(language), pathToQuantiModoNodeModule);
+});
+gulp.task('JS-SDK-UPDATE', function(callback){
+    language = javascriptFlavor;
+    runSequence(
+        'clean-unzipped-folders',
+        'download-and-unzip-one-sdk',
+        'js-sdk-copy-to-node-modules',
+        function (error) {
+            if (error) {
+                logError(error.message);
+            } else {
+                logInfo('Run js-sdk-copy-to-node-modules again because it probably ran too early');
+            }
+            callback(error);
+        });
 });
