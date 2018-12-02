@@ -203,7 +203,7 @@ function getUnzippedPathForSdkLanguage(languageName) {
 function getRepoPathForSdkLanguage(languageName) {
     return sdksReposPath + '/' + getSdkNameForLanguage(languageName);
 }
-var pathToIonic = '../../../public.built/ionic/Modo';
+var pathToIonic = '../../../public/ionic/Modo';
 var pathToLaravel = '../../../laravel';
 function readJsonFile(pathToFile) {
     logInfo("Reading " + pathToFile);
