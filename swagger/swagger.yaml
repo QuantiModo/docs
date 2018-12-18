@@ -1016,7 +1016,7 @@ definitions:
       pngUrl:
         description: >-
           Example:
-          https://app.quantimo.do/ionic/Modo/www/img/variable_categories/sleep.png
+          https://web.quantimo.do/img/variable_categories/sleep.png
         type: string
       predictorOfInterest:
         description: 'Example: 0'
@@ -1075,7 +1075,7 @@ definitions:
       svgUrl:
         description: >-
           Example:
-          https://app.quantimo.do/ionic/Modo/www/img/variable_categories/sleep.svg
+          https://web.quantimo.do/img/variable_categories/sleep.svg
         type: string
       thirdMostCommonValue:
         description: 'Example: 7'
@@ -2043,13 +2043,13 @@ definitions:
       image:
         description: >-
           Example:
-          https://app.quantimo.do/ionic/Modo/www/img/logos/quantimodo-logo-qm-rainbow-200-200.png
+          https://web.quantimo.do/img/logos/quantimodo-logo-qm-rainbow-200-200.png
         type: string
       imageHtml:
         description: >-
           Example: <a href="https://quantimo.do"><img id="quantimodo_image"
           title="QuantiModo"
-          src="https://app.quantimo.do/ionic/Modo/www/img/logos/quantimodo-logo-qm-rainbow-200-200.png"
+          src="https://web.quantimo.do/img/logos/quantimodo-logo-qm-rainbow-200-200.png"
           alt="QuantiModo"></a>
         type: string
       linkedDisplayNameHtml:
@@ -2550,7 +2550,7 @@ definitions:
       pngUrl:
         description: >-
           Example:
-          https://app.quantimo.do/ionic/Modo/www/img/variable_categories/emotions.png
+          https://web.quantimo.do/img/variable_categories/emotions.png
         type: string
       sourceName:
         description: 'Example: pImUNsI6T5Ysd81k'
@@ -2565,7 +2565,7 @@ definitions:
       svgUrl:
         description: >-
           Example:
-          https://app.quantimo.do/ionic/Modo/www/img/variable_categories/emotions.svg
+          https://web.quantimo.do/img/variable_categories/emotions.svg
         type: string
       unitAbbreviatedName:
         description: 'Example: /5'
@@ -2771,7 +2771,7 @@ definitions:
       pngUrl:
         description: >-
           Example:
-          https://app.quantimo.do/ionic/Modo/www/img/variable_categories/emotions.png
+          https://web.quantimo.do/img/variable_categories/emotions.png
         type: string
       public:
         description: 'Example: true'
@@ -2791,7 +2791,7 @@ definitions:
       svgUrl:
         description: >-
           Example:
-          https://app.quantimo.do/ionic/Modo/www/img/variable_categories/emotions.svg
+          https://web.quantimo.do/img/variable_categories/emotions.svg
         type: string
       thirdMostCommonValue:
         description: 'Example: 2'
@@ -3063,7 +3063,7 @@ definitions:
       pngUrl:
         description: >-
           Example:
-          https://app.quantimo.do/ionic/Modo/www/img/variable_categories/treatments.png
+          https://web.quantimo.do/img/variable_categories/treatments.png
         type: string
       reminderFrequency:
         description: 'Example: 86400'
@@ -3108,7 +3108,7 @@ definitions:
       svgUrl:
         description: >-
           Example:
-          https://app.quantimo.do/ionic/Modo/www/img/variable_categories/treatments.svg
+          https://web.quantimo.do/img/variable_categories/treatments.svg
         type: string
       thirdToLastValue:
         description: 'Example: 250'
@@ -3361,7 +3361,7 @@ definitions:
       pngUrl:
         description: >-
           Example:
-          https://app.quantimo.do/ionic/Modo/www/img/variable_categories/treatments.png
+          https://web.quantimo.do/img/variable_categories/treatments.png
         type: string
       sourceName:
         description: Application or device used to record the measurement values
@@ -3382,7 +3382,7 @@ definitions:
       svgUrl:
         description: >-
           Example:
-          https://app.quantimo.do/ionic/Modo/www/img/variable_categories/treatments.svg
+          https://web.quantimo.do/img/variable_categories/treatments.svg
         type: string
       unitAbbreviatedName:
         description: Abbreviated name for the unit of measurement
@@ -5038,7 +5038,7 @@ definitions:
       pngUrl:
         description: >-
           Example:
-          https://app.quantimo.do/ionic/Modo/www/img/variable_categories/symptoms.png
+          https://web.quantimo.do/img/variable_categories/symptoms.png
         type: string
       popUp:
         description: True if the reminders should appear as a popup notification
@@ -5100,7 +5100,7 @@ definitions:
       svgUrl:
         description: >-
           Example:
-          https://app.quantimo.do/ionic/Modo/www/img/variable_categories/symptoms.svg
+          https://web.quantimo.do/img/variable_categories/symptoms.svg
         type: string
       thirdDailyReminderTime:
         description: 'Example: 20:00:00'
@@ -5294,7 +5294,7 @@ definitions:
       pngUrl:
         description: >-
           Example:
-          https://app.quantimo.do/ionic/Modo/www/img/variable_categories/emotions.png
+          https://web.quantimo.do/img/variable_categories/emotions.png
         type: string
       popUp:
         description: True if the reminders should appear as a popup notification
@@ -5335,7 +5335,7 @@ definitions:
       svgUrl:
         description: >-
           Example:
-          https://app.quantimo.do/ionic/Modo/www/img/variable_categories/emotions.svg
+          https://web.quantimo.do/img/variable_categories/emotions.svg
         type: string
       thirdMostCommonValue:
         description: 'Example: 2'
@@ -7167,7 +7167,7 @@ definitions:
       pngUrl:
         description: >-
           Example:
-          https://app.quantimo.do/ionic/Modo/www/img/variable_categories/treatments.png
+          https://web.quantimo.do/img/variable_categories/treatments.png
         type: string
       predictorOfInterest:
         description: 'Example: 0'
@@ -7220,7 +7220,7 @@ definitions:
       svgUrl:
         description: >-
           Example:
-          https://app.quantimo.do/ionic/Modo/www/img/variable_categories/treatments.svg
+          https://web.quantimo.do/img/variable_categories/treatments.svg
         type: string
       thirdMostCommonValue:
         description: 'Example: 6'
@@ -7429,7 +7429,7 @@ definitions:
       pngUrl:
         description: >-
           Example:
-          https://app.quantimo.do/ionic/Modo/www/img/variable_categories/emotions.png
+          https://web.quantimo.do/img/variable_categories/emotions.png
         type: string
       public:
         description: 'Example: true'
@@ -7440,7 +7440,7 @@ definitions:
       svgUrl:
         description: >-
           Example:
-          https://app.quantimo.do/ionic/Modo/www/img/variable_categories/emotions.svg
+          https://web.quantimo.do/img/variable_categories/emotions.svg
         type: string
       updated:
         description: 'Example: 1'
