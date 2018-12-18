@@ -1,0 +1,12 @@
+{
+    "name": "quantimodo/docs",
+    "description": "Aggregate and analyze your users' live-tracking data.",
+    "type": "library",
+    "authors": [
+        {
+            "name": "mikepsinn",
+            "email": "m@quantimodo.com"
+        }
+    ],
+    "require": {}
+}
