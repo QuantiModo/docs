@@ -3699,7 +3699,11 @@
           "type": "boolean"
         },
         "createdAt": {
-          "description": "When the record was first created. Use UTC ISO 8601 YYYY-MM-DDThh:mm:ss  datetime format",
+          "description": "When the record was first created. Use UTC ISO 8601 YYYY-MM-DDThh:mm:ss datetime format",
+          "type": "string"
+        },
+        "description": {
+          "description": "Your bio will be displayed on your published studies",
           "type": "string"
         },
         "displayName": {
