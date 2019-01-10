@@ -1955,11 +1955,11 @@
     "ParticipantInstruction": {
       "properties": {
         "instructionsForCauseVariable": {
-          "description": "Ex: <a href=\"https://www.amazon.com/Fitbit-Charge-Heart-Fitness-Wristband/dp/B01K9S260E/ref=as_li_ss_tl?ie=UTF8&qid=1493518902&sr=8-3&keywords=fitbit&th=1&linkCode=ll1&tag=quant08-20&linkId=b357b0833de73b0c4e935fd7c13a079e\">Obtain Fitbit</a> and use it to record your Sleep Duration. Once you have a <a href=\"https://www.amazon.com/Fitbit-Charge-Heart-Fitness-Wristband/dp/B01K9S260E/ref=as_li_ss_tl?ie=UTF8&qid=1493518902&sr=8-3&keywords=fitbit&th=1&linkCode=ll1&tag=quant08-20&linkId=b357b0833de73b0c4e935fd7c13a079e\">Fitbit</a> account, <a href=\"https://quantimodo.quantimo.do/ionic/Modo/www/#/app/import\">connect your  Fitbit account at QuantiModo</a> to automatically import and analyze your data.",
+          "description": "Ex: <a href=\"https://www.amazon.com/Fitbit-Charge-Heart-Fitness-Wristband/dp/B01K9S260E/ref=as_li_ss_tl?ie=UTF8&qid=1493518902&sr=8-3&keywords=fitbit&th=1&linkCode=ll1&tag=quant08-20&linkId=b357b0833de73b0c4e935fd7c13a079e\">Obtain Fitbit</a> and use it to record your Sleep Duration. Once you have a <a href=\"https://www.amazon.com/Fitbit-Charge-Heart-Fitness-Wristband/dp/B01K9S260E/ref=as_li_ss_tl?ie=UTF8&qid=1493518902&sr=8-3&keywords=fitbit&th=1&linkCode=ll1&tag=quant08-20&linkId=b357b0833de73b0c4e935fd7c13a079e\">Fitbit</a> account, <a href=\"https://web.quantimo.do/#/app/import\">connect your  Fitbit account at QuantiModo</a> to automatically import and analyze your data.",
           "type": "string"
         },
         "instructionsForEffectVariable": {
-          "description": "Ex: <a href=\"https://quantimo.do\">Obtain QuantiModo</a> and use it to record your Overall Mood. Once you have a <a href=\"https://quantimo.do\">QuantiModo</a> account, <a href=\"https://quantimodo.quantimo.do/ionic/Modo/www/#/app/import\">connect your  QuantiModo account at QuantiModo</a> to automatically import and analyze your data.",
+          "description": "Ex: <a href=\"https://quantimo.do\">Obtain QuantiModo</a> and use it to record your Overall Mood. Once you have a <a href=\"https://quantimo.do\">QuantiModo</a> account, <a href=\"https://web.quantimo.do/#/app/import\">connect your  QuantiModo account at QuantiModo</a> to automatically import and analyze your data.",
           "type": "string"
         }
       }
@@ -11355,7 +11355,7 @@
       "description": "Identify the strongest predictors of a given outcome and generate studies",
       "externalDocs": {
         "description": "Try it out",
-        "url": "https://quantimodo.quantimo.do/ionic/Modo/www/index.html#/app/predictor-search"
+        "url": "https://web.quantimo.do/#/app/predictor-search"
       },
       "name": "analytics"
     },
@@ -11363,7 +11363,7 @@
       "description": "Import data from third-party apps and devices like Fitbit and Mint.",
       "externalDocs": {
         "description": "Import your data now",
-        "url": "https://quantimodo.quantimo.do/ionic/Modo/www/#/app/import"
+        "url": "https://web.quantimo.do/#/app/import"
       },
       "name": "connectors"
     },
@@ -11371,7 +11371,7 @@
       "description": "Measurements are any value that can be recorded like daily steps, a mood rating, or apples eaten.",
       "externalDocs": {
         "description": "See it in action",
-        "url": "https://quantimodo.quantimo.do/ionic/Modo/www/#/app/history-all-category/Anything?accessToken=demo"
+        "url": "https://web.quantimo.do/#/app/history-all-category/Anything?accessToken=demo"
       },
       "name": "measurements"
     },
@@ -11379,7 +11379,7 @@
       "description": "Users can be reminded to track certain variables at a specified frequency with a default value.",
       "externalDocs": {
         "description": "See it in action",
-        "url": "https://quantimodo.quantimo.do/ionic/Modo/www/#/app/reminders-inbox?accessToken=demo"
+        "url": "https://web.quantimo.do/#/app/reminders-inbox?accessToken=demo"
       },
       "name": "reminders"
     },
@@ -11387,7 +11387,7 @@
       "description": "Available units for measurements",
       "externalDocs": {
         "description": "See it in action",
-        "url": "https://quantimodo.quantimo.do/ionic/Modo/www/#/app/measurement-search?accessToken=demo"
+        "url": "https://web.quantimo.do/#/app/measurement-search?accessToken=demo"
       },
       "name": "units"
     },
@@ -11395,7 +11395,7 @@
       "description": "Get or update user info and settings",
       "externalDocs": {
         "description": "See it in action",
-        "url": "https://quantimodo.quantimo.do/ionic/Modo/www/#/app/settings?accessToken=demo"
+        "url": "https://web.quantimo.do/#/app/settings?accessToken=demo"
       },
       "name": "user"
     },
@@ -11403,7 +11403,7 @@
       "description": "Can be used for search auto-complete for data types like symptoms, foods and treatments and include statistics",
       "externalDocs": {
         "description": "Search for a variable",
-        "url": "https://quantimodo.quantimo.do/ionic/Modo/www/#/app/reminder-search?accessToken=demo"
+        "url": "https://web.quantimo.do/#/app/reminder-search?accessToken=demo"
       },
       "name": "variables"
     },
@@ -11411,7 +11411,7 @@
       "description": "Automatically generated natural language studies examining the relationship between a predictor and outcome variable including charts.",
       "externalDocs": {
         "description": "Search for a study",
-        "url": "https://quantimodo.quantimo.do/ionic/Modo/www/#/app/studies"
+        "url": "https://web.quantimo.do/#/app/studies"
       },
       "name": "studies"
     }
