@@ -7868,6 +7868,18 @@
         "operationId": "getStudies",
         "parameters": [
           {
+            "$ref": "#/parameters/causeVariableNameParam"
+          },
+          {
+            "$ref": "#/parameters/effectVariableNameParam"
+          },
+          {
+            "$ref": "#/parameters/causeVariableIdParam"
+          },
+          {
+            "$ref": "#/parameters/effectVariableIdParam"
+          },
+          {
             "$ref": "#/parameters/predictorVariableNameParam"
           },
           {
@@ -8286,6 +8298,18 @@
         "parameters": [
           {
             "$ref": "#/parameters/studyClientIdParam"
+          },
+          {
+            "$ref": "#/parameters/causeVariableNameParam"
+          },
+          {
+            "$ref": "#/parameters/effectVariableNameParam"
+          },
+          {
+            "$ref": "#/parameters/causeVariableIdParam"
+          },
+          {
+            "$ref": "#/parameters/effectVariableIdParam"
           },
           {
             "$ref": "#/parameters/predictorVariableNameParam"
