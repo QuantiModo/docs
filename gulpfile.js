@@ -81,7 +81,7 @@ var sdkSwaggerCodegenOptions ={
         "gemAuthorEmail": "mike@quantimo.do"
     }
 };
-var majorMinorVersionNumbers = '5.9.';
+var majorMinorVersionNumbers = '5.10.';
 function getPatchVersionNumber() {
     var date = new Date();
     var monthNumber = (date.getMonth() + 1).toString();
@@ -265,8 +265,8 @@ gulp.task('js-5-release', [], function (callback) {
         ' && bower version ' + apiVersionNumber, function () {
         executeCommand("cd " + getRepoPathForSdkLanguage(javascriptFlavor) + " && npm version " + apiVersionNumber +
             ' && npm publish && git push && git push origin ' + apiVersionNumber, function () {
-            updateBowerAndPackageJsonVersions(pathToQmDocker);
-            updateBowerAndPackageJsonVersions(pathToIonic);
+            //updateBowerAndPackageJsonVersions(pathToQmDocker);
+            //updateBowerAndPackageJsonVersions(pathToIonic);
             //updateBowerAndPackageJsonVersions(".");
             callback();
         });
