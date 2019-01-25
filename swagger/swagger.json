@@ -5955,10 +5955,17 @@
       "required": false,
       "type": "string"
     },
+    "causeVariableIdParam": {
+      "description": "Variable id of the hypothetical predictor variable.  Ex: 1398",
+      "in": "query",
+      "name": "causeVariableId",
+      "required": false,
+      "type": "integer"
+    },
     "predictorVariableNameParam": {
       "description": "Name of the hypothetical predictor variable.  Ex: Sleep Duration",
       "in": "query",
-      "name": "causeVariableName",
+      "name": "predictorVariableName",
       "required": false,
       "type": "string"
     },
@@ -6094,16 +6101,23 @@
       "type": "string"
     },
     "effectVariableNameParam": {
-      "description": "Deprecated: Name of the hypothetical outcome variable.  Ex: Overall Mood",
+      "description": "Deprecated: Name of the outcome variable of interest.  Ex: Overall Mood",
       "in": "query",
       "name": "effectVariableName",
       "required": false,
       "type": "string"
     },
-    "outcomeVariableNameParam": {
-      "description": "Name of the hypothetical outcome variable.  Ex: Overall Mood",
+    "effectVariableIdParam": {
+      "description": "Variable id of the outcome variable of interest.  Ex: 1398",
       "in": "query",
-      "name": "effectVariableName",
+      "name": "effectVariableId",
+      "required": false,
+      "type": "integer"
+    },
+    "outcomeVariableNameParam": {
+      "description": "Name of the outcome variable of interest.  Ex: Overall Mood",
+      "in": "query",
+      "name": "outcomeVariableName",
       "required": false,
       "type": "string"
     },
@@ -6867,6 +6881,12 @@
             "$ref": "#/parameters/effectVariableNameParam"
           },
           {
+            "$ref": "#/parameters/causeVariableIdParam"
+          },
+          {
+            "$ref": "#/parameters/effectVariableIdParam"
+          },
+          {
             "$ref": "#/parameters/predictorVariableNameParam"
           },
           {
@@ -7597,6 +7617,12 @@
             "$ref": "#/parameters/effectVariableNameParam"
           },
           {
+            "$ref": "#/parameters/causeVariableIdParam"
+          },
+          {
+            "$ref": "#/parameters/effectVariableIdParam"
+          },
+          {
             "$ref": "#/parameters/predictorVariableNameParam"
           },
           {
@@ -7944,6 +7970,12 @@
             "$ref": "#/parameters/effectVariableNameParam"
           },
           {
+            "$ref": "#/parameters/causeVariableIdParam"
+          },
+          {
+            "$ref": "#/parameters/effectVariableIdParam"
+          },
+          {
             "$ref": "#/parameters/predictorVariableNameParam"
           },
           {
@@ -8017,6 +8049,12 @@
           },
           {
             "$ref": "#/parameters/effectVariableNameParam"
+          },
+          {
+            "$ref": "#/parameters/causeVariableIdParam"
+          },
+          {
+            "$ref": "#/parameters/effectVariableIdParam"
           },
           {
             "$ref": "#/parameters/predictorVariableNameParam"
@@ -8094,6 +8132,12 @@
             "$ref": "#/parameters/effectVariableNameParam"
           },
           {
+            "$ref": "#/parameters/causeVariableIdParam"
+          },
+          {
+            "$ref": "#/parameters/effectVariableIdParam"
+          },
+          {
             "$ref": "#/parameters/predictorVariableNameParam"
           },
           {
@@ -8161,6 +8205,12 @@
           },
           {
             "$ref": "#/parameters/effectVariableNameParam"
+          },
+          {
+            "$ref": "#/parameters/causeVariableIdParam"
+          },
+          {
+            "$ref": "#/parameters/effectVariableIdParam"
           },
           {
             "$ref": "#/parameters/predictorVariableNameParam"
@@ -9454,6 +9504,12 @@
           },
           {
             "$ref": "#/parameters/effectVariableNameParam"
+          },
+          {
+            "$ref": "#/parameters/causeVariableIdParam"
+          },
+          {
+            "$ref": "#/parameters/effectVariableIdParam"
           },
           {
             "$ref": "#/parameters/predictorVariableNameParam"
