@@ -6969,6 +6969,12 @@
             "$ref": "#/parameters/effectVariableNameParam"
           },
           {
+            "$ref": "#/parameters/causeVariableIdParam"
+          },
+          {
+            "$ref": "#/parameters/effectVariableIdParam"
+          },
+          {
             "$ref": "#/parameters/predictorVariableNameParam"
           },
           {
