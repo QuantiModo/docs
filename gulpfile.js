@@ -149,7 +149,7 @@ function executeCommand(command, callback) {
         if(callback){callback(err);}
     });
 }
-var swaggerJsonUrl = 'https://raw.githubusercontent.com/QuantiModo/docs/develop/swagger/swagger.json';
+var swaggerJsonUrl = 'https://raw.githubusercontent.com/QuantiModo/docs/master/swagger/swagger.json';
 //swaggerJsonUrl = 'https://utopia.quantimo.do:4443/api/docs/swagger/swagger.json';
 function clone(organization, repoName, destinationFolder, callback){
     var repoUrl = 'https://github.com/' + organization + '/' + repoName;
