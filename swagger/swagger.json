@@ -9063,6 +9063,9 @@
             "type": "string"
           },
           {
+            "$ref": "#/parameters/variableNameParam"
+          },
+          {
             "$ref": "#/parameters/updatedAtParam"
           },
           {
