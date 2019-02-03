@@ -8,6 +8,6 @@
 * Create an app to get your client id and secret at
 [https://builder.quantimo.do](https://builder.quantimo.do)
 
-See our interactive API explorer at [https://app.quantimo.do/api/docs](https://app.quantimo.do/api/docs) 
+See our interactive API explorer at [https://app.quantimo.do/api/v2/account/api-explorer](https://app.quantimo.do/api/v2/account/api-explorer) 
 
 [Query Options](query-options.md)
