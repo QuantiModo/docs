@@ -6051,6 +6051,13 @@
       "required": false,
       "type": "boolean"
     },
+    "downVotedParam": {
+      "description": "These are studies that you have down-voted",
+      "in": "query",
+      "name": "downvoted",
+      "required": false,
+      "type": "boolean"
+    },
     "createdAtParam": {
       "description": "When the record was first created. Use UTC ISO 8601 YYYY-MM-DDThh:mm:ss datetime format. Time zone should be UTC and not local.",
       "in": "query",
@@ -7935,6 +7942,9 @@
           },
           {
             "$ref": "#/parameters/populationParam"
+          },
+          {
+            "$ref": "#/parameters/downVotedParam"
           }
         ],
         "produces": [
