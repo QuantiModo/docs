@@ -130,11 +130,11 @@
           "type": "number"
         },
         "link": {
-          "description": "A super neat url!",
+          "description": "A super neat url you might want to share with your users!",
           "type": "string"
         },
         "card": {
-          "description": "A super neat card!",
+          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       },
@@ -434,11 +434,11 @@
           "type": "number"
         },
         "link": {
-          "description": "A super neat url!",
+          "description": "A super neat url you might want to share with your users!",
           "type": "string"
         },
         "card": {
-          "description": "A super neat card!",
+          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       },
@@ -1402,11 +1402,11 @@
           "type": "number"
         },
         "link": {
-          "description": "A super neat url!",
+          "description": "A super neat url you might want to share with your users!",
           "type": "string"
         },
         "card": {
-          "description": "A super neat card!",
+          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       },
@@ -1454,11 +1454,11 @@
           "type": "number"
         },
         "link": {
-          "description": "A super neat url!",
+          "description": "A super neat url you might want to share with your users!",
           "type": "string"
         },
         "card": {
-          "description": "A super neat card!",
+          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       },
@@ -1504,11 +1504,11 @@
           "type": "number"
         },
         "link": {
-          "description": "A super neat url!",
+          "description": "A super neat url you might want to share with your users!",
           "type": "string"
         },
         "card": {
-          "description": "A super neat card!",
+          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       },
@@ -1594,11 +1594,11 @@
           "type": "number"
         },
         "link": {
-          "description": "A super neat url!",
+          "description": "A super neat url you might want to share with your users!",
           "type": "string"
         },
         "card": {
-          "description": "A super neat card!",
+          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       },
@@ -1643,11 +1643,11 @@
           "type": "number"
         },
         "link": {
-          "description": "A super neat url!",
+          "description": "A super neat url you might want to share with your users!",
           "type": "string"
         },
         "card": {
-          "description": "A super neat card!",
+          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       },
@@ -1693,11 +1693,11 @@
           "type": "number"
         },
         "link": {
-          "description": "A super neat url!",
+          "description": "A super neat url you might want to share with your users!",
           "type": "string"
         },
         "card": {
-          "description": "A super neat card!",
+          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       },
@@ -1761,11 +1761,11 @@
           "type": "number"
         },
         "link": {
-          "description": "A super neat url!",
+          "description": "A super neat url you might want to share with your users!",
           "type": "string"
         },
         "card": {
-          "description": "A super neat card!",
+          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       },
@@ -2250,11 +2250,11 @@
           "type": "number"
         },
         "link": {
-          "description": "A super neat url!",
+          "description": "A super neat url you might want to share with your users!",
           "type": "string"
         },
         "card": {
-          "description": "A super neat card!",
+          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       }
@@ -2296,11 +2296,11 @@
           "type": "number"
         },
         "link": {
-          "description": "A super neat url!",
+          "description": "A super neat url you might want to share with your users!",
           "type": "string"
         },
         "card": {
-          "description": "A super neat card!",
+          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       },
@@ -2339,11 +2339,11 @@
           "type": "number"
         },
         "link": {
-          "description": "A super neat url!",
+          "description": "A super neat url you might want to share with your users!",
           "type": "string"
         },
         "card": {
-          "description": "A super neat card!",
+          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       }
@@ -2381,11 +2381,11 @@
           "type": "number"
         },
         "link": {
-          "description": "A super neat url!",
+          "description": "A super neat url you might want to share with your users!",
           "type": "string"
         },
         "card": {
-          "description": "A super neat card!",
+          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       }
@@ -2438,11 +2438,11 @@
           "type": "number"
         },
         "link": {
-          "description": "A super neat url!",
+          "description": "A super neat url you might want to share with your users!",
           "type": "string"
         },
         "card": {
-          "description": "A super neat card!",
+          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       }
@@ -2484,11 +2484,11 @@
           "type": "number"
         },
         "link": {
-          "description": "A super neat url!",
+          "description": "A super neat url you might want to share with your users!",
           "type": "string"
         },
         "card": {
-          "description": "A super neat card!",
+          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       },
@@ -2531,11 +2531,11 @@
           "type": "number"
         },
         "link": {
-          "description": "A super neat url!",
+          "description": "A super neat url you might want to share with your users!",
           "type": "string"
         },
         "card": {
-          "description": "A super neat card!",
+          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       }
@@ -2577,11 +2577,11 @@
           "type": "number"
         },
         "link": {
-          "description": "A super neat url!",
+          "description": "A super neat url you might want to share with your users!",
           "type": "string"
         },
         "card": {
-          "description": "A super neat card!",
+          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       },
@@ -2895,11 +2895,11 @@
           "type": "number"
         },
         "link": {
-          "description": "A super neat url!",
+          "description": "A super neat url you might want to share with your users!",
           "type": "string"
         },
         "card": {
-          "description": "A super neat card!",
+          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       }
@@ -4358,11 +4358,11 @@
           "type": "string"
         },
         "link": {
-          "description": "A super neat url!",
+          "description": "A super neat url you might want to share with your users!",
           "type": "string"
         },
         "card": {
-          "description": "A super neat card!",
+          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       }
@@ -5523,11 +5523,11 @@
           "type": "number"
         },
         "link": {
-          "description": "A super neat url!",
+          "description": "A super neat url you might want to share with your users!",
           "type": "string"
         },
         "card": {
-          "description": "A super neat card!",
+          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       }
@@ -5629,11 +5629,11 @@
           "type": "number"
         },
         "link": {
-          "description": "A super neat url!",
+          "description": "A super neat url you might want to share with your users!",
           "type": "string"
         },
         "card": {
-          "description": "A super neat card!",
+          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       }
@@ -5750,11 +5750,11 @@
           "type": "number"
         },
         "link": {
-          "description": "A super neat url!",
+          "description": "A super neat url you might want to share with your users!",
           "type": "string"
         },
         "card": {
-          "description": "A super neat card!",
+          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       }
@@ -5886,11 +5886,11 @@
           "type": "number"
         },
         "link": {
-          "description": "A super neat url!",
+          "description": "A super neat url you might want to share with your users!",
           "type": "string"
         },
         "card": {
-          "description": "A super neat card!",
+          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       }
@@ -5992,11 +5992,11 @@
           "type": "number"
         },
         "link": {
-          "description": "A super neat url!",
+          "description": "A super neat url you might want to share with your users!",
           "type": "string"
         },
         "card": {
-          "description": "A super neat card!",
+          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       }
@@ -6101,11 +6101,11 @@
           "type": "number"
         },
         "link": {
-          "description": "A super neat url!",
+          "description": "A super neat url you might want to share with your users!",
           "type": "string"
         },
         "card": {
-          "description": "A super neat card!",
+          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       }
@@ -6207,11 +6207,11 @@
           "type": "number"
         },
         "link": {
-          "description": "A super neat url!",
+          "description": "A super neat url you might want to share with your users!",
           "type": "string"
         },
         "card": {
-          "description": "A super neat card!",
+          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       }
@@ -6323,11 +6323,11 @@
           "type": "number"
         },
         "link": {
-          "description": "A super neat url!",
+          "description": "A super neat url you might want to share with your users!",
           "type": "string"
         },
         "card": {
-          "description": "A super neat card!",
+          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       }
@@ -6414,11 +6414,11 @@
           "type": "number"
         },
         "link": {
-          "description": "A super neat url!",
+          "description": "A super neat url you might want to share with your users!",
           "type": "string"
         },
         "card": {
-          "description": "A super neat card!",
+          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       }
@@ -6515,11 +6515,11 @@
           "type": "number"
         },
         "link": {
-          "description": "A super neat url!",
+          "description": "A super neat url you might want to share with your users!",
           "type": "string"
         },
         "card": {
-          "description": "A super neat card!",
+          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       }
@@ -6651,11 +6651,11 @@
           "type": "number"
         },
         "link": {
-          "description": "A super neat url!",
+          "description": "A super neat url you might want to share with your users!",
           "type": "string"
         },
         "card": {
-          "description": "A super neat card!",
+          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       }
@@ -6752,11 +6752,11 @@
           "type": "number"
         },
         "link": {
-          "description": "A super neat url!",
+          "description": "A super neat url you might want to share with your users!",
           "type": "string"
         },
         "card": {
-          "description": "A super neat card!",
+          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       }
