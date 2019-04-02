@@ -111,7 +111,10 @@
           "type": "string"
         },
         "errors": {
-          "description": "Array of string error messages",
+          "description": "Array of error objects with message property",
+          "items": {
+            "$ref": "#/definitions/Error"
+          },
           "type": "array"
         },
         "status": {
@@ -404,7 +407,10 @@
           "type": "string"
         },
         "errors": {
-          "description": "Array of string error messages",
+          "description": "Array of error objects with message property",
+          "items": {
+            "$ref": "#/definitions/Error"
+          },
           "type": "array"
         },
         "status": {
@@ -1165,6 +1171,17 @@
         "platform"
       ]
     },
+    "Error": {
+      "properties": {
+        "message": {
+          "description": "Error message",
+          "type": "string"
+        }
+      },
+      "required": [
+        "message"
+      ]
+    },
     "Explanation": {
       "properties": {
         "description": {
@@ -1350,7 +1367,10 @@
           "type": "string"
         },
         "errors": {
-          "description": "Array of string error messages",
+          "description": "Array of error objects with message property",
+          "items": {
+            "$ref": "#/definitions/Error"
+          },
           "type": "array"
         },
         "status": {
@@ -1391,7 +1411,10 @@
           "type": "string"
         },
         "errors": {
-          "description": "Array of string error messages",
+          "description": "Array of error objects with message property",
+          "items": {
+            "$ref": "#/definitions/Error"
+          },
           "type": "array"
         },
         "status": {
@@ -1430,7 +1453,10 @@
           "type": "string"
         },
         "errors": {
-          "description": "Array of string error messages",
+          "description": "Array of error objects with message property",
+          "items": {
+            "$ref": "#/definitions/Error"
+          },
           "type": "array"
         },
         "status": {
@@ -1509,7 +1535,10 @@
           "type": "string"
         },
         "errors": {
-          "description": "Array of string error messages",
+          "description": "Array of error objects with message property",
+          "items": {
+            "$ref": "#/definitions/Error"
+          },
           "type": "array"
         },
         "status": {
@@ -1547,7 +1576,10 @@
           "type": "string"
         },
         "errors": {
-          "description": "Array of string error messages",
+          "description": "Array of error objects with message property",
+          "items": {
+            "$ref": "#/definitions/Error"
+          },
           "type": "array"
         },
         "status": {
@@ -1586,7 +1618,10 @@
           "type": "string"
         },
         "errors": {
-          "description": "Array of string error messages",
+          "description": "Array of error objects with message property",
+          "items": {
+            "$ref": "#/definitions/Error"
+          },
           "type": "array"
         },
         "status": {
@@ -1643,7 +1678,10 @@
           "type": "string"
         },
         "errors": {
-          "description": "Array of string error messages",
+          "description": "Array of error objects with message property",
+          "items": {
+            "$ref": "#/definitions/Error"
+          },
           "type": "array"
         },
         "status": {
@@ -2121,7 +2159,10 @@
           "type": "string"
         },
         "errors": {
-          "description": "Array of string error messages",
+          "description": "Array of error objects with message property",
+          "items": {
+            "$ref": "#/definitions/Error"
+          },
           "type": "array"
         },
         "status": {
@@ -2156,7 +2197,10 @@
           "type": "string"
         },
         "errors": {
-          "description": "Array of string error messages",
+          "description": "Array of error objects with message property",
+          "items": {
+            "$ref": "#/definitions/Error"
+          },
           "type": "array"
         },
         "status": {
@@ -2188,7 +2232,10 @@
           "type": "string"
         },
         "errors": {
-          "description": "Array of string error messages",
+          "description": "Array of error objects with message property",
+          "items": {
+            "$ref": "#/definitions/Error"
+          },
           "type": "array"
         },
         "status": {
@@ -2219,7 +2266,10 @@
           "type": "string"
         },
         "errors": {
-          "description": "Array of string error messages",
+          "description": "Array of error objects with message property",
+          "items": {
+            "$ref": "#/definitions/Error"
+          },
           "type": "array"
         },
         "status": {
@@ -2265,7 +2315,10 @@
           "type": "string"
         },
         "errors": {
-          "description": "Array of string error messages",
+          "description": "Array of error objects with message property",
+          "items": {
+            "$ref": "#/definitions/Error"
+          },
           "type": "array"
         },
         "status": {
@@ -2300,7 +2353,10 @@
           "type": "string"
         },
         "errors": {
-          "description": "Array of string error messages",
+          "description": "Array of error objects with message property",
+          "items": {
+            "$ref": "#/definitions/Error"
+          },
           "type": "array"
         },
         "status": {
@@ -2336,7 +2392,10 @@
           "type": "string"
         },
         "errors": {
-          "description": "Array of string error messages",
+          "description": "Array of error objects with message property",
+          "items": {
+            "$ref": "#/definitions/Error"
+          },
           "type": "array"
         },
         "status": {
@@ -2371,7 +2430,10 @@
           "type": "string"
         },
         "errors": {
-          "description": "Array of string error messages",
+          "description": "Array of error objects with message property",
+          "items": {
+            "$ref": "#/definitions/Error"
+          },
           "type": "array"
         },
         "status": {
@@ -2678,7 +2740,10 @@
           "type": "string"
         },
         "errors": {
-          "description": "Array of string error messages",
+          "description": "Array of error objects with message property",
+          "items": {
+            "$ref": "#/definitions/Error"
+          },
           "type": "array"
         },
         "status": {
@@ -4115,7 +4180,10 @@
           "type": "string"
         },
         "errors": {
-          "description": "Array of error messages",
+          "description": "Array of error objects with message property",
+          "items": {
+            "$ref": "#/definitions/Error"
+          },
           "type": "array"
         },
         "status": {
@@ -5284,7 +5352,10 @@
           "type": "string"
         },
         "errors": {
-          "description": "Array of string error messages",
+          "description": "Array of error objects with message property",
+          "items": {
+            "$ref": "#/definitions/Error"
+          },
           "type": "array"
         },
         "status": {
@@ -5379,7 +5450,10 @@
           "type": "string"
         },
         "errors": {
-          "description": "Array of string error messages",
+          "description": "Array of error objects with message property",
+          "items": {
+            "$ref": "#/definitions/Error"
+          },
           "type": "array"
         },
         "status": {
@@ -5489,7 +5563,10 @@
           "type": "string"
         },
         "errors": {
-          "description": "Array of string error messages",
+          "description": "Array of error objects with message property",
+          "items": {
+            "$ref": "#/definitions/Error"
+          },
           "type": "array"
         },
         "status": {
@@ -5614,7 +5691,10 @@
           "type": "string"
         },
         "errors": {
-          "description": "Array of string error messages",
+          "description": "Array of error objects with message property",
+          "items": {
+            "$ref": "#/definitions/Error"
+          },
           "type": "array"
         },
         "status": {
@@ -5709,7 +5789,10 @@
           "type": "string"
         },
         "errors": {
-          "description": "Array of string error messages",
+          "description": "Array of error objects with message property",
+          "items": {
+            "$ref": "#/definitions/Error"
+          },
           "type": "array"
         },
         "status": {
@@ -5799,7 +5882,10 @@
           "type": "string"
         },
         "errors": {
-          "description": "Array of error messages",
+          "description": "Array of error objects with message property",
+          "items": {
+            "$ref": "#/definitions/Error"
+          },
           "type": "array"
         },
         "error": {
@@ -5902,7 +5988,10 @@
           "type": "string"
         },
         "errors": {
-          "description": "Array of string error messages",
+          "description": "Array of error objects with message property",
+          "items": {
+            "$ref": "#/definitions/Error"
+          },
           "type": "array"
         },
         "status": {
@@ -6007,7 +6096,10 @@
           "type": "string"
         },
         "errors": {
-          "description": "Array of string error messages",
+          "description": "Array of error objects with message property",
+          "items": {
+            "$ref": "#/definitions/Error"
+          },
           "type": "array"
         },
         "status": {
@@ -6087,7 +6179,10 @@
           "type": "string"
         },
         "errors": {
-          "description": "Array of string error messages",
+          "description": "Array of error objects with message property",
+          "items": {
+            "$ref": "#/definitions/Error"
+          },
           "type": "array"
         },
         "status": {
@@ -6177,7 +6272,10 @@
           "type": "string"
         },
         "errors": {
-          "description": "Array of string error messages",
+          "description": "Array of error objects with message property",
+          "items": {
+            "$ref": "#/definitions/Error"
+          },
           "type": "array"
         },
         "status": {
@@ -6302,7 +6400,10 @@
           "type": "string"
         },
         "errors": {
-          "description": "Array of string error messages",
+          "description": "Array of error objects with message property",
+          "items": {
+            "$ref": "#/definitions/Error"
+          },
           "type": "array"
         },
         "status": {
@@ -6392,7 +6493,10 @@
           "type": "string"
         },
         "errors": {
-          "description": "Array of string error messages",
+          "description": "Array of error objects with message property",
+          "items": {
+            "$ref": "#/definitions/Error"
+          },
           "type": "array"
         },
         "status": {
