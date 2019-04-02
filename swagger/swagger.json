@@ -128,6 +128,14 @@
         "code": {
           "description": "Response code such as 200",
           "type": "number"
+        },
+        "link": {
+          "description": "A super neat url!",
+          "type": "string"
+        },
+        "card": {
+          "description": "A super neat card!",
+          "$ref": "#/definitions/Card"
         }
       },
       "required": [
@@ -424,6 +432,14 @@
         "code": {
           "description": "Response code such as 200",
           "type": "number"
+        },
+        "link": {
+          "description": "A super neat url!",
+          "type": "string"
+        },
+        "card": {
+          "description": "A super neat card!",
+          "$ref": "#/definitions/Card"
         }
       },
       "required": [
@@ -1384,6 +1400,14 @@
         "code": {
           "description": "Response code such as 200",
           "type": "number"
+        },
+        "link": {
+          "description": "A super neat url!",
+          "type": "string"
+        },
+        "card": {
+          "description": "A super neat card!",
+          "$ref": "#/definitions/Card"
         }
       },
       "required": [
@@ -1428,6 +1452,14 @@
         "code": {
           "description": "Response code such as 200",
           "type": "number"
+        },
+        "link": {
+          "description": "A super neat url!",
+          "type": "string"
+        },
+        "card": {
+          "description": "A super neat card!",
+          "$ref": "#/definitions/Card"
         }
       },
       "required": [
@@ -1470,6 +1502,14 @@
         "code": {
           "description": "Response code such as 200",
           "type": "number"
+        },
+        "link": {
+          "description": "A super neat url!",
+          "type": "string"
+        },
+        "card": {
+          "description": "A super neat card!",
+          "$ref": "#/definitions/Card"
         }
       },
       "required": [
@@ -1552,6 +1592,14 @@
         "code": {
           "description": "Response code such as 200",
           "type": "number"
+        },
+        "link": {
+          "description": "A super neat url!",
+          "type": "string"
+        },
+        "card": {
+          "description": "A super neat card!",
+          "$ref": "#/definitions/Card"
         }
       },
       "required": [
@@ -1593,6 +1641,14 @@
         "code": {
           "description": "Response code such as 200",
           "type": "number"
+        },
+        "link": {
+          "description": "A super neat url!",
+          "type": "string"
+        },
+        "card": {
+          "description": "A super neat card!",
+          "$ref": "#/definitions/Card"
         }
       },
       "required": [
@@ -1635,6 +1691,14 @@
         "code": {
           "description": "Response code such as 200",
           "type": "number"
+        },
+        "link": {
+          "description": "A super neat url!",
+          "type": "string"
+        },
+        "card": {
+          "description": "A super neat card!",
+          "$ref": "#/definitions/Card"
         }
       },
       "required": [
@@ -1695,6 +1759,14 @@
         "code": {
           "description": "Response code such as 200",
           "type": "number"
+        },
+        "link": {
+          "description": "A super neat url!",
+          "type": "string"
+        },
+        "card": {
+          "description": "A super neat card!",
+          "$ref": "#/definitions/Card"
         }
       },
       "required": [
@@ -2176,6 +2248,14 @@
         "code": {
           "description": "Response code such as 200",
           "type": "number"
+        },
+        "link": {
+          "description": "A super neat url!",
+          "type": "string"
+        },
+        "card": {
+          "description": "A super neat card!",
+          "$ref": "#/definitions/Card"
         }
       }
     },
@@ -2214,6 +2294,14 @@
         "code": {
           "description": "Response code such as 200",
           "type": "number"
+        },
+        "link": {
+          "description": "A super neat url!",
+          "type": "string"
+        },
+        "card": {
+          "description": "A super neat card!",
+          "$ref": "#/definitions/Card"
         }
       },
       "required": [
@@ -2249,6 +2337,14 @@
         "code": {
           "description": "Response code such as 200",
           "type": "number"
+        },
+        "link": {
+          "description": "A super neat url!",
+          "type": "string"
+        },
+        "card": {
+          "description": "A super neat card!",
+          "$ref": "#/definitions/Card"
         }
       }
     },
@@ -2283,6 +2379,14 @@
         "code": {
           "description": "Response code such as 200",
           "type": "number"
+        },
+        "link": {
+          "description": "A super neat url!",
+          "type": "string"
+        },
+        "card": {
+          "description": "A super neat card!",
+          "$ref": "#/definitions/Card"
         }
       }
     },
@@ -2332,6 +2436,14 @@
         "code": {
           "description": "Response code such as 200",
           "type": "number"
+        },
+        "link": {
+          "description": "A super neat url!",
+          "type": "string"
+        },
+        "card": {
+          "description": "A super neat card!",
+          "$ref": "#/definitions/Card"
         }
       }
     },
@@ -2370,6 +2482,14 @@
         "code": {
           "description": "Response code such as 200",
           "type": "number"
+        },
+        "link": {
+          "description": "A super neat url!",
+          "type": "string"
+        },
+        "card": {
+          "description": "A super neat card!",
+          "$ref": "#/definitions/Card"
         }
       },
       "required": [
@@ -2409,6 +2529,14 @@
         "code": {
           "description": "Response code such as 200",
           "type": "number"
+        },
+        "link": {
+          "description": "A super neat url!",
+          "type": "string"
+        },
+        "card": {
+          "description": "A super neat card!",
+          "$ref": "#/definitions/Card"
         }
       }
     },
@@ -2447,6 +2575,14 @@
         "code": {
           "description": "Response code such as 200",
           "type": "number"
+        },
+        "link": {
+          "description": "A super neat url!",
+          "type": "string"
+        },
+        "card": {
+          "description": "A super neat card!",
+          "$ref": "#/definitions/Card"
         }
       },
       "required": [
@@ -2757,6 +2893,14 @@
         "code": {
           "description": "Response code such as 200",
           "type": "number"
+        },
+        "link": {
+          "description": "A super neat url!",
+          "type": "string"
+        },
+        "card": {
+          "description": "A super neat card!",
+          "$ref": "#/definitions/Card"
         }
       }
     },
@@ -4212,6 +4356,14 @@
         "html": {
           "description": "Users who granted access to their data",
           "type": "string"
+        },
+        "link": {
+          "description": "A super neat url!",
+          "type": "string"
+        },
+        "card": {
+          "description": "A super neat card!",
+          "$ref": "#/definitions/Card"
         }
       }
     },
@@ -5369,6 +5521,14 @@
         "code": {
           "description": "Response code such as 200",
           "type": "number"
+        },
+        "link": {
+          "description": "A super neat url!",
+          "type": "string"
+        },
+        "card": {
+          "description": "A super neat card!",
+          "$ref": "#/definitions/Card"
         }
       }
     },
@@ -5467,6 +5627,14 @@
         "code": {
           "description": "Response code such as 200",
           "type": "number"
+        },
+        "link": {
+          "description": "A super neat url!",
+          "type": "string"
+        },
+        "card": {
+          "description": "A super neat card!",
+          "$ref": "#/definitions/Card"
         }
       }
     },
@@ -5580,6 +5748,14 @@
         "code": {
           "description": "Response code such as 200",
           "type": "number"
+        },
+        "link": {
+          "description": "A super neat url!",
+          "type": "string"
+        },
+        "card": {
+          "description": "A super neat card!",
+          "$ref": "#/definitions/Card"
         }
       }
     },
@@ -5708,6 +5884,14 @@
         "code": {
           "description": "Response code such as 200",
           "type": "number"
+        },
+        "link": {
+          "description": "A super neat url!",
+          "type": "string"
+        },
+        "card": {
+          "description": "A super neat card!",
+          "$ref": "#/definitions/Card"
         }
       }
     },
@@ -5806,6 +5990,14 @@
         "code": {
           "description": "Response code such as 200",
           "type": "number"
+        },
+        "link": {
+          "description": "A super neat url!",
+          "type": "string"
+        },
+        "card": {
+          "description": "A super neat card!",
+          "$ref": "#/definitions/Card"
         }
       }
     },
@@ -5907,6 +6099,14 @@
         "code": {
           "description": "Response code such as 200",
           "type": "number"
+        },
+        "link": {
+          "description": "A super neat url!",
+          "type": "string"
+        },
+        "card": {
+          "description": "A super neat card!",
+          "$ref": "#/definitions/Card"
         }
       }
     },
@@ -6005,6 +6205,14 @@
         "code": {
           "description": "Response code such as 200",
           "type": "number"
+        },
+        "link": {
+          "description": "A super neat url!",
+          "type": "string"
+        },
+        "card": {
+          "description": "A super neat card!",
+          "$ref": "#/definitions/Card"
         }
       }
     },
@@ -6113,6 +6321,14 @@
         "code": {
           "description": "Response code such as 200",
           "type": "number"
+        },
+        "link": {
+          "description": "A super neat url!",
+          "type": "string"
+        },
+        "card": {
+          "description": "A super neat card!",
+          "$ref": "#/definitions/Card"
         }
       }
     },
@@ -6196,6 +6412,14 @@
         "code": {
           "description": "Response code such as 200",
           "type": "number"
+        },
+        "link": {
+          "description": "A super neat url!",
+          "type": "string"
+        },
+        "card": {
+          "description": "A super neat card!",
+          "$ref": "#/definitions/Card"
         }
       }
     },
@@ -6289,6 +6513,14 @@
         "code": {
           "description": "Response code such as 200",
           "type": "number"
+        },
+        "link": {
+          "description": "A super neat url!",
+          "type": "string"
+        },
+        "card": {
+          "description": "A super neat card!",
+          "$ref": "#/definitions/Card"
         }
       }
     },
@@ -6417,6 +6649,14 @@
         "code": {
           "description": "Response code such as 200",
           "type": "number"
+        },
+        "link": {
+          "description": "A super neat url!",
+          "type": "string"
+        },
+        "card": {
+          "description": "A super neat card!",
+          "$ref": "#/definitions/Card"
         }
       }
     },
@@ -6510,6 +6750,14 @@
         "code": {
           "description": "Response code such as 200",
           "type": "number"
+        },
+        "link": {
+          "description": "A super neat url!",
+          "type": "string"
+        },
+        "card": {
+          "description": "A super neat card!",
+          "$ref": "#/definitions/Card"
         }
       }
     }
