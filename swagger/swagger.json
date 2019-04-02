@@ -3856,6 +3856,42 @@
         "loginName"
       ]
     },
+    "UsersResponse": {
+      "required": [
+        "users"
+      ],
+      "properties": {
+        "users": {
+          "items": {
+            "$ref": "#/definitions/User"
+          },
+          "type": "array"
+        },
+        "description": {
+          "description": "Users who granted access to their data",
+          "type": "string"
+        },
+        "summary": {
+          "description": "Users who granted access to their data",
+          "type": "string"
+        },
+        "image": {
+          "$ref": "#/definitions/Image"
+        },
+        "avatar": {
+          "description": "Square icon png url",
+          "type": "string"
+        },
+        "ionIcon": {
+          "description": "Ex: ion-ios-person",
+          "type": "string"
+        },
+        "html": {
+          "description": "Users who granted access to their data",
+          "type": "string"
+        }
+      }
+    },
     "UserTag": {
       "properties": {
         "conversionFactor": {
@@ -8857,6 +8893,78 @@
           }
         ],
         "summary": "Get user info",
+        "tags": [
+          "user"
+        ]
+      }
+    },
+    "/v3/users": {
+      "get": {
+        "description": "Returns users who have granted access to their data",
+        "operationId": "getUsers",
+        "parameters": [
+          {
+            "$ref": "#/parameters/userIdParam"
+          },
+          {
+            "$ref": "#/parameters/createdAtParam"
+          },
+          {
+            "$ref": "#/parameters/updatedAtParam"
+          },
+          {
+            "$ref": "#/parameters/limitParam"
+          },
+          {
+            "$ref": "#/parameters/offsetParam"
+          },
+          {
+            "$ref": "#/parameters/sortParam"
+          },
+          {
+            "$ref": "#/parameters/clientIdParam"
+          },
+          {
+            "$ref": "#/parameters/appVersionParam"
+          },
+          {
+            "$ref": "#/parameters/clientUserIdParam"
+          },
+          {
+            "$ref": "#/parameters/platform"
+          },
+          {
+            "$ref": "#/parameters/log"
+          },
+          {
+            "$ref": "#/parameters/pwd"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/UsersResponse"
+            }
+          },
+          "401": {
+            "description": "Not Authenticated"
+          }
+        },
+        "security": [
+          {
+            "access_token": []
+          },
+          {
+            "quantimodo_oauth2": [
+              "basic"
+            ]
+          }
+        ],
+        "summary": "Get users who shared data",
         "tags": [
           "user"
         ]
