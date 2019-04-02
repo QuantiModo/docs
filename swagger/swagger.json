@@ -109,6 +109,22 @@
         "summary": {
           "description": "Can be used as title in help info popup",
           "type": "string"
+        },
+        "errors": {
+          "description": "Array of string error messages",
+          "type": "array"
+        },
+        "status": {
+          "description": "ex. OK or ERROR",
+          "type": "string"
+        },
+        "success": {
+          "description": "true or false",
+          "type": "boolean"
+        },
+        "code": {
+          "description": "Response code such as 200",
+          "type": "number"
         }
       },
       "required": [
@@ -386,6 +402,22 @@
         "summary": {
           "description": "Can be used as title in help info popup",
           "type": "string"
+        },
+        "errors": {
+          "description": "Array of string error messages",
+          "type": "array"
+        },
+        "status": {
+          "description": "ex. OK or ERROR",
+          "type": "string"
+        },
+        "success": {
+          "description": "true or false",
+          "type": "boolean"
+        },
+        "code": {
+          "description": "Response code such as 200",
+          "type": "number"
         }
       },
       "required": [
@@ -1316,6 +1348,22 @@
         "summary": {
           "description": "Can be used as title in help info popup",
           "type": "string"
+        },
+        "errors": {
+          "description": "Array of string error messages",
+          "type": "array"
+        },
+        "status": {
+          "description": "ex. OK or ERROR",
+          "type": "string"
+        },
+        "success": {
+          "description": "true or false",
+          "type": "boolean"
+        },
+        "code": {
+          "description": "Response code such as 200",
+          "type": "number"
         }
       },
       "required": [
@@ -1341,6 +1389,22 @@
         "summary": {
           "description": "Can be used as title in help info popup",
           "type": "string"
+        },
+        "errors": {
+          "description": "Array of string error messages",
+          "type": "array"
+        },
+        "status": {
+          "description": "ex. OK or ERROR",
+          "type": "string"
+        },
+        "success": {
+          "description": "true or false",
+          "type": "boolean"
+        },
+        "code": {
+          "description": "Response code such as 200",
+          "type": "number"
         }
       },
       "required": [
@@ -1364,6 +1428,22 @@
         "avatar": {
           "description": "Square icon png url",
           "type": "string"
+        },
+        "errors": {
+          "description": "Array of string error messages",
+          "type": "array"
+        },
+        "status": {
+          "description": "ex. OK or ERROR",
+          "type": "string"
+        },
+        "success": {
+          "description": "true or false",
+          "type": "boolean"
+        },
+        "code": {
+          "description": "Response code such as 200",
+          "type": "number"
         }
       },
       "required": [
@@ -1427,6 +1507,22 @@
         "summary": {
           "description": "Can be used as title in help info popup",
           "type": "string"
+        },
+        "errors": {
+          "description": "Array of string error messages",
+          "type": "array"
+        },
+        "status": {
+          "description": "ex. OK or ERROR",
+          "type": "string"
+        },
+        "success": {
+          "description": "true or false",
+          "type": "boolean"
+        },
+        "code": {
+          "description": "Response code such as 200",
+          "type": "number"
         }
       },
       "required": [
@@ -1449,6 +1545,22 @@
         "summary": {
           "description": "Tracking reminder notifications, messages, and study results",
           "type": "string"
+        },
+        "errors": {
+          "description": "Array of string error messages",
+          "type": "array"
+        },
+        "status": {
+          "description": "ex. OK or ERROR",
+          "type": "string"
+        },
+        "success": {
+          "description": "true or false",
+          "type": "boolean"
+        },
+        "code": {
+          "description": "Response code such as 200",
+          "type": "number"
         }
       },
       "required": [
@@ -1472,6 +1584,22 @@
         "summary": {
           "description": "Can be used as title in help info popup",
           "type": "string"
+        },
+        "errors": {
+          "description": "Array of string error messages",
+          "type": "array"
+        },
+        "status": {
+          "description": "ex. OK or ERROR",
+          "type": "string"
+        },
+        "success": {
+          "description": "true or false",
+          "type": "boolean"
+        },
+        "code": {
+          "description": "Response code such as 200",
+          "type": "number"
         }
       },
       "required": [
@@ -1506,10 +1634,6 @@
           "description": "Error message",
           "type": "string"
         },
-        "status": {
-          "description": "Status: \"ok\" or \"error\"",
-          "type": "string"
-        },
         "description": {
           "description": "Can be used as body of help info popup",
           "type": "string"
@@ -1517,6 +1641,22 @@
         "summary": {
           "description": "Can be used as title in help info popup",
           "type": "string"
+        },
+        "errors": {
+          "description": "Array of string error messages",
+          "type": "array"
+        },
+        "status": {
+          "description": "ex. OK or ERROR",
+          "type": "string"
+        },
+        "success": {
+          "description": "true or false",
+          "type": "boolean"
+        },
+        "code": {
+          "description": "Response code such as 200",
+          "type": "number"
         }
       },
       "required": [
@@ -1979,6 +2119,22 @@
         "summary": {
           "description": "Can be used as title in help info popup",
           "type": "string"
+        },
+        "errors": {
+          "description": "Array of string error messages",
+          "type": "array"
+        },
+        "status": {
+          "description": "ex. OK or ERROR",
+          "type": "string"
+        },
+        "success": {
+          "description": "true or false",
+          "type": "boolean"
+        },
+        "code": {
+          "description": "Response code such as 200",
+          "type": "number"
         }
       }
     },
@@ -1991,13 +2147,6 @@
           "description": "Message",
           "type": "string"
         },
-        "status": {
-          "description": "Status code",
-          "type": "integer"
-        },
-        "success": {
-          "type": "boolean"
-        },
         "description": {
           "description": "Can be used as body of help info popup",
           "type": "string"
@@ -2005,6 +2154,22 @@
         "summary": {
           "description": "Can be used as title in help info popup",
           "type": "string"
+        },
+        "errors": {
+          "description": "Array of string error messages",
+          "type": "array"
+        },
+        "status": {
+          "description": "ex. OK or ERROR",
+          "type": "string"
+        },
+        "success": {
+          "description": "true or false",
+          "type": "boolean"
+        },
+        "code": {
+          "description": "Response code such as 200",
+          "type": "number"
         }
       },
       "required": [
@@ -2014,14 +2179,6 @@
     },
     "PostStudyPublishResponse": {
       "properties": {
-        "status": {
-          "description": "Ex: ok",
-          "type": "string"
-        },
-        "success": {
-          "description": "Ex: true",
-          "type": "boolean"
-        },
         "description": {
           "description": "Can be used as body of help info popup",
           "type": "string"
@@ -2029,6 +2186,22 @@
         "summary": {
           "description": "Can be used as title in help info popup",
           "type": "string"
+        },
+        "errors": {
+          "description": "Array of string error messages",
+          "type": "array"
+        },
+        "status": {
+          "description": "ex. OK or ERROR",
+          "type": "string"
+        },
+        "success": {
+          "description": "true or false",
+          "type": "boolean"
+        },
+        "code": {
+          "description": "Response code such as 200",
+          "type": "number"
         }
       }
     },
@@ -2037,14 +2210,6 @@
         "study": {
           "$ref": "#/definitions/Study"
         },
-        "status": {
-          "description": "Ex: ok",
-          "type": "string"
-        },
-        "success": {
-          "description": "Ex: true",
-          "type": "boolean"
-        },
         "description": {
           "description": "Can be used as body of help info popup",
           "type": "string"
@@ -2052,6 +2217,22 @@
         "summary": {
           "description": "Can be used as title in help info popup",
           "type": "string"
+        },
+        "errors": {
+          "description": "Array of string error messages",
+          "type": "array"
+        },
+        "status": {
+          "description": "ex. OK or ERROR",
+          "type": "string"
+        },
+        "success": {
+          "description": "true or false",
+          "type": "boolean"
+        },
+        "code": {
+          "description": "Response code such as 200",
+          "type": "number"
         }
       }
     },
@@ -2082,6 +2263,22 @@
         "summary": {
           "description": "Can be used as title in help info popup",
           "type": "string"
+        },
+        "errors": {
+          "description": "Array of string error messages",
+          "type": "array"
+        },
+        "status": {
+          "description": "ex. OK or ERROR",
+          "type": "string"
+        },
+        "success": {
+          "description": "true or false",
+          "type": "boolean"
+        },
+        "code": {
+          "description": "Response code such as 200",
+          "type": "number"
         }
       }
     },
@@ -2094,13 +2291,6 @@
           "description": "Message",
           "type": "string"
         },
-        "status": {
-          "description": "Status code",
-          "type": "integer"
-        },
-        "success": {
-          "type": "boolean"
-        },
         "description": {
           "description": "Can be used as body of help info popup",
           "type": "string"
@@ -2108,6 +2298,22 @@
         "summary": {
           "description": "Can be used as title in help info popup",
           "type": "string"
+        },
+        "errors": {
+          "description": "Array of string error messages",
+          "type": "array"
+        },
+        "status": {
+          "description": "ex. OK or ERROR",
+          "type": "string"
+        },
+        "success": {
+          "description": "true or false",
+          "type": "boolean"
+        },
+        "code": {
+          "description": "Response code such as 200",
+          "type": "number"
         }
       },
       "required": [
@@ -2128,6 +2334,22 @@
         "summary": {
           "description": "Can be used as title in help info popup",
           "type": "string"
+        },
+        "errors": {
+          "description": "Array of string error messages",
+          "type": "array"
+        },
+        "status": {
+          "description": "ex. OK or ERROR",
+          "type": "string"
+        },
+        "success": {
+          "description": "true or false",
+          "type": "boolean"
+        },
+        "code": {
+          "description": "Response code such as 200",
+          "type": "number"
         }
       }
     },
@@ -2140,13 +2362,6 @@
           "description": "Message",
           "type": "string"
         },
-        "status": {
-          "description": "Status code",
-          "type": "integer"
-        },
-        "success": {
-          "type": "boolean"
-        },
         "description": {
           "description": "Can be used as body of help info popup",
           "type": "string"
@@ -2154,6 +2369,22 @@
         "summary": {
           "description": "Can be used as title in help info popup",
           "type": "string"
+        },
+        "errors": {
+          "description": "Array of string error messages",
+          "type": "array"
+        },
+        "status": {
+          "description": "ex. OK or ERROR",
+          "type": "string"
+        },
+        "success": {
+          "description": "true or false",
+          "type": "boolean"
+        },
+        "code": {
+          "description": "Response code such as 200",
+          "type": "number"
         }
       },
       "required": [
@@ -2438,14 +2669,6 @@
             "$ref": "#/definitions/TrackingReminderNotification"
           }
         },
-        "status": {
-          "description": "Ex: ok",
-          "type": "string"
-        },
-        "success": {
-          "description": "Ex: true",
-          "type": "boolean"
-        },
         "description": {
           "description": "Can be used as body of help info popup",
           "type": "string"
@@ -2453,6 +2676,22 @@
         "summary": {
           "description": "Can be used as title in help info popup",
           "type": "string"
+        },
+        "errors": {
+          "description": "Array of string error messages",
+          "type": "array"
+        },
+        "status": {
+          "description": "ex. OK or ERROR",
+          "type": "string"
+        },
+        "success": {
+          "description": "true or false",
+          "type": "boolean"
+        },
+        "code": {
+          "description": "Response code such as 200",
+          "type": "number"
         }
       }
     },
@@ -3875,6 +4114,22 @@
           "description": "Users who granted access to their data",
           "type": "string"
         },
+        "errors": {
+          "description": "Array of error messages",
+          "type": "array"
+        },
+        "status": {
+          "description": "ex. OK or ERROR",
+          "type": "string"
+        },
+        "success": {
+          "description": "true or false",
+          "type": "boolean"
+        },
+        "code": {
+          "description": "Response code such as 200",
+          "type": "number"
+        },
         "image": {
           "$ref": "#/definitions/Image"
         },
@@ -5027,6 +5282,22 @@
         "html": {
           "description": "Embeddable list of study summaries with explanation at the top",
           "type": "string"
+        },
+        "errors": {
+          "description": "Array of string error messages",
+          "type": "array"
+        },
+        "status": {
+          "description": "ex. OK or ERROR",
+          "type": "string"
+        },
+        "success": {
+          "description": "true or false",
+          "type": "boolean"
+        },
+        "code": {
+          "description": "Response code such as 200",
+          "type": "number"
         }
       }
     },
@@ -5106,6 +5377,22 @@
         "html": {
           "description": "Embeddable list of study summaries with explanation at the top",
           "type": "string"
+        },
+        "errors": {
+          "description": "Array of string error messages",
+          "type": "array"
+        },
+        "status": {
+          "description": "ex. OK or ERROR",
+          "type": "string"
+        },
+        "success": {
+          "description": "true or false",
+          "type": "boolean"
+        },
+        "code": {
+          "description": "Response code such as 200",
+          "type": "number"
         }
       }
     },
@@ -5200,6 +5487,22 @@
         "html": {
           "description": "Embeddable list of study summaries with explanation at the top",
           "type": "string"
+        },
+        "errors": {
+          "description": "Array of string error messages",
+          "type": "array"
+        },
+        "status": {
+          "description": "ex. OK or ERROR",
+          "type": "string"
+        },
+        "success": {
+          "description": "true or false",
+          "type": "boolean"
+        },
+        "code": {
+          "description": "Response code such as 200",
+          "type": "number"
         }
       }
     },
@@ -5309,6 +5612,22 @@
         "html": {
           "description": "Embeddable list of study summaries with explanation at the top",
           "type": "string"
+        },
+        "errors": {
+          "description": "Array of string error messages",
+          "type": "array"
+        },
+        "status": {
+          "description": "ex. OK or ERROR",
+          "type": "string"
+        },
+        "success": {
+          "description": "true or false",
+          "type": "boolean"
+        },
+        "code": {
+          "description": "Response code such as 200",
+          "type": "number"
         }
       }
     },
@@ -5388,6 +5707,22 @@
         "html": {
           "description": "Embeddable list of study summaries with explanation at the top",
           "type": "string"
+        },
+        "errors": {
+          "description": "Array of string error messages",
+          "type": "array"
+        },
+        "status": {
+          "description": "ex. OK or ERROR",
+          "type": "string"
+        },
+        "success": {
+          "description": "true or false",
+          "type": "boolean"
+        },
+        "code": {
+          "description": "Response code such as 200",
+          "type": "number"
         }
       }
     },
@@ -5462,6 +5797,30 @@
         "html": {
           "description": "Embeddable list of study summaries with explanation at the top",
           "type": "string"
+        },
+        "errors": {
+          "description": "Array of error messages",
+          "type": "array"
+        },
+        "error": {
+          "description": "Error message",
+          "type": "string"
+        },
+        "errorMessage": {
+          "description": "Error message",
+          "type": "string"
+        },
+        "status": {
+          "description": "ex. OK or ERROR",
+          "type": "string"
+        },
+        "success": {
+          "description": "true or false",
+          "type": "boolean"
+        },
+        "code": {
+          "description": "Response code such as 200",
+          "type": "number"
         }
       }
     },
@@ -5541,6 +5900,22 @@
         "html": {
           "description": "Embeddable list of study summaries with explanation at the top",
           "type": "string"
+        },
+        "errors": {
+          "description": "Array of string error messages",
+          "type": "array"
+        },
+        "status": {
+          "description": "ex. OK or ERROR",
+          "type": "string"
+        },
+        "success": {
+          "description": "true or false",
+          "type": "boolean"
+        },
+        "code": {
+          "description": "Response code such as 200",
+          "type": "number"
         }
       }
     },
@@ -5630,6 +6005,22 @@
         "html": {
           "description": "Embeddable list of study summaries with explanation at the top",
           "type": "string"
+        },
+        "errors": {
+          "description": "Array of string error messages",
+          "type": "array"
+        },
+        "status": {
+          "description": "ex. OK or ERROR",
+          "type": "string"
+        },
+        "success": {
+          "description": "true or false",
+          "type": "boolean"
+        },
+        "code": {
+          "description": "Response code such as 200",
+          "type": "number"
         }
       }
     },
@@ -5694,6 +6085,22 @@
         "html": {
           "description": "Embeddable list of study summaries with explanation at the top",
           "type": "string"
+        },
+        "errors": {
+          "description": "Array of string error messages",
+          "type": "array"
+        },
+        "status": {
+          "description": "ex. OK or ERROR",
+          "type": "string"
+        },
+        "success": {
+          "description": "true or false",
+          "type": "boolean"
+        },
+        "code": {
+          "description": "Response code such as 200",
+          "type": "number"
         }
       }
     },
@@ -5768,6 +6175,22 @@
         "html": {
           "description": "Embeddable list of study summaries with explanation at the top",
           "type": "string"
+        },
+        "errors": {
+          "description": "Array of string error messages",
+          "type": "array"
+        },
+        "status": {
+          "description": "ex. OK or ERROR",
+          "type": "string"
+        },
+        "success": {
+          "description": "true or false",
+          "type": "boolean"
+        },
+        "code": {
+          "description": "Response code such as 200",
+          "type": "number"
         }
       }
     },
@@ -5877,6 +6300,22 @@
         "html": {
           "description": "Embeddable list of study summaries with explanation at the top",
           "type": "string"
+        },
+        "errors": {
+          "description": "Array of string error messages",
+          "type": "array"
+        },
+        "status": {
+          "description": "ex. OK or ERROR",
+          "type": "string"
+        },
+        "success": {
+          "description": "true or false",
+          "type": "boolean"
+        },
+        "code": {
+          "description": "Response code such as 200",
+          "type": "number"
         }
       }
     },
@@ -5951,6 +6390,22 @@
         "html": {
           "description": "Embeddable list of study summaries with explanation at the top",
           "type": "string"
+        },
+        "errors": {
+          "description": "Array of string error messages",
+          "type": "array"
+        },
+        "status": {
+          "description": "ex. OK or ERROR",
+          "type": "string"
+        },
+        "success": {
+          "description": "true or false",
+          "type": "boolean"
+        },
+        "code": {
+          "description": "Response code such as 200",
+          "type": "number"
         }
       }
     }
