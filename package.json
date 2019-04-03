@@ -25,7 +25,7 @@
     "q": "^1.4.1",
     "request-promise": "latest",
     "run-sequence": "latest",
-    "quantimodo": "5.10.20315",
+    "quantimodo": "5.10.40213",
     "unzip": "latest"
   },
   "devDependencies": {}
