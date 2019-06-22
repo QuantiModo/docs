@@ -54,8 +54,9 @@
           "type": "string"
         },
         "userId": {
-          "description": "What do you expect?",
-          "type": "string"
+          "description": "User id of the owner of the application",
+          "format": "int32",
+          "type": "integer"
         },
         "users": {
           "description": "What do you expect?",
@@ -2627,7 +2628,8 @@
         },
         "userId": {
           "description": "The user id of the principal investigator or subject if an individual studies",
-          "type": "string"
+          "format": "int32",
+          "type": "integer"
         },
         "id": {
           "description": "ID of the cohort study which is necessary to allow participants to join",
