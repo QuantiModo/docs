@@ -10133,6 +10133,13 @@
           },
           {
             "$ref": "#/parameters/conciseParam"
+          },
+          {
+            "description": "Regenerate charts instead of getting from the cache",
+            "in": "query",
+            "name": "refresh",
+            "required": false,
+            "type": "boolean"
           }
         ],
         "produces": [
