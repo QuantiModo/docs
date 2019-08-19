@@ -39,7 +39,7 @@
           "type": "string"
         },
         "clientSecret": {
-          "description": "What do you expect?",
+          "description": "Get yours at https:://builder.quantimo.do",
           "type": "string"
         },
         "collaborators": {
