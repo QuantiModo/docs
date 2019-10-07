@@ -4228,12 +4228,20 @@
           "description": "Ex: 1234",
           "type": "string"
         },
+        "primaryOutcomeVariableId": {
+          "description": "A good primary outcome variable is something that you want to improve and that changes inexplicably. For instance, if you have anxiety, back pain or arthritis which is worse on some days than others, these would be good candidates for primary outcome variables.  Recording their severity and potential factors will help you identify hidden factors exacerbating or improving them. ",
+          "type": "integer"
+        },
+        "primaryOutcomeVariableName": {
+          "description": "A good primary outcome variable is something that you want to improve and that changes inexplicably. For instance, if you have anxiety, back pain or arthritis which is worse on some days than others, these would be good candidates for primary outcome variables.  Recording their severity and potential factors will help you identify hidden factors exacerbating or improving them. ",
+          "type": "string"
+        },
         "pushNotificationsEnabled": {
           "description": "Ex: 1",
           "type": "boolean"
         },
         "refreshToken": {
-          "description": "Ex: 6e99b113d85586de1f92468433f2df1e666647cb",
+          "description": "See https://oauth.net/2/grant-types/refresh-token/",
           "type": "string"
         },
         "roles": {
