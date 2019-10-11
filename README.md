@@ -11,3 +11,14 @@
 See our interactive API explorer at [https://app.quantimo.do/api/v2/account/api-explorer](https://app.quantimo.do/api/v2/account/api-explorer) 
 
 [Query Options](query-options.md)
+
+
+## Alternative API Explorers
+
+### Spectacle
+https://docs.quantimo.do/public/index.html
+Powered by https://github.com/sourcey/spectacle
+
+### Redoc
+https://docs.quantimo.do/redoc/index.html
+Powered by https://github.com/Redocly/redoc/
