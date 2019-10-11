@@ -182,6 +182,10 @@ beeper@^1.0.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/beeper/-/beeper-1.1.1.tgz#e6d5ea8c5dad001304a70b22638447f69cb2f809"
 
+big-integer@^1.6.17:
+  version "1.6.47"
+  resolved "https://registry.yarnpkg.com/big-integer/-/big-integer-1.6.47.tgz#e1e9320e26c4cc81f64fbf4b3bb20e025bf18e2d"
+
 "binary@>= 0.3.0 < 1", binary@~0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/binary/-/binary-0.3.0.tgz#9f60553bc5ce8c3386f3b553cff47462adecaa79"
@@ -189,7 +193,7 @@ beeper@^1.0.0:
     buffers "~0.1.1"
     chainsaw "~0.1.0"
 
-bl@^1.0.0:
+bl@^1.0.0, bl@^1.2.1:
   version "1.2.2"
   resolved "https://registry.npmjs.org/bl/-/bl-1.2.2.tgz#a160911717103c07410cef63ef51b397c025af9c"
   dependencies:
@@ -256,10 +260,6 @@ buffer-fill@^1.0.0:
 buffer-indexof-polyfill@~1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/buffer-indexof-polyfill/-/buffer-indexof-polyfill-1.0.1.tgz#a9fb806ce8145d5428510ce72f278bb363a638bf"
-
-buffer-shims@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/buffer-shims/-/buffer-shims-1.0.0.tgz#9978ce317388c649ad8793028c3477ef044a8b51"
 
 buffer@^3.0.1:
   version "3.6.0"
@@ -767,9 +767,9 @@ fs.realpath@^1.0.0:
     mkdirp "0.5"
     rimraf "2"
 
-fstream@~1.0.10:
-  version "1.0.11"
-  resolved "https://registry.yarnpkg.com/fstream/-/fstream-1.0.11.tgz#5c1fb1f117477114f0632a0eb4b71b3cb0fd3171"
+fstream@^1.0.12:
+  version "1.0.12"
+  resolved "https://registry.yarnpkg.com/fstream/-/fstream-1.0.12.tgz#4e8ba8ee2d48be4f7d0de505455548eae5932045"
   dependencies:
     graceful-fs "^4.1.2"
     inherits "~2.0.0"
@@ -967,14 +967,12 @@ gulp-rename@latest:
   resolved "https://registry.yarnpkg.com/gulp-rename/-/gulp-rename-1.4.0.tgz#de1c718e7c4095ae861f7296ef4f3248648240bd"
 
 gulp-unzip@latest:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/gulp-unzip/-/gulp-unzip-1.0.0.tgz#bed2d1af846ed2af82a797087bb9ee2ac6658ca7"
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/gulp-unzip/-/gulp-unzip-1.1.0.tgz#d182f55172c7ea910d3052fd0271d7065bf9d9c7"
   dependencies:
-    defaults "^1.0.0"
-    fancy-log "^1.3.2"
-    through2 "^0.4.1"
-    unzipper "^0.7.1"
-    vinyl "^1.2.0"
+    unzipper "0.9.15"
+    vinyl "2.2.0"
+    vinyl-buffer "1.0.1"
 
 gulp-util@^3.0.0:
   version "3.0.8"
@@ -1612,10 +1610,6 @@ object-copy@^0.1.0:
     define-property "^0.2.5"
     kind-of "^3.0.3"
 
-object-keys@~0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/object-keys/-/object-keys-0.4.0.tgz#28a6aae7428dd2c3a92f3d95f21335dd204e0336"
-
 object-visit@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/object-visit/-/object-visit-1.0.1.tgz#f79c4493af0c5377b59fe39d395e41042dd045bb"
@@ -1779,10 +1773,6 @@ process-nextick-args@^2.0.0, process-nextick-args@~2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/process-nextick-args/-/process-nextick-args-2.0.0.tgz#a37d732f4271b4ab1ad070d35508e8290788ffaa"
 
-process-nextick-args@~1.0.6:
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/process-nextick-args/-/process-nextick-args-1.0.7.tgz#150e20b756590ad3f91093f25a4f2ad8bff30ba3"
-
 promise@7.x:
   version "7.3.1"
   resolved "https://registry.yarnpkg.com/promise/-/promise-7.3.1.tgz#064b72602b18f90f29192b8b1bc418ffd1ebd3bf"
@@ -1828,7 +1818,7 @@ quantimodo@5.10.100719:
   dependencies:
     superagent "3.8.3"
 
-"readable-stream@>=1.0.33-1 <1.1.0-0", readable-stream@~1.0.0, readable-stream@~1.0.17, readable-stream@~1.0.31:
+"readable-stream@>=1.0.33-1 <1.1.0-0", readable-stream@~1.0.0, readable-stream@~1.0.31:
   version "1.0.34"
   resolved "https://registry.npmjs.org/readable-stream/-/readable-stream-1.0.34.tgz#125820e34bc842d2f2aaafafe4c2916ee32c157c"
   dependencies:
@@ -1857,18 +1847,6 @@ readable-stream@~1.1.9:
     inherits "~2.0.1"
     isarray "0.0.1"
     string_decoder "~0.10.x"
-
-readable-stream@~2.1.5:
-  version "2.1.5"
-  resolved "https://registry.npmjs.org/readable-stream/-/readable-stream-2.1.5.tgz#66fa8b720e1438b364681f2ad1a63c618448c9d0"
-  dependencies:
-    buffer-shims "^1.0.0"
-    core-util-is "~1.0.0"
-    inherits "~2.0.1"
-    isarray "~1.0.0"
-    process-nextick-args "~1.0.6"
-    string_decoder "~0.10.x"
-    util-deprecate "~1.0.1"
 
 rechoir@^0.6.2:
   version "0.6.2"
@@ -2203,13 +2181,6 @@ tar-stream@^1.5.2:
     to-buffer "^1.1.1"
     xtend "^4.0.0"
 
-through2@^0.4.1:
-  version "0.4.2"
-  resolved "https://registry.npmjs.org/through2/-/through2-0.4.2.tgz#dbf5866031151ec8352bb6c4db64a2292a840b9b"
-  dependencies:
-    readable-stream "~1.0.17"
-    xtend "~2.1.1"
-
 through2@^0.6.1:
   version "0.6.5"
   resolved "https://registry.npmjs.org/through2/-/through2-0.6.5.tgz#41ab9c67b29d57209071410e1d7a7a968cd3ad48"
@@ -2334,17 +2305,18 @@ unzip@latest:
     readable-stream "~1.0.31"
     setimmediate ">= 1.0.1 < 2"
 
-unzipper@^0.7.1:
-  version "0.7.6"
-  resolved "https://registry.yarnpkg.com/unzipper/-/unzipper-0.7.6.tgz#fe7b46616ea12435988036deb9b7bbbfdc77806e"
+unzipper@0.9.15:
+  version "0.9.15"
+  resolved "https://registry.yarnpkg.com/unzipper/-/unzipper-0.9.15.tgz#97d99203dad17698ee39882483c14e4845c7549c"
   dependencies:
+    big-integer "^1.6.17"
     binary "~0.3.0"
     bluebird "~3.4.1"
     buffer-indexof-polyfill "~1.0.0"
     duplexer2 "~0.1.4"
-    fstream "~1.0.10"
+    fstream "^1.0.12"
     listenercount "~1.0.1"
-    readable-stream "~2.1.5"
+    readable-stream "~2.3.6"
     setimmediate "~1.0.4"
 
 uri-js@^4.2.2:
@@ -2387,6 +2359,13 @@ verror@1.10.0:
     core-util-is "1.0.2"
     extsprintf "^1.2.0"
 
+vinyl-buffer@1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/vinyl-buffer/-/vinyl-buffer-1.0.1.tgz#96c1a3479b8c5392542c612029013b5b27f88bbf"
+  dependencies:
+    bl "^1.2.1"
+    through2 "^2.0.3"
+
 vinyl-fs@^0.3.0:
   version "0.3.14"
   resolved "https://registry.yarnpkg.com/vinyl-fs/-/vinyl-fs-0.3.14.tgz#9a6851ce1cac1c1cea5fe86c0931d620c2cfa9e6"
@@ -2399,6 +2378,17 @@ vinyl-fs@^0.3.0:
     strip-bom "^1.0.0"
     through2 "^0.6.1"
     vinyl "^0.4.0"
+
+vinyl@2.2.0, vinyl@^2.0.1, vinyl@^2.1.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/vinyl/-/vinyl-2.2.0.tgz#d85b07da96e458d25b2ffe19fece9f2caa13ed86"
+  dependencies:
+    clone "^2.1.1"
+    clone-buffer "^1.0.0"
+    clone-stats "^1.0.0"
+    cloneable-readable "^1.0.0"
+    remove-trailing-separator "^1.0.1"
+    replace-ext "^1.0.0"
 
 vinyl@^0.4.0:
   version "0.4.6"
@@ -2415,25 +2405,6 @@ vinyl@^0.5.0:
     clone-stats "^0.0.1"
     replace-ext "0.0.1"
 
-vinyl@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/vinyl/-/vinyl-1.2.0.tgz#5c88036cf565e5df05558bfc911f8656df218884"
-  dependencies:
-    clone "^1.0.0"
-    clone-stats "^0.0.1"
-    replace-ext "0.0.1"
-
-vinyl@^2.0.1, vinyl@^2.1.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/vinyl/-/vinyl-2.2.0.tgz#d85b07da96e458d25b2ffe19fece9f2caa13ed86"
-  dependencies:
-    clone "^2.1.1"
-    clone-buffer "^1.0.0"
-    clone-stats "^1.0.0"
-    cloneable-readable "^1.0.0"
-    remove-trailing-separator "^1.0.1"
-    replace-ext "^1.0.0"
-
 which@^1.2.14:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/which/-/which-1.3.1.tgz#a45043d54f5805316da8d62f9f50918d3da70b0a"
@@ -2447,12 +2418,6 @@ wrappy@1:
 "xtend@>=4.0.0 <4.1.0-0", xtend@^4.0.0, xtend@~4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/xtend/-/xtend-4.0.1.tgz#a5c6d532be656e23db820efb943a1f04998d63af"
-
-xtend@~2.1.1:
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/xtend/-/xtend-2.1.2.tgz#6efecc2a4dad8e6962c4901b337ce7ba87b5d28b"
-  dependencies:
-    object-keys "~0.4.0"
 
 yauzl@^2.4.2:
   version "2.10.0"
