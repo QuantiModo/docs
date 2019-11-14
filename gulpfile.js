@@ -1,32 +1,32 @@
-var gulp = require('gulp');
-var rename = require('gulp-rename');
-var fs = require('fs');
-var runSequence = require('run-sequence');
-var git = require('gulp-git');
-var download = require('gulp-download-stream');
-var rp = require('request-promise');
-var ignore = require('gulp-ignore');
-var del = require('del');
-var decompress = require('gulp-decompress');
-var bugsnag = require("bugsnag");
-var q = require('q');
-var unzip = require('gulp-unzip');
+const gulp = require('gulp');
+const rename = require('gulp-rename');
+const fs = require('fs');
+const runSequence = require('run-sequence');
+const git = require('gulp-git');
+const download = require('gulp-download-stream');
+const rp = require('request-promise');
+const ignore = require('gulp-ignore');
+const del = require('del');
+const decompress = require('gulp-decompress');
+const bugsnag = require("bugsnag");
+const q = require('q');
+const unzip = require('gulp-unzip');
 bugsnag.register("ae7bc49d1285848342342bb5c321a2cf");
 process.on('unhandledRejection', function (err, promise) {
     console.error("Unhandled rejection: " + (err && err.stack || err));
     bugsnag.notify(err);
 });
 bugsnag.onBeforeNotify(function (notification) {
-    var metaData = notification.events[0].metaData;
+    const metaData = notification.events[0].metaData;
     // modify meta-data
     metaData.subsystem = { name: "Your subsystem name" };
 });
 function isTruthy(value) {return (value && value !== "false");}
-var debug = isTruthy(process.env.DEBUG);
-var sdksZippedPath = "./sdks-zipped";
-var sdksUnzippedPath = "./sdks-unzipped";
-var sdksReposPath = './sdk-repos';
-var languages = [
+const debug = isTruthy(process.env.DEBUG);
+const sdksZippedPath = "./sdks-zipped";
+const sdksUnzippedPath = "./sdks-unzipped";
+const sdksReposPath = './sdk-repos';
+let languages = [
     "akka-scala",
     "android",
     "async-scala",
@@ -58,7 +58,7 @@ var languages = [
     //"typescript-fetch",
     "typescript-node"
 ];
-var sdkSwaggerCodegenOptions ={
+const sdkSwaggerCodegenOptions = {
     "php": {
         "invokerPackage": "QuantiModo\\Client",
         "composerProjectName": "quantimodo-sdk-php",
@@ -81,24 +81,24 @@ var sdkSwaggerCodegenOptions ={
         "gemAuthorEmail": "mike@quantimo.do"
     }
 };
-var majorMinorVersionNumbers = '5.10.';
+const majorMinorVersionNumbers = '5.10.';
 function getPatchVersionNumber() {
-    var date = new Date();
-    var monthNumber = (date.getMonth() + 1).toString();
-    var dayOfMonth = ('0' + date.getDate()).slice(-2);
-    var hourOfDay = date.getHours();
-    var hourOfDayString = ('0' + hourOfDay).slice(-2);
+    const date = new Date();
+    const monthNumber = (date.getMonth() + 1).toString();
+    const dayOfMonth = ('0' + date.getDate()).slice(-2);
+    const hourOfDay = date.getHours();
+    const hourOfDayString = ('0' + hourOfDay).slice(-2);
     //hourOfDayString = "72"; // Manually set if need to release more than once per hour
     return monthNumber + dayOfMonth + hourOfDayString;
 }
-var apiVersionNumber = majorMinorVersionNumbers + getPatchVersionNumber();
+const apiVersionNumber = majorMinorVersionNumbers + getPatchVersionNumber();
 logInfo("API version is " + apiVersionNumber);
 function obfuscateSecrets(object){
     if(typeof object !== 'object'){return object;}
     object = JSON.parse(JSON.stringify(object)); // Decouple so we don't screw up original object
-    for (var propertyName in object) {
+    for (let propertyName in object) {
         if (object.hasOwnProperty(propertyName)) {
-            var lowerCaseProperty = propertyName.toLowerCase();
+            const lowerCaseProperty = propertyName.toLowerCase();
             if(lowerCaseProperty.indexOf('secret') !== -1 || lowerCaseProperty.indexOf('password') !== -1 || lowerCaseProperty.indexOf('token') !== -1){
                 object[propertyName] = "HIDDEN";
             } else {
@@ -113,7 +113,7 @@ function prettyJSONStringify(object, spaces) {
     return JSON.stringify(object, null, spaces);
 }
 function obfuscateStringify(message, object) {
-    var objectString = '';
+    let objectString = '';
     if(object){
         object = obfuscateSecrets(object);
         objectString = ':  ' + prettyJSONStringify(object);
@@ -132,28 +132,28 @@ function logError(message, object) {
     bugsnag.notify(new Error(obfuscateStringify(message), obfuscateSecrets(object)));
 }
 function getAppVersionNumber() {
-    var date = new Date();
-    var longDate = date.getFullYear().toString() + (date.getMonth() + 1).toString() + date.getDate().toString();
-    var monthNumber = (date.getMonth() + 1).toString();
-    var dayOfMonth = ('0' + date.getDate()).slice(-2);
-    var majorMinorVersionNumbers = '5.8.';
-    var patchVersionNumber = monthNumber + dayOfMonth;
+    const date = new Date();
+    const longDate = date.getFullYear().toString() + (date.getMonth() + 1).toString() + date.getDate().toString();
+    const monthNumber = (date.getMonth() + 1).toString();
+    const dayOfMonth = ('0' + date.getDate()).slice(-2);
+    const majorMinorVersionNumbers = '5.8.';
+    const patchVersionNumber = monthNumber + dayOfMonth;
     return majorMinorVersionNumbers + patchVersionNumber;
 }
 function executeCommand(command, callback) {
     logInfo(command);
-    var exec = require('child_process').exec;
+    const exec = require('child_process').exec;
     exec(command, function (err, stdout, stderr) {
         logInfo(stdout);
         if(stderr){logError(stderr);}
         if(callback){callback(err);}
     });
 }
-var swaggerJsonUrl = 'https://raw.githubusercontent.com/QuantiModo/docs/master/swagger/swagger.json';
+const swaggerJsonUrl = 'https://raw.githubusercontent.com/QuantiModo/docs/master/swagger/swagger.json';
 //swaggerJsonUrl = 'https://utopia.quantimo.do:4443/api/docs/swagger/swagger.json';
 function clone(organization, repoName, destinationFolder, callback){
-    var repoUrl = 'https://github.com/' + organization + '/' + repoName;
-    var repoFolder = destinationFolder + '/' + repoName;
+    const repoUrl = 'https://github.com/' + organization + '/' + repoName;
+    const repoFolder = destinationFolder + '/' + repoName;
     logInfo("Cloning " + repoUrl + " to " + destinationFolder + '/' + repoName);
     return git.clone(repoUrl, {args: repoFolder}, function (err) {
         if (err) {logError(err);} else {logInfo("Cloned " + repoUrl + " to " + destinationFolder + '/' + repoName);}
@@ -203,24 +203,24 @@ function getUnzippedPathForSdkLanguage(languageName) {
 function getRepoPathForSdkLanguage(languageName) {
     return sdksReposPath + '/' + getSdkNameForLanguage(languageName);
 }
-var pathToIonic = '../../../public/ionic/Modo';
-var pathToLaravel = '../../../laravel';
+const pathToIonic = '../../../public/ionic/Modo';
+const pathToLaravel = '../../../laravel';
 function readJsonFile(pathToFile) {
     logInfo("Reading " + pathToFile);
     return JSON.parse(fs.readFileSync(pathToFile, 'utf8'));
 }
-var pathToSwaggerJson = "swagger/swagger.json";
-var swaggerJson = readJsonFile(pathToSwaggerJson);
+const pathToSwaggerJson = "swagger/swagger.json";
+const swaggerJson = readJsonFile(pathToSwaggerJson);
 function unzipFileToFolder(sourceFile, destinationFolder) {
     logInfo('Unzipping files in ' + sourceFile + ' to output path ' + destinationFolder);
     return gulp.src(sourceFile)
         .pipe(decompress())
         .pipe(gulp.dest(destinationFolder));
 }
-var pathToQmDocker = "../../..";
-var pathToQuantiModoNodeModule = 'node_modules/quantimodo';
+const pathToQmDocker = "../../..";
+const pathToQuantiModoNodeModule = 'node_modules/quantimodo';
 String.prototype.replaceAll = function(search, replacement) {
-    var target = this;
+    const target = this;
     return target.replace(new RegExp(search, 'g'), replacement);
 };
 gulp.task('js-sdk-browserify-unzipped', [], function (callback) {
@@ -230,8 +230,8 @@ gulp.task('js-sdk-browserify-repo', [], function (callback) {
     browserify(getRepoPathForSdkLanguage(javascriptFlavor), callback);
 });
 function browserify(path, callback){
-    var sourceFile = 'src/index.js';
-    var outputFile = 'quantimodo-web.js';
+    const sourceFile = 'src/index.js';
+    const outputFile = 'quantimodo-web.js';
     executeCommand('cd ' + path + ' && npm install -g browserify && browserify ' +
         sourceFile + ' --standalone Quantimodo > ' + outputFile, function () {
         callback();
@@ -239,11 +239,11 @@ function browserify(path, callback){
 }
 gulp.task('js-5-release', [], function (callback) {
     function updateBowerAndPackageJsonVersions(path, callback) {
-        var bowerJson = readJsonFile(path + '/bower.json');
+        const bowerJson = readJsonFile(path + '/bower.json');
         bowerJson.dependencies.quantimodo = apiVersionNumber;
         return writeToFile(path  + '/bower.json', prettyJSONStringify(bowerJson), function () {
             executeCommand("cd " + pathToIonic + " && bower install && yarn install", function () {
-                var packageJson = readJsonFile(path + '/package.json');
+                const packageJson = readJsonFile(path + '/package.json');
                 packageJson.dependencies.quantimodo = apiVersionNumber;
                 return writeToFile(path  + '/package.json', prettyJSONStringify(packageJson), function () {
                     executeCommand("cd " + pathToIonic + " && yarn install", function () {
@@ -288,7 +288,7 @@ gulp.task('clean-unzipped-folders', [], function () {
     ]);
 });
 gulp.task('clone-repos', [], function (callback) {
-    for(var i = 0; i < languages.length; i++){
+    for(let i = 0; i < languages.length; i++){
         if(i === languages.length - 1){
             clone('quantimodo', getSdkNameForLanguage(languages[i]), sdksReposPath, callback);
         } else {
@@ -306,7 +306,7 @@ gulp.task('clean-folders-and-clone-repos', function (callback) { // Must be run 
         });
 });
 gulp.task('clean-repos-except-git', [], function(){
-    for(var i = 0; i < languages.length; i++) {
+    for(let i = 0; i < languages.length; i++) {
         if(i === languages.length - 1){ return cleanOneFolderExceptGit(getRepoPathForSdkLanguage(languages[i]));}
         cleanOneFolderExceptGit(getRepoPathForSdkLanguage(languages[i]));
         executeCommand("cd " + getRepoPathForSdkLanguage(languages[i]) + " && git pull");
@@ -322,44 +322,9 @@ function getRequestOptions(language) {
         json: true // Automatically stringifies the body to JSON
     };
 }
-var sdkDownloadLink;
 var language = "javascript";
-function getSdkDownloadLink() {
-    var requestOptions = getRequestOptions(language);
-    if (sdkSwaggerCodegenOptions[language]) {
-        requestOptions.body.options = sdkSwaggerCodegenOptions[language];
-    } else {
-        requestOptions.body.options = {};
-        requestOptions.body.options.apiPackage = "QuantiModoApi";
-        requestOptions.body.options.artifactId = "quantimodoApi";
-        requestOptions.body.options.authorEmail = "mike@quantimo.do";
-        requestOptions.body.options.authorName = "Mike P. Sinn";
-        requestOptions.body.options.classPrefix = "QM";
-        requestOptions.body.options.developerEmail = "mike@quantimo.do";
-        requestOptions.body.options.developerName = "Mike P. Sinn";
-        requestOptions.body.options.invokerPackage = (sdkSwaggerCodegenOptions[language] && sdkSwaggerCodegenOptions[language].invokerPackage) ? sdkSwaggerCodegenOptions[language].invokerPackage : "quantimodoApi";
-        requestOptions.body.options.modelPackage = "quantimodoApi";
-        requestOptions.body.options.moduleName = "quantimodoApi";
-        requestOptions.body.options.packageName = "quantimodo_api";
-        requestOptions.body.options.packagePath = "QuantiModoClient";
-        requestOptions.body.options.podName = "QuantiModoApi";
-        //requestOptions.body.options.podVersion = getAppVersionNumber();  // Commented because it makes too many file changes in git
-        requestOptions.body.options.projectName = (sdkSwaggerCodegenOptions[language] && sdkSwaggerCodegenOptions[language].projectName) ? sdkSwaggerCodegenOptions[language].projectName : "quantimodoApi";
-    }
-    // Commented because it makes too many file changes in git repo
-    //requestOptions.body.options.artifactVersion = requestOptions.body.options.projectVersion = requestOptions.body.options.packageVarsion = requestOptions.body.options.podVersion = getAppVersionNumber();
-    requestOptions.body.options.artifactDescription = requestOptions.body.options.projectDescription = swaggerJson.info.description;
-    if(debug){getSwaggerConfigOptions(language);}
-    return rp(requestOptions)
-        .then(function (parsedBody) {
-            sdkDownloadLink = parsedBody.link.replace('https', 'http');
-        })
-        .catch(function (err) {
-            logError(err.error.message);
-        });
-}
 function getSwaggerDownloadRequestOptions(language) {
-    var requestOptions = getRequestOptions(language);
+    const requestOptions = getRequestOptions(language);
     if (sdkSwaggerCodegenOptions[language]) {
         requestOptions.body.options = sdkSwaggerCodegenOptions[language];
     } else {
@@ -385,11 +350,11 @@ function getSwaggerDownloadRequestOptions(language) {
     return requestOptions;
 }
 function downloadSdk(language) {
-    var requestOptions = getSwaggerDownloadRequestOptions(language);
+    const requestOptions = getSwaggerDownloadRequestOptions(language);
     if(debug){getSwaggerConfigOptions(language);}
     return rp(requestOptions)
         .then(function (parsedBody) {
-            var downloadLink = parsedBody.link.replace('https', 'http');
+            const downloadLink = parsedBody.link.replace('https', 'http');
             return download(downloadLink)
                 .pipe(rename(getSdkNameForLanguage(language) + '.zip'))
                 .pipe(gulp.dest(sdksZippedPath));
@@ -403,11 +368,11 @@ function downloadAndUnzipSdk(language, destinationPath) {
         destinationPath = sdksUnzippedPath;
     }
     logInfo("Downloading and unzipping " + language + " sdk to " + destinationPath);
-    var requestOptions = getSwaggerDownloadRequestOptions(language);
+    const requestOptions = getSwaggerDownloadRequestOptions(language);
     if(debug){getSwaggerConfigOptions(language);}
     return rp(requestOptions)
         .then(function (parsedBody) {
-            var downloadLink = parsedBody.link.replace('https', 'http');
+            const downloadLink = parsedBody.link.replace('https', 'http');
             return download(downloadLink)
                 .pipe(unzip())
                 .pipe(gulp.dest(destinationPath));
@@ -417,7 +382,7 @@ function downloadAndUnzipSdk(language, destinationPath) {
         });
 }
 function getSwaggerConfigOptions(language) {
-    var getOptionsRequestOptions = getRequestOptions(language);
+    const getOptionsRequestOptions = getRequestOptions(language);
     getOptionsRequestOptions.method = "GET";
     return rp(getOptionsRequestOptions)
         .then(function (parsedBody) {
@@ -431,7 +396,7 @@ function getSwaggerConfigOptions(language) {
 gulp.task('0-download', ['clean-unzipped-folders'], function () {
     logInfo("Generating sdks with " + swaggerJsonUrl);
     logInfo("See https://github.com/swagger-api/swagger-codegen/tree/master/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages for available clients");
-    for(var i = 0; i < languages.length; i++){
+    for(let i = 0; i < languages.length; i++){
         if(i === languages.length - 1){ return downloadSdk(languages[i]);}
         downloadSdk(languages[i]);
     }
@@ -449,7 +414,7 @@ gulp.task('php-0-sdk-download', [], function () {
     return downloadSdk('php');
 });
 gulp.task('1-decompress', ['clean-repos-except-git'], function () {
-    for(var i = 0; i < languages.length; i++) {
+    for(let i = 0; i < languages.length; i++) {
         if(i === languages.length - 1){
             return unzipFileToFolder(getZipPathForLanguage(languages[i]), sdksUnzippedPath);
         }
@@ -481,7 +446,7 @@ gulp.task('js-copy-to-src-lib', [], function(){
     return copyUnzippedJsSdkToIonicSrcLibForTesting();
 });
 function copySdksFromUnzippedPathToRepos(){
-    for(var i = 0; i < languages.length; i++) {
+    for(let i = 0; i < languages.length; i++) {
         if(i === languages.length - 1){
             return copyOneFoldersContentsToAnotherExceptReadme(getUnzippedPathForSdkLanguage(languages[i]), getRepoPathForSdkLanguage(languages[i]));
         }
@@ -509,7 +474,7 @@ gulp.task('js-4-reset-package-json-readme', [], function(){
     resetPackageJsonAndReadme();
 });
 var laravelVendorPath = pathToQmDocker + '/laravel/vendor/quantimodo/quantimodo-sdk-php';
-gulp.task('php-2-sdk-copy-to-repo', ['clean-repos-except-git'], function(){
+gulp.task('php-2-sdk-copy-to-repo', [], function(){
     return copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage('php') + '/QuantiModoClient/**/*',
         getRepoPathForSdkLanguage('php'))
 });
@@ -518,15 +483,15 @@ gulp.task('php-3-move-client-to-repo-root', [], function(){
         getRepoPathForSdkLanguage('php'));
 });
 gulp.task('php-4-update-sdk-composer', [], function(){
-    var composerJsonPath = getRepoPathForSdkLanguage('php') + '/composer.json';
-    var composerJson = readJsonFile(composerJsonPath);
+    const composerJsonPath = getRepoPathForSdkLanguage('php') + '/composer.json';
+    const composerJson = readJsonFile(composerJsonPath);
     composerJson.version = apiVersionNumber;
     return writeToFile(composerJsonPath, prettyJSONStringify(composerJson, 4), function () {
         return commitChanges('php');
     });
 });
 gulp.task('php-5-update-laravel-composer', [], function(callback){
-    var composerJson = readJsonFile(pathToLaravel + '/composer.json');
+    const composerJson = readJsonFile(pathToLaravel + '/composer.json');
     composerJson.require["quantimodo/quantimodo-sdk-php"] = apiVersionNumber;
     return writeToFile(pathToLaravel  + '/composer.json', prettyJSONStringify(composerJson, 4), function () {
         executeCommand("cd " + pathToLaravel + " && composer update --ignore-platform-reqs", function () {
@@ -538,9 +503,9 @@ gulp.task('3-copy-to-repos', ['js-sdk-browserify-unzipped'], function(){
     return copySdksFromUnzippedPathToRepos();
 });
 function commitChanges(language, filesToResetArray){
-    var command = "cd " + getRepoPathForSdkLanguage(language);
+    let command = "cd " + getRepoPathForSdkLanguage(language);
     if(filesToResetArray){
-        for (var i = 0; i < filesToResetArray.length; i++) {
+        for (let i = 0; i < filesToResetArray.length; i++) {
             command += ' && git checkout ' + filesToResetArray[i];
         }
     }
@@ -552,11 +517,11 @@ function commitChanges(language, filesToResetArray){
         ' && git push origin ' + apiVersionNumber);
 }
 function resetPackageJsonAndReadme(){
-    var command = "cd " + getRepoPathForSdkLanguage(language) + ' && git checkout package.json && git checkout README.md';
+    const command = "cd " + getRepoPathForSdkLanguage(language) + ' && git checkout package.json && git checkout README.md';
     executeCommand(command);
 }
 gulp.task('5-commit-changes', [], function(){
-    for(var i = 0; i < languages.length; i++) {
+    for(let i = 0; i < languages.length; i++) {
         if(i === languages.length - 1){
             return commitChanges(getUnzippedPathForSdkLanguage(languages[i]));
         }
@@ -569,12 +534,12 @@ try {
 } catch (error) {
     logError(error);
 }
-var defaultClient;
+let defaultClient;
 function authenticateQuantiModoSdk() {
     defaultClient = Quantimodo.ApiClient.instance;
     if(process.env.APP_HOST_NAME){defaultClient.basePath = process.env.APP_HOST_NAME + '/api';}
-    var quantimodo_oauth2 = defaultClient.authentications['quantimodo_oauth2'];
-    var clientId = defaultClient.authentications['client_id'];
+    const quantimodo_oauth2 = defaultClient.authentications['quantimodo_oauth2'];
+    const clientId = defaultClient.authentications['client_id'];
     clientId.apiKey = "testClient";
     if(process.env.TEST_ACCESS_TOKEN){
         logInfo("Using process.env.QUANTIMODO_ACCESS_TOKEN");
@@ -586,36 +551,41 @@ function authenticateQuantiModoSdk() {
 }
 function convertPathToFilename(path) {
     path = stripQueryFromPath(path);
-    var filename = path.replace('/api/', '');
+    let filename = path.replace('/api/', '');
     filename = filename.replaceAll('/', '-') + '.json';
     return 'responses/' + filename;
 }
 function stripQueryFromPath(path) {
-    var parts = path.split('?');
+    const parts = path.split('?');
     return parts[0];
 }
-var variableIsArray = function(variable) {
-    var isAnArray = Array.isArray(variable);
-    if(isAnArray){return true;}
-    var constructorArray = variable.constructor === Array;
-    if(constructorArray){return true;}
-    var instanceOfArray = variable instanceof Array;
-    if(instanceOfArray){return true;}
-    var prototypeArray = Object.prototype.toString.call(variable) === '[object Array]';
-    if(prototypeArray){return true;}
-    return false;
+const variableIsArray = function(variable){
+    const isAnArray = Array.isArray(variable);
+    if(isAnArray){
+        return true;
+    }
+    const constructorArray = variable.constructor === Array;
+    if(constructorArray){
+        return true;
+    }
+    const instanceOfArray = variable instanceof Array;
+    if(instanceOfArray){
+        return true;
+    }
+    return Object.prototype.toString.call(variable) === '[object Array]';
+
 };
 function handleApiResponse(error, data, response, requiredProperties) {
     function getUrlFromResponse(response) {
         return "https://" + response.request.host + response.req.path;
     }
     function checkRequiredProperties(data, requiredProperties) {
-        var exampleObject = data;
+        let exampleObject = data;
         if (variableIsArray(data)) {
             exampleObject = data[0];
         }
         if (requiredProperties) {
-            for (var i = 0; i < requiredProperties.length; i++) {
+            for (let i = 0; i < requiredProperties.length; i++) {
                 if (!exampleObject[requiredProperties[i]]) {
                     logError('Example object', exampleObject);
                     throw "Required property " + requiredProperties[i] + " not returned from " + getUrlFromResponse(response);
@@ -635,7 +605,7 @@ function handleApiResponse(error, data, response, requiredProperties) {
     logDebug(getUrlFromResponse(response) + ' returned data', data);
 }
 gulp.task('get-aggregated-correlations', [], function (callback) {
-    var apiInstance = new Quantimodo.AnalyticsApi();
+    const apiInstance = new Quantimodo.AnalyticsApi();
     function qmApiResponseCallback(error, data, response) {
         handleApiResponse(error, data, response);
         callback();
@@ -643,7 +613,7 @@ gulp.task('get-aggregated-correlations', [], function (callback) {
     apiInstance.getCorrelations({commonOnly: true}, qmApiResponseCallback);
 });
 gulp.task('get-connectors', [], function (callback) {
-    var apiInstance = new Quantimodo.ConnectorsApi();
+    const apiInstance = new Quantimodo.ConnectorsApi();
     function qmApiResponseCallback(error, data, response) {
         handleApiResponse(error, data, response);
         callback();
@@ -652,7 +622,7 @@ gulp.task('get-connectors', [], function (callback) {
 });
 gulp.task('get-measurements', ['post-measurements'], function (callback) {
     // If this isn't working try waiting a few seconds after
-    var apiInstance = new Quantimodo.MeasurementsApi();
+    const apiInstance = new Quantimodo.MeasurementsApi();
     function qmApiResponseCallback(error, data, response) {
         handleApiResponse(error, data, response);
         if(data[0].startTimeEpoch !== currentUnixTime){
@@ -664,14 +634,14 @@ gulp.task('get-measurements', ['post-measurements'], function (callback) {
     }
     apiInstance.getMeasurements({sort: '-startTime', variableName: testVariableName}, qmApiResponseCallback);
 });
-var dateTime = Date.now();
+const dateTime = Date.now();
 var currentUnixTime = Math.floor(dateTime / 1000);
 var testVariableName = currentUnixTime + ' Unique Test Variable';
 gulp.task('default', ['check-responses']);
 gulp.task('post-measurements', [], function (callback) {
-    var expectedMethod = "POST";
-    var apiInstance = new Quantimodo.MeasurementsApi();
-    var options = {};
+    const expectedMethod = "POST";
+    const apiInstance = new Quantimodo.MeasurementsApi();
+    const options = {};
     function qmApiResponseCallback(error, data, response) {
         if(response.req.method !== expectedMethod){
             throw "Method should be " + expectedMethod + " but is actually " + response.req.method;
@@ -682,13 +652,15 @@ gulp.task('post-measurements', [], function (callback) {
         handleApiResponse(error, data, response);
         callback();
     }
-    var measurement = {"variableName":testVariableName ,"value":1,"startTimeEpoch":currentUnixTime,
-        "unitAbbreviatedName":"/5","variableCategoryName":"Emotions","combinationOperation":"MEAN"};
+    const measurement = {
+        "variableName": testVariableName, "value": 1, "startTimeEpoch": currentUnixTime,
+        "unitAbbreviatedName": "/5", "variableCategoryName": "Emotions", "combinationOperation": "MEAN"
+    };
     logInfo("Posting measurement", measurement);
     apiInstance.postMeasurements(measurement, options, qmApiResponseCallback);
 });
 gulp.task('get-pairs', [], function (callback) {
-    var apiInstance = new Quantimodo.MeasurementsApi();
+    const apiInstance = new Quantimodo.MeasurementsApi();
     function qmApiResponseCallback(error, data, response) {
         handleApiResponse(error, data, response);
         callback();
@@ -696,17 +668,17 @@ gulp.task('get-pairs', [], function (callback) {
     apiInstance.getPairs({causeVariableName: "Sleep Duration", effectVariableName: "Overall Mood"}, qmApiResponseCallback);
 });
 gulp.task('get-common-variables', [], function (callback) {
-    var apiInstance = new Quantimodo.VariablesApi();
+    const apiInstance = new Quantimodo.VariablesApi();
     function qmApiResponseCallback(error, data, response) {
-        var requiredProperties = ['unitAbbreviatedName', 'unit', 'unitName', 'unitId'];
+        const requiredProperties = ['unitAbbreviatedName', 'unit', 'unitName', 'unitId'];
         handleApiResponse(error, data, response, requiredProperties);
         callback();
     }
     apiInstance.getVariables({commonOnly: true}, qmApiResponseCallback);
 });
 gulp.task('get-study', [], function (callback) {
-    var apiInstance = new Quantimodo.AnalyticsApi();
-    var requiredProperties = [
+    const apiInstance = new Quantimodo.AnalyticsApi();
+    const requiredProperties = [
         'causeVariable',
         'effectVariable',
         'charts',
@@ -720,7 +692,7 @@ gulp.task('get-study', [], function (callback) {
     apiInstance.getStudy({causeVariableName: "Sleep Duration", effectVariableName: "Overall Mood"}, qmApiResponseCallback);
 });
 gulp.task('get-tracking-reminder-notifications', [], function (callback) {
-    var apiInstance = new Quantimodo.RemindersApi();
+    const apiInstance = new Quantimodo.RemindersApi();
     function qmApiResponseCallback(error, data, response) {
         handleApiResponse(error, data, response);
         callback();
@@ -728,26 +700,26 @@ gulp.task('get-tracking-reminder-notifications', [], function (callback) {
     apiInstance.getTrackingReminderNotifications({}, qmApiResponseCallback);
 });
 gulp.task('post-tracking-reminders', [], function (callback) {
-    var apiInstance = new Quantimodo.RemindersApi();
+    const apiInstance = new Quantimodo.RemindersApi();
     function qmApiResponseCallback(error, data, response) {
         handleApiResponse(error, data, response);
         callback();
     }
-    var postBody = [{
-        "variableName" : testVariableName,
-        "reminderFrequency" : 86400,
-        "variableCategoryName" : "Emotions",
-        "unitAbbreviatedName" : "/5",
-        "instructions" : "I am an instruction!"
+    const postBody = [{
+        "variableName": testVariableName,
+        "reminderFrequency": 86400,
+        "variableCategoryName": "Emotions",
+        "unitAbbreviatedName": "/5",
+        "instructions": "I am an instruction!"
     }];
     apiInstance.postTrackingReminders(postBody, qmApiResponseCallback);
 });
 gulp.task('get-tracking-reminders', ['post-tracking-reminders'], function (callback) {
-    var apiInstance = new Quantimodo.RemindersApi();
+    const apiInstance = new Quantimodo.RemindersApi();
     function qmApiResponseCallback(error, data, response) {
-        var newReminderPresent = false;
-        for(var i = 0; i < data.length; i++){
-            var currentName = data[i].variableName;
+        let newReminderPresent = false;
+        for(let i = 0; i < data.length; i++){
+            const currentName = data[i].variableName;
             if(currentName === testVariableName){
                 newReminderPresent = true;
             }
@@ -759,7 +731,7 @@ gulp.task('get-tracking-reminders', ['post-tracking-reminders'], function (callb
     apiInstance.getTrackingReminders({}, qmApiResponseCallback);
 });
 gulp.task('get-units', [], function (callback) {
-    var apiInstance = new Quantimodo.UnitsApi();
+    const apiInstance = new Quantimodo.UnitsApi();
     function qmApiResponseCallback(error, data, response) {
         handleApiResponse(error, data, response);
         callback();
@@ -767,7 +739,7 @@ gulp.task('get-units', [], function (callback) {
     apiInstance.getUnits(qmApiResponseCallback);
 });
 gulp.task('get-unit-categories', [], function (callback) {
-    var apiInstance = new Quantimodo.UnitsApi();
+    const apiInstance = new Quantimodo.UnitsApi();
     function qmApiResponseCallback(error, data, response) {
         handleApiResponse(error, data, response);
         callback();
@@ -775,7 +747,7 @@ gulp.task('get-unit-categories', [], function (callback) {
     apiInstance.getUnitCategories(qmApiResponseCallback);
 });
 gulp.task('get-user', [], function (callback) {
-    var apiInstance = new Quantimodo.UserApi();
+    const apiInstance = new Quantimodo.UserApi();
     function qmApiResponseCallback(error, data, response) {
         logInfo(response.request.url + " response", response);
         handleApiResponse(error, data, response);
@@ -784,7 +756,7 @@ gulp.task('get-user', [], function (callback) {
     apiInstance.getUser({}, qmApiResponseCallback);
 });
 gulp.task('get-user-correlations', [], function (callback) {
-    var apiInstance = new Quantimodo.AnalyticsApi();
+    const apiInstance = new Quantimodo.AnalyticsApi();
     function qmApiResponseCallback(error, data, response) {
         handleApiResponse(error, data, response);
         callback();
@@ -792,9 +764,9 @@ gulp.task('get-user-correlations', [], function (callback) {
     apiInstance.getCorrelations({}, qmApiResponseCallback);
 });
 gulp.task('get-user-variables', [], function (callback) {
-    var apiInstance = new Quantimodo.VariablesApi();
+    const apiInstance = new Quantimodo.VariablesApi();
     function qmApiResponseCallback(error, data, response) {
-        var requiredProperties = ['unitAbbreviatedName', 'unit', 'unitName', 'unitId'];
+        const requiredProperties = ['unitAbbreviatedName', 'unit', 'unitName', 'unitId'];
         handleApiResponse(error, data, response, requiredProperties);
         callback();
     }
@@ -837,7 +809,7 @@ function verifyExistenceOfFile(filePath) {
     });
 }
 gulp.task('check-responses', ['test-endpoints'], function (callback) {
-    var apiPaths = [
+    const apiPaths = [
         '/api/v3/connectors/list',
         '/api/v3/measurements',
         '/api/v3/pairs',
@@ -845,7 +817,7 @@ gulp.task('check-responses', ['test-endpoints'], function (callback) {
         '/api/v3/units',
         '/api/v3/user'
     ];
-    for(var i = 0; i < apiPaths.length; i++){
+    for(let i = 0; i < apiPaths.length; i++){
         verifyExistenceOfFile(convertPathToFilename(apiPaths[i]));
     }
     callback();
