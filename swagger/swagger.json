@@ -885,10 +885,16 @@
         },
         "correlationsOverDurationsOfAction": {
           "description": "Correlations calculated with various duration of action hyper-parameters",
+          "items": {
+            "$ref": "#/definitions/Correlation"
+          },
           "type": "array"
         },
         "correlationsOverOnsetDelays": {
           "description": "Correlations calculated with various onset delay hyper-parameters",
+          "items": {
+            "$ref": "#/definitions/Correlation"
+          },
           "type": "array"
         },
         "correlationsOverDurationsOfActionChartConfig": {

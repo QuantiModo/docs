@@ -363,24 +363,6 @@ function downloadSdk(language) {
             logError(err.error.message);
         });
 }
-function downloadAndUnzipSdk(language, destinationPath) {
-    if(!destinationPath){
-        destinationPath = sdksUnzippedPath;
-    }
-    logInfo("Downloading and unzipping " + language + " sdk to " + destinationPath);
-    const requestOptions = getSwaggerDownloadRequestOptions(language);
-    if(debug){getSwaggerConfigOptions(language);}
-    return rp(requestOptions)
-        .then(function (parsedBody) {
-            const downloadLink = parsedBody.link.replace('https', 'http');
-            return download(downloadLink)
-                .pipe(unzip())
-                .pipe(gulp.dest(destinationPath));
-        })
-        .catch(function (err) {
-            logError(err.error.message);
-        });
-}
 function getSwaggerConfigOptions(language) {
     const getOptionsRequestOptions = getRequestOptions(language);
     getOptionsRequestOptions.method = "GET";
