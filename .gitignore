@@ -8,11 +8,11 @@ slim-server-generated\.zip
 
 silex-PHP-server-generated/SwaggerServer/
 
-slim-server-generated/
 
-*.zip
+/.idea/*
+!/.idea/dictionaries/
+!/.idea/dictionaries/*
 
-\.idea/
 node_modules/
 sdks-unzipped/
 
