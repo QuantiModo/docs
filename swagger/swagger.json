@@ -863,7 +863,7 @@
           "type": "number"
         },
         "outcomeDataSources": {
-          "description": "original name of the cause.",
+          "description": "Sources used to collect data for the outcome variable",
           "type": "string"
         },
         "principalInvestigator": {
@@ -876,23 +876,28 @@
         },
         "averagePearsonCorrelationCoefficientOverOnsetDelays": {
           "description": "Ex: ",
-          "type": "string"
+          "format": "float",
+          "type": "number"
         },
         "causeNumberOfRawMeasurements": {
           "description": "Ex: 14764",
           "type": "integer"
         },
         "correlationsOverDurationsOfAction": {
-          "description": "Ex: ",
-          "type": "string"
+          "description": "Correlations calculated with various duration of action hyper-parameters",
+          "type": "array"
+        },
+        "correlationsOverOnsetDelays": {
+          "description": "Correlations calculated with various onset delay hyper-parameters",
+          "type": "array"
         },
         "correlationsOverDurationsOfActionChartConfig": {
-          "description": "Ex: ",
-          "type": "string"
+          "description": "Highchart config illustrating correlations calculated with various duration of action hyper-parameters",
+          "type": "object"
         },
         "correlationsOverOnsetDelaysChartConfig": {
-          "description": "Ex: ",
-          "type": "string"
+          "description": "Highchart config illustrating correlations calculated with various onset delay hyper-parameters",
+          "type": "object"
         },
         "numberOfUsers": {
           "description": "Ex: 1",
@@ -936,61 +941,8 @@
         }
       },
       "required": [
-        "averageDailyHighCause",
-        "averageDailyLowCause",
-        "averageEffect",
-        "averageEffectFollowingHighCause",
-        "averageEffectFollowingLowCause",
-        "averageForwardPearsonCorrelationOverOnsetDelays",
-        "averageReversePearsonCorrelationOverOnsetDelays",
-        "averageVote",
-        "causeChanges",
-        "causeUserVariableShareUserMeasurements",
         "causeVariableName",
-        "confidenceInterval",
-        "confidenceLevel",
-        "correlationCoefficient",
-        "createdAt",
-        "criticalTValue",
-        "direction",
-        "durationOfAction",
-        "durationOfActionInHours",
-        "effectChanges",
-        "effectSize",
-        "effectUnit",
-        "effectVariableName",
-        "experimentEndTime",
-        "experimentStartTime",
-        "forwardSpearmanCorrelationCoefficient",
-        "numberOfPairs",
-        "onsetDelay",
-        "onsetDelayInHours",
-        "onsetDelayWithStrongestPearsonCorrelation",
-        "onsetDelayWithStrongestPearsonCorrelationInHours",
-        "optimalPearsonProduct",
-        "outcomeFillingValue",
-        "pearsonCorrelationWithNoOnsetDelay",
-        "predictivePearsonCorrelation",
-        "predictivePearsonCorrelationCoefficient",
-        "predictorDataSources",
-        "predictorFillingValue",
-        "predictorMaximumAllowedValue",
-        "predictorMinimumAllowedValue",
-        "predictsHighEffectChange",
-        "predictsLowEffectChange",
-        "qmScore",
-        "reversePearsonCorrelationCoefficient",
-        "shareUserMeasurements",
-        "significantDifference",
-        "statisticalSignificance",
-        "strengthLevel",
-        "strongestPearsonCorrelationCoefficient",
-        "tValue",
-        "updatedAt",
-        "userId",
-        "userVote",
-        "valuePredictingHighOutcome",
-        "valuePredictingLowOutcome"
+        "effectVariableName"
       ]
     },
     "DataSource": {
