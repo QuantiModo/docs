@@ -9,7 +9,7 @@
     "postinstall": "",
     "clean": "gulp clean-unzipped-folders",
     "build:js": "gulp js-1-download && js-2-unzip && js-3-copy-everywhere && js-4-reset-package-json-readme",
-    "build:php": "gulp php-0-sdk-download && php-1-unzip && php-2-sdk-copy-to-repo && php-3-move-client-to-repo-root"
+    "build:php": "gulp php-0-sdk-download && gulp php-1-unzip && gulp php-2-sdk-copy-to-repo && gulp php-3-move-client-to-repo-root && gulp hp-4-update-sdk-composer"
   },
   "author": "mikepsinn",
   "license": "ISC",
