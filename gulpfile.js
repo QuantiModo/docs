@@ -453,7 +453,7 @@ gulp.task('js-3-copy-everywhere', ['js-sdk-browserify-unzipped'], function(){
     console.log("After completion, open repo, discard readme changes and commit new version to Github.  Then you can run js-4-release");
 });
 gulp.task('js-4-reset-package-json-readme', [], function(){
-    resetPackageJsonAndReadme();
+    resetNonGeneratedFiles();
 });
 var laravelVendorPath = pathToQmDocker + '/laravel/vendor/quantimodo/quantimodo-sdk-php';
 gulp.task('php-2-sdk-copy-to-repo', [], function(){
@@ -498,7 +498,7 @@ function commitChanges(language, filesToResetArray){
         ' && git tag ' + apiVersionNumber +
         ' && git push origin ' + apiVersionNumber);
 }
-function resetPackageJsonAndReadme(){
+function resetNonGeneratedFiles(){
     var toReset = [
         'package.json',
         'README.md',
