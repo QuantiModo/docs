@@ -81,7 +81,7 @@ const sdkSwaggerCodegenOptions = {
         "gemAuthorEmail": "mike@quantimo.do"
     }
 };
-const majorMinorVersionNumbers = '5.10.';
+const majorMinorVersionNumbers = '5.11.';
 function getPatchVersionNumber() {
     const date = new Date();
     const monthNumber = (date.getMonth() + 1).toString();
