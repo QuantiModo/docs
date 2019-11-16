@@ -504,6 +504,7 @@ function resetNonGeneratedFiles(){
         'README.md',
         'qmHelpers.js',
         'qmChrome.js',
+        'qmLogger.js',
         'psychedelic-loader.js',
         'popup.js',
         'ionIcons.js'
