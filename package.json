@@ -5,6 +5,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "download:unzip:copy": "gulp 0-download && gulp 1-decompress && gulp 3-copy-to-repos",
     "test": "gulp check-responses",
     "postinstall": "",
     "prepare": "gulp clean-folders-and-clone-repos",

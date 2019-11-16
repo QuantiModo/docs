@@ -29,9 +29,9 @@ const sdksReposPath = './sdk-repos';
 let languages = [
     "akka-scala",
     "android",
-    "async-scala",
+    //"async-scala",
     "csharp",
-    "CsharpDotNet2",
+    //"CsharpDotNet2",
     "dart",
     "dynamic-html",
     "flash",
@@ -54,7 +54,7 @@ let languages = [
     "swift",
     "tizen",
     "typescript-angular",
-    "typescript-angular2",
+    //"typescript-angular2",
     //"typescript-fetch",
     "typescript-node"
 ];
@@ -499,7 +499,19 @@ function commitChanges(language, filesToResetArray){
         ' && git push origin ' + apiVersionNumber);
 }
 function resetPackageJsonAndReadme(){
-    const command = "cd " + getRepoPathForSdkLanguage(language) + ' && git checkout package.json && git checkout README.md';
+    var toReset = [
+        'package.json',
+        'README.md',
+        'qmHelpers.js',
+        'qmChrome.js',
+        'psychedelic-loader.js',
+        'popup.js',
+        'ionIcons.js'
+    ];
+    var command = "cd " + getRepoPathForSdkLanguage(language);
+    toReset.forEach(function(file){
+        command += " && git checkout "+file;
+    });
     executeCommand(command);
 }
 gulp.task('5-commit-changes', [], function(){
@@ -511,14 +523,13 @@ gulp.task('5-commit-changes', [], function(){
     }
 });
 try {
-    var Quantimodo = require('quantimodo');
     authenticateQuantiModoSdk();
 } catch (error) {
     logError(error);
 }
-let defaultClient;
 function authenticateQuantiModoSdk() {
-    defaultClient = Quantimodo.ApiClient.instance;
+    var Quantimodo = require('quantimodo');
+    let defaultClient = Quantimodo.ApiClient.instance;
     if(process.env.APP_HOST_NAME){defaultClient.basePath = process.env.APP_HOST_NAME + '/api';}
     const quantimodo_oauth2 = defaultClient.authentications['quantimodo_oauth2'];
     const clientId = defaultClient.authentications['client_id'];
