@@ -242,11 +242,11 @@ gulp.task('js-5-release', [], function (callback) {
         const bowerJson = readJsonFile(path + '/bower.json');
         bowerJson.dependencies.quantimodo = apiVersionNumber;
         return writeToFile(path  + '/bower.json', prettyJSONStringify(bowerJson), function () {
-            executeCommand("cd " + pathToIonic + " && bower install && yarn install", function () {
+            executeCommand("cd " + pathToIonic + " && bower install && npm install", function () {
                 const packageJson = readJsonFile(path + '/package.json');
                 packageJson.dependencies.quantimodo = apiVersionNumber;
                 return writeToFile(path  + '/package.json', prettyJSONStringify(packageJson), function () {
-                    executeCommand("cd " + pathToIonic + " && yarn install", function () {
+                    executeCommand("cd " + pathToIonic + " && npm install", function () {
                         if(callback){callback();}
                     });
                 });
@@ -413,6 +413,37 @@ gulp.task('0-download', ['clean-unzipped-folders'], function () {
         if(i === languages.length - 1){ return downloadSdk(languages[i]);}
         downloadSdk(languages[i]);
     }
+});
+gulp.task('typescript', [], function () {
+
+    var fs = require("fs");
+    var CodeGen = require("swagger-typescript-codegen").CodeGen;
+
+    var file = "swagger/swagger.json";
+    var swagger = JSON.parse(fs.readFileSync(file, "UTF-8"));
+    var tsSourceCode = CodeGen.getTypescriptCode({
+        className: "Test",
+        swagger: swagger,
+        imports: ["../../typings/tsd.d.ts"]
+    });
+    console.log(tsSourceCode);
+    fs.writeFileSync('quantimodo.ts', tsSourceCode);
+
+
+    const { generateTSFiles } = require('swagger-ts-generator');
+
+    const config = {
+        file: __dirname + '/swagger/swagger.json'
+    };
+
+    return generateTSFiles(
+        config.file, // This can be either a file containing the Swagger json or the Swagger object itself
+        {
+            modelFolder: './typescript/models',
+            enumTSFile: './typescript/models/enums.ts'
+            // + optionally more configuration
+        }
+    );
 });
 var javascriptFlavor = 'javascript';
 //var javascriptFlavor = 'typescript-fetch';

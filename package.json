@@ -8,7 +8,7 @@
     "download:unzip:copy": "gulp 0-download && gulp 1-decompress && gulp 3-copy-to-repos",
     "test": "gulp check-responses",
     "postinstall": "",
-    "prepare": "gulp clean-folders-and-clone-repos",
+    "clean-folders-and-clone-repos": "gulp clean-folders-and-clone-repos",
     "clean": "gulp clean-unzipped-folders",
     "build:js": "gulp js-1-download && js-2-unzip && js-3-copy-everywhere && js-4-reset-package-json-readme",
     "build:php": "gulp php-0-sdk-download && gulp php-1-unzip && gulp php-2-sdk-copy-to-repo && gulp php-3-move-client-to-repo-root && gulp php-4-update-sdk-composer"
@@ -34,5 +34,8 @@
     "swagger-node-codegen": "^1.6.3",
     "unzip": "latest"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "swagger-ts-generator": "latest",
+    "swagger-typescript-codegen": "^3.0.2"
+  }
 }
