@@ -395,7 +395,7 @@ gulp.task('php-0-sdk-download', [], function () {
     logInfo("Generating " + language + " sdk using " +  swaggerJsonUrl);
     return downloadSdk('php');
 });
-gulp.task('1-decompress', ['clean-repos-except-git'], function () {
+gulp.task('1-decompress', [], function () {
     for(let i = 0; i < languages.length; i++) {
         if(i === languages.length - 1){
             return unzipFileToFolder(getZipPathForLanguage(languages[i]), sdksUnzippedPath);
@@ -403,7 +403,7 @@ gulp.task('1-decompress', ['clean-repos-except-git'], function () {
         unzipFileToFolder(getZipPathForLanguage(languages[i]), sdksUnzippedPath);
     }
 });
-gulp.task('js-2-unzip', ['clean-repos-except-git'], function () {
+gulp.task('js-2-unzip', [], function () {
     return unzipFileToFolder(getZipPathForLanguage(javascriptFlavor), sdksUnzippedPath);
 });
 gulp.task('php-1-unzip', [], function () {
