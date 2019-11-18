@@ -900,3 +900,23 @@ gulp.task('JS-SDK-UPDATE', function(callback){
             callback(error);
         });
 });
+gulp.task('js-node-angular-react-typescript', function(cb){
+    var fs = require('fs');
+    var CodeGen = require('swagger-js-codegen').CodeGen;
+
+    var file = 'swagger/swagger.json';
+    var swagger = JSON.parse(fs.readFileSync(file, 'UTF-8'));
+    let jsRepo = './sdk-repos/quantimodo-sdk-javascript/src/';
+
+    var nodejsSourceCode = CodeGen.getNodeCode({ className: 'QM', swagger: swagger });
+    fs.writeFileSync(jsRepo+"qm.node.js", nodejsSourceCode);
+
+    // var reactjsSourceCode = CodeGen.getReactCode({ className: 'Test', swagger: swagger });
+    // fs.writeFileSync(jsRepo+"qm.react.js", reactjsSourceCode);
+
+    var tsSourceCode = CodeGen.getTypescriptCode({ className: 'QM', swagger: swagger, imports: ['../../typings/tsd.d.ts'] });
+    fs.writeFileSync(jsRepo+"qm.typescript.js", tsSourceCode);
+
+    var angularjsSourceCode = CodeGen.getAngularCode({ className: 'QM', swagger: swagger });
+    fs.writeFile(jsRepo+"qm.angular-js.js", angularjsSourceCode, cb);
+});
