@@ -349,19 +349,34 @@ function getSwaggerDownloadRequestOptions(language) {
     requestOptions.body.options.artifactDescription = requestOptions.body.options.projectDescription = swaggerJson.info.description;
     return requestOptions;
 }
-function downloadSdk(language) {
+function downloadSdk(language){
     const requestOptions = getSwaggerDownloadRequestOptions(language);
-    if(debug){getSwaggerConfigOptions(language);}
+    if(debug){
+        getSwaggerConfigOptions(language);
+    }
     return rp(requestOptions)
-        .then(function (parsedBody) {
+        .then(function(parsedBody){
             const downloadLink = parsedBody.link.replace('https', 'http');
             return download(downloadLink)
                 .pipe(rename(getSdkNameForLanguage(language) + '.zip'))
                 .pipe(gulp.dest(sdksZippedPath));
         })
-        .catch(function (err) {
+        .catch(function(err){
             logError(err.error.message);
         });
+}
+function generateExpressServer(){
+    const path = require('path');
+    const codegen = require('swagger-node-codegen');
+    const swagger = require('./swagger/swagger.json');
+    codegen.generate({
+        swagger,
+        target_dir: path.resolve(__dirname, './sdks-unzipped/'+getSdkNameForLanguage(language))
+    }).then(() => {
+        console.log('Done!');
+    }).catch(err => {
+        console.error(`Something went wrong: ${err.message}`);
+    });
 }
 function getSwaggerConfigOptions(language) {
     const getOptionsRequestOptions = getRequestOptions(language);
