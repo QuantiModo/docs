@@ -1121,6 +1121,33 @@ definitions:
     required:
       - description
       - summary
+  GetUploadResponse:
+    properties:
+      data:
+        type: string
+      description:
+        description: 'Whatever you uploaded'
+        type: string
+      summary:
+        description: Can be used as title in help info popup
+        type: string
+      image:
+        $ref: '#/definitions/Image'
+      avatar:
+        description: Square icon png url
+        type: string
+      ionIcon:
+        description: 'Ex: ion-ios-person'
+        type: string
+      title:
+        description: 'Ex: Top Predictors of Overall Mood'
+        type: string
+      html:
+        description: Embeddable list of study summaries with explanation at the top
+        type: string
+    required:
+      - description
+      - summary
   GetSharesResponse:
     properties:
       authorizedClients:
@@ -1848,6 +1875,44 @@ definitions:
     properties:
       data:
         $ref: '#/definitions/PostUserSettingsDataResponse'
+      message:
+        description: Message
+        type: string
+      description:
+        description: Can be used as body of help info popup
+        type: string
+      summary:
+        description: Can be used as title in help info popup
+        type: string
+      errors:
+        description: Array of error objects with message property
+        items:
+          $ref: '#/definitions/Error'
+        type: array
+      status:
+        description: ex. OK or ERROR
+        type: string
+      success:
+        description: true or false
+        type: boolean
+      code:
+        description: Response code such as 200
+        type: number
+      link:
+        description: A super neat url you might want to share with your users!
+        type: string
+      card:
+        description: A super neat card with buttons and HTML that you can use in your app!
+        $ref: '#/definitions/Card'
+    required:
+      - status
+      - success
+    type: object
+  PostUploadResponse:
+    properties:
+      data:
+        description: Message
+        type: string
       message:
         description: Message
         type: string
@@ -8203,6 +8268,67 @@ paths:
         - access_token: []
         - quantimodo_oauth2:
             - readmeasurements
+  /v2/upload:
+    get:
+      operationId: getUpload
+      tags:
+        - Upload
+      summary: Get whatever you uploaded
+      description: Get Upload
+      produces:
+        - multipart/form-data
+      responses:
+        '200':
+          description: Successful operation
+          schema:
+            $ref: '#/definitions/GetUploadResponse'
+        '401':
+          description: Not authenticated
+        '404':
+          description: Not found
+        '500':
+          description: Internal server error
+      parameters:
+        - $ref: '#/parameters/userIdParam'
+        - description: format you want to receive the data in
+          in: query
+          name: format
+          required: false
+          type: string
+          enum:
+            - download
+            - display
+        - description: Id
+          in: query
+          name: id
+          required: false
+          type: integer
+        - $ref: '#/parameters/clientIdParam'
+        - $ref: '#/parameters/platform'
+      security:
+        - access_token: []
+        - quantimodo_oauth2:
+            - readmeasurements
+    post:
+      summary: Uploads a file.
+      consumes:
+        - multipart/form-data
+      parameters:
+        - in: formData
+          name: upfile
+          type: file
+          description: The file to upload.
+      responses:
+        '201':
+          description: Successful operation
+          schema:
+            $ref: '#/definitions/PostUploadResponse'
+        '401':
+          description: Not authenticated
+        '404':
+          description: Not found
+        '500':
+          description: Internal server error
 produces:
   - application/json
 schemes:
