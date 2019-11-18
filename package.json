@@ -27,13 +27,11 @@
     "gulp-ignore": "latest",
     "gulp-rename": "latest",
     "gulp-unzip": "latest",
-    "q": "^1.4.1",
     "quantimodo": "5.10.100719",
     "request-promise": "latest",
     "run-sequence": "latest",
     "swagger-js-codegen": "^1.13.0",
-    "swagger-node-codegen": "^1.6.3",
-    "unzip": "latest"
+    "swagger-node-codegen": "^1.6.3"
   },
   "devDependencies": {
     "swagger-ts-generator": "latest",

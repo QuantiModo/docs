@@ -9,10 +9,8 @@ const ignore = require('gulp-ignore');
 const del = require('del');
 const decompress = require('gulp-decompress');
 const bugsnag = require("bugsnag");
-const q = require('q');
-const unzip = require('gulp-unzip');
 bugsnag.register("ae7bc49d1285848342342bb5c321a2cf");
-process.on('unhandledRejection', function (err, promise) {
+process.on('unhandledRejection', function (err) {
     console.error("Unhandled rejection: " + (err && err.stack || err));
     bugsnag.notify(err);
 });
@@ -133,7 +131,6 @@ function logError(message, object) {
 }
 function getAppVersionNumber() {
     const date = new Date();
-    const longDate = date.getFullYear().toString() + (date.getMonth() + 1).toString() + date.getDate().toString();
     const monthNumber = (date.getMonth() + 1).toString();
     const dayOfMonth = ('0' + date.getDate()).slice(-2);
     const majorMinorVersionNumbers = '5.8.';
@@ -223,6 +220,7 @@ String.prototype.replaceAll = function(search, replacement) {
     const target = this;
     return target.replace(new RegExp(search, 'g'), replacement);
 };
+let javascriptFlavor = 'javascript';
 gulp.task('js-sdk-browserify-unzipped', [], function (callback) {
     browserify(getUnzippedPathForSdkLanguage(javascriptFlavor), callback);
 });
@@ -238,21 +236,6 @@ function browserify(path, callback){
     });
 }
 gulp.task('js-5-release', [], function (callback) {
-    function updateBowerAndPackageJsonVersions(path, callback) {
-        const bowerJson = readJsonFile(path + '/bower.json');
-        bowerJson.dependencies.quantimodo = apiVersionNumber;
-        return writeToFile(path  + '/bower.json', prettyJSONStringify(bowerJson), function () {
-            executeCommand("cd " + pathToIonic + " && bower install && npm install", function () {
-                const packageJson = readJsonFile(path + '/package.json');
-                packageJson.dependencies.quantimodo = apiVersionNumber;
-                return writeToFile(path  + '/package.json', prettyJSONStringify(packageJson), function () {
-                    executeCommand("cd " + pathToIonic + " && npm install", function () {
-                        if(callback){callback();}
-                    });
-                });
-            });
-        });
-    }
     executeCommand("cd " + getRepoPathForSdkLanguage(javascriptFlavor) +
         //' && npm install' +
         ' && git checkout HEAD -- README.md' +
@@ -279,6 +262,7 @@ gulp.task('clean-folders', [], function () {
         sdksReposPath + '/**/*'
     ]);
 });
+let laravelVendorPath = pathToQmDocker + '/laravel/vendor/quantimodo/quantimodo-sdk-php';
 gulp.task('clean-laravel-vendor', [], function () {
     return del([laravelVendorPath + '/**/*'], {force: true});
 });
@@ -328,7 +312,7 @@ function getRequestOptions(language, useLocalSpec) {
     }
     return opt;
 }
-var language = "javascript";
+let language = "javascript";
 function getSwaggerDownloadRequestOptions(language, useLocalSpec) {
     const requestOptions = getRequestOptions(language, useLocalSpec);
     if (sdkSwaggerCodegenOptions[language]) {
@@ -381,7 +365,7 @@ function downloadSdk(language, useLocalSpec){
             }
         });
 }
-function generateExpressServer(){
+gulp.task('generateExpressServer', [], function () {
     const path = require('path');
     const codegen = require('swagger-node-codegen');
     const swagger = require('./swagger/swagger.json');
@@ -393,7 +377,7 @@ function generateExpressServer(){
     }).catch(err => {
         console.error(`Something went wrong: ${err.message}`);
     });
-}
+});
 function getSwaggerConfigOptions(language, useLocalSpec) {
     const getOptionsRequestOptions = getRequestOptions(language, useLocalSpec);
     getOptionsRequestOptions.method = "GET";
@@ -415,13 +399,11 @@ gulp.task('0-download', ['clean-unzipped-folders'], function () {
     }
 });
 gulp.task('typescript', [], function () {
-
-    var fs = require("fs");
-    var CodeGen = require("swagger-typescript-codegen").CodeGen;
-
-    var file = "swagger/swagger.json";
-    var swagger = JSON.parse(fs.readFileSync(file, "UTF-8"));
-    var tsSourceCode = CodeGen.getTypescriptCode({
+    const fs = require("fs");
+    const CodeGen = require("swagger-typescript-codegen").CodeGen;
+    const file = "swagger/swagger.json";
+    const swagger = JSON.parse(fs.readFileSync(file, "UTF-8"));
+    const tsSourceCode = CodeGen.getTypescriptCode({
         className: "Test",
         swagger: swagger,
         imports: ["../../typings/tsd.d.ts"]
@@ -445,7 +427,6 @@ gulp.task('typescript', [], function () {
         }
     );
 });
-var javascriptFlavor = 'javascript';
 //var javascriptFlavor = 'typescript-fetch';
 gulp.task('js-1-download', ['clean-unzipped-folders'], function () {
     languages = [javascriptFlavor];
@@ -471,12 +452,6 @@ gulp.task('js-2-unzip', [], function () {
 gulp.task('php-1-unzip', [], function () {
     return unzipFileToFolder(getZipPathForLanguage('php'), sdksUnzippedPath);
 });
-function copyUnzippedJsSdkToQmDockerNodeModules(){
-    return copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage(javascriptFlavor), pathToQmDocker + '/' + pathToQuantiModoNodeModule);
-}
-function copyUnzippedJsSdkToIonicNodeModules(){
-    return copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage(javascriptFlavor), pathToIonic + '/' + pathToQuantiModoNodeModule);
-}
 function copyUnzippedJsSdkToRepo(){
     return copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage(javascriptFlavor), getRepoPathForSdkLanguage(javascriptFlavor));
 }
@@ -517,7 +492,6 @@ gulp.task('js-3-copy-everywhere', ['js-sdk-browserify-unzipped'], function(){
 gulp.task('js-4-reset-package-json-readme', [], function(){
     resetNonGeneratedFiles();
 });
-var laravelVendorPath = pathToQmDocker + '/laravel/vendor/quantimodo/quantimodo-sdk-php';
 gulp.task('php-2-sdk-copy-to-repo', [], function(){
     return copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage('php') + '/QuantiModoClient/**/*',
         getRepoPathForSdkLanguage('php'))
@@ -561,7 +535,7 @@ function commitChanges(language, filesToResetArray){
         ' && git push origin ' + apiVersionNumber);
 }
 function resetNonGeneratedFiles(){
-    var toReset = [
+    const toReset = [
         'package.json',
         'README.md',
         'qmHelpers.js',
@@ -571,7 +545,7 @@ function resetNonGeneratedFiles(){
         'popup.js',
         'ionIcons.js'
     ];
-    var command = "cd " + getRepoPathForSdkLanguage(language);
+    let command = "cd " + getRepoPathForSdkLanguage(language);
     toReset.forEach(function(file){
         command += " && git checkout "+file;
     });
@@ -591,7 +565,7 @@ try {
     logError(error);
 }
 function authenticateQuantiModoSdk() {
-    var Quantimodo = require('quantimodo');
+    const Quantimodo = require('quantimodo');
     let defaultClient = Quantimodo.ApiClient.instance;
     if(process.env.APP_HOST_NAME){defaultClient.basePath = process.env.APP_HOST_NAME + '/api';}
     const quantimodo_oauth2 = defaultClient.authentications['quantimodo_oauth2'];
@@ -676,6 +650,9 @@ gulp.task('get-connectors', [], function (callback) {
     }
     apiInstance.getConnectors({}, qmApiResponseCallback);
 });
+const dateTime = Date.now();
+let currentUnixTime = Math.floor(dateTime / 1000);
+let testVariableName = currentUnixTime + ' Unique Test Variable';
 gulp.task('get-measurements', ['post-measurements'], function (callback) {
     // If this isn't working try waiting a few seconds after
     const apiInstance = new Quantimodo.MeasurementsApi();
@@ -690,9 +667,6 @@ gulp.task('get-measurements', ['post-measurements'], function (callback) {
     }
     apiInstance.getMeasurements({sort: '-startTime', variableName: testVariableName}, qmApiResponseCallback);
 });
-const dateTime = Date.now();
-var currentUnixTime = Math.floor(dateTime / 1000);
-var testVariableName = currentUnixTime + ' Unique Test Variable';
 gulp.task('default', ['check-responses']);
 gulp.task('post-measurements', [], function (callback) {
     const expectedMethod = "POST";
@@ -860,7 +834,7 @@ gulp.task('test-javascript-client', [], function (callback) {
     });
 });
 function verifyExistenceOfFile(filePath) {
-    return fs.stat(filePath, function (err, stat) {
+    return fs.stat(filePath, function (err) {
         if (!err) {logInfo(filePath + ' exists');} else {throw 'Could not find ' + filePath + ': '+ err;}
     });
 }
@@ -901,22 +875,22 @@ gulp.task('JS-SDK-UPDATE', function(callback){
         });
 });
 gulp.task('js-node-angular-react-typescript', function(cb){
-    var fs = require('fs');
-    var CodeGen = require('swagger-js-codegen').CodeGen;
-
-    var file = 'swagger/swagger.json';
-    var swagger = JSON.parse(fs.readFileSync(file, 'UTF-8'));
+    const fs = require('fs');
+    const CodeGen = require('swagger-js-codegen').CodeGen;
+    const file = 'swagger/swagger.json';
+    const swagger = JSON.parse(fs.readFileSync(file, 'UTF-8'));
     let jsRepo = './sdk-repos/quantimodo-sdk-javascript/src/';
-
-    var nodejsSourceCode = CodeGen.getNodeCode({ className: 'QM', swagger: swagger });
+    const nodejsSourceCode = CodeGen.getNodeCode({className: 'QM', swagger: swagger});
     fs.writeFileSync(jsRepo+"qm.node.js", nodejsSourceCode);
 
-    // var reactjsSourceCode = CodeGen.getReactCode({ className: 'Test', swagger: swagger });
-    // fs.writeFileSync(jsRepo+"qm.react.js", reactjsSourceCode);
-
-    var tsSourceCode = CodeGen.getTypescriptCode({ className: 'QM', swagger: swagger, imports: ['../../typings/tsd.d.ts'] });
+    // var reactJsSourceCode = CodeGen.getReactCode({ className: 'Test', swagger: swagger });
+    // fs.writeFileSync(jsRepo+"qm.react.js", reactJsSourceCode);
+    const tsSourceCode = CodeGen.getTypescriptCode({
+        className: 'QM',
+        swagger: swagger,
+        imports: ['../../typings/tsd.d.ts']
+    });
     fs.writeFileSync(jsRepo+"qm.typescript.js", tsSourceCode);
-
-    var angularjsSourceCode = CodeGen.getAngularCode({ className: 'QM', swagger: swagger });
-    fs.writeFile(jsRepo+"qm.angular-js.js", angularjsSourceCode, cb);
+    const angularJsSourceCode = CodeGen.getAngularCode({className: 'QM', swagger: swagger});
+    fs.writeFile(jsRepo+"qm.angular-js.js", angularJsSourceCode, cb);
 });
