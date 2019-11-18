@@ -877,6 +877,7 @@ gulp.task('JS-SDK-UPDATE', function(callback){
 gulp.task('js-node-angular-react-typescript', function(cb){
     const fs = require('fs');
     const CodeGen = require('swagger-js-codegen').CodeGen;
+    //const file = 'swagger/petstore.json';
     const file = 'swagger/swagger.json';
     const swagger = JSON.parse(fs.readFileSync(file, 'UTF-8'));
     let jsRepo = './sdk-repos/quantimodo-sdk-javascript/src/';
@@ -888,7 +889,9 @@ gulp.task('js-node-angular-react-typescript', function(cb){
     const tsSourceCode = CodeGen.getTypescriptCode({
         className: 'QM',
         swagger: swagger,
-        imports: ['../../typings/tsd.d.ts']
+        imports: [
+            //'../../typings/tsd.d.ts'
+        ]
     });
     fs.writeFileSync(jsRepo+"qm.typescript.js", tsSourceCode);
     const angularJsSourceCode = CodeGen.getAngularCode({className: 'QM', swagger: swagger});
