@@ -312,19 +312,25 @@ gulp.task('clean-repos-except-git', [], function(){
         executeCommand("cd " + getRepoPathForSdkLanguage(languages[i]) + " && git pull");
     }
 });
-function getRequestOptions(language) {
-    return {
+function getRequestOptions(language, useLocalSpec) {
+    let opt = {
         method: 'POST',
             uri: 'http://generator.swagger.io/api/gen/clients/' + language,
         body: {
-        swaggerUrl: swaggerJsonUrl
-    },
+
+        },
         json: true // Automatically stringifies the body to JSON
     };
+    if(useLocalSpec){
+        opt.body.spec = require('./swagger/swagger.json');
+    } else {
+        opt.body.swaggerUrl = swaggerJsonUrl;
+    }
+    return opt;
 }
 var language = "javascript";
-function getSwaggerDownloadRequestOptions(language) {
-    const requestOptions = getRequestOptions(language);
+function getSwaggerDownloadRequestOptions(language, useLocalSpec) {
+    const requestOptions = getRequestOptions(language, useLocalSpec);
     if (sdkSwaggerCodegenOptions[language]) {
         requestOptions.body.options = sdkSwaggerCodegenOptions[language];
     } else {
@@ -349,10 +355,16 @@ function getSwaggerDownloadRequestOptions(language) {
     requestOptions.body.options.artifactDescription = requestOptions.body.options.projectDescription = swaggerJson.info.description;
     return requestOptions;
 }
-function downloadSdk(language){
-    const requestOptions = getSwaggerDownloadRequestOptions(language);
+function downloadSdk(language, useLocalSpec){
+    const requestOptions = getSwaggerDownloadRequestOptions(language, useLocalSpec);
     if(debug){
-        getSwaggerConfigOptions(language);
+        getSwaggerConfigOptions(language, useLocalSpec);
+    }
+    requestOptions.spec = require('./swagger/swagger.json');
+    if(useLocalSpec){
+        logInfo("Generating " + language + " sdk using local swagger.json");
+    }else{
+        logInfo("Generating " + language + " sdk using " +  swaggerJsonUrl);
     }
     return rp(requestOptions)
         .then(function(parsedBody){
@@ -362,7 +374,11 @@ function downloadSdk(language){
                 .pipe(gulp.dest(sdksZippedPath));
         })
         .catch(function(err){
-            logError(err.error.message);
+            if(err.error){
+                logError(err.error.message);
+            } else {
+                logError(err);
+            }
         });
 }
 function generateExpressServer(){
@@ -378,8 +394,8 @@ function generateExpressServer(){
         console.error(`Something went wrong: ${err.message}`);
     });
 }
-function getSwaggerConfigOptions(language) {
-    const getOptionsRequestOptions = getRequestOptions(language);
+function getSwaggerConfigOptions(language, useLocalSpec) {
+    const getOptionsRequestOptions = getRequestOptions(language, useLocalSpec);
     getOptionsRequestOptions.method = "GET";
     return rp(getOptionsRequestOptions)
         .then(function (parsedBody) {
@@ -402,8 +418,8 @@ var javascriptFlavor = 'javascript';
 //var javascriptFlavor = 'typescript-fetch';
 gulp.task('js-1-download', ['clean-unzipped-folders'], function () {
     languages = [javascriptFlavor];
-    logInfo("Generating " + language + " sdk using " +  swaggerJsonUrl);
-    return downloadSdk(javascriptFlavor);
+
+    return downloadSdk(javascriptFlavor, true);
 });
 gulp.task('php-0-sdk-download', [], function () {
     languages = ['php'];
