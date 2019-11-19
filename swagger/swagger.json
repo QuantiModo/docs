@@ -7417,9 +7417,6 @@
           },
           {
             "$ref": "#/parameters/clientSecretParam"
-          },
-          {
-            "$ref": "#/parameters/platform"
           }
         ],
         "produces": [
@@ -7523,9 +7520,6 @@
         "parameters": [
           {
             "$ref": "#/parameters/clientIdParam"
-          },
-          {
-            "$ref": "#/parameters/platform"
           }
         ],
         "produces": [
@@ -7743,9 +7737,6 @@
             "name": "commonOnly",
             "required": false,
             "type": "boolean"
-          },
-          {
-            "$ref": "#/parameters/platform"
           }
         ],
         "produces": [
@@ -7898,9 +7889,6 @@
           },
           {
             "$ref": "#/parameters/clientIdParam"
-          },
-          {
-            "$ref": "#/parameters/platform"
           }
         ],
         "produces": [
@@ -7951,9 +7939,6 @@
           },
           {
             "$ref": "#/parameters/clientIdParam"
-          },
-          {
-            "$ref": "#/parameters/platform"
           }
         ],
         "produces": [
@@ -8021,9 +8006,6 @@
         "parameters": [
           {
             "$ref": "#/parameters/clientIdParam"
-          },
-          {
-            "$ref": "#/parameters/platform"
           }
         ],
         "produces": [
@@ -8111,9 +8093,6 @@
           },
           {
             "$ref": "#/parameters/minMaxFilterParam"
-          },
-          {
-            "$ref": "#/parameters/platform"
           }
         ],
         "produces": [
@@ -8340,9 +8319,6 @@
           },
           {
             "$ref": "#/parameters/stateParam"
-          },
-          {
-            "$ref": "#/parameters/platform"
           }
         ],
         "produces": [
@@ -8400,9 +8376,6 @@
           },
           {
             "$ref": "#/parameters/stateParam"
-          },
-          {
-            "$ref": "#/parameters/platform"
           }
         ],
         "produces": [
@@ -8540,9 +8513,6 @@
             "$ref": "#/parameters/appVersionParam"
           },
           {
-            "$ref": "#/parameters/platform"
-          },
-          {
             "$ref": "#/parameters/log"
           },
           {
@@ -8597,9 +8567,6 @@
             "name": "reason",
             "required": false,
             "type": "string"
-          },
-          {
-            "$ref": "#/parameters/platform"
           }
         ],
         "produces": [
@@ -8645,9 +8612,6 @@
             "schema": {
               "$ref": "#/definitions/ShareInvitationBody"
             }
-          },
-          {
-            "$ref": "#/parameters/platform"
           },
           {
             "$ref": "#/parameters/clientIdParam"
@@ -8714,9 +8678,6 @@
           },
           {
             "$ref": "#/parameters/includeChartsParam"
-          },
-          {
-            "$ref": "#/parameters/platform"
           },
           {
             "$ref": "#/parameters/recalculate"
@@ -8833,9 +8794,6 @@
             "$ref": "#/parameters/includeChartsParam"
           },
           {
-            "$ref": "#/parameters/platform"
-          },
-          {
             "$ref": "#/parameters/recalculate"
           },
           {
@@ -8927,9 +8885,6 @@
           },
           {
             "$ref": "#/parameters/clientIdParam"
-          },
-          {
-            "$ref": "#/parameters/platform"
           }
         ],
         "produces": [
@@ -9002,9 +8957,6 @@
           },
           {
             "$ref": "#/parameters/clientIdParam"
-          },
-          {
-            "$ref": "#/parameters/platform"
           }
         ],
         "produces": [
@@ -9068,9 +9020,6 @@
           },
           {
             "$ref": "#/parameters/includeChartsParam"
-          },
-          {
-            "$ref": "#/parameters/platform"
           },
           {
             "$ref": "#/parameters/recalculate"
@@ -9146,9 +9095,6 @@
           },
           {
             "$ref": "#/parameters/clientIdParam"
-          },
-          {
-            "$ref": "#/parameters/platform"
           }
         ],
         "produces": [
@@ -9203,9 +9149,6 @@
           },
           {
             "$ref": "#/parameters/clientIdParam"
-          },
-          {
-            "$ref": "#/parameters/platform"
           }
         ],
         "produces": [
@@ -9281,9 +9224,6 @@
           },
           {
             "$ref": "#/parameters/includeDeletedParam"
-          },
-          {
-            "$ref": "#/parameters/platform"
           }
         ],
         "produces": [
@@ -9334,9 +9274,6 @@
           },
           {
             "$ref": "#/parameters/clientIdParam"
-          },
-          {
-            "$ref": "#/parameters/platform"
           }
         ],
         "produces": [
@@ -9400,9 +9337,6 @@
           },
           {
             "$ref": "#/parameters/appVersionParam"
-          },
-          {
-            "$ref": "#/parameters/platform"
           }
         ],
         "produces": [
@@ -9634,9 +9568,6 @@
             "$ref": "#/parameters/clientUserIdParam"
           },
           {
-            "$ref": "#/parameters/platform"
-          },
-          {
             "$ref": "#/parameters/log"
           },
           {
@@ -9709,9 +9640,6 @@
             "$ref": "#/parameters/clientUserIdParam"
           },
           {
-            "$ref": "#/parameters/platform"
-          },
-          {
             "$ref": "#/parameters/log"
           },
           {
@@ -9762,9 +9690,6 @@
             "name": "reason",
             "required": true,
             "type": "string"
-          },
-          {
-            "$ref": "#/parameters/platform"
           }
         ],
         "produces": [
@@ -9804,9 +9729,6 @@
         "parameters": [
           {
             "$ref": "#/parameters/clientIdParam"
-          },
-          {
-            "$ref": "#/parameters/platform"
           },
           {
             "description": "User settings to update",
@@ -10085,9 +10007,6 @@
             "type": "boolean"
           },
           {
-            "$ref": "#/parameters/platform"
-          },
-          {
             "$ref": "#/parameters/includeTagsParam"
           },
           {
@@ -10172,9 +10091,6 @@
           },
           {
             "$ref": "#/parameters/synonymsParam"
-          },
-          {
-            "$ref": "#/parameters/platform"
           }
         ],
         "produces": [
@@ -10463,9 +10379,6 @@
             "$ref": "#/parameters/includeChartsParam"
           },
           {
-            "$ref": "#/parameters/platform"
-          },
-          {
             "$ref": "#/parameters/recalculate"
           },
           {
@@ -10570,9 +10483,6 @@
           },
           {
             "$ref": "#/parameters/clientIdParam"
-          },
-          {
-            "$ref": "#/parameters/platform"
           }
         ],
         "security": [
@@ -10644,9 +10554,6 @@
           },
           {
             "$ref": "#/parameters/clientIdParam"
-          },
-          {
-            "$ref": "#/parameters/platform"
           }
         ],
         "security": [
@@ -10720,9 +10627,6 @@
           },
           {
             "$ref": "#/parameters/clientIdParam"
-          },
-          {
-            "$ref": "#/parameters/platform"
           }
         ],
         "security": [
@@ -10794,9 +10698,6 @@
           },
           {
             "$ref": "#/parameters/clientIdParam"
-          },
-          {
-            "$ref": "#/parameters/platform"
           }
         ],
         "security": [
@@ -10870,9 +10771,6 @@
           },
           {
             "$ref": "#/parameters/clientIdParam"
-          },
-          {
-            "$ref": "#/parameters/platform"
           }
         ],
         "security": [
@@ -10944,9 +10842,6 @@
           },
           {
             "$ref": "#/parameters/clientIdParam"
-          },
-          {
-            "$ref": "#/parameters/platform"
           }
         ],
         "security": [
@@ -11020,9 +10915,6 @@
           },
           {
             "$ref": "#/parameters/clientIdParam"
-          },
-          {
-            "$ref": "#/parameters/platform"
           }
         ],
         "security": [
@@ -11094,9 +10986,6 @@
           },
           {
             "$ref": "#/parameters/clientIdParam"
-          },
-          {
-            "$ref": "#/parameters/platform"
           }
         ],
         "security": [
@@ -11170,9 +11059,6 @@
           },
           {
             "$ref": "#/parameters/clientIdParam"
-          },
-          {
-            "$ref": "#/parameters/platform"
           }
         ],
         "security": [
@@ -11244,9 +11130,6 @@
           },
           {
             "$ref": "#/parameters/clientIdParam"
-          },
-          {
-            "$ref": "#/parameters/platform"
           }
         ],
         "security": [
@@ -11320,9 +11203,6 @@
           },
           {
             "$ref": "#/parameters/clientIdParam"
-          },
-          {
-            "$ref": "#/parameters/platform"
           }
         ],
         "security": [
@@ -11394,9 +11274,6 @@
           },
           {
             "$ref": "#/parameters/clientIdParam"
-          },
-          {
-            "$ref": "#/parameters/platform"
           }
         ],
         "security": [
@@ -11470,9 +11347,6 @@
           },
           {
             "$ref": "#/parameters/clientIdParam"
-          },
-          {
-            "$ref": "#/parameters/platform"
           }
         ],
         "security": [
@@ -11544,9 +11418,6 @@
           },
           {
             "$ref": "#/parameters/clientIdParam"
-          },
-          {
-            "$ref": "#/parameters/platform"
           }
         ],
         "security": [
@@ -11620,9 +11491,6 @@
           },
           {
             "$ref": "#/parameters/clientIdParam"
-          },
-          {
-            "$ref": "#/parameters/platform"
           }
         ],
         "security": [
@@ -11694,9 +11562,6 @@
           },
           {
             "$ref": "#/parameters/clientIdParam"
-          },
-          {
-            "$ref": "#/parameters/platform"
           }
         ],
         "security": [
@@ -11770,9 +11635,6 @@
           },
           {
             "$ref": "#/parameters/clientIdParam"
-          },
-          {
-            "$ref": "#/parameters/platform"
           }
         ],
         "security": [
@@ -11844,9 +11706,6 @@
           },
           {
             "$ref": "#/parameters/clientIdParam"
-          },
-          {
-            "$ref": "#/parameters/platform"
           }
         ],
         "security": [
@@ -11920,9 +11779,6 @@
           },
           {
             "$ref": "#/parameters/clientIdParam"
-          },
-          {
-            "$ref": "#/parameters/platform"
           }
         ],
         "security": [
@@ -11994,9 +11850,6 @@
           },
           {
             "$ref": "#/parameters/clientIdParam"
-          },
-          {
-            "$ref": "#/parameters/platform"
           }
         ],
         "security": [
@@ -12070,9 +11923,6 @@
           },
           {
             "$ref": "#/parameters/clientIdParam"
-          },
-          {
-            "$ref": "#/parameters/platform"
           }
         ],
         "security": [
@@ -12144,9 +11994,6 @@
           },
           {
             "$ref": "#/parameters/clientIdParam"
-          },
-          {
-            "$ref": "#/parameters/platform"
           }
         ],
         "security": [
@@ -12220,9 +12067,6 @@
           },
           {
             "$ref": "#/parameters/clientIdParam"
-          },
-          {
-            "$ref": "#/parameters/platform"
           }
         ],
         "security": [
@@ -12294,9 +12138,6 @@
           },
           {
             "$ref": "#/parameters/clientIdParam"
-          },
-          {
-            "$ref": "#/parameters/platform"
           }
         ],
         "security": [

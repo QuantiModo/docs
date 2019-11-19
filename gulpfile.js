@@ -367,11 +367,30 @@ function downloadSdk(opts, language, cb){
         })
     });
 }
+// This function handles arrays and objects
+function deleteKeyRecursively(obj, keyToDelete){
+    for (var key in obj){
+        if(!obj.hasOwnProperty(key)){
+            continue;
+        }
+        if(key === keyToDelete){
+            if(obj.description){
+                obj.description = "Options: "+obj[keyToDelete].join(", ");
+            }
+            delete obj[keyToDelete]
+        }
+        if(typeof obj[key] == "object" && obj[key] !== null) {
+            deleteKeyRecursively(obj[key], keyToDelete);
+        }
+    }
+}
 function generateOptionsAndDownloadSdk(language, localSpec, cb){
     const opts = getSwaggerDownloadRequestOptions(language, localSpec);
     if(debug){outputAvailableOptionsForLanguage(language, localSpec);}
     if(localSpec){
         opts.spec = require('./swagger/swagger.json');
+        console.info("Deleting enum's because they break the typescript generator")
+        deleteKeyRecursively(opts.spec, "enum")
         logInfo("Generating " + language + " sdk using local swagger.json");
     }else{
         logInfo("Generating " + language + " sdk using " +  swaggerJsonUrl);
