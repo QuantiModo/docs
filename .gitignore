@@ -26,3 +26,4 @@ responses/*.json
 codegen/
 oax/
 swagger-ui/
+/swagger-codegen-cli*
