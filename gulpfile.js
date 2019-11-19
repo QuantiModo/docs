@@ -301,7 +301,6 @@ function getRequestOptions(language, useLocalSpec) {
         method: 'POST',
             uri: 'http://generator.swagger.io/api/gen/clients/' + language,
         body: {
-
         },
         json: true // Automatically stringifies the body to JSON
     };
@@ -398,39 +397,9 @@ gulp.task('0-download', ['clean-unzipped-folders'], function () {
         downloadSdk(languages[i]);
     }
 });
-gulp.task('typescript', [], function () {
-    const fs = require("fs");
-    const CodeGen = require("swagger-typescript-codegen").CodeGen;
-    const file = "swagger/swagger.json";
-    const swagger = JSON.parse(fs.readFileSync(file, "UTF-8"));
-    const tsSourceCode = CodeGen.getTypescriptCode({
-        className: "Test",
-        swagger: swagger,
-        imports: ["../../typings/tsd.d.ts"]
-    });
-    console.log(tsSourceCode);
-    fs.writeFileSync('quantimodo.ts', tsSourceCode);
-
-
-    const { generateTSFiles } = require('swagger-ts-generator');
-
-    const config = {
-        file: __dirname + '/swagger/swagger.json'
-    };
-
-    return generateTSFiles(
-        config.file, // This can be either a file containing the Swagger json or the Swagger object itself
-        {
-            modelFolder: './typescript/models',
-            enumTSFile: './typescript/models/enums.ts'
-            // + optionally more configuration
-        }
-    );
-});
 //var javascriptFlavor = 'typescript-fetch';
 gulp.task('js-1-download', ['clean-unzipped-folders'], function () {
     languages = [javascriptFlavor];
-
     return downloadSdk(javascriptFlavor, true);
 });
 gulp.task('php-0-sdk-download', [], function () {
@@ -603,7 +572,6 @@ const variableIsArray = function(variable){
         return true;
     }
     return Object.prototype.toString.call(variable) === '[object Array]';
-
 };
 function handleApiResponse(error, data, response, requiredProperties) {
     function getUrlFromResponse(response) {
@@ -883,7 +851,6 @@ gulp.task('js-node-angular-react-typescript', function(cb){
     let jsRepo = './sdk-repos/quantimodo-sdk-javascript/src/';
     const nodejsSourceCode = CodeGen.getNodeCode({className: 'QM', swagger: swagger});
     fs.writeFileSync(jsRepo+"qm.node.js", nodejsSourceCode);
-
     // var reactJsSourceCode = CodeGen.getReactCode({ className: 'Test', swagger: swagger });
     // fs.writeFileSync(jsRepo+"qm.react.js", reactJsSourceCode);
     const tsSourceCode = CodeGen.getTypescriptCode({
@@ -896,4 +863,18 @@ gulp.task('js-node-angular-react-typescript', function(cb){
     fs.writeFileSync(jsRepo+"qm.typescript.js", tsSourceCode);
     const angularJsSourceCode = CodeGen.getAngularCode({className: 'QM', swagger: swagger});
     fs.writeFile(jsRepo+"qm.angular-js.js", angularJsSourceCode, cb);
+});
+const swaggerCodegenVersion = "2.4.10";
+gulp.task('download-codegen-jar', [], function (cb) {
+    var download = require('download-file');
+    var url = `http://central.maven.org/maven2/io/swagger/swagger-codegen-cli/2.4.10/swagger-codegen-cli-#${swaggerCodegenVersion}.jar`
+    var options = {
+        directory: "./",
+        filename: `swagger-codegen-cli-${swaggerCodegenVersion}.jar`
+    }
+    download(url, options, function(err){
+        if (err) throw err
+        console.log(`Downloaded ${options.filename}!`)
+        cb();
+    })
 });

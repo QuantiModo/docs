@@ -34,6 +34,7 @@
     "swagger-node-codegen": "^1.6.3"
   },
   "devDependencies": {
+    "download-file": "^0.1.5",
     "swagger-ts-generator": "latest",
     "swagger-typescript-codegen": "^3.0.2"
   }
