@@ -4,11 +4,13 @@ const fs = require('fs');
 const runSequence = require('run-sequence');
 const git = require('gulp-git');
 const download = require('gulp-download-stream');
+const path = require('path')
 const rp = require('request-promise');
 const ignore = require('gulp-ignore');
 const del = require('del');
 const decompress = require('gulp-decompress');
 const bugsnag = require("bugsnag");
+var downloadFile = require('download-file');
 bugsnag.register("ae7bc49d1285848342342bb5c321a2cf");
 process.on('unhandledRejection', function (err) {
     console.error("Unhandled rejection: " + (err && err.stack || err));
@@ -21,7 +23,7 @@ bugsnag.onBeforeNotify(function (notification) {
 });
 function isTruthy(value) {return (value && value !== "false");}
 const debug = isTruthy(process.env.DEBUG);
-const sdksZippedPath = "./sdks-zipped";
+const sdksZippedRelativePath = "./sdks-zipped";
 const sdksUnzippedPath = "./sdks-unzipped";
 const sdksReposPath = './sdk-repos';
 let languages = [
@@ -77,6 +79,18 @@ const sdkSwaggerCodegenOptions = {
         "gemDescription": "A ruby wrapper for the QuantiModo API",
         "gemAuthor": "Mike P. Sinn",
         "gemAuthorEmail": "mike@quantimo.do"
+    },
+    "typescript-node": {
+        supportsES6: true
+    },
+    "typescript-angular": {
+        supportsES6: true
+    },
+    "typescript-angularjs": {
+        supportsES6: true
+    },
+    "typescript-fetch": {
+        supportsES6: true
     }
 };
 const majorMinorVersionNumbers = '5.11.';
@@ -184,7 +198,7 @@ function copyOneFoldersContentsToAnother(sourceFolderPath, destinationFolderPath
         .pipe(gulp.dest(destinationFolderPath));
 }
 function getZipPathForLanguage(language) {
-    return sdksZippedPath + '/' + getSdkNameForLanguage(language) + '.zip';
+    return path.resolve(sdksZippedRelativePath + '/' + getSdkNameForLanguage(language) + '.zip');
 }
 function writeToFile(filePath, stringContents, callback) {
     logDebug("Writing to " + filePath);
@@ -197,7 +211,7 @@ function getSdkNameForLanguage(languageName) {
 function getUnzippedPathForSdkLanguage(languageName) {
     return sdksUnzippedPath + '/' + languageName + '-client';
 }
-function getRepoPathForSdkLanguage(languageName) {
+function getRepoRelativePathForSdkLanguage(languageName) {
     return sdksReposPath + '/' + getSdkNameForLanguage(languageName);
 }
 const pathToIonic = '../../../public/ionic/Modo';
@@ -225,7 +239,7 @@ gulp.task('js-sdk-browserify-unzipped', [], function (callback) {
     browserify(getUnzippedPathForSdkLanguage(javascriptFlavor), callback);
 });
 gulp.task('js-sdk-browserify-repo', [], function (callback) {
-    browserify(getRepoPathForSdkLanguage(javascriptFlavor), callback);
+    browserify(getRepoRelativePathForSdkLanguage(javascriptFlavor), callback);
 });
 function browserify(path, callback){
     const sourceFile = 'src/index.js';
@@ -236,7 +250,7 @@ function browserify(path, callback){
     });
 }
 gulp.task('js-5-release', [], function (callback) {
-    executeCommand("cd " + getRepoPathForSdkLanguage(javascriptFlavor) +
+    executeCommand("cd " + getRepoRelativePathForSdkLanguage(javascriptFlavor) +
         //' && npm install' +
         ' && git checkout HEAD -- README.md' +
         ' && git checkout HEAD -- package.json' +
@@ -246,7 +260,7 @@ gulp.task('js-5-release', [], function (callback) {
         ' && git tag ' + apiVersionNumber +
         ' && git push origin ' + apiVersionNumber +
         ' && bower version ' + apiVersionNumber, function () {
-        executeCommand("cd " + getRepoPathForSdkLanguage(javascriptFlavor) + " && npm version " + apiVersionNumber +
+        executeCommand("cd " + getRepoRelativePathForSdkLanguage(javascriptFlavor) + " && npm version " + apiVersionNumber +
             ' && npm publish && git push && git push origin ' + apiVersionNumber, function () {
             //updateBowerAndPackageJsonVersions(pathToQmDocker);
             //updateBowerAndPackageJsonVersions(pathToIonic);
@@ -257,7 +271,7 @@ gulp.task('js-5-release', [], function (callback) {
 });
 gulp.task('clean-folders', [], function () {
     return del([
-        sdksZippedPath + '/**/*',
+        sdksZippedRelativePath + '/**/*',
         sdksUnzippedPath + '/**/*',
         sdksReposPath + '/**/*'
     ]);
@@ -291,12 +305,12 @@ gulp.task('clean-folders-and-clone-repos', function (callback) { // Must be run 
 });
 gulp.task('clean-repos-except-git', [], function(){
     for(let i = 0; i < languages.length; i++) {
-        if(i === languages.length - 1){ return cleanOneFolderExceptGit(getRepoPathForSdkLanguage(languages[i]));}
-        cleanOneFolderExceptGit(getRepoPathForSdkLanguage(languages[i]));
-        executeCommand("cd " + getRepoPathForSdkLanguage(languages[i]) + " && git pull");
+        if(i === languages.length - 1){ return cleanOneFolderExceptGit(getRepoRelativePathForSdkLanguage(languages[i]));}
+        cleanOneFolderExceptGit(getRepoRelativePathForSdkLanguage(languages[i]));
+        executeCommand("cd " + getRepoRelativePathForSdkLanguage(languages[i]) + " && git pull");
     }
 });
-function getRequestOptions(language, useLocalSpec) {
+function getGlobalSwaggerRequestOptions(language, useLocalSpec) {
     let opt = {
         method: 'POST',
             uri: 'http://generator.swagger.io/api/gen/clients/' + language,
@@ -313,56 +327,56 @@ function getRequestOptions(language, useLocalSpec) {
 }
 let language = "javascript";
 function getSwaggerDownloadRequestOptions(language, useLocalSpec) {
-    const requestOptions = getRequestOptions(language, useLocalSpec);
+    const opts = getGlobalSwaggerRequestOptions(language, useLocalSpec);
     if (sdkSwaggerCodegenOptions[language]) {
-        requestOptions.body.options = sdkSwaggerCodegenOptions[language];
+        opts.body.options = sdkSwaggerCodegenOptions[language];
     } else {
-        requestOptions.body.options = {};
-        requestOptions.body.options.apiPackage = "QuantiModoApi";
-        requestOptions.body.options.artifactId = "quantimodoApi";
-        requestOptions.body.options.authorEmail = "mike@quantimo.do";
-        requestOptions.body.options.authorName = "Mike P. Sinn";
-        requestOptions.body.options.classPrefix = "QM";
-        requestOptions.body.options.developerEmail = "mike@quantimo.do";
-        requestOptions.body.options.developerName = "Mike P. Sinn";
-        requestOptions.body.options.invokerPackage = (sdkSwaggerCodegenOptions[language] && sdkSwaggerCodegenOptions[language].invokerPackage) ? sdkSwaggerCodegenOptions[language].invokerPackage : "quantimodoApi";
-        requestOptions.body.options.modelPackage = "quantimodoApi";
-        requestOptions.body.options.moduleName = "quantimodoApi";
-        requestOptions.body.options.packageName = "quantimodo_api";
-        requestOptions.body.options.packagePath = "QuantiModoClient";
-        requestOptions.body.options.podName = "QuantiModoApi";
+        opts.body.options = {};
+        opts.body.options.apiPackage = "QuantiModoApi";
+        opts.body.options.artifactId = "quantimodoApi";
+        opts.body.options.authorEmail = "mike@quantimo.do";
+        opts.body.options.authorName = "Mike P. Sinn";
+        opts.body.options.classPrefix = "QM";
+        opts.body.options.developerEmail = "mike@quantimo.do";
+        opts.body.options.developerName = "Mike P. Sinn";
+        opts.body.options.invokerPackage = (sdkSwaggerCodegenOptions[language] && sdkSwaggerCodegenOptions[language].invokerPackage) ? sdkSwaggerCodegenOptions[language].invokerPackage : "quantimodoApi";
+        opts.body.options.modelPackage = "quantimodoApi";
+        opts.body.options.moduleName = "quantimodoApi";
+        opts.body.options.packageName = "quantimodo_api";
+        opts.body.options.packagePath = "QuantiModoClient";
+        opts.body.options.podName = "QuantiModoApi";
         //requestOptions.body.options.podVersion = getAppVersionNumber();
-        requestOptions.body.options.projectName = (sdkSwaggerCodegenOptions[language] && sdkSwaggerCodegenOptions[language].projectName) ? sdkSwaggerCodegenOptions[language].projectName : "quantimodoApi";
+        opts.body.options.projectName = (sdkSwaggerCodegenOptions[language] && sdkSwaggerCodegenOptions[language].projectName) ? sdkSwaggerCodegenOptions[language].projectName : "quantimodoApi";
     }
     //requestOptions.body.options.artifactVersion = requestOptions.body.options.projectVersion = requestOptions.body.options.packageVersion = requestOptions.body.options.podVersion = getAppVersionNumber();
-    requestOptions.body.options.artifactDescription = requestOptions.body.options.projectDescription = swaggerJson.info.description;
-    return requestOptions;
+    opts.body.options.artifactDescription = opts.body.options.projectDescription = swaggerJson.info.description;
+    return opts;
 }
-function downloadSdk(language, useLocalSpec){
-    const requestOptions = getSwaggerDownloadRequestOptions(language, useLocalSpec);
-    if(debug){
-        getSwaggerConfigOptions(language, useLocalSpec);
-    }
-    requestOptions.spec = require('./swagger/swagger.json');
-    if(useLocalSpec){
+function downloadSdk(opts, language, cb){
+    rp(opts).then(function(res){
+        const downloadLink = res.link.replace('https', 'http');
+        let filename = getSdkNameForLanguage(language) + '.zip';
+        console.info(`Downloading ${downloadLink}...`)
+        downloadFile(downloadLink, {
+            directory: sdksZippedRelativePath,
+            filename: filename
+        }, function(err){
+            if(err) throw err
+            console.log(`Downloaded ${filename}!`)
+            cb();
+        })
+    });
+}
+function generateOptionsAndDownloadSdk(language, localSpec, cb){
+    const opts = getSwaggerDownloadRequestOptions(language, localSpec);
+    if(debug){outputAvailableOptionsForLanguage(language, localSpec);}
+    if(localSpec){
+        opts.spec = require('./swagger/swagger.json');
         logInfo("Generating " + language + " sdk using local swagger.json");
     }else{
         logInfo("Generating " + language + " sdk using " +  swaggerJsonUrl);
     }
-    return rp(requestOptions)
-        .then(function(parsedBody){
-            const downloadLink = parsedBody.link.replace('https', 'http');
-            return download(downloadLink)
-                .pipe(rename(getSdkNameForLanguage(language) + '.zip'))
-                .pipe(gulp.dest(sdksZippedPath));
-        })
-        .catch(function(err){
-            if(err.error){
-                logError(err.error.message);
-            } else {
-                logError(err);
-            }
-        });
+    downloadSdk(opts, language, cb);
 }
 gulp.task('generateExpressServer', [], function () {
     const path = require('path');
@@ -377,10 +391,10 @@ gulp.task('generateExpressServer', [], function () {
         console.error(`Something went wrong: ${err.message}`);
     });
 });
-function getSwaggerConfigOptions(language, useLocalSpec) {
-    const getOptionsRequestOptions = getRequestOptions(language, useLocalSpec);
-    getOptionsRequestOptions.method = "GET";
-    return rp(getOptionsRequestOptions)
+function outputAvailableOptionsForLanguage(language) {
+    const opts = getGlobalSwaggerRequestOptions(language);
+    opts.method = "GET";
+    return rp(opts)
         .then(function (parsedBody) {
             logInfo("Available swagger config options for " + language, parsedBody);
         })
@@ -393,19 +407,19 @@ gulp.task('0-download', ['clean-unzipped-folders'], function () {
     logInfo("Generating sdks with " + swaggerJsonUrl);
     logInfo("See https://github.com/swagger-api/swagger-codegen/tree/master/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages for available clients");
     for(let i = 0; i < languages.length; i++){
-        if(i === languages.length - 1){ return downloadSdk(languages[i]);}
-        downloadSdk(languages[i]);
+        if(i === languages.length - 1){ return generateOptionsAndDownloadSdk(languages[i]);}
+        generateOptionsAndDownloadSdk(languages[i]);
     }
 });
 //var javascriptFlavor = 'typescript-fetch';
-gulp.task('js-1-download', ['clean-unzipped-folders'], function () {
+gulp.task('js-1-download', [], function () {
     languages = [javascriptFlavor];
-    return downloadSdk(javascriptFlavor, true);
+    return generateOptionsAndDownloadSdk(javascriptFlavor, true);
 });
 gulp.task('php-0-sdk-download', [], function () {
     languages = ['php'];
     logInfo("Generating " + language + " sdk using " +  swaggerJsonUrl);
-    return downloadSdk('php');
+    return generateOptionsAndDownloadSdk('php');
 });
 gulp.task('1-decompress', [], function () {
     for(let i = 0; i < languages.length; i++) {
@@ -422,7 +436,7 @@ gulp.task('php-1-unzip', [], function () {
     return unzipFileToFolder(getZipPathForLanguage('php'), sdksUnzippedPath);
 });
 function copyUnzippedJsSdkToRepo(){
-    return copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage(javascriptFlavor), getRepoPathForSdkLanguage(javascriptFlavor));
+    return copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage(javascriptFlavor), getRepoRelativePathForSdkLanguage(javascriptFlavor));
 }
 function copyUnzippedJsSdkToApiDocsNodeModules(){
     return copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage(javascriptFlavor), pathToQuantiModoNodeModule);
@@ -436,9 +450,9 @@ gulp.task('js-copy-to-src-lib', [], function(){
 function copySdksFromUnzippedPathToRepos(){
     for(let i = 0; i < languages.length; i++) {
         if(i === languages.length - 1){
-            return copyOneFoldersContentsToAnotherExceptReadme(getUnzippedPathForSdkLanguage(languages[i]), getRepoPathForSdkLanguage(languages[i]));
+            return copyOneFoldersContentsToAnotherExceptReadme(getUnzippedPathForSdkLanguage(languages[i]), getRepoRelativePathForSdkLanguage(languages[i]));
         }
-        copyOneFoldersContentsToAnotherExceptReadme(getUnzippedPathForSdkLanguage(languages[i]), getRepoPathForSdkLanguage(languages[i]));
+        copyOneFoldersContentsToAnotherExceptReadme(getUnzippedPathForSdkLanguage(languages[i]), getRepoRelativePathForSdkLanguage(languages[i]));
     }
 }
 gulp.task('js-3-copy-everywhere', ['js-sdk-browserify-unzipped'], function(){
@@ -463,14 +477,14 @@ gulp.task('js-4-reset-package-json-readme', [], function(){
 });
 gulp.task('php-2-sdk-copy-to-repo', [], function(){
     return copyOneFoldersContentsToAnother(getUnzippedPathForSdkLanguage('php') + '/QuantiModoClient/**/*',
-        getRepoPathForSdkLanguage('php'))
+        getRepoRelativePathForSdkLanguage('php'))
 });
 gulp.task('php-3-move-client-to-repo-root', [], function(){
-    return copyOneFoldersContentsToAnother(getRepoPathForSdkLanguage('php') + '/QuantiModoClient/**/*',
-        getRepoPathForSdkLanguage('php'));
+    return copyOneFoldersContentsToAnother(getRepoRelativePathForSdkLanguage('php') + '/QuantiModoClient/**/*',
+        getRepoRelativePathForSdkLanguage('php'));
 });
 gulp.task('php-4-update-sdk-composer', [], function(){
-    const composerJsonPath = getRepoPathForSdkLanguage('php') + '/composer.json';
+    const composerJsonPath = getRepoRelativePathForSdkLanguage('php') + '/composer.json';
     const composerJson = readJsonFile(composerJsonPath);
     composerJson.version = apiVersionNumber;
     return writeToFile(composerJsonPath, prettyJSONStringify(composerJson, 4), function () {
@@ -490,7 +504,7 @@ gulp.task('3-copy-to-repos', ['js-sdk-browserify-unzipped'], function(){
     return copySdksFromUnzippedPathToRepos();
 });
 function commitChanges(language, filesToResetArray){
-    let command = "cd " + getRepoPathForSdkLanguage(language);
+    let command = "cd " + getRepoRelativePathForSdkLanguage(language);
     if(filesToResetArray){
         for (let i = 0; i < filesToResetArray.length; i++) {
             command += ' && git checkout ' + filesToResetArray[i];
@@ -514,7 +528,7 @@ function resetNonGeneratedFiles(){
         'popup.js',
         'ionIcons.js'
     ];
-    let command = "cd " + getRepoPathForSdkLanguage(language);
+    let command = "cd " + getRepoRelativePathForSdkLanguage(language);
     toReset.forEach(function(file){
         command += " && git checkout "+file;
     });
@@ -842,39 +856,63 @@ gulp.task('JS-SDK-UPDATE', function(callback){
             callback(error);
         });
 });
-gulp.task('js-node-angular-react-typescript', function(cb){
-    const fs = require('fs');
-    const CodeGen = require('swagger-js-codegen').CodeGen;
-    //const file = 'swagger/petstore.json';
-    const file = 'swagger/swagger.json';
-    const swagger = JSON.parse(fs.readFileSync(file, 'UTF-8'));
-    let jsRepo = './sdk-repos/quantimodo-sdk-javascript/src/';
-    const nodejsSourceCode = CodeGen.getNodeCode({className: 'QM', swagger: swagger});
-    fs.writeFileSync(jsRepo+"qm.node.js", nodejsSourceCode);
-    // var reactJsSourceCode = CodeGen.getReactCode({ className: 'Test', swagger: swagger });
-    // fs.writeFileSync(jsRepo+"qm.react.js", reactJsSourceCode);
-    const tsSourceCode = CodeGen.getTypescriptCode({
-        className: 'QM',
-        swagger: swagger,
-        imports: [
-            //'../../typings/tsd.d.ts'
-        ]
-    });
-    fs.writeFileSync(jsRepo+"qm.typescript.js", tsSourceCode);
-    const angularJsSourceCode = CodeGen.getAngularCode({className: 'QM', swagger: swagger});
-    fs.writeFile(jsRepo+"qm.angular-js.js", angularJsSourceCode, cb);
-});
+function downloadAndExtractJavascriptClient(language, cb){
+    let jsSdkFolder = getRepoRelativePathForSdkLanguage('javascript');
+    let clientFolder = jsSdkFolder+'/' + language + '-client';
+    const rimraf = require('rimraf')
+    rimraf(clientFolder, function(){
+        generateOptionsAndDownloadSdk(language, true, function(res){
+            let zipPath = getZipPathForLanguage(language);
+            var extract = require('extract-zip')
+            console.info(`Extracting ${zipPath}...`)
+            extract(zipPath, {dir: path.resolve(jsSdkFolder)}, function (err) {
+                if(err) throw err
+                console.info(`Extracted to ${clientFolder}!`)
+                if(cb) cb()
+            })
+        });
+    })
+}
+
 const swaggerCodegenVersion = "2.4.10";
+const jar = `swagger-codegen-cli-${swaggerCodegenVersion}.jar`;
 gulp.task('download-codegen-jar', [], function (cb) {
-    var download = require('download-file');
-    var url = `http://central.maven.org/maven2/io/swagger/swagger-codegen-cli/2.4.10/swagger-codegen-cli-#${swaggerCodegenVersion}.jar`
-    var options = {
+    downloadFile(`http://central.maven.org/maven2/io/swagger/swagger-codegen-cli/2.4.10/swagger-codegen-cli-#${swaggerCodegenVersion}.jar`, {
         directory: "./",
-        filename: `swagger-codegen-cli-${swaggerCodegenVersion}.jar`
-    }
-    download(url, options, function(err){
+        filename: jar
+    }, function(err){
         if (err) throw err
-        console.log(`Downloaded ${options.filename}!`)
+        console.log(`Downloaded ${jar}!`)
         cb();
     })
+});
+// noinspection JSUnusedLocalSymbols
+function executeSynchronously(cmd, catchExceptions, cb){
+    const execSync = require('child_process').execSync;
+    console.info(cmd);
+    try{
+        execSync(cmd);
+        if(cb){
+            cb();
+        }
+    }catch (error){
+        if(catchExceptions){
+            console.error(error);
+        }else{
+            throw error;
+        }
+    }
+}
+function generateLocally(language, options){
+    executeSynchronously(`java -jar ${jar} generate -i swagger/swagger.json -l ${language} -o sdks-unzipped/${language} ${options}`)
+}
+gulp.task('js-node-angular-react-typescript', function(cb){
+    downloadAndExtractJavascriptClient('typescript-node', function(){
+        downloadAndExtractJavascriptClient('typescript-angular', function(){
+            downloadAndExtractJavascriptClient('typescript-angularjs', function(){
+                downloadAndExtractJavascriptClient('typescript-fetch', cb);
+            });
+        });
+    });
+    //return downloadSdk('typescript-node', true);
 });

@@ -19,6 +19,7 @@
     "bower": "*",
     "bugsnag": "*",
     "del": "*",
+    "extract-zip": "^1.6.7",
     "gulp": "*",
     "gulp-callback": "*",
     "gulp-decompress": "*",
@@ -31,7 +32,8 @@
     "request-promise": "latest",
     "run-sequence": "latest",
     "swagger-js-codegen": "^1.13.0",
-    "swagger-node-codegen": "^1.6.3"
+    "swagger-node-codegen": "^1.6.3",
+    "unzip": "^0.1.11"
   },
   "devDependencies": {
     "download-file": "^0.1.5",
