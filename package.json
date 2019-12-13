@@ -28,6 +28,8 @@
     "gulp-ignore": "latest",
     "gulp-rename": "latest",
     "gulp-unzip": "latest",
+    "mkdirp": "^0.5.1",
+    "portable-fetch": "^3.0.0",
     "q": "^1.4.1",
     "quantimodo": "5.11.111615",
     "request-promise": "latest",

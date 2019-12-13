@@ -201,9 +201,14 @@ function getZipPathForLanguage(language) {
     return path.resolve(sdksZippedRelativePath + '/' + getSdkNameForLanguage(language) + '.zip');
 }
 function writeToFile(filePath, stringContents, callback) {
+    var mkdirp = require('mkdirp');
+    var fs = require('fs');
+    var getDirName = require('path').dirname;
     logDebug("Writing to " + filePath);
-    if(typeof stringContents !== "string"){stringContents = JSON.stringify(stringContents);}
-    return fs.writeFile(filePath, stringContents, {}, callback);
+    mkdirp(getDirName(filePath), function (err) {
+        if(typeof stringContents !== "string"){stringContents = JSON.stringify(stringContents);}
+        return fs.writeFile(filePath, stringContents, {}, callback);
+    });
 }
 function getSdkNameForLanguage(languageName) {
     return 'quantimodo-sdk-' + languageName;
@@ -876,7 +881,7 @@ gulp.task('JS-SDK-UPDATE', function(callback){
         });
 });
 function downloadAndExtractJavascriptClient(language, cb){
-    let jsSdkFolder = getRepoRelativePathForSdkLanguage('javascript');
+    let jsSdkFolder = getRepoRelativePathForSdkLanguage(language);
     let clientFolder = jsSdkFolder+'/' + language + '-client';
     const rimraf = require('rimraf')
     rimraf(clientFolder, function(){
@@ -925,7 +930,7 @@ function executeSynchronously(cmd, catchExceptions, cb){
 function generateLocally(language, options){
     executeSynchronously(`java -jar ${jar} generate -i swagger/swagger.json -l ${language} -o sdks-unzipped/${language} ${options}`)
 }
-gulp.task('js-node-angular-react-typescript', function(cb){
+gulp.task('_typescript', function(cb){
     downloadAndExtractJavascriptClient('typescript-node', function(){
         downloadAndExtractJavascriptClient('typescript-angular', function(){
             downloadAndExtractJavascriptClient('typescript-angularjs', function(){
@@ -934,4 +939,23 @@ gulp.task('js-node-angular-react-typescript', function(cb){
         });
     });
     //return downloadSdk('typescript-node', true);
+});
+gulp.task('_typescript-fetch', function(cb){
+    downloadAndExtractJavascriptClient('typescript-fetch', cb);
+});
+
+gulp.task('upload-file', function(cb){
+    var tsClient = require('./sdk-repos/quantimodo-sdk-typescript-fetch/typescript-fetch-client');
+    var time = Math.floor(Date.now() / 1000);
+    var filePath = "./tmp/test-files/"+time
+    writeToFile(filePath, time, function(){
+        var data = fs.readFileSync(filePath);
+        var config = new tsClient.Configuration({accessToken: "demo"});
+        var FileApi = new tsClient.FileApi(config);
+        FileApi.postFile(data, "note", {accessToke: "demo"}).then(function(res){
+            FileApi.getFile(1, time, "demo",{accessToke: "demo"}).then(function(res){
+                console.log(res)
+            })
+        })
+    });
 });

@@ -63,6 +63,7 @@
       url = document.location.origin + "/api/docs/swagger/swagger.json?access_token=demo";
     }
     if(window.location.host === "docs.quantimo.do"){url = "https://docs.quantimo.do/swagger/swagger.json?access_token=demo"}
+      if(window.location.host === "dev-docs.quantimo.do"){url = "https://dev-docs.quantimo.do/swagger/swagger.json?access_token=demo"}
     window.ui = SwaggerUIBundle({
       url: url,
       dom_id: '#swagger-ui',
