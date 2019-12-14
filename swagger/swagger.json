@@ -12211,7 +12211,7 @@
           },
           {
             "in": "formData",
-            "name": "name",
+            "name": "folder",
             "type": "string",
             "required": false,
             "description": "Optionally provide the sub-folder name where you want to save"
