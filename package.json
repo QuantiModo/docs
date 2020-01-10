@@ -39,8 +39,8 @@
     "unzip": "^0.1.11"
   },
   "devDependencies": {
-    "download-file": "^0.1.5",
+    "download-file": "0.1.5",
     "swagger-ts-generator": "latest",
-    "swagger-typescript-codegen": "^3.0.2"
+    "swagger-typescript-codegen": "3.0.2"
   }
 }
