@@ -7359,7 +7359,7 @@
   "paths": {
     "/v3/appSettings": {
       "get": {
-        "description": "Get the settings for your application configurable at https://build.quantimo.do",
+        "description": "Get the settings for your application configurable at https://builder.quantimo.do",
         "operationId": "getAppSettings",
         "parameters": [
           {
