@@ -1945,7 +1945,7 @@
           "type": "integer"
         },
         "variableCategoryImageUrl": {
-          "description": "Ex: https://maxcdn.icons8.com/Color/PNG/96/Healthcare/pill-96.png",
+          "description": "Ex: https://static.quantimo.do/img/variable_categories/pill-96.png",
           "type": "string"
         },
         "variableCategoryName": {
@@ -2853,7 +2853,7 @@
     "StudyImages": {
       "properties": {
         "causeVariableImageUrl": {
-          "description": "Ex: https://maxcdn.icons8.com/Color/PNG/96/Household/sleeping_in_bed-96.png",
+          "description": "Ex: https://static.quantimo.do/img/variable_categories/sleeping_in_bed-96.png",
           "type": "string"
         },
         "causeVariableIonIcon": {
@@ -2861,7 +2861,7 @@
           "type": "string"
         },
         "effectVariableImageUrl": {
-          "description": "Ex: https://maxcdn.icons8.com/Color/PNG/96/Cinema/theatre_mask-96.png",
+          "description": "Ex: https://static.quantimo.do/img/variable_categories/theatre_mask-96.png",
           "type": "string"
         },
         "effectVariableIonIcon": {
@@ -3501,7 +3501,7 @@
           "type": "integer"
         },
         "variableCategoryImageUrl": {
-          "description": "Ex: https://maxcdn.icons8.com/Color/PNG/96/Messaging/sad-96.png",
+          "description": "Ex: https://static.quantimo.do/img/variable_categories/sad-96.png",
           "type": "string"
         },
         "variableCategoryName": {
@@ -3902,7 +3902,7 @@
           "type": "integer"
         },
         "variableCategoryImageUrl": {
-          "description": "Ex: https://maxcdn.icons8.com/Color/PNG/96/Cinema/theatre_mask-96.png",
+          "description": "Ex: https://static.quantimo.do/img/variable_categories/theatre_mask-96.png",
           "type": "string"
         },
         "variableCategoryName": {
@@ -5245,7 +5245,7 @@
           "type": "integer"
         },
         "imageUrl": {
-          "description": "Ex: https://maxcdn.icons8.com/Color/PNG/96/Cinema/theatre_mask-96.png",
+          "description": "Ex: https://static.quantimo.do/img/variable_categories/theatre_mask-96.png",
           "type": "string"
         },
         "ionIcon": {

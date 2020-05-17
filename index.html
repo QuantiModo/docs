@@ -62,6 +62,9 @@
     if(window.location.href.indexOf('api/docs') !== -1){
       url = document.location.origin + "/api/docs/swagger/swagger.json?access_token=demo";
     }
+      if(window.location.href.indexOf('dev-docs') !== -1){
+          url = document.location.origin + "/dev-docs/swagger/swagger.json?access_token=demo";
+      }
     if(window.location.host === "docs.quantimo.do"){url = "https://docs.quantimo.do/swagger/swagger.json?access_token=demo"}
     window.ui = SwaggerUIBundle({
       url: url,
