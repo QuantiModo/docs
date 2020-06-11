@@ -1,0 +1,4497 @@
+{
+    "variables": [],
+    "info": {
+        "name": "QuantiModo API",
+        "_postman_id": "7869c853-25f6-4c68-98a3-0eb4c95f5b4a",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "general",
+            "description": "",
+            "item": [
+                {
+                    "name": "api\/v6\/variables",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/variables",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/variables",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/variables",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/variables\/{variable}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/variables\/:variable",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/variables\/{variable}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/variables\/:variable",
+                            "query": []
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/variables\/{variable}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/variables\/:variable",
+                            "query": []
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/connectors",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/connectors",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/connectors",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/connectors",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/connectors\/{connector}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/connectors\/:connector",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/connectors\/{connector}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/connectors\/:connector",
+                            "query": []
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/connectors\/{connector}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/connectors\/:connector",
+                            "query": []
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/aggregate_correlations",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/aggregate_correlations",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/aggregate_correlations",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/aggregate_correlations",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/aggregate_correlations\/{aggregate_correlation}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/aggregate_correlations\/:aggregate_correlation",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/aggregate_correlations\/{aggregate_correlation}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/aggregate_correlations\/:aggregate_correlation",
+                            "query": []
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/aggregate_correlations\/{aggregate_correlation}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/aggregate_correlations\/:aggregate_correlation",
+                            "query": []
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/applications",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/applications",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/applications",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/applications",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/applications\/{application}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/applications\/:application",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/applications\/{application}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/applications\/:application",
+                            "query": []
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/applications\/{application}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/applications\/:application",
+                            "query": []
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/bshaffer_oauth_access_tokens",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/bshaffer_oauth_access_tokens",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/bshaffer_oauth_access_tokens",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/bshaffer_oauth_access_tokens",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/bshaffer_oauth_access_tokens\/{bshaffer_oauth_access_token}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/bshaffer_oauth_access_tokens\/:bshaffer_oauth_access_token",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/bshaffer_oauth_access_tokens\/{bshaffer_oauth_access_token}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/bshaffer_oauth_access_tokens\/:bshaffer_oauth_access_token",
+                            "query": []
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/bshaffer_oauth_access_tokens\/{bshaffer_oauth_access_token}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/bshaffer_oauth_access_tokens\/:bshaffer_oauth_access_token",
+                            "query": []
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/bshaffer_oauth_clients",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/bshaffer_oauth_clients",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/bshaffer_oauth_clients",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/bshaffer_oauth_clients",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/bshaffer_oauth_clients\/{bshaffer_oauth_client}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/bshaffer_oauth_clients\/:bshaffer_oauth_client",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/bshaffer_oauth_clients\/{bshaffer_oauth_client}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/bshaffer_oauth_clients\/:bshaffer_oauth_client",
+                            "query": []
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/bshaffer_oauth_clients\/{bshaffer_oauth_client}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/bshaffer_oauth_clients\/:bshaffer_oauth_client",
+                            "query": []
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/collaborators",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/collaborators",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/collaborators",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/collaborators",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/collaborators\/{collaborator}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/collaborators\/:collaborator",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/collaborators\/{collaborator}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/collaborators\/:collaborator",
+                            "query": []
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/collaborators\/{collaborator}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/collaborators\/:collaborator",
+                            "query": []
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/common_tags",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/common_tags",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/common_tags",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/common_tags",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/common_tags\/{common_tag}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/common_tags\/:common_tag",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/common_tags\/{common_tag}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/common_tags\/:common_tag",
+                            "query": []
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/common_tags\/{common_tag}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/common_tags\/:common_tag",
+                            "query": []
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/connections",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/connections",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/connections",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/connections",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/connections\/{connection}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/connections\/:connection",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/connections\/{connection}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/connections\/:connection",
+                            "query": []
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/connections\/{connection}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/connections\/:connection",
+                            "query": []
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/connector_imports",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/connector_imports",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/connector_imports",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/connector_imports",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/connector_imports\/{connector_import}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/connector_imports\/:connector_import",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/connector_imports\/{connector_import}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/connector_imports\/:connector_import",
+                            "query": []
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/connector_imports\/{connector_import}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/connector_imports\/:connector_import",
+                            "query": []
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/connector_requests",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/connector_requests",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/connector_requests",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/connector_requests",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/connector_requests\/{connector_request}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/connector_requests\/:connector_request",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/connector_requests\/{connector_request}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/connector_requests\/:connector_request",
+                            "query": []
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/connector_requests\/{connector_request}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/connector_requests\/:connector_request",
+                            "query": []
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/correlations",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/correlations",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/correlations",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/correlations",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/correlations\/{correlation}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/correlations\/:correlation",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/correlations\/{correlation}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/correlations\/:correlation",
+                            "query": []
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/correlations\/{correlation}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/correlations\/:correlation",
+                            "query": []
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/device_tokens",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/device_tokens",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/device_tokens",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/device_tokens",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/device_tokens\/{device_token}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/device_tokens\/:device_token",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/device_tokens\/{device_token}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/device_tokens\/:device_token",
+                            "query": []
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/device_tokens\/{device_token}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/device_tokens\/:device_token",
+                            "query": []
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/measurement_exports",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/measurement_exports",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/measurement_exports",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/measurement_exports",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/measurement_exports\/{measurement_export}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/measurement_exports\/:measurement_export",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/measurement_exports\/{measurement_export}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/measurement_exports\/:measurement_export",
+                            "query": []
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/measurement_exports\/{measurement_export}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/measurement_exports\/:measurement_export",
+                            "query": []
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/measurement_imports",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/measurement_imports",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/measurement_imports",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/measurement_imports",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/measurement_imports\/{measurement_import}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/measurement_imports\/:measurement_import",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/measurement_imports\/{measurement_import}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/measurement_imports\/:measurement_import",
+                            "query": []
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/measurement_imports\/{measurement_import}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/measurement_imports\/:measurement_import",
+                            "query": []
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/measurements",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/measurements",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/measurements",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/measurements",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/measurements\/{measurement}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/measurements\/:measurement",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/measurements\/{measurement}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/measurements\/:measurement",
+                            "query": []
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/measurements\/{measurement}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/measurements\/:measurement",
+                            "query": []
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/notifications",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/notifications",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/notifications",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/notifications",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/notifications\/{notification}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/notifications\/:notification",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/notifications\/{notification}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/notifications\/:notification",
+                            "query": []
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/notifications\/{notification}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/notifications\/:notification",
+                            "query": []
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/oauth_access_tokens",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/oauth_access_tokens",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/oauth_access_tokens",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/oauth_access_tokens",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/oauth_access_tokens\/{oauth_access_token}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/oauth_access_tokens\/:oauth_access_token",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/oauth_access_tokens\/{oauth_access_token}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/oauth_access_tokens\/:oauth_access_token",
+                            "query": []
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/oauth_access_tokens\/{oauth_access_token}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/oauth_access_tokens\/:oauth_access_token",
+                            "query": []
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/oauth_clients",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/oauth_clients",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/oauth_clients",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/oauth_clients",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/oauth_clients\/{oauth_client}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/oauth_clients\/:oauth_client",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/oauth_clients\/{oauth_client}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/oauth_clients\/:oauth_client",
+                            "query": []
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/oauth_clients\/{oauth_client}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/oauth_clients\/:oauth_client",
+                            "query": []
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/purchases",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/purchases",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/purchases",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/purchases",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/purchases\/{purchase}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/purchases\/:purchase",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/purchases\/{purchase}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/purchases\/:purchase",
+                            "query": []
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/purchases\/{purchase}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/purchases\/:purchase",
+                            "query": []
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/sent_emails",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/sent_emails",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/sent_emails",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/sent_emails",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/sent_emails\/{sent_email}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/sent_emails\/:sent_email",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/sent_emails\/{sent_email}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/sent_emails\/:sent_email",
+                            "query": []
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/sent_emails\/{sent_email}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/sent_emails\/:sent_email",
+                            "query": []
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/studies",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/studies",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/studies",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/studies",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/studies\/{study}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/studies\/:study",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/studies\/{study}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/studies\/:study",
+                            "query": []
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/studies\/{study}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/studies\/:study",
+                            "query": []
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/user_tags",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/user_tags",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/user_tags",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/user_tags",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/user_tags\/{user_tag}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/user_tags\/:user_tag",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/user_tags\/{user_tag}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/user_tags\/:user_tag",
+                            "query": []
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/user_tags\/{user_tag}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/user_tags\/:user_tag",
+                            "query": []
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/user_variables",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/user_variables",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/user_variables",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/user_variables",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/user_variables\/{user_variable}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/user_variables\/:user_variable",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/user_variables\/{user_variable}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/user_variables\/:user_variable",
+                            "query": []
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/user_variables\/{user_variable}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/user_variables\/:user_variable",
+                            "query": []
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/users",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/users",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/users",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/users",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/users\/{user}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/users\/:user",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/users\/{user}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/users\/:user",
+                            "query": []
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/users\/{user}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/users\/:user",
+                            "query": []
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/variable_user_sources",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/variable_user_sources",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/variable_user_sources",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/variable_user_sources",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/variable_user_sources\/{variable_user_source}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/variable_user_sources\/:variable_user_source",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/variable_user_sources\/{variable_user_source}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/variable_user_sources\/:variable_user_source",
+                            "query": []
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/variable_user_sources\/{variable_user_source}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/variable_user_sources\/:variable_user_source",
+                            "query": []
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/votes",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/votes",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/votes",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/votes",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/votes\/{vote}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/votes\/:vote",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/votes\/{vote}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/votes\/:vote",
+                            "query": []
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/votes\/{vote}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/votes\/:vote",
+                            "query": []
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/variable_categories",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/variable_categories",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/variable_categories",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/variable_categories",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/variable_categories\/{variable_category}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/variable_categories\/:variable_category",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/variable_categories\/{variable_category}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/variable_categories\/:variable_category",
+                            "query": []
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/v6\/variable_categories\/{variable_category}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/v6\/variable_categories\/:variable_category",
+                            "query": []
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 42ff4170172357b7312bb127fb58d5ea464943c1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        }
+    ]
+}
