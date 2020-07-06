@@ -135,7 +135,6 @@
           "type": "string"
         },
         "card": {
-          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       },
@@ -343,7 +342,6 @@
           "type": "array"
         },
         "selectedButton": {
-          "description": "Button that the user clicked and the provided function parameters",
           "$ref": "#/definitions/Button"
         },
         "sharingBody": {
@@ -439,7 +437,6 @@
           "type": "string"
         },
         "card": {
-          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       },
@@ -968,7 +965,6 @@
           "type": "array"
         },
         "card": {
-          "description": "Card containing instructions, image, text, link and relevant import buttons",
           "$ref": "#/definitions/Card"
         },
         "clientId": {
@@ -984,7 +980,6 @@
           "type": "string"
         },
         "connectInstructions": {
-          "description": "URL and parameters used when connecting to a service",
           "$ref": "#/definitions/ConnectInstructions"
         },
         "connectorId": {
@@ -1365,7 +1360,6 @@
           "type": "string"
         },
         "card": {
-          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       },
@@ -1417,7 +1411,6 @@
           "type": "string"
         },
         "card": {
-          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       },
@@ -1467,7 +1460,6 @@
           "type": "string"
         },
         "card": {
-          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       },
@@ -1557,7 +1549,6 @@
           "type": "string"
         },
         "card": {
-          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       },
@@ -1606,7 +1597,6 @@
           "type": "string"
         },
         "card": {
-          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       },
@@ -1656,7 +1646,6 @@
           "type": "string"
         },
         "card": {
-          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       },
@@ -1724,7 +1713,6 @@
           "type": "string"
         },
         "card": {
-          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       },
@@ -1735,7 +1723,6 @@
     "Measurement": {
       "properties": {
         "card": {
-          "description": "Card containing image, text, link and relevant buttons",
           "$ref": "#/definitions/Card"
         },
         "clientId": {
@@ -2212,7 +2199,6 @@
           "type": "string"
         },
         "card": {
-          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       }
@@ -2258,7 +2244,6 @@
           "type": "string"
         },
         "card": {
-          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       },
@@ -2301,7 +2286,6 @@
           "type": "string"
         },
         "card": {
-          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       }
@@ -2343,7 +2327,6 @@
           "type": "string"
         },
         "card": {
-          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       }
@@ -2400,7 +2383,6 @@
           "type": "string"
         },
         "card": {
-          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       }
@@ -2446,7 +2428,6 @@
           "type": "string"
         },
         "card": {
-          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       },
@@ -2493,7 +2474,6 @@
           "type": "string"
         },
         "card": {
-          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       }
@@ -2539,7 +2519,6 @@
           "type": "string"
         },
         "card": {
-          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       },
@@ -2616,7 +2595,6 @@
           "$ref": "#/definitions/Correlation"
         },
         "studyCard": {
-          "description": "Contains a summary, images, sharing buttons, and links",
           "$ref": "#/definitions/Card"
         },
         "studyHtml": {
@@ -2858,7 +2836,6 @@
           "type": "string"
         },
         "card": {
-          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       }
@@ -3067,7 +3044,6 @@
           "type": "string"
         },
         "bestStudyCard": {
-          "description": "Description of relationship with variable with strongest relationship for user or population",
           "$ref": "#/definitions/Card"
         },
         "bestUserStudyLink": {
@@ -3075,7 +3051,6 @@
           "type": "string"
         },
         "bestUserStudyCard": {
-          "description": "Description of relationship with variable with strongest relationship for user",
           "$ref": "#/definitions/Card"
         },
         "bestPopulationStudyLink": {
@@ -3083,7 +3058,6 @@
           "type": "string"
         },
         "bestPopulationStudyCard": {
-          "description": "Description of relationship with variable with strongest relationship for population",
           "$ref": "#/definitions/Card"
         },
         "optimalValueMessage": {
@@ -3099,7 +3073,6 @@
           "type": "string"
         },
         "card": {
-          "description": "Card containing instructions, image, text, link and relevant import buttons",
           "$ref": "#/definitions/Card"
         },
         "clientId": {
@@ -3494,7 +3467,6 @@
           "type": "string"
         },
         "bestStudyCard": {
-          "description": "Description of relationship with variable with strongest relationship for user or population",
           "$ref": "#/definitions/Card"
         },
         "bestUserStudyLink": {
@@ -3502,7 +3474,6 @@
           "type": "string"
         },
         "bestUserStudyCard": {
-          "description": "Description of relationship with variable with strongest relationship for user",
           "$ref": "#/definitions/Card"
         },
         "bestPopulationStudyLink": {
@@ -3510,7 +3481,6 @@
           "type": "string"
         },
         "bestPopulationStudyCard": {
-          "description": "Description of relationship with variable with strongest relationship for population",
           "$ref": "#/definitions/Card"
         },
         "optimalValueMessage": {
@@ -3526,7 +3496,6 @@
           "type": "string"
         },
         "card": {
-          "description": "Card with options for tracking.",
           "$ref": "#/definitions/Card"
         },
         "clientId": {
@@ -4090,7 +4059,6 @@
           "type": "string"
         },
         "card": {
-          "description": "Avatar and info",
           "$ref": "#/definitions/Card"
         },
         "clientId": {
@@ -4333,7 +4301,6 @@
           "type": "string"
         },
         "card": {
-          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       }
@@ -4382,7 +4349,6 @@
           "type": "string"
         },
         "bestStudyCard": {
-          "description": "Description of relationship with variable with strongest relationship for user or population",
           "$ref": "#/definitions/Card"
         },
         "bestUserStudyLink": {
@@ -4390,7 +4356,6 @@
           "type": "string"
         },
         "bestUserStudyCard": {
-          "description": "Description of relationship with variable with strongest relationship for user",
           "$ref": "#/definitions/Card"
         },
         "bestPopulationStudyLink": {
@@ -4398,7 +4363,6 @@
           "type": "string"
         },
         "bestPopulationStudyCard": {
-          "description": "Description of relationship with variable with strongest relationship for population",
           "$ref": "#/definitions/Card"
         },
         "optimalValueMessage": {
@@ -4414,7 +4378,6 @@
           "type": "string"
         },
         "card": {
-          "description": "Card containing instructions, image, text, link and relevant import buttons",
           "$ref": "#/definitions/Card"
         },
         "causeOnly": {
@@ -4948,7 +4911,6 @@
           "type": "string"
         },
         "trackingInstructionsCard": {
-          "description": "Instructions for tracking with buttons and images",
           "$ref": "#/definitions/Card"
         },
         "unit": {
@@ -5498,7 +5460,6 @@
           "type": "string"
         },
         "card": {
-          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       }
@@ -5604,7 +5565,6 @@
           "type": "string"
         },
         "card": {
-          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       }
@@ -5725,7 +5685,6 @@
           "type": "string"
         },
         "card": {
-          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       }
@@ -5861,7 +5820,6 @@
           "type": "string"
         },
         "card": {
-          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       }
@@ -5967,7 +5925,6 @@
           "type": "string"
         },
         "card": {
-          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       }
@@ -6076,7 +6033,6 @@
           "type": "string"
         },
         "card": {
-          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       }
@@ -6182,7 +6138,6 @@
           "type": "string"
         },
         "card": {
-          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       }
@@ -6298,7 +6253,6 @@
           "type": "string"
         },
         "card": {
-          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       }
@@ -6389,7 +6343,6 @@
           "type": "string"
         },
         "card": {
-          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       }
@@ -6490,7 +6443,6 @@
           "type": "string"
         },
         "card": {
-          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       }
@@ -6626,7 +6578,6 @@
           "type": "string"
         },
         "card": {
-          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       }
@@ -6727,13 +6678,12 @@
           "type": "string"
         },
         "card": {
-          "description": "A super neat card with buttons and HTML that you can use in your app!",
           "$ref": "#/definitions/Card"
         }
       }
     }
   },
-  "host": "app.quantimo.do",
+  "host": "local.quantimo.do",
   "info": {
     "contact": {
       "name": "info@quantimo.do"
@@ -6745,7 +6695,7 @@
     },
     "termsOfService": "https://quantimo.do/tos/",
     "title": "quantimodo",
-    "version": "5.8.112511"
+    "version": "5.8.112513"
   },
   "parameters": {
     "appVersionParam": {
@@ -12147,6 +12097,133 @@
           {
             "quantimodo_oauth2": [
               "readmeasurements"
+            ]
+          }
+        ]
+      }
+    },
+    "/v2/file": {
+      "get": {
+        "operationId": "downloadFile",
+        "tags": [
+          "File"
+        ],
+        "summary": "Download a File",
+        "description": "Download a previously uploaded file by previously returned url or originally provided name and optional folder",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          },
+          "401": {
+            "description": "Not authenticated"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/parameters/userIdParam"
+          },
+          {
+            "description": "Original uploaded file name or name param provided during original upload",
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Folder param provided during original upload, if any",
+            "in": "query",
+            "name": "folder",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "$ref": "#/parameters/clientIdParam"
+          }
+        ],
+        "security": [
+          {
+            "access_token": []
+          },
+          {
+            "quantimodo_oauth2": [
+              "readmeasurements"
+            ]
+          }
+        ]
+      },
+      "post": {
+        "operationId": "uploadFile",
+        "summary": "Upload a File",
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "tags": [
+          "File"
+        ],
+        "description": "Post File",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "Successful operation"
+          },
+          "401": {
+            "description": "Not authenticated"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "file",
+            "type": "file",
+            "required": true,
+            "description": "The file to upload."
+          },
+          {
+            "in": "formData",
+            "name": "note",
+            "type": "string",
+            "required": false,
+            "description": "Optional description of file contents"
+          },
+          {
+            "in": "formData",
+            "name": "name",
+            "type": "string",
+            "required": false,
+            "description": "Optionally provide the name you want to save as if different from the original one"
+          },
+          {
+            "in": "formData",
+            "name": "folder",
+            "type": "string",
+            "required": false,
+            "description": "Optionally provide the sub-folder name where you want to save"
+          }
+        ],
+        "security": [
+          {
+            "access_token": []
+          },
+          {
+            "quantimodo_oauth2": [
+              "writemeasurements"
             ]
           }
         ]
