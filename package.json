@@ -5,6 +5,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
+    "upgrade": "npm uninstall --save nocodb && npm install --save nocodb",
     "download:unzip:copy": "gulp 0-download && gulp 1-decompress && gulp 3-copy-to-repos",
     "test": "gulp check-responses",
     "postinstall": "",
@@ -16,6 +18,9 @@
   "author": "mikepsinn",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "nocodb": "^0.83.0",
     "bower": "*",
     "bugsnag": "*",
     "del": "*",
@@ -44,3 +49,4 @@
     "swagger-typescript-codegen": "3.0.2"
   }
 }
+

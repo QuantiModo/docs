@@ -28,3 +28,5 @@ oax/
 swagger-ui/
 /swagger-codegen-cli*
 tmp
+.env
+/vendor/
