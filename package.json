@@ -36,7 +36,7 @@
     "mkdirp": "^0.5.1",
     "portable-fetch": "^3.0.0",
     "q": "^1.4.1",
-    "quantimodo": "5.11.111615",
+    "quantimodo": "5.12.1",
     "request-promise": "latest",
     "run-sequence": "latest",
     "swagger-js-codegen": "^1.13.0",
