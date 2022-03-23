@@ -5,25 +5,18 @@ definitions:
   AppSettings:
     properties:
       additionalSettings:
-        description: 
         type: object
       appDescription:
-        description: 
         type: string
       appDesign:
-        description: 
         type: object
       appDisplayName:
-        description: 
         type: string
       appStatus:
-        description: 
         type: object
       appType:
-        description: 
         type: string
       buildEnabled:
-        description: 
         type: string
       clientId:
         description: 'Get yours at https:://builder.quantimo.do'
@@ -32,42 +25,32 @@ definitions:
         description: 'Get yours at https:://builder.quantimo.do'
         type: string
       collaborators:
-        description: 
         items:
           $ref: '#/definitions/User'
         type: array
       createdAt:
-        description: 
         type: string
       userId:
         description: User id of the owner of the application
         format: int32
         type: integer
       users:
-        description: 
         items:
           $ref: '#/definitions/User'
         type: array
       redirectUri:
-        description: 
         type: string
       companyName:
-        description: 
         type: string
       homepageUrl:
-        description: 
         type: string
       iconUrl:
-        description: 
         type: string
       longDescription:
-        description: 
         type: string
       splashScreen:
-        description: 
         type: string
       textLogo:
-        description: 
         type: string
     required:
       - clientId
@@ -898,46 +881,33 @@ definitions:
   InputField:
     properties:
       displayName:
-        description: 
         type: string
       helpText:
-        description: 
         type: string
       hint:
-        description: 
         type: string
       icon:
-        description: 
         type: string
       id:
         description: HTML element id
         type: string
       image:
-        description: 
         type: string
       key:
-        description: 
         type: string
       labelLeft:
-        description: 
         type: string
       labelRight:
-        description: 
         type: string
       link:
-        description: 
         type: string
       maxLength:
-        description: 
         type: integer
       maxValue:
-        description: 
         type: number
       minLength:
-        description: 
         type: integer
       minValue:
-        description: 
         type: number
       options:
         description: Selector list options
@@ -948,10 +918,8 @@ definitions:
         description: 'Ex: Title'
         type: string
       postUrl:
-        description: 
         type: string
       required:
-        description: 
         type: boolean
       show:
         description: 'Ex: Title'
@@ -977,7 +945,6 @@ definitions:
         description: 'See http://html5pattern.com/ for examples'
         type: string
       value:
-        description: 
         type: string
     required:
       - displayName
@@ -2023,10 +1990,8 @@ definitions:
         description: Formatted study text sections
         type: string
       socialSharingButtonHtml:
-        description: 
         type: string
       studySummaryBoxHtml:
-        description: 
         type: string
     required:
       - chartHtml
@@ -3427,7 +3392,6 @@ definitions:
         description: 'Ex: 95614'
         type: integer
       imageUrl:
-        description: 
         type: string
       informationalUrl:
         description: 'Ex: https://google.com'
@@ -3456,7 +3420,6 @@ definitions:
         description: Type of input field to show for recording measurements
         type: string
       ionIcon:
-        description: 
         type: string
       joinedCommonTagVariables:
         description: 'Commonly defined for all users.  Joining can be used used to merge duplicate variables. For instance, if two variables called Apples (Red Delicious) and Red Delicious Apples are joined, when one of them is analyzed, the measurements for the other will be included as well.'
@@ -4043,46 +4006,32 @@ definitions:
       - isSpam
     properties:
       id:
-        description: 
         type: integer
       userId:
-        description: 
         type: integer
       component:
-        description: 
         type: string
       type:
-        description: 
         type: string
       action:
-        description: 
         type: string
       content:
-        description: 
         type: string
       primaryLink:
-        description: 
         type: string
       itemId:
-        description: 
         type: integer
       secondaryItemId:
-        description: 
         type: integer
       dateRecorded:
-        description: 
         type: string
       hideSitewide:
-        description: 
         type: integer
       mpttLeft:
-        description: 
         type: integer
       mpttRight:
-        description: 
         type: integer
       isSpam:
-        description: 
         type: integer
       metaDataArray:
         description: Additional activity key-value data
@@ -4144,22 +4093,16 @@ definitions:
       - dateCreated
     properties:
       id:
-        description: 
         type: integer
       initiatorUserId:
-        description: 
         type: integer
       friendUserId:
-        description: 
         type: integer
       isConfirmed:
-        description: 
         type: integer
       isLimited:
-        description: 
         type: integer
       dateCreated:
-        description: 
         type: string
       metaDataArray:
         description: Additional friend key-value data
@@ -4224,31 +4167,22 @@ definitions:
       - dateCreated
     properties:
       id:
-        description: 
         type: integer
       creatorId:
-        description: 
         type: integer
       name:
-        description: 
         type: string
       slug:
-        description: 
         type: string
       description:
-        description: 
         type: string
       status:
-        description: 
         type: string
       parentId:
-        description: 
         type: integer
       enableForum:
-        description: 
         type: integer
       dateCreated:
-        description: 
         type: string
       metaDataArray:
         description: Additional group key-value data
@@ -4316,40 +4250,28 @@ definitions:
       - inviteSent
     properties:
       id:
-        description: 
         type: integer
       groupId:
-        description: 
         type: integer
       userId:
-        description: 
         type: integer
       inviterId:
-        description: 
         type: integer
       isAdmin:
-        description: 
         type: integer
       isMod:
-        description: 
         type: integer
       userTitle:
-        description: 
         type: string
       dateModified:
-        description: 
         type: string
       comments:
-        description: 
         type: string
       isConfirmed:
-        description: 
         type: integer
       isBanned:
-        description: 
         type: integer
       inviteSent:
-        description: 
         type: integer
       metaDataArray:
         description: Additional groupsmember key-value data
@@ -4411,22 +4333,16 @@ definitions:
       - dateSent
     properties:
       id:
-        description: 
         type: integer
       threadId:
-        description: 
         type: integer
       senderId:
-        description: 
         type: integer
       subject:
-        description: 
         type: string
       message:
-        description: 
         type: string
       dateSent:
-        description: 
         type: string
       metaDataArray:
         description: Additional messagesmessage key-value data
@@ -4487,19 +4403,14 @@ definitions:
       - isActive
     properties:
       id:
-        description: 
         type: integer
       subject:
-        description: 
         type: string
       message:
-        description: 
         type: string
       dateSent:
-        description: 
         type: string
       isActive:
-        description: 
         type: integer
       metaDataArray:
         description: Additional messagesnotice key-value data
@@ -4567,22 +4478,16 @@ definitions:
       - isDeleted
     properties:
       id:
-        description: 
         type: integer
       userId:
-        description: 
         type: integer
       threadId:
-        description: 
         type: integer
       unreadCount:
-        description: 
         type: integer
       senderOnly:
-        description: 
         type: integer
       isDeleted:
-        description: 
         type: integer
       metaDataArray:
         description: Additional messagesrecipient key-value data
@@ -4646,28 +4551,20 @@ definitions:
       - isNew
     properties:
       id:
-        description: 
         type: integer
       userId:
-        description: 
         type: integer
       itemId:
-        description: 
         type: integer
       secondaryItemId:
-        description: 
         type: integer
       componentName:
-        description: 
         type: string
       componentAction:
-        description: 
         type: string
       dateNotified:
-        description: 
         type: string
       isNew:
-        description: 
         type: integer
       metaDataArray:
         description: Additional notification key-value data
@@ -4726,13 +4623,10 @@ definitions:
       - blogId
     properties:
       id:
-        description: 
         type: integer
       userId:
-        description: 
         type: integer
       blogId:
-        description: 
         type: integer
       metaDataArray:
         description: Additional userblog key-value data
@@ -4793,19 +4687,14 @@ definitions:
       - lastUpdated
     properties:
       id:
-        description: 
         type: integer
       fieldId:
-        description: 
         type: integer
       userId:
-        description: 
         type: integer
       value:
-        description: 
         type: string
       lastUpdated:
-        description: 
         type: string
       metaDataArray:
         description: Additional xprofiledatum key-value data
@@ -4873,40 +4762,28 @@ definitions:
       - canDelete
     properties:
       id:
-        description: 
         type: integer
       groupId:
-        description: 
         type: integer
       parentId:
-        description: 
         type: integer
       type:
-        description: 
         type: string
       name:
-        description: 
         type: string
       description:
-        description: 
         type: string
       isRequired:
-        description: 
         type: integer
       isDefaultOption:
-        description: 
         type: integer
       fieldOrder:
-        description: 
         type: integer
       optionOrder:
-        description: 
         type: integer
       orderBy:
-        description: 
         type: string
       canDelete:
-        description: 
         type: integer
       metaDataArray:
         description: Additional xprofilefield key-value data
@@ -4967,19 +4844,14 @@ definitions:
       - canDelete
     properties:
       id:
-        description: 
         type: integer
       name:
-        description: 
         type: string
       description:
-        description: 
         type: string
       groupOrder:
-        description: 
         type: integer
       canDelete:
-        description: 
         type: integer
       metaDataArray:
         description: Additional xprofilegroup key-value data
@@ -5038,7 +4910,7 @@ info:
   description: 'We make it easy to retrieve and analyze normalized user data from a wide array of devices and applications. Check out our [docs and sdk''s](https://github.com/QuantiModo/docs) or [contact us](https://help.quantimo.do).'
   license:
     name: Apache 2.0
-    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+    url: 'https://www.apache.org/licenses/LICENSE-2.0.html'
   termsOfService: 'https://curedao.org/tos/'
   title: quantimodo
   version: 5.8.112511
@@ -6159,7 +6031,7 @@ paths:
         - authentication
   /v3/oauth2/token:
     get:
-      description: 'Client provides authorization token obtained from /api/v3/oauth2/authorize to this endpoint and receives an access token. Access token can then be used to query API endpoints. ### Request Access Token After user approves your access to the given scope form the https:/app.quantimo.do/v1/oauth2/authorize endpoint, you''ll receive an authorization code to request an access token. This time make a `POST` request to `/api/v1/oauth/access_token` with parameters including: * `grant_type` Can be `authorization_code` or `refresh_token` since we are getting the `access_token` for the first time we don''t have a `refresh_token` so this must be `authorization_code`. * `code` Authorization code you received with the previous request. * `redirect_uri` Your application''s redirect url. ### Refreshing Access Token Access tokens expire at some point, to continue using our api you need to refresh them with `refresh_token` you received along with the `access_token`. To do this make a `POST` request to `/api/v1/oauth/access_token` with correct parameters, which are: * `grant_type` This time grant type must be `refresh_token` since we have it. * `clientId` Your application''s client id. * `client_secret` Your application''s client secret. * `refresh_token` The refresh token you received with the `access_token`. Every request you make to this endpoint will give you a new refresh token and make the old one expired. So you can keep getting new access tokens with new refresh tokens. ### Using Access Token Currently we support 2 ways for this, you can''t use both at the same time. * Adding access token to the request header as `Authorization: Bearer {access_token}` * Adding to the url as a query parameter `?access_token={access_token}` You can read more about OAuth2 from [here](http://oauth.net/2/)'
+      description: 'Client provides authorization token obtained from /api/v3/oauth2/authorize to this endpoint and receives an access token. Access token can then be used to query API endpoints. ### Request Access Token After user approves your access to the given scope form the https:/app.quantimo.do/v1/oauth2/authorize endpoint, you''ll receive an authorization code to request an access token. This time make a `POST` request to `/api/v1/oauth/access_token` with parameters including: * `grant_type` Can be `authorization_code` or `refresh_token` since we are getting the `access_token` for the first time we don''t have a `refresh_token` so this must be `authorization_code`. * `code` Authorization code you received with the previous request. * `redirect_uri` Your application''s redirect url. ### Refreshing Access Token Access tokens expire at some point, to continue using our api you need to refresh them with `refresh_token` you received along with the `access_token`. To do this make a `POST` request to `/api/v1/oauth/access_token` with correct parameters, which are: * `grant_type` This time grant type must be `refresh_token` since we have it. * `clientId` Your application''s client id. * `client_secret` Your application''s client secret. * `refresh_token` The refresh token you received with the `access_token`. Every request you make to this endpoint will give you a new refresh token and make the old one expired. So you can keep getting new access tokens with new refresh tokens. ### Using Access Token Currently we support 2 ways for this, you can''t use both at the same time. * Adding access token to the request header as `Authorization: Bearer {access_token}` * Adding to the url as a query parameter `?access_token={access_token}` You can read more about OAuth2 from [here](https://oauth.net/2/)'
       operationId: getAccessToken
       parameters:
         - $ref: '#/parameters/clientIdParam'
