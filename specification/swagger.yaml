@@ -756,7 +756,7 @@ definitions:
         description: 'Ex: 0'
         type: integer
       getItUrl:
-        description: 'Ex: https://quantimo.do'
+        description: 'Ex: https://curedao.org'
         type: string
       id:
         description: 'Ex: 72'
@@ -765,7 +765,7 @@ definitions:
         description: 'Ex: https://web.quantimo.do/img/logos/quantimodo-logo-qm-rainbow-200-200.png'
         type: string
       imageHtml:
-        description: 'Ex: <a href="https://quantimo.do"><img id="quantimodo_image" title="QuantiModo" src="https://web.quantimo.do/img/logos/quantimodo-logo-qm-rainbow-200-200.png" alt="QuantiModo"></a>'
+        description: 'Ex: <a href="https://curedao.org"><img id="quantimodo_image" title="QuantiModo" src="https://web.quantimo.do/img/logos/quantimodo-logo-qm-rainbow-200-200.png" alt="QuantiModo"></a>'
         type: string
       lastSuccessfulUpdatedAt:
         description: 'Ex: 2017-07-31 10:10:34 UTC ISO 8601 YYYY-MM-DDThh:mm:ss'
@@ -774,7 +774,7 @@ definitions:
         description: Epoch timestamp of last sync
         type: integer
       linkedDisplayNameHtml:
-        description: 'Ex: <a href="https://quantimo.do">QuantiModo</a>'
+        description: 'Ex: <a href="https://curedao.org">QuantiModo</a>'
         type: string
       longDescription:
         description: 'Ex: QuantiModo is a Chrome extension, Android app, iOS app, and web app that allows you to easily track mood, symptoms, or any outcome you want to optimize in a fraction of a second.  You can also import your data from over 30 other apps and devices like Fitbit, Rescuetime, Jawbone Up, Withings, Facebook, Github, Google Calendar, Runkeeper, MoodPanda, Slice, Google Fit, and more.  QuantiModo then analyzes your data to identify which hidden factors are most likely to be influencing your mood or symptoms and their optimal daily values.'
@@ -1609,7 +1609,7 @@ definitions:
         description: 'Ex: <a href="https://www.amazon.com/Fitbit-Charge-Heart-Fitness-Wristband/dp/B01K9S260E/ref=as_li_ss_tl?ie=UTF8&qid=1493518902&sr=8-3&keywords=fitbit&th=1&linkCode=ll1&tag=quant08-20&linkId=b357b0833de73b0c4e935fd7c13a079e">Obtain Fitbit</a> and use it to record your Sleep Duration. Once you have a <a href="https://www.amazon.com/Fitbit-Charge-Heart-Fitness-Wristband/dp/B01K9S260E/ref=as_li_ss_tl?ie=UTF8&qid=1493518902&sr=8-3&keywords=fitbit&th=1&linkCode=ll1&tag=quant08-20&linkId=b357b0833de73b0c4e935fd7c13a079e">Fitbit</a> account, <a href="https://web.quantimo.do/#/app/import">connect your  Fitbit account at QuantiModo</a> to automatically import and analyze your data.'
         type: string
       instructionsForEffectVariable:
-        description: 'Ex: <a href="https://quantimo.do">Obtain QuantiModo</a> and use it to record your Overall Mood. Once you have a <a href="https://quantimo.do">QuantiModo</a> account, <a href="https://web.quantimo.do/#/app/import">connect your  QuantiModo account at QuantiModo</a> to automatically import and analyze your data.'
+        description: 'Ex: <a href="https://curedao.org">Obtain QuantiModo</a> and use it to record your Overall Mood. Once you have a <a href="https://curedao.org">QuantiModo</a> account, <a href="https://web.quantimo.do/#/app/import">connect your  QuantiModo account at QuantiModo</a> to automatically import and analyze your data.'
         type: string
   PostMeasurementsDataResponse:
     properties:
@@ -5039,7 +5039,7 @@ info:
   license:
     name: Apache 2.0
     url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
-  termsOfService: 'https://quantimo.do/tos/'
+  termsOfService: 'https://curedao.org/tos/'
   title: quantimodo
   version: 5.8.112511
 parameters:

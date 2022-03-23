@@ -1,8 +1,8 @@
 ### Query Options
 
-The standard query options for QuantiModo API are as described in the table below.
+The standard query options for CureDAO API are as described in the table below.
 
-These are the available query options in QuantiModo API:
+These are the available query options in CureDAO API:
 
 Parameter | Description                                                                                   
 ----------|--------------------------------------------------------------------------

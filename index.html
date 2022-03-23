@@ -65,7 +65,7 @@
       if(window.location.href.indexOf('dev-docs') !== -1){
           url = document.location.origin + "/dev-docs/swagger/swagger.json?access_token=demo";
       }
-    if(window.location.host === "docs.quantimo.do"){url = "https://docs.quantimo.do/swagger/swagger.json?access_token=demo"}
+    if(window.location.host === "docs.quantimo.do"){url = "https://api-docs.curedao.org/swagger/swagger.json?access_token=demo"}
       if(window.location.host === "dev-docs.quantimo.do"){url = "https://dev-docs.quantimo.do/swagger/swagger.json?access_token=demo"}
     window.ui = SwaggerUIBundle({
       url: url,

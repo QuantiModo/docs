@@ -74,9 +74,9 @@ const sdkSwaggerCodegenOptions = {
         "gemName": "quantimodoApi",
         "moduleName": "QuantiModoApi",
         "gemVersion": getAppVersionNumber(),
-        "gemHomepage": "https://quantimo.do",
-        "gemSummary": "A ruby wrapper for the QuantiModo API",
-        "gemDescription": "A ruby wrapper for the QuantiModo API",
+        "gemHomepage": "https://curedao.org",
+        "gemSummary": "A ruby wrapper for the CureDAO API",
+        "gemDescription": "A ruby wrapper for the CureDAO API",
         "gemAuthor": "Mike P. Sinn",
         "gemAuthorEmail": "mike@quantimo.do"
     },
