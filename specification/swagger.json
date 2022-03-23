@@ -7,31 +7,31 @@
     "AppSettings": {
       "properties": {
         "additionalSettings": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "object"
         },
         "appDescription": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "string"
         },
         "appDesign": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "object"
         },
         "appDisplayName": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "string"
         },
         "appStatus": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "object"
         },
         "appType": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "string"
         },
         "buildEnabled": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "string"
         },
         "clientId": {
@@ -43,14 +43,14 @@
           "type": "string"
         },
         "collaborators": {
-          "description": "What do you expect?",
+          "description": "",
           "items": {
             "$ref": "#/definitions/User"
           },
           "type": "array"
         },
         "createdAt": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "string"
         },
         "userId": {
@@ -59,38 +59,38 @@
           "type": "integer"
         },
         "users": {
-          "description": "What do you expect?",
+          "description": "",
           "items": {
             "$ref": "#/definitions/User"
           },
           "type": "array"
         },
         "redirectUri": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "string"
         },
         "companyName": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "string"
         },
         "homepageUrl": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "string"
         },
         "iconUrl": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "string"
         },
         "longDescription": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "string"
         },
         "splashScreen": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "string"
         },
         "textLogo": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "string"
         }
       },
@@ -1213,19 +1213,19 @@
     "InputField": {
       "properties": {
         "displayName": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "string"
         },
         "helpText": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "string"
         },
         "hint": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "string"
         },
         "icon": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "string"
         },
         "id": {
@@ -1233,39 +1233,39 @@
           "type": "string"
         },
         "image": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "string"
         },
         "key": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "string"
         },
         "labelLeft": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "string"
         },
         "labelRight": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "string"
         },
         "link": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "string"
         },
         "maxLength": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "integer"
         },
         "maxValue": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "number"
         },
         "minLength": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "integer"
         },
         "minValue": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "number"
         },
         "options": {
@@ -1280,11 +1280,11 @@
           "type": "string"
         },
         "postUrl": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "string"
         },
         "required": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "boolean"
         },
         "show": {
@@ -1316,7 +1316,7 @@
           "type": "string"
         },
         "value": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "string"
         }
       },
@@ -2747,11 +2747,11 @@
           "type": "string"
         },
         "socialSharingButtonHtml": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "string"
         },
         "studySummaryBoxHtml": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "string"
         }
       },
@@ -4573,7 +4573,7 @@
           "type": "integer"
         },
         "imageUrl": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "string"
         },
         "informationalUrl": {
@@ -4613,7 +4613,7 @@
           "type": "string"
         },
         "ionIcon": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "string"
         },
         "joinedCommonTagVariables": {
@@ -5376,59 +5376,59 @@
       ],
       "properties": {
         "id": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "integer"
         },
         "userId": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "integer"
         },
         "component": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "string"
         },
         "type": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "string"
         },
         "action": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "string"
         },
         "content": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "string"
         },
         "primaryLink": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "string"
         },
         "itemId": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "integer"
         },
         "secondaryItemId": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "integer"
         },
         "dateRecorded": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "string"
         },
         "hideSitewide": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "integer"
         },
         "mpttLeft": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "integer"
         },
         "mpttRight": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "integer"
         },
         "isSpam": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "integer"
         },
         "metaDataArray": {
@@ -5514,27 +5514,27 @@
       ],
       "properties": {
         "id": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "integer"
         },
         "initiatorUserId": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "integer"
         },
         "friendUserId": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "integer"
         },
         "isConfirmed": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "integer"
         },
         "isLimited": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "integer"
         },
         "dateCreated": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "string"
         },
         "metaDataArray": {
@@ -5623,39 +5623,39 @@
       ],
       "properties": {
         "id": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "integer"
         },
         "creatorId": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "integer"
         },
         "name": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "string"
         },
         "slug": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "string"
         },
         "description": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "string"
         },
         "status": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "string"
         },
         "parentId": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "integer"
         },
         "enableForum": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "integer"
         },
         "dateCreated": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "string"
         },
         "metaDataArray": {
@@ -5747,51 +5747,51 @@
       ],
       "properties": {
         "id": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "integer"
         },
         "groupId": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "integer"
         },
         "userId": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "integer"
         },
         "inviterId": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "integer"
         },
         "isAdmin": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "integer"
         },
         "isMod": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "integer"
         },
         "userTitle": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "string"
         },
         "dateModified": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "string"
         },
         "comments": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "string"
         },
         "isConfirmed": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "integer"
         },
         "isBanned": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "integer"
         },
         "inviteSent": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "integer"
         },
         "metaDataArray": {
@@ -5877,27 +5877,27 @@
       ],
       "properties": {
         "id": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "integer"
         },
         "threadId": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "integer"
         },
         "senderId": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "integer"
         },
         "subject": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "string"
         },
         "message": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "string"
         },
         "dateSent": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "string"
         },
         "metaDataArray": {
@@ -5982,23 +5982,23 @@
       ],
       "properties": {
         "id": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "integer"
         },
         "subject": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "string"
         },
         "message": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "string"
         },
         "dateSent": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "string"
         },
         "isActive": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "integer"
         },
         "metaDataArray": {
@@ -6092,27 +6092,27 @@
       ],
       "properties": {
         "id": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "integer"
         },
         "userId": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "integer"
         },
         "threadId": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "integer"
         },
         "unreadCount": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "integer"
         },
         "senderOnly": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "integer"
         },
         "isDeleted": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "integer"
         },
         "metaDataArray": {
@@ -6200,35 +6200,35 @@
       ],
       "properties": {
         "id": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "integer"
         },
         "userId": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "integer"
         },
         "itemId": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "integer"
         },
         "secondaryItemId": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "integer"
         },
         "componentName": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "string"
         },
         "componentAction": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "string"
         },
         "dateNotified": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "string"
         },
         "isNew": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "integer"
         },
         "metaDataArray": {
@@ -6311,15 +6311,15 @@
       ],
       "properties": {
         "id": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "integer"
         },
         "userId": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "integer"
         },
         "blogId": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "integer"
         },
         "metaDataArray": {
@@ -6404,23 +6404,23 @@
       ],
       "properties": {
         "id": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "integer"
         },
         "fieldId": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "integer"
         },
         "userId": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "integer"
         },
         "value": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "string"
         },
         "lastUpdated": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "string"
         },
         "metaDataArray": {
@@ -6512,51 +6512,51 @@
       ],
       "properties": {
         "id": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "integer"
         },
         "groupId": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "integer"
         },
         "parentId": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "integer"
         },
         "type": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "string"
         },
         "name": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "string"
         },
         "description": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "string"
         },
         "isRequired": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "integer"
         },
         "isDefaultOption": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "integer"
         },
         "fieldOrder": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "integer"
         },
         "optionOrder": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "integer"
         },
         "orderBy": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "string"
         },
         "canDelete": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "integer"
         },
         "metaDataArray": {
@@ -6641,23 +6641,23 @@
       ],
       "properties": {
         "id": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "integer"
         },
         "name": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "string"
         },
         "description": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "string"
         },
         "groupOrder": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "integer"
         },
         "canDelete": {
-          "description": "What do you expect?",
+          "description": "",
           "type": "integer"
         },
         "metaDataArray": {
@@ -6736,16 +6736,16 @@
   "host": "app.quantimo.do",
   "info": {
     "contact": {
-      "name": "info@quantimo.do"
+      "name": "hello@curedao.org"
     },
     "description": "We make it easy to retrieve and analyze normalized user data from a wide array of devices and applications. Check out our [docs and sdk's](https://github.com/QuantiModo/docs) or [contact us](https://help.quantimo.do).",
     "license": {
-      "name": "Apache 2.0",
-      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+      "name": "GNU General Public License v3 (GPL-3)",
+      "url": "https://tldrlegal.com/license/gnu-general-public-license-v3-(gpl-3)"
     },
-    "termsOfService": "https://curedao.org/tos/",
-    "title": "quantimodo",
-    "version": "5.8.112511"
+    "termsOfService": "https://quantimo.do/tos/",
+    "title": "CureDAO Unified Health API",
+    "version": "0.0.1"
   },
   "parameters": {
     "appVersionParam": {
@@ -12164,6 +12164,11 @@
       "in": "query",
       "name": "access_token",
       "type": "apiKey"
+    },
+    "api_key": {
+      "type": "apiKey",
+      "name": "api_key",
+      "in": "header"
     },
     "client_id": {
       "in": "query",

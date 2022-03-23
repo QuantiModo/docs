@@ -160,8 +160,8 @@ function executeCommand(command, callback) {
         if(callback){callback(err);}
     });
 }
-const swaggerJsonUrl = 'https://raw.githubusercontent.com/QuantiModo/docs/master/swagger/swagger.json';
-//swaggerJsonUrl = 'https://utopia.quantimo.do:4443/api/docs/swagger/swagger.json';
+const swaggerJsonUrl = 'https://raw.githubusercontent.com/QuantiModo/docs/master/specification/swagger.json';
+//swaggerJsonUrl = 'https://utopia.quantimo.do:4443/api/docs/specification/swagger.json';
 function clone(organization, repoName, destinationFolder, callback){
     const repoUrl = 'https://github.com/' + organization + '/' + repoName;
     const repoFolder = destinationFolder + '/' + repoName;
@@ -324,7 +324,7 @@ function getGlobalSwaggerRequestOptions(language, useLocalSpec) {
         json: true // Automatically stringifies the body to JSON
     };
     if(useLocalSpec){
-        opt.body.spec = require('./swagger/swagger.json');
+        opt.body.spec = require('./specification/swagger.json');
     } else {
         opt.body.swaggerUrl = swaggerJsonUrl;
     }
@@ -393,7 +393,7 @@ function generateOptionsAndDownloadSdk(language, localSpec, cb){
     const opts = getSwaggerDownloadRequestOptions(language, localSpec);
     if(debug){outputAvailableOptionsForLanguage(language, localSpec);}
     if(localSpec){
-        opts.spec = require('./swagger/swagger.json');
+        opts.spec = require('./specification/swagger.json');
         console.info("Deleting enum's because they break the typescript generator")
         deleteKeyRecursively(opts.spec, "enum")
         logInfo("Generating " + language + " sdk using local swagger.json");
@@ -405,7 +405,7 @@ function generateOptionsAndDownloadSdk(language, localSpec, cb){
 gulp.task('generateExpressServer', [], function () {
     const path = require('path');
     const codegen = require('swagger-node-codegen');
-    const swagger = require('./swagger/swagger.json');
+    const swagger = require('./specification/swagger.json');
     codegen.generate({
         swagger,
         target_dir: path.resolve(__dirname, './sdks-unzipped/'+getSdkNameForLanguage(language))
@@ -901,7 +901,7 @@ function downloadAndExtractJavascriptClient(language, cb){
 const swaggerCodegenVersion = "2.4.10";
 const jar = `swagger-codegen-cli-${swaggerCodegenVersion}.jar`;
 gulp.task('download-codegen-jar', [], function (cb) {
-    downloadFile(`http://central.maven.org/maven2/io/swagger/swagger-codegen-cli/2.4.10/swagger-codegen-cli-#${swaggerCodegenVersion}.jar`, {
+    downloadFile(`http://central.maven.org/maven2/io/specification/swagger-codegen-cli/2.4.10/swagger-codegen-cli-#${swaggerCodegenVersion}.jar`, {
         directory: "./",
         filename: jar
     }, function(err){

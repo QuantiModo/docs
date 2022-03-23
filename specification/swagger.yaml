@@ -5,25 +5,25 @@ definitions:
   AppSettings:
     properties:
       additionalSettings:
-        description: What do you expect?
+        description: 
         type: object
       appDescription:
-        description: What do you expect?
+        description: 
         type: string
       appDesign:
-        description: What do you expect?
+        description: 
         type: object
       appDisplayName:
-        description: What do you expect?
+        description: 
         type: string
       appStatus:
-        description: What do you expect?
+        description: 
         type: object
       appType:
-        description: What do you expect?
+        description: 
         type: string
       buildEnabled:
-        description: What do you expect?
+        description: 
         type: string
       clientId:
         description: 'Get yours at https:://builder.quantimo.do'
@@ -32,42 +32,42 @@ definitions:
         description: 'Get yours at https:://builder.quantimo.do'
         type: string
       collaborators:
-        description: What do you expect?
+        description: 
         items:
           $ref: '#/definitions/User'
         type: array
       createdAt:
-        description: What do you expect?
+        description: 
         type: string
       userId:
         description: User id of the owner of the application
         format: int32
         type: integer
       users:
-        description: What do you expect?
+        description: 
         items:
           $ref: '#/definitions/User'
         type: array
       redirectUri:
-        description: What do you expect?
+        description: 
         type: string
       companyName:
-        description: What do you expect?
+        description: 
         type: string
       homepageUrl:
-        description: What do you expect?
+        description: 
         type: string
       iconUrl:
-        description: What do you expect?
+        description: 
         type: string
       longDescription:
-        description: What do you expect?
+        description: 
         type: string
       splashScreen:
-        description: What do you expect?
+        description: 
         type: string
       textLogo:
-        description: What do you expect?
+        description: 
         type: string
     required:
       - clientId
@@ -898,46 +898,46 @@ definitions:
   InputField:
     properties:
       displayName:
-        description: What do you expect?
+        description: 
         type: string
       helpText:
-        description: What do you expect?
+        description: 
         type: string
       hint:
-        description: What do you expect?
+        description: 
         type: string
       icon:
-        description: What do you expect?
+        description: 
         type: string
       id:
         description: HTML element id
         type: string
       image:
-        description: What do you expect?
+        description: 
         type: string
       key:
-        description: What do you expect?
+        description: 
         type: string
       labelLeft:
-        description: What do you expect?
+        description: 
         type: string
       labelRight:
-        description: What do you expect?
+        description: 
         type: string
       link:
-        description: What do you expect?
+        description: 
         type: string
       maxLength:
-        description: What do you expect?
+        description: 
         type: integer
       maxValue:
-        description: What do you expect?
+        description: 
         type: number
       minLength:
-        description: What do you expect?
+        description: 
         type: integer
       minValue:
-        description: What do you expect?
+        description: 
         type: number
       options:
         description: Selector list options
@@ -948,10 +948,10 @@ definitions:
         description: 'Ex: Title'
         type: string
       postUrl:
-        description: What do you expect?
+        description: 
         type: string
       required:
-        description: What do you expect?
+        description: 
         type: boolean
       show:
         description: 'Ex: Title'
@@ -977,7 +977,7 @@ definitions:
         description: 'See http://html5pattern.com/ for examples'
         type: string
       value:
-        description: What do you expect?
+        description: 
         type: string
     required:
       - displayName
@@ -2023,10 +2023,10 @@ definitions:
         description: Formatted study text sections
         type: string
       socialSharingButtonHtml:
-        description: What do you expect?
+        description: 
         type: string
       studySummaryBoxHtml:
-        description: What do you expect?
+        description: 
         type: string
     required:
       - chartHtml
@@ -3427,7 +3427,7 @@ definitions:
         description: 'Ex: 95614'
         type: integer
       imageUrl:
-        description: What do you expect?
+        description: 
         type: string
       informationalUrl:
         description: 'Ex: https://google.com'
@@ -3456,7 +3456,7 @@ definitions:
         description: Type of input field to show for recording measurements
         type: string
       ionIcon:
-        description: What do you expect?
+        description: 
         type: string
       joinedCommonTagVariables:
         description: 'Commonly defined for all users.  Joining can be used used to merge duplicate variables. For instance, if two variables called Apples (Red Delicious) and Red Delicious Apples are joined, when one of them is analyzed, the measurements for the other will be included as well.'
@@ -4043,46 +4043,46 @@ definitions:
       - isSpam
     properties:
       id:
-        description: What do you expect?
+        description: 
         type: integer
       userId:
-        description: What do you expect?
+        description: 
         type: integer
       component:
-        description: What do you expect?
+        description: 
         type: string
       type:
-        description: What do you expect?
+        description: 
         type: string
       action:
-        description: What do you expect?
+        description: 
         type: string
       content:
-        description: What do you expect?
+        description: 
         type: string
       primaryLink:
-        description: What do you expect?
+        description: 
         type: string
       itemId:
-        description: What do you expect?
+        description: 
         type: integer
       secondaryItemId:
-        description: What do you expect?
+        description: 
         type: integer
       dateRecorded:
-        description: What do you expect?
+        description: 
         type: string
       hideSitewide:
-        description: What do you expect?
+        description: 
         type: integer
       mpttLeft:
-        description: What do you expect?
+        description: 
         type: integer
       mpttRight:
-        description: What do you expect?
+        description: 
         type: integer
       isSpam:
-        description: What do you expect?
+        description: 
         type: integer
       metaDataArray:
         description: Additional activity key-value data
@@ -4144,22 +4144,22 @@ definitions:
       - dateCreated
     properties:
       id:
-        description: What do you expect?
+        description: 
         type: integer
       initiatorUserId:
-        description: What do you expect?
+        description: 
         type: integer
       friendUserId:
-        description: What do you expect?
+        description: 
         type: integer
       isConfirmed:
-        description: What do you expect?
+        description: 
         type: integer
       isLimited:
-        description: What do you expect?
+        description: 
         type: integer
       dateCreated:
-        description: What do you expect?
+        description: 
         type: string
       metaDataArray:
         description: Additional friend key-value data
@@ -4224,31 +4224,31 @@ definitions:
       - dateCreated
     properties:
       id:
-        description: What do you expect?
+        description: 
         type: integer
       creatorId:
-        description: What do you expect?
+        description: 
         type: integer
       name:
-        description: What do you expect?
+        description: 
         type: string
       slug:
-        description: What do you expect?
+        description: 
         type: string
       description:
-        description: What do you expect?
+        description: 
         type: string
       status:
-        description: What do you expect?
+        description: 
         type: string
       parentId:
-        description: What do you expect?
+        description: 
         type: integer
       enableForum:
-        description: What do you expect?
+        description: 
         type: integer
       dateCreated:
-        description: What do you expect?
+        description: 
         type: string
       metaDataArray:
         description: Additional group key-value data
@@ -4316,40 +4316,40 @@ definitions:
       - inviteSent
     properties:
       id:
-        description: What do you expect?
+        description: 
         type: integer
       groupId:
-        description: What do you expect?
+        description: 
         type: integer
       userId:
-        description: What do you expect?
+        description: 
         type: integer
       inviterId:
-        description: What do you expect?
+        description: 
         type: integer
       isAdmin:
-        description: What do you expect?
+        description: 
         type: integer
       isMod:
-        description: What do you expect?
+        description: 
         type: integer
       userTitle:
-        description: What do you expect?
+        description: 
         type: string
       dateModified:
-        description: What do you expect?
+        description: 
         type: string
       comments:
-        description: What do you expect?
+        description: 
         type: string
       isConfirmed:
-        description: What do you expect?
+        description: 
         type: integer
       isBanned:
-        description: What do you expect?
+        description: 
         type: integer
       inviteSent:
-        description: What do you expect?
+        description: 
         type: integer
       metaDataArray:
         description: Additional groupsmember key-value data
@@ -4411,22 +4411,22 @@ definitions:
       - dateSent
     properties:
       id:
-        description: What do you expect?
+        description: 
         type: integer
       threadId:
-        description: What do you expect?
+        description: 
         type: integer
       senderId:
-        description: What do you expect?
+        description: 
         type: integer
       subject:
-        description: What do you expect?
+        description: 
         type: string
       message:
-        description: What do you expect?
+        description: 
         type: string
       dateSent:
-        description: What do you expect?
+        description: 
         type: string
       metaDataArray:
         description: Additional messagesmessage key-value data
@@ -4487,19 +4487,19 @@ definitions:
       - isActive
     properties:
       id:
-        description: What do you expect?
+        description: 
         type: integer
       subject:
-        description: What do you expect?
+        description: 
         type: string
       message:
-        description: What do you expect?
+        description: 
         type: string
       dateSent:
-        description: What do you expect?
+        description: 
         type: string
       isActive:
-        description: What do you expect?
+        description: 
         type: integer
       metaDataArray:
         description: Additional messagesnotice key-value data
@@ -4567,22 +4567,22 @@ definitions:
       - isDeleted
     properties:
       id:
-        description: What do you expect?
+        description: 
         type: integer
       userId:
-        description: What do you expect?
+        description: 
         type: integer
       threadId:
-        description: What do you expect?
+        description: 
         type: integer
       unreadCount:
-        description: What do you expect?
+        description: 
         type: integer
       senderOnly:
-        description: What do you expect?
+        description: 
         type: integer
       isDeleted:
-        description: What do you expect?
+        description: 
         type: integer
       metaDataArray:
         description: Additional messagesrecipient key-value data
@@ -4646,28 +4646,28 @@ definitions:
       - isNew
     properties:
       id:
-        description: What do you expect?
+        description: 
         type: integer
       userId:
-        description: What do you expect?
+        description: 
         type: integer
       itemId:
-        description: What do you expect?
+        description: 
         type: integer
       secondaryItemId:
-        description: What do you expect?
+        description: 
         type: integer
       componentName:
-        description: What do you expect?
+        description: 
         type: string
       componentAction:
-        description: What do you expect?
+        description: 
         type: string
       dateNotified:
-        description: What do you expect?
+        description: 
         type: string
       isNew:
-        description: What do you expect?
+        description: 
         type: integer
       metaDataArray:
         description: Additional notification key-value data
@@ -4726,13 +4726,13 @@ definitions:
       - blogId
     properties:
       id:
-        description: What do you expect?
+        description: 
         type: integer
       userId:
-        description: What do you expect?
+        description: 
         type: integer
       blogId:
-        description: What do you expect?
+        description: 
         type: integer
       metaDataArray:
         description: Additional userblog key-value data
@@ -4793,19 +4793,19 @@ definitions:
       - lastUpdated
     properties:
       id:
-        description: What do you expect?
+        description: 
         type: integer
       fieldId:
-        description: What do you expect?
+        description: 
         type: integer
       userId:
-        description: What do you expect?
+        description: 
         type: integer
       value:
-        description: What do you expect?
+        description: 
         type: string
       lastUpdated:
-        description: What do you expect?
+        description: 
         type: string
       metaDataArray:
         description: Additional xprofiledatum key-value data
@@ -4873,40 +4873,40 @@ definitions:
       - canDelete
     properties:
       id:
-        description: What do you expect?
+        description: 
         type: integer
       groupId:
-        description: What do you expect?
+        description: 
         type: integer
       parentId:
-        description: What do you expect?
+        description: 
         type: integer
       type:
-        description: What do you expect?
+        description: 
         type: string
       name:
-        description: What do you expect?
+        description: 
         type: string
       description:
-        description: What do you expect?
+        description: 
         type: string
       isRequired:
-        description: What do you expect?
+        description: 
         type: integer
       isDefaultOption:
-        description: What do you expect?
+        description: 
         type: integer
       fieldOrder:
-        description: What do you expect?
+        description: 
         type: integer
       optionOrder:
-        description: What do you expect?
+        description: 
         type: integer
       orderBy:
-        description: What do you expect?
+        description: 
         type: string
       canDelete:
-        description: What do you expect?
+        description: 
         type: integer
       metaDataArray:
         description: Additional xprofilefield key-value data
@@ -4967,19 +4967,19 @@ definitions:
       - canDelete
     properties:
       id:
-        description: What do you expect?
+        description: 
         type: integer
       name:
-        description: What do you expect?
+        description: 
         type: string
       description:
-        description: What do you expect?
+        description: 
         type: string
       groupOrder:
-        description: What do you expect?
+        description: 
         type: integer
       canDelete:
-        description: What do you expect?
+        description: 
         type: integer
       metaDataArray:
         description: Additional xprofilegroup key-value data

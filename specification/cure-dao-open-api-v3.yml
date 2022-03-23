@@ -2411,27 +2411,27 @@ components:
         additionalSettings:
           type: object
           properties: {}
-          description: What do you expect?
+          description: 
         appDescription:
           type: string
-          description: What do you expect?
+          description: 
         appDesign:
           type: object
           properties: {}
-          description: What do you expect?
+          description: 
         appDisplayName:
           type: string
-          description: What do you expect?
+          description: 
         appStatus:
           type: object
           properties: {}
-          description: What do you expect?
+          description: 
         appType:
           type: string
-          description: What do you expect?
+          description: 
         buildEnabled:
           type: string
-          description: What do you expect?
+          description: 
         clientId:
           type: string
           description: 'Get yours at https:://builder.quantimo.do'
@@ -2440,42 +2440,42 @@ components:
           description: 'Get yours at https:://builder.quantimo.do'
         collaborators:
           type: array
-          description: What do you expect?
+          description: 
           items:
             $ref: '#/components/schemas/User'
         createdAt:
           type: string
-          description: What do you expect?
+          description: 
         userId:
           type: integer
           description: User id of the owner of the application
           format: int32
         users:
           type: array
-          description: What do you expect?
+          description: 
           items:
             $ref: '#/components/schemas/User'
         redirectUri:
           type: string
-          description: What do you expect?
+          description: 
         companyName:
           type: string
-          description: What do you expect?
+          description: 
         homepageUrl:
           type: string
-          description: What do you expect?
+          description: 
         iconUrl:
           type: string
-          description: What do you expect?
+          description: 
         longDescription:
           type: string
-          description: What do you expect?
+          description: 
         splashScreen:
           type: string
-          description: What do you expect?
+          description: 
         textLogo:
           type: string
-          description: What do you expect?
+          description: 
     AppSettingsResponse:
       required:
         - description
@@ -3324,46 +3324,46 @@ components:
       properties:
         displayName:
           type: string
-          description: What do you expect?
+          description: 
         helpText:
           type: string
-          description: What do you expect?
+          description: 
         hint:
           type: string
-          description: What do you expect?
+          description: 
         icon:
           type: string
-          description: What do you expect?
+          description: 
         id:
           type: string
           description: HTML element id
         image:
           type: string
-          description: What do you expect?
+          description: 
         key:
           type: string
-          description: What do you expect?
+          description: 
         labelLeft:
           type: string
-          description: What do you expect?
+          description: 
         labelRight:
           type: string
-          description: What do you expect?
+          description: 
         link:
           type: string
-          description: What do you expect?
+          description: 
         maxLength:
           type: integer
-          description: What do you expect?
+          description: 
         maxValue:
           type: number
-          description: What do you expect?
+          description: 
         minLength:
           type: integer
-          description: What do you expect?
+          description: 
         minValue:
           type: number
-          description: What do you expect?
+          description: 
         options:
           type: array
           description: Selector list options
@@ -3374,10 +3374,10 @@ components:
           description: 'Ex: Title'
         postUrl:
           type: string
-          description: What do you expect?
+          description: 
         required:
           type: boolean
-          description: What do you expect?
+          description: 
         show:
           type: boolean
           description: 'Ex: Title'
@@ -3403,7 +3403,7 @@ components:
           description: 'See http://html5pattern.com/ for examples'
         value:
           type: string
-          description: What do you expect?
+          description: 
     GetConnectorsResponse:
       required:
         - description
@@ -4445,10 +4445,10 @@ components:
           description: Formatted study text sections
         socialSharingButtonHtml:
           type: string
-          description: What do you expect?
+          description: 
         studySummaryBoxHtml:
           type: string
-          description: What do you expect?
+          description: 
     StudyImages:
       required:
         - gaugeImage
@@ -5846,7 +5846,7 @@ components:
           description: 'Ex: 95614'
         imageUrl:
           type: string
-          description: What do you expect?
+          description: 
         informationalUrl:
           type: string
           description: 'Ex: https://google.com'
@@ -5875,7 +5875,7 @@ components:
           description: Type of input field to show for recording measurements
         ionIcon:
           type: string
-          description: What do you expect?
+          description: 
         joinedCommonTagVariables:
           type: array
           description: 'Commonly defined for all users.  Joining can be used used to merge duplicate variables. For instance, if two variables called Apples (Red Delicious) and Red Delicious Apples are joined, when one of them is analyzed, the measurements for the other will be included as well.'
@@ -6450,46 +6450,46 @@ components:
       properties:
         id:
           type: integer
-          description: What do you expect?
+          description: 
         userId:
           type: integer
-          description: What do you expect?
+          description: 
         component:
           type: string
-          description: What do you expect?
+          description: 
         type:
           type: string
-          description: What do you expect?
+          description: 
         action:
           type: string
-          description: What do you expect?
+          description: 
         content:
           type: string
-          description: What do you expect?
+          description: 
         primaryLink:
           type: string
-          description: What do you expect?
+          description: 
         itemId:
           type: integer
-          description: What do you expect?
+          description: 
         secondaryItemId:
           type: integer
-          description: What do you expect?
+          description: 
         dateRecorded:
           type: string
-          description: What do you expect?
+          description: 
         hideSitewide:
           type: integer
-          description: What do you expect?
+          description: 
         mpttLeft:
           type: integer
-          description: What do you expect?
+          description: 
         mpttRight:
           type: integer
-          description: What do you expect?
+          description: 
         isSpam:
           type: integer
-          description: What do you expect?
+          description: 
         metaDataArray:
           type: array
           description: Additional activity key-value data
@@ -6553,22 +6553,22 @@ components:
       properties:
         id:
           type: integer
-          description: What do you expect?
+          description: 
         initiatorUserId:
           type: integer
-          description: What do you expect?
+          description: 
         friendUserId:
           type: integer
-          description: What do you expect?
+          description: 
         isConfirmed:
           type: integer
-          description: What do you expect?
+          description: 
         isLimited:
           type: integer
-          description: What do you expect?
+          description: 
         dateCreated:
           type: string
-          description: What do you expect?
+          description: 
         metaDataArray:
           type: array
           description: Additional friend key-value data
@@ -6635,31 +6635,31 @@ components:
       properties:
         id:
           type: integer
-          description: What do you expect?
+          description: 
         creatorId:
           type: integer
-          description: What do you expect?
+          description: 
         name:
           type: string
-          description: What do you expect?
+          description: 
         slug:
           type: string
-          description: What do you expect?
+          description: 
         description:
           type: string
-          description: What do you expect?
+          description: 
         status:
           type: string
-          description: What do you expect?
+          description: 
         parentId:
           type: integer
-          description: What do you expect?
+          description: 
         enableForum:
           type: integer
-          description: What do you expect?
+          description: 
         dateCreated:
           type: string
-          description: What do you expect?
+          description: 
         metaDataArray:
           type: array
           description: Additional group key-value data
@@ -6729,40 +6729,40 @@ components:
       properties:
         id:
           type: integer
-          description: What do you expect?
+          description: 
         groupId:
           type: integer
-          description: What do you expect?
+          description: 
         userId:
           type: integer
-          description: What do you expect?
+          description: 
         inviterId:
           type: integer
-          description: What do you expect?
+          description: 
         isAdmin:
           type: integer
-          description: What do you expect?
+          description: 
         isMod:
           type: integer
-          description: What do you expect?
+          description: 
         userTitle:
           type: string
-          description: What do you expect?
+          description: 
         dateModified:
           type: string
-          description: What do you expect?
+          description: 
         comments:
           type: string
-          description: What do you expect?
+          description: 
         isConfirmed:
           type: integer
-          description: What do you expect?
+          description: 
         isBanned:
           type: integer
-          description: What do you expect?
+          description: 
         inviteSent:
           type: integer
-          description: What do you expect?
+          description: 
         metaDataArray:
           type: array
           description: Additional groupsmember key-value data
@@ -6826,22 +6826,22 @@ components:
       properties:
         id:
           type: integer
-          description: What do you expect?
+          description: 
         threadId:
           type: integer
-          description: What do you expect?
+          description: 
         senderId:
           type: integer
-          description: What do you expect?
+          description: 
         subject:
           type: string
-          description: What do you expect?
+          description: 
         message:
           type: string
-          description: What do you expect?
+          description: 
         dateSent:
           type: string
-          description: What do you expect?
+          description: 
         metaDataArray:
           type: array
           description: Additional messagesmessage key-value data
@@ -6904,19 +6904,19 @@ components:
       properties:
         id:
           type: integer
-          description: What do you expect?
+          description: 
         subject:
           type: string
-          description: What do you expect?
+          description: 
         message:
           type: string
-          description: What do you expect?
+          description: 
         dateSent:
           type: string
-          description: What do you expect?
+          description: 
         isActive:
           type: integer
-          description: What do you expect?
+          description: 
         metaDataArray:
           type: array
           description: Additional messagesnotice key-value data
@@ -6986,22 +6986,22 @@ components:
       properties:
         id:
           type: integer
-          description: What do you expect?
+          description: 
         userId:
           type: integer
-          description: What do you expect?
+          description: 
         threadId:
           type: integer
-          description: What do you expect?
+          description: 
         unreadCount:
           type: integer
-          description: What do you expect?
+          description: 
         senderOnly:
           type: integer
-          description: What do you expect?
+          description: 
         isDeleted:
           type: integer
-          description: What do you expect?
+          description: 
         metaDataArray:
           type: array
           description: Additional messagesrecipient key-value data
@@ -7067,28 +7067,28 @@ components:
       properties:
         id:
           type: integer
-          description: What do you expect?
+          description: 
         userId:
           type: integer
-          description: What do you expect?
+          description: 
         itemId:
           type: integer
-          description: What do you expect?
+          description: 
         secondaryItemId:
           type: integer
-          description: What do you expect?
+          description: 
         componentName:
           type: string
-          description: What do you expect?
+          description: 
         componentAction:
           type: string
-          description: What do you expect?
+          description: 
         dateNotified:
           type: string
-          description: What do you expect?
+          description: 
         isNew:
           type: integer
-          description: What do you expect?
+          description: 
         metaDataArray:
           type: array
           description: Additional notification key-value data

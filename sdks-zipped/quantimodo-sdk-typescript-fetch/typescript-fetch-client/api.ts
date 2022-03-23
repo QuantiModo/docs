@@ -171,85 +171,85 @@ export interface ActivitiesResponse {
  */
 export interface Activity {
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof Activity
      */
     id: number;
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof Activity
      */
     userId: number;
     /**
-     * What do you expect?
+     * 
      * @type {string}
      * @memberof Activity
      */
     component: string;
     /**
-     * What do you expect?
+     * 
      * @type {string}
      * @memberof Activity
      */
     type: string;
     /**
-     * What do you expect?
+     * 
      * @type {string}
      * @memberof Activity
      */
     action: string;
     /**
-     * What do you expect?
+     * 
      * @type {string}
      * @memberof Activity
      */
     content: string;
     /**
-     * What do you expect?
+     * 
      * @type {string}
      * @memberof Activity
      */
     primaryLink: string;
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof Activity
      */
     itemId: number;
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof Activity
      */
     secondaryItemId: number;
     /**
-     * What do you expect?
+     * 
      * @type {string}
      * @memberof Activity
      */
     dateRecorded: string;
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof Activity
      */
     hideSitewide: number;
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof Activity
      */
     mpttLeft: number;
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof Activity
      */
     mpttRight: number;
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof Activity
      */
@@ -269,43 +269,43 @@ export interface Activity {
  */
 export interface AppSettings {
     /**
-     * What do you expect?
+     * 
      * @type {any}
      * @memberof AppSettings
      */
     additionalSettings?: any;
     /**
-     * What do you expect?
+     * 
      * @type {string}
      * @memberof AppSettings
      */
     appDescription?: string;
     /**
-     * What do you expect?
+     * 
      * @type {any}
      * @memberof AppSettings
      */
     appDesign?: any;
     /**
-     * What do you expect?
+     * 
      * @type {string}
      * @memberof AppSettings
      */
     appDisplayName?: string;
     /**
-     * What do you expect?
+     * 
      * @type {any}
      * @memberof AppSettings
      */
     appStatus?: any;
     /**
-     * What do you expect?
+     * 
      * @type {string}
      * @memberof AppSettings
      */
     appType?: string;
     /**
-     * What do you expect?
+     * 
      * @type {string}
      * @memberof AppSettings
      */
@@ -323,13 +323,13 @@ export interface AppSettings {
      */
     clientSecret?: string;
     /**
-     * What do you expect?
+     * 
      * @type {Array<User>}
      * @memberof AppSettings
      */
     collaborators?: Array<User>;
     /**
-     * What do you expect?
+     * 
      * @type {string}
      * @memberof AppSettings
      */
@@ -341,49 +341,49 @@ export interface AppSettings {
      */
     userId?: number;
     /**
-     * What do you expect?
+     * 
      * @type {Array<User>}
      * @memberof AppSettings
      */
     users?: Array<User>;
     /**
-     * What do you expect?
+     * 
      * @type {string}
      * @memberof AppSettings
      */
     redirectUri?: string;
     /**
-     * What do you expect?
+     * 
      * @type {string}
      * @memberof AppSettings
      */
     companyName?: string;
     /**
-     * What do you expect?
+     * 
      * @type {string}
      * @memberof AppSettings
      */
     homepageUrl?: string;
     /**
-     * What do you expect?
+     * 
      * @type {string}
      * @memberof AppSettings
      */
     iconUrl?: string;
     /**
-     * What do you expect?
+     * 
      * @type {string}
      * @memberof AppSettings
      */
     longDescription?: string;
     /**
-     * What do you expect?
+     * 
      * @type {string}
      * @memberof AppSettings
      */
     splashScreen?: string;
     /**
-     * What do you expect?
+     * 
      * @type {string}
      * @memberof AppSettings
      */
@@ -1931,37 +1931,37 @@ export interface FeedResponse {
  */
 export interface Friend {
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof Friend
      */
     id: number;
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof Friend
      */
     initiatorUserId: number;
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof Friend
      */
     friendUserId: number;
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof Friend
      */
     isConfirmed: number;
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof Friend
      */
     isLimited: number;
     /**
-     * What do you expect?
+     * 
      * @type {string}
      * @memberof Friend
      */
@@ -2451,55 +2451,55 @@ export interface GetTrackingReminderNotificationsResponse {
  */
 export interface Group {
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof Group
      */
     id: number;
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof Group
      */
     creatorId: number;
     /**
-     * What do you expect?
+     * 
      * @type {string}
      * @memberof Group
      */
     name: string;
     /**
-     * What do you expect?
+     * 
      * @type {string}
      * @memberof Group
      */
     slug: string;
     /**
-     * What do you expect?
+     * 
      * @type {string}
      * @memberof Group
      */
     description: string;
     /**
-     * What do you expect?
+     * 
      * @type {string}
      * @memberof Group
      */
     status: string;
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof Group
      */
     parentId: number;
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof Group
      */
     enableForum: number;
     /**
-     * What do you expect?
+     * 
      * @type {string}
      * @memberof Group
      */
@@ -2519,73 +2519,73 @@ export interface Group {
  */
 export interface GroupsMember {
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof GroupsMember
      */
     id: number;
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof GroupsMember
      */
     groupId: number;
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof GroupsMember
      */
     userId: number;
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof GroupsMember
      */
     inviterId: number;
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof GroupsMember
      */
     isAdmin: number;
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof GroupsMember
      */
     isMod: number;
     /**
-     * What do you expect?
+     * 
      * @type {string}
      * @memberof GroupsMember
      */
     userTitle: string;
     /**
-     * What do you expect?
+     * 
      * @type {string}
      * @memberof GroupsMember
      */
     dateModified: string;
     /**
-     * What do you expect?
+     * 
      * @type {string}
      * @memberof GroupsMember
      */
     comments: string;
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof GroupsMember
      */
     isConfirmed: number;
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof GroupsMember
      */
     isBanned: number;
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof GroupsMember
      */
@@ -2803,25 +2803,25 @@ export interface Image {
  */
 export interface InputField {
     /**
-     * What do you expect?
+     * 
      * @type {string}
      * @memberof InputField
      */
     displayName: string;
     /**
-     * What do you expect?
+     * 
      * @type {string}
      * @memberof InputField
      */
     helpText?: string;
     /**
-     * What do you expect?
+     * 
      * @type {string}
      * @memberof InputField
      */
     hint?: string;
     /**
-     * What do you expect?
+     * 
      * @type {string}
      * @memberof InputField
      */
@@ -2833,55 +2833,55 @@ export interface InputField {
      */
     id?: string;
     /**
-     * What do you expect?
+     * 
      * @type {string}
      * @memberof InputField
      */
     image?: string;
     /**
-     * What do you expect?
+     * 
      * @type {string}
      * @memberof InputField
      */
     key?: string;
     /**
-     * What do you expect?
+     * 
      * @type {string}
      * @memberof InputField
      */
     labelLeft?: string;
     /**
-     * What do you expect?
+     * 
      * @type {string}
      * @memberof InputField
      */
     labelRight?: string;
     /**
-     * What do you expect?
+     * 
      * @type {string}
      * @memberof InputField
      */
     link?: string;
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof InputField
      */
     maxLength?: number;
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof InputField
      */
     maxValue?: number;
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof InputField
      */
     minLength?: number;
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof InputField
      */
@@ -2899,13 +2899,13 @@ export interface InputField {
      */
     placeholder?: string;
     /**
-     * What do you expect?
+     * 
      * @type {string}
      * @memberof InputField
      */
     postUrl?: string;
     /**
-     * What do you expect?
+     * 
      * @type {boolean}
      * @memberof InputField
      */
@@ -2935,7 +2935,7 @@ export interface InputField {
      */
     validationPattern?: string;
     /**
-     * What do you expect?
+     * 
      * @type {string}
      * @memberof InputField
      */
@@ -3447,37 +3447,37 @@ export interface MeasurementUpdate {
  */
 export interface MessagesMessage {
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof MessagesMessage
      */
     id: number;
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof MessagesMessage
      */
     threadId: number;
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof MessagesMessage
      */
     senderId: number;
     /**
-     * What do you expect?
+     * 
      * @type {string}
      * @memberof MessagesMessage
      */
     subject: string;
     /**
-     * What do you expect?
+     * 
      * @type {string}
      * @memberof MessagesMessage
      */
     message: string;
     /**
-     * What do you expect?
+     * 
      * @type {string}
      * @memberof MessagesMessage
      */
@@ -3583,31 +3583,31 @@ export interface MessagesMessagesResponse {
  */
 export interface MessagesNotice {
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof MessagesNotice
      */
     id: number;
     /**
-     * What do you expect?
+     * 
      * @type {string}
      * @memberof MessagesNotice
      */
     subject: string;
     /**
-     * What do you expect?
+     * 
      * @type {string}
      * @memberof MessagesNotice
      */
     message: string;
     /**
-     * What do you expect?
+     * 
      * @type {string}
      * @memberof MessagesNotice
      */
     dateSent: string;
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof MessagesNotice
      */
@@ -3725,37 +3725,37 @@ export interface MessagesNoticesResponse {
  */
 export interface MessagesRecipient {
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof MessagesRecipient
      */
     id: number;
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof MessagesRecipient
      */
     userId: number;
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof MessagesRecipient
      */
     threadId: number;
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof MessagesRecipient
      */
     unreadCount: number;
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof MessagesRecipient
      */
     senderOnly: number;
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof MessagesRecipient
      */
@@ -3875,49 +3875,49 @@ export interface ModelError {
  */
 export interface Notification {
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof Notification
      */
     id: number;
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof Notification
      */
     userId: number;
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof Notification
      */
     itemId: number;
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof Notification
      */
     secondaryItemId: number;
     /**
-     * What do you expect?
+     * 
      * @type {string}
      * @memberof Notification
      */
     componentName: string;
     /**
-     * What do you expect?
+     * 
      * @type {string}
      * @memberof Notification
      */
     componentAction: string;
     /**
-     * What do you expect?
+     * 
      * @type {string}
      * @memberof Notification
      */
     dateNotified: string;
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof Notification
      */
@@ -4927,13 +4927,13 @@ export interface StudyHtml {
      */
     studyTextHtml?: string;
     /**
-     * What do you expect?
+     * 
      * @type {string}
      * @memberof StudyHtml
      */
     socialSharingButtonHtml?: string;
     /**
-     * What do you expect?
+     * 
      * @type {string}
      * @memberof StudyHtml
      */
@@ -6939,19 +6939,19 @@ export interface User {
  */
 export interface UserBlog {
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof UserBlog
      */
     id: number;
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof UserBlog
      */
     userId: number;
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof UserBlog
      */
@@ -7453,7 +7453,7 @@ export interface Variable {
      */
     id: number;
     /**
-     * What do you expect?
+     * 
      * @type {string}
      * @memberof Variable
      */
@@ -7495,7 +7495,7 @@ export interface Variable {
      */
     inputType?: string;
     /**
-     * What do you expect?
+     * 
      * @type {string}
      * @memberof Variable
      */
@@ -8497,31 +8497,31 @@ export interface XprofileDataResponse {
  */
 export interface XprofileDatum {
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof XprofileDatum
      */
     id: number;
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof XprofileDatum
      */
     fieldId: number;
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof XprofileDatum
      */
     userId: number;
     /**
-     * What do you expect?
+     * 
      * @type {string}
      * @memberof XprofileDatum
      */
     value: string;
     /**
-     * What do you expect?
+     * 
      * @type {string}
      * @memberof XprofileDatum
      */
@@ -8541,73 +8541,73 @@ export interface XprofileDatum {
  */
 export interface XprofileField {
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof XprofileField
      */
     id: number;
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof XprofileField
      */
     groupId: number;
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof XprofileField
      */
     parentId: number;
     /**
-     * What do you expect?
+     * 
      * @type {string}
      * @memberof XprofileField
      */
     type: string;
     /**
-     * What do you expect?
+     * 
      * @type {string}
      * @memberof XprofileField
      */
     name: string;
     /**
-     * What do you expect?
+     * 
      * @type {string}
      * @memberof XprofileField
      */
     description: string;
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof XprofileField
      */
     isRequired: number;
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof XprofileField
      */
     isDefaultOption: number;
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof XprofileField
      */
     fieldOrder: number;
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof XprofileField
      */
     optionOrder: number;
     /**
-     * What do you expect?
+     * 
      * @type {string}
      * @memberof XprofileField
      */
     orderBy: string;
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof XprofileField
      */
@@ -8713,31 +8713,31 @@ export interface XprofileFieldsResponse {
  */
 export interface XprofileGroup {
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof XprofileGroup
      */
     id: number;
     /**
-     * What do you expect?
+     * 
      * @type {string}
      * @memberof XprofileGroup
      */
     name: string;
     /**
-     * What do you expect?
+     * 
      * @type {string}
      * @memberof XprofileGroup
      */
     description: string;
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof XprofileGroup
      */
     groupOrder: number;
     /**
-     * What do you expect?
+     * 
      * @type {number}
      * @memberof XprofileGroup
      */
