@@ -20,7 +20,7 @@
   "dependencies": {
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "nocodb": "^0.83.0",
+    "nocodb": "^0.98.0",
     "bower": "*",
     "bugsnag": "*",
     "del": "*",
